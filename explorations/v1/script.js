@@ -88,5 +88,41 @@
     done.focus();
   });
 
-  show(0, false);
+  /* Sur une page métier, le métier est déjà choisi : on commence à la question 2 */
+  show(form.querySelector('input[name="metier"]:checked') ? 1 : 0, false);
+})();
+
+/* Source de la demande : page, UTM et identifiants de clic, conservés pendant la visite */
+(() => {
+  const form = document.getElementById('qform');
+  if (!form) return;
+  const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+  const params = new URLSearchParams(location.search);
+  let stored = {};
+  try { stored = JSON.parse(sessionStorage.getItem('bc_src') || '{}'); } catch (e) {}
+  keys.forEach((k) => { if (params.get(k)) stored[k] = params.get(k); });
+  try { sessionStorage.setItem('bc_src', JSON.stringify(stored)); } catch (e) {}
+  keys.forEach((k) => { const f = form.elements[k]; if (f && stored[k]) f.value = stored[k]; });
+  if (form.elements.page) form.elements.page.value = location.pathname;
+})();
+
+/* Sélecteur de palette : aperçu uniquement, à retirer une fois la palette choisie */
+(() => {
+  const root = document.documentElement;
+  const names = { a: 'Minium', b: 'Sapin', c: 'Nuit' };
+  const box = document.createElement('div');
+  box.className = 'palette-picker';
+  box.setAttribute('role', 'group');
+  box.setAttribute('aria-label', 'Choisir la palette de couleurs');
+  box.innerHTML = '<span>Palette</span>' + Object.keys(names).map((k) => `<button type="button" data-p="${k}" title="${names[k]}" aria-label="Palette ${names[k]}">${k.toUpperCase()}</button>`).join('');
+  const sync = () => box.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String((root.dataset.palette || 'a') === b.dataset.p)));
+  box.addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    const p = b.dataset.p;
+    if (p === 'a') delete root.dataset.palette; else root.dataset.palette = p;
+    try { localStorage.setItem('bc_palette', p); } catch (err) {}
+    sync();
+  });
+  sync();
+  document.body.appendChild(box);
 })();

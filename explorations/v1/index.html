@@ -6,12 +6,12 @@
 <title>Bartier &amp; Co — Rendez-vous de devis exclusifs pour artisans du bâtiment</title>
 <meta name="description" content="Bartier &amp; Co trouve les propriétaires qui ont un vrai projet près de chez vous, les rappelle en moins de cinq minutes et pose le rendez-vous de devis dans votre agenda.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#F3EEE4">
+<meta name="theme-color" content="#F6F5F1">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/newsreader-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(d){d.classList.add('js');try{var q=new URLSearchParams(location.search).get('palette');if(q)localStorage.setItem('bc_palette',q);var p=localStorage.getItem('bc_palette');if(p&&p!=='a')d.dataset.palette=p}catch(e){}})(document.documentElement)</script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -23,7 +23,7 @@
     </a>
     <nav class="nav" aria-label="Navigation principale">
       <a href="#methode">Méthode</a>
-      <a href="#metiers">Métiers</a>
+      <a href="/metiers/">Métiers</a>
       <a href="#engagements">Engagements</a>
       <a href="#fondateurs">À propos</a>
       <a href="#journal">Journal</a>
@@ -213,11 +213,11 @@
       <p class="lede">Nous travaillons avec les entreprises du bâtiment dont un seul chantier représente plusieurs milliers d’euros.</p>
     </div>
     <ul class="trades">
-      <li><span>Couverture et zinguerie</span></li>
-      <li><span>Façade et ravalement</span></li>
-      <li><span>Charpente</span></li>
-      <li><span>Menuiserie extérieure</span></li>
-      <li><span>Isolation</span></li>
+      <li><a href="/metiers/couverture/"><span>Couverture et zinguerie</span><span class="trade-go" aria-hidden="true">→</span></a></li>
+      <li><a href="/metiers/facade/"><span>Façade et ravalement</span><span class="trade-go" aria-hidden="true">→</span></a></li>
+      <li><a href="/metiers/charpente/"><span>Charpente</span><span class="trade-go" aria-hidden="true">→</span></a></li>
+      <li><a href="/metiers/menuiserie-exterieure/"><span>Menuiserie extérieure</span><span class="trade-go" aria-hidden="true">→</span></a></li>
+      <li><a href="/metiers/isolation/"><span>Isolation</span><span class="trade-go" aria-hidden="true">→</span></a></li>
       <li class="trades-other"><a href="#secteur">Un autre métier du bâtiment&nbsp;? <em>Parlons-en.</em></a></li>
     </ul>
   </div>
@@ -375,6 +375,12 @@
         <p class="consent">Vos coordonnées servent uniquement à vous rappeler au sujet de votre demande. Voir notre <a href="#">politique de confidentialité</a>.</p>
       </fieldset>
 
+      <!-- Source de la demande : renseignée automatiquement -->
+      <input type="hidden" name="page" value="">
+      <input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_content" value=""><input type="hidden" name="utm_term" value="">
+      <input type="hidden" name="gclid" value=""><input type="hidden" name="fbclid" value="">
+      <div class="hp" aria-hidden="true"><label>Ne pas remplir <input type="text" name="site_web" tabindex="-1" autocomplete="off"></label></div>
+
       <p class="qform-error" role="alert" hidden>Choisissez une réponse pour continuer.</p>
 
       <div class="qform-nav">
@@ -402,7 +408,7 @@
     <div class="cordeau" aria-hidden="true"></div>
     <div class="footer-cols">
       <nav aria-label="Pied de page">
-        <a href="#methode">Méthode</a><a href="#metiers">Métiers</a><a href="#engagements">Engagements</a><a href="#fondateurs">À propos</a><a href="#journal">Journal</a>
+        <a href="#methode">Méthode</a><a href="/metiers/">Métiers</a><a href="#engagements">Engagements</a><a href="#fondateurs">À propos</a><a href="#journal">Journal</a>
       </nav>
       <nav aria-label="Informations légales">
         <a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">Cookies</a>
