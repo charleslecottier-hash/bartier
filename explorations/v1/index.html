@@ -7,10 +7,12 @@
 <meta name="description" content="Nous trouvons les propriétaires, nous les rappelons en moins de cinq minutes, vous faites la visite. Des rendez-vous de devis réservés à vous seul.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#FFFFFF">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/general-sans-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://bartierandco.com/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://bartierandco.com/#org","name":"Bartier & Co","legalName":"Bartier & Co SAS","url":"https://bartierandco.com/","email":"contact@bartierandco.com","areaServed":["FR","BE"],"description":"Agence d’acquisition qui livre des rendez-vous de devis exclusifs aux artisans du bâtiment : annonces locales, rappel des demandes en moins de cinq minutes, qualification et prise de rendez-vous.","founder":[{"@type":"Person","name":"Charles Le Cottier"},{"@type":"Person","name":"Martin Barthélémy"}]},{"@type":"WebSite","@id":"https://bartierandco.com/#site","url":"https://bartierandco.com/","name":"Bartier & Co","inLanguage":"fr-FR","publisher":{"@id":"https://bartierandco.com/#org"}},{"@type":"Service","name":"Rendez-vous de devis exclusifs pour artisans du bâtiment","provider":{"@id":"https://bartierandco.com/#org"},"areaServed":["FR","BE"],"serviceType":"Acquisition de clients"}]}</script>
 <script>(function(d){d.classList.add('js')})(document.documentElement)</script>
 </head>
 <body>
@@ -23,10 +25,11 @@
       <span class="logo-word">Bartier <span>&amp;</span> Co</span>
     </a>
     <nav class="nav" aria-label="Navigation principale">
-      <a href="#comment">Méthode</a>
       <a href="/metiers/">Métiers</a>
-      <a href="#engagements">Engagements</a>
-      <a href="#faq">Questions</a>
+      <a href="/google-ads/">Google Ads</a>
+      <a href="/meta-ads/">Meta Ads</a>
+      <a href="/qui-sommes-nous/">Qui sommes-nous</a>
+      <a href="/blog/">Blog</a>
     </nav>
     <div class="header-end">
       <div class="lang" aria-label="Langue"><a href="#" aria-current="true">FR</a><a href="#" hreflang="en" lang="en">EN</a></div>
@@ -38,15 +41,15 @@
 <main id="contenu">
 
 <!-- Héros -->
-<section class="hero" id="top" aria-labelledby="h1">
+<section class="hero hero-dark" id="top" aria-labelledby="h1">
   <div class="wrap hero-grid">
     <div class="hero-text">
       <p class="kicker">Acquisition pour artisans du bâtiment</p>
       <h1 id="h1">Des <span class="nw">rendez-vous</span> de devis. Réservés à vous seul.</h1>
       <p class="lead">Nous trouvons les propriétaires, nous les rappelons en moins de cinq minutes. Vous faites la visite.</p>
       <div class="ctas">
-        <a class="btn btn-primary" href="#secteur">Vérifier mon secteur <span class="go" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="#comment">Voir la méthode</a>
+        <a class="btn btn-white" href="#secteur">Vérifier mon secteur <span class="go" aria-hidden="true">→</span></a>
+        <a class="btn btn-outline" href="#comment">Voir la méthode</a>
       </div>
       <ul class="hero-facts">
         <li>Un artisan par secteur</li>
@@ -55,19 +58,27 @@
       </ul>
     </div>
 
-    <figure class="agenda" aria-label="Exemple d’agenda d’un artisan">
-      <div class="agenda-top">
-        <p><b>Agenda</b><span>Semaine 48</span></p>
-        <span class="tag">Exemple</span>
+    <div class="collage" aria-label="Exemple : un rendez-vous arrive dans l’agenda d’un artisan" role="img">
+      <div class="c-call" aria-hidden="true">
+        <p class="c-k">Appel en cours · 02:14</p>
+        <p class="c-name">Mme D., Amiens</p>
+        <p class="c-sub">Réfection de toiture · propriétaire</p>
+        <div class="m-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       </div>
-      <ul class="agenda-list">
-        <li><time>Lun. 09:00</time><p><b>Réfection de toiture</b><span>Arras · propriétaire occupant</span></p><em>Confirmé</em></li>
-        <li><time>Mar. 17:30</time><p><b>Ravalement de façade</b><span>Reims · propriétaire occupant</span></p><em>Confirmé</em></li>
-        <li><time>Mer. 10:30</time><p><b>Remplacement de 9 fenêtres</b><span>Namur · propriétaire occupant</span></p><em>Confirmé</em></li>
-        <li class="is-new"><time>Jeu. 17:00</time><p><b>Zinguerie complète</b><span>Amiens · propriétaire occupant</span></p><em>Nouveau</em></li>
-      </ul>
-      <div class="agenda-toast" aria-hidden="true"><span class="dot"></span><p><b>Nouveau rendez-vous</b>Jeudi 17:00, rappel envoyé au propriétaire</p></div>
-    </figure>
+      <figure class="agenda" aria-hidden="true">
+        <div class="agenda-top">
+          <p><b>Agenda</b><span>Semaine 48</span></p>
+          <span class="tag">Exemple</span>
+        </div>
+        <ul class="agenda-list">
+          <li><time>Lun. 09:00</time><p><b>Réfection de toiture</b><span>Arras</span></p><em>Confirmé</em></li>
+          <li><time>Mar. 17:30</time><p><b>Ravalement de façade</b><span>Reims</span></p><em>Confirmé</em></li>
+          <li><time>Mer. 10:30</time><p><b>9 fenêtres à remplacer</b><span>Namur</span></p><em>Confirmé</em></li>
+          <li class="is-new"><time>Jeu. 17:00</time><p><b>Zinguerie complète</b><span>Amiens</span></p><em>Nouveau</em></li>
+        </ul>
+      </figure>
+      <div class="agenda-toast" aria-hidden="true"><span class="dot"></span><p><b>Nouveau rendez-vous</b>Jeudi 17:00 · rappel envoyé</p></div>
+    </div>
   </div>
 </section>
 
@@ -380,7 +391,7 @@
       <p>Rendez-vous de devis pour artisans du bâtiment. France et Belgique.</p>
     </div>
     <nav aria-label="Pied de page">
-      <a href="#comment">Méthode</a><a href="/metiers/">Métiers</a><a href="#engagements">Engagements</a><a href="#fondateurs">À propos</a>
+      <a href="/metiers/">Métiers</a><a href="/google-ads/">Google Ads</a><a href="/meta-ads/">Meta Ads</a><a href="/qui-sommes-nous/">Qui sommes-nous</a><a href="/blog/">Blog</a>
     </nav>
     <nav aria-label="Informations légales">
       <a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">Cookies</a>
