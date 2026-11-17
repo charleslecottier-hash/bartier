@@ -281,11 +281,11 @@ page("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
     <div class="tm-text">
       <p class="kicker">Les fondateurs</p>
       <h2>Charles et Martin.</h2>
-      <p class="sub">Charles suit les artisans, de l'appel de découverte au premier rendez-vous. Martin pilote les annonces et l'équipe qui rappelle les propriétaires.</p>
+      <p class="sub">Charles, Head of Performance, pilote les annonces, le rappel et les résultats. Martin, Head of Sales, est votre interlocuteur du premier appel au démarrage.</p>
     </div>
     <div class="tm-people">
-      <figure><div class="ph" role="img" aria-label="Portrait de Charles Le Cottier, à venir"></div><figcaption><b>Charles Le Cottier</b><small>Cofondateur</small></figcaption></figure>
-      <figure><div class="ph" role="img" aria-label="Portrait de Martin Barthélémy, à venir"></div><figcaption><b>Martin Barthélémy</b><small>Cofondateur</small></figcaption></figure>
+      <figure><div class="ph" role="img" aria-label="Portrait de Charles Le Cottier, à venir"></div><figcaption><b>Charles Le Cottier</b><small>Cofondateur · Head of Performance</small></figcaption></figure>
+      <figure><div class="ph" role="img" aria-label="Portrait de Martin Barthélémy, à venir"></div><figcaption><b>Martin Barthélémy</b><small>Cofondateur · Head of Sales</small></figcaption></figure>
     </div>
   </div>
 </section>""",
@@ -295,8 +295,8 @@ page("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
      schema={"@context": "https://schema.org", "@graph": [
          {"@type": "AboutPage", "name": "Qui sommes-nous", "url": SITE + "/qui-sommes-nous/"},
          {"@type": "Organization", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "url": SITE + "/", "founder": [
-             {"@type": "Person", "name": "Charles Le Cottier", "jobTitle": "Cofondateur"},
-             {"@type": "Person", "name": "Martin Barthélémy", "jobTitle": "Cofondateur"}]},
+             {"@type": "Person", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance"},
+             {"@type": "Person", "name": "Martin Barthélémy", "jobTitle": "Cofondateur, Head of Sales"}]},
          breadcrumb_ld(("Qui sommes-nous", "/qui-sommes-nous/"))]})
 
 # ——— Blog ———

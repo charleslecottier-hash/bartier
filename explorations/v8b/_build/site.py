@@ -123,7 +123,7 @@ WA_HTML = f"""<div class="wa" id="wa">
   <div class="wa-panel" id="wa-panel" role="dialog" aria-modal="false" aria-labelledby="wa-title">
     <div class="wa-head">
       <span class="wa-av" aria-hidden="true">MB</span>
-      <p id="wa-title"><b>Martin Barthélémy</b><small>Cofondateur · répond lui-même</small></p>
+      <p id="wa-title"><b>Martin Barthélémy</b><small>Cofondateur · Head of Sales</small></p>
       <button class="wa-x" type="button" aria-label="Fermer" data-wa-close>×</button>
     </div>
     <div class="wa-body">
@@ -137,7 +137,7 @@ WA_HTML = f"""<div class="wa" id="wa">
       <p class="wa-foot">Lundi au vendredi, 8 h à 19 h · {PHONE_TXT}</p>
     </div>
   </div>
-  <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, cofondateur</span></b></button>
+  <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, Head of Sales</span></b></button>
 </div>
 <script>
 (function(){{var w=document.getElementById('wa');if(!w)return;var b=w.querySelector('.wa-fab');
@@ -523,7 +523,7 @@ paths.append("/blog/")
 
 for a in ARTICLES:
     path = f"/blog/{a['slug']}/"
-    meta = f'<p class="post-meta-line"><span>Par Charles Le Cottier, cofondateur</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>{a["minutes"]} min de lecture</span></p>'
+    meta = f'<p class="post-meta-line"><span>Par Charles Le Cottier, cofondateur · Head of Performance</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>{a["minutes"]} min de lecture</span></p>'
     body = "\n\n".join([
         top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta),
         f"""<section class="sheet" data-tone="light">
@@ -542,7 +542,7 @@ for a in ARTICLES:
     write(path, f"{a['short']} | Bartier & Co", a["desc"], body, nav="/blog/",
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "BlogPosting", "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": TODAY + "T09:00:00+01:00", "inLanguage": "fr-FR",
-               "mainEntityOfPage": SITE + path, "author": {"@type": "Person", "name": "Charles Le Cottier", "jobTitle": "Cofondateur", "url": SITE + "/qui-sommes-nous/"},
+               "mainEntityOfPage": SITE + path, "author": {"@type": "Person", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/"},
                "publisher": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}},
               bc_ld(("Blog", "/blog/"), (a["short"], path))]})
     paths.append(path)
