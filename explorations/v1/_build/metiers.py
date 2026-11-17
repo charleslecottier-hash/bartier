@@ -31,6 +31,8 @@ HEADER = absolutize(between('<a class="skip"', "</header>"))
 FOOTER = absolutize(between('<footer class="site-footer">', "</footer>"))
 FORM = between("<!-- Formulaire -->", "</section>")
 HEAD_SCRIPT = between("<script>(function(d)", "</script>")
+ENGAGEMENTS = between('<ul class="en">', "</ul>")
+GUARANTEE = absolutize(between('<div class="guarantee">', "</div>"))
 MOBILE_CTA = between('<a class="mobile-cta', "</a>")
 
 T = "’"  # apostrophe typographique
@@ -198,30 +200,24 @@ def trade_page(t):
     form = FORM.replace(f'value="{t["radio"]}"', f'value="{t["radio"]}" checked', 1)
     form = form.replace("<!-- Formulaire -->", "")
     problems = "\n".join(
-        f'''      <article class="point">
-        <p class="point-num">{i:02d}</p>
-        <h3>{esc(h)}</h3>
-        <p>{esc(p)}</p>
-      </article>''' for i, (h, p) in enumerate(t["problems"], 1))
-    questions = "\n".join(f'          <li>{esc(q)}</li>' for q in t["questions"])
+        f"""      <li><span class="pb-n">{i}</span><h3>{esc(h)}</h3><p>{esc(p)}</p></li>""" for i, (h, p) in enumerate(t["problems"], 1))
+    questions = "\n".join(f'      <li>{esc(q)}</li>' for q in t["questions"])
     angles = "\n".join(
-        f'''      <article class="ad">
-        <p class="ad-meta"><span class="ad-dot" aria-hidden="true"></span>Votre entreprise · Sponsorisé</p>
+        f"""      <article class="ad">
+        <p class="ad-meta"><span class="ad-dot" aria-hidden="true"></span><span><b>Votre entreprise</b> · Sponsorisé</span></p>
         <p class="ad-angle">{esc(a)}</p>
         <p class="ad-text">{esc(b)}</p>
-        <p class="ad-cta">Demander une visite</p>
-      </article>''' for a, b in t["angles"])
+        <div class="ad-img">Vos vraies photos de chantier</div>
+        <p class="ad-cta"><span>Demander une visite</span><b>En savoir plus</b></p>
+      </article>""" for a, b in t["angles"])
     faq = "\n".join(
-        f'''      <details>
-        <summary>{esc(q)}</summary>
-        <p>{esc(a)}</p>
-      </details>''' for q, a in t["faq"] + [
+        f"""      <details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>""" for q, a in t["faq"] + [
             ("Combien cela coûte-t-il ?", "Cela dépend de votre secteur et du nombre de rendez-vous que vous pouvez absorber. Nous vous donnons un prix précis pendant l'appel de quinze minutes, avant toute décision."),
             ("Y a-t-il un engagement ?", "Non. Aucune durée minimale."),
         ])
-    other_links = "\n".join(f'        <li><a href="/metiers/{o["slug"]}/">{esc(o["name"])}<span aria-hidden="true">→</span></a></li>' for o in others)
+    other_links = "\n".join(f'      <li><a href="/metiers/{o["slug"]}/">{esc(o["name"])} <span aria-hidden="true">→</span></a></li>' for o in others)
 
-    return f'''<!doctype html>
+    return f"""<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
@@ -229,11 +225,11 @@ def trade_page(t):
 <title>{esc(t["title"])} — Bartier &amp; Co</title>
 <meta name="description" content="{html.escape(fr(t["lede"]))}">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#F1F2F4">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="https://bartierandco.com/metiers/{t["slug"]}/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/newsreader-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/general-sans-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 {HEAD_SCRIPT}
 </head>
@@ -242,23 +238,21 @@ def trade_page(t):
 
 <main id="contenu">
 
-<section class="hero hero-trade">
-  <div class="wrap hero-grid">
-    <div class="hero-head">
+<section class="hero hero-trade" aria-labelledby="h1">
+  <div class="wrap trade-hero">
+    <div>
       <nav class="crumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><a href="/metiers/">Métiers</a><span aria-hidden="true">/</span><span aria-current="page">{esc(t["name"])}</span></nav>
-      <p class="eyebrow">{esc(t["who"])} · France et Belgique</p>
-      <h1 class="h-display h-display-trade"><span>{nw(esc(t["h1"]))}</span> <em>{nw(esc(t["h1_em"]))}</em></h1>
-    </div>
-    <div class="hero-text">
-      <p class="lede">{esc(t["lede"])}</p>
-      <div class="hero-actions">
-        <a class="btn" href="#secteur">Vérifier si mon secteur est libre <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="link" href="#questions-tel">Ce que nous vérifions</a>
+      <p class="pill"><span class="pill-dot" aria-hidden="true"></span>{esc(t["who"])} · France et Belgique</p>
+      <h1 id="h1">{nw(esc(t["h1"]))} <span class="hl">{nw(esc(t["h1_em"]))}</span></h1>
+      <p class="lead">{esc(t["lede"])}</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#secteur">Vérifier si mon secteur est libre <span class="go" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#questions-tel">Ce que nous vérifions</a>
       </div>
-      <p class="fineprint">Un seul artisan par métier et par secteur. Sans engagement de durée.</p>
+      <p class="hero-note">Un seul artisan par métier et par secteur. Sans engagement de durée.</p>
     </div>
     <aside class="sort" aria-label="Les chantiers que nous allons chercher">
-      <div class="sort-head"><span class="agenda-title">Le tri</span><span class="agenda-week">{esc(t["name"])}</span></div>
+      <p class="sort-head"><span>Le tri</span><span class="tag">{esc(t["name"])}</span></p>
       <p class="sort-label">Nous allons chercher</p>
       <ul class="sort-keep">
 {li(t["keep"])}
@@ -271,22 +265,22 @@ def trade_page(t):
   </div>
 </section>
 
-<section class="section" aria-labelledby="pb-titre">
+<section class="section section-soft" aria-labelledby="pb-h">
   <div class="wrap">
-    <p class="section-label"><span class="num">01</span>Ce qui bloque aujourd’hui</p>
-    <h2 class="h-section" id="pb-titre">Le métier est bon. <em>Les demandes, beaucoup moins.</em></h2>
-    <div class="cols-3">
-{problems}
+    <div class="head-c">
+      <h2 id="pb-h">Le métier est bon. Les demandes, beaucoup moins.</h2>
     </div>
+    <ul class="pb">
+{problems}
+    </ul>
   </div>
 </section>
 
-<section class="section section-blue" id="questions-tel" aria-labelledby="tel-titre">
-  <div class="wrap split">
+<section class="section section-dark" id="questions-tel" aria-labelledby="tel-h">
+  <div class="wrap calls-grid">
     <div>
-      <p class="section-label"><span class="num">02</span>Au téléphone</p>
-      <h2 class="h-section" id="tel-titre">Ce que nous vérifions <em>avant de vous déplacer.</em></h2>
-      <p class="lede">Chaque demande est rappelée en moins de cinq minutes, du lundi au vendredi, de 8{NB}h à 19{NB}h. Le rendez-vous n’est posé que si les réponses correspondent à ce que vous faites.</p>
+      <h2 id="tel-h">Ce que nous vérifions <span class="hl-light">avant de vous déplacer.</span></h2>
+      <p class="sub">Chaque demande est rappelée en moins de cinq minutes, du lundi au vendredi, de 8{NB}h à 19{NB}h. Le rendez-vous n’est posé que si les réponses correspondent à ce que vous faites.</p>
     </div>
     <ol class="calls">
 {questions}
@@ -294,53 +288,41 @@ def trade_page(t):
   </div>
 </section>
 
-<section class="section" aria-labelledby="ads-titre">
+<section class="section" aria-labelledby="ads-h">
   <div class="wrap">
-    <p class="section-label"><span class="num">03</span>Les annonces</p>
-    <div class="split split-top">
-      <h2 class="h-section" id="ads-titre">Des annonces à votre nom, <em>autour de chez vous.</em></h2>
-      <p class="lede">Diffusées sur Facebook et Instagram à 25 à 40{NB}km de votre dépôt, au nom de votre entreprise, avec vos vraies photos de chantier. Le budget est réglé directement par vous à Meta.</p>
+    <div class="head-c">
+      <h2 id="ads-h">Des annonces à votre nom, autour de chez vous.</h2>
+      <p class="sub">Diffusées sur Facebook et Instagram à 25 à 40{NB}km de votre dépôt, avec vos vraies photos de chantier. Le budget est réglé directement par vous à Meta.</p>
     </div>
     <div class="ads">
 {angles}
     </div>
-    <p class="ads-note">Exemples d’angles. Les textes définitifs sont écrits avec vous.</p>
+    <p class="note">Exemples d’angles. Les textes définitifs sont écrits avec vous.</p>
   </div>
 </section>
 
-<section class="section section-paper2" aria-labelledby="eng-titre">
+<section class="section section-soft" aria-labelledby="en-h">
   <div class="wrap">
-    <p class="section-label"><span class="num">04</span>Nos engagements</p>
-    <h2 class="h-section" id="eng-titre">Ce à quoi nous nous engageons, <em>par écrit.</em></h2>
-    <ol class="pledges">
-      <li><h3>Vos rendez-vous ne sont proposés qu’à vous.</h3><p>Aucune demande n’est partagée ni revendue à un autre professionnel.</p></li>
-      <li><h3>Un seul artisan par métier et par secteur.</h3><p>Si nous travaillons avec vous, nous ne travaillons pas avec votre concurrent d’à côté.</p></li>
-      <li><h3>Chaque demande rappelée en moins de cinq minutes.</h3><p>Du lundi au vendredi, de 8{NB}h à 19{NB}h. Les demandes du soir et du week-end sont rappelées dès l’ouverture.</p></li>
-      <li><h3>Sans engagement de durée.</h3><p>Vous restez parce que l’agenda se remplit, pas parce qu’un contrat vous y oblige.</p></li>
-    </ol>
-    <aside class="guarantee" aria-label="Notre garantie">
-      <p class="guarantee-label">La garantie</p>
-      <p class="guarantee-text">Nous fixons avec vous, par écrit, un nombre de rendez-vous. <em>S’il n’est pas atteint, nous continuons sans vous facturer jusqu’à ce qu’il le soit.</em></p>
-    </aside>
+    <div class="head-c">
+      <h2 id="en-h">On s’engage par écrit.</h2>
+    </div>
+    {ENGAGEMENTS}
+    {GUARANTEE}
   </div>
 </section>
 
-<section class="section" aria-labelledby="res-titre">
-  <div class="wrap split split-top">
-    <div>
-      <p class="section-label"><span class="num">05</span>Résultats</p>
-      <h2 class="h-section" id="res-titre">Nos premiers résultats <em>seront publiés ici.</em></h2>
+<section class="section" aria-labelledby="res-h">
+  <div class="wrap">
+    <div class="res">
+      <h2 id="res-h">Nos premiers résultats seront publiés ici.</h2>
+      <p class="sub">Nous débutons. Plutôt que d’afficher des chiffres que nous ne pouvons pas encore prouver, nous publierons ici nos premières études de cas, avec des chiffres réels et le nom de l’entreprise, si elle est d’accord.</p>
     </div>
-    <p class="lede">Nous débutons. Plutôt que d’afficher des chiffres que nous ne pouvons pas encore prouver, nous publierons ici nos premières études de cas, avec des chiffres réels et le nom de l’entreprise, si elle est d’accord.</p>
   </div>
 </section>
 
-<section class="section section-paper2" aria-labelledby="faq-titre">
-  <div class="wrap faq-grid">
-    <div>
-      <p class="section-label"><span class="num">06</span>Questions</p>
-      <h2 class="h-section" id="faq-titre">Les questions <em>qu’on nous pose.</em></h2>
-    </div>
+<section class="section section-soft" aria-labelledby="fq-h">
+  <div class="wrap">
+    <h2 id="fq-h" class="fq-title">Questions fréquentes</h2>
     <div class="faq">
 {faq}
     </div>
@@ -348,10 +330,9 @@ def trade_page(t):
 </section>
 {form}
 
-<section class="section section-tight" aria-labelledby="autres-titre">
+<section class="section" aria-labelledby="autres-h">
   <div class="wrap">
-    <p class="section-label">Autres métiers</p>
-    <h2 class="visually-hidden" id="autres-titre">Autres métiers</h2>
+    <div class="head-c"><h2 id="autres-h" class="fq-title">Les autres métiers</h2></div>
     <ul class="other-trades">
 {other_links}
     </ul>
@@ -367,20 +348,20 @@ def trade_page(t):
 <script src="/script.js" defer></script>
 </body>
 </html>
-'''
+"""
 
 
 def hub_page():
     cards = "\n".join(
-        f'''      <li>
+        f"""      <li>
         <a class="trade-card" href="/metiers/{t["slug"]}/">
           <span class="trade-card-num">{i:02d}</span>
           <span class="trade-card-name">{esc(t["name"])}</span>
           <span class="trade-card-text">{esc(", ".join(t["keep"][:3]))}.</span>
           <span class="trade-card-go">Voir la page <span aria-hidden="true">→</span></span>
         </a>
-      </li>''' for i, t in enumerate(TRADES, 1))
-    return f'''<!doctype html>
+      </li>""" for i, t in enumerate(TRADES, 1))
+    return f"""<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
@@ -388,24 +369,25 @@ def hub_page():
 <title>Métiers — Bartier &amp; Co</title>
 <meta name="description" content="Rendez-vous de devis exclusifs pour les artisans du bâtiment à gros chantiers : couverture, menuiserie extérieure, façade, charpente, isolation.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="https://bartierandco.com/metiers/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/general-sans-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 {HEAD_SCRIPT}
 </head>
 <body>
 {HEADER}
 <main id="contenu">
-<section class="hero hero-trade">
-  <div class="wrap">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-inner">
     <nav class="crumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Métiers</span></nav>
-    <p class="eyebrow">Artisans du bâtiment · France et Belgique</p>
-    <h1 class="h-display h-display-trade"><span>Uniquement les métiers</span> <em>où un chantier compte.</em></h1>
-    <p class="lede hub-lede">{esc("Nous travaillons avec les entreprises dont un seul chantier représente plusieurs milliers d'euros. Pas de dépannage, pas de petits travaux : des projets complets, chez des propriétaires qui vous attendent.")}</p>
+    <p class="pill"><span class="pill-dot" aria-hidden="true"></span>Artisans du bâtiment · France et Belgique</p>
+    <h1 id="h1">Uniquement les métiers <span class="hl">où un chantier compte.</span></h1>
+    <p class="lead">{esc("Nous travaillons avec les entreprises dont un seul chantier représente plusieurs milliers d'euros. Pas de dépannage, pas de petits travaux : des projets complets, chez des propriétaires qui vous attendent.")}</p>
   </div>
 </section>
-<section class="section section-tight-top">
+<section class="section section-soft">
   <div class="wrap">
     <ol class="trade-cards">
 {cards}
@@ -426,7 +408,7 @@ def hub_page():
 <script src="/script.js" defer></script>
 </body>
 </html>
-'''
+"""
 
 
 for t in TRADES:

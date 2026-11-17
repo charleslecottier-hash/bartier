@@ -1,18 +1,10 @@
 (() => {
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* Le cordeau de la méthode se tend au fil du défilement */
-  const steps = document.querySelector('.steps');
-  if (steps && !reduce) {
-    const update = () => {
-      const r = steps.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const p = Math.min(1, Math.max(0, (vh * 0.7 - r.top) / r.height));
-      steps.style.setProperty('--progress', p.toFixed(3));
-    };
-    update();
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
+    /* En-tête : filet sous la barre une fois la page défilée */
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
   /* Bouton mobile : masqué sur le héros et sur le formulaire */
@@ -106,23 +98,26 @@
   if (form.elements.page) form.elements.page.value = location.pathname;
 })();
 
-/* Sélecteur de palette : aperçu uniquement, à retirer une fois la palette choisie */
+/* Simulateur : chiffre d'affaires en plus, calculé avec les chiffres de l'artisan */
 (() => {
-  const root = document.documentElement;
-  const names = { a: 'Cobalt', b: 'Outremer', c: 'Ardoise' };
-  const box = document.createElement('div');
-  box.className = 'palette-picker';
-  box.setAttribute('role', 'group');
-  box.setAttribute('aria-label', 'Choisir le bleu');
-  box.innerHTML = '<span>Bleu</span>' + Object.keys(names).map((k) => `<button type="button" data-p="${k}" title="${names[k]}" aria-label="Palette ${names[k]}">${k.toUpperCase()}</button>`).join('');
-  const sync = () => box.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String((root.dataset.palette || 'a') === b.dataset.p)));
-  box.addEventListener('click', (e) => {
-    const b = e.target.closest('button'); if (!b) return;
-    const p = b.dataset.p;
-    if (p === 'a') delete root.dataset.palette; else root.dataset.palette = p;
-    try { localStorage.setItem('bc_palette', p); } catch (err) {}
-    sync();
-  });
-  sync();
-  document.body.appendChild(box);
+  const rdv = document.getElementById('s-rdv');
+  if (!rdv) return;
+  const panier = document.getElementById('s-panier');
+  const taux = document.getElementById('s-taux');
+  const eur = (n) => new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 }).format(Math.round(n)) + '\u00a0€';
+  const fill = (el) => el.style.setProperty('--p', ((el.value - el.min) / (el.max - el.min) * 100) + '%');
+  const set = (id, v) => { document.getElementById(id).textContent = v; };
+  const update = () => {
+    [rdv, panier, taux].forEach(fill);
+    const chantiers = rdv.value * taux.value / 100;
+    const mois = chantiers * panier.value;
+    set('o-rdv', rdv.value);
+    set('o-panier', eur(panier.value));
+    set('o-taux', taux.value + '\u00a0%');
+    set('r-chantiers', chantiers.toLocaleString('fr-FR', { maximumFractionDigits: 1 }));
+    set('r-mois', eur(mois));
+    set('r-an', eur(mois * 12));
+  };
+  [rdv, panier, taux].forEach((el) => el.addEventListener('input', update));
+  update();
 })();
