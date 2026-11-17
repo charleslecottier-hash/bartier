@@ -274,7 +274,7 @@ page("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
 </section>""",
          cols([("Un interlocuteur, pas un standard", "Vous avez le numéro de Charles et de Martin. L'un de nous répond."),
                ("Des engagements écrits", "Exclusivité, un artisan par secteur, rappel en cinq minutes, sans engagement de durée."),
-               ("Aucun chiffre inventé", "Nous démarrons. Nos premiers résultats seront publiés avec l'accord de nos clients.")],
+               ("Des chiffres vérifiables", "Le budget publicitaire est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
               "Comment nous travaillons", "Simple, joignable, honnête.", grey=True),
          """<section class="section">
   <div class="wrap tm">
