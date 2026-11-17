@@ -31,6 +31,20 @@
   .rule-n{grid-row:1 / span 2;padding-top:.35rem}
   .rule-item h3{font-size:1.35rem}
 }
+
+.ss-head{row-gap:16px;margin-bottom:clamp(36px,4vw,64px)}
+.ss-head h2{grid-column:1 / 3}
+.ss-head p{grid-column:3 / 5;align-self:end;max-width:46ch}
+.ss-list{row-gap:32px}
+.season{display:flex;flex-direction:column;gap:.8rem;padding-top:1.1rem;border-top:3px solid var(--accent)}
+.season-when{font-size:.85rem;color:var(--muted)}
+.season h3{font:300 clamp(1.9rem,2.6vw,2.6rem)/1 var(--f-display);letter-spacing:-.04em}
+.season dl{display:grid;gap:1rem;margin:0}
+.season dt{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.25rem}
+.season dd{margin:0;font-size:.95rem;line-height:1.45}
+.season div:last-child dd{color:var(--accent)}
+@media (max-width:900px){.ss-head h2,.ss-head p{grid-column:1 / -1}}
+@media (max-width:760px){.ss-list{grid-template-columns:minmax(0,1fr)}.season{padding-bottom:.4rem}}
 /* —— Ajouts Bartier & Co —— */
 .ca-grid{row-gap:40px;align-items:start}
 .ca-head{grid-column:1 / 2;display:flex;flex-direction:column;gap:1.5rem;position:sticky;top:calc(var(--hdr) + 40px)}
@@ -368,24 +382,16 @@
   </ul>
 </section>
 
-<section class="calendar sheet" id="calendar" data-kind="calendar" data-tone="light">
-  <div class="grid cl-head">
-    <h2 data-split>Votre année, mois par mois</h2>
-    <p>Les annonces suivent les saisons de votre métier : rénovation au printemps, entretien avant l'hiver, vérification après les tempêtes.</p>
+<section class="seasons sheet" id="calendar" data-kind="seasons" data-tone="light">
+  <div class="grid ss-head">
+    <h2 data-split>Un agenda rempli en toute saison</h2>
+    <p>Vos clients ne pensent pas à leur maison au même moment de l’année. Nos annonces suivent leurs saisons, avec un temps d’avance sur votre planning.</p>
   </div>
-  <ol class="months grid">
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Janvier</h3><ul class="month-dates"><li><strong>6</strong><span>Bilan de l'année et objectifs</span></li><li><strong>20</strong><span>Annonces rénovation de printemps</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Février</h3><ul class="month-dates"><li><strong>10</strong><span>Préparation des visites de mars</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Mars</h3><ul class="month-dates"><li><strong>2</strong><span>Lancement des annonces façade</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Avril</h3><ul class="month-dates"><li><strong>1</strong><span>Pic des demandes</span></li><li><strong>15</strong><span>Point sur les chantiers signés</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Mai</h3><ul class="month-dates"><li><strong>12</strong><span>Angle démoussage</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Juin</h3><ul class="month-dates"><li><strong>16</strong><span>Relance des devis en attente</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Juillet</h3><ul class="month-dates"><li><strong>1</strong><span>Planning d'été</span></li><li><strong>20</strong><span>Flyers de voisinage</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Août</h3><ul class="month-dates"><li><strong>25</strong><span>Préparation des campagnes de rentrée</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Septembre</h3><ul class="month-dates"><li><strong>8</strong><span>Angle entretien avant l'hiver</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Octobre</h3><ul class="month-dates"><li><strong>1</strong><span>Annonces après les premières tempêtes</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Novembre</h3><ul class="month-dates"><li><strong>10</strong><span>Bilan de l'année écoulée</span></li></ul></li>
-    <li class="month"><span class="month-bar" aria-hidden="true"></span><h3 class="month-name">Décembre</h3><ul class="month-dates"><li><strong>15</strong><span>Planning des visites de janvier</span></li></ul></li>
+  <ol class="grid ss-list">
+    <li class="season"><p class="season-when">Déc. – fév.</p><h3>Hiver</h3><dl><div><dt>Les propriétaires pensent à</dt><dd>Fuites, tuiles envolées après les tempêtes, maison froide.</dd></div><div><dt>Nous lançons</dt><dd>Annonces « vérification après intempéries » et isolation. Nous remplissons déjà votre printemps.</dd></div></dl></li>
+    <li class="season"><p class="season-when">Mars – mai</p><h3>Printemps</h3><dl><div><dt>Les propriétaires pensent à</dt><dd>Réfection de toiture, ravalement, démoussage&nbsp;: les projets repoussés reviennent.</dd></div><div><dt>Nous lançons</dt><dd>Annonces rénovation dans votre rayon. Les chantiers de l’été se signent maintenant.</dd></div></dl></li>
+    <li class="season"><p class="season-when">Juin – août</p><h3>Été</h3><dl><div><dt>Les propriétaires pensent à</dt><dd>Vos équipes sont sur les chantiers&nbsp;; les demandes ralentissent en août.</dd></div><div><dt>Nous lançons</dt><dd>Flyers autour de vos échafaudages, relance des devis en attente. La rentrée se prépare.</dd></div></dl></li>
+    <li class="season"><p class="season-when">Sept. – nov.</p><h3>Automne</h3><dl><div><dt>Les propriétaires pensent à</dt><dd>Entretien avant l’hiver, gouttières, fenêtres qui laissent passer le froid.</dd></div><div><dt>Nous lançons</dt><dd>Annonces entretien et menuiserie, puis vérification dès les premiers coups de vent.</dd></div></dl></li>
   </ol>
 </section>
 
