@@ -435,6 +435,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .post-card h3 { font-size: 20px; }
 .post-card p { color: var(--muted); font-size: 15px; flex: 1; }
 .post-card .meta { font-size: 13px; color: var(--faint); }
+.article > * { min-width: 0; }
 .article { display: grid; grid-template-columns: minmax(0, 720px) 260px; gap: clamp(40px, 6vw, 80px); justify-content: space-between; }
 .prose { font-size: 18px; line-height: 1.7; color: var(--text); }
 .prose > * + * { margin-top: 1.1em; }
@@ -501,8 +502,8 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
   .cols li + li { border-top: 1px solid var(--line); }
   .cta-band { flex-direction: column; align-items: flex-start; }
   .prose { font-size: 17px; }
-  .prose table { display: block; overflow-x: auto; white-space: nowrap; }
-  .prose td, .prose th { white-space: normal; min-width: 120px; }
+  .prose table { display: block; overflow-x: auto; }
+  .prose td, .prose th { min-width: 110px; }
   .sys, .sim, .en, .pb, .ads, .trade-cards, .choices, .choices-3, .fields-2, .footer-inner { grid-template-columns: 1fr; }
   .trades { grid-template-columns: 1fr; }
   .trades li + li { border-left: 0; border-top: 1px solid var(--line); }
