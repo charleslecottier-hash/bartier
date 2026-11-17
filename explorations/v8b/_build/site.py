@@ -158,7 +158,7 @@ home = home.replace("</body>", WA_HTML + "</body>", 1)
 # Données structurées et adresse canonique de l'accueil
 if '"@type":"Organization"' not in home:
     ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "url": SITE + "/", "email": "contact@bartierandco.com", "areaServed": ["FR", "BE"],
+        {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "url": SITE + "/", "email": "contact@bartierandco.com", "areaServed": ["FR", "BE"], "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434"],
          "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de cinq minutes, visites de devis fixées directement dans leur agenda.",
          "founder": [{"@type": "Person", "name": "Charles Le Cottier"}, {"@type": "Person", "name": "Martin Barthélémy"}]},
         {"@type": "WebSite", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}]}

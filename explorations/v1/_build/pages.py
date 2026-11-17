@@ -556,6 +556,8 @@ art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['
 - Les prix ne sont pas publiés : ils dépendent du métier et du secteur, et sont donnés pendant un appel de 15 minutes.
 - Le budget publicitaire est payé directement par l'artisan à Meta ou à Google.
 - Contact : contact@bartierandco.com
+- Facebook : https://www.facebook.com/profile.php?id=61596597124434
+- Téléphone et WhatsApp : 07 81 01 89 36 (Martin Barthélémy, Head of Sales)
 """, encoding="utf-8")
 
 print("pages générées :", len(paths) - 7, "+ robots.txt, sitemap.xml, llms.txt")
