@@ -170,7 +170,7 @@ HEAD = home[:home.index("</head>")]
 HEAD = re.sub(r'<link rel="canonical"[^>]*>\n?', "", HEAD)
 HEAD = re.sub(r'<script type="application/ld\+json">[\s\S]*?</script>\n?', "", HEAD)
 BODY_OPEN = home[home.index("</head>"):home.index("<main>") + len("<main>")]
-CONTACT = home[home.index('<section class="contact sheet"'):]
+CONTACT = home[home.rindex('<section', 0, home.index('id="contact"')):]
 CONTACT = CONTACT[:CONTACT.index("</section>") + len("</section>")]
 TAIL = home[home.index("</main>"):]
 TEAM = home[home.index('<section class="team sheet"'):]
@@ -286,11 +286,12 @@ def head(title, desc, path, schema=None):
     return h + f'<link rel="canonical" href="{SITE}{path}">\n' + ld + EXTRA_CSS
 
 
-def write(path, title, desc, body, nav=None, schema=None):
+def write(path, title, desc, body, nav=None, schema=None, metier=None):
     top = absolutize(BODY_OPEN)
     if nav:
         top = top.replace(f'class="link" href="{nav}"', f'class="link" href="{nav}" aria-current="page"', 1)
-    doc = head(title, desc, path, schema) + top + "\n" + fr(body) + "\n\n" + CONTACT + "\n" + absolutize(TAIL)
+    contact = CONTACT.replace(f'name="metier" value="{metier}"', f'name="metier" value="{metier}" checked', 1) if metier else CONTACT
+    doc = head(title, desc, path, schema) + top + "\n" + fr(body) + "\n\n" + contact + "\n" + absolutize(TAIL)
     out = ROOT / path.strip("/") / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, encoding="utf-8")
@@ -418,7 +419,7 @@ for t in TRADES:
         faq(trade_faq),
     ])
     body = body.replace('class="sp-two"', 'class="sp-two"')
-    write(path, f"{t['title']} | Bartier & Co", short, body, nav="/metiers/",
+    write(path, f"{t['title']} | Bartier & Co", short, body, nav="/metiers/", metier=t["radio"],
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "areaServed": ["FR", "BE"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}},
               bc_ld(("Métiers", "/metiers/"), (t["name"], path)), faq_ld(trade_faq)]})
