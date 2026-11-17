@@ -112,6 +112,10 @@
 @media (max-width:760px){.dq-tiles,.dq-tiles.is-3{grid-template-columns:minmax(0,1fr)}.dq-tile span{min-height:56px}.dq-zone{grid-template-columns:minmax(0,1fr)}.dq-fields{grid-template-columns:minmax(0,1fr)}.dq{padding:20px}}
 @media (prefers-reduced-motion:reduce){.dq-step.is-on{animation:none}.dq-bar i{transition:none}}
 /* —— Ajouts Bartier & Co —— */
+.logo-w{display:block;height:24px;aspect-ratio:6314 / 918;background:currentColor;-webkit-mask:url(/assets/logo-bartier-wordmark.svg) center / contain no-repeat;mask:url(/assets/logo-bartier-wordmark.svg) center / contain no-repeat}
+.ftr-logo{margin:clamp(72px,9vw,140px) var(--cell) 0;aspect-ratio:6314 / 1506;max-width:1100px;background:currentColor;-webkit-mask:url(/assets/logo-bartier.svg) left bottom / contain no-repeat;mask:url(/assets/logo-bartier.svg) left bottom / contain no-repeat}
+@media (max-width:760px){.logo-w{height:19px}}
+@media (max-width:360px){.logo-w{height:16px}}
 .ca-grid{row-gap:40px;align-items:start}
 .ca-head{grid-column:1 / 2;display:flex;flex-direction:column;gap:1.5rem;position:sticky;top:calc(var(--hdr) + 40px)}
 .ca-head p{max-width:30ch}
@@ -161,6 +165,7 @@
   body{-webkit-text-size-adjust:100%}
 }
 </style>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style id="wa-css">
 .wa{position:fixed;right:clamp(14px,2vw,24px);bottom:clamp(14px,2vw,24px);z-index:90;font-family:var(--f-text)}
 .wa-fab{display:flex;align-items:center;gap:.65rem;padding:.55rem 1.1rem .55rem .55rem;border:0;border-radius:999px;background:var(--ink);color:var(--bg);font-size:.95rem;cursor:pointer;box-shadow:0 14px 34px -14px rgba(10,20,36,.55);transition:transform .3s var(--ease)}
@@ -328,7 +333,7 @@
 <header class="hdr" data-tone="light">
   <div class="hdr-in">
     <div class="hdr-lead">
-      <a class="hdr-brand" href="/" aria-label="Bartier &amp; Co, retour en haut"><span class="mark" data-loop aria-hidden="true"><i></i><i></i><i></i></span><span>Bartier</span></a>
+      <a class="hdr-brand" href="/" aria-label="Bartier &amp; Co, retour en haut"><span class="logo-w" aria-hidden="true"></span></a>
       <p class="hdr-tag">Des clients pour les artisans du bâtiment</p>
     </div>
     <nav class="hdr-nav" aria-label="Menu">
@@ -510,7 +515,7 @@
       <a class="ibtn ftr-top" href="/" aria-label="Retour en haut"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14V2M3 7l5-5 5 5" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></a>
     </div>
   </div>
-  <div class="ftr-word" style="--len:7"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="ftr-name">Bartier</span></div>
+  <div class="ftr-logo" role="img" aria-label="Bartier &amp; Co"></div>
   <div class="ftr-base">
     <span>© 2026 Bartier &amp; Co SAS</span>
     <a class="link" href="#contact">Confidentialité</a>
