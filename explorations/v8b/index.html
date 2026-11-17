@@ -191,7 +191,11 @@
 .wa-btn.is-call{background:var(--ink);color:var(--bg)}
 .wa-btn svg{width:18px;height:18px;fill:currentColor}
 .wa-foot{font-size:.78rem;color:var(--muted);text-align:center}
-@media (max-width:760px){.wa-fab b span{display:none}.wa-fab{padding-right:.9rem}}
+@media (max-width:760px){.wa{right:14px;bottom:14px}.wa-fab{padding:0;background:none}.wa-fab .wa-ico{box-shadow:0 10px 24px -8px rgba(10,20,36,.5)}.wa-fab b,.wa-fab .wa-dot{display:none}.wa-fab .wa-ico{width:50px;height:50px}
+:root{--sp:64px}
+.sheet::before,.ruled::before,.ftr::before{background:linear-gradient(var(--rule),var(--rule)) 0 0/1px 100% no-repeat,linear-gradient(var(--rule),var(--rule)) 100% 0/1px 100% no-repeat}
+.ftr-base{flex-direction:column;align-items:flex-start;gap:.7rem}.ftr-base span:first-child{margin-right:0}
+.pg-top{padding-top:calc(var(--hdr) + 32px)}.sector-name{transform:none!important}}
 @media (prefers-reduced-motion:reduce){.wa-panel,.wa-fab{transition:none}}
 </style>
 </head>
@@ -664,8 +668,8 @@ f.addEventListener('submit',function(e){e.preventDefault();if(!ok(cur))return;if
 })();
 </script>
 <script>
-document.addEventListener('DOMContentLoaded',function(){var w=document.getElementById('wa'),c=document.getElementById('contact');if(!w||!c||!('IntersectionObserver' in window))return;
-new IntersectionObserver(function(e){var v=e[0].isIntersecting;if(v&&w.classList.contains('is-open'))return;w.classList.toggle('is-away',v)},{threshold:.15}).observe(c);});
+document.addEventListener('DOMContentLoaded',function(){var w=document.getElementById('wa'),c=document.getElementById('contact'),f=document.querySelector('.ftr');if(!w||!('IntersectionObserver' in window))return;
+var on=new Set();var io=new IntersectionObserver(function(es){es.forEach(function(x){x.isIntersecting?on.add(x.target):on.delete(x.target)});var v=on.size>0;if(v&&w.classList.contains('is-open'))return;w.classList.toggle('is-away',v)},{threshold:.05});[c,f].forEach(function(n){n&&io.observe(n)});});
 </script>
 <div class="wa" id="wa">
   <div class="wa-panel" id="wa-panel" role="dialog" aria-modal="false" aria-labelledby="wa-title">

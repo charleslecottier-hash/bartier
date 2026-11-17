@@ -105,7 +105,11 @@ WA_CSS = """<style id="wa-css">
 .wa-btn.is-call{background:var(--ink);color:var(--bg)}
 .wa-btn svg{width:18px;height:18px;fill:currentColor}
 .wa-foot{font-size:.78rem;color:var(--muted);text-align:center}
-@media (max-width:760px){.wa-fab b span{display:none}.wa-fab{padding-right:.9rem}}
+@media (max-width:760px){.wa{right:14px;bottom:14px}.wa-fab{padding:0;background:none}.wa-fab .wa-ico{box-shadow:0 10px 24px -8px rgba(10,20,36,.5)}.wa-fab b,.wa-fab .wa-dot{display:none}.wa-fab .wa-ico{width:50px;height:50px}
+:root{--sp:64px}
+.sheet::before,.ruled::before,.ftr::before{background:linear-gradient(var(--rule),var(--rule)) 0 0/1px 100% no-repeat,linear-gradient(var(--rule),var(--rule)) 100% 0/1px 100% no-repeat}
+.ftr-base{flex-direction:column;align-items:flex-start;gap:.7rem}.ftr-base span:first-child{margin-right:0}
+.pg-top{padding-top:calc(var(--hdr) + 32px)}.sector-name{transform:none!important}}
 @media (prefers-reduced-motion:reduce){.wa-panel,.wa-fab{transition:none}}
 </style>
 """
@@ -192,6 +196,44 @@ def absolutize(block):
 
 EXTRA_CSS = """<style>
 /* Pages intérieures */
+.pg-photo.mk{position:relative;display:grid;place-items:center;aspect-ratio:auto;height:auto;min-height:440px;padding:clamp(20px,3vw,40px);background:var(--paper);border-radius:var(--r);overflow:hidden}
+.mk::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 70% 20%,color-mix(in oklab,var(--accent) 16%,transparent),transparent 70%)}
+.mk-tag{position:absolute;top:14px;right:14px;padding:.3em .6em;font-size:.72rem;background:var(--bg);color:var(--muted);border-radius:var(--r)}
+.mk-g{position:relative;width:min(100%,460px);background:var(--bg);border-radius:12px;padding:18px;box-shadow:0 24px 50px -24px rgba(10,20,36,.35);font-family:Arial,Helvetica,sans-serif}
+.mk-search{display:flex;align-items:center;gap:.6rem;height:44px;padding:0 14px;border:1px solid #dfe1e5;border-radius:22px;color:#5f6368;font-size:.95rem;margin-bottom:16px}
+.mk-search svg{width:18px;height:18px;flex:none}
+.mk-search span{color:#202124}
+.mk-search i{margin-left:-2px;width:1px;height:18px;background:#202124;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.mk-res{padding:12px 4px;border-top:1px solid #f1f3f4}
+.mk-res.is-ad{border-top:0;border-radius:8px;padding:12px;background:color-mix(in oklab,var(--accent) 5%,#fff);box-shadow:inset 0 0 0 1px color-mix(in oklab,var(--accent) 25%,transparent)}
+.mk-spon{font-size:.72rem;font-weight:700;color:#202124;margin-bottom:6px}
+.mk-site{display:flex;align-items:center;gap:.55rem;font-size:.8rem;color:#202124}
+.mk-site small{display:block;color:#4d5156;font-size:.75rem}
+.mk-fav{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:.7rem;font-weight:700;flex:none}
+.mk-title{margin:6px 0 4px;font-size:1.12rem;line-height:1.3;color:#1a0dab}
+.mk-desc{font-size:.84rem;line-height:1.45;color:#4d5156}
+.mk-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.mk-links span{padding:.35em .7em;border:1px solid #dadce0;border-radius:16px;font-size:.75rem;color:#1a0dab;background:#fff}
+.mk-call{display:inline-flex;align-items:center;gap:.4rem;margin-top:10px;padding:.45em .85em;border-radius:16px;background:var(--accent);color:#fff;font-size:.8rem}
+.mk-res.is-ghost i{display:block;height:9px;margin:7px 0;border-radius:5px;background:#eef0f3}
+.mk-res.is-ghost i:first-child{width:45%}.mk-res.is-ghost i:nth-child(2){width:85%}.mk-res.is-ghost i:nth-child(3){width:70%}
+.mk-phone{position:relative;width:min(100%,300px);padding:14px 10px 18px;background:#0A1424;border-radius:36px;box-shadow:0 30px 60px -24px rgba(10,20,36,.55)}
+.mk-notch{width:90px;height:18px;margin:0 auto 10px;border-radius:12px;background:#000}
+.mk-post{background:#fff;border-radius:22px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;color:#050505}
+.mk-post .mk-site{padding:12px 12px 0}
+.mk-post .mk-site small{color:#65676b}
+.mk-text{padding:8px 12px 10px;font-size:.82rem;line-height:1.4}
+.mk-img{aspect-ratio:4/3;background:#e4e6eb}
+.pg-photo .mk-img img{width:100%;height:100%;object-fit:cover;filter:none}
+.mk-cta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;background:#f0f2f5}
+.mk-cta small{display:block;color:#65676b;font-size:.72rem;text-transform:uppercase}
+.mk-cta b{font-size:.8rem}.mk-cta > span{min-width:0}.mk-cta small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mk-cta em{font-style:normal;flex:none;padding:.5em .8em;border-radius:6px;background:#e4e6eb;font-size:.76rem;font-weight:700}
+.mk-react{display:flex;justify-content:space-between;padding:9px 12px;font-size:.72rem;color:#65676b}
+@media (max-width:760px){.pg-photo.mk{min-height:0;padding:28px 16px;order:0}.mk-g{padding:14px}.mk-title{font-size:1rem}}
+@media (prefers-reduced-motion:reduce){.mk-search i{animation:none}}
+
 .pg-top{padding-top:calc(var(--hdr) + clamp(48px,7vw,104px))}
 .pg-grid{row-gap:40px;align-items:end}
 .pg-text{grid-column:1 / 3;display:flex;flex-direction:column;gap:1.4rem}
@@ -314,12 +356,14 @@ def faq_ld(items):
     return {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": clean(q), "acceptedAnswer": {"@type": "Answer", "text": clean(a)}} for q, a in items]}
 
 
-def top(kick, h1, lead, crumb, photo=None, cta2=None, meta=""):
+def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None):
     second = f'<a class="link" href="{cta2[1]}">{cta2[0]}</a>' if cta2 else ""
     fig = ""
     if photo:
         url, alt = img(photo)
         fig = f'<figure class="pg-photo frame"><img src="{url}" alt="{html.escape(alt)}" width="1200" height="900"></figure>'
+    if visual:
+        fig = visual
     lead_html = f'<p class="lead">{lead}</p>' if lead else ""
     return f"""<section class="sheet pg-top" data-tone="light">
   <div class="grid pg-grid">
@@ -380,6 +424,38 @@ COMPARE = """<section class="sheet" data-tone="light">
     <div class="sp-row" role="row"><span role="rowheader">Le point clé</span><span role="cell">Écarter les recherches inutiles</span><span role="cell">Qualifier au téléphone</span></div>
   </div>
 </section>"""
+
+
+ROOF_URL = img("Un couvreur pose")[0]
+GOOGLE_MOCK = """<figure class="pg-photo mk" aria-label="Exemple d’annonce sur Google pour un couvreur">
+  <div class="mk-g">
+    <div class="mk-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>couvreur amiens</span><i></i></div>
+    <div class="mk-res is-ad">
+      <p class="mk-spon">Sponsorisé</p>
+      <p class="mk-site"><span class="mk-fav">TM</span><span><b>Toitures Martin</b><small>toitures-martin.fr › rendez-vous</small></span></p>
+      <p class="mk-title">Couvreur à Amiens · Visite et devis gratuits</p>
+      <p class="mk-desc">Réfection, zinguerie, démoussage. Entreprise locale, garantie décennale. Rappel en 5 minutes.</p>
+      <p class="mk-links"><span>Réfection de toiture</span><span>Fuite urgente</span><span>Nos chantiers</span></p>
+      <p class="mk-call"><span>📞</span>Appeler l’entreprise</p>
+    </div>
+    <div class="mk-res is-ghost"><i></i><i></i><i></i></div>
+    <div class="mk-res is-ghost"><i></i><i></i></div>
+  </div>
+  <figcaption class="mk-tag">Exemple</figcaption>
+</figure>"""
+META_MOCK = f"""<figure class="pg-photo mk" aria-label="Exemple d’annonce Facebook et Instagram pour un couvreur">
+  <div class="mk-phone">
+    <div class="mk-notch"></div>
+    <div class="mk-post">
+      <p class="mk-site"><span class="mk-fav">TM</span><span><b>Toitures Martin</b><small>Sponsorisé · Amiens</small></span></p>
+      <p class="mk-text">Votre toiture a plus de 15 ans&nbsp;? Faites-la vérifier par un couvreur de votre secteur. Visite et chiffrage offerts.</p>
+      <div class="mk-img"><img src="{ROOF_URL}" alt="" loading="lazy"></div>
+      <div class="mk-cta"><span><small>toitures-martin.fr</small><b>Visite gratuite à domicile</b></span><em>Demander une visite</em></div>
+      <p class="mk-react"><span>👍 ❤️ 48</span><span>12 commentaires</span></p>
+    </div>
+  </div>
+  <figcaption class="mk-tag">Exemple</figcaption>
+</figure>"""
 
 PHOTO = {"couverture": "Un couvreur pose", "facade": "Une façade en rénovation", "menuiserie-exterieure": "Un menuisier pose",
          "charpente": "Une charpente en bois", "isolation": "Isolation d"}
@@ -442,7 +518,7 @@ paths.insert(1, "/metiers/")
 write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
       "Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de cinq minutes.",
       "\n\n".join([
-          top("Google Ads", "Soyez trouvé au moment où ils cherchent.", "Un propriétaire tape « couvreur » et le nom de sa ville. Il tombe sur vous. Nous le rappelons en moins de cinq minutes, avant vos concurrents.", crumbs(("Google Ads", "/google-ads/")), "Campagne de recherche", ("Comparer avec Meta", "/meta-ads/")),
+          top("Google Ads", "Soyez trouvé au moment où ils cherchent.", "Un propriétaire tape « couvreur » et le nom de sa ville. Il tombe sur vous. Nous le rappelons en moins de cinq minutes, avant vos concurrents.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_MOCK),
           cols([("Les urgences", "Fuite, tuiles envolées, gouttière arrachée : la demande est immédiate."),
                 ("Les projets mûrs", "Le propriétaire compare déjà des entreprises. Être là et rappeler vite fait la différence."),
                 ("Les secteurs denses", "Assez de recherches locales pour qu'une campagne tienne toute l'année.")],
@@ -463,7 +539,7 @@ paths.append("/google-ads/")
 write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & Co",
       "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de cinq minutes et qualifiés.",
       "\n\n".join([
-          top("Meta Ads · Facebook et Instagram", "Remplissez votre agenda avant qu'ils ne cherchent.", "Des annonces à votre nom, vues par les propriétaires à 25 à 40 km de votre dépôt. Chaque demande rappelée en moins de cinq minutes, puis vérifiée.", crumbs(("Meta Ads", "/meta-ads/")), "Un propriétaire voit", ("Comparer avec Google", "/google-ads/")),
+          top("Meta Ads · Facebook et Instagram", "Remplissez votre agenda avant qu'ils ne cherchent.", "Des annonces à votre nom, vues par les propriétaires à 25 à 40 km de votre dépôt. Chaque demande rappelée en moins de cinq minutes, puis vérifiée.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_MOCK),
           cols([("Un rayon autour du dépôt", "25 à 40 km, réglés commune par commune selon vos chantiers."),
                 ("Vos vraies photos", "Vos chantiers, votre équipe. Rien ne convainc mieux un voisin."),
                 ("Des angles de saison", "Après les intempéries, avant l'hiver, au printemps pour la rénovation.")],
