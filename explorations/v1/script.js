@@ -109,12 +109,12 @@
 /* Sélecteur de palette : aperçu uniquement, à retirer une fois la palette choisie */
 (() => {
   const root = document.documentElement;
-  const names = { a: 'Minium', b: 'Sapin', c: 'Nuit' };
+  const names = { a: 'Cobalt', b: 'Outremer', c: 'Ardoise' };
   const box = document.createElement('div');
   box.className = 'palette-picker';
   box.setAttribute('role', 'group');
-  box.setAttribute('aria-label', 'Choisir la palette de couleurs');
-  box.innerHTML = '<span>Palette</span>' + Object.keys(names).map((k) => `<button type="button" data-p="${k}" title="${names[k]}" aria-label="Palette ${names[k]}">${k.toUpperCase()}</button>`).join('');
+  box.setAttribute('aria-label', 'Choisir le bleu');
+  box.innerHTML = '<span>Bleu</span>' + Object.keys(names).map((k) => `<button type="button" data-p="${k}" title="${names[k]}" aria-label="Palette ${names[k]}">${k.toUpperCase()}</button>`).join('');
   const sync = () => box.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String((root.dataset.palette || 'a') === b.dataset.p)));
   box.addEventListener('click', (e) => {
     const b = e.target.closest('button'); if (!b) return;

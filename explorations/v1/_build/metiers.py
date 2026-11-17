@@ -229,7 +229,7 @@ def trade_page(t):
 <title>{esc(t["title"])} — Bartier &amp; Co</title>
 <meta name="description" content="{html.escape(fr(t["lede"]))}">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#F6F5F1">
+<meta name="theme-color" content="#F1F2F4">
 <link rel="canonical" href="https://bartierandco.com/metiers/{t["slug"]}/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
