@@ -159,7 +159,7 @@ home = home.replace("</body>", WA_HTML + "</body>", 1)
 if '"@type":"Organization"' not in home:
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "url": SITE + "/", "email": "contact@bartierandco.com", "areaServed": ["FR", "BE"],
-         "description": "Agence d’acquisition qui livre des rendez-vous de devis exclusifs aux artisans du bâtiment : annonces locales, rappel des demandes en moins de cinq minutes, qualification et prise de rendez-vous.",
+         "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de cinq minutes, visites de devis fixées directement dans leur agenda.",
          "founder": [{"@type": "Person", "name": "Charles Le Cottier"}, {"@type": "Person", "name": "Martin Barthélémy"}]},
         {"@type": "WebSite", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}]}
     home = home.replace("</head>", f'<link rel="canonical" href="{SITE}/">\n<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False, separators=(",", ":"))}</script>\n</head>', 1)
@@ -420,13 +420,13 @@ for t in TRADES:
     body = body.replace('class="sp-two"', 'class="sp-two"')
     write(path, f"{t['title']} | Bartier & Co", short, body, nav="/metiers/",
           schema={"@context": "https://schema.org", "@graph": [
-              {"@type": "Service", "name": fr(t["title"]), "serviceType": "Rendez-vous de devis exclusifs", "areaServed": ["FR", "BE"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}},
+              {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "areaServed": ["FR", "BE"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}},
               bc_ld(("Métiers", "/metiers/"), (t["name"], path)), faq_ld(trade_faq)]})
     paths.append(path)
 
 hub_items = "\n".join(f'    <li class="sector"><h3 class="sector-name"><a href="/metiers/{t["slug"]}/">{t["name"].split(" et ")[0]}</a></h3><p class="sector-note">{esc(", ".join(t["keep"][:3]))}</p></li>' for t in TRADES)
-write("/metiers/", "Métiers : rendez-vous de devis par corps de métier | Bartier & Co",
-      "Rendez-vous de devis exclusifs pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, en France et en Belgique.",
+write("/metiers/", "Métiers : des clients pour chaque corps de métier | Bartier & Co",
+      "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, en France et en Belgique. Un seul artisan par secteur.",
       "\n\n".join([
           top("Métiers", "Uniquement les métiers où un chantier compte.", "Des chantiers de plusieurs milliers d'euros. Pas de dépannage, pas de petits travaux.", crumbs(("Métiers", "/metiers/")), "Une équipe d"),
           f"""<section class="sectors sheet" data-kind="industries" data-tone="tint">
@@ -481,7 +481,7 @@ paths.append("/meta-ads/")
 
 # ——— Qui sommes-nous ———
 write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
-      "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Rendez-vous de devis exclusifs pour artisans du bâtiment.",
+      "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.",
       "\n\n".join([
           top("Qui sommes-nous", "Deux fondateurs. Un seul objectif : votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous remplissons l'agenda des artisans du bâtiment, en France et en Belgique.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), "Un artisan rencontre"),
           """<section class="sheet" data-tone="light">

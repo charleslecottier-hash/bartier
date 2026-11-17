@@ -1,6 +1,6 @@
 # Bartier & Co
 
-> Agence d'acquisition pour artisans du bâtiment à gros chantiers (couverture, façade, menuiserie extérieure, charpente, isolation), en France et en Belgique. Bartier & Co diffuse des annonces locales (Meta Ads, Google Ads), rappelle chaque demande en moins de cinq minutes en semaine de 8 h à 19 h, vérifie le projet et pose le rendez-vous de devis dans l'agenda de l'artisan. Les rendez-vous ne sont proposés qu'à un seul artisan par métier et par secteur. Sans engagement de durée. Société : Bartier & Co SAS (France). Fondateurs : Charles Le Cottier et Martin Barthélémy.
+> Bartier & Co trouve des clients aux artisans du bâtiment à gros chantiers (couverture, façade, menuiserie extérieure, charpente, isolation), en France et en Belgique. Bartier & Co diffuse des annonces locales (Meta Ads, Google Ads), rappelle chaque demande en moins de cinq minutes en semaine de 8 h à 19 h, vérifie le projet et fixe la visite chez le propriétaire, directement dans l'agenda de l'artisan. Les rendez-vous ne sont proposés qu'à un seul artisan par métier et par secteur. Sans engagement de durée. Société : Bartier & Co SAS (France). Fondateurs : Charles Le Cottier et Martin Barthélémy.
 
 ## Pages principales
 - [Accueil](https://bartierandco.com/) : la méthode, les engagements et le formulaire pour vérifier si un secteur est libre.
