@@ -1020,7 +1020,7 @@ def guide(G, kick, crumb_items, faq_title, links):
     toc_html = ('<nav class="gd-toc" aria-label="Dans ce guide"><p class="gd-toc-k">Dans ce guide</p><ol>'
                 + "".join(f'<li><a href="#{i}">{x}</a></li>' for i, x in toc) + "</ol></nav>")
     body = "\n\n".join([
-        top(kick, G["h1"], G["lead"], crumbs(*crumb_items), meta=AUTHOR_META, dated=True, visual=toc_html),
+        top(kick, G["h1"], G["lead"], crumbs(*crumb_items), visual=toc_html),
         f"""<section class="sheet gd-body" data-tone="light">
   <div class="grid art-grid">
     <article class="prose">
@@ -1083,7 +1083,7 @@ def pillar_page(G):
     faq_items = [G["faq"][i] for i in (0, 1, 3, 5)]
     body = "\n\n".join([
         top("Guide", G["h1"], "Huit façons de trouver des chantiers, comparées. La bonne est celle qui vous coûte le moins par chantier signé.",
-            crumbs(("Trouver des chantiers", G["path"])), "Un menuisier pose une fenêtre", meta=AUTHOR_META, dated=True),
+            crumbs(("Trouver des chantiers", G["path"])), "Un menuisier pose une fenêtre"),
         f"""<section class="sheet tc-sec" id="canaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Les 8 canaux pour trouver des chantiers</h2><p>Ce que chacun vous coûte, et si la demande est pour vous seul.</p></div>
   <table class="tc-table">
