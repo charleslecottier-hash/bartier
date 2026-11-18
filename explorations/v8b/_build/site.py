@@ -651,7 +651,8 @@ for t in TRADES:
         meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en moins de 5 minutes."
     if len(meta_desc) > 158:  # encore trop longue : « Trouvez des chantiers » devient « Chantiers »
         meta_desc = meta_desc.replace("Trouvez des chantiers", "Chantiers", 1)
-    angles = "\n".join(f"""    <li><div class="ad-card"><p class="ad-meta">Votre entreprise · Sponsorisé</p><p class="ad-angle">{a}</p><p class="ad-text">{b}</p><p class="ad-cta">Demander une visite</p></div></li>""" for a, b in t["angles"])
+    _ad_url, _ad_alt = img(PHOTO[t["slug"]])
+    angles = "\n".join(f"""    <li><div class="ad-card"><div class="ad-head"><span class="ad-av" aria-hidden="true">VE</span><p class="ad-meta"><b>Votre entreprise</b><span>Sponsorisé</span></p></div><p class="ad-text">{b}</p><figure class="ad-img is-color"><img src="{_ad_url}" alt="" width="1200" height="800" style="object-position:50% {pos}"></figure><div class="ad-bar"><p class="ad-angle">{a}</p><p class="ad-cta">Demander une visite</p></div></div></li>""" for (a, b), pos in zip(t["angles"], ("30%", "55%", "80%")))
     trade_faq = t["faq"] + [("Combien ça coûte ?", "Un devis personnalisé, en fonction de vos objectifs. Martin vous le présente pendant l'appel de 15 minutes, et vous décidez ensuite, à tête reposée."),
                             ("Faut-il s'engager sur une durée ?", "Non, aucune durée minimale. Vous restez libre d'arrêter quand vous le souhaitez."),
                             ("Qui rappelle les propriétaires ?", "Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
@@ -933,7 +934,8 @@ _qs_all = [qa for g in QS.GROUPS for qa in g[3]]
 write("/questions/", "Questions fréquentes des artisans | Bartier & Co",
       "Prix, engagement, publicité, exclusivité, rappel en moins de 5 minutes, cadre légal : les réponses aux questions des artisans du bâtiment.",
       "\n\n".join([
-          top("Questions", "Vos questions, nos réponses", "Ce que les artisans nous demandent avant de commencer : la méthode, le prix, les engagements et le cadre légal.", crumbs(("Questions", "/questions/"))),
+          top("Questions", "Vos questions, nos réponses", "Ce que les artisans nous demandent avant de commencer : la méthode, le prix, les engagements et le cadre légal.", crumbs(("Questions", "/questions/")),
+              visual='<nav class="gd-toc" aria-label="Les sujets"><p class="gd-toc-k">Les sujets</p><ol>' + "".join(f'<li><a href="#{sid}">{title}<small>{len(items)} questions</small></a></li>' for sid, title, intro, items in QS.GROUPS) + '</ol></nav>'),
           *[faq(items, title=title, aside=intro, sid=sid) for sid, title, intro, items in QS.GROUPS],
           more("Aller plus loin", "Le lexique", "/lexique/", [("Comment trouver des chantiers", "/trouver-des-chantiers/"), ("Google Ads pour artisans", "/google-ads/"), ("Meta Ads pour artisans", "/meta-ads/")]),
       ]), nav="/questions/",
@@ -941,7 +943,7 @@ write("/questions/", "Questions fréquentes des artisans | Bartier & Co",
 paths.append("/questions/")
 
 # ——— Blog ———
-COVER = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Tuiles de toiture", "google-ads-ou-meta-ads-artisan": "Une personne consulte", "relance-devis-artisan": "Un artisan prépare"}
+COVER = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Tuiles de toiture", "google-ads-ou-meta-ads-artisan": "Une personne consulte", "relance-devis-artisan": "Une chargée de rappel"}
 posts = []
 for a in ARTICLES:
     url, alt = img(COVER[a["slug"]])
@@ -949,7 +951,8 @@ for a in ARTICLES:
 write("/blog/", "Blog artisans : chantiers, publicité, devis | Bartier & Co",
       "Des articles courts et concrets pour les artisans du bâtiment : trouver des chantiers, publicité locale, relance de devis, rendez-vous qualifiés.",
       "\n\n".join([
-          top("Blog", "Plus de chantiers, moins de soirées au téléphone.", "Des articles courts et concrets, écrits pour les artisans du bâtiment.", crumbs(("Blog", "/blog/"))),
+          top("Blog", "Plus de chantiers, moins de soirées au téléphone.", "Des articles courts et concrets, écrits pour les artisans du bâtiment.", crumbs(("Blog", "/blog/")),
+              visual='<nav class="gd-toc" aria-label="Les articles"><p class="gd-toc-k">Les articles</p><ol>' + "".join(f'<li><a href="/blog/{a["slug"]}/">{a["short"]}<small>{a["tag"]} · {a["minutes"]} min</small></a></li>' for a in ARTICLES) + '</ol></nav>'),
           f"""<section class="journal sheet" data-kind="journal" data-tone="light">
   <ul class="jr-list">
 {chr(10).join(posts)}

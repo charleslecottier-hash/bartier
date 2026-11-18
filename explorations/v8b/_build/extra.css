@@ -703,3 +703,28 @@ main section.sheet.tc-sec,main section.sheet.tc-us{padding-top:clamp(64px,6.5vw,
 .pg-photo.has-scene .ph-steps li.is-on{background:#fff;color:var(--ink)}
 .has-scene .mk-tag{top:16px;right:16px;padding:4px 8px;border-radius:6px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
 @media (max-width:420px){.pg-photo.has-scene .ph-steps{flex-wrap:nowrap}.pg-photo.has-scene .ph-steps li{padding:6px 8px;font-size:.72rem;white-space:nowrap}}
+
+/* ——— Passe unslop du site (retouche) ——— */
+/* Sommaires en tête de page : le petit texte sous chaque entrée */
+.gd-toc a small{display:block;font-size:.84rem;color:#5b616b}
+.gd-toc a{flex-wrap:wrap;row-gap:2px}
+.gd-toc a > small{flex-basis:100%;padding-left:40px}
+/* Exemples d'annonces des pages métiers : une carte Facebook crédible (photo du métier, texte lisible, bouton qui ne paraît pas désactivé) */
+.ad-card{display:flex;flex-direction:column;gap:0;padding:0;overflow:hidden;background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(10,20,36,.06),0 16px 40px -20px rgba(10,20,36,.3);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#050505}
+.ad-head{display:flex;align-items:center;gap:8px;padding:12px 16px 8px}
+.ad-av{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:600;letter-spacing:0}
+.ad-card .ad-meta{display:flex;flex-direction:column;margin:0;font-size:12px;line-height:1.3;color:#65676b}
+.ad-card .ad-meta b{font-size:14px;font-weight:600;color:#050505}
+.ad-card .ad-text{margin:0;padding:4px 16px 12px;font-size:14px;line-height:1.4;color:#050505}
+.ad-img{margin:0;aspect-ratio:1.91 / 1;background:#e4e6eb}
+.ad-img img{display:block;width:100%;height:100%;object-fit:cover;filter:none}
+.ad-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:#f0f2f5}
+.ad-card .ad-angle{margin:0;font-size:15px;line-height:1.25;font-weight:600;color:#050505;text-transform:none;letter-spacing:0}
+.ad-card .ad-cta{flex:none;margin:0;padding:8px 12px;border-radius:6px;background:#e4e6eb;color:#050505;font-size:14px;font-weight:600;line-height:1.2;white-space:nowrap}
+/* Étiquettes : plus de majuscules espacées */
+.pf-t{text-transform:none;letter-spacing:0;font-weight:500}
+/* Calculateur : pas de halo dans le panneau bleu */
+.ca-out::before{content:none}
+/* Blog : pas de zoom au survol, le titre change de couleur et c'est tout */
+.post-link:hover .post-photo img{transform:none}
+section .ad-card.ad-card{padding:0}
