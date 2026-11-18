@@ -46,7 +46,14 @@ NAV = [("Comment ça marche", "#services"), ("Métiers", "/metiers/"), ("Google 
        ("Qui sommes-nous", "/qui-sommes-nous/"), ("Questions", "/questions/"), ("Particuliers", "/devis-travaux/")]
 # « Comment ça marche » ouvre une petite liste : la méthode, puis le guide pour trouver des chantiers
 NAV_SUB = {"#services": [("Notre méthode", "Annonces, rappel, visite dans votre agenda", "#services"),
-                         ("Comment trouver des chantiers", "Les 8 canaux comparés", "/trouver-des-chantiers/")]}
+                         ("Comment trouver des chantiers", "Les 8 canaux comparés", "/trouver-des-chantiers/")],
+           # « Métiers » ouvre la liste des cinq métiers
+           "/metiers/": [("Couverture et zinguerie", "Réfections de toiture", "/metiers/couverture/"),
+                         ("Façade et ravalement", "Ravalements complets", "/metiers/facade/"),
+                         ("Menuiserie extérieure", "Fenêtres, baies et portes d'entrée", "/metiers/menuiserie-exterieure/"),
+                         ("Charpente", "Projets prêts à démarrer", "/metiers/charpente/"),
+                         ("Isolation", "Propriétaires qui ont fait la demande", "/metiers/isolation/"),
+                         ("Tous les métiers", "Les chantiers que nous cherchons", "/metiers/")]}
 NAV_CHEV = '<svg class="dd-chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>'
 def _nav_item(t, h):
     if h in NAV_SUB:
@@ -54,7 +61,12 @@ def _nav_item(t, h):
         return f'      <div class="hdr-dd"><a class="link hdr-dd-t" href="{h}" aria-haspopup="true">{t}{NAV_CHEV}</a><div class="hdr-dd-menu">{sub}</div></div>'
     return f'      <a class="link" href="{h}">{t}</a>'
 nav_html = "\n".join(_nav_item(t, h) for t, h in NAV)
-menu_html = "\n".join(f'    <a href="{h}">{t}</a>' + ("\n    <a href=\"/trouver-des-chantiers/\">Comment trouver des chantiers</a>" if h == "#services" else "") for t, h in NAV) + '\n    <a href="#contact">Contact</a>'
+def _menu_item(t, h):  # sur téléphone : « Comment ça marche » et « Métiers » s'ouvrent comme des listes
+    if h in NAV_SUB:
+        sub = "".join(f'<a href="{sh}"><b>{st}</b><small>{sd}</small></a>' for st, sd, sh in NAV_SUB[h])
+        return f'    <details class="menu-dd"><summary>{t}{NAV_CHEV}</summary><div class="menu-dd-list">{sub}</div></details>'
+    return f'    <a href="{h}">{t}</a>'
+menu_html = "\n".join(_menu_item(t, h) for t, h in NAV) + '\n    <a href="#contact">Contact</a>'
 home = re.sub(r'(<nav class="hdr-nav" aria-label="Menu">)[\s\S]*?(</nav>)', r"\1\n" + nav_html + r"\n    \2", home, count=1)
 home = re.sub(r'(<div class="menu" id="menu">\s*<nav aria-label="Menu">)[\s\S]*?(</nav>)', r"\1\n" + menu_html + r"\n  \2", home, count=1)
 
@@ -670,7 +682,7 @@ for t in TRADES:
     </div>
   </div>
 </section>""",
-        cols(t["problems"], "Le métier est bon. Les demandes, moins.", "Ce qui coince souvent dans votre métier."),
+        cols(t["problems"], "Ce qui vous coûte des chantiers aujourd'hui", "Ce qui coince souvent dans votre métier."),
         f"""<section class="sheet tr-call" id="appel" data-tone="accent">
   <div class="grid sp-split">
     <div><h2 data-split>Ce que nous vérifions avant votre visite</h2><p>Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.</p></div>
@@ -1063,6 +1075,13 @@ TC_CHANNELS = [  # nom, ce que vous payez, ce qu'il faut, la demande (ok : pour 
     ("Flyers et panneaux", "L'impression et la distribution", "Des chantiers dans le quartier", "ok", ""),
     ("Réseaux professionnels", "Une cotisation et du temps", "Une présence régulière", "ok", ""),
 ]
+TC_CALC_JS = r'''<script>(function(){var g=function(i){return document.getElementById(i)},d=g('tc-d'),s=g('tc-s'),m=g('tc-m'),r=g('tc-r'),q=g('tc-p');if(!d)return;
+var n=function(e){var v=e.value.replace(/[^0-9,.]/g,'').replace(',','.');return v===''?NaN:parseFloat(v)},f=function(x){return new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0}).format(x)};
+function run(){var a=n(d),b=n(s),c=n(m);if(!(a>=0)||!(b>0)){r.textContent='—';q.textContent=b===0?'Ajoutez au moins un chantier signé':'';return}
+var k=a/b;r.textContent=f(k)+'\u00a0€';q.textContent=c>0?(k>=c?'soit plus que votre marge sur un chantier':'soit '+f(k/c*100)+'\u00a0% de votre marge'):''}
+[d,s,m].forEach(function(e){e.addEventListener('input',run)});run()})();</script>'''
+
+
 def pillar_page(G):
     def _row(i, n, c, w, k, lab):
         us = n == "Annonces locales"
@@ -1076,10 +1095,11 @@ def pillar_page(G):
             ("Le devis envoyé tard", "Entre-temps, le propriétaire a reçu d'autres devis."),
             ("Le devis jamais relancé", 'Un appel et un SMS suffisent souvent. <a class="link" href="/blog/relance-devis-artisan/">La méthode</a>')]
     loss_html = "\n".join(f'    <li><span class="tc-n">{i:02d}</span><h3>{h}</h3><p>{p}</p></li>' for i, (h, p) in enumerate(loss, 1))
-    def slip(k, d, n, per, s, res, win=False):
+    def slip(k, d, n, per, s, rate, res, win=False):
         return (f'<article class="tc-slip{" is-win" if win else ""}"><header><p class="tc-slip-k">{k}</p><p class="tc-slip-sub">Sur un mois</p></header><dl>'
                 f'<div><dt>Dépensé</dt><dd>{d}</dd></div><div><dt>Demandes reçues</dt><dd>{n}</dd></div>'
-                f'<div><dt>Prix d\'une demande</dt><dd>{per}</dd></div><div><dt>Chantiers signés</dt><dd>{s}</dd></div></dl>'
+                f'<div><dt>Prix d\'une demande</dt><dd>{per}</dd></div><div><dt>Chantiers signés</dt><dd>{s}</dd></div>'
+                f'<div class="is-rate"><dt>Demandes signées</dt><dd>{rate}</dd></div></dl>'
                 f'<p class="tc-slip-tot"><span>Coût par chantier signé</span><b>{res}</b></p>'
                 + ('<p class="tc-stamp">Le moins cher au final</p>' if win else "") + "</article>")
     trades = " · ".join(f'<a class="link" href="/metiers/{sl}/">{lb}</a>' for lb, sl in [("Couverture", "couverture"), ("Façade", "facade"), ("Menuiserie", "menuiserie-exterieure"), ("Charpente", "charpente"), ("Isolation", "isolation")])
@@ -1101,8 +1121,17 @@ def pillar_page(G):
   <div class="grid sp-head"><h2 data-split>Comment calculer le coût par chantier signé ?</h2><p>Additionnez ce que le canal vous a coûté, puis divisez par les chantiers signés grâce à lui.</p></div>
   <p class="tc-formula">Dépenses du canal ÷ chantiers signés = <b>coût par chantier signé</b></p>
   <div class="tc-ab">
-    {slip("Canal A", "400 €", "40", "10 €", "2", "200 €")}
-    {slip("Canal B", "900 €", "12", "75 €", "6", "150 €", True)}
+    {slip("Demandes partagées", "400 €", "40", "10 €", "2", "1 sur 20", "200 €")}
+    {slip("Demandes pour vous seul", "900 €", "12", "75 €", "6", "1 sur 2", "150 €", True)}
+    <div class="tc-calc" id="calculateur" role="group" aria-labelledby="tc-calc-k">
+      <p class="tc-calc-k" id="tc-calc-k">Faites le calcul avec vos chiffres</p>
+      <div class="tc-calc-f">
+        <label for="tc-d"><span>Dépensé sur le mois</span><span class="tc-in"><input id="tc-d" inputmode="numeric" autocomplete="off" value="1 200"><i>€</i></span></label>
+        <label for="tc-s"><span>Chantiers signés</span><span class="tc-in"><input id="tc-s" inputmode="numeric" autocomplete="off" value="4"></span></label>
+        <label for="tc-m"><span>Votre marge sur un chantier</span><span class="tc-in"><input id="tc-m" inputmode="numeric" autocomplete="off" value="3 000"><i>€</i></span></label>
+      </div>
+      <p class="tc-calc-r"><span>Votre coût par chantier signé</span><output id="tc-r" for="tc-d tc-s" aria-live="polite">300 €</output><small id="tc-p">soit 10 % de votre marge</small></p>
+    </div>
   </div>
   <p class="tc-foot is-calc">Chiffres d'exemple, ce ne sont pas des moyennes. La demande la moins chère ne donne pas le chantier le moins cher.</p>
 </section>""",
@@ -1334,6 +1363,8 @@ for f in PAGES_OUT:
     doc = IMG.localize(doc, SITE).replace('<link rel="preconnect" href="https://images.unsplash.com">\n', "")
     doc = re.sub(r"<img [^>]*>", real_dims, doc)
     doc = typo(doc)
+    if 'id="calculateur"' in doc and 'id="tc-js"' not in doc:  # calculateur : script ajouté après la typo, qui changerait ses apostrophes
+        doc = doc.replace("</body>", TC_CALC_JS.replace("<script>", '<script id="tc-js">', 1) + "\n</body>", 1)
     if 'id="wa"' in doc and "wa-mini" not in doc:  # bulle WhatsApp : réduite à l'icône une fois la page entamée, pour ne rien cacher
         doc = doc.replace("</body>", '<script id="wa-mini">(function(){var w=document.getElementById("wa");if(!w)return;var f=function(){w.classList.toggle("is-mini",scrollY>innerHeight*1.1)};addEventListener("scroll",f,{passive:true});f()})();</script>\n</body>', 1)
     if "<main>" in doc and 'class="skip"' not in doc:  # clavier : aller directement au contenu

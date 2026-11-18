@@ -61,11 +61,11 @@ PILLAR = dict(
 <p class="answer">Coût par chantier signé = dépenses du canal ÷ chantiers signés grâce à ce canal</p>
 <p>Exemple, avec des chiffres choisis pour le calcul (ce ne sont pas des moyennes) :</p>
 <table>
-<thead><tr><th></th><th>Canal A</th><th>Canal B</th></tr></thead>
+<thead><tr><th></th><th>Demandes partagées</th><th>Demandes pour vous seul</th></tr></thead>
 <tbody>
 <tr><td>Dépenses du mois</td><td>400 €</td><td>900 €</td></tr>
 <tr><td>Demandes reçues</td><td>40, soit 10 € la demande</td><td>12, soit 75 € la demande</td></tr>
-<tr><td>Chantiers signés</td><td>2</td><td>6</td></tr>
+<tr><td>Chantiers signés</td><td>2, soit 1 demande sur 20</td><td>6, soit 1 demande sur 2</td></tr>
 <tr><td>Coût par chantier signé</td><td>200 €</td><td>150 €</td></tr>
 </tbody>
 </table>

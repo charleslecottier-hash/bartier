@@ -172,7 +172,7 @@ Ce que nous écartons
 - Une petite fuite à dépanner
 - Les locataires et les demandes hors de votre zone
 
-### Le métier est bon. Les demandes, moins.
+### Ce qui vous coûte des chantiers aujourd’hui
 Ce qui coince souvent dans votre métier.
 - 01
 
@@ -252,7 +252,7 @@ Ce que nous écartons
 - La pose de matériel acheté ailleurs
 - Les locataires et les demandes hors de votre zone
 
-### Le métier est bon. Les demandes, moins.
+### Ce qui vous coûte des chantiers aujourd’hui
 Ce qui coince souvent dans votre métier.
 - 01
 
@@ -331,7 +331,7 @@ Ce que nous écartons
 - Les petites retouches
 - Les locataires et les demandes hors de votre zone
 
-### Le métier est bon. Les demandes, moins.
+### Ce qui vous coûte des chantiers aujourd’hui
 Ce qui coince souvent dans votre métier.
 - 01
 
@@ -410,7 +410,7 @@ Ce que nous écartons
 - Les projets sans calendrier
 - Les locataires et les demandes hors de votre zone
 
-### Le métier est bon. Les demandes, moins.
+### Ce qui vous coûte des chantiers aujourd’hui
 Ce qui coince souvent dans votre métier.
 - 01
 
@@ -488,7 +488,7 @@ Ce que nous écartons
 - Les projets dont l’éligibilité aux aides est la seule motivation
 - Les locataires et les demandes hors de votre zone
 
-### Le métier est bon. Les demandes, moins.
+### Ce qui vous coûte des chantiers aujourd’hui
 Ce qui coince souvent dans votre métier.
 - 01
 
@@ -2138,7 +2138,7 @@ Plateformes : lisez leurs conditions avant de signer. Exemple : Habitatpresto Pr
 ### Comment calculer le coût par chantier signé ?
 Additionnez ce que le canal vous a coûté, puis divisez par les chantiers signés grâce à lui.
 Dépenses du canal ÷ chantiers signés = coût par chantier signé
-Canal A
+Demandes partagées
 Sur un mois
 
 **Dépensé**
@@ -2152,8 +2152,11 @@ Sur un mois
 
 **Chantiers signés**
 - 2
+
+**Demandes signées**
+- 1 sur 20
 Coût par chantier signé 200 €
-Canal B
+Demandes pour vous seul
 Sur un mois
 
 **Dépensé**
@@ -2167,6 +2170,9 @@ Sur un mois
 
 **Chantiers signés**
 - 6
+
+**Demandes signées**
+- 1 sur 2
 Coût par chantier signé 150 €
 Le moins cher au final
 

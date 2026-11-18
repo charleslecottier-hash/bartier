@@ -931,3 +931,54 @@ section.ws-cols ol.sp-cols h3{font-size:clamp(1.3rem,1.7vw,1.6rem)}
   section.ws-cols ol.sp-cols > li::before{margin-bottom:16px}
   section.ws-cols ol.sp-cols .sp-n{margin-bottom:8px;font-size:3.5rem}
 }
+
+/* Trouver des chantiers, calcul : deux tickets d'exemple + votre calcul, sur les 4 colonnes */
+.tc-ab{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none;gap:0;padding:0}
+.tc-ab > *{margin:0 var(--cell)}
+.tc-ab > .tc-calc{grid-column:3 / 5}
+.tc-slip header{flex-wrap:wrap;row-gap:4px}
+.tc-slip dl .is-rate dt,.tc-slip dl .is-rate dd{color:var(--ink)}
+.tc-slip.is-win dl .is-rate dd{color:var(--accent)}
+.tc-calc{display:flex;flex-direction:column;gap:20px;padding:28px 28px 32px;border-radius:12px;background:var(--accent);color:#fff;box-shadow:0 24px 48px -28px rgba(10,20,36,.45)}
+.tc-calc-k{margin:0;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.3);font:400 1.3rem/1.2 var(--f-display);letter-spacing:-.015em}
+.tc-calc-f{display:grid;gap:12px}
+.tc-calc label{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:.95rem}
+.tc-in{display:flex;align-items:center;gap:6px;flex:0 0 10rem;height:44px;padding:0 12px;border-radius:8px;background:rgba(10,20,36,.2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);transition:box-shadow .15s cubic-bezier(.22,1,.36,1)}
+.tc-in:focus-within{box-shadow:inset 0 0 0 2px #fff}
+.tc-in input{flex:1;min-width:0;padding:0;border:0;background:none;color:#fff;font:400 1.05rem/1 var(--f-text);text-align:right;font-variant-numeric:tabular-nums;outline:0}
+.tc-in i{font-style:normal;color:rgba(255,255,255,.85)}
+.tc-calc-r{margin:auto 0 0;padding-top:16px;border-top:1px dashed rgba(255,255,255,.5);display:flex;flex-direction:column;gap:4px}
+.tc-calc-r span{font-size:.9rem;color:rgba(255,255,255,.88)}
+.tc-calc-r output{font:300 clamp(2.6rem,4vw,3.4rem)/1 var(--f-display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.tc-calc-r small{min-height:1.4em;font-size:.95rem}
+@media (min-width:761px) and (max-width:1280px){
+  .tc-ab{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}
+  .tc-ab > .tc-calc{grid-column:1 / -1}
+}
+@media (max-width:760px){
+  .tc-ab{grid-template-columns:minmax(0,1fr);row-gap:16px}
+  .tc-ab > .tc-calc{grid-column:auto;padding:24px 20px 28px}
+  .tc-calc label{flex-wrap:wrap;row-gap:8px}
+  .tc-in{flex:1 1 100%}
+}
+
+/* Menu : « Métiers » ouvre les cinq métiers (en deux colonnes) ; sur téléphone, listes repliables */
+.hdr-dd-menu:has(> a:nth-child(5)){grid-template-columns:repeat(2,minmax(0,1fr));min-width:520px}
+.tc-in{flex:none;width:12rem;min-width:0}
+.tc-in input{width:0}
+.tc-slip .tc-stamp{top:-14px;right:-8px;bottom:auto;background:#fff}
+@media (max-width:760px){
+  .tc-slip .tc-stamp{top:-12px;right:-4px;bottom:auto}
+  .tc-in{width:100%}
+}
+.menu nav .menu-dd{border-bottom:1px solid var(--rule)}
+.menu nav .menu-dd summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:.55rem 0;font:300 clamp(1.9rem,8vw,2.6rem)/1.1 var(--f-display);letter-spacing:-.03em;list-style:none;cursor:pointer}
+.menu nav .menu-dd summary::-webkit-details-marker{display:none}
+.menu nav .menu-dd summary .dd-chev{width:16px;height:10px;margin-right:4px;color:#5b616b}
+.menu nav .menu-dd[open] summary .dd-chev{transform:rotate(180deg)}
+.menu nav .menu-dd:not([open]) summary .dd-chev{transform:none}
+.menu nav .menu-dd-list{display:grid;margin:0 0 12px}
+.menu nav .menu-dd-list a{display:grid;gap:2px;padding:12px 0 12px 16px;border-bottom:0;border-top:1px solid var(--rule);box-shadow:inset 2px 0 0 var(--rule);font:400 1.05rem/1.3 var(--f-text);letter-spacing:0}
+.menu nav .menu-dd-list a b{font-weight:500}
+.menu nav .menu-dd-list a small{font-size:.85rem;line-height:1.35;color:#5b616b}
+.menu nav .menu-dd-list a:active{box-shadow:inset 2px 0 0 var(--accent)}
