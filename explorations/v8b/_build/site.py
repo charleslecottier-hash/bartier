@@ -759,7 +759,7 @@ paths.append("/google-ads/")
 write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & Co",
       "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et vérifiés.",
       "\n\n".join([
-          top("Meta Ads · Facebook et Instagram", "Touchez vos futurs clients sur Facebook et Instagram.", "Des annonces à votre nom, vues par les propriétaires de votre secteur avant même qu'ils cherchent un artisan. Chaque demande est rappelée en moins de 5 minutes en semaine, puis vérifiée.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_ANIM),
+          top("Meta Ads · Facebook et Instagram", "Apparaissez sur Facebook et Instagram auprès de vos futurs clients.", "Des annonces à votre nom, vues par les propriétaires de votre secteur avant même qu'ils cherchent un artisan. Chaque demande est rappelée en moins de 5 minutes en semaine, puis vérifiée.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_ANIM),
           cols([("Autour de votre dépôt", "Dans un rayon de 25 à 40 km, réglé commune par commune."),
                 ("Avec vos vraies photos", "Vos chantiers et votre équipe : rien ne convainc mieux un voisin."),
                 ("Au bon moment de l'année", "Après les intempéries, avant l'hiver, au printemps pour la rénovation.")],
