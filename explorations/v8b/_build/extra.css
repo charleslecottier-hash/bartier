@@ -1,0 +1,42 @@
+/* Feuille complémentaire Bartier & Co : injectée dans toutes les pages par site.py (style#bc-css).
+   Tout ce qui est ajouté au gabarit d'origine vit ici, en clair. */
+
+/* ——— Pied de page ——— */
+.ftr{padding-top:clamp(56px,6vw,96px)}
+.ftr-grid{row-gap:36px}
+.ftr-lead{gap:1.4rem}
+.ftr-lead .btn{margin-top:0}
+.ftr-col:not(.ftr-lead){gap:0}
+.ftr-col:not(.ftr-lead) .ftr-h{margin-bottom:.5rem}
+.ftr-col:not(.ftr-lead) a{display:inline-flex;align-items:center;min-height:34px;color:color-mix(in oklab,var(--bg) 86%,var(--ink));text-decoration:none;transition:color .2s}
+.ftr-col:not(.ftr-lead) a:hover,.ftr-col:not(.ftr-lead) a:focus-visible{color:var(--bg);text-decoration:underline;text-underline-offset:.28em;text-decoration-thickness:1px}
+.ftr-contact{list-style:none;margin:.2rem 0 0;padding:0;display:grid;gap:.85rem}
+.ftr-contact li{display:grid;gap:.1rem}
+.ftr-contact a{justify-self:start;color:inherit;text-decoration:none;font:400 1.05rem/1.3 var(--f-display);letter-spacing:-.01em;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s var(--ease)}
+.ftr-contact a:hover,.ftr-contact a:focus-visible{background-size:100% 1px}
+.ftr-contact span{color:var(--soft);font-size:.84rem;line-height:1.4}
+.ftr-logo{margin-top:clamp(48px,6vw,96px)}
+.ftr-base{align-items:center;gap:.4rem 1.6rem}
+.ftr-legal{display:flex;flex-wrap:wrap;align-items:center;gap:.1rem 1.4rem}
+.ftr-legal a,.ftr-cookies{display:inline-flex;align-items:center;min-height:32px;padding:0;border:0;background:none;color:inherit;font:inherit;cursor:pointer;text-decoration:underline;text-decoration-color:color-mix(in oklab,currentColor 35%,transparent);text-underline-offset:.3em;transition:color .2s,text-decoration-color .2s}
+.ftr-legal a:hover,.ftr-cookies:hover,.ftr-legal a:focus-visible,.ftr-cookies:focus-visible{color:var(--bg);text-decoration-color:currentColor}
+.ftr-legal{margin-left:auto}
+.ftr-base .ftr-top{margin:0}
+@media (max-width:760px){
+  .ftr{padding-top:48px;padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+  .ftr-grid{row-gap:30px}
+  .ftr-lead p{max-width:none}
+  .ftr-contact{gap:.2rem;width:100%}
+  .ftr-contact a{min-height:40px;display:inline-flex;align-items:center;font-size:1.02rem}
+  .ftr-contact li:first-child span{margin-top:-.45rem}
+  .ftr-contact li:last-child{margin-top:.5rem}
+  .ftr-col:not(.ftr-lead) a{min-height:40px;font-size:.95rem}
+  .ftr-col.ftr-co{grid-column:1 / -1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:calc(var(--cell) * 2)}
+  .ftr-col.ftr-co .ftr-h{grid-column:1 / -1}
+  .ftr-logo{margin-top:36px}
+  .ftr-base{flex-direction:row;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;margin-top:22px}
+  .ftr-base > span:first-child{flex:1 1 100%;margin-right:0}
+  .ftr-legal{flex:1 1 0;gap:0 1.1rem;margin-left:0}
+  .ftr-legal a,.ftr-cookies{min-height:40px}
+  .ftr-base .ftr-top{align-self:flex-end;margin-left:auto}
+}

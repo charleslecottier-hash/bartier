@@ -207,6 +207,49 @@ if '"@type":"Organization"' not in home:
     home = home.replace("</head>", f'<link rel="canonical" href="{SITE}/">\n<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False, separators=(",", ":"))}</script>\n</head>', 1)
 (ROOT / "index.html").write_text(home, encoding="utf-8")
 
+# Feuille complémentaire (_build/extra.css), injectée dans toutes les pages
+def mincss(c):
+    c = re.sub(r"/\*[\s\S]*?\*/", "", c)
+    c = re.sub(r"\s+", " ", c)
+    return re.sub(r"\s*([{};,>])\s*", r"\1", c).replace(";}", "}").strip()
+XCSS = mincss((ROOT / "_build" / "extra.css").read_text(encoding="utf-8"))
+home = re.sub(r'<style id="bc-css">[\s\S]*?</style>\n', "", home)
+home = home.replace("</head>", f'<style id="bc-css">{XCSS}</style>\n</head>', 1)
+(ROOT / "index.html").write_text(home, encoding="utf-8")
+
+# ——— Cookies : gestionnaire de consentement (assets/js/consent.js), textes dans _build/legal/notices.json s'il existe ———
+# Identifiants des balises : laisser vide tant qu'ils n'existent pas. Rien n'est chargé sans identifiant ET sans accord.
+TAGS = {"ga4": "", "gads": "", "meta": ""}
+CC_TEXTS = {
+    "banner_title": "Cookies : à vous de choisir",
+    "banner_text": "Avec votre accord, nous mesurons l'audience du site et l'efficacité de nos publicités (Google, Meta). Sans accord, rien n'est déposé. <a href=\"/cookies/\">En savoir plus</a>",
+    "banner_accept": "Tout accepter", "banner_refuse": "Tout refuser", "banner_customize": "Personnaliser mes choix",
+    "prefs_title": "Vos choix de cookies",
+    "prefs_intro": "Choisissez ce que vous acceptez. Le site fonctionne dans tous les cas.",
+    "prefs_always": "Toujours actifs",
+    "prefs_necessary_title": "Nécessaires", "prefs_necessary_text": "Ils retiennent votre choix et l'affichage du site. Aucun suivi.",
+    "prefs_audience_title": "Mesure d'audience", "prefs_audience_text": "Google Analytics : pages vues et parcours, pour améliorer le site.",
+    "prefs_ads_title": "Publicité", "prefs_ads_text": "Google Ads et Meta : savoir quelles annonces amènent des demandes.",
+    "prefs_save": "Enregistrer mes choix",
+}
+_notices = ROOT / "_build" / "legal" / "notices.json"
+NOTICES = json.loads(_notices.read_text(encoding="utf-8")) if _notices.exists() else {}
+CC_TEXTS.update({k: v for k, v in NOTICES.items() if k in CC_TEXTS and isinstance(v, str) and v.strip()})
+LEGAL_SLUGS = ["mentions-legales", "confidentialite", "cookies", "conditions-du-service"]
+LEGAL_READY = [s for s in LEGAL_SLUGS if (ROOT / "_build" / "legal" / f"{s}.html").exists()]
+if "cookies" not in LEGAL_READY:
+    CC_TEXTS["banner_text"] = re.sub(r"\s*<a [^>]*>[^<]*</a>", "", CC_TEXTS["banner_text"])
+_cc = (ROOT / "_build" / "consent.src.js").read_text(encoding="utf-8")
+_cc = re.sub(r"^/\*[\s\S]*?\*/\n", "", _cc)
+_cc = _cc.replace("__TEXTS__", json.dumps({k: fr(v) for k, v in CC_TEXTS.items()}, ensure_ascii=False)).replace("__TAGS__", json.dumps(TAGS))
+_cc = "\n".join(l.strip() for l in _cc.splitlines() if l.strip())
+(ROOT / "assets" / "js" / "consent.js").write_text(_cc, encoding="utf-8")
+import hashlib
+CC_TAG = f'<script src="/assets/js/consent.js?v={hashlib.sha1(_cc.encode()).hexdigest()[:8]}" defer></script>'
+home = re.sub(r'<script src="/assets/js/consent\.js[^"]*" defer></script>\n?', "", home)
+home = home.replace("</body>", CC_TAG + "\n</body>", 1)
+(ROOT / "index.html").write_text(home, encoding="utf-8")
+
 # ——— Gabarit des pages intérieures ———
 HEAD = home[:home.index("</head>")]
 HEAD = re.sub(r'<link rel="canonical"[^>]*>\n?', "", HEAD)
@@ -235,6 +278,7 @@ def absolutize(block):
 EXTRA_CSS = """<style>
 /* Pages intérieures */
 .pg-photo.mk{position:relative;display:grid;place-items:center;aspect-ratio:auto;height:auto;min-height:440px;padding:clamp(20px,3vw,40px);background:var(--paper);border-radius:var(--r);overflow:hidden}
+.pg-photo img{filter:grayscale(1) contrast(1.05)}
 .mk::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 70% 20%,color-mix(in oklab,var(--accent) 16%,transparent),transparent 70%)}
 .mk-tag{position:absolute;top:14px;right:14px;padding:.3em .6em;font-size:.72rem;background:var(--bg);color:var(--muted);border-radius:var(--r)}
 .mk-g{position:relative;width:min(100%,460px);background:var(--bg);border-radius:12px;padding:18px;box-shadow:0 24px 50px -24px rgba(10,20,36,.35);font-family:Arial,Helvetica,sans-serif}
@@ -614,8 +658,8 @@ pf_top = pf_top.replace('<span>Appeler Martin</span>', '<span>Nous appeler</span
 pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Décrire mes travaux</a>', 1)
 pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Des artisans de confiance près de chez vous</p>')
 pf_tail = absolutize(TAIL)
-pf_tail = pf_tail.replace('<p>Vous faites le chantier. Nous remplissons votre&nbsp;agenda.</p>', '<p>Un projet de travaux&nbsp;? Un seul artisan, le bon.</p>', 1)
-pf_tail = pf_tail.replace('<a class="btn" href="#contact"><span>Nous écrire</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
+pf_tail = pf_tail.replace('<p>Vous faites le chantier.<br>Nous remplissons votre&nbsp;agenda.</p>', '<p>Un projet de travaux&nbsp;?<br>Un seul artisan, le bon.</p>', 1)
+pf_tail = pf_tail.replace('<a class="btn" href="#contact"><span>Vérifier mon secteur</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
 pf_tail = pf_tail.replace('<small>Cofondateur · Head of Sales</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
 pf_tail = pf_tail.replace('<b>Parler à Martin<span>, Head of Sales</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
 pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', lambda m: '<p class="wa-bubble">Bonjour. Un projet de travaux ou une question&nbsp;? Écrivez-moi, je vous réponds personnellement.</p>\n      <p class="wa-k">Choisissez une question, ou écrivez la vôtre&nbsp;:</p>\n' + "\n".join(
@@ -779,6 +823,9 @@ for f in PAGES_OUT:
         return tag.replace("<img ", f'<img srcset="{", ".join(cands)}"{sz} ', 1)
     doc = re.sub(r"<img [^>]*>", srcset, doc)
     doc = IMG.localize(doc, SITE).replace('<link rel="preconnect" href="https://images.unsplash.com">\n', "")
+    for slug in LEGAL_SLUGS:  # pas de lien vers une page légale qui n'existe pas encore
+        if slug not in LEGAL_READY:
+            doc = re.sub(rf'\s*<a href="/{slug}/">[^<]*</a>', "", doc)
     rob = '<meta name="robots" content="noindex">'
     if doc.count(rob) > 1:
         i = doc.index(rob) + len(rob)
