@@ -378,3 +378,13 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 
 /* ——— Fluidité : éléments animés sur leur propre calque, pour ne pas repeindre toute la section ——— */
 [data-shutter] .person-photo,.vc-row.is-live .vc-track,[data-parallax] img{will-change:transform}
+
+/* ——— Ouverture claire : pour qui, ce que nous faisons, comment ——— */
+.hero-kick{margin:0 0 clamp(12px,1.6vw,22px);font-size:clamp(.92rem,1.15vw,1.08rem);line-height:1.35;color:var(--soft)}
+.hero-h1{margin:0 0 0 -.03em;font:300 clamp(2.3rem,7.6cqi,6.6rem)/.96 var(--f-display);letter-spacing:-.045em;color:var(--ink)}
+.hero-h1 span{display:block}
+.hero-h1 span + span{color:var(--accent)}
+.hero-steps{flex-direction:column;flex-wrap:nowrap;gap:.55rem;font-size:clamp(.95rem,1.1vw,1.05rem)}
+.hero-steps li{align-items:flex-start}
+.hero-steps span{flex:none;margin-top:-.05em}
+@media (min-width:1280px){.hero-steps{flex-wrap:nowrap;white-space:normal;gap:.55rem;font-size:1rem}}

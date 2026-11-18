@@ -791,7 +791,7 @@ pf_top = pf_top.replace('<span>Appeler Martin</span>', '<span>Nous appeler</span
 pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Décrire mes travaux</a>', 1)
 pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un seul artisan près de chez vous, sans frais</p>')
 pf_tail = absolutize(TAIL)
-pf_tail = pf_tail.replace('<p>Vous faites le chantier.<br>Nous remplissons votre&nbsp;agenda.</p>', '<p>Un projet de travaux&nbsp;?<br>Un seul artisan, près de chez vous.</p>', 1)
+pf_tail = pf_tail.replace('<p>Faire équipe.<br>Faire la différence.</p>', '<p>Un projet de travaux&nbsp;?<br>Un seul artisan, près de chez vous.</p>', 1)
 pf_tail = pf_tail.replace('<a class="btn" href="#contact"><span>Vérifier mon secteur</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
 pf_tail = pf_tail.replace('<small>Cofondateur · Head of Sales</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
 pf_tail = pf_tail.replace('<b>Parler à Martin<span>, Head of Sales</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
