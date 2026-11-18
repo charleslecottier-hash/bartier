@@ -186,7 +186,7 @@ html.ld-on{overflow:hidden}
 """
 LD_BODY = """<div class="ld" id="ld" aria-hidden="true"><span class="ld-logo"></span><div class="ld-row"><p>Des clients pour les artisans du bâtiment</p><span class="ld-n"><span id="ld-n">0</span>%</span></div><i class="ld-bar" id="ld-bar"></i></div>
 <script>(function(){var l=document.getElementById('ld'),h=document.documentElement;if(!l||h.classList.contains('ld-skip')){if(l)l.remove();return}
-var n=document.getElementById('ld-n'),b=document.getElementById('ld-bar'),t0=performance.now(),D=matchMedia('(prefers-reduced-motion: reduce)').matches?200:1300;
+var n=document.getElementById('ld-n'),b=document.getElementById('ld-bar'),t0=performance.now(),D=matchMedia('(prefers-reduced-motion: reduce)').matches?200:(innerWidth<761?900:1300);
 function f(t){var k=Math.max(0,Math.min(1,(t-t0)/D)),e=1-Math.pow(1-k,3);n.textContent=Math.round(e*100);b.style.transform='scaleX('+e+')';if(k<1)requestAnimationFrame(f);else done()}
 function done(){try{sessionStorage.setItem('bc-ld','1')}catch(e){}setTimeout(function(){l.classList.add('is-out');h.classList.remove('ld-on');setTimeout(function(){l.remove()},800)},180)}
 requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.remove();h.classList.remove('ld-on')}},4000)})();</script>
@@ -734,6 +734,24 @@ for f in ROOT.rglob("*.html"):
             return tag
         return tag.replace("<img ", '<img loading="lazy" decoding="async" ', 1)
     doc = re.sub(r"<img [^>]*>", lazy, doc)
+    def srcset(m):
+        tag = m.group(0)
+        if "srcset=" in tag or "images.unsplash.com" not in tag:
+            return tag
+        u = re.search(r'src="([^"]+)"', tag).group(1)
+        w = re.search(r"[?&](?:amp;)?w=(\d+)", u); h = re.search(r"[?&](?:amp;)?h=(\d+)", u)
+        if not w:
+            return tag
+        W = int(w.group(1)); H = int(h.group(1)) if h else None
+        cands = []
+        for nw in [480, 800, 1200]:
+            if nw < W:
+                v = re.sub(r"([?&](?:amp;)?w=)\d+", lambda x: x.group(1) + str(nw), u)
+                if H: v = re.sub(r"([?&](?:amp;)?h=)\d+", lambda x: x.group(1) + str(round(H * nw / W)), v)
+                cands.append(f"{v} {nw}w")
+        cands.append(f"{u} {W}w")
+        return tag.replace("<img ", f'<img srcset="{", ".join(cands)}" sizes="(max-width: 760px) 100vw, 50vw" ', 1)
+    doc = re.sub(r"<img [^>]*>", srcset, doc)
     rob = '<meta name="robots" content="noindex">'
     if doc.count(rob) > 1:
         i = doc.index(rob) + len(rob)
