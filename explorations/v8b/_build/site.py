@@ -33,7 +33,8 @@ def esc(t):
 
 
 # ——— Page d'accueil : navigation, héros, liens vers les pages ———
-home = (ROOT / "index.html").read_text(encoding="utf-8")
+# La source de l'accueil est _build/home.src.html ; index.html est le fichier généré.
+home = (ROOT / "_build" / "home.src.html").read_text(encoding="utf-8")
 
 NAV = [("Métiers", "/metiers/"), ("Google Ads", "/google-ads/"), ("Meta Ads", "/meta-ads/"),
        ("Qui sommes-nous", "/qui-sommes-nous/"), ("Blog", "/blog/"), ("Questions", "/#faq"), ("Particuliers", "/devis-travaux/")]
@@ -278,7 +279,6 @@ EXTRA_CSS = """<style>
 .pg-text .lead{font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.5;max-width:36ch}
 .pg-text .actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem}
 .pg-photo{grid-column:3 / 5;aspect-ratio:4 / 3}
-.pg-photo img{filter:grayscale(1) contrast(1.05)}
 .crumbs{display:flex;flex-wrap:wrap;gap:.5rem;font-size:.85rem;color:var(--soft)}
 .crumbs a{color:inherit}
 .kick{font-size:.88rem;color:var(--accent)}
@@ -499,8 +499,9 @@ META_MOCK = f"""<figure class="pg-photo mk" aria-label="Exemple d’annonce Face
 </figure>"""
 
 from anim import meta_anim, google_anim, ANIM_CSS, ANIM_JS
-GOOGLE_ANIM = google_anim(ROOF_URL) + ANIM_JS
-META_ANIM = meta_anim(ROOF_URL) + ANIM_JS
+ROOF_AD = re.sub(r"w=\d+", "w=720", re.sub(r"h=\d+", "h=480", ROOF_URL)) + "&amp;bc=color"
+GOOGLE_ANIM = google_anim(ROOF_AD) + ANIM_JS
+META_ANIM = meta_anim(ROOF_AD) + ANIM_JS
 EXTRA_CSS = EXTRA_CSS.replace("</style>", ANIM_CSS + "</style>", 1)
 
 PHOTO = {"couverture": "Un couvreur pose", "facade": "Une façade en rénovation", "menuiserie-exterieure": "Un menuisier pose",
@@ -744,10 +745,12 @@ nf = nf.replace('href="#contact"', 'href="/#contact"')
 nf = re.sub(r'<link rel="canonical"[^>]*>\n?', "", nf)
 (ROOT / "404.html").write_text(nf, encoding="utf-8")
 
-# ——— Passe finale sur toutes les pages : images différées, une seule balise robots ———
-for f in ROOT.rglob("*.html"):
-    if f.name == "8b-original.html" or "_build" in f.parts or "_video" in f.parts:
-        continue
+# ——— Passe finale sur toutes les pages : images différées et hébergées chez nous, une seule balise robots ———
+import images as IMG
+PAGES_OUT = sorted(f for f in ROOT.rglob("*.html") if not (f.name == "8b-original.html" or "_build" in f.parts or "_video" in f.parts))
+for f in PAGES_OUT:
+    IMG.scan(f.read_text(encoding="utf-8"))
+for f in PAGES_OUT:
     doc = f.read_text(encoding="utf-8")
     first = doc.find("<img ", doc.find("<main>") if "<main>" in doc else 0)
     def lazy(m):
@@ -775,6 +778,7 @@ for f in ROOT.rglob("*.html"):
         sz = "" if "sizes=" in tag else ' sizes="(max-width: 760px) 100vw, 50vw"'
         return tag.replace("<img ", f'<img srcset="{", ".join(cands)}"{sz} ', 1)
     doc = re.sub(r"<img [^>]*>", srcset, doc)
+    doc = IMG.localize(doc, SITE).replace('<link rel="preconnect" href="https://images.unsplash.com">\n', "")
     rob = '<meta name="robots" content="noindex">'
     if doc.count(rob) > 1:
         i = doc.index(rob) + len(rob)

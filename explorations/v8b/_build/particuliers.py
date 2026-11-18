@@ -360,7 +360,7 @@ CSS = """<style id="pf-css">
 .pf-trades{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);margin:0;padding:0 var(--cell);list-style:none}
 .pf-trade{display:flex;flex-direction:column;gap:.6rem;min-width:0}
 .pf-trade figure{aspect-ratio:4 / 3;margin:0 0 .4rem}
-.pf-trade img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.pf-trade img{width:100%;height:100%;object-fit:cover}
 .pf-trade h3{font:400 1.35rem/1.15 var(--f-display);letter-spacing:-.02em}
 .pf-trade p{font-size:.92rem;line-height:1.45;color:var(--muted);flex:1}
 .pf-pick.link{align-self:flex-start;font-size:.92rem;white-space:normal}
@@ -678,7 +678,7 @@ CSS_TRADE = """<style id="pf-css-2">
 .pf-more{margin-top:8px;display:inline-block;font-size:.88rem}
 .pf-prices li{display:flex;flex-direction:column;gap:4px}
 .pf-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,48px);padding:0 var(--cell);align-items:start}
-.pf-ph{aspect-ratio:4 / 3;margin:0}.pf-ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.pf-ph{aspect-ratio:4 / 3;margin:0}.pf-ph img{width:100%;height:100%;object-fit:cover}
 .pf-needs{grid-template-columns:1fr 1fr;padding:0}
 .pf-refbox{display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:56ch;padding:0 var(--cell)}
 .pf-refbox .pf-ref{font:400 clamp(1.3rem,2vw,1.7rem)/1.25 var(--f-display);letter-spacing:-.01em}
