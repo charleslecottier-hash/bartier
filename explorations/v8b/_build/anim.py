@@ -8,13 +8,13 @@ PHONE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d
 
 
 def _browser():
-    return f'<div class="br"><span class="br-x">✕</span><span class="br-url">{LOCK}toitures-martin.fr</span><span class="br-x">⋯</span></div>'
+    return f'<div class="br"><span class="br-x">✕</span><span class="br-url">{LOCK}toitures-lemaire.fr</span><span class="br-x">⋯</span></div>'
 
 
 def _lp(roof, kick, title):
     return f"""<div class="sc sc-lp">{_browser()}
       <div class="lp-body">
-        <div class="lp-hero"><img src="{roof}" alt="" loading="lazy" width="720" height="480"><span class="lp-logo">Toitures Martin</span></div>
+        <div class="lp-hero"><img src="{roof}" alt="" loading="lazy" width="720" height="480"><span class="lp-logo">Toitures Lemaire</span></div>
         <div class="lp-in">
           <p class="lp-kick">{kick}</p>
           <p class="lp-h">{title}</p>
@@ -59,7 +59,7 @@ def _done(summary):
 
 
 CALL = f"""<div class="sc sc-call" data-dark>
-      <div class="cl-top"><p class="cl-sub">Appel mobile…</p><p class="cl-name">Toitures Martin</p><p class="cl-sub">Amiens</p><p class="cl-chip">Demande envoyée il y a 3 min</p></div>
+      <div class="cl-top"><p class="cl-sub">Appel mobile…</p><p class="cl-name">Toitures Lemaire</p><p class="cl-sub">Amiens</p><p class="cl-chip">Demande envoyée il y a 3 min</p></div>
       <p class="cl-live">Rendez-vous de visite<br><b>jeudi 10 h, à votre domicile</b></p>
       <div class="cl-btns"><span class="cl-b is-no">{PHONE}<small>Refuser</small></span><span class="cl-b is-ok">{PHONE}<small>Accepter</small></span></div>
     </div>"""
@@ -86,7 +86,7 @@ def meta_anim(roof):
       <div class="fd-list">
         <div class="fd-ghost"><p class="fd-who"><i></i><span><b></b><small></small></span></p><p class="fd-l"></p><p class="fd-l is-s"></p><div class="fd-pic"></div></div>
         <div class="ad">
-          <p class="fd-who"><span class="av">TM</span><span><b>Toitures Martin</b><small>Sponsorisé · Amiens</small></span></p>
+          <p class="fd-who"><span class="av">TL</span><span><b>Toitures Lemaire</b><small>Sponsorisé · Amiens</small></span></p>
           <p class="ad-t">Votre toiture a plus de 15 ans&nbsp;? Avant l’hiver, faites-la vérifier par un couvreur de votre secteur. Visite et chiffrage offerts.</p>
           <div class="ad-img"><img src="{roof}" alt="" loading="lazy" width="720" height="480"></div>
           <div class="ad-link"><span><small>TOITURES-MARTIN.FR</small><b>Visite gratuite à domicile</b></span><em class="ad-cta">Demander une visite</em></div>
@@ -118,7 +118,7 @@ def google_anim(roof):
       <p class="gs-tabs"><b>Tous</b><span>Maps</span><span>Images</span><span>Actualités</span></p>
       <div class="gs-ad">
         <p class="gs-spon">Sponsorisé</p>
-        <p class="gs-site"><span class="av">TM</span><span><b>Toitures Martin</b><small>toitures-martin.fr › devis</small></span></p>
+        <p class="gs-site"><span class="av">TL</span><span><b>Toitures Lemaire</b><small>toitures-lemaire.fr › devis</small></span></p>
         <p class="gs-title">Réfection de toiture à Amiens · Devis gratuit sous 48 h</p>
         <p class="gs-desc">Couvreur local, garantie décennale. Visite et chiffrage offerts, rappel en 5 minutes.</p>
         <p class="gs-links"><span>Prix d’une réfection</span><span>Nos chantiers</span></p>

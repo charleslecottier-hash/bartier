@@ -37,7 +37,7 @@ PILLAR = dict(
     title="Comment trouver des chantiers : 8 canaux comparés",
     desc="Les 8 canaux pour trouver des chantiers quand on est artisan, comparés par coût du chantier signé : bouche-à-oreille, fiche Google, plateformes, annonces.",
     h1="Comment trouver des chantiers quand on est artisan",
-    lead="Un artisan du bâtiment trouve ses chantiers par 8 canaux : le bouche-à-oreille, la fiche Google, les plateformes de devis, les apporteurs d'affaires, la sous-traitance, les annonces locales, les flyers et panneaux de chantier, et les réseaux professionnels. Le bon canal n'est pas le moins cher par demande : c'est celui dont le coût par chantier signé est le plus bas.",
+    lead="Un artisan du bâtiment trouve ses chantiers par 8 canaux : le bouche-à-oreille, la fiche Google, les plateformes de devis, les apporteurs d'affaires, la sous-traitance, les annonces locales, les flyers et panneaux de chantier, et les réseaux professionnels. Le bon canal est celui qui vous coûte le moins par chantier signé.",
     body=f"""
 <h2>Les 8 canaux pour trouver des chantiers</h2>
 <p>Pour comparer deux canaux, trois questions suffisent : ce que vous payez, à combien d'entreprises la même demande est proposée, et qui rappelle le propriétaire.</p>
@@ -96,7 +96,7 @@ PILLAR = dict(
 
 <h2>Où se perdent les chantiers après la demande ?</h2>
 <ol>
-<li><b>Le rappel tardif</b> : une demande rappelée le soir a pu parler entre-temps à un concurrent.</li>
+<li><b>Le rappel tardif</b> : un propriétaire rappelé le soir a pu parler entre-temps à un concurrent.</li>
 <li><b>La visite inutile</b> : un locataire, un projet pour dans trois ans, une commune hors zone. Quelques questions au téléphone l'évitent.</li>
 <li><b>Le devis envoyé tard</b> : plus il arrive tard, plus le propriétaire a reçu d'autres devis.</li>
 <li><b>Le devis jamais relancé</b> : un appel et un SMS suffisent souvent. Voir <a href="/blog/relance-devis-artisan/">la relance de devis</a>.</li>
@@ -108,14 +108,14 @@ PILLAR = dict(
 
 <h2>Notre approche, et ses limites</h2>
 <p>Bartier & Co combine deux canaux de cette liste, les annonces locales sur Google et sur Facebook et Instagram, avec l'étape où beaucoup de chantiers se perdent : le rappel. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda. Un seul artisan par métier et par secteur.</p>
-<p>Ce n'est pas un remplacement du bouche-à-oreille : c'est un flux en plus, sans durée d'engagement. <a href="/#services">Voir comment ça marche</a>.</p>
+<p>Le bouche-à-oreille reste votre premier canal. Nos annonces vous apportent des demandes en plus, sans durée d'engagement. <a href="/#services">Voir comment ça marche</a>.</p>
 """,
     faq=[
         ("Quel est le meilleur site pour trouver des chantiers ?", "Aucun site n'est le meilleur pour tous les artisans. Comparez trois points : à combien d'entreprises la même demande est proposée, qui rappelle le propriétaire, et combien vous coûte un chantier signé."),
         ("Comment trouver des chantiers gratuitement ?", "Par le bouche-à-oreille, une fiche Google complète avec des avis, un panneau sur chaque chantier et des prescripteurs comme les architectes. C'est gratuit en argent, mais cela demande du temps et plusieurs mois."),
         ("Comment trouver des chantiers chez les particuliers ?", "Visez les propriétaires de votre secteur : la fiche Google et les annonces Google pour ceux qui cherchent déjà, les annonces Facebook et Instagram et les flyers pour ceux qui y pensent. Depuis août 2026, ne les appelez que s'ils l'ont demandé."),
         ("Faut-il payer pour avoir des chantiers ?", "Non, mais les canaux gratuits sont lents. Payer a du sens quand le coût par chantier signé reste nettement inférieur à votre marge sur le chantier."),
-        ("Combien de temps faut-il pour remplir son agenda ?", "Cela dépend du canal, du métier et de la saison. Le bouche-à-oreille et la fiche Google demandent des mois. Des annonces locales donnent des demandes dès qu'elles tournent, à condition de les rappeler vite."),
+        ("Combien de temps faut-il pour remplir son agenda ?", "Cela dépend du canal, du métier et de la saison. Le bouche-à-oreille et la fiche Google demandent des mois. Des annonces locales apportent des demandes dès leur lancement, à condition de rappeler chaque demande vite."),
         ("Les plateformes de devis valent-elles le coup ?", "Cela dépend de leurs conditions. Avant de signer, demandez à combien d'artisans chaque demande est envoyée, la durée d'engagement, le prix réel et ce qui se passe pour une demande non valable."),
     ],
 )
@@ -129,7 +129,7 @@ HP = dict(
     h1="Habitatpresto Pro : ce que disent ses conditions, côté artisan",
     lead="Habitatpresto Pro fonctionne par abonnement mensuel, avec des frais de mise en service. Le prix n'est pas publié : il dépend des départements et des catégories choisis. L'engagement initial est de 6 ou 12 mois, et chaque demande de devis est d'abord envoyée à 5 professionnels, puis à 5 autres.",
     body=f"""
-<p>Cette fiche résume les documents publiés par Habitatpresto, consultés le 18 novembre 2026. Elle ne donne pas d'avis. Si une information a changé, <a href="mailto:contact@bartierandco.com">écrivez-nous</a> : nous corrigeons.</p>
+<p>Cette page résume les documents publiés par Habitatpresto, consultés le 18 novembre 2026. Elle ne donne pas d'avis. Si une information a changé, <a href="mailto:contact@bartierandco.com">écrivez-nous</a> : nous corrigeons.</p>
 
 <h2>Comment fonctionne Habitatpresto Pro ?</h2>
 <table>
@@ -197,7 +197,7 @@ PLUS = {
 <tr><td>Coût par chantier signé</td><td>500 €</td><td>300 €</td></tr>
 </tbody>
 </table>
-<p>Ajoutez votre temps : chaque demande se rappelle, et chaque visite inutile coûte une demi-journée.</p>
+<p>Ajoutez votre temps : chaque demande doit être rappelée, et chaque visite inutile coûte une demi-journée.</p>
 
 <h2>Que vérifier dans le contrat ?</h2>
 <ul>
@@ -227,7 +227,7 @@ PLUS = {
 <table>
 <thead><tr><th></th><th>Google Ads</th><th>Meta Ads (Facebook, Instagram)</th></tr></thead>
 <tbody>
-<tr><td>La demande</td><td>Exprimée : le propriétaire cherche</td><td>Suscitée : il n'a pas encore cherché</td></tr>
+<tr><td>La demande</td><td>Le propriétaire cherche déjà</td><td>Le propriétaire n'a pas encore cherché</td></tr>
 <tr><td>Typiquement</td><td>Urgences, projets mûrs</td><td>Rénovation, entretien, projets à venir</td></tr>
 <tr><td>Le ciblage</td><td>Les recherches, dans vos communes</td><td>Un rayon autour de votre dépôt</td></tr>
 <tr><td>Le point clé</td><td>Écarter les recherches inutiles</td><td>Trier les demandes au téléphone</td></tr>
@@ -264,7 +264,7 @@ PLUS = {
 <ol>
 <li><b>Demandez à quoi il est comparé</b> : un autre devis, un budget, un prix vu en ligne.</li>
 <li><b>Comparez poste par poste</b> : matériaux, surface, échafaudage, évacuation des déchets, garanties.</li>
-<li><b>Proposez une option, pas une remise</b> : un autre matériau, une partie des travaux plus tard.</li>
+<li><b>Proposez une autre option plutôt qu'une remise</b> : un autre matériau, une partie des travaux plus tard.</li>
 <li><b>Rappelez ce qui est inclus</b> : la visite, la garantie décennale, le délai.</li>
 </ol>
 
@@ -273,7 +273,7 @@ PLUS = {
 <p class="src">{src("devis", "decennale")}</p>
 
 <h2>Un modèle de relance par e-mail</h2>
-<blockquote>Objet : votre devis de toiture<br>Bonjour Madame Durand, je reviens vers vous au sujet du devis envoyé le 4 mars pour la réfection de votre toiture. Avez-vous des questions sur les matériaux ou le délai ? Je peux vous rappeler à l'heure qui vous arrange. Bien cordialement, Julien, Martin Couverture.</blockquote>
+<blockquote>Objet : votre devis de toiture<br>Bonjour Madame Durand, je reviens vers vous au sujet du devis envoyé le 4 mars pour la réfection de votre toiture. Avez-vous des questions sur les matériaux ou le délai ? Je peux vous rappeler à l'heure qui vous arrange. Bien cordialement, Julien, Lemaire Couverture.</blockquote>
 <p>Comme pour les SMS, les noms sont des exemples.</p>
 
 """,

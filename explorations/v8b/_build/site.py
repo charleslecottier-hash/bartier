@@ -579,7 +579,7 @@ COMPARE = """<section class="sheet" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Deux canaux, deux demandes</h2><p>Google capte ceux qui cherchent déjà. Meta touche ceux qui n'ont pas encore cherché. Nous choisissons selon votre métier et votre secteur.</p></div>
   <div class="sp-table" role="table" aria-label="Google Ads et Meta Ads">
     <div class="sp-row is-head" role="row"><span role="columnheader"></span><span role="columnheader">Google Ads</span><span role="columnheader">Meta Ads</span></div>
-    <div class="sp-row" role="row"><span role="rowheader">La demande</span><span role="cell">Exprimée : le propriétaire cherche</span><span role="cell">Suscitée : il n'a pas encore cherché</span></div>
+    <div class="sp-row" role="row"><span role="rowheader">La demande</span><span role="cell">Le propriétaire cherche déjà</span><span role="cell">Le propriétaire n'a pas encore cherché</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Typiquement</span><span role="cell">Urgences, projets mûrs</span><span role="cell">Rénovation, entretien, projets à venir</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le volume</span><span role="cell">Limité aux recherches locales</span><span role="cell">Tous les propriétaires du rayon</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le point clé</span><span role="cell">Écarter les recherches inutiles</span><span role="cell">Trier au téléphone</span></div>
@@ -593,7 +593,7 @@ GOOGLE_MOCK = """<figure class="pg-photo mk" aria-label="Exemple d’annonce sur
     <div class="mk-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>couvreur amiens</span><i></i></div>
     <div class="mk-res is-ad">
       <p class="mk-spon">Sponsorisé</p>
-      <p class="mk-site"><span class="mk-fav">TM</span><span><b>Toitures Martin</b><small>toitures-martin.fr › rendez-vous</small></span></p>
+      <p class="mk-site"><span class="mk-fav">TL</span><span><b>Toitures Lemaire</b><small>toitures-lemaire.fr › rendez-vous</small></span></p>
       <p class="mk-title">Couvreur à Amiens · Visite et devis gratuits</p>
       <p class="mk-desc">Réfection, zinguerie, démoussage. Entreprise locale, garantie décennale. Rappel en 5 minutes.</p>
       <p class="mk-links"><span>Réfection de toiture</span><span>Fuite urgente</span><span>Nos chantiers</span></p>
@@ -608,10 +608,10 @@ META_MOCK = f"""<figure class="pg-photo mk" aria-label="Exemple d’annonce Face
   <div class="mk-phone">
     <div class="mk-notch"></div>
     <div class="mk-post">
-      <p class="mk-site"><span class="mk-fav">TM</span><span><b>Toitures Martin</b><small>Sponsorisé · Amiens</small></span></p>
+      <p class="mk-site"><span class="mk-fav">TL</span><span><b>Toitures Lemaire</b><small>Sponsorisé · Amiens</small></span></p>
       <p class="mk-text">Votre toiture a plus de 15 ans&nbsp;? Faites-la vérifier par un couvreur de votre secteur. Visite et chiffrage offerts.</p>
       <div class="mk-img"><img src="{ROOF_URL}" alt="" loading="lazy"></div>
-      <div class="mk-cta"><span><small>toitures-martin.fr</small><b>Visite gratuite à domicile</b></span><em>Demander une visite</em></div>
+      <div class="mk-cta"><span><small>toitures-lemaire.fr</small><b>Visite gratuite à domicile</b></span><em>Demander une visite</em></div>
       <p class="mk-react"><span>👍 ❤️ 48</span><span>12 commentaires</span></p>
     </div>
   </div>
@@ -632,9 +632,11 @@ paths = ["/"]
 for t in TRADES:
     path = f"/metiers/{t['slug']}/"
     short = f"Des propriétaires qui préparent {PROJECT[t['slug']]}. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda."
-    meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes, visite dans votre agenda."
+    meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en moins de 5 minutes, visite dans votre agenda."
     if len(meta_desc) > 158:  # descriptions courtes : la phrase s'arrête au rappel
-        meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes."
+        meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en moins de 5 minutes."
+    if len(meta_desc) > 158:  # encore trop longue : « Trouvez des chantiers » devient « Chantiers »
+        meta_desc = meta_desc.replace("Trouvez des chantiers", "Chantiers", 1)
     angles = "\n".join(f"""    <li><div class="ad-card"><p class="ad-meta">Votre entreprise · Sponsorisé</p><p class="ad-angle">{a}</p><p class="ad-text">{b}</p><p class="ad-cta">Demander une visite</p></div></li>""" for a, b in t["angles"])
     trade_faq = t["faq"] + [("Combien ça coûte ?", "Un devis personnalisé, en fonction de vos objectifs. Martin vous le présente pendant l'appel de 15 minutes, et vous décidez ensuite, à tête reposée."),
                             ("Faut-il s'engager sur une durée ?", "Non, aucune durée minimale. Vous restez libre d'arrêter quand vous le souhaitez."),
@@ -651,7 +653,7 @@ for t in TRADES:
     </div>
   </div>
 </section>""",
-        cols(t["problems"], "Le métier est bon. Les demandes, moins.", "Ce que nous entendons chez les artisans de votre métier."),
+        cols(t["problems"], "Le métier est bon. Les demandes, moins.", "Ce qui coince souvent dans votre métier."),
         f"""<section class="sheet" id="appel" data-tone="dark">
   <div class="grid sp-split">
     <div><h2 data-split>Ce que nous vérifions avant votre visite</h2><p>Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.</p></div>
@@ -737,8 +739,8 @@ write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
       "\n\n".join([
           top("Google Ads", "Apparaissez sur Google quand vos clients cherchent un artisan.", "Un propriétaire tape « couvreur » et sa ville : il voit votre annonce. Nous rappelons chaque demande en moins de 5 minutes.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_ANIM),
           cols([("Les urgences", "Fuite, tuiles envolées, gouttière arrachée : le propriétaire veut quelqu'un tout de suite."),
-                ("Les projets déjà avancés", "Le propriétaire compare des entreprises. Être visible et rappeler vite fait la différence."),
-                ("Les secteurs où l'on cherche beaucoup", "Assez de recherches autour de chez vous pour que la campagne tourne toute l'année.")],
+                ("Les projets déjà avancés", "Le propriétaire compare des entreprises. Celle qui le rappelle la première a souvent la visite."),
+                ("Les secteurs où les recherches sont nombreuses", "Assez de recherches autour de chez vous pour que la campagne tourne toute l'année.")],
                "Quand choisir Google ?", "Quand le propriétaire cherche déjà un artisan : il faut être visible, et le rappeler avant les autres."),
           split("Une campagne réglée sur mesure", "Chaque clic coûte. L'essentiel du travail consiste à écarter ceux qui ne deviendront jamais des devis signés.",
                 ["Campagnes par métier et par commune de votre zone", "Recherches inutiles exclues : gratuit, pas cher, emploi, formation, bricolage",
@@ -764,7 +766,7 @@ write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & 
                 ("Avec vos vraies photos", "Vos chantiers et votre équipe : rien ne convainc mieux un voisin."),
                 ("Au bon moment de l'année", "Après les intempéries, avant l'hiver, au printemps pour la rénovation.")],
                "Des annonces à votre nom", "Avec vos chantiers, montrées à vos futurs clients."),
-          split("Chaque demande vérifiée au téléphone", "Une demande Facebook n'est qu'un début. Le tri se fait au téléphone, pas dans votre agenda.",
+          split("Chaque demande vérifiée au téléphone", "Nous appelons chaque personne qui répond à l'annonce. Seuls les projets sérieux arrivent dans votre agenda.",
                 ["Formulaire avec questions de tri et accord explicite d'être recontacté", "Preuve du consentement conservée pour chaque demande",
                  "Rappel en moins de 5 minutes, en semaine de 8 h à 19 h", "Propriétaire, projet, commune et délai vérifiés",
                  "Rendez-vous dans votre agenda, rappels la veille et deux heures avant", "Flyers dans les rues voisines de chaque chantier signé"], tone="paper"),
@@ -881,7 +883,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
     </div>
   </div>
 </section>""",
-          cols([("Un interlocuteur, pas un standard", "Vous avez le numéro direct de Martin. Il vous répond sous un jour ouvré."),
+          cols([("Un seul interlocuteur", "Vous avez le numéro direct de Martin. Il vous répond sous un jour ouvré."),
                 ("Des engagements écrits", "Exclusivité, un seul artisan par métier et par secteur, rappel en moins de 5 minutes en semaine, aucune durée minimale. Tout est dans le contrat."),
                 ("Des chiffres vérifiables", "Le budget est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
                "Comment nous travaillons", "", tone="paper"),
@@ -915,7 +917,7 @@ paths.append("/qui-sommes-nous/")
 import questions as QS
 _qs_all = [qa for g in QS.GROUPS for qa in g[3]]
 write("/questions/", "Questions fréquentes des artisans | Bartier & Co",
-      "Prix, engagement, publicité, exclusivité, rappel en 5 minutes, cadre légal : les réponses aux questions des artisans du bâtiment.",
+      "Prix, engagement, publicité, exclusivité, rappel en moins de 5 minutes, cadre légal : les réponses aux questions des artisans du bâtiment.",
       "\n\n".join([
           top("Questions", "Vos questions, nos réponses", "Ce que les artisans nous demandent avant de commencer : la méthode, le prix, les engagements et le cadre légal.", crumbs(("Questions", "/questions/"))),
           *[faq(items, title=title, aside=intro, sid=sid) for sid, title, intro, items in QS.GROUPS],
@@ -1016,7 +1018,7 @@ def guide(G, kick, crumb_items, faq_title, links):
 _art = {x["slug"]: (x["short"], f"/blog/{x['slug']}/") for x in ARTICLES}
 guide(CT.PILLAR, "Guide", [("Trouver des chantiers", CT.PILLAR["path"])], "Vos questions sur la recherche de chantiers",
       [_art["google-ads-ou-meta-ads-artisan"], _art["relance-devis-artisan"], _art["lead-partage-lead-exclusif-rendez-vous-qualifie"], ("Lexique des chantiers et des travaux", "/lexique/")])
-guide(CT.HP, "Fiche plateforme", [("Trouver des chantiers", CT.PILLAR["path"]), ("Habitatpresto Pro", CT.HP["path"])], "Habitatpresto Pro : vos questions",
+guide(CT.HP, "Plateforme de devis", [("Trouver des chantiers", CT.PILLAR["path"]), ("Habitatpresto Pro", CT.HP["path"])], "Habitatpresto Pro : vos questions",
       [("Comment trouver des chantiers : 8 canaux comparés", CT.PILLAR["path"]), _art["lead-partage-lead-exclusif-rendez-vous-qualifie"], ("Lexique des chantiers et des travaux", "/lexique/")])
 
 # ——— Pages légales : _build/legal/<slug>.html (fragment HTML, métadonnées JSON en commentaire sur la première ligne) ———
@@ -1125,7 +1127,7 @@ lx_body = "\n\n".join([
     </div>
   </div>
 </section>""",
-    more("Passer à l'action", "Toutes les questions fréquentes", "/questions/", [("Vous êtes artisan : vérifier votre secteur", "/#contact"), ("Vous êtes propriétaire : décrire vos travaux", "/devis-travaux/")]),
+    more("Passer à l'action", "Toutes les questions fréquentes", "/questions/", [("Vous êtes artisan : vérifier si votre secteur est libre", "/#contact"), ("Vous êtes propriétaire : décrire vos travaux", "/devis-travaux/")]),
 ])
 _lx_clean = lambda s: re.sub("<[^>]+>", "", fr(s))
 write_plain("/lexique/", "Lexique des chantiers et des travaux | Bartier & Co",
@@ -1145,7 +1147,7 @@ nf_body = """<section class="sheet pg-top" data-tone="light">
     <div class="pg-text">
       <p class="kick">Erreur 404</p>
       <h1>Cette page n’existe pas.</h1>
-      <p class="lead">Vous cherchiez peut-être l’une de ces deux portes d’entrée.</p>
+      <p class="lead">Vous êtes propriétaire ou artisan ? Voici par où continuer.</p>
       <div class="actions"><a class="btn" href="/devis-travaux/"><span>Décrire mes travaux</span></a><a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener">Réserver un appel</a></div>
     </div>
   </div>
@@ -1175,6 +1177,7 @@ def typo(doc):
     for i in range(0, len(parts), 2):
         if parts[i].strip():
             parts[i] = re.sub(r" ([;:?!»])", r"&nbsp;\1", parts[i]).replace("« ", "«&nbsp;").replace("'", "’")
+            parts[i] = re.sub(r"(\d) (h|min|minutes|heures|jours|km|ans|mois|%|€)(?![\w])", r"\1&nbsp;\2", parts[i])
     return "".join(parts)
 
 

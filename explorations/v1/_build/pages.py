@@ -170,7 +170,7 @@ COMPARE = """<section class="section">
     <div class="head"><p class="kicker">Google ou Meta</p><h2>Deux canaux, deux demandes différentes.</h2></div>
     <div class="table" role="table" aria-label="Google Ads et Meta Ads">
       <div class="t-row t-head" role="row"><span role="columnheader"></span><span role="columnheader">Google Ads</span><span role="columnheader">Meta Ads</span></div>
-      <div class="t-row" role="row"><span role="rowheader">La demande</span><span role="cell">Exprimée : le propriétaire cherche déjà</span><span role="cell">Suscitée : il n'a pas encore cherché</span></div>
+      <div class="t-row" role="row"><span role="rowheader">La demande</span><span role="cell">Le propriétaire cherche déjà</span><span role="cell">Le propriétaire n'a pas encore cherché</span></div>
       <div class="t-row" role="row"><span role="rowheader">Typiquement</span><span role="cell">Urgences, projets mûrs</span><span role="cell">Rénovation, entretien, projets à venir</span></div>
       <div class="t-row" role="row"><span role="rowheader">Le volume</span><span role="cell">Limité aux recherches locales</span><span role="cell">Tous les propriétaires du rayon</span></div>
       <div class="t-row" role="row"><span role="rowheader">Le point clé</span><span role="cell">Filtrer les recherches inutiles</span><span role="cell">Qualifier au téléphone</span></div>
@@ -221,7 +221,7 @@ page("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
 # ——— Meta Ads ———
 META_FAQ = [
     ("Faut-il une page Facebook ?", "Oui, à votre nom. Si vous n'en avez pas, nous la créons avec vous pendant la mise en place."),
-    ("Quel budget prévoir ?", "Il dépend de votre secteur et du nombre de rendez-vous que vous pouvez absorber. Nous l'estimons ensemble. Vous le payez directement à Meta."),
+    ("Quel budget prévoir ?", "Il dépend de votre secteur et du nombre de visites que vous pouvez prendre en plus. Nous l'estimons ensemble. Vous le payez directement à Meta."),
     ("Est-ce légal de rappeler ces personnes ?", "Oui. Le formulaire demande leur accord explicite pour être recontactées par votre entreprise, et la preuve est conservée. Nous ne démarchons personne."),
     ("Les demandes Facebook sont-elles sérieuses ?", "Pas toutes. C'est pourquoi chaque demande est rappelée et vérifiée avant d'arriver dans votre agenda : propriétaire, projet, commune, délai."),
     ("Dans quel rayon les annonces sont-elles diffusées ?", "En général 25 à 40 km autour de votre dépôt, réglés commune par commune selon les chantiers que vous voulez."),
@@ -325,7 +325,7 @@ ARTICLES = [
 <p>La demande n'est vendue qu'à vous. C'est mieux, mais vérifiez ce que recouvre le mot. Exclusif pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c'est vous, le soir, la demande a souvent refroidi.</p>
 
 <h2>Le rendez-vous qualifié : ce qui a été vérifié</h2>
-<p>Quelqu'un a rappelé le propriétaire, vérifié qu'il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez une visite dans votre agenda, pas un nom à rappeler.</p>
+<p>Quelqu'un a rappelé le propriétaire, vérifié qu'il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez directement une visite dans votre agenda, sans personne à rappeler.</p>
 
 <h2>Demande partagée, demande exclusive, rendez-vous qualifié : le comparatif</h2>
 <table>
@@ -366,7 +366,7 @@ ARTICLES = [
 <p>Une fuite après un coup de vent se cherche sur Google. Une toiture qui verdit, des fenêtres de vingt ans ou une façade fatiguée sont des projets que le propriétaire repousse : une annonce bien placée les fait avancer.</p>
 
 <h2>Combien coûte une campagne : ce qui dépend de vous</h2>
-<p>Sur Google, le prix du clic dépend du métier et de la concurrence locale. Sur Meta, le budget se règle librement, mais toutes les demandes ne sont pas sérieuses. Dans les deux cas, le vrai coût est celui du <a href="/lexique/#cout-par-chantier-signe">chantier signé</a>, pas celui du clic.</p>
+<p>Sur Google, le prix du clic dépend du métier et de la concurrence locale. Sur Meta, le budget se règle librement, mais toutes les demandes ne sont pas sérieuses. Dans les deux cas, comptez ce que vous coûte un <a href="/lexique/#cout-par-chantier-signe">chantier signé</a>.</p>
 
 <h2>Ce que chaque canal exige après le clic</h2>
 <ul>
@@ -385,25 +385,25 @@ ARTICLES = [
         "tag": "Méthode",
         "title": "Relance de devis : calendrier, SMS et script d'appel pour artisans",
         "short": "Relance de devis : le calendrier, les SMS et le script",
-        "desc": "Un devis de plusieurs milliers d'euros se relance. Un calendrier simple, trois SMS prêts à copier et un script d'appel de deux minutes.",
+        "desc": "Un devis de rénovation se relance. Un calendrier simple, trois SMS prêts à copier et un script d'appel de deux minutes.",
         "minutes": 5,
         "body": """
-<p class="answer">Relancez un devis de rénovation <b>par un appel</b>, quelques jours après l'envoi, puis <b>par SMS</b> si vous n'avez pas de réponse. Arrêtez après trois tentatives sans retour, en laissant la porte ouverte. Le but n'est pas d'insister : c'est de savoir où en est le projet.</p>
+<p class="answer">Relancez un devis de rénovation <b>par un appel</b>, quelques jours après l'envoi, puis <b>par SMS</b> si vous n'avez pas de réponse. Arrêtez après trois tentatives sans retour, en laissant la porte ouverte. Chaque relance sert à savoir où en est le projet.</p>
 
 <h2>Quand relancer un devis ?</h2>
 <table>
 <thead><tr><th>Quand</th><th>Quoi</th><th>Pourquoi</th></tr></thead>
 <tbody>
 <tr><td>Le jour de l'envoi</td><td>SMS court</td><td>Confirmer que le devis est bien arrivé</td></tr>
-<tr><td>Quelques jours après</td><td>Appel</td><td>Répondre aux questions avant qu'il compare</td></tr>
-<tr><td>Une semaine plus tard</td><td>SMS</td><td>Proposer un rappel au moment qui l'arrange</td></tr>
+<tr><td>Quelques jours après</td><td>Appel</td><td>Répondre aux questions avant que le client compare</td></tr>
+<tr><td>Une semaine plus tard</td><td>SMS</td><td>Proposer de rappeler le client au moment qui l'arrange</td></tr>
 <tr><td>Deux à trois semaines plus tard</td><td>Dernier SMS</td><td>Clore poliment et laisser la porte ouverte</td></tr>
 </tbody>
 </table>
 <p>Adaptez le rythme au projet : une urgence se relance plus vite qu'une rénovation prévue pour le printemps.</p>
 
 <h2>Trois SMS de relance prêts à copier</h2>
-<blockquote>Bonjour Madame Durand, c'est Julien de l'entreprise Martin Couverture. Je vous ai envoyé le devis pour votre toiture par e-mail. Dites-moi s'il est bien arrivé. Bonne journée.</blockquote>
+<blockquote>Bonjour Madame Durand, c'est Julien de l'entreprise Lemaire Couverture. Je vous ai envoyé le devis pour votre toiture par e-mail. Dites-moi s'il est bien arrivé. Bonne journée.</blockquote>
 <blockquote>Bonjour Madame Durand, avez-vous pu regarder le devis pour la toiture ? Je peux vous rappeler pour en parler, à l'heure qui vous arrange.</blockquote>
 <blockquote>Bonjour Madame Durand, je ne veux pas vous déranger davantage. Si le projet revient, je reste disponible. Bonne continuation.</blockquote>
 <p>Les noms sont des exemples. Gardez le vôtre, celui de l'entreprise, et le projet précis.</p>
@@ -590,7 +590,7 @@ art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['
 - Qu'est-ce qu'un rendez-vous qualifié ? Une visite déjà fixée chez un propriétaire dont le projet a été vérifié au téléphone : propriétaire, travaux, commune, délai.
 - Les demandes sont-elles partagées entre plusieurs artisans ? Non. Un seul artisan par métier et par secteur.
 - Y a-t-il une durée d'engagement ? Non, aucune durée minimale.
-- Combien coûte le service pour un artisan ? Le prix dépend du métier et du secteur ; il est donné pendant un appel de 15 minutes. Le budget publicitaire est payé directement à Meta ou à Google.
+- Combien coûte le service pour un artisan ? Un devis personnalisé, en fonction des objectifs de l'artisan, présenté pendant un appel de 15 minutes. Le budget publicitaire est payé directement à Meta ou à Google.
 - Est-ce gratuit pour un particulier ? Oui. La mise en relation, la visite et le devis de l'artisan sont gratuits pour le propriétaire.
 - Quand Bartier & Co rappelle-t-il ? En moins de 5 minutes, du lundi au vendredi de 8 h à 19 h ; en dehors de ces horaires, dès la réouverture.
 
@@ -606,7 +606,7 @@ Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et dev
 {art_lines}
 
 ## Faits utiles
-- Les prix ne sont pas publiés : ils dépendent du métier et du secteur, et sont donnés pendant un appel de 15 minutes.
+- Les prix ne sont pas publiés : chaque artisan reçoit un devis personnalisé, en fonction de ses objectifs, pendant un appel de 15 minutes.
 - Le budget publicitaire est payé directement par l'artisan à Meta ou à Google.
 - Contact : contact@bartierandco.com
 - Facebook : https://www.facebook.com/profile.php?id=61596597124434
