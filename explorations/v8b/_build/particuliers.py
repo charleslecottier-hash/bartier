@@ -105,6 +105,18 @@ FAQ = [
      "Certains travaux de rénovation énergétique, comme l’isolation, peuvent ouvrir droit à des aides publiques s’ils sont réalisés par une entreprise certifiée RGE. Les conditions changent chaque année : vérifiez-les sur france-renov.gouv.fr et parlez-en lors de notre appel."),
     ("Où intervenez-vous ?",
      "Là où un artisan partenaire couvre votre commune. Sinon, nous vous le disons dès l’appel et votre demande n’est transmise à personne."),
+    ("Comment savoir si un artisan est sérieux ?",
+     "Vérifiez son immatriculation sur annuaire-entreprises.data.gouv.fr, demandez son attestation d’assurance décennale et un devis écrit et détaillé. Pour obtenir des aides, il doit être certifié RGE. Méfiez-vous des démarcheurs qui pressent ou annoncent un prix valable « aujourd’hui seulement »."),
+    ("Qu’est-ce que l’assurance décennale ?",
+     "C’est l’assurance qui couvre, pendant 10 ans après la fin des travaux, les dommages qui menacent la solidité du bâtiment ou le rendent impropre à son usage. Elle est obligatoire pour les artisans du bâtiment, et le nom de l’assureur doit figurer sur le devis."),
+    ("Faut-il une autorisation de la mairie pour ses travaux ?",
+     "Souvent, oui, dès que l’aspect extérieur change : matériau ou couleur de la toiture, façade, fenêtres. Il faut alors une déclaration préalable. Des travaux à l’identique n’en demandent en général pas, sauf en secteur protégé ou si votre commune l’impose : le service urbanisme de la mairie vous le confirme."),
+    ("Combien de devis faut-il demander ?",
+     "Aucune règle ne l’impose. Pour de gros travaux, comparer deux ou trois devis est courant. Avec nous, un artisan local vient chiffrer chez vous, et vous restez libre de demander d’autres devis."),
+    ("Quand l’artisan vient-il chez moi ?",
+     "La date de visite est fixée pendant notre appel, selon vos disponibilités et celles de l’artisan. Les fuites et dégâts urgents passent en priorité."),
+    ("Pouvez-vous me rappeler le soir ou le week-end ?",
+     "Nous rappelons du lundi au vendredi, de 8 h à 19 h. Une demande envoyée en dehors de ces horaires est traitée dès la réouverture, en priorité si c’est une urgence."),
     ("Que faites-vous de mes données ?",
      "Elles servent uniquement à traiter votre demande et à la transmettre à l’artisan retenu, à personne d’autre. Vous pouvez demander leur suppression à contact@bartierandco.com."),
 ]
@@ -545,7 +557,8 @@ PAGES = {
                ("Fuite et réparation", "Tuiles cassées ou déplacées, faîtage, solins, recherche de l’origine d’une fuite."),
                ("Zinguerie", "Gouttières, chéneaux, noues et descentes d’eau pluviale."),
                ("Démoussage et nettoyage", "Mousses et lichens retirés, état des tuiles vérifié au passage.")],
-        faq=[("Faut-il réparer ou refaire toute la toiture ?", "Quelques tuiles cassées ou une fuite localisée se réparent. Des fuites qui reviennent, une couverture poreuse ou une charpente abîmée imposent souvent une réfection. Le couvreur tranche lors de la visite."),
+        faq=[("Faut-il une autorisation pour refaire sa toiture ?", "À l’identique, en général non. Changer de matériau ou de couleur, ou créer une fenêtre de toit, demande une déclaration préalable en mairie, et davantage en secteur protégé."),
+             ("Faut-il réparer ou refaire toute la toiture ?", "Quelques tuiles cassées ou une fuite localisée se réparent. Des fuites qui reviennent, une couverture poreuse ou une charpente abîmée imposent souvent une réfection. Le couvreur tranche lors de la visite."),
              ("Faut-il démousser sa toiture ?", "Les mousses retiennent l’humidité et abîment les tuiles avec le temps. Un démoussage est aussi l’occasion de faire vérifier l’état de la couverture."),
              ("Combien de temps dure une réfection de toiture ?", "Cela dépend de la surface, de la météo et de l’état de la charpente. Le couvreur vous donne un délai dans son devis.")],
         brief="Un seul couvreur de votre secteur, choisi pour vos travaux de toiture : réfection, fuite, zinguerie ou démoussage. Visite et devis offerts."),
@@ -581,7 +594,8 @@ PAGES = {
                ("Traitement du bois", "Contre les insectes et les champignons, en curatif ou en préventif."),
                ("Extension et surélévation", "Nouvelle charpente pour agrandir ou créer un étage."),
                ("Charpente neuve", "Traditionnelle ou en fermettes, souvent avec la couverture.")],
-        faq=[("Quels signes montrent qu’une charpente est abîmée ?", "Du bois qui s’effrite, de la sciure ou de petits trous, des traces d’humidité, une toiture qui se déforme. Au moindre doute, faites-la inspecter."),
+        faq=[("Faut-il un permis pour une surélévation ?", "Une surélévation crée de la surface : selon la surface ajoutée et le plan local d’urbanisme, il faut une déclaration préalable ou un permis de construire. Renseignez-vous en mairie avant de signer le devis."),
+             ("Quels signes montrent qu’une charpente est abîmée ?", "Du bois qui s’effrite, de la sciure ou de petits trous, des traces d’humidité, une toiture qui se déforme. Au moindre doute, faites-la inspecter."),
              ("Quand faut-il traiter une charpente ?", "En présence d’insectes ou de champignons, et en prévention lors d’une réfection de toiture, quand le bois est accessible."),
              ("Faut-il refaire la couverture en même temps ?", "Souvent, oui : la charpente est alors à nu et les deux chantiers se coordonnent. Le charpentier et le couvreur peuvent travailler ensemble.")],
         brief="Un seul charpentier de votre secteur pour réparer, traiter ou créer votre charpente. Visite et devis offerts."),
@@ -593,7 +607,8 @@ PAGES = {
                ("Combles aménagés", "Isolation sous les rampants, par l’intérieur."),
                ("Murs par l’extérieur", "Isolant posé sur la façade puis recouvert."),
                ("Toiture par l’extérieur", "Isolant posé sur la charpente lors d’une réfection, technique dite du sarking.")],
-        faq=[("Quelles aides pour isoler ses combles ?", "Les aides publiques dépendent des travaux, de vos revenus et de l’année. Elles demandent une entreprise certifiée RGE. Vérifiez votre éligibilité sur france-renov.gouv.fr avant de signer."),
+        faq=[("Faut-il une autorisation pour isoler par l’extérieur ?", "En général oui : l’isolation par l’extérieur change l’aspect de la façade et demande une déclaration préalable en mairie."),
+             ("Quelles aides pour isoler ses combles ?", "Les aides publiques dépendent des travaux, de vos revenus et de l’année. Elles demandent une entreprise certifiée RGE. Vérifiez votre éligibilité sur france-renov.gouv.fr avant de signer."),
              ("Combles perdus ou aménagés : quelle différence ?", "Des combles perdus ne sont pas habitables : on isole le plancher, c’est le chantier le plus simple. Des combles aménagés sont habitables : on isole sous la toiture."),
              ("Faut-il une entreprise RGE ?", "Pour obtenir des aides publiques, oui. Dites-le lors de notre appel : nous en tenons compte pour vous présenter l’artisan.")],
         brief="Un seul artisan de votre secteur pour isoler vos combles, vos murs ou votre toiture. Visite et devis offerts."),
@@ -671,7 +686,7 @@ def trade_faq(key):
     out += P["faq"]
     if key == "toiture":
         out.append(("J’ai une fuite de toiture, que faire tout de suite ?", general["J’ai une fuite de toiture, que faire tout de suite ?"]))
-    out += [(q, general[q]) for q in ["Est-ce vraiment gratuit ?", "La visite et le devis de l’artisan sont-ils payants ?", "Combien d’entreprises vont m’appeler ?", "Et si le devis ne me convient pas ?", "Où intervenez-vous ?"]]
+    out += [(q, general[q]) for q in ["Est-ce vraiment gratuit ?", "La visite et le devis de l’artisan sont-ils payants ?", "Combien d’entreprises vont m’appeler ?", "Et si le devis ne me convient pas ?", "Comment savoir si un artisan est sérieux ?", "Où intervenez-vous ?"]]
     return out
 
 

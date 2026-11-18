@@ -602,7 +602,9 @@ for t in TRADES:
     meta_desc = f"Des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes, visite fixée dans votre agenda. Un seul par secteur."
     angles = "\n".join(f"""    <li><div class="ad-card"><p class="ad-meta">Votre entreprise · Sponsorisé</p><p class="ad-angle">{a}</p><p class="ad-text">{b}</p><p class="ad-cta">Demander une visite</p></div></li>""" for a, b in t["angles"])
     trade_faq = t["faq"] + [("Combien cela coûte-t-il ?", "Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l'appel de 15 minutes, avant toute décision."),
-                            ("Y a-t-il un engagement ?", "Non. Aucune durée minimale : vous restez parce que l'agenda se remplit.")]
+                            ("Y a-t-il un engagement ?", "Non. Aucune durée minimale : vous restez parce que l'agenda se remplit."),
+                            ("Qui rappelle les propriétaires ?", "Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
+                            ("En combien de temps arrivent les premiers rendez-vous ?", "La mise en place prend 48 heures après notre appel, et les annonces tournent dès la première semaine. Le rythme dépend ensuite de votre secteur et de la saison.")]
     body = "\n\n".join([
         top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Ce que nous vérifions", "#appel")),
         f"""<section class="sheet" data-tone="paper">

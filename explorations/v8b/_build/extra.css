@@ -256,3 +256,8 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 .pc-grid,.fe-grid{row-gap:var(--gap-head)}
 /* curseurs du calcul : zone tactile de 44 px, sans déplacer la mise en page */
 .calc input[type=range]{height:44px;margin-block:-7px}
+
+/* ——— Liens dans les réponses des questions fréquentes ——— */
+.fq-a a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.fq-a a:hover{color:var(--accent)}
+[data-tone="dark"] .fq-a a{color:var(--bg)}

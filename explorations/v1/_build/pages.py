@@ -184,6 +184,8 @@ GOOGLE_FAQ = [
     ("Quel budget prévoir ?", "Il dépend de votre métier et de la concurrence dans votre secteur. Nous l'estimons avec vous avant de démarrer. Vous le payez directement à Google."),
     ("Le compte Google Ads est-il à moi ?", "Oui. Le compte est à votre nom, vous gardez l'accès et l'historique, même si vous arrêtez."),
     ("Qui rappelle les demandes ?", "Notre équipe, en moins de 5 minutes, en semaine de 8 h à 19 h. Vous ne recevez que des rendez-vous qualifiés."),
+    ("Sur quelles recherches apparaissez-vous ?", "Sur les recherches de votre métier dans vos communes, comme « couvreur » suivi du nom de la ville. Les recherches inutiles sont exclues : gratuit, pas cher, emploi, formation, bricolage."),
+    ("Combien de temps avant les premières demandes ?", "La campagne est prête 48 heures après notre appel. Les premières demandes arrivent dès que les annonces tournent, en général dans la première semaine, selon les recherches de votre secteur."),
 ]
 page("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
      "Campagnes Google Ads locales pour couvreurs, façadiers et menuisiers : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.",
@@ -222,6 +224,8 @@ META_FAQ = [
     ("Quel budget prévoir ?", "Il dépend de votre secteur et du nombre de rendez-vous que vous pouvez absorber. Nous l'estimons ensemble. Vous le payez directement à Meta."),
     ("Est-ce légal de rappeler ces personnes ?", "Oui. Le formulaire demande leur accord explicite pour être recontactées par votre entreprise, et la preuve est conservée. Nous ne démarchons personne."),
     ("Les demandes Facebook sont-elles sérieuses ?", "Pas toutes. C'est pourquoi chaque demande est rappelée et vérifiée avant d'arriver dans votre agenda : propriétaire, projet, commune, délai."),
+    ("Dans quel rayon les annonces sont-elles diffusées ?", "En général 25 à 40 km autour de votre dépôt, réglés commune par commune selon les chantiers que vous voulez."),
+    ("Faut-il des photos de mes chantiers ?", "Oui, c'est ce qui convainc le mieux un voisin. Vos vraies photos de chantier et de votre équipe passent avant les images de banque."),
 ]
 page("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & Co",
      "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et qualifiés.",
