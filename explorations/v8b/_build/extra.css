@@ -903,3 +903,31 @@ ol.sp-cols:not(.is-cards) p{color:#5b616b}
 .prose .facts-dl > div:last-child{border-bottom:0}
 .prose .facts-dl dt{margin:0;font-size:.84rem;color:#5b616b}
 @media (max-width:760px){.prose .facts-dl{padding:4px 20px}.prose .facts-dl > div{grid-template-columns:minmax(0,1fr);row-gap:4px;padding:14px 0}}
+
+/* Qui sommes-nous, « Comment nous travaillons » : éditorial calé sur la grille, un engagement par colonne */
+section.ws-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:start}
+section.ws-cols .sp-head{grid-column:1;display:block;margin:0;padding:0 var(--cell)}
+section.ws-cols .sp-head h2{max-width:9ch;font-size:clamp(2.2rem,4.1vw,3.75rem)}
+section.ws-cols ol.sp-cols{grid-column:2 / 5;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:0}
+section.ws-cols ol.sp-cols > li,section.ws-cols ol.sp-cols > li + li{gap:12px;padding:0 var(--cell);border:0;background:none;border-radius:0;box-shadow:none}
+section.ws-cols ol.sp-cols > li::before{content:"";display:block;height:2px;margin-bottom:20px;background:var(--ink)}
+section.ws-cols ol.sp-cols .sp-n{display:block;width:auto;height:auto;margin:0 0 16px;background:none;border-radius:0;font:300 clamp(4.5rem,7vw,7rem)/.9 var(--f-display);letter-spacing:-.05em;color:var(--accent);font-variant-numeric:tabular-nums}
+section.ws-cols ol.sp-cols h3{font-size:clamp(1.3rem,1.7vw,1.6rem)}
+@media (min-width:761px) and (max-width:1100px){
+  section.ws-cols{display:block}
+  section.ws-cols .sp-head{margin-bottom:40px}
+  section.ws-cols .sp-head h2{max-width:none}
+  section.ws-cols ol.sp-cols{grid-template-columns:minmax(0,1fr);row-gap:40px}
+  section.ws-cols ol.sp-cols > li,section.ws-cols ol.sp-cols > li + li{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));row-gap:12px;padding:0}
+  section.ws-cols ol.sp-cols > li::before{grid-column:1 / -1;margin:0 var(--cell) 8px}
+  section.ws-cols ol.sp-cols .sp-n{grid-column:1;grid-row:2 / 4;margin:0;padding:0 var(--cell);font-size:4.5rem}
+  section.ws-cols ol.sp-cols h3,section.ws-cols ol.sp-cols p{grid-column:2 / 5;margin:0;padding:0 var(--cell)}
+}
+@media (max-width:760px){
+  section.ws-cols{display:block}
+  section.ws-cols .sp-head{margin-bottom:32px}
+  section.ws-cols .sp-head h2{max-width:none}
+  section.ws-cols ol.sp-cols{grid-template-columns:minmax(0,1fr);row-gap:40px}
+  section.ws-cols ol.sp-cols > li::before{margin-bottom:16px}
+  section.ws-cols ol.sp-cols .sp-n{margin-bottom:8px;font-size:3.5rem}
+}

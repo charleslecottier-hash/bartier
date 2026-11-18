@@ -904,7 +904,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
           cols([("Un seul interlocuteur", "Vous avez le numéro direct de Martin. Il vous répond sous un jour ouvré."),
                 ("Des engagements écrits", "Exclusivité, un seul artisan par métier et par secteur, rappel en moins de 5 minutes en semaine, aucune durée minimale. Tout est dans le contrat."),
                 ("Des chiffres vérifiables", "Le budget est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
-               "Comment nous travaillons", "", tone="paper"),
+               "Comment nous travaillons", "", tone="paper").replace('<section class="sheet"', '<section class="sheet ws-cols"', 1),
           (ROOT / "_build" / "demarrage.html").read_text(encoding="utf-8").split("-->", 1)[1].strip(),
           TEAM_ABOUT,
           """<section class="sheet" data-tone="light">

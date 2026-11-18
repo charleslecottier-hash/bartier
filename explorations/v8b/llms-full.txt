@@ -1748,7 +1748,7 @@ Un appel de 15 minutes, 24 à 48 heures d’intégration, puis 3 à 5 jours pour
 Jour 1
 
 #### Un appel de 15 minutes
-Votre métier, votre secteur, combien de chantiers vous pouvez prendre en plus. Si le potentiel n’y est pas, nous vous le disons.
+Votre métier, votre secteur, combien de chantiers vous pouvez prendre en plus. À la fin de l’appel, vous savez ce que votre secteur peut vous apporter.
 Sous 24 à 48 heures
 
 #### L’intégration
