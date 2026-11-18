@@ -300,3 +300,8 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
   .art-grid .prose td:first-child::before{content:none}
   .art-grid .prose td:empty{display:none}
 }
+
+.prose tbody th[scope=row]{background:none;font-weight:500;text-align:left}
+@media (max-width:760px){
+  .art-grid .prose tbody th[scope=row]{display:block;padding:0 0 4px;border:0;font-size:1rem}
+}

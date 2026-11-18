@@ -476,8 +476,12 @@ def label_tables(frag):
         heads = [re.sub(r"<[^>]+>", "", h) for h in re.findall(r"<th>(.*?)</th>", m.group(0), flags=re.S)]
         def row(r):
             cells = iter(heads)
-            return re.sub(r"<td>", lambda c: f'<td data-label="{html.escape(next(cells, ""))}">', r.group(0))
-        return re.sub(r"<tr>(?:(?!</tr>).)*</tr>", row, m.group(0), flags=re.S)
+            out = re.sub(r"<td>", lambda c: f'<td data-label="{html.escape(next(cells, ""))}">', r.group(0))
+            if heads and heads[0] == "":  # la première colonne donne le titre de la ligne : en-tête de ligne
+                out = re.sub(r'<td data-label="">(.*?)</td>', r'<th scope="row">\1</th>', out, count=1, flags=re.S)
+            return out
+        t = re.sub(r"<tr>(?:(?!</tr>).)*</tr>", row, m.group(0), flags=re.S)
+        return re.sub(r"<thead>(.*?)</thead>", lambda h: "<thead>" + h.group(1).replace("<th>", '<th scope="col">') + "</thead>", t, flags=re.S)
     return re.sub(r"<table>.*?</table>", table, frag, flags=re.S)
 
 
