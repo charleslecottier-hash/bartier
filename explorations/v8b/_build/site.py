@@ -137,7 +137,7 @@ WA_HTML = f"""<div class="wa" id="wa">
   <div class="wa-panel" id="wa-panel" role="dialog" aria-modal="false" aria-labelledby="wa-title">
     <div class="wa-head">
       <span class="wa-av" aria-hidden="true">MB</span>
-      <p id="wa-title"><b>Martin Barthélémy</b><small>Cofondateur · Head of Sales</small></p>
+      <p id="wa-title"><b>Martin Barthélémy</b><small>Cofondateur · Responsable commercial</small></p>
       <button class="wa-x" type="button" aria-label="Fermer" data-wa-close>×</button>
     </div>
     <div class="wa-body">
@@ -152,7 +152,7 @@ WA_HTML = f"""<div class="wa" id="wa">
     </div>
   </div>
   <div class="wa-tip" role="status"><button class="wa-tip-go" type="button"><b>Une question&nbsp;?</b> Martin vous répond sur WhatsApp.</button><button class="wa-tip-x" type="button" aria-label="Fermer">×</button></div>
-  <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel" aria-label="Écrire à Martin sur WhatsApp ou l’appeler"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, Head of Sales</span></b></button>
+  <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel" aria-label="Écrire à Martin sur WhatsApp ou l’appeler"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, responsable commercial</span></b></button>
 </div>
 <script>
 (function(){{var w=document.getElementById('wa');if(!w)return;var b=w.querySelector('.wa-fab');
@@ -198,7 +198,7 @@ home = re.sub(r'<div class="ld" id="ld"[\s\S]*?</script>\n', "", home)
 # Écran d'attente retiré le 18/11/2026 : la page s'affiche tout de suite (LD_HEAD et LD_BODY ne sont plus insérés).
 
 # Données structurées, adresse canonique et balises de partage de l'accueil (toujours régénérées)
-FOUNDERS = [("charles", "Charles Le Cottier", "Cofondateur, Head of Performance"), ("martin", "Martin Barthélémy", "Cofondateur, Head of Sales")]
+FOUNDERS = [("charles", "Charles Le Cottier", "Cofondateur, responsable des annonces"), ("martin", "Martin Barthélémy", "Cofondateur, responsable commercial")]
 PORTRAIT = {"charles": "charles-le-cottier", "martin": "martin-barthelemy"}
 def portrait(k):
     return SITE + f"/assets/photos/{PORTRAIT[k]}-700x875-nb.webp"
@@ -796,8 +796,8 @@ pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un se
 pf_tail = absolutize(TAIL)
 pf_tail = pf_tail.replace('<p>Faire équipe.<br>Faire la différence.</p>', '<p>Un projet de travaux&nbsp;?<br>Un seul artisan, près de chez vous.</p>', 1)
 pf_tail = pf_tail.replace('<a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
-pf_tail = pf_tail.replace('<small>Cofondateur · Head of Sales</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
-pf_tail = pf_tail.replace('<b>Parler à Martin<span>, Head of Sales</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
+pf_tail = pf_tail.replace('<small>Cofondateur · Responsable commercial</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
+pf_tail = pf_tail.replace('<b>Parler à Martin<span>, responsable commercial</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
 pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', lambda m: '<p class="wa-bubble">Bonjour. Un projet de travaux ou une question&nbsp;? Écrivez-moi, je vous réponds personnellement.</p>\n      <p class="wa-k">Choisissez une question, ou écrivez la vôtre&nbsp;:</p>\n' + "\n".join(
     f'      <a class="wa-q" href="{html.escape(wa(m))}" target="_blank" rel="noopener" data-wa="question-particulier">{q}</a>' for q, m in [
         ("Combien vont coûter mes travaux&nbsp;?", "Bonjour, j'ai un projet de travaux ([toiture, façade, fenêtres...]) à [ville]. Combien cela peut-il coûter ?"),
@@ -848,12 +848,12 @@ TEAM_ABOUT = """<section class="team-about sheet" id="equipe" data-kind="team" d
   <div class="grid ta-grid">
     <div class="ta-head">
       <h2 data-split>Qui vous répond ?<br> Nous.</h2>
-      <p>Pas de standard. Vous parlez aux fondateurs, du premier appel à l'onboarding.</p>
+      <p>Pas de standard. Vous parlez aux fondateurs, du premier appel au lancement de vos annonces.</p>
     </div>
     <div class="ta-body">
       <ul class="ta-people">
-        <li id="charles"><img src="/assets/photos/charles-le-cottier-360x450-nb.webp" alt="Portrait de Charles Le Cottier, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Charles Le Cottier</h3><p>Cofondateur · Head of Performance</p></div></li>
-        <li id="martin"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Martin Barthélémy</h3><p>Cofondateur · Head of Sales</p></div></li>
+        <li id="charles"><img src="/assets/photos/charles-le-cottier-360x450-nb.webp" alt="Portrait de Charles Le Cottier, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Charles Le Cottier</h3><p>Cofondateur<br>Responsable des annonces</p></div></li>
+        <li id="martin"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Martin Barthélémy</h3><p>Cofondateur<br>Responsable commercial</p></div></li>
       </ul>
       <p class="ta-note">Une question avant de vous lancer ? Appelez Martin en semaine, de 8&nbsp;h à 19&nbsp;h, ou écrivez-lui : il répond sous un jour ouvré.</p>
       <div class="ta-acts">
@@ -893,7 +893,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
     <div class="prose">
       <dl class="facts-dl">
         <div><dt>Société</dt><dd>Bartier & Co, SAS. 6 rue Saint-Bon, 75004 Paris.</dd></div>
-        <div><dt>Fondateurs</dt><dd>Charles Le Cottier, Head of Performance. Martin Barthélémy, Head of Sales.</dd></div>
+        <div><dt>Fondateurs</dt><dd>Charles Le Cottier, responsable des annonces. Martin Barthélémy, responsable commercial.</dd></div>
         <div><dt>Activité</dt><dd>Trouver des clients aux artisans du bâtiment : annonces locales Google et Meta, rappel des demandes en moins de 5 minutes, visites fixées dans l'agenda.</dd></div>
         <div><dt>Métiers</dt><dd><a href="/metiers/couverture/">Couverture</a>, <a href="/metiers/facade/">façade</a>, <a href="/metiers/menuiserie-exterieure/">menuiserie extérieure</a>, <a href="/metiers/charpente/">charpente</a>, <a href="/metiers/isolation/">isolation</a>.</dd></div>
         <div><dt>Zone</dt><dd>France. Un seul artisan par métier et par secteur, sans engagement de durée.</dd></div>
@@ -955,7 +955,7 @@ for a in ARTICLES:
     a["minutes"] = max(3, round(len(re.sub(r"<[^>]+>", " ", a["body"]).split()) / 200))
 for a in ARTICLES:
     path = f"/blog/{a['slug']}/"
-    meta = f'<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur · Head of Performance</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
+    meta = f'<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur · Responsable des annonces</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
     body = "\n\n".join([
         top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta, photo=COVER[a["slug"]], dated=False).replace('class="pg-photo frame"', 'class="pg-photo frame is-color"', 1),
         f"""<section class="sheet" data-tone="light">
@@ -976,13 +976,13 @@ for a in ARTICLES:
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "BlogPosting", "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": "@@MAJ@@", "inLanguage": "fr-FR",
                "mainEntityOfPage": SITE + path, "image": [img(COVER[a["slug"]])[0]],
-               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, responsable des annonces", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               bc_ld(("Blog", "/blog/"), (a["short"], path))] + ([faq_ld(a["faq"])] if a.get("faq") else [])})
     paths.append(path)
 
 # ——— Guides : comment trouver des chantiers, fiche Habitatpresto Pro (_build/contenu.py) ———
-AUTHOR_META = '<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur · Head of Performance</span></p>'
+AUTHOR_META = '<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur · Responsable des annonces</span></p>'
 
 
 def guide(G, kick, crumb_items, faq_title, links):
@@ -1007,7 +1007,7 @@ def guide(G, kick, crumb_items, faq_title, links):
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Article", "headline": fr(G["h1"]), "description": fr(G["desc"]), "datePublished": "2026-11-18", "dateModified": "@@MAJ@@",
                "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"],
-               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, responsable des annonces", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               faq_ld(G["faq"]), bc_ld(*crumb_items)]})
     paths.append(G["path"])

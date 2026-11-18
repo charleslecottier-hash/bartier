@@ -285,11 +285,11 @@ page("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
     <div class="tm-text">
       <p class="kicker">Les fondateurs</p>
       <h2>Charles et Martin.</h2>
-      <p class="sub">Charles, Head of Performance, pilote les annonces, le rappel et les résultats. Martin, Head of Sales, est votre interlocuteur du premier appel au démarrage.</p>
+      <p class="sub">Charles, responsable des annonces, pilote les annonces, le rappel et les résultats. Martin, responsable commercial, est votre interlocuteur du premier appel au démarrage.</p>
     </div>
     <div class="tm-people">
-      <figure><div class="ph" role="img" aria-label="Portrait de Charles Le Cottier, à venir"></div><figcaption><b>Charles Le Cottier</b><small>Cofondateur · Head of Performance</small></figcaption></figure>
-      <figure><div class="ph" role="img" aria-label="Portrait de Martin Barthélémy, à venir"></div><figcaption><b>Martin Barthélémy</b><small>Cofondateur · Head of Sales</small></figcaption></figure>
+      <figure><div class="ph" role="img" aria-label="Portrait de Charles Le Cottier, à venir"></div><figcaption><b>Charles Le Cottier</b><small>Cofondateur · Responsable des annonces</small></figcaption></figure>
+      <figure><div class="ph" role="img" aria-label="Portrait de Martin Barthélémy, à venir"></div><figcaption><b>Martin Barthélémy</b><small>Cofondateur · Responsable commercial</small></figcaption></figure>
     </div>
   </div>
 </section>""",
@@ -299,8 +299,8 @@ page("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
      schema={"@context": "https://schema.org", "@graph": [
          {"@type": "AboutPage", "name": "Qui sommes-nous", "url": SITE + "/qui-sommes-nous/"},
          {"@type": "Organization", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "url": SITE + "/", "founder": [
-             {"@type": "Person", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance"},
-             {"@type": "Person", "name": "Martin Barthélémy", "jobTitle": "Cofondateur, Head of Sales"}]},
+             {"@type": "Person", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, responsable des annonces"},
+             {"@type": "Person", "name": "Martin Barthélémy", "jobTitle": "Cofondateur, responsable commercial"}]},
          breadcrumb_ld(("Qui sommes-nous", "/qui-sommes-nous/"))]})
 
 # ——— Blog ———
@@ -610,7 +610,7 @@ Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et dev
 - Le budget publicitaire est payé directement par l'artisan à Meta ou à Google.
 - Contact : contact@bartierandco.com
 - Facebook : https://www.facebook.com/profile.php?id=61596597124434
-- Téléphone et WhatsApp : 07 81 01 89 36 (Martin Barthélémy, Head of Sales)
+- Téléphone et WhatsApp : 07 81 01 89 36 (Martin Barthélémy, responsable commercial)
 - Horaires : du lundi au vendredi, de 8 h à 19 h.
 
 ## Informations légales
