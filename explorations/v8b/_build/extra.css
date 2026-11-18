@@ -498,3 +498,6 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 .dq-wa-link{margin:0}
 .dq-wa-link .link{color:var(--bg)}
 #contact .dq{box-shadow:0 24px 60px -30px rgba(10,20,36,.45)}
+
+/* ——— Questions : réponses plus lisibles ——— */
+.fq-a p{color:color-mix(in oklab,var(--ink) 78%,var(--bg));font-size:clamp(.98rem,1.1vw,1.06rem);line-height:1.5}
