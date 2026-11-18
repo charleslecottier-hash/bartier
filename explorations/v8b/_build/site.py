@@ -201,7 +201,7 @@ home = re.sub(r"(<body[^>]*>\n?)", lambda m: m.group(1) + LD_BODY, home, count=1
 if '"@type":"Organization"' not in home:
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "address": {"@type": "PostalAddress", "streetAddress": "6 rue Saint-Bon", "postalCode": "75004", "addressLocality": "Paris", "addressCountry": "FR"}, "url": SITE + "/", "logo": SITE + "/assets/logo-bartier.png", "email": "contact@bartierandco.com", "areaServed": ["FR"], "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434"],
-         "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de cinq minutes, visites de devis fixées directement dans leur agenda.",
+         "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de 5 minutes, visites de devis fixées directement dans leur agenda.",
          "founder": [{"@type": "Person", "name": "Charles Le Cottier"}, {"@type": "Person", "name": "Martin Barthélémy"}]},
         {"@type": "WebSite", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}]}
     home = home.replace("</head>", f'<link rel="canonical" href="{SITE}/">\n<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False, separators=(",", ":"))}</script>\n</head>', 1)
@@ -575,7 +575,7 @@ for t in TRADES:
         cols(t["problems"], "Le métier est bon. Les demandes, moins.", "Ce que nous entendons chez les artisans de votre métier."),
         f"""<section class="sheet" id="appel" data-tone="dark">
   <div class="grid sp-split">
-    <div><h2 data-split>Ce que nous vérifions avant votre visite</h2><p>Rappel en moins de cinq minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses, pas de rendez-vous.</p></div>
+    <div><h2 data-split>Ce que nous vérifions avant votre visite</h2><p>Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses, pas de rendez-vous.</p></div>
     <ol class="sp-list is-num">{''.join(f'<li>{q}</li>' for q in t['questions'])}</ol>
   </div>
 </section>""",
@@ -609,9 +609,9 @@ paths.insert(1, "/metiers/")
 
 # ——— Google Ads ———
 write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
-      "Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de cinq minutes.",
+      "Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.",
       "\n\n".join([
-          top("Google Ads", "Soyez trouvé au moment où ils cherchent.", "Un propriétaire tape « couvreur » et le nom de sa ville. Il tombe sur vous. Nous le rappelons en moins de cinq minutes, avant vos concurrents.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_ANIM),
+          top("Google Ads", "Soyez trouvé au moment où ils cherchent.", "Un propriétaire tape « couvreur » et le nom de sa ville. Il tombe sur vous. Nous le rappelons en moins de 5 minutes, avant vos concurrents.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_ANIM),
           cols([("Les urgences", "Fuite, tuiles envolées, gouttière arrachée : la demande est immédiate."),
                 ("Les projets mûrs", "Le propriétaire compare déjà des entreprises. Être là et rappeler vite fait la différence."),
                 ("Les secteurs denses", "Assez de recherches locales pour qu'une campagne tienne toute l'année.")],
@@ -619,7 +619,7 @@ write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
           split("Une campagne qui ne paie que les bonnes recherches", "Chaque clic coûte. L'essentiel du travail consiste à écarter ceux qui ne deviendront jamais des chantiers.",
                 ["Campagnes par métier et par commune de votre zone", "Recherches inutiles exclues : gratuit, pas cher, emploi, formation, bricolage",
                  "Une page dédiée à votre entreprise, rapide sur mobile", "Chaque appel et chaque formulaire suivis jusqu'au rendez-vous",
-                 "Rappel en moins de cinq minutes, qualification, rendez-vous dans votre agenda"], tone="paper"),
+                 "Rappel en moins de 5 minutes, qualification, rendez-vous dans votre agenda"], tone="paper"),
           split("Votre compte, votre budget, vos chiffres", "Tout est créé à votre nom. Vous gardez ce qui a été construit, même si vous arrêtez.",
                 ["Compte Google Ads à votre nom", "Budget payé directement à Google", "Chaque recherche, chaque clic, chaque euro visibles"]),
           COMPARE,
@@ -630,16 +630,16 @@ paths.append("/google-ads/")
 
 # ——— Meta Ads ———
 write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & Co",
-      "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de cinq minutes et qualifiés.",
+      "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et qualifiés.",
       "\n\n".join([
-          top("Meta Ads · Facebook et Instagram", "Remplissez votre agenda avant qu'ils ne cherchent.", "Des annonces à votre nom, vues par les propriétaires à 25 à 40 km de votre dépôt. Chaque demande rappelée en moins de cinq minutes, puis vérifiée.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_ANIM),
+          top("Meta Ads · Facebook et Instagram", "Remplissez votre agenda avant qu'ils ne cherchent.", "Des annonces à votre nom, vues par les propriétaires à 25 à 40 km de votre dépôt. Chaque demande rappelée en moins de 5 minutes, puis vérifiée.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_ANIM),
           cols([("Un rayon autour du dépôt", "25 à 40 km, réglés commune par commune selon vos chantiers."),
                 ("Vos vraies photos", "Vos chantiers, votre équipe. Rien ne convainc mieux un voisin."),
                 ("Des angles de saison", "Après les intempéries, avant l'hiver, au printemps pour la rénovation.")],
                "Des annonces qui vous ressemblent", "Au nom de votre entreprise, avec vos chantiers."),
           split("Rien ne part sans être vérifié", "Une demande Facebook n'est qu'un début. Le tri se fait au téléphone, pas dans votre agenda.",
                 ["Formulaire avec questions de tri et accord explicite d'être recontacté", "Preuve du consentement conservée pour chaque demande",
-                 "Rappel en moins de cinq minutes, en semaine de 8 h à 19 h", "Propriétaire, projet, commune et délai vérifiés",
+                 "Rappel en moins de 5 minutes, en semaine de 8 h à 19 h", "Propriétaire, projet, commune et délai vérifiés",
                  "Rendez-vous dans votre agenda, rappels la veille et deux heures avant", "Flyers dans les rues voisines de chaque chantier signé"], tone="paper"),
           split("Votre page, votre compte, vos chiffres", "Tout est créé à votre nom, et le reste si vous arrêtez.",
                 ["Page Facebook et compte publicitaire à votre nom", "Budget payé directement à Meta", "Toutes les statistiques des annonces visibles"]),
@@ -722,7 +722,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
     <div class="prose">
       <p>Les artisans que nous accompagnons ont du métier et des clients satisfaits. Ce qui leur manque, c'est un flux régulier de projets sérieux.</p>
       <p>Les plateformes revendent la même demande à plusieurs entreprises. Le bouche-à-oreille ne se commande pas. Et personne ne peut rappeler depuis un toit.</p>
-      <p>Nous avons construit un système simple : des annonces locales, un rappel en moins de cinq minutes, et un rendez-vous réservé à un seul artisan par secteur.</p>
+      <p>Nous avons construit un système simple : des annonces locales, un rappel en moins de 5 minutes, et un rendez-vous réservé à un seul artisan par secteur.</p>
     </div>
   </div>
 </section>""",

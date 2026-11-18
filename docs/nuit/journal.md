@@ -14,3 +14,6 @@ Demande : tourner toute la nuit, améliorer (qualité, fluidité, SEO, GEO), aud
 | 09:00 | Photos en couleur étalonnée (noir et blanc gardé pour la photo d'ouverture), pied de page, bandeau cookies, skill unslop installé. Déployé | fait |
 | 09:05 | Pages légales rédigées et intégrées, relecture par deux agents lancée ; formulaires : erreurs précises, département reconnu, fin honnête. Déployé | fait |
 | 09:12 | Blog sur téléphone, solutions de repli pour anciens navigateurs (vérifiées par simulation). Déployé | fait |
+| 09:20 | Relecture juridique reçue (deux relecteurs) : corrections intégrées aux quatre pages, aux notices et au formulaire particuliers ; docs/legal-a-valider.md écrit | fait |
+| 09:25 | Audit design unslop reçu : corrections sûres appliquées (docs/nuit/unslop.md) ; titres et descriptions raccourcis ; robots.txt et llms.txt | fait |
+| 09:30 | Audit complet : 25 pages, téléphone et ordinateur, aucune erreur, aucun lien cassé. Lighthouse en ligne : accueil 93 / 100 / 100, devis-travaux 98 / 100 / 100 | fait |

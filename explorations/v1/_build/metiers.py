@@ -54,7 +54,7 @@ TRADES = [
         "title": "Trouver des chantiers de couverture",
         "h1": "Couvreurs : des rendez-vous de réfection,",
         "h1_em": "pas des appels de dépannage.",
-        "lede": "Nous allons chercher les propriétaires qui préparent une réfection, une rénovation ou une zinguerie complète près de votre dépôt. Nous les rappelons en moins de cinq minutes, nous vérifions le projet, puis nous posons la visite dans votre agenda.",
+        "lede": "Nous allons chercher les propriétaires qui préparent une réfection, une rénovation ou une zinguerie complète près de votre dépôt. Nous les rappelons en moins de 5 minutes, nous vérifions le projet, puis nous posons la visite dans votre agenda.",
         "keep": ["Réfection complète de toiture", "Rénovation de toiture avec isolation", "Démoussage et hydrofuge d'une toiture entière", "Zinguerie complète : gouttières, chéneaux, noues", "Remplacement de couverture après un sinistre"],
         "drop": ["Une tuile à remettre en place", "Une petite fuite à dépanner", "Les locataires et les demandes hors de votre zone"],
         "problems": [
@@ -81,7 +81,7 @@ TRADES = [
         "title": "Trouver des chantiers de menuiserie extérieure",
         "h1": "Menuisiers : des projets de maison entière,",
         "h1_em": "pas des prix à la fenêtre.",
-        "lede": "Nous allons chercher les propriétaires qui veulent remplacer leurs fenêtres, leur baie ou leur porte d'entrée, près de votre atelier. Nous les rappelons en moins de cinq minutes, nous vérifions l'ampleur du projet, puis nous posons la visite dans votre agenda.",
+        "lede": "Nous allons chercher les propriétaires qui veulent remplacer leurs fenêtres, leur baie ou leur porte d'entrée, près de votre atelier. Nous les rappelons en moins de 5 minutes, nous vérifions l'ampleur du projet, puis nous posons la visite dans votre agenda.",
         "keep": ["Remplacement de toutes les fenêtres d'une maison", "Baies coulissantes et galandages", "Portes d'entrée sur mesure", "Volets roulants posés avec les fenêtres", "Portails et clôtures en aluminium"],
         "drop": ["Une seule fenêtre à changer", "La pose de matériel acheté ailleurs", "Les locataires et les demandes hors de votre zone"],
         "problems": [
@@ -108,7 +108,7 @@ TRADES = [
         "title": "Trouver des chantiers de façade",
         "h1": "Façadiers : des ravalements complets,",
         "h1_em": "pas des demandes de nettoyage.",
-        "lede": "Nous allons chercher les propriétaires qui préparent un ravalement ou une isolation par l'extérieur près de votre dépôt. Nous les rappelons en moins de cinq minutes, nous vérifions le projet, puis nous posons la visite dans votre agenda, avec les deux décideurs.",
+        "lede": "Nous allons chercher les propriétaires qui préparent un ravalement ou une isolation par l'extérieur près de votre dépôt. Nous les rappelons en moins de 5 minutes, nous vérifions le projet, puis nous posons la visite dans votre agenda, avec les deux décideurs.",
         "keep": ["Ravalement complet de maison", "Isolation thermique par l'extérieur", "Enduit, crépi et peinture de façade", "Traitement des fissures et imperméabilisation"],
         "drop": ["Un simple nettoyage haute pression", "Les petites retouches", "Les locataires et les demandes hors de votre zone"],
         "problems": [
@@ -135,7 +135,7 @@ TRADES = [
         "title": "Trouver des chantiers de charpente",
         "h1": "Charpentiers : des projets prêts à démarrer,",
         "h1_em": "pas des idées pour dans trois ans.",
-        "lede": "Nous allons chercher les propriétaires qui ont un projet de charpente concret près de votre atelier. Nous les rappelons en moins de cinq minutes, nous vérifions où en est le projet, puis nous posons la visite dans votre agenda.",
+        "lede": "Nous allons chercher les propriétaires qui ont un projet de charpente concret près de votre atelier. Nous les rappelons en moins de 5 minutes, nous vérifions où en est le projet, puis nous posons la visite dans votre agenda.",
         "keep": ["Rénovation ou remplacement de charpente", "Surélévation de maison", "Traitement de charpente sur une maison entière", "Extension à ossature bois"],
         "drop": ["Les abris de jardin et petits ouvrages", "Les projets sans calendrier", "Les locataires et les demandes hors de votre zone"],
         "problems": [
@@ -161,7 +161,7 @@ TRADES = [
         "title": "Trouver des chantiers d'isolation",
         "h1": "Isolation : des propriétaires qui vous appellent,",
         "h1_em": "jamais du démarchage.",
-        "lede": "Le secteur a souffert du démarchage et des offres trop belles. Nous faisons l'inverse : seuls les propriétaires qui ont fait une demande et accepté d'être recontactés sont rappelés, en moins de cinq minutes, avant que la visite soit posée dans votre agenda.",
+        "lede": "Le secteur a souffert du démarchage et des offres trop belles. Nous faisons l'inverse : seuls les propriétaires qui ont fait une demande et accepté d'être recontactés sont rappelés, en moins de 5 minutes, avant que la visite soit posée dans votre agenda.",
         "keep": ["Isolation thermique par l'extérieur", "Isolation des combles aménagés et des rampants", "Isolation des combles perdus avec d'autres travaux", "Isolation par l'intérieur d'une maison entière"],
         "drop": ["Les demandes d'offres à prix symbolique", "Les projets dont l'éligibilité aux aides est la seule motivation", "Les locataires et les demandes hors de votre zone"],
         "problems": [
@@ -205,7 +205,7 @@ PROJECT = {
 
 
 def trade_page(t):
-    short = f"Nous trouvons les propriétaires qui préparent {PROJECT[t['slug']]}, nous les rappelons en moins de cinq minutes. Vous faites la visite."
+    short = f"Nous trouvons les propriétaires qui préparent {PROJECT[t['slug']]}, nous les rappelons en moins de 5 minutes. Vous faites la visite."
     others = [o for o in TRADES if o["slug"] != t["slug"]]
     form = FORM.replace(f'value="{t["radio"]}"', f'value="{t["radio"]}" checked', 1)
     form = form.replace("<!-- Formulaire -->", "")
@@ -292,7 +292,7 @@ def trade_page(t):
     <div>
       <p class="kicker hl-light">Au téléphone</p>
       <h2 id="tel-h">Ce que nous vérifions avant votre visite.</h2>
-      <p class="sub">Rappel en moins de cinq minutes, en semaine de 8{NB}h à 19{NB}h. Pas de bonnes réponses, pas de rendez-vous.</p>
+      <p class="sub">Rappel en moins de 5 minutes, en semaine de 8{NB}h à 19{NB}h. Pas de bonnes réponses, pas de rendez-vous.</p>
     </div>
     <ol class="calls">
 {questions}

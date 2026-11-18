@@ -186,3 +186,10 @@ a.pf-sticky{box-shadow:0 14px 30px -14px rgba(10,20,36,.55)}
   .crumbs a{display:inline-flex;align-items:center;min-height:40px}
   .crumbs{align-items:center;row-gap:0}
 }
+
+/* ——— En-tête des pages intérieures sur téléphone : le titre arrive plus tôt ——— */
+@media (max-width:760px){
+  .pg-top .pg-photo.frame{aspect-ratio:16 / 9}
+  .pg-top .pg-text h1{font-size:2.3rem}
+  .pg-top .pg-text{gap:1.1rem}
+}
