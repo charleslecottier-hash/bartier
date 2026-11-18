@@ -550,6 +550,14 @@ art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['
 - [Qui sommes-nous]({SITE}/qui-sommes-nous/) : les fondateurs et la façon de travailler.
 - [Devis travaux, pour les particuliers]({SITE}/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de cinq minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
 
+## Pour les particuliers
+Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et devis de l'artisan compris. Rappel en moins de 5 minutes du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Un seul artisan par métier et par secteur ; les coordonnées ne sont jamais revendues.
+- [Devis toiture]({SITE}/devis-travaux/toiture/) : réfection, fuite, zinguerie, démoussage.
+- [Ravalement de façade]({SITE}/devis-travaux/ravalement-facade/) : ravalement, fissures, enduit, peinture, isolation par l'extérieur.
+- [Fenêtres et portes]({SITE}/devis-travaux/fenetres/) : fenêtres PVC, alu ou bois, porte d'entrée, baie vitrée, volets.
+- [Charpente]({SITE}/devis-travaux/charpente/) : réparation, traitement, extension, surélévation.
+- [Isolation]({SITE}/devis-travaux/isolation/) : combles perdus ou aménagés, murs par l'extérieur, toiture.
+
 ## Articles
 {art_lines}
 

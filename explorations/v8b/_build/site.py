@@ -362,7 +362,11 @@ def head(title, desc, path, schema=None):
     h = re.sub(r"<title>[^<]*</title>", f"<title>{html.escape(fr(title), quote=False)}</title>", HEAD, count=1)
     h = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{html.escape(fr(desc))}">', h, count=1)
     ld = f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False, separators=(",", ":"))}</script>\n' if schema else ""
-    return h + f'<link rel="canonical" href="{SITE}{path}">\n' + ld + EXTRA_CSS
+    og = (f'<meta property="og:type" content="website">\n<meta property="og:locale" content="fr_FR">\n<meta property="og:site_name" content="Bartier &amp; Co">\n'
+          f'<meta property="og:title" content="{html.escape(fr(title))}">\n<meta property="og:description" content="{html.escape(fr(desc))}">\n'
+          f'<meta property="og:url" content="{SITE}{path}">\n<meta property="og:image" content="{SITE}/assets/og.png">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
+          f'<meta name="twitter:card" content="summary_large_image">\n')
+    return h + f'<link rel="canonical" href="{SITE}{path}">\n' + og + ld + EXTRA_CSS
 
 
 def write(path, title, desc, body, nav=None, schema=None, metier=None):
@@ -619,11 +623,21 @@ pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', l
         ("Un artisan peut-il passer cette semaine&nbsp;?", "Bonjour, j'ai des travaux à faire à [ville]. Un artisan peut-il passer cette semaine ?"),
         ("J’ai une fuite, que faire&nbsp;?", "Bonjour, j'ai une fuite de toiture à [ville]. Que dois-je faire ?")]) + "\n      ", pf_tail, count=1)
 pf_schema = PF.schema(SITE, faq_ld, bc_ld)
-pf_doc = head(PF.TITLE, PF.DESC, PF.PATH, pf_schema) + PF.CSS + "\n" + pf_top + "\n" + fr(pf_body) + "\n" + pf_tail
-pf_doc = pf_doc.replace("</body>", PF.js() + "\n</body>", 1)
-(ROOT / "devis-travaux").mkdir(exist_ok=True)
-(ROOT / "devis-travaux" / "index.html").write_text(pf_doc, encoding="utf-8")
-paths.append(PF.PATH)
+def pf_write(path, title, desc, body, schema):
+    doc = head(title, desc, path, schema) + PF.CSS + PF.CSS_TRADE + "\n" + pf_top + "\n" + fr(body) + "\n" + pf_tail
+    doc = doc.replace("</body>", PF.js() + "\n</body>", 1)
+    out = ROOT / path.strip("/") / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(doc, encoding="utf-8")
+    paths.append(path)
+
+
+pf_write(PF.PATH, PF.TITLE, PF.DESC, pf_body, pf_schema)
+for k in PF.SLUG:
+    t = next(x for x in PF.TRADES if x[0] == k)
+    sub = f"{PF.PATH}{PF.SLUG[k]}/"
+    body = PF.build_trade(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH), (t[1], sub)), k)
+    pf_write(sub, PF.PAGES[k]["title"], PF.PAGES[k]["desc"], body, PF.trade_schema(SITE, faq_ld, bc_ld, k))
 
 # ——— Qui sommes-nous ———
 write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",

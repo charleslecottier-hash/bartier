@@ -116,7 +116,7 @@ def trust(cls=""):
       </ul>"""
 
 
-def build(img, phone, phone_txt, crumbs):
+def build(img, phone, phone_txt, crumbs, parts=False):
     tiles = "".join(f'<button type="button" class="pf-tile" data-v="{t[0]}">{t[1]}</button>' for t in TRADES) + \
         '<button type="button" class="pf-tile" data-v="autre">Autre projet</button>'
     form = f"""<div class="pf-card" id="projet">
@@ -180,7 +180,7 @@ def build(img, phone, phone_txt, crumbs):
     for k, l, who, photo, needs, h3, words, alt, ph, pr in TRADES:
         url, _ = img(photo)
         cards.append(f"""    <li class="pf-trade"><figure class="frame"><img src="{url}" alt="{alt}" width="900" height="676" loading="lazy"></figure>
-      <h3>{h3}</h3><p>{words}</p><a class="link pf-pick" href="#projet" data-v="{k}">Devis {l.lower()}</a></li>""")
+      <h3><a class="pf-tl" href="/devis-travaux/{SLUG[k]}/">{h3}</a></h3><p>{words}</p><a class="link pf-pick" href="#projet" data-v="{k}">Devis {l.lower()}</a></li>""")
     trades = f"""<section class="sheet" id="travaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Toiture, façade, fenêtres, charpente, isolation</h2><p>Les gros travaux de la maison. Un artisan local pour chacun.</p></div>
   <ul class="pf-trades">
@@ -215,9 +215,9 @@ def build(img, phone, phone_txt, crumbs):
   <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick()}</a><span class="pf-prio">Rappel prioritaire</span></p>
 </section>"""
 
-    prices = "".join(f'<li><h3>{t[8]}</h3><p>{t[9]}</p></li>' for t in TRADES)
+    prices = "".join(f'<li><h3>{t[8]}</h3><p>{t[9]}</p><p class="pf-ref">{REF[t[0]][0]}</p><p class="pf-src">Source&nbsp;: {REF[t[0]][1]}</p><a class="link pf-more" href="/devis-travaux/{SLUG[t[0]]}/">Tout sur {t[1].lower()}</a></li>' for t in TRADES)
     price = f"""<section class="sheet" id="prix" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Combien vont coûter vos travaux&nbsp;?</h2><p>Un prix au mètre carré trouvé en ligne reste une moyenne. Voici ce qui fait vraiment le prix. La visite, elle, est gratuite.</p></div>
+  <div class="grid sp-head"><h2 data-split>Combien vont coûter vos travaux&nbsp;?</h2><p>Les repères publiés en ligne sont des moyennes, souvent très larges. Voici ce qui fait vraiment le prix. La visite, elle, est gratuite.</p></div>
   <ul class="pf-prices">{prices}</ul>
   <p class="pf-mid"><a class="btn" href="#projet"><span>Obtenir mon devis</span>{tick()}</a></p>
 </section>"""
@@ -246,6 +246,8 @@ def build(img, phone, phone_txt, crumbs):
 </section>
 <a class="pf-sticky" href="#projet">Décrire mes travaux<span>1 min · gratuit</span></a>"""
 
+    if parts:
+        return dict(form=form, steps=steps, compare=compare, leak=leak, serious=serious, end=end)
     return "\n\n".join([hero, trades, steps, compare, leak, price, serious, brief, faq, end])
 
 
@@ -390,7 +392,7 @@ f.addEventListener("click",function(e){var b=e.target.closest(".pf-tile,.pf-opt"
   setTimeout(function(){show(cur+1)},230)});
 back.addEventListener("click",function(){if(cur>0)show(cur-1)});
 document.querySelectorAll(".pf-pick").forEach(function(a){a.addEventListener("click",function(){pickTrade(a.dataset.v,true);if(a.dataset.need==="fuite")pickLeak()})});
-var q=new URLSearchParams(location.search),t=q.get("travaux");
+var q=new URLSearchParams(location.search),t=q.get("travaux")||f.dataset.preset;
 if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,true);if(q.get("besoin")==="fuite")pickLeak()}
 function nextOpen(){var d=new Date(),day=d.getDay(),h=d.getHours()+d.getMinutes()/60;
   if(day>=1&&day<=5&&h>=8&&h<19)return "";
@@ -425,3 +427,197 @@ def js():
     who["autre"] = "artisans"
     label = {t[0]: t[1] for t in TRADES}
     return JS.replace("__NEEDS__", json.dumps(needs, ensure_ascii=False)).replace("__WHO__", json.dumps(who, ensure_ascii=False)).replace("__LABEL__", json.dumps(label, ensure_ascii=False))
+
+
+# ——— Repères de prix publiés (vérifiés sur les pages sources le 18/11/2026) ———
+def _src(name, url, date):
+    return f'<a class="link" href="{url}" target="_blank" rel="noopener">{name}</a>, {date}'
+
+
+REF = {
+    "toiture": ("Rénovation de toiture&nbsp;: de 60 à 500 €/m², pose comprise. L’écart dépend de ce qui est refait&nbsp;: couverture seule, isolation, charpente.",
+                _src("QuelleEnergie", "https://www.quelleenergie.fr/prix-travaux/isolation/renovation-toiture", "consulté le 18/11/2026")),
+    "facade": ("Ravalement de façade&nbsp;: de 40 à 160 €/m² en moyenne.",
+               _src("Obat", "https://travaux.obat.fr/guides/tarif-facadier", "mis à jour le 30/10/2024")),
+    "fenetres": ("Fenêtre PVC double vitrage, fournie et posée en remplacement&nbsp;: de 870 à 1&nbsp;170 € TTC, 1&nbsp;020 € en moyenne.",
+                 _src("La Maison Saint-Gobain", "https://www.lamaisonsaintgobain.fr/guides-travaux/menuiseries-exterieures/prix-fenetre-pvc", "mis à jour le 13/02/2026")),
+    "charpente": ("Rénovation de charpente en bois&nbsp;: 150 €/m² en moyenne, de 40 à 250 €/m² selon l’état et la surface.",
+                  _src("Obat", "https://travaux.obat.fr/guides/tarif-charpentier/", "mis à jour le 28/10/2024")),
+    "isolation": ("Isolation des combles perdus, pose comprise&nbsp;: 40 €/m² si l’accès se fait par l’intérieur, 45 €/m² par le toit.",
+                  _src("La Maison Saint-Gobain", "https://www.lamaisonsaintgobain.fr/guides-travaux/isolation/prix-isolation-combles", "mis à jour le 06/07/2026")),
+}
+
+SLUG = {"toiture": "toiture", "facade": "ravalement-facade", "fenetres": "fenetres", "charpente": "charpente", "isolation": "isolation"}
+
+PAGES = {
+    "toiture": dict(
+        title="Devis toiture : réfection, fuite, zinguerie | Un couvreur près de chez vous",
+        desc="Réfection de toiture, fuite, tuiles, zinguerie, démoussage. Décrivez vos travaux en 1 minute : un seul couvreur de votre secteur vient chiffrer. Gratuit.",
+        kw="Devis toiture près de chez vous", h2="Vos travaux de toiture", price_h2="Prix d’une réfection de toiture",
+        needs=[("Réfection complète", "Dépose de l’ancienne couverture, écran sous-toiture, tuiles ou ardoises neuves."),
+               ("Fuite et réparation", "Tuiles cassées ou déplacées, faîtage, solins, recherche de l’origine d’une fuite."),
+               ("Zinguerie", "Gouttières, chéneaux, noues et descentes d’eau pluviale."),
+               ("Démoussage et nettoyage", "Mousses et lichens retirés, état des tuiles vérifié au passage.")],
+        faq=[("Faut-il réparer ou refaire toute la toiture ?", "Quelques tuiles cassées ou une fuite localisée se réparent. Des fuites qui reviennent, une couverture poreuse ou une charpente abîmée imposent souvent une réfection. Le couvreur tranche lors de la visite."),
+             ("Faut-il démousser sa toiture ?", "Les mousses retiennent l’humidité et abîment les tuiles avec le temps. Un démoussage est aussi l’occasion de faire vérifier l’état de la couverture."),
+             ("Combien de temps dure une réfection de toiture ?", "Cela dépend de la surface, de la météo et de l’état de la charpente. Le couvreur vous donne un délai dans son devis.")],
+        brief="Un seul couvreur de votre secteur, choisi pour vos travaux de toiture : réfection, fuite, zinguerie ou démoussage. Visite et devis offerts."),
+    "facade": dict(
+        title="Ravalement de façade : devis gratuit | Un artisan près de chez vous",
+        desc="Ravalement de façade, fissures, enduit, peinture, isolation par l’extérieur. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer. Gratuit.",
+        kw="Ravalement de façade près de chez vous", h2="Vos travaux de façade", price_h2="Prix d’un ravalement de façade",
+        needs=[("Ravalement complet", "Nettoyage, reprise du support, enduit ou peinture de finition."),
+               ("Fissures", "Diagnostic de l’origine et reprise des fissures avant finition."),
+               ("Nettoyage et peinture", "Façade rafraîchie quand le support est sain."),
+               ("Isolation par l’extérieur", "Isolant posé sur les murs puis recouvert d’un enduit ou d’un bardage.")],
+        faq=[("Le ravalement est-il obligatoire ?", "Dans certaines communes, un arrêté impose un ravalement régulier, souvent tous les dix ans. Renseignez-vous auprès de votre mairie."),
+             ("Faut-il une autorisation pour un ravalement ?", "Un ravalement qui modifie l’aspect extérieur demande en général une déclaration préalable en mairie. Vérifiez aussi le plan local d’urbanisme de votre commune."),
+             ("Peut-on isoler en même temps que le ravalement ?", "Oui, c’est le bon moment pour une isolation par l’extérieur. Réalisée par une entreprise RGE, elle peut ouvrir droit à des aides : vérifiez-les sur france-renov.gouv.fr.")],
+        brief="Un seul artisan façade de votre secteur pour votre ravalement : nettoyage, fissures, enduit, peinture ou isolation par l’extérieur. Visite et devis offerts."),
+    "fenetres": dict(
+        title="Devis fenêtres PVC, alu, bois : pose par un menuisier près de chez vous",
+        desc="Fenêtres PVC, alu ou bois, porte d’entrée, baie vitrée, volets. Décrivez vos travaux en 1 minute : un seul menuisier local vient chiffrer. Gratuit.",
+        kw="Devis fenêtres et portes près de chez vous", h2="Vos travaux de fenêtres et portes", price_h2="Prix de fenêtres posées",
+        needs=[("Remplacement de fenêtres", "PVC, aluminium ou bois, double vitrage, sur mesure."),
+               ("Porte d’entrée", "Isolation, sécurité et style de la façade."),
+               ("Baie vitrée", "Coulissante ou à galandage, création ou remplacement."),
+               ("Volets", "Roulants, battants ou persiennes, motorisés ou non.")],
+        faq=[("Pose en rénovation ou dépose totale ?", "En rénovation, la fenêtre neuve se pose sur l’ancien cadre : c’est plus rapide, mais la surface vitrée diminue un peu. En dépose totale, tout est retiré : c’est plus cher, avec un meilleur résultat. Le menuisier vous conseille lors de la visite."),
+             ("PVC, aluminium ou bois ?", "Le PVC est le plus économique, l’aluminium permet des profils fins et de grandes baies, le bois apporte du cachet et demande plus d’entretien."),
+             ("Faut-il une autorisation pour changer ses fenêtres ?", "Remplacer à l’identique ne demande en général rien. Changer l’aspect, le matériau, la couleur ou le découpage demande une déclaration préalable en mairie.")],
+        brief="Un seul menuisier de votre secteur pour vos fenêtres, portes, baies vitrées ou volets. Visite et devis offerts."),
+    "charpente": dict(
+        title="Devis charpente : réparation, traitement | Un charpentier près de chez vous",
+        desc="Réparation et renfort, traitement du bois, extension, surélévation. Décrivez vos travaux en 1 minute : un seul charpentier local vient chiffrer. Gratuit.",
+        kw="Devis charpente près de chez vous", h2="Vos travaux de charpente", price_h2="Prix de travaux de charpente",
+        needs=[("Réparation et renfort", "Pièces de bois abîmées remplacées ou doublées."),
+               ("Traitement du bois", "Contre les insectes et les champignons, en curatif ou en préventif."),
+               ("Extension et surélévation", "Nouvelle charpente pour agrandir ou créer un étage."),
+               ("Charpente neuve", "Traditionnelle ou en fermettes, souvent avec la couverture.")],
+        faq=[("Quels signes montrent qu’une charpente est abîmée ?", "Du bois qui s’effrite, de la sciure ou de petits trous, des traces d’humidité, une toiture qui se déforme. Au moindre doute, faites-la inspecter."),
+             ("Quand faut-il traiter une charpente ?", "En présence d’insectes ou de champignons, et en prévention lors d’une réfection de toiture, quand le bois est accessible."),
+             ("Faut-il refaire la couverture en même temps ?", "Souvent, oui : la charpente est alors à nu et les deux chantiers se coordonnent. Le charpentier et le couvreur peuvent travailler ensemble.")],
+        brief="Un seul charpentier de votre secteur pour réparer, traiter ou créer votre charpente. Visite et devis offerts."),
+    "isolation": dict(
+        title="Isolation des combles et des murs : devis gratuit | Un artisan près de chez vous",
+        desc="Isolation des combles perdus ou aménagés, des murs par l’extérieur, de la toiture. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer.",
+        kw="Isolation des combles et des murs près de chez vous", h2="Vos travaux d’isolation", price_h2="Prix de l’isolation des combles",
+        needs=[("Combles perdus", "Isolant soufflé ou déroulé sur le plancher des combles."),
+               ("Combles aménagés", "Isolation sous les rampants, par l’intérieur."),
+               ("Murs par l’extérieur", "Isolant posé sur la façade puis recouvert."),
+               ("Toiture par l’extérieur", "Isolant posé sur la charpente lors d’une réfection, technique dite du sarking.")],
+        faq=[("Quelles aides pour isoler ses combles ?", "Les aides publiques dépendent des travaux, de vos revenus et de l’année. Elles demandent une entreprise certifiée RGE. Vérifiez votre éligibilité sur france-renov.gouv.fr avant de signer."),
+             ("Combles perdus ou aménagés : quelle différence ?", "Des combles perdus ne sont pas habitables : on isole le plancher, c’est le chantier le plus simple. Des combles aménagés sont habitables : on isole sous la toiture."),
+             ("Faut-il une entreprise RGE ?", "Pour obtenir des aides publiques, oui. Dites-le lors de notre appel : nous en tenons compte pour vous présenter l’artisan.")],
+        brief="Un seul artisan de votre secteur pour isoler vos combles, vos murs ou votre toiture. Visite et devis offerts."),
+}
+
+
+def build_trade(img, phone, phone_txt, crumbs, key):
+    t = next(x for x in TRADES if x[0] == key)
+    P = PAGES[key]
+    blocks = build(img, phone, phone_txt, crumbs, parts=True)
+    form = blocks["form"].replace('<form class="pf-form"', f'<form class="pf-form" data-preset="{key}"', 1)
+    url, _ = img(t[3])
+    hero = f"""<section class="sheet pf-hero" id="haut" data-tone="light">
+  <div class="grid pf-hero-grid">
+    <div class="pf-intro">
+      {crumbs}
+      <h1 class="pf-h1"><span class="pf-kw">{P["kw"]}</span><span class="pf-big">Pas cinq <span class="pf-who">{t[2]}</span>.<br>Un seul. Le bon.</span></h1>
+      <p class="lead">Décrivez vos travaux en 1 minute.<br>On vous rappelle en 5.</p>
+      {trust("d-only")}
+    </div>
+    {form}
+    <div class="pf-mtrust m-only">{trust()}</div>
+  </div>
+</section>"""
+    needs = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in P["needs"])
+    needs = f"""<section class="sheet" id="travaux" data-tone="light">
+  <div class="grid sp-head"><h2 data-split>{P["h2"]}</h2><p>{t[6]}</p></div>
+  <div class="pf-split"><figure class="frame pf-ph"><img src="{url}" alt="{t[7]}" width="1200" height="900" loading="lazy"></figure><ul class="pf-checks pf-needs">{needs}</ul></div>
+</section>"""
+    price = f"""<section class="sheet" id="prix" data-tone="paper">
+  <div class="grid sp-head"><h2 data-split>{P["price_h2"]}</h2><p>{t[9]}</p></div>
+  <div class="pf-refbox"><p class="pf-ref">{REF[key][0]}</p><p class="pf-src">Source&nbsp;: {REF[key][1]}</p><p>Ce repère reste une moyenne. Seule une visite permet un devis fiable, et elle ne vous coûte rien.</p>
+  <a class="btn" href="#projet"><span>Obtenir mon devis</span>{tick()}</a></div>
+</section>"""
+    brief = [("Le service", P["brief"])] + BRIEF[1:]
+    brief = "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in brief)
+    brief = f"""<section class="sheet pf-brief" data-tone="light" aria-labelledby="pf-brief-h">
+  <div class="grid pf-brief-grid">
+    <h2 id="pf-brief-h">En bref</h2>
+    <dl class="pf-dl">{brief}</dl>
+    <p class="pf-upd">Mis à jour le <time datetime="{UPDATED}">{UPDATED_TXT}</time></p>
+  </div>
+</section>"""
+    faq_items = trade_faq(key)
+    rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in faq_items)
+    faq = f"""<section class="faq sheet" id="questions" data-kind="faq" data-tone="paper">
+  <div class="grid fq-grid">
+    <div class="fq-head"><h2 data-split>Vos questions</h2><p>Une autre question&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p></div>
+    <div class="fq-list">
+{rows}
+    </div>
+  </div>
+</section>"""
+    others = "".join(f'<li><a class="link" href="/devis-travaux/{SLUG[x[0]]}/">{x[5]}</a></li>' for x in TRADES if x[0] != key)
+    others = f"""<section class="sheet pf-others" data-tone="light">
+  <div class="grid sp-head"><h2 data-split>Autres travaux</h2><p><a class="link" href="/devis-travaux/">Tous les devis de travaux</a></p></div>
+  <ul class="pf-olist">{others}</ul>
+</section>"""
+    seq = [hero, needs, price] + ([blocks["leak"]] if key == "toiture" else []) + [blocks["steps"], blocks["compare"], blocks["serious"], brief, faq, others, blocks["end"]]
+    return "\n\n".join(seq)
+
+
+def trade_faq(key):
+    P = PAGES[key]
+    t = next(x for x in TRADES if x[0] == key)
+    general = {q: a for q, a in FAQ}
+    price_q = {"toiture": "Combien coûte une réfection de toiture ?", "facade": "Combien coûte un ravalement de façade ?",
+               "fenetres": "Combien coûte le remplacement d’une fenêtre ?"}
+    out = []
+    if key in price_q:
+        out.append((price_q[key], general[price_q[key]]))
+    else:
+        out.append((f"Combien coûtent des travaux de {t[1].lower()} ?", f"Le prix dépend de {t[9][0].lower()}{t[9][1:]} Seule une visite permet un devis fiable."))
+    out += P["faq"]
+    if key == "toiture":
+        out.append(("J’ai une fuite de toiture, que faire tout de suite ?", general["J’ai une fuite de toiture, que faire tout de suite ?"]))
+    out += [(q, general[q]) for q in ["Est-ce vraiment gratuit ?", "La visite et le devis de l’artisan sont-ils payants ?", "Combien d’entreprises vont m’appeler ?", "Où intervenez-vous ?"]]
+    return out
+
+
+def trade_schema(SITE, faq_ld, bc_ld, key):
+    import re
+    clean = lambda s: re.sub("<[^>]+>", "", s).replace("&amp;", "&").replace("&nbsp;", " ")
+    t = next(x for x in TRADES if x[0] == key)
+    P = PAGES[key]
+    path = f"{PATH}{SLUG[key]}/"
+    graph = [
+        {"@type": "WebPage", "@id": SITE + path, "url": SITE + path, "name": P["title"], "description": P["desc"], "inLanguage": "fr-FR",
+         "dateModified": UPDATED + "T09:00:00+01:00", "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}},
+        {"@type": "Service", "name": f"Devis {t[5].lower()}", "serviceType": t[5], "description": clean(P["brief"]), "url": SITE + path,
+         "areaServed": {"@type": "Country", "name": "France"}, "audience": {"@type": "Audience", "audienceType": "Propriétaires de maison"},
+         "provider": {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "url": SITE + "/"},
+         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Gratuit pour le particulier : mise en relation, visite et devis de l'artisan"}},
+        faq_ld(trade_faq(key)), bc_ld(("Devis travaux", PATH), (t[1], path))]
+    if key == "toiture":
+        graph.append({"@type": "HowTo", "name": "Fuite de toiture : que faire en urgence", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]})
+    return {"@context": "https://schema.org", "@graph": graph}
+
+
+CSS_TRADE = """<style id="pf-css-2">
+.pf-tl{color:inherit;text-decoration:none}.pf-tl:hover{color:var(--accent)}
+.pf-ref{margin-top:10px;font-weight:500}
+.pf-src{font-size:.8rem;color:var(--muted)}
+.pf-src a{font-size:inherit}
+.pf-more{margin-top:8px;display:inline-block;font-size:.88rem}
+.pf-prices li{display:flex;flex-direction:column;gap:4px}
+.pf-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,48px);padding:0 var(--cell);align-items:start}
+.pf-ph{aspect-ratio:4 / 3;margin:0}.pf-ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.pf-needs{grid-template-columns:1fr 1fr;padding:0}
+.pf-refbox{display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:56ch;padding:0 var(--cell)}
+.pf-refbox .pf-ref{font:400 clamp(1.3rem,2vw,1.7rem)/1.25 var(--f-display);letter-spacing:-.01em}
+.pf-olist{display:flex;flex-wrap:wrap;gap:12px 28px;margin:0;padding:0 var(--cell);list-style:none;font-size:1.05rem}
+@media (max-width:760px){.pf-split{grid-template-columns:1fr}.pf-needs{grid-template-columns:1fr}}
+</style>"""
