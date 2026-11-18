@@ -470,7 +470,22 @@ def faq_ld(items):
     return {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": clean(q), "acceptedAnswer": {"@type": "Answer", "text": clean(a)}} for q, a in items]}
 
 
-def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None):
+def label_tables(frag):
+    """Chaque cellule porte le titre de sa colonne : sur téléphone, le tableau devient une liste de fiches."""
+    def table(m):
+        heads = [re.sub(r"<[^>]+>", "", h) for h in re.findall(r"<th>(.*?)</th>", m.group(0), flags=re.S)]
+        def row(r):
+            cells = iter(heads)
+            return re.sub(r"<td>", lambda c: f'<td data-label="{html.escape(next(cells, ""))}">', r.group(0))
+        return re.sub(r"<tr>(?:(?!</tr>).)*</tr>", row, m.group(0), flags=re.S)
+    return re.sub(r"<table>.*?</table>", table, frag, flags=re.S)
+
+
+MAJ_HTML = '<p class="pg-upd">Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></p>'
+REVIEW = {"/trouver-des-chantiers/habitatpresto-pro/"}  # pages à faire valider : jamais indexées, absentes du plan du site
+
+
+def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None, dated=True):
     second = f'<a class="link" href="{cta2[1]}">{cta2[0]}</a>' if cta2 else ""
     fig = ""
     if photo:
@@ -479,6 +494,7 @@ def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None):
     if visual:
         fig = visual
     lead_html = f'<p class="lead">{lead}</p>' if lead else ""
+    meta = meta + (MAJ_HTML if dated else "")
     return f"""<section class="sheet pg-top" data-tone="light">
   <div class="grid pg-grid">
     <div class="pg-text">
@@ -838,15 +854,23 @@ paths.append("/blog/")
 SEO_TITLE = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Demande partagée, exclusive ou rendez-vous qualifié ?",
              "relance-devis-artisan": "Relance de devis : calendrier, SMS et script d'appel",
              "google-ads-ou-meta-ads-artisan": "Google Ads ou Meta Ads pour un artisan : que choisir ?"}
+import contenu as CT
+for a in ARTICLES:
+    _p = CT.PLUS.get(a["slug"])
+    if _p and not a.get("faq"):
+        assert _p["before"] in a["body"], a["slug"]
+        a["body"] = a["body"].replace(_p["before"], _p["insert"] + _p["before"], 1) + _p["append"] + "\n" + CT.qa_html(_p["faq"]) + "\n"
+        a["faq"] = _p["faq"]
+    a["minutes"] = max(3, round(len(re.sub(r"<[^>]+>", " ", a["body"]).split()) / 200))
 for a in ARTICLES:
     path = f"/blog/{a['slug']}/"
-    meta = f'<p class="post-meta-line"><span>Par Charles Le Cottier, cofondateur · Head of Performance</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>{a["minutes"]} min de lecture</span></p>'
+    meta = f'<p class="post-meta-line"><span>Par Charles Le Cottier, cofondateur · Head of Performance</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
     body = "\n\n".join([
-        top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta, photo=COVER[a["slug"]]).replace('class="pg-photo frame"', 'class="pg-photo frame is-color"', 1),
+        top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta, photo=COVER[a["slug"]], dated=False).replace('class="pg-photo frame"', 'class="pg-photo frame is-color"', 1),
         f"""<section class="sheet" data-tone="light">
   <div class="grid art-grid">
     <article class="prose">
-{a['body']}
+{label_tables(a['body'])}
     </article>
     <aside class="art-aside">
       <h3>Votre secteur est-il libre ?</h3>
@@ -859,12 +883,50 @@ for a in ARTICLES:
     ])
     write(path, SEO_TITLE.get(a["slug"]) or f"{a['short']} | Bartier & Co", a["desc"], body, nav="/blog/",
           schema={"@context": "https://schema.org", "@graph": [
-              {"@type": "BlogPosting", "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": TODAY + "T09:00:00+01:00", "inLanguage": "fr-FR",
+              {"@type": "BlogPosting", "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": "@@MAJ@@", "inLanguage": "fr-FR",
                "mainEntityOfPage": SITE + path, "image": [img(COVER[a["slug"]])[0]],
                "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/"},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
-              bc_ld(("Blog", "/blog/"), (a["short"], path))]})
+              bc_ld(("Blog", "/blog/"), (a["short"], path))] + ([faq_ld(a["faq"])] if a.get("faq") else [])})
     paths.append(path)
+
+# ——— Guides : comment trouver des chantiers, fiche Habitatpresto Pro (_build/contenu.py) ———
+AUTHOR_META = '<p class="post-meta-line"><span>Par Charles Le Cottier, cofondateur · Head of Performance</span></p>'
+
+
+def guide(G, kick, crumb_items, faq_title, links):
+    body = "\n\n".join([
+        top(kick, G["h1"], G["lead"], crumbs(*crumb_items), meta=AUTHOR_META),
+        f"""<section class="sheet" data-tone="light">
+  <div class="grid art-grid">
+    <article class="prose">
+{label_tables(G['body'])}
+    </article>
+    <aside class="art-aside">
+      <h3>Votre secteur est-il libre ?</h3>
+      <p>Un seul artisan par métier et par secteur. Visites déjà fixées, sans durée d'engagement.</p>
+      <a class="btn" href="#contact"><span>Vérifier mon secteur</span></a>
+    </aside>
+  </div>
+</section>""",
+        faq(G["faq"], title=faq_title),
+        more("À lire aussi", "Tous les articles", "/blog/", links),
+    ])
+    write(G["path"], G["title"], G["desc"], body, nav=None,
+          schema={"@context": "https://schema.org", "@graph": [
+              {"@type": "Article", "headline": fr(G["h1"]), "description": fr(G["desc"]), "datePublished": "2026-11-18", "dateModified": "@@MAJ@@",
+               "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"],
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/"},
+               "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
+              faq_ld(G["faq"]), bc_ld(*crumb_items)]})
+    paths.append(G["path"])
+
+
+_art = {x["slug"]: (x["short"], f"/blog/{x['slug']}/") for x in ARTICLES}
+guide(CT.PILLAR, "Guide", [("Trouver des chantiers", CT.PILLAR["path"])], "Vos questions sur la recherche de chantiers",
+      [_art["google-ads-ou-meta-ads-artisan"], _art["relance-devis-artisan"], _art["lead-partage-lead-exclusif-rendez-vous-qualifie"], ("Lexique des chantiers et des travaux", "/lexique/")])
+guide(CT.HP, "Fiche plateforme", [("Trouver des chantiers", CT.PILLAR["path"]), ("Habitatpresto Pro", CT.HP["path"])], "Habitatpresto Pro : vos questions",
+      [("Comment trouver des chantiers : 8 canaux comparés", CT.PILLAR["path"]), _art["lead-partage-lead-exclusif-rendez-vous-qualifie"], ("Lexique des chantiers et des travaux", "/lexique/")])
 
 # ——— Pages légales : _build/legal/<slug>.html (fragment HTML, métadonnées JSON en commentaire sur la première ligne) ———
 # Informations de la société encore inconnues : à renseigner ici dès qu'elles existent. Une information vide s'affiche « à compléter ».
@@ -955,7 +1017,7 @@ LX_UPDATED = "2026-11-18"
 lx_body = "\n\n".join([
     top("Lexique", "Lexique des chantiers et des travaux",
         "Les mots que croisent artisans et propriétaires, expliqués en deux ou trois phrases, avec la source officielle quand elle existe.",
-        crumbs(("Lexique", "/lexique/")), meta=f'<p class="lx-upd">Mis à jour le <time datetime="{LX_UPDATED}">18 novembre 2026</time></p>'),
+        crumbs(("Lexique", "/lexique/"))),
     f"""<section class="sheet lx" id="clients" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>Trouver des clients</h2><p>Pour les artisans du bâtiment : demandes, rendez-vous, coûts et règles d'appel.</p></div>
@@ -980,7 +1042,7 @@ write_plain("/lexique/", "Lexique des chantiers et des travaux | Bartier & Co",
             lx_body.replace('href="#contact"', 'href="/#contact"'),
             schema={"@context": "https://schema.org", "@graph": [
                 {"@type": "DefinedTermSet", "@id": SITE + "/lexique/#lexique", "name": "Lexique des chantiers et des travaux", "url": SITE + "/lexique/",
-                 "inLanguage": "fr-FR", "dateModified": LX_UPDATED, "publisher": ORG_REF,
+                 "inLanguage": "fr-FR", "dateModified": "@@MAJ@@", "publisher": ORG_REF,
                  "hasDefinedTerm": [{"@type": "DefinedTerm", "@id": f"{SITE}/lexique/#{s}", "name": _lx_clean(t), "description": _lx_clean(d),
                                      "url": f"{SITE}/lexique/#{s}", "inDefinedTermSet": {"@id": SITE + "/lexique/#lexique"}} for s, t, d, _, _ in LX.CLIENTS + LX.TRAVAUX]},
                 bc_ld(("Lexique", "/lexique/"))]})
@@ -1059,13 +1121,17 @@ for f in PAGES_OUT:
     doc = IMG.localize(doc, SITE).replace('<link rel="preconnect" href="https://images.unsplash.com">\n', "")
     doc = re.sub(r"<img [^>]*>", real_dims, doc)
     doc = typo(doc)
+    _parts = doc.split('<div class="fq-list">')  # Microsoft : ne pas cacher les réponses importantes
+    doc = _parts[0] + "".join('<div class="fq-list">' + s.replace('<details class="fq">', '<details class="fq" open>', 2) for s in _parts[1:])
+    _rel = f.relative_to(ROOT)
+    _page = "/" + ("" if str(_rel.parent) == "." else str(_rel.parent) + "/")
     if 'name="theme-color"' not in doc:
         doc = doc.replace("</title>", '</title>\n<meta name="theme-color" content="#ffffff">', 1)
     for slug in LEGAL_SLUGS:  # pas de lien vers une page légale qui n'existe pas encore
         if slug not in LEGAL_READY:
             doc = re.sub(rf'\s*<a href="/{slug}/">[^<]*</a>', "", doc)
     rob = '<meta name="robots" content="noindex">'
-    if LIVE:  # en ligne : indexation et extraits longs autorisés (moteurs de réponse)
+    if LIVE and _page not in REVIEW:  # en ligne : indexation et extraits longs autorisés (moteurs de réponse)
         doc = doc.replace(rob, '<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">', 1).replace(rob + "\n", "").replace(rob, "")
     if doc.count(rob) > 1:
         i = doc.index(rob) + len(rob)
@@ -1106,10 +1172,17 @@ for p in paths:
         _lm[p] = {"sig": sig, "date": BUILD}
 _lm = {p: _lm[p] for p in paths}
 _lm_file.write_text(json.dumps(_lm, indent=1, sort_keys=True) + "\n", encoding="utf-8")
-urls = "\n".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{_lm[p]['date']}</lastmod></url>" for p in paths)
+_MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+for p in paths:
+    _f = ROOT / p.strip("/") / "index.html"
+    _t = _f.read_text(encoding="utf-8")
+    if "@@MAJ" in _t:
+        _y, _m, _d = _lm[p]["date"].split("-")
+        _f.write_text(_t.replace("@@MAJFR@@", f"{int(_d)} {_MOIS[int(_m) - 1]} {_y}").replace("@@MAJ@@", _lm[p]["date"]), encoding="utf-8")
+urls = "\n".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{_lm[p]['date']}</lastmod></url>" for p in paths if p not in REVIEW)
 (ROOT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
 import llmsfull
-(ROOT / "llms-full.txt").write_text(llmsfull.build(ROOT, SITE, [p for p in paths if p not in ("/mentions-legales/", "/confidentialite/", "/cookies/")]), encoding="utf-8")
+(ROOT / "llms-full.txt").write_text(llmsfull.build(ROOT, SITE, [p for p in paths if p not in ("/mentions-legales/", "/confidentialite/", "/cookies/") and p not in REVIEW]), encoding="utf-8")
 _keep = IMG.used()
 for _f in (ROOT / "assets" / "photos").glob("*.webp"):
     if _f.name not in _keep:

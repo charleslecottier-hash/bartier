@@ -62,7 +62,7 @@ mark.todo{padding:.1em .4em;border-radius:var(--r);background:#FFE9A8;color:#4d3
   .lg-prose thead{display:none}
   .lg-prose tr{padding:.9rem 0;border-bottom:1px solid var(--rule)}
   .lg-prose td{padding:.15rem 0;border:0}
-  .lg-prose td::before{content:attr(data-label) " : ";font-weight:500}
+  .lg-prose td::before{content:attr(data-label) "\a0: ";font-weight:500}
   .lg-prose td:first-child{font-weight:500;font-size:1rem;margin-bottom:.3rem}
   .lg-prose td:first-child::before{content:none}
   mark.todo{white-space:normal}
@@ -277,4 +277,26 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 }
 @media (min-width:761px){
   .lx .sp-split > div:first-child{position:sticky;top:calc(var(--hdr) + 40px)}
+}
+
+/* ——— Guides et articles enrichis ——— */
+.pg-upd{margin-top:16px;font-size:.88rem;color:var(--muted)}
+.post-meta-line + .pg-upd{margin-top:8px}
+.prose .src{font-size:.88rem;line-height:1.5;color:var(--muted)}
+.prose .src a{color:var(--ink)}
+.prose h3{font:400 clamp(1.12rem,1.5vw,1.3rem)/1.3 var(--f-display);letter-spacing:-.01em;margin-top:1.6em}
+.prose h2 + h3{margin-top:1em}
+.prose td a{color:var(--accent)}
+
+/* tableaux des articles et des guides : une fiche par ligne sur téléphone */
+@media (max-width:760px){
+  .art-grid .prose table,.art-grid .prose tbody,.art-grid .prose tr,.art-grid .prose td{display:block;width:auto}
+  .art-grid .prose thead{display:none}
+  .art-grid .prose tr{padding:16px 0;border-bottom:1px solid var(--rule)}
+  .art-grid .prose td{min-width:0;padding:2px 0;border:0;font-size:.95rem;line-height:1.5}
+  .art-grid .prose td::before{content:attr(data-label) "\a0: ";font-weight:500;color:var(--ink)}
+  .art-grid .prose td[data-label=""]::before{content:none}
+  .art-grid .prose td:first-child{margin-bottom:4px;font-weight:500;font-size:1rem}
+  .art-grid .prose td:first-child::before{content:none}
+  .art-grid .prose td:empty{display:none}
 }

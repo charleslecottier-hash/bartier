@@ -211,7 +211,7 @@ Une autre question ? Écrivez-nous
 La demande n’est proposée qu’à vous, nous rappelons nous-mêmes le propriétaire, et vous ne vous déplacez qu’une fois le rendez-vous fixé.
 
 **Comment trouver des chantiers quand on est artisan ?**
-Pour trouver des chantiers, un artisan a cinq canaux : le bouche-à-oreille, les plateformes de devis, les apporteurs d’affaires, les flyers et les annonces locales. Nous misons sur les annonces locales à votre nom, sur Google et sur Facebook et Instagram : chaque demande est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda.
+Pour trouver des chantiers, un artisan a cinq canaux : le bouche-à-oreille, les plateformes de devis, les apporteurs d’affaires, les flyers et les annonces locales. Nous misons sur les annonces locales à votre nom, sur Google et sur Facebook et Instagram : chaque demande est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda. Les 8 canaux sont comparés dans notre guide.
 
 **Qu’est-ce qu’un rendez-vous qualifié ?**
 C’est une visite fixée chez un propriétaire dont nous avons vérifié le projet au téléphone : il est propriétaire, il sait quels travaux il veut, sa commune est dans votre zone et son délai est clair. Vous ne vous déplacez que pour ces visites.
@@ -271,6 +271,7 @@ Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises 
 
 Métiers
 Des chantiers de plusieurs milliers d’euros. Pas de dépannage, pas de petits travaux.
+Mis à jour le 18 novembre 2026
 
 ### Couverture
 Réfection complète de toiture, Rénovation de toiture avec isolation, Démoussage et hydrofuge d’une toiture entière
@@ -301,6 +302,7 @@ Trouvez des chantiers de couverture : des propriétaires qui préparent une ré
 
 Couvreurs-zingueurs · Partout en France
 Votre agenda rempli de propriétaires qui préparent une réfection ou une rénovation de toiture. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
+Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
@@ -378,6 +380,7 @@ Trouvez des chantiers de menuiserie extérieure : des propriétaires qui prépa
 
 Menuisiers poseurs · Partout en France
 Votre agenda rempli de propriétaires qui préparent le remplacement de leurs fenêtres ou de leur porte. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
+Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
@@ -455,6 +458,7 @@ Trouvez des chantiers de façade : des propriétaires qui préparent un ravalem
 
 Façadiers · Partout en France
 Votre agenda rempli de propriétaires qui préparent un ravalement ou une isolation par l’extérieur. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
+Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
@@ -531,6 +535,7 @@ Trouvez des chantiers de charpente : des propriétaires qui préparent un proje
 
 Charpentiers · Partout en France
 Votre agenda rempli de propriétaires qui préparent un projet de charpente prêt à démarrer. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
+Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
@@ -606,6 +611,7 @@ Trouvez des chantiers d’isolation : des propriétaires qui préparent l’iso
 
 Entreprises d’isolation · Partout en France
 Votre agenda rempli de propriétaires qui préparent l’isolation complète de leur maison. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
+Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
@@ -682,6 +688,7 @@ Campagnes Google Ads locales pour artisans du bâtiment : captez les propriéta
 
 Google Ads
 Un propriétaire tape « couvreur » et le nom de sa ville. Il tombe sur vous. Nous le rappelons en moins de 5 minutes, avant vos concurrents.
+Mis à jour le 18 novembre 2026
 
 ### Quand Google est le bon canal
 La demande existe déjà. Il faut la capter avant les autres.
@@ -752,6 +759,7 @@ Annonces Facebook et Instagram locales pour artisans du bâtiment : les propri�
 
 Meta Ads · Facebook et Instagram
 Des annonces à votre nom, vues par les propriétaires à 25 à 40 km de votre dépôt. Chaque demande rappelée en moins de 5 minutes, puis vérifiée.
+Mis à jour le 18 novembre 2026
 
 ### Des annonces qui vous ressemblent
 Au nom de votre entreprise, avec vos chantiers.
@@ -1863,6 +1871,7 @@ Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Bar
 
 Qui sommes-nous
 Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous remplissons l’agenda des artisans du bâtiment, partout en France.
+Mis à jour le 18 novembre 2026
 
 ### Un bon artisan ne devrait pas courir après les devis
 Les artisans que nous accompagnons ont du métier et des clients satisfaits. Ce qui leur manque, c’est un flux régulier de projets sérieux.
@@ -1927,6 +1936,7 @@ Des articles courts et concrets pour les artisans du bâtiment : trouver des ch
 
 Blog
 Des articles courts et concrets, écrits pour les artisans du bâtiment.
+Mis à jour le 18 novembre 2026
 17 nov. 2026 Comprendre
 
 ### Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
@@ -1946,7 +1956,7 @@ Adresse : https://bartierandco.com/blog/lead-partage-lead-exclusif-rendez-vous-q
 Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer.
 
 Comprendre
-Par Charles Le Cottier, cofondateur · Head of Performance Publié le 17 novembre 2026 5 min de lecture
+Par Charles Le Cottier, cofondateur · Head of Performance Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
 Une demande partagée est une demande de devis vendue à plusieurs entreprises. Une demande exclusive n’est vendue qu’à vous, mais c’est à vous de rappeler. Un rendez-vous qualifié est une visite déjà fixée, chez un propriétaire dont le projet a été vérifié.
 
 ### Quelle différence entre une demande de devis et un rendez-vous qualifié ?
@@ -1968,6 +1978,27 @@ Quelqu’un a rappelé le propriétaire, vérifié qu’il est propriétaire occ
 - Projet vérifié | Rarement | Parfois | Oui
 - Ce que vous recevez | Une fiche | Une fiche | Une visite fixée
 
+### Combien coûte vraiment une demande ?
+Le prix affiché d’une demande ne dit pas grand-chose. Ce qui compte, c’est le coût par chantier signé : le prix des demandes divisé par le nombre de chantiers qu’elles vous ont fait signer.
+Exemple, avec des chiffres choisis pour le calcul (ce ne sont pas des moyennes) :
+- Demandes partagées | Demandes exclusives
+- Prix d’une demande | 25 € | 60 €
+- Demandes achetées | 20, soit 500 € | 10, soit 600 €
+- Chantiers signés | 1 | 2
+- Coût par chantier signé | 500 € | 300 €
+Ajoutez votre temps : chaque demande se rappelle, et chaque visite inutile coûte une demi-journée.
+
+### Que vérifier dans le contrat ?
+- La durée d’engagement, et les frais si vous arrêtez avant la fin.
+- La zone couverte, et la durée de l’exclusivité si elle est promise.
+- Ce qui se passe pour une demande non valable : faux numéro, locataire, hors zone.
+- Le prix après la première période.
+- La preuve que le particulier a demandé à être rappelé au sujet de son projet.
+
+### Depuis 2026, l’accord du particulier compte
+Depuis le 11 août 2026, appeler un particulier pour lui proposer des travaux demande son accord préalable. Avant d’acheter des demandes, vérifiez que chaque particulier a bien demandé à être rappelé au sujet de son projet, et que le vendeur peut le prouver. Sans cet accord, l’appel peut être considéré comme du démarchage interdit.
+Source : CNIL, prospection par téléphone, Code de la consommation, L223-1 et suivants.
+
 ### Les questions à poser avant de signer
 - À combien d’entreprises la même demande est-elle transmise ?
 - Qui rappelle le propriétaire, et en combien de temps ?
@@ -1975,6 +2006,17 @@ Quelqu’un a rappelé le propriétaire, vérifié qu’il est propriétaire occ
 - Que se passe-t-il si le propriétaire n’est pas joignable ou n’est pas sérieux ?
 - Y a-t-il une durée d’engagement minimale ?
 Nos réponses sont sur la page Engagements. Les définitions sont dans notre lexique.
+
+### Questions fréquentes
+
+#### Qu’est-ce qu’un lead dans le bâtiment ?
+C’est le mot des plateformes pour une demande de devis : les coordonnées d’un particulier qui envisage des travaux. Il reste à le rappeler, à vérifier son projet et à fixer une visite.
+
+#### Une demande exclusive coûte-t-elle plus cher ?
+Elle coûte en général plus cher à l’achat, mais elle peut revenir moins cher par chantier signé, puisque vous n’êtes pas en concurrence sur le même appel. Faites le calcul avec vos propres chiffres.
+
+#### Comment savoir si une demande est sérieuse ?
+Posez cinq questions au premier appel : êtes-vous propriétaire, quels travaux, quelle commune, pour quand, avez-vous déjà des devis ? Les réponses suffisent à trier.
 
 #### Votre secteur est-il libre ?
 Un seul artisan par métier et par secteur.
@@ -1993,7 +2035,7 @@ Adresse : https://bartierandco.com/blog/google-ads-ou-meta-ads-artisan/
 Google capte ceux qui cherchent déjà, Meta touche ceux qui n’ont pas encore cherché. Comment choisir selon votre métier et votre secteur.
 
 Publicité
-Par Charles Le Cottier, cofondateur · Head of Performance Publié le 17 novembre 2026 4 min de lecture
+Par Charles Le Cottier, cofondateur · Head of Performance Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
 Google Ads capte une demande qui existe déjà : le propriétaire cherche un artisan. Meta Ads (Facebook et Instagram) suscite une demande chez des propriétaires qui n’ont pas encore cherché. Le premier convient aux urgences et aux projets mûrs, le second aux rénovations et à l’entretien.
 
 ### Demande exprimée ou demande suscitée
@@ -2010,9 +2052,41 @@ Sur Google, le prix du clic dépend du métier et de la concurrence locale. Sur 
 - Meta : qualifier au téléphone, car une partie des demandes est encore au stade de l’idée.
 Dans les deux cas, la demande doit être rappelée en quelques minutes. C’est là que la plupart des campagnes perdent leurs meilleurs projets.
 
+### Google Ads ou Meta Ads : le tableau
+- Google Ads | Meta Ads (Facebook, Instagram)
+- La demande | Exprimée : le propriétaire cherche | Suscitée : il n’a pas encore cherché
+- Typiquement | Urgences, projets mûrs | Rénovation, entretien, projets à venir
+- Le ciblage | Les recherches, dans vos communes | Un rayon autour de votre dépôt
+- Le point clé | Écarter les recherches inutiles | Trier les demandes au téléphone
+- Ce qui convainc | Répondre vite | Vos vraies photos de chantier
+
+### Combien de budget prévoir pour commencer ?
+Il n’existe pas de bon chiffre pour tous : le prix d’un clic dépend du métier, de la ville et de la saison. Partez de votre objectif : combien de chantiers voulez-vous signer par mois, et combien êtes-vous prêt à payer pour chacun ?
+Budget de départ ≈ chantiers visés par mois × coût acceptable par chantier signé
+Exemple pour le calcul : pour 2 chantiers par mois, à 400 € au plus chacun, le budget de départ est d’environ 800 € par mois. Ajustez-le après quelques semaines, selon les demandes réelles.
+
+### Les erreurs qui coûtent le plus cher
+- Aucun mot exclu sur Google : sans liste de mots à exclure (gratuit, emploi, formation, bricolage), vous payez des clics qui ne deviendront jamais des chantiers.
+- Un rayon trop large : des demandes à une heure de route, que vous refuserez.
+- Un formulaire sans question : sur Facebook et Instagram, ajoutez des questions de tri (propriétaire, travaux, commune).
+- Un rappel le lendemain : la demande a refroidi, ou un concurrent a rappelé avant vous.
+- Des comptes au nom du prestataire : si vous arrêtez, vous perdez l’historique. Exigez des comptes à votre nom.
+Source : Google Ads, mots clés à exclure, Meta, publicités à formulaire.
+
 ### Google Ads ou Meta Ads : notre choix, et ses limites
 Nous commençons le plus souvent par Meta pour les métiers de rénovation (couverture, façade, menuiserie, isolation), parce que le volume se construit dans un rayon précis. Nous ajoutons Google quand votre secteur a assez de recherches locales. Ce n’est pas une règle : certains secteurs ruraux n’ont pas assez de recherches pour Google, et certains métiers vivent surtout de l’urgence.
 Voir aussi : Google Ads et Meta Ads.
+
+### Questions fréquentes
+
+#### Google Ads ou Meta Ads pour un couvreur ?
+Souvent les deux : Google pour les urgences comme une fuite, Facebook et Instagram pour la réfection, que le propriétaire repousse. Commencez par celui qui correspond aux chantiers que vous voulez.
+
+#### Faut-il un site internet pour faire de la publicité ?
+Pas forcément un site complet. Pour Google, une page rapide sur mobile, à votre nom, suffit. Sur Facebook et Instagram, le formulaire peut rester dans l’application.
+
+#### Qui doit posséder les comptes publicitaires ?
+Vous. Les comptes Google Ads et Meta doivent être à votre nom, payés directement par votre entreprise, pour garder l’historique si vous changez de prestataire.
 
 #### Votre secteur est-il libre ?
 Un seul artisan par métier et par secteur.
@@ -2031,7 +2105,7 @@ Adresse : https://bartierandco.com/blog/relance-devis-artisan/
 Un devis de plusieurs milliers d’euros se relance. Un calendrier simple, trois SMS prêts à copier et un script d’appel de deux minutes.
 
 Méthode
-Par Charles Le Cottier, cofondateur · Head of Performance Publié le 17 novembre 2026 5 min de lecture
+Par Charles Le Cottier, cofondateur · Head of Performance Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
 Relancez un devis de rénovation par un appel, quelques jours après l’envoi, puis par SMS si vous n’avez pas de réponse. Arrêtez après trois tentatives sans retour, en laissant la porte ouverte. Le but n’est pas d’insister : c’est de savoir où en est le projet.
 
 ### Quand relancer un devis ?
@@ -2054,11 +2128,42 @@ Les noms sont des exemples. Gardez le vôtre, celui de l’entreprise, et le pro
 - L’écoute : le prix, le délai, une question technique, un autre devis.
 - La prochaine étape : « Je vous propose qu’on se rappelle vendredi, après que vous en aurez parlé ensemble. »
 
+### Que répondre quand le devis est jugé trop cher ?
+- Demandez à quoi il est comparé : un autre devis, un budget, un prix vu en ligne.
+- Comparez poste par poste : matériaux, surface, échafaudage, évacuation des déchets, garanties.
+- Proposez une option, pas une remise : un autre matériau, une partie des travaux plus tard.
+- Rappelez ce qui est inclus : la visite, la garantie décennale, le délai.
+
+### Un devis qui aide à signer
+Un devis clair se relance plus facilement. Il détaille les travaux poste par poste, les matériaux, le prix hors taxes et toutes taxes comprises, la durée de validité, le délai d’exécution, et le nom de votre assurance décennale.
+Source : Service-Public, devis obligatoire, Service-Public, garantie décennale.
+
+### Un modèle de relance par e-mail
+Objet : votre devis de toiture Bonjour Madame Durand, je reviens vers vous au sujet du devis envoyé le 4 mars pour la réfection de votre toiture. Avez-vous des questions sur les matériaux ou le délai ? Je peux vous rappeler à l’heure qui vous arrange. Bien cordialement, Julien, Martin Couverture.
+Comme pour les SMS, les noms sont des exemples.
+
 ### Quand arrêter de relancer un devis ?
 Après trois tentatives sans réponse, arrêtez. Un dernier message poli laisse une meilleure impression qu’un quatrième appel, et le propriétaire reviendra parfois quelques mois plus tard.
 
 ### Comment mesurer l’effet de vos relances ?
 Notez pour chaque devis : envoyé, relancé, signé ou perdu, et pourquoi. Au bout de quelques mois, vous saurez quels projets vous signez, et où partent les autres. Votre taux de signature (devis signés ÷ devis envoyés × 100) dit si les relances paient.
+
+### Le tableau de suivi des devis
+- Client | Devis envoyé le | Montant | Relances | Statut | Si perdu, pourquoi
+- Exemple : M. et Mme Durand | 4 mars | 14 800 € | SMS, appel, SMS | Signé
+- Exemple : M. Petit | 11 mars | 6 200 € | SMS, appel | Perdu | Prix, autre devis
+Au bout de quelques mois, la dernière colonne vous dit où partent vos chantiers.
+
+### Questions fréquentes
+
+#### Combien de fois faut-il relancer un devis ?
+Trois fois au plus : un SMS le jour de l’envoi, un appel quelques jours après, puis un dernier message deux à trois semaines plus tard.
+
+#### Faut-il relancer par téléphone ou par SMS ?
+Les deux. L’appel sert à répondre aux questions, le SMS à ne pas déranger. Commencez par confirmer la réception du devis par SMS le jour même.
+
+#### Comment savoir si mes relances fonctionnent ?
+Suivez votre taux de signature (devis signés ÷ devis envoyés × 100) avant et après avoir mis en place les relances, sur plusieurs mois.
 
 #### Votre secteur est-il libre ?
 Un seul artisan par métier et par secteur.
@@ -2066,6 +2171,105 @@ Un seul artisan par métier et par secteur.
 ### À lire aussi
 - Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
 - Google Ads ou Meta Ads : qui capte quelle demande
+- Tous les articles
+
+---
+
+## Comment trouver des chantiers : 8 canaux comparés
+
+Adresse : https://bartierandco.com/trouver-des-chantiers/
+
+Les 8 canaux pour trouver des chantiers quand on est artisan, comparés par coût du chantier signé : bouche-à-oreille, fiche Google, plateformes, annonces.
+
+Guide
+Un artisan du bâtiment trouve ses chantiers par 8 canaux : le bouche-à-oreille, la fiche Google, les plateformes de devis, les apporteurs d’affaires, la sous-traitance, les annonces locales, les flyers et panneaux de chantier, et les réseaux professionnels. Le bon canal n’est pas le moins cher par demande : c’est celui dont le coût par chantier signé est le plus bas.
+Par Charles Le Cottier, cofondateur · Head of Performance
+Mis à jour le 18 novembre 2026
+
+### Les 8 canaux pour trouver des chantiers
+Pour comparer deux canaux, trois questions suffisent : ce que vous payez, à combien d’entreprises la même demande est proposée, et qui rappelle le propriétaire.
+- Canal | Ce que vous payez | Demande partagée ? | Qui rappelle | Ce qu’il faut pour que ça marche
+- Bouche-à-oreille | Rien, sinon du temps | Non | Le client vous appelle | Des chantiers récents et des clients contents
+- Fiche Google | Rien | Non, mais le propriétaire compare plusieurs fiches | Le client vous appelle | Une fiche complète, des photos, des avis
+- Plateformes de devis | Un abonnement ou un prix par demande | Souvent, selon la plateforme | Vous | Rappeler très vite et relancer chaque devis
+- Apporteur d’affaires | Une commission sur le chantier signé | Selon le contrat | Vous, ou l’apporteur | Un contrat écrit : commission, zone, durée
+- Sous-traitance | Une marge plus faible | Non | L’entreprise principale | Un réseau d’entreprises générales ou d’architectes
+- Annonces locales (Google, Facebook, Instagram) | Le budget publicitaire et la gestion des campagnes | Non | Vous, ou votre prestataire | Une zone bien réglée, un tri au téléphone, un rappel rapide
+- Flyers et panneaux de chantier | L’impression et la distribution | Non | Le client vous appelle | Des chantiers en cours dans le quartier
+- Réseaux professionnels | Une cotisation, du temps | Non | Le client ou le prescripteur vous appelle | Une présence régulière et des recommandations
+Les plateformes de devis ne fonctionnent pas toutes de la même façon : lisez leurs conditions avant de signer. Exemple : ce que disent les conditions d’Habitatpresto Pro.
+
+### Comment calculer le coût par chantier signé ?
+Additionnez tout ce qu’un canal vous a coûté sur une période : abonnement, publicité, commissions, impression. Divisez par le nombre de chantiers signés grâce à ce canal sur la même période.
+Coût par chantier signé = dépenses du canal ÷ chantiers signés grâce à ce canal
+Exemple, avec des chiffres choisis pour le calcul (ce ne sont pas des moyennes) :
+- Canal A | Canal B
+- Dépenses du mois | 400 € | 900 €
+- Demandes reçues | 40, soit 10 € la demande | 12, soit 75 € la demande
+- Chantiers signés | 2 | 6
+- Coût par chantier signé | 200 € | 150 €
+La demande la moins chère ne donne pas le chantier le moins cher. Comptez aussi votre temps : les appels, les visites qui ne donnent rien, les devis jamais signés. Le taux de signature de vos devis complète le calcul.
+
+### Quels canaux sont gratuits ?
+Le bouche-à-oreille, la fiche Google, le panneau de chantier et les prescripteurs ne coûtent presque rien en argent. Ils coûtent du temps, et ils mettent des mois à donner un flux régulier.
+- Fiche Google : renseignez votre métier, votre zone, vos horaires et des photos, puis demandez un avis après chaque chantier. Google classe les fiches locales selon trois critères : la pertinence, la distance et la notoriété.
+- Panneau de chantier : votre nom, votre métier et votre numéro, lisibles depuis la rue.
+- Voisinage : un mot dans les boîtes aux lettres des rues voisines, avant et pendant le chantier.
+- Prescripteurs : architectes, maîtres d’œuvre, autres corps de métier, fournisseurs.
+Source : Google, aide de la fiche d’établissement.
+
+### Quel canal choisir selon votre métier ?
+- Métier | Ce que cherchent les propriétaires | Canaux qui conviennent
+- Couverture | Urgences (fuite, tuiles) et réfections | Google pour les urgences, Facebook et Instagram pour la réfection, panneau de chantier
+- Façade | Ravalements, souvent repoussés | Facebook et Instagram, flyers dans les rues voisines
+- Menuiserie extérieure | Remplacement de fenêtres et de portes | Facebook et Instagram, fiche Google, fournisseurs
+- Charpente | Projets liés à la toiture ou à une extension | Prescripteurs (couvreurs, architectes), Google
+- Isolation | Projets souvent liés aux aides | Annonces locales, en respectant les règles propres à la rénovation énergétique
+Pour aller plus loin : Google Ads ou Meta Ads : qui capte quelle demande.
+
+### Où se perdent les chantiers après la demande ?
+- Le rappel tardif : une demande rappelée le soir a pu parler entre-temps à un concurrent.
+- La visite inutile : un locataire, un projet pour dans trois ans, une commune hors zone. Quelques questions au téléphone l’évitent.
+- Le devis envoyé tard : plus il arrive tard, plus le propriétaire a reçu d’autres devis.
+- Le devis jamais relancé : un appel et un SMS suffisent souvent. Voir la relance de devis.
+
+### Ce que la loi interdit depuis 2026
+Depuis le 11 août 2026, appeler un particulier pour lui proposer des travaux demande son accord préalable, sauf contrat en cours. Pour la rénovation énergétique, la prospection par téléphone est interdite. Rappeler un propriétaire qui vous a lui-même demandé d’être contacté reste possible, si vous gardez la preuve de sa demande.
+Source : CNIL, prospection par téléphone, Code de la consommation, L223-1 et suivants. Définition dans notre lexique.
+
+### Notre approche, et ses limites
+Bartier & Co combine deux canaux de cette liste, les annonces locales sur Google et sur Facebook et Instagram, avec l’étape où se perdent le plus de chantiers : le rappel. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda. Un seul artisan par métier et par secteur.
+Ce n’est pas un remplacement du bouche-à-oreille : c’est un flux en plus, sans durée d’engagement. Voir comment ça marche.
+
+#### Votre secteur est-il libre ?
+Un seul artisan par métier et par secteur. Visites déjà fixées, sans durée d’engagement.
+
+### Vos questions sur la recherche de chantiers
+Une autre question ? Écrivez-nous
+
+**Quel est le meilleur site pour trouver des chantiers ?**
+Aucun site n’est le meilleur pour tous les artisans. Comparez trois points : à combien d’entreprises la même demande est proposée, qui rappelle le propriétaire, et combien vous coûte un chantier signé.
+
+**Comment trouver des chantiers gratuitement ?**
+Par le bouche-à-oreille, une fiche Google complète avec des avis, un panneau sur chaque chantier et des prescripteurs comme les architectes. C’est gratuit en argent, mais cela demande du temps et plusieurs mois.
+
+**Comment trouver des chantiers chez les particuliers ?**
+Visez les propriétaires de votre secteur : la fiche Google et les annonces Google pour ceux qui cherchent déjà, les annonces Facebook et Instagram et les flyers pour ceux qui y pensent. Depuis août 2026, ne les appelez que s’ils l’ont demandé.
+
+**Faut-il payer pour avoir des chantiers ?**
+Non, mais les canaux gratuits sont lents. Payer a du sens quand le coût par chantier signé reste nettement inférieur à votre marge sur le chantier.
+
+**Combien de temps faut-il pour remplir son agenda ?**
+Cela dépend du canal, du métier et de la saison. Le bouche-à-oreille et la fiche Google demandent des mois. Des annonces locales donnent des demandes dès qu’elles tournent, à condition de les rappeler vite.
+
+**Les plateformes de devis valent-elles le coup ?**
+Cela dépend de leurs conditions. Avant de signer, demandez à combien d’artisans chaque demande est envoyée, la durée d’engagement, le prix réel et ce qui se passe pour une demande non valable.
+
+### À lire aussi
+- Google Ads ou Meta Ads : qui capte quelle demande
+- Relance de devis : le calendrier, les SMS et le script
+- Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
+- Lexique des chantiers et des travaux
 - Tous les articles
 
 ---
