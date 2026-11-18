@@ -1083,7 +1083,7 @@ def pillar_page(G):
     faq_items = [G["faq"][i] for i in (0, 1, 3, 5)]
     body = "\n\n".join([
         top("Guide", G["h1"], "Huit façons de trouver des chantiers, comparées. La bonne est celle qui vous coûte le moins par chantier signé.",
-            crumbs(("Trouver des chantiers", G["path"])), "Tuiles de toiture en gros plan", meta=AUTHOR_META, dated=True),
+            crumbs(("Trouver des chantiers", G["path"])), "Un menuisier pose une fenêtre", meta=AUTHOR_META, dated=True),
         f"""<section class="sheet tc-sec" id="canaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Les 8 canaux pour trouver des chantiers</h2><p>Ce que chacun vous coûte, et si la demande est pour vous seul.</p></div>
   <table class="tc-table">
