@@ -14,6 +14,14 @@
 - [Questions fréquentes](https://bartierandco.com/questions/) : prix, engagement, publicité, exclusivité, rappel des demandes, cadre légal, métiers.
 - [Contenu complet du site](https://bartierandco.com/llms-full.txt) : le texte de toutes les pages en un seul fichier.
 
+## Pour les artisans, par métier
+- [Couverture et zinguerie](https://bartierandco.com/metiers/couverture/) : pour les couvreurs-zingueurs. Réfections complètes de toiture, rénovations avec isolation, zinguerie complète, remplacement de couverture après un sinistre.
+- [Façade et ravalement](https://bartierandco.com/metiers/facade/) : pour les façadiers. Ravalements complets, isolation thermique par l'extérieur, enduit et peinture, traitement des fissures.
+- [Menuiserie extérieure](https://bartierandco.com/metiers/menuiserie-exterieure/) : pour les menuisiers poseurs. Fenêtres de toute une maison, baies coulissantes, portes d'entrée sur mesure, portails en aluminium.
+- [Charpente](https://bartierandco.com/metiers/charpente/) : pour les charpentiers. Rénovation ou remplacement de charpente, surélévation, traitement d'une maison entière, extension à ossature bois.
+- [Isolation](https://bartierandco.com/metiers/isolation/) : pour les entreprises d'isolation. Isolation par l'extérieur, combles aménagés et rampants, isolation d'une maison entière, uniquement auprès de propriétaires qui ont fait la demande.
+- [Habitatpresto Pro, d'après ses conditions](https://bartierandco.com/trouver-des-chantiers/habitatpresto-pro/) : abonnement mensuel, engagement de 6 ou 12 mois, demandes envoyées à 5 professionnels.
+
 ## Questions fréquentes
 - Qu'est-ce que Bartier & Co ? Une agence qui trouve des clients aux artisans du bâtiment : annonces locales à leur nom, rappel de chaque demande en moins de 5 minutes, visite fixée dans leur agenda.
 - Qu'est-ce qu'un rendez-vous qualifié ? Une visite déjà fixée chez un propriétaire dont le projet a été vérifié au téléphone : propriétaire, travaux, commune, délai.
@@ -41,7 +49,7 @@ Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et dev
 - Le budget publicitaire est payé directement par l'artisan à Meta ou à Google.
 - Contact : contact@bartierandco.com
 - Facebook : https://www.facebook.com/profile.php?id=61596597124434
-- Téléphone et WhatsApp : 07 81 01 89 36 (Martin Barthélémy, responsable commercial)
+- Téléphone et WhatsApp : 07 81 01 89 36 (Martin Barthélémy, co-fondateur)
 - Horaires : du lundi au vendredi, de 8 h à 19 h.
 
 ## Informations légales

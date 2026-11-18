@@ -733,7 +733,7 @@ for t in TRADES:
     ])
     write(path, f"{t['title']} | Bartier & Co", meta_desc, body, nav="/metiers/", metier=t["radio"], form_h2=TRADE_SOLO[t["slug"]],
           schema={"@context": "https://schema.org", "@graph": [
-              {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "description": fr(meta_desc), "url": SITE + path,
+              {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "audience": {"@type": "BusinessAudience", "audienceType": fr(t["who"])}, "description": fr(meta_desc), "url": SITE + path,
                "areaServed": {"@type": "Country", "name": "France"}, "provider": ORG_REF},
               bc_ld(("Métiers", "/metiers/"), (t["name"], path)), faq_ld(trade_faq)]})
     paths.append(path)
@@ -1367,8 +1367,12 @@ for f in PAGES_OUT:
 for f in PAGES_OUT:
     doc = f.read_text(encoding="utf-8")
     first = doc.find("<img ", doc.find("<main>") if "<main>" in doc else 0)
+    hero = doc.find('<figure class="pg-photo frame"><img ', doc.find('class="sheet pg-top')) if 'class="sheet pg-top' in doc else -1
+    hero = hero + len('<figure class="pg-photo frame">') if hero >= 0 else -2
     def lazy(m):
         tag = m.group(0)
+        if m.start() == hero and "fetchpriority=" not in tag:
+            return tag.replace("<img ", '<img fetchpriority="high" ', 1)  # photo d'en-tête des pages intérieures : chargée en premier (LCP)
         if m.start() == first or "loading=" in tag:
             return tag
         return tag.replace("<img ", '<img loading="lazy" decoding="async" ', 1)
@@ -1430,6 +1434,7 @@ for f in PAGES_OUT:
                                                 {"key": "X-Frame-Options", "value": "SAMEORIGIN"},
                                                 {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
                                                 {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"}]},
+                {"source": "/(.*)", "has": [{"type": "host", "value": ".*\\.vercel\\.app"}], "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]},  # adresses Vercel : jamais indexées, seul bartierandco.com compte
                 {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400"}]},
                 {"source": "/assets/photos/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=2592000"}]},
                 {"source": "/assets/fonts/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},

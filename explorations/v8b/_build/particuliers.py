@@ -597,7 +597,7 @@ PAGES = {
              ("Peut-on isoler en même temps que le ravalement ?", "Oui, c’est le bon moment pour une isolation par l’extérieur. Réalisée par une entreprise RGE, elle peut ouvrir droit à des aides : vérifiez-les sur france-renov.gouv.fr.")],
         brief="Un seul artisan façade de votre secteur pour votre ravalement : nettoyage, fissures, enduit, peinture ou isolation par l’extérieur. Visite et devis offerts."),
     "fenetres": dict(
-        title="Devis fenêtres PVC, alu, bois : un menuisier près de chez vous",
+        title="Devis fenêtres PVC, alu, bois : menuisier près de chez vous",
         desc="Fenêtres PVC, alu ou bois, porte d’entrée, baie vitrée, volets. Décrivez vos travaux en 1 minute : un seul menuisier local vient chiffrer. Gratuit.",
         kw="Devis fenêtres et portes près de chez vous", h2="Vos travaux de fenêtres et portes", price_h2="Prix de fenêtres posées",
         needs=[("Remplacement de fenêtres", "PVC, aluminium ou bois, double vitrage, sur mesure."),
