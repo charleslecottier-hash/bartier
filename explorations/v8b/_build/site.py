@@ -636,7 +636,7 @@ for t in TRADES:
     if len(meta_desc) > 158:  # descriptions courtes : la phrase s'arrête au rappel
         meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes."
     angles = "\n".join(f"""    <li><div class="ad-card"><p class="ad-meta">Votre entreprise · Sponsorisé</p><p class="ad-angle">{a}</p><p class="ad-text">{b}</p><p class="ad-cta">Demander une visite</p></div></li>""" for a, b in t["angles"])
-    trade_faq = t["faq"] + [("Combien ça coûte ?", "Le prix dépend de votre métier, de votre secteur et du nombre d'équipes à occuper. Martin vous le donne pendant l'appel de 15 minutes, et vous décidez ensuite, à tête reposée."),
+    trade_faq = t["faq"] + [("Combien ça coûte ?", "Un devis personnalisé, en fonction de vos besoins et de vos attentes. Martin vous le présente pendant l'appel de 15 minutes, et vous décidez ensuite, à tête reposée."),
                             ("Faut-il s'engager sur une durée ?", "Non, aucune durée minimale. Vous restez libre d'arrêter quand vous le souhaitez."),
                             ("Qui rappelle les propriétaires ?", "Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
                             ("En combien de temps arrivent les premiers rendez-vous ?", "L'intégration prend 24 à 48 heures après notre appel, puis 3 à 5 jours pour lancer vos annonces. Le rythme dépend ensuite de votre secteur et de la saison.")]
