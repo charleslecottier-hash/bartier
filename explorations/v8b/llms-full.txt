@@ -2123,84 +2123,51 @@ Mis à jour le 18 novembre 2026
 
 ### Les 8 canaux pour trouver des chantiers
 Ce que chacun vous coûte, et si la demande est pour vous seul.
-- 01
-
-#### Bouche-à-oreille
-Coût Du temps
-Il faut Des clients contents
-Rien que pour vous
-- 02
-
-#### Fiche Google
-Coût Gratuit
-Il faut Des photos et des avis
-Comparée à d’autres fiches
-- 03
-
-#### Plateformes de devis
-Coût Un abonnement ou un prix par demande
-Il faut Rappeler très vite
-Souvent partagée
-- 04
-
-#### Apporteur d’affaires
-Coût Une commission sur le chantier
-Il faut Un contrat écrit
-Selon le contrat
-- 05
-
-#### Sous-traitance
-Coût Une marge plus faible
-Il faut Un réseau d’entreprises générales
-Rien que pour vous
-- 06
-
-#### Annonces locales
-Coût Le budget publicitaire et la gestion
-Il faut Un rappel rapide
-Rien que pour vous
-C’est ce que nous faisons pour vous
-- 07
-
-#### Flyers et panneaux
-Coût L’impression et la distribution
-Il faut Des chantiers dans le quartier
-Rien que pour vous
-- 08
-
-#### Réseaux professionnels
-Coût Une cotisation et du temps
-Il faut Une présence régulière
-Rien que pour vous
+- Canal | Ce que vous payez | Ce qu’il faut | La demande
+- 01 Bouche-à-oreille | Du temps | Des clients contents | Pour vous seul
+- 02 Fiche Google | Gratuit | Des photos et des avis | Comparée à d’autres fiches
+- 03 Plateformes de devis | Un abonnement ou un prix par demande | Rappeler très vite | Souvent partagée
+- 04 Apporteur d’affaires | Une commission sur le chantier | Un contrat écrit | Selon le contrat
+- 05 Sous-traitance | Une marge plus faible | Un réseau d’entreprises générales | Pour vous seul
+- 06 Annonces localesNotre métier | Le budget publicitaire et la gestion | Un rappel rapide | Pour vous seul
+- 07 Flyers et panneaux | L’impression et la distribution | Des chantiers dans le quartier | Pour vous seul
+- 08 Réseaux professionnels | Une cotisation et du temps | Une présence régulière | Pour vous seul
 Plateformes : lisez leurs conditions avant de signer. Exemple : Habitatpresto Pro.
 
 ### Comment calculer le coût par chantier signé ?
 Additionnez ce que le canal vous a coûté, puis divisez par les chantiers signés grâce à lui.
 Dépenses du canal ÷ chantiers signés = coût par chantier signé
 Canal A
+Sur un mois
 
 **Dépensé**
 - 400 €
 
-**Demandes**
-- 40 (10 € l’une)
+**Demandes reçues**
+- 40
+
+**Prix d’une demande**
+- 10 €
 
 **Chantiers signés**
 - 2
-200 € par chantier signé
+Coût par chantier signé 200 €
 Canal B
+Sur un mois
 
 **Dépensé**
 - 900 €
 
-**Demandes**
-- 12 (75 € l’une)
+**Demandes reçues**
+- 12
+
+**Prix d’une demande**
+- 75 €
 
 **Chantiers signés**
 - 6
-150 € par chantier signé
+Coût par chantier signé 150 €
 Le moins cher au final
-Chiffres d’exemple, ce ne sont pas des moyennes. La demande la moins chère ne donne pas le chantier le moins cher.
 
 ### Où se perdent les chantiers ?
 Après la demande, quatre moments font perdre le chantier.

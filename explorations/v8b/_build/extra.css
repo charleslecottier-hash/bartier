@@ -607,71 +607,86 @@ section.sheet.gd-body{padding-top:clamp(40px,4.5vw,72px)}
 @media (min-width:1280px){.hdr-nav{column-gap:1.15rem}}
 @media (min-width:1280px) and (max-width:1365px){.hdr-nav{column-gap:.75rem;font-size:.8rem}}
 
-/* ——— Trouver des chantiers : 8 cartes, un calcul en deux colonnes, 4 pertes, une bande « Notre approche » ——— */
-.tc-cards{margin:0;padding:0 var(--cell);list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.tc-card{position:relative;display:flex;flex-direction:column;gap:.75rem;padding:clamp(18px,1.7vw,24px);background:var(--bg);border:1px solid var(--rule);border-radius:var(--r)}
-.tc-n{font-size:.82rem;color:var(--accent);font-variant-numeric:tabular-nums}
-.tc-card h3{margin:0;font:400 clamp(1.15rem,1.4vw,1.35rem)/1.2 var(--f-display);letter-spacing:-.02em}
-.tc-cost,.tc-need{margin:0;display:grid;gap:2px;font-size:.95rem;line-height:1.4}
-.tc-cost span,.tc-need span{font-size:.78rem;color:#5b616b}
-.tc-tag{align-self:flex-start;margin:auto 0 0;padding:.32rem .65rem;border-radius:999px;font-size:.8rem;line-height:1.2}
-.tc-tag.is-ok{background:var(--tint);color:var(--accent)}
-.tc-tag.is-part{background:#fdeedd;color:#8a4500}
-.tc-tag.is-mix{background:var(--paper);color:var(--ink)}
-.tc-card.is-us{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.tc-card.is-us .tc-cost span,.tc-card.is-us .tc-need span{color:rgba(255,255,255,.66)}
-.tc-card.is-us .tc-n{color:#a9c1ff}
-.tc-card.is-us .tc-tag.is-ok{background:rgba(255,255,255,.12);color:#fff}
-.tc-us-k{margin:0;font-size:.82rem;color:#a9c1ff}
-.tc-foot{margin:clamp(20px,2vw,28px) 0 0;padding:0 var(--cell);max-width:70ch;font-size:.95rem;color:#5b616b}
+/* ——— Trouver des chantiers (passe unslop) : une liste calée sur la grille, deux devis papier pour le calcul, le bleu réservé au résultat ———
+   Monde : le bureau de chantier (devis, plan, encre bleue). Moment fort : les deux devis et le tampon « Le moins cher au final ». */
+main section.sheet.tc-sec,main section.sheet.tc-us{padding-top:clamp(64px,6.5vw,96px);padding-bottom:clamp(64px,6.5vw,96px)}
+.tc-sec .sp-head{row-gap:12px;margin-bottom:40px}
+.tc-sec .sp-head h2,.tc-sec .sp-head p{grid-column:1 / 3}
+.tc-sec .sp-head p{align-self:start;max-width:40ch;color:#5b616b}
+.tc-n{font-size:.8rem;color:#5b616b;font-variant-numeric:tabular-nums}
+
+/* Les 8 canaux : un tableau dont les colonnes tombent sur les lignes de la grille */
+.tc-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:1rem}
+.tc-table th,.tc-table td{width:25%;padding:20px var(--cell);text-align:left;vertical-align:top;border-bottom:1px solid var(--rule);line-height:1.4}
+.tc-table thead th{padding-top:0;padding-bottom:12px;font-size:.84rem;font-weight:400;color:#5b616b}
+.tc-table tbody th{font:400 clamp(1.12rem,1.3vw,1.28rem)/1.25 var(--f-display);letter-spacing:-.015em}
+.tc-table tbody th .tc-n{display:block;margin-bottom:4px;font:400 .8rem/1 var(--f-text);letter-spacing:0}
+.tc-table td{color:color-mix(in oklab,var(--ink) 78%,var(--bg))}
+.tc-solo{color:#5b616b}
+.tc-mk{display:inline-block;padding:4px 8px;border-radius:6px;font-size:.84rem;line-height:1.3;border:1px solid var(--rule);color:var(--ink)}
+.tc-mk.is-part{border-color:#e7b98a;background:#fdf3e8;color:#7a3e00}
+.tc-table tr.is-us th,.tc-table tr.is-us td{background:var(--tint)}
+.tc-us-tag{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:6px;background:var(--accent);color:#fff;font:400 .78rem/1.4 var(--f-text);letter-spacing:0;vertical-align:.2em}
+.tc-foot{margin:24px 0 0;padding:0 var(--cell);max-width:70ch;font-size:.95rem;color:#5b616b}
 .tc-foot .link{color:var(--ink)}
-.tc-formula{margin:0 var(--cell);padding:clamp(18px,2vw,26px) clamp(20px,2.2vw,30px);background:var(--bg);border-radius:var(--r);font:300 clamp(1.15rem,1.8vw,1.6rem)/1.35 var(--f-display);letter-spacing:-.015em}
-.tc-formula i{font-style:normal;color:var(--accent);margin:0 .25em}
-.tc-formula b{font-weight:400;color:var(--accent)}
-.tc-ab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px var(--cell) 0}
-.tc-abc{display:flex;flex-direction:column;gap:1rem;padding:clamp(20px,2vw,28px);background:var(--bg);border-radius:var(--r);border:1px solid transparent}
-.tc-abc.is-win{border-color:var(--accent)}
-.tc-abk{margin:0;font-size:.9rem;color:#5b616b}
-.tc-abc dl{margin:0;display:grid;gap:.5rem}
-.tc-abc dl div{display:flex;justify-content:space-between;gap:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--rule)}
-.tc-abc dt{color:#5b616b}
-.tc-abc dd{margin:0;font-variant-numeric:tabular-nums;text-align:right}
-.tc-abc dd small{color:#5b616b}
-.tc-abr{margin:0;font-size:1rem}
-.tc-abr b{display:block;font:300 clamp(2.2rem,3.6vw,3.2rem)/1 var(--f-display);letter-spacing:-.04em;color:var(--ink)}
-.tc-abc.is-win .tc-abr b{color:var(--accent)}
-.tc-win{align-self:flex-start;margin:0;padding:.32rem .65rem;border-radius:999px;background:var(--accent);color:#fff;font-size:.8rem}
-.tc-loss{margin:0;padding:0 var(--cell);list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,32px)}
-.tc-loss li{display:flex;flex-direction:column;gap:.5rem;padding-top:1rem;border-top:2px solid var(--ink)}
-.tc-loss h3{margin:0;font:400 clamp(1.1rem,1.35vw,1.3rem)/1.2 var(--f-display);letter-spacing:-.02em}
+
+/* Le calcul : la formule en clair, puis deux devis papier côte à côte */
+.tc-formula{margin:0 0 32px;padding:0 var(--cell);font:300 clamp(1.3rem,2.2vw,2rem)/1.3 var(--f-display);letter-spacing:-.02em;color:#5b616b}
+.tc-formula b{font-weight:300;color:var(--ink)}
+.tc-ab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:0 var(--cell);max-width:960px}
+.tc-slip{position:relative;display:flex;flex-direction:column;gap:20px;padding:28px 28px 32px;background:#fff;border-radius:4px;box-shadow:0 1px 2px rgba(10,20,36,.06),0 16px 40px -20px rgba(10,20,36,.28)}
+.tc-slip::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;border-radius:4px 4px 0 0;background:repeating-linear-gradient(90deg,var(--paper) 0 8px,transparent 8px 12px)}
+.tc-slip header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
+.tc-slip-k{margin:0;font:400 1.3rem/1.2 var(--f-display);letter-spacing:-.015em}
+.tc-slip-sub{margin:0;font-size:.84rem;color:#5b616b}
+.tc-slip dl{margin:0;display:grid;gap:12px}
+.tc-slip dl div{display:flex;align-items:baseline;gap:8px}
+.tc-slip dt{display:flex;flex:1;align-items:baseline;gap:8px;color:#5b616b}
+.tc-slip dt::after{content:"";flex:1;border-bottom:1px dotted color-mix(in oklab,var(--ink) 30%,transparent);transform:translateY(-4px)}
+.tc-slip dd{margin:0;font-variant-numeric:tabular-nums}
+.tc-slip-tot{margin:0;padding-top:16px;border-top:1px dashed color-mix(in oklab,var(--ink) 35%,transparent);display:flex;flex-direction:column;gap:4px}
+.tc-slip-tot span{font-size:.9rem;color:#5b616b}
+.tc-slip-tot b{font:300 clamp(2.6rem,4vw,3.4rem)/1 var(--f-display);letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:var(--ink)}
+.tc-slip.is-win .tc-slip-tot b{color:var(--accent)}
+.tc-stamp{position:absolute;right:24px;bottom:28px;margin:0;padding:8px 12px;border:2px solid var(--accent);border-radius:6px;color:var(--accent);font:500 .9rem/1.2 var(--f-text);transform:rotate(-7deg);box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3px color-mix(in oklab,var(--accent) 55%,transparent);opacity:.92}
+.tc-sec .tc-foot.is-calc{margin-top:28px}
+
+/* Où se perdent les chantiers : quatre colonnes de la grille */
+.tc-loss{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.tc-loss li{display:flex;flex-direction:column;gap:8px;padding:16px var(--cell) 0;border-top:1px solid var(--ink)}
+.tc-loss h3{margin:0;font:400 clamp(1.1rem,1.3vw,1.25rem)/1.25 var(--f-display);letter-spacing:-.015em}
 .tc-loss p{margin:0;font-size:.98rem;line-height:1.5;color:color-mix(in oklab,var(--ink) 75%,var(--bg))}
-.tc-law{margin:clamp(32px,3.4vw,48px) var(--cell) 0;padding:clamp(18px,2vw,26px);border-radius:var(--r);background:var(--paper);max-width:820px}
-.tc-law-k{margin:0 0 .35rem;font-size:.85rem;color:var(--accent)}
+.tc-law{margin:40px var(--cell) 0;padding:20px 24px;border-left:2px solid var(--ink);background:var(--paper);max-width:820px}
+.tc-law-k{margin:0 0 4px;font-size:.84rem;color:#5b616b}
 .tc-law p{margin:0;line-height:1.55}
-.tc-law .tc-src{margin-top:.6rem;font-size:.85rem;color:#5b616b}
+.tc-law .tc-src{margin-top:8px;font-size:.84rem;color:#5b616b}
 .tc-law .tc-src a{color:inherit}
+
+/* Notre approche */
 .tc-us-grid{row-gap:24px;align-items:start}
 .tc-us-grid h2{grid-column:1 / 3;margin:0;padding:0 var(--cell)}
-.tc-us-txt{grid-column:3 / 5;display:flex;flex-direction:column;gap:1rem;padding:0 var(--cell);font-size:1.05rem;line-height:1.6}
+.tc-us-txt{grid-column:3 / 5;display:flex;flex-direction:column;gap:16px;padding:0 var(--cell);font-size:1.05rem;line-height:1.6}
 .tc-us-txt p{margin:0}
-.tc-us-txt .actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem;margin-top:.4rem}
+.tc-us-txt .actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:8px}
 .tc-trades{font-size:.92rem;color:rgba(255,255,255,.7)}
 .tc-trades .link{color:#fff}
-@media (max-width:1100px){.tc-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.tc-loss{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+@media (max-width:1023px){.tc-loss{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}}
 @media (max-width:760px){
-  .tc-cards,.tc-loss,.tc-ab{grid-template-columns:minmax(0,1fr)}
+  .tc-table,.tc-table tbody,.tc-table tr,.tc-table th,.tc-table td{display:block;width:auto}
+  .tc-table thead{display:none}
+  .tc-table tr{padding:16px var(--cell);border-bottom:1px solid var(--rule)}
+  .tc-table th,.tc-table td{padding:0;border:0}
+  .tc-table tbody th{margin-bottom:8px}
+  .tc-table tbody th .tc-n{display:inline;margin:0 8px 0 0}
+  .tc-table td{font-size:.95rem;line-height:1.5}
+  .tc-table td[data-l]::before{content:attr(data-l) "\a0: ";color:#5b616b}
+  .tc-table td.tc-dem{margin-top:8px}
+  .tc-table td.tc-dem::before{content:none}
+  .tc-table tr.is-us{background:var(--tint)}
+  .tc-ab{grid-template-columns:minmax(0,1fr);gap:16px}
+  .tc-slip{padding:24px 20px 28px}
+  .tc-stamp{right:16px;bottom:24px;font-size:.82rem}
+  .tc-loss{grid-template-columns:minmax(0,1fr);row-gap:24px}
   .tc-us-grid h2,.tc-us-txt{grid-column:1 / -1}
-}
-/* Trouver des chantiers : sections plus resserrées, cartes compactes sur téléphone */
-main section.sheet.tc-sec,main section.sheet.tc-us{padding-top:clamp(64px,6.5vw,104px);padding-bottom:clamp(64px,6.5vw,104px)}
-@media (max-width:760px){
-  .tc-cards{gap:8px}
-  .tc-card{gap:.4rem;padding:16px 18px}
-  .tc-card h3{font-size:1.15rem}
-  .tc-card .tc-n{position:absolute;top:16px;right:18px}
-  .tc-cost,.tc-need{display:block;font-size:.92rem}
-  .tc-cost span,.tc-need span{font-size:.92rem}
-  .tc-cost span::after,.tc-need span::after{content:"\a0: "}
-  .tc-tag{margin-top:.35rem}
-  .tc-loss{row-gap:24px}
 }
