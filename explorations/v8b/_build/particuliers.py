@@ -202,7 +202,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     cards = []
     for k, l, who, photo, needs, h3, words, alt, ph, pr in TRADES:
         url, _ = img(photo)
-        cards.append(f"""    <li class="pf-trade"><figure class="frame"><img src="{url}" alt="{alt}" width="900" height="676" loading="lazy"></figure>
+        cards.append(f"""    <li class="pf-trade"><figure class="frame"><img src="{url}" alt="{alt}" width="900" height="676" loading="lazy" sizes="(max-width: 760px) 46vw, 18vw"></figure>
       <h3><a class="pf-tl" href="/devis-travaux/{SLUG[k]}/">{h3}</a></h3><p>{words}</p><a class="link pf-pick" href="#projet" data-v="{k}">Devis {l.lower()}</a></li>""")
     trades = f"""<section class="sheet" id="travaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Toiture, façade, fenêtres, charpente, isolation</h2><p>Un artisan local pour chaque chantier.</p></div>
@@ -683,4 +683,39 @@ CSS_TRADE = """<style id="pf-css-2">
 .pf-refbox .pf-ref{font:400 clamp(1.3rem,2vw,1.7rem)/1.25 var(--f-display);letter-spacing:-.01em}
 .pf-olist{display:flex;flex-wrap:wrap;gap:12px 28px;margin:0;padding:0 var(--cell);list-style:none;font-size:1.05rem}
 @media (max-width:760px){.pf-split{grid-template-columns:1fr}.pf-needs{grid-template-columns:1fr}}
+/* Aération mobile */
+@media (max-width:760px){
+  :root{--sp:76px}
+  .pf-hero{padding-top:calc(var(--hdr) + 26px);padding-bottom:60px}
+  .pf-hero-grid{row-gap:26px}
+  .pf-intro{gap:1.05rem}
+  .pf-h1{gap:.75rem}
+  .pf-card{padding:22px 18px}
+  .pf-live{margin:0 0 16px}
+  .pf-bar{margin:14px 0 24px}
+  .pf-step legend{margin-bottom:18px}
+  .pf-grid,.pf-list{gap:10px}
+  .pf-tile,.pf-opt{min-height:58px}
+  .pf-fields{gap:14px;margin-bottom:18px}
+  .pf-trust{gap:.65rem 1.1rem}
+  .sp-head{row-gap:16px;margin-bottom:36px}
+  .sp-head p{line-height:1.55}
+  .pf-proms{gap:30px 18px}
+  .pf-proms li{padding-top:18px;gap:10px}
+  .pf-trades{gap:30px 14px}
+  .pf-trade{gap:.7rem}
+  .pf-howto,.pf-checks,.pf-prices{gap:30px}
+  .pf-howto li,.pf-checks li,.pf-prices li{padding-top:18px}
+  .pf-howto h3,.pf-checks h3,.pf-prices h3{margin-bottom:10px}
+  .pf-howto p,.pf-checks p,.pf-prices p,.pf-time p,.pf-trade p{font-size:.95rem;line-height:1.55}
+  .pf-time li{padding-bottom:30px}
+  .pf-time h3{margin-bottom:8px}
+  .sp-row > *{padding-top:1.1rem;padding-bottom:1.1rem}
+  .pf-band{margin-top:40px;padding:22px 20px;gap:18px}
+  .pf-mid{margin-top:36px;gap:1rem 1.2rem}
+  .pf-dl{gap:26px}
+  .pf-end-grid{row-gap:28px}
+  .pf-end-grid > div{gap:1.4rem}
+  .fq summary{padding-top:1.5rem;padding-bottom:1.5rem}
+}
 </style>"""

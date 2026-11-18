@@ -624,9 +624,29 @@ pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', l
         ("J’ai une fuite, que faire&nbsp;?", "Bonjour, j'ai une fuite de toiture à [ville]. Que dois-je faire ?")]) + "\n      ", pf_tail, count=1)
 pf_tail = pf_tail.replace('href="#contact"', 'href="/#contact"')
 pf_schema = PF.schema(SITE, faq_ld, bc_ld)
+def pf_fast(doc):
+    """Pages d'atterrissage des annonces : pas d'écran de chargement ; sur téléphone, aucune bibliothèque
+    d'animation ; sur ordinateur, les animations se chargent après l'affichage."""
+    doc = re.sub(r'<style id="ld-css">[\s\S]*?</script>\n', "", doc)
+    doc = re.sub(r'<div class="ld" id="ld"[\s\S]*?</script>\n', "", doc)
+    libs = re.findall(r'<script src="(/assets/js/[^"]+)"></script>', doc)
+    doc = re.sub(r'<script src="/assets/js/[^"]+"></script>\n?', "", doc)
+    i = doc.index("<script>(()=>{const $=(s,r=document)")
+    j = doc.index("</script>", i)
+    main = doc[i + len("<script>"):j].rstrip()
+    assert main.endswith("})();")
+    main = "window.__bcMain=" + main[:-3] + ";"
+    loader = ('<script>(function(){var d=document.documentElement,run=function(){if(window.__bcMain)window.__bcMain()};'
+              'if(innerWidth<761||!window.matchMedia||matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.remove("motion");run();return}'
+              'var L=' + json.dumps(libs) + ',k=0;function next(){if(k>=L.length){run();return}var s=document.createElement("script");s.src=L[k++];s.onload=next;s.onerror=next;document.body.appendChild(s)}'
+              'if(document.readyState==="complete")next();else addEventListener("load",next)})();</script>')
+    return doc[:i] + "<script>" + main + "</script>\n" + loader + doc[j + len("</script>"):]
+
+
 def pf_write(path, title, desc, body, schema):
     doc = head(title, desc, path, schema) + PF.CSS + PF.CSS_TRADE + "\n" + pf_top + "\n" + fr(body) + "\n" + pf_tail
     doc = doc.replace("</body>", PF.js() + "\n</body>", 1)
+    doc = pf_fast(doc)
     out = ROOT / path.strip("/") / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, encoding="utf-8")
@@ -752,7 +772,8 @@ for f in ROOT.rglob("*.html"):
                 if H: v = re.sub(r"([?&](?:amp;)?h=)\d+", lambda x: x.group(1) + str(round(H * nw / W)), v)
                 cands.append(f"{v} {nw}w")
         cands.append(f"{u} {W}w")
-        return tag.replace("<img ", f'<img srcset="{", ".join(cands)}" sizes="(max-width: 760px) 100vw, 50vw" ', 1)
+        sz = "" if "sizes=" in tag else ' sizes="(max-width: 760px) 100vw, 50vw"'
+        return tag.replace("<img ", f'<img srcset="{", ".join(cands)}"{sz} ', 1)
     doc = re.sub(r"<img [^>]*>", srcset, doc)
     rob = '<meta name="robots" content="noindex">'
     if doc.count(rob) > 1:
