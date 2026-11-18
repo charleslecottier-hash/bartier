@@ -532,3 +532,37 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 .skip{position:fixed;left:12px;top:-80px;z-index:1000;padding:.75rem 1rem;border-radius:var(--r);background:var(--ink);color:var(--bg);font-size:.95rem;text-decoration:none;transition:top .2s}
 .skip:focus{top:12px;outline:2px solid var(--accent);outline-offset:2px}
 main:focus{outline:none}
+
+/* ——— Formulaire artisan : sur la section bleue, les boutons de la carte blanche restent pleins (bleu, texte blanc) ——— */
+[data-tone="accent"] .dq .btn:not(.btn-line){--b:var(--accent);--f:var(--bg);--h:var(--ink);--hf:var(--bg)}
+
+/* ——— Menu téléphone ouvert : le « + » devient « × », la page derrière ne défile plus, la bulle WhatsApp s'efface ——— */
+.hdr-menu svg{transition:transform .3s var(--ease)}
+.hdr-menu[aria-expanded="true"] svg{transform:rotate(45deg)}
+html.menu-open{overflow:hidden}
+html.menu-open .wa{display:none}
+
+/* ——— Ouverture : un peu plus de contraste pour la 2e ligne du titre et le sur-titre (le ciel à droite est clair) ——— */
+.hero.is-cover .hero-window::after{background:linear-gradient(90deg,rgba(10,20,36,.9) 0%,rgba(10,20,36,.74) 48%,rgba(10,20,36,.42) 100%)}
+.hero.is-cover .hero-kick{color:rgba(255,255,255,.9)}
+@media (max-width:1023px){.hero.is-cover .hero-window::after{background:linear-gradient(0deg,rgba(10,20,36,.92) 0%,rgba(10,20,36,.74) 50%,rgba(10,20,36,.36) 100%)}}
+
+/* ——— Sections grises : le texte discret passe à 4,5:1 minimum (WCAG AA) ——— */
+html [data-tone="paper"]{--soft:#5b616b}
+html [data-tone="paper"]{--muted:#5b616b}
+
+/* ——— Tableau Google / Meta : sur la page Google, c'est la colonne Google qui est mise en avant ——— */
+.sp-table.is-google .sp-row > :last-child{background:none}
+.sp-table.is-google .sp-row > :nth-child(2){background:var(--tint)}
+
+/* ——— Titres : lignes équilibrées, pas de mot seul sur la dernière ligne ——— */
+h1,h2,h3{text-wrap:balance}
+
+/* ——— Bulle WhatsApp : libellé court, puis l'icône seule une fois la page entamée (elle ne cache plus le contenu) ——— */
+.wa-fab b span{display:none}
+.wa.is-mini:not(.is-open) .wa-fab b,.wa.is-mini:not(.is-open) .wa-fab .wa-dot{display:none}
+.wa.is-mini:not(.is-open) .wa-fab{padding:.55rem}
+.wa.is-mini:not(.is-open) .wa-fab:hover b,.wa.is-mini:not(.is-open) .wa-fab:focus-visible b{display:inline}
+
+/* ——— Métiers, téléphone : le long titre de la galerie garde une taille de titre raisonnable ——— */
+@media (max-width:760px){#gallery .gl-head h2{font-size:clamp(1.55rem,6.6vw,2rem);line-height:1.12}}

@@ -344,6 +344,7 @@ CSS = """<style id="pf-css">
 .pf-card{grid-column:3 / 5;scroll-margin-top:calc(var(--hdr) + 16px);padding:clamp(20px,2.4vw,32px);background:var(--bg);border:1px solid var(--rule);border-radius:var(--r);box-shadow:0 30px 70px -40px rgba(10,20,36,.45)}
 .pf-top{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--muted)}
 .pf-back{display:inline-flex;align-items:center;min-height:44px;margin:-8px 0;border:0;background:none;color:var(--ink);font:inherit;cursor:pointer;padding:0 0 0 12px}
+.pf-back[hidden]{display:none}
 .pf-bar{height:4px;margin:12px 0 22px;background:var(--paper);border-radius:2px;overflow:hidden}
 .pf-bar i{display:block;height:100%;width:20%;background:var(--accent);transition:width .45s var(--ease)}
 .pf-step{display:none;margin:0;padding:0;border:0;min-width:0}
@@ -487,25 +488,33 @@ document.querySelectorAll(".pf-pick").forEach(function(a){a.addEventListener("cl
 var q=new URLSearchParams(location.search),t=q.get("travaux")||f.dataset.preset;
 if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,true);if(q.get("besoin")==="fuite")pickLeak()}
 (function(){var l=document.querySelector(".pf-live"),t=l&&l.querySelector(".pf-live-t"),w=nextOpen();
-  if(l){if(!w){l.classList.add("is-on");t.textContent="Disponibles maintenant · rappel en moins de 5 min"}else t.textContent="Rappel "+w+" · demandes enregistrées 24 h/24"}
+  if(l){if(!w){l.classList.add("is-on");t.textContent="Disponibles maintenant · rappel en moins de 5 min"}else t.textContent="Rappel "+w+" · demandes enregistrées 24\u00a0h/24"}
   var m=new Date().getMonth(),se=document.querySelector(".pf-season"),S=["Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité."];
   if(se)se.textContent=S[m]})();
 function nextOpen(){var d=new Date(),day=d.getDay(),h=d.getHours()+d.getMinutes()/60;
   if(day>=1&&day<=5&&h>=8&&h<19)return "";
   if(day>=1&&day<=4&&h>=19)return "demain dès 8 h";if(day>=1&&day<=5&&h<8)return "ce matin dès 8 h";return "lundi dès 8 h"}
-f.addEventListener("submit",function(e){e.preventDefault();var err=f.querySelector(".pf-err"),bad=[];
+function check(){var err=f.querySelector(".pf-err"),bad=[];
   var cp=f.querySelector("[name=code_postal]"),pr=f.querySelector("[name=prenom]"),tel=f.querySelector("[name=telephone]"),ok=f.querySelector("[name=consentement]");
-  [cp,pr,tel].forEach(function(x){x.removeAttribute("aria-invalid")});
+  [cp,pr,tel,ok].forEach(function(x){x.removeAttribute("aria-invalid")});
   if(!/^\d{5}$/.test(cp.value.trim()))bad.push([cp,"un code postal à 5 chiffres"]);
   if(pr.value.trim().length<2)bad.push([pr,"votre prénom"]);
   if(tel.value.replace(/\D/g,"").length<10)bad.push([tel,"un numéro de téléphone"]);
   if(!ok.checked)bad.push([ok,"votre accord pour être rappelé"]);
-  if(bad.length){bad.forEach(function(b){b[0].setAttribute("aria-invalid","true")});err.textContent="Il manque "+bad.map(function(b){return b[1]}).join(", ")+".";err.hidden=false;bad[0][0].focus();return}
+  bad.forEach(function(b){b[0].setAttribute("aria-invalid","true")});
+  if(bad.length){err.textContent="Il manque "+bad.map(function(b){return b[1]}).join(", ")+".";err.hidden=false}else err.hidden=true;
+  return bad}
+/* une fois l'erreur affichée, elle se met à jour pendant la saisie et disparaît quand tout est bon */
+f.addEventListener("input",function(e){if(!f.querySelector(".pf-err").hidden&&e.target.closest(".pf-step"))check()});
+f.addEventListener("change",function(e){if(!f.querySelector(".pf-err").hidden&&e.target.closest(".pf-step"))check()});
+f.addEventListener("submit",function(e){e.preventDefault();var err=f.querySelector(".pf-err"),bad=check();
+  if(bad.length){if(window.innerWidth<=760){err.scrollIntoView({block:"center"});bad[0][0].focus({preventScroll:true})}else bad[0][0].focus();return}
   err.hidden=true;if(val("site_web"))return;
   var tr=LABEL[val("travaux")]||"Autre projet",msg="Bonjour, je souhaite être rappelé pour des travaux : "+tr+" ("+val("besoin")+"), "+val("delai").toLowerCase()+". "+val("statut")+", code postal "+val("code_postal")+". "+val("prenom")+", "+val("telephone")+".";
   var done=f.querySelector(".pf-done"),btn=f.querySelector(".pf-submit"),lab=btn.querySelector("span"),old=lab.textContent;
   f.querySelector(".pf-name").textContent=", "+val("prenom");f.querySelector(".pf-name2").textContent=val("prenom")+", envoyez";
-  var w=nextOpen();f.querySelector(".pf-when-sent").textContent=w?"Nous vous rappelons "+w+" au "+val("telephone")+".":"Nous vous rappelons dans les 5 minutes au "+val("telephone")+".";
+  var w=nextOpen();var telf=val("telephone").replace(/\D/g,"").length===10?val("telephone").replace(/\D/g,"").replace(/(\d{2})(?=\d)/g,"$1\u00a0"):val("telephone");
+  f.querySelector(".pf-when-sent").textContent=w?"Nous vous rappelons "+w+" au "+telf+".":"Nous vous rappelons dans les 5 minutes au "+telf+".";
   f.querySelectorAll(".pf-wa").forEach(function(a){a.href="https://wa.me/33781018936?text="+encodeURIComponent(msg)});
   var fin=false,end=function(sent){if(fin)return;fin=true;btn.disabled=false;lab.textContent=old;
     dl("particulier_demande",{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),envoi:sent?"auto":"manuel"});

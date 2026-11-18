@@ -305,7 +305,7 @@ def img(alt_start):
 
 def absolutize(block):
     block = block.replace('href="#hero"', 'href="/"')
-    return re.sub(r'href="#(?!contact\b|menu\b)([\w-]+)"', r'href="/#\1"', block)
+    return re.sub(r'href="#(?!contact\b|menu\b|contenu\b)([\w-]+)"', r'href="/#\1"', block)
 
 
 EXTRA_CSS = """<style>
@@ -748,7 +748,7 @@ write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
                  "Rappel en moins de 5 minutes en semaine, projet vérifié, rendez-vous dans votre agenda"], tone="paper"),
           split("Votre compte, votre budget, vos chiffres", "Tout est créé à votre nom. Vous gardez ce qui a été construit, même si vous arrêtez.",
                 ["Compte Google Ads à votre nom", "Budget payé directement à Google", "Chaque recherche, chaque clic, chaque euro visibles"]),
-          COMPARE,
+          COMPARE.replace('class="sp-table"', 'class="sp-table is-google"', 1),  # page Google : la colonne Google est mise en avant
           faq(GOOGLE_FAQ),
           more("À lire aussi", "Tous les articles", "/blog/", READ_ADS),
       ]), nav="/google-ads/",
@@ -1215,6 +1215,8 @@ for f in PAGES_OUT:
     doc = IMG.localize(doc, SITE).replace('<link rel="preconnect" href="https://images.unsplash.com">\n', "")
     doc = re.sub(r"<img [^>]*>", real_dims, doc)
     doc = typo(doc)
+    if 'id="wa"' in doc and "wa-mini" not in doc:  # bulle WhatsApp : réduite à l'icône une fois la page entamée, pour ne rien cacher
+        doc = doc.replace("</body>", '<script id="wa-mini">(function(){var w=document.getElementById("wa");if(!w)return;var f=function(){w.classList.toggle("is-mini",scrollY>innerHeight*1.1)};addEventListener("scroll",f,{passive:true});f()})();</script>\n</body>', 1)
     if "<main>" in doc and 'class="skip"' not in doc:  # clavier : aller directement au contenu
         doc = doc.replace("<main>", '<main id="contenu" tabindex="-1">', 1)
         doc = re.sub(r"(<body[^>]*>)", r'\1\n<a class="skip" href="#contenu">Aller au contenu</a>', doc, count=1)
