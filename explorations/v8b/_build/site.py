@@ -194,8 +194,7 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
 """
 home = re.sub(r'<style id="ld-css">[\s\S]*?</script>\n', "", home)
 home = re.sub(r'<div class="ld" id="ld"[\s\S]*?</script>\n', "", home)
-home = home.replace("</head>", LD_HEAD + "</head>", 1)
-home = re.sub(r"(<body[^>]*>\n?)", lambda m: m.group(1) + LD_BODY, home, count=1)
+# Écran d'attente retiré le 18/11/2026 : la page s'affiche tout de suite (LD_HEAD et LD_BODY ne sont plus insérés).
 
 # Données structurées, adresse canonique et balises de partage de l'accueil (toujours régénérées)
 FOUNDERS = [("charles", "Charles Le Cottier", "Cofondateur, Head of Performance"), ("martin", "Martin Barthélémy", "Cofondateur, Head of Sales")]
@@ -638,7 +637,7 @@ for t in TRADES:
     trade_faq = t["faq"] + [("Combien cela coûte-t-il ?", "Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l'appel de 15 minutes, avant toute décision."),
                             ("Y a-t-il un engagement ?", "Non. Aucune durée minimale : vous restez parce que l'agenda se remplit."),
                             ("Qui rappelle les propriétaires ?", "Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
-                            ("En combien de temps arrivent les premiers rendez-vous ?", "La mise en place prend 48 heures après notre appel, et les annonces tournent dès la première semaine. Le rythme dépend ensuite de votre secteur et de la saison.")]
+                            ("En combien de temps arrivent les premiers rendez-vous ?", "La mise en place prend 24 à 48 heures après notre appel, et les annonces tournent dès la première semaine. Le rythme dépend ensuite de votre secteur et de la saison.")]
     body = "\n\n".join([
         top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Ce que nous vérifions", "#appel")),
         f"""<section class="sheet" data-tone="paper">

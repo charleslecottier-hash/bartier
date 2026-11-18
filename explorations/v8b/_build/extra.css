@@ -364,3 +364,14 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 @media (max-width:760px){.actions .cta-note{order:1;margin-top:-.25rem}.actions .link{order:2}}
 @media (min-width:1280px){.hero-steps{flex-wrap:nowrap;gap:1.1rem;font-size:.88rem;white-space:nowrap}}
 .vc-card{gap:1rem}
+
+/* ——— Équipe : contact direct ; pastilles cliquables ——— */
+.tm-acts{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.5rem}
+.svc-points a{display:inline-flex;align-items:center;min-height:24px}
+.svc-points a:hover{text-decoration-thickness:2px}
+.svc-points li{position:relative}
+.svc-points a::after{content:"";position:absolute;inset:0}
+
+/* ——— Chiffres clés : « 24–48 » sur une ligne, même taille pour les quatre chiffres ——— */
+.fact-num{white-space:nowrap;font-size:clamp(3rem,5.6vw,5.4rem)}
+@media (max-width:760px){.fact-num{font-size:3rem}}
