@@ -1,23 +1,23 @@
 {
  "/": {
   "date": "2026-11-18",
-  "sig": "7b3377e4fa202312"
+  "sig": "7da545d5648a9ea5"
  },
  "/blog/": {
   "date": "2026-11-18",
-  "sig": "77b74673fc6df9b9"
+  "sig": "40edc37895a393a0"
  },
  "/blog/google-ads-ou-meta-ads-artisan/": {
   "date": "2026-11-18",
-  "sig": "bb7b6878471e477d"
+  "sig": "26d1f4b943a96137"
  },
  "/blog/lead-partage-lead-exclusif-rendez-vous-qualifie/": {
   "date": "2026-11-18",
-  "sig": "a99e2fd0c395f15e"
+  "sig": "f9a220ba43b16f3e"
  },
  "/blog/relance-devis-artisan/": {
   "date": "2026-11-18",
-  "sig": "4595f01ed6821650"
+  "sig": "6252dac8290f04d4"
  },
  "/conditions-du-service/": {
   "date": "2026-11-18",
@@ -57,7 +57,7 @@
  },
  "/google-ads/": {
   "date": "2026-11-18",
-  "sig": "939ba56bd5a0da7c"
+  "sig": "5e9a3ff98e3c0779"
  },
  "/lexique/": {
   "date": "2026-11-18",
@@ -69,46 +69,46 @@
  },
  "/meta-ads/": {
   "date": "2026-11-18",
-  "sig": "61164f107f03d151"
+  "sig": "567389264bdffc61"
  },
  "/metiers/": {
   "date": "2026-11-18",
-  "sig": "814c2ab15d5aa9b1"
+  "sig": "5c6d6235ad04041f"
  },
  "/metiers/charpente/": {
   "date": "2026-11-18",
-  "sig": "f17e43548a97c298"
+  "sig": "b782aae1502eb6c4"
  },
  "/metiers/couverture/": {
   "date": "2026-11-18",
-  "sig": "24f58ec376d416ae"
+  "sig": "f31a96cc8ea4d247"
  },
  "/metiers/facade/": {
   "date": "2026-11-18",
-  "sig": "c2a3aaf8e83d30ee"
+  "sig": "a426d757a06f38c5"
  },
  "/metiers/isolation/": {
   "date": "2026-11-18",
-  "sig": "6097b8b6045f85cb"
+  "sig": "de617e4d4f143d60"
  },
  "/metiers/menuiserie-exterieure/": {
   "date": "2026-11-18",
-  "sig": "dad43fc5138735de"
+  "sig": "750d2a4450a77220"
  },
  "/questions/": {
   "date": "2026-11-18",
-  "sig": "81b199949059bad6"
+  "sig": "ae563073dc57efc4"
  },
  "/qui-sommes-nous/": {
   "date": "2026-11-18",
-  "sig": "13900b5555f53e24"
+  "sig": "803a02f489362d7d"
  },
  "/trouver-des-chantiers/": {
   "date": "2026-11-18",
-  "sig": "fd28dcb2dd54fab7"
+  "sig": "9ca8e9388ff2c307"
  },
  "/trouver-des-chantiers/habitatpresto-pro/": {
   "date": "2026-11-18",
-  "sig": "86f2001f2eb50e6c"
+  "sig": "41a289449dad7755"
  }
 }

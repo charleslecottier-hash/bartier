@@ -489,3 +489,12 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
   .pl-step:nth-child(4){padding-left:calc(var(--cell) + 48px)}
 }
 .pl-num span{margin-left:.14em}
+
+/* ——— Formulaire : fond bleu de la marque, carte blanche, moins de texte ——— */
+#contact .dq-side h2{max-width:16ch}
+#contact .dq-lead{color:color-mix(in oklab,var(--bg) 88%,var(--accent));font-size:clamp(1.05rem,1.3vw,1.25rem)}
+#contact .dq-team p{color:color-mix(in oklab,var(--bg) 85%,var(--accent))}
+#contact .dq-team img{box-shadow:0 0 0 2px color-mix(in oklab,var(--bg) 35%,var(--accent))}
+.dq-wa-link{margin:0}
+.dq-wa-link .link{color:var(--bg)}
+#contact .dq{box-shadow:0 24px 60px -30px rgba(10,20,36,.45)}
