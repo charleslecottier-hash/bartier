@@ -548,6 +548,7 @@ art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['
 - [Google Ads]({SITE}/google-ads/) : campagnes locales pour capter les propriétaires qui cherchent déjà un artisan.
 - [Meta Ads]({SITE}/meta-ads/) : annonces Facebook et Instagram dans un rayon de 25 à 40 km autour du dépôt.
 - [Qui sommes-nous]({SITE}/qui-sommes-nous/) : les fondateurs et la façon de travailler.
+- [Devis travaux, pour les particuliers]({SITE}/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de cinq minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
 
 ## Articles
 {art_lines}

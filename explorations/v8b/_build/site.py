@@ -36,7 +36,7 @@ def esc(t):
 home = (ROOT / "index.html").read_text(encoding="utf-8")
 
 NAV = [("Métiers", "/metiers/"), ("Google Ads", "/google-ads/"), ("Meta Ads", "/meta-ads/"),
-       ("Qui sommes-nous", "/qui-sommes-nous/"), ("Blog", "/blog/"), ("Questions", "/#faq")]
+       ("Qui sommes-nous", "/qui-sommes-nous/"), ("Blog", "/blog/"), ("Questions", "/#faq"), ("Particuliers", "/devis-travaux/")]
 nav_html = "\n".join(f'      <a class="link" href="{h}">{t}</a>' for t, h in NAV)
 menu_html = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in NAV) + '\n    <a href="#contact">Contact</a>'
 home = re.sub(r'(<nav class="hdr-nav" aria-label="Menu">)[\s\S]*?(</nav>)', r"\1\n" + nav_html + r"\n    \2", home, count=1)
@@ -597,6 +597,33 @@ write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & 
       ]), nav="/meta-ads/",
       schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Publicité Facebook et Instagram pour artisans du bâtiment", "areaServed": ["FR"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}}, bc_ld(("Meta Ads", "/meta-ads/")), faq_ld(META_FAQ)]})
 paths.append("/meta-ads/")
+
+# ——— Particuliers : capter la demande des propriétaires ———
+import particuliers as PF
+pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH)))
+pf_top = absolutize(BODY_OPEN)
+pf_top = pf_top.replace('class="link" href="/devis-travaux/"', 'class="link" href="/devis-travaux/" aria-current="page"', 1)
+pf_top = re.sub(r'<p class="hdr-tag">[^<]*', '<p class="hdr-tag">Vos travaux, un artisan de confiance', pf_top, count=1)
+pf_top = pf_top.replace('<a class="hdr-cta" href="#contact"><span>Mon secteur</span>', '<a class="hdr-cta" href="#projet"><span>Mon devis</span>', 1)
+pf_top = pf_top.replace('<span>Appeler Martin</span>', '<span>Nous appeler</span>', 1)
+pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Décrire mes travaux</a>', 1)
+pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Des artisans de confiance près de chez vous</p>')
+pf_tail = absolutize(TAIL)
+pf_tail = pf_tail.replace('<p>Vous faites le chantier. Nous remplissons l’agenda.</p>', '<p>Un projet de travaux&nbsp;? Un seul artisan, le bon.</p>', 1)
+pf_tail = pf_tail.replace('<a class="btn" href="#contact"><span>Nous écrire</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
+pf_tail = pf_tail.replace('<small>Cofondateur · Head of Sales</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
+pf_tail = pf_tail.replace('<b>Parler à Martin<span>, Head of Sales</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
+pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', lambda m: '<p class="wa-bubble">Bonjour. Un projet de travaux ou une question&nbsp;? Écrivez-moi, je vous réponds personnellement.</p>\n      <p class="wa-k">Choisissez une question, ou écrivez la vôtre&nbsp;:</p>\n' + "\n".join(
+    f'      <a class="wa-q" href="{html.escape(wa(m))}" target="_blank" rel="noopener" data-wa="question-particulier">{q}</a>' for q, m in [
+        ("Combien vont coûter mes travaux&nbsp;?", "Bonjour, j'ai un projet de travaux ([toiture, façade, fenêtres...]) à [ville]. Combien cela peut-il coûter ?"),
+        ("Un artisan peut-il passer cette semaine&nbsp;?", "Bonjour, j'ai des travaux à faire à [ville]. Un artisan peut-il passer cette semaine ?"),
+        ("J’ai une fuite, que faire&nbsp;?", "Bonjour, j'ai une fuite de toiture à [ville]. Que dois-je faire ?")]) + "\n      ", pf_tail, count=1)
+pf_schema = PF.schema(SITE, faq_ld, bc_ld)
+pf_doc = head(PF.TITLE, PF.DESC, PF.PATH, pf_schema) + PF.CSS + "\n" + pf_top + "\n" + fr(pf_body) + "\n" + pf_tail
+pf_doc = pf_doc.replace("</body>", PF.js() + "\n</body>", 1)
+(ROOT / "devis-travaux").mkdir(exist_ok=True)
+(ROOT / "devis-travaux" / "index.html").write_text(pf_doc, encoding="utf-8")
+paths.append(PF.PATH)
 
 # ——— Qui sommes-nous ———
 write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
