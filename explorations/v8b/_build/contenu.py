@@ -107,7 +107,7 @@ PILLAR = dict(
 <p class="src">{src("cnil", "l223")} Définition dans notre <a href="/lexique/#demarchage-telephonique">lexique</a>.</p>
 
 <h2>Notre approche, et ses limites</h2>
-<p>Bartier & Co combine deux canaux de cette liste, les annonces locales sur Google et sur Facebook et Instagram, avec l'étape où se perdent le plus de chantiers : le rappel. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda. Un seul artisan par métier et par secteur.</p>
+<p>Bartier & Co combine deux canaux de cette liste, les annonces locales sur Google et sur Facebook et Instagram, avec l'étape où beaucoup de chantiers se perdent : le rappel. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda. Un seul artisan par métier et par secteur.</p>
 <p>Ce n'est pas un remplacement du bouche-à-oreille : c'est un flux en plus, sans durée d'engagement. <a href="/#services">Voir comment ça marche</a>.</p>
 """,
     faq=[
@@ -289,7 +289,7 @@ PLUS = {
 <p>Au bout de quelques mois, la dernière colonne vous dit où partent vos chantiers.</p>
 """,
         faq=[
-            ("Combien de fois faut-il relancer un devis ?", "Trois fois au plus : un SMS le jour de l'envoi, un appel quelques jours après, puis un dernier message deux à trois semaines plus tard."),
+            ("Combien de fois faut-il relancer un devis ?", "Trois relances au plus : un appel quelques jours après l'envoi, un SMS une semaine plus tard, puis un dernier message deux à trois semaines plus tard. Le SMS du jour de l'envoi sert seulement à confirmer la réception."),
             ("Faut-il relancer par téléphone ou par SMS ?", "Les deux. L'appel sert à répondre aux questions, le SMS à ne pas déranger. Commencez par confirmer la réception du devis par SMS le jour même."),
             ("Comment savoir si mes relances fonctionnent ?", "Suivez votre taux de signature (devis signés ÷ devis envoyés × 100) avant et après avoir mis en place les relances, sur plusieurs mois."),
         ],

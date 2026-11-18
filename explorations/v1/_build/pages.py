@@ -183,9 +183,9 @@ GOOGLE_FAQ = [
     ("Google Ads ou Meta, lequel choisir ?", "Les deux se complètent. Google capte ceux qui cherchent déjà, Meta ceux qui y pensent. Nous recommandons l'un, l'autre ou les deux selon votre métier et votre secteur, pendant l'appel."),
     ("Quel budget prévoir ?", "Il dépend de votre métier et de la concurrence dans votre secteur. Nous l'estimons avec vous avant de démarrer. Vous le payez directement à Google."),
     ("Le compte Google Ads est-il à moi ?", "Oui. Le compte est à votre nom, vous gardez l'accès et l'historique, même si vous arrêtez."),
-    ("Qui rappelle les demandes ?", "Notre équipe, en moins de 5 minutes, en semaine de 8 h à 19 h. Vous ne recevez que des rendez-vous qualifiés."),
+    ("Qui rappelle les demandes ?", "Notre équipe, en moins de 5 minutes, en semaine de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
     ("Sur quelles recherches apparaissez-vous ?", "Sur les recherches de votre métier dans vos communes, comme « couvreur » suivi du nom de la ville. Les recherches inutiles sont exclues : gratuit, pas cher, emploi, formation, bricolage."),
-    ("Combien de temps avant les premières demandes ?", "La campagne est prête 24 à 48 heures après notre appel. Les premières demandes arrivent dès que les annonces tournent, en général dans la première semaine, selon les recherches de votre secteur."),
+    ("Combien de temps avant les premières demandes ?", "La campagne est prête 24 à 48 heures après notre appel. Les annonces tournent dès la première semaine. Le rythme des demandes dépend ensuite des recherches dans votre secteur."),
 ]
 page("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
      "Campagnes Google Ads locales pour couvreurs, façadiers et menuisiers : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.",
@@ -318,14 +318,14 @@ ARTICLES = [
 <h2>Quelle différence entre une demande de devis et un rendez-vous qualifié ?</h2>
 <p>Le vocabulaire marketing mélange tout, et les plateformes parlent de « leads ». Pour un artisan, il n'y a que trois questions : combien d'entreprises reçoivent la même demande, qui rappelle le propriétaire, et qu'est-ce qui a été vérifié avant que vous vous déplaciez.</p>
 
-<h2>La demande partagée : la même fiche vendue plusieurs fois</h2>
-<p>Vous recevez un nom, un numéro et une description du projet. D'autres entreprises reçoivent la même fiche, au même moment. Le propriétaire est appelé plusieurs fois, compare les prix, et retient souvent le premier qui rappelle ou le moins cher.</p>
+<h2>La demande partagée : la même demande vendue plusieurs fois</h2>
+<p>Vous recevez un nom, un numéro et une description du projet. D'autres entreprises reçoivent la même demande, au même moment. Le propriétaire est appelé plusieurs fois, compare les prix, et retient souvent le premier qui rappelle ou le moins cher.</p>
 
 <h2>La demande exclusive : exclusive jusqu'où ?</h2>
-<p>La fiche n'est vendue qu'à vous. C'est mieux, mais vérifiez ce que recouvre le mot. Exclusif pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c'est vous, le soir, la demande a souvent refroidi.</p>
+<p>La demande n'est vendue qu'à vous. C'est mieux, mais vérifiez ce que recouvre le mot. Exclusif pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c'est vous, le soir, la demande a souvent refroidi.</p>
 
 <h2>Le rendez-vous qualifié : ce qui a été vérifié</h2>
-<p>Quelqu'un a rappelé le propriétaire, vérifié qu'il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez une visite dans votre agenda, pas une fiche à traiter.</p>
+<p>Quelqu'un a rappelé le propriétaire, vérifié qu'il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez une visite dans votre agenda, pas un nom à rappeler.</p>
 
 <h2>Demande partagée, demande exclusive, rendez-vous qualifié : le comparatif</h2>
 <table>
@@ -334,7 +334,7 @@ ARTICLES = [
 <tr><td>Entreprises sur la même demande</td><td>Plusieurs</td><td>Une</td><td>Une</td></tr>
 <tr><td>Qui rappelle</td><td>Vous</td><td>Vous</td><td>Le prestataire</td></tr>
 <tr><td>Projet vérifié</td><td>Rarement</td><td>Parfois</td><td>Oui</td></tr>
-<tr><td>Ce que vous recevez</td><td>Une fiche</td><td>Une fiche</td><td>Une visite fixée</td></tr>
+<tr><td>Ce que vous recevez</td><td>Un nom et un numéro</td><td>Un nom et un numéro</td><td>Une visite fixée</td></tr>
 </tbody>
 </table>
 
@@ -346,7 +346,7 @@ ARTICLES = [
 <li>Que se passe-t-il si le propriétaire n'est pas joignable ou n'est pas sérieux ?</li>
 <li>Y a-t-il une durée d'engagement minimale ?</li>
 </ol>
-<p>Nos réponses sont sur la page <a href="/#principles">Engagements</a>. Les définitions sont dans notre <a href="/lexique/#clients">lexique</a>.</p>
+<p>Nos réponses sont dans nos <a href="/#principles">engagements</a>, sur la page d'accueil. Les définitions sont dans notre <a href="/lexique/#clients">lexique</a>.</p>
 """,
     },
     {
@@ -371,9 +371,9 @@ ARTICLES = [
 <h2>Ce que chaque canal exige après le clic</h2>
 <ul>
 <li><b>Google</b> : écarter les recherches inutiles (gratuit, emploi, bricolage) et répondre vite, car le propriétaire appelle plusieurs entreprises.</li>
-<li><b>Meta</b> : qualifier au téléphone, car une partie des demandes est encore au stade de l'idée.</li>
+<li><b>Meta</b> : trier au téléphone, car une partie des demandes est encore au stade de l'idée.</li>
 </ul>
-<p>Dans les deux cas, la demande doit être rappelée en quelques minutes. C'est là que la plupart des campagnes perdent leurs meilleurs projets.</p>
+<p>Dans les deux cas, la demande doit être rappelée en quelques minutes. C'est souvent là que se perdent les meilleurs projets.</p>
 
 <h2>Google Ads ou Meta Ads : notre choix, et ses limites</h2>
 <p>Nous commençons le plus souvent par Meta pour les métiers de rénovation (couverture, façade, menuiserie, isolation), parce que le volume se construit dans un rayon précis. Nous ajoutons Google quand votre secteur a assez de recherches locales. Ce n'est pas une règle : certains secteurs ruraux n'ont pas assez de recherches pour Google, et certains métiers vivent surtout de l'urgence.</p>

@@ -8,7 +8,7 @@ Ce fichier reprend le texte des pages du site. La version courte est https://bar
 
 Adresse : https://bartierandco.com/
 
-Bartier & Co trouve des clients aux artisans du bâtiment : des propriétaires avec un vrai projet, rappelés en 5 minutes, visite fixée dans votre agenda.
+Bartier & Co trouve des clients aux artisans du bâtiment : propriétaires avec un vrai projet, rappelés en moins de 5 minutes, visite fixée dans votre agenda.
 
 Complet.
 Faire équipe. Faire la différence.
@@ -21,9 +21,9 @@ Vous faites le chantier. Nous trouvons les clients.
 Un bon artisan ne devrait pas passer ses soirées à courir après des devis. Bartier & Co s’en charge : nous trouvons les propriétaires, nous les rappelons, nous fixons la visite. Vous gardez votre temps pour le chantier.
 Voir l’équipe
 - 24–48 heures pour tout mettre en place
-- 5 minutes maximum pour rappeler
+- 5 minutes au plus pour rappeler, en semaine
 - 1 seul artisan par métier et par secteur
-- 0 engagement de durée
+- 0 mois d’engagement minimum
 
 ### Qui vous répond ? Nous.
 Pas de standard. Vous parlez aux fondateurs, du premier appel à l’onboarding.
@@ -33,7 +33,7 @@ Cofondateur · Head of Performance
 
 #### Martin Barthélémy
 Cofondateur · Head of Sales
-Une question avant de vous lancer ? Martin vous répond directement, du lundi au vendredi de 8 h à 19 h.
+Une question avant de vous lancer ? Appelez Martin en semaine, de 8 h à 19 h, ou écrivez-lui : il répond sous un jour ouvré.
 Appeler le 07 81 01 89 36
 
 ### Comment ça marche
@@ -73,10 +73,10 @@ Le prix dépend de votre métier, de votre secteur et du nombre d’équipes : v
 - 01
 
 #### Exclusivité
-Vos rendez-vous ne sont ni partagés, ni revendus.
+Vos rendez-vous ne sont ni partagés ni revendus.
 - 02
 
-#### Un seul par secteur
+#### Un seul par métier et par secteur
 Jamais votre concurrent d’à côté.
 - 03
 
@@ -111,7 +111,7 @@ Avec nous Des annonces qui suivent les saisons, toute l’année.
 
 ### Avant de commencer
 Les six questions que les artisans nous posent le plus.
-Toutes les questions
+Voir toutes les questions
 
 **Qu’est-ce qui change par rapport à une plateforme ?**
 La demande n’est proposée qu’à vous, nous rappelons nous-mêmes le propriétaire, et vous ne vous déplacez qu’une fois le rendez-vous fixé.
@@ -123,7 +123,7 @@ Le prix dépend de votre métier, de votre secteur et du nombre d’équipes. Vo
 Vous, directement à Meta ou Google, depuis des comptes à votre nom. Vous voyez chaque euro dépensé.
 
 **Y a-t-il une durée d’engagement ?**
-Non. Aucune durée minimale : vous restez parce que l’agenda se remplit.
+Non. Aucune durée minimale.
 
 **Que se passe-t-il si l’objectif n’est pas atteint ?**
 Nous continuons sans facturer. C’est écrit dans le contrat, avec nos autres engagements.
@@ -140,11 +140,11 @@ Adresse : https://bartierandco.com/metiers/
 Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d’isolation, partout en France. Un seul artisan par secteur.
 
 Métiers
-Des chantiers de plusieurs milliers d’euros. Pas de dépannage, pas de petits travaux.
+Pas de dépannage, pas de petits travaux. Un seul artisan par métier et par secteur.
 Mis à jour le 18 novembre 2026
 
-### Les métiers que nous servons
-Cinq métiers, et pour chacun un seul artisan par secteur. Cliquez sur un métier pour voir ce que nous allons chercher pour vous.
+### Les métiers que nous accompagnons
+Cliquez sur un métier pour voir les chantiers que nous allons chercher.
 
 #### Couverture
 Réfection, rénovation, zinguerie, démoussage
@@ -176,7 +176,7 @@ Les chantiers qui valent le déplacement passent. Le reste est écarté au tél�
 ### Sur le terrain, avec vous
 Nos annonces montrent vos vrais chantiers, et nos flyers partent dans les rues où votre échafaudage est déjà monté.
 
-### Un agenda rempli en toute saison
+### Des annonces pour chaque saison
 Chaque saison a ses demandes. Nos annonces ont un temps d’avance.
 Ils cherchent Nous lançons
 Déc. – fév.
@@ -205,7 +205,7 @@ Des annonces locales à votre nom, sur Google et sur Facebook et Instagram. Chaq
 Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d’autre. Pour comparer avec les autres façons de trouver des clients : comment trouver des chantiers.
 
 ### Vos questions sur les métiers
-Une autre question ? Écrivez-nous
+Une autre question ? Écrire à Martin sur WhatsApp
 
 **Quels métiers du bâtiment accompagnez-vous ?**
 Cinq métiers où un chantier vaut plusieurs milliers d’euros : la couverture et la zinguerie, la menuiserie extérieure, la façade et le ravalement, la charpente et l’isolation.
@@ -231,7 +231,7 @@ Adresse : https://bartierandco.com/metiers/couverture/
 Trouvez des chantiers de couverture : des propriétaires qui préparent une réfection ou une rénovation de toiture, rappelés en 5 minutes.
 
 Couvreurs-zingueurs · Partout en France
-Votre agenda rempli de propriétaires qui préparent une réfection ou une rénovation de toiture. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
+Des propriétaires qui préparent une réfection ou une rénovation de toiture. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
 Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
@@ -261,7 +261,7 @@ Après un coup de vent, tout le monde appelle en même temps. Puis plus rien pen
 Sur les plateformes, le propriétaire reçoit plusieurs appels pour la même toiture. Il compare des prix, rarement la qualité du travail.
 
 ### Ce que nous vérifions avant votre visite
-Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses, pas de rendez-vous.
+Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.
 - Êtes-vous propriétaire de la maison et l’occupez-vous ?
 - Quels travaux envisagez-vous : réfection, rénovation, démoussage, zinguerie, fuite ?
 - Quel est le matériau de la toiture et quel est son âge, à peu près ?
@@ -270,10 +270,10 @@ Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses
 - Quand souhaitez-vous faire les travaux ?
 
 ### À votre nom, autour de chez vous
-Facebook et Instagram, à 25 à 40 km de votre dépôt, avec vos photos de chantier. Exemples d’angles, écrits ensuite avec vous.
+Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d’annonces, rédigées ensuite avec vous.
 
 ### Vos questions, nos réponses
-Une autre question ? Écrivez-nous
+Une autre question ? Écrire à Martin sur WhatsApp
 
 **Vous m’envoyez aussi des petits dépannages ?**
 Non. Nos annonces et nos questions écartent les petits dépannages. Si un propriétaire signale une urgence, nous vous le précisons avant de proposer le créneau, et vous restez libre de refuser.
@@ -282,10 +282,10 @@ Non. Nos annonces et nos questions écartent les petits dépannages. Si un propr
 Non. Nous alternons les angles selon la saison : vérification après intempéries, entretien avant l’hiver, rénovation complète au printemps. L’objectif est un agenda régulier.
 
 **Combien cela coûte-t-il ?**
-Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l’appel de 15 minutes, avant toute décision.
+Le prix dépend de votre métier, de votre secteur et du nombre d’équipes. Vous l’avez pendant l’appel de 15 minutes, avant toute décision.
 
-**Y a-t-il un engagement ?**
-Non. Aucune durée minimale : vous restez parce que l’agenda se remplit.
+**Y a-t-il une durée d’engagement ?**
+Non. Aucune durée minimale.
 
 **Qui rappelle les propriétaires ?**
 Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda.
@@ -309,7 +309,7 @@ Adresse : https://bartierandco.com/metiers/menuiserie-exterieure/
 Trouvez des chantiers de menuiserie extérieure : des propriétaires qui préparent le remplacement de leurs fenêtres ou de leur porte, rappelés en 5 minutes.
 
 Menuisiers poseurs · Partout en France
-Votre agenda rempli de propriétaires qui préparent le remplacement de leurs fenêtres ou de leur porte. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
+Des propriétaires qui préparent le remplacement de leurs fenêtres ou de leur porte. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
 Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
@@ -327,7 +327,7 @@ Des chantiers qui valent le déplacement. Le reste est écarté avant d’arrive
 Ce que nous entendons chez les artisans de votre métier.
 - 01
 
-#### Des prospects attirés par de fausses promesses.
+#### Des propriétaires échaudés par les fausses promesses.
 Le secteur a connu les offres trop belles et les aides annoncées à tort. Beaucoup de propriétaires arrivent méfiants, ou avec des attentes impossibles.
 - 02
 
@@ -339,7 +339,7 @@ Le propriétaire compare votre devis au prix d’une fenêtre en magasin. Sans �
 Entre la visite et la décision, il peut s’écouler des semaines. Sans relance, le projet passe au second plan, ou chez un concurrent.
 
 ### Ce que nous vérifions avant votre visite
-Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses, pas de rendez-vous.
+Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.
 - Êtes-vous propriétaire de la maison et l’occupez-vous ?
 - Combien de menuiseries souhaitez-vous remplacer ?
 - Quel matériau envisagez-vous : PVC, aluminium, bois ?
@@ -348,10 +348,10 @@ Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses
 - Quand souhaitez-vous faire les travaux ?
 
 ### À votre nom, autour de chez vous
-Facebook et Instagram, à 25 à 40 km de votre dépôt, avec vos photos de chantier. Exemples d’angles, écrits ensuite avec vous.
+Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d’annonces, rédigées ensuite avec vous.
 
 ### Vos questions, nos réponses
-Une autre question ? Écrivez-nous
+Une autre question ? Écrire à Martin sur WhatsApp
 
 **Les propriétaires savent-ils que vous ne vendez pas d’aides ?**
 Oui. Nos annonces ne promettent ni aide ni prix d’appel. Le propriétaire sait qu’il rencontre une entreprise pour un devis, et notre équipe le lui confirme au téléphone.
@@ -360,10 +360,10 @@ Oui. Nos annonces ne promettent ni aide ni prix d’appel. Le propriétaire sait
 Oui. Nous adaptons les annonces et les questions à ce que vous posez : matériaux, gammes, types d’ouvertures. Les projets hors de votre offre sont écartés.
 
 **Combien cela coûte-t-il ?**
-Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l’appel de 15 minutes, avant toute décision.
+Le prix dépend de votre métier, de votre secteur et du nombre d’équipes. Vous l’avez pendant l’appel de 15 minutes, avant toute décision.
 
-**Y a-t-il un engagement ?**
-Non. Aucune durée minimale : vous restez parce que l’agenda se remplit.
+**Y a-t-il une durée d’engagement ?**
+Non. Aucune durée minimale.
 
 **Qui rappelle les propriétaires ?**
 Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda.
@@ -387,7 +387,7 @@ Adresse : https://bartierandco.com/metiers/facade/
 Trouvez des chantiers de façade : des propriétaires qui préparent un ravalement ou une isolation par l’extérieur, rappelés en 5 minutes.
 
 Façadiers · Partout en France
-Votre agenda rempli de propriétaires qui préparent un ravalement ou une isolation par l’extérieur. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
+Des propriétaires qui préparent un ravalement ou une isolation par l’extérieur. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
 Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
@@ -416,7 +416,7 @@ Les propriétaires pensent à leur façade quand il fait beau. Pour travailler t
 Sur les plateformes, plusieurs façadiers reçoivent la même demande. Le propriétaire compare des prix au mètre carré, pas des méthodes.
 
 ### Ce que nous vérifions avant votre visite
-Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses, pas de rendez-vous.
+Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.
 - Êtes-vous propriétaire de la maison et l’occupez-vous ?
 - Quels travaux envisagez-vous : ravalement, isolation par l’extérieur, fissures, peinture ?
 - Combien d’étages et quelle surface de façade, à peu près ?
@@ -425,10 +425,10 @@ Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses
 - Quand souhaitez-vous faire les travaux ?
 
 ### À votre nom, autour de chez vous
-Facebook et Instagram, à 25 à 40 km de votre dépôt, avec vos photos de chantier. Exemples d’angles, écrits ensuite avec vous.
+Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d’annonces, rédigées ensuite avec vous.
 
 ### Vos questions, nos réponses
-Une autre question ? Écrivez-nous
+Une autre question ? Écrire à Martin sur WhatsApp
 
 **Travaillez-vous avec les copropriétés ?**
 Notre méthode vise les maisons individuelles, où le propriétaire décide seul ou en couple. Pour les copropriétés, parlons-en pendant l’appel.
@@ -437,10 +437,10 @@ Notre méthode vise les maisons individuelles, où le propriétaire décide seul
 Oui. Les annonces et les questions s’adaptent aux chantiers que vous voulez développer en priorité.
 
 **Combien cela coûte-t-il ?**
-Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l’appel de 15 minutes, avant toute décision.
+Le prix dépend de votre métier, de votre secteur et du nombre d’équipes. Vous l’avez pendant l’appel de 15 minutes, avant toute décision.
 
-**Y a-t-il un engagement ?**
-Non. Aucune durée minimale : vous restez parce que l’agenda se remplit.
+**Y a-t-il une durée d’engagement ?**
+Non. Aucune durée minimale.
 
 **Qui rappelle les propriétaires ?**
 Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda.
@@ -464,7 +464,7 @@ Adresse : https://bartierandco.com/metiers/charpente/
 Trouvez des chantiers de charpente : des propriétaires qui préparent un projet de charpente prêt à démarrer, rappelés en 5 minutes, visite dans votre agenda.
 
 Charpentiers · Partout en France
-Votre agenda rempli de propriétaires qui préparent un projet de charpente prêt à démarrer. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
+Des propriétaires qui préparent un projet de charpente prêt à démarrer. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
 Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
@@ -493,7 +493,7 @@ Les propriétaires ne distinguent pas toujours charpente et couverture. Sans tri
 Le propriétaire compare des devis sans voir la différence entre deux charpentes. La visite est le moment où tout se joue.
 
 ### Ce que nous vérifions avant votre visite
-Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses, pas de rendez-vous.
+Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.
 - Êtes-vous propriétaire de la maison et l’occupez-vous ?
 - Quel est votre projet : rénovation, remplacement, surélévation, extension, traitement ?
 - Où en sont les plans et les démarches administratives ?
@@ -501,10 +501,10 @@ Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses
 - Quand souhaitez-vous commencer les travaux ?
 
 ### À votre nom, autour de chez vous
-Facebook et Instagram, à 25 à 40 km de votre dépôt, avec vos photos de chantier. Exemples d’angles, écrits ensuite avec vous.
+Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d’annonces, rédigées ensuite avec vous.
 
 ### Vos questions, nos réponses
-Une autre question ? Écrivez-nous
+Une autre question ? Écrire à Martin sur WhatsApp
 
 **Mes chantiers ont des cycles longs. Est-ce adapté ?**
 Oui, à condition de trier tôt. Nos questions portent sur l’avancement des plans et des démarches : vous ne rencontrez que des propriétaires dont le projet peut démarrer.
@@ -513,10 +513,10 @@ Oui, à condition de trier tôt. Nos questions portent sur l’avancement des pl
 Oui. Ou, si vous faites aussi la couverture, les garder. Nous réglons le tri selon ce que vous réalisez.
 
 **Combien cela coûte-t-il ?**
-Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l’appel de 15 minutes, avant toute décision.
+Le prix dépend de votre métier, de votre secteur et du nombre d’équipes. Vous l’avez pendant l’appel de 15 minutes, avant toute décision.
 
-**Y a-t-il un engagement ?**
-Non. Aucune durée minimale : vous restez parce que l’agenda se remplit.
+**Y a-t-il une durée d’engagement ?**
+Non. Aucune durée minimale.
 
 **Qui rappelle les propriétaires ?**
 Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda.
@@ -540,7 +540,7 @@ Adresse : https://bartierandco.com/metiers/isolation/
 Trouvez des chantiers d’isolation : des propriétaires qui préparent l’isolation complète de leur maison, rappelés en 5 minutes, visite dans votre agenda.
 
 Entreprises d’isolation · Partout en France
-Votre agenda rempli de propriétaires qui préparent l’isolation complète de leur maison. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
+Des propriétaires qui préparent l’isolation complète de leur maison. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
 Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
@@ -562,14 +562,14 @@ Après des années d’appels non sollicités, les propriétaires se méfient. L
 - 02
 
 #### Des demandes motivées par les seules aides.
-Beaucoup de prospects ne s’intéressent qu’à l’aide promise. Quand elle ne correspond pas à leur situation, le projet s’arrête.
+Beaucoup de demandes ne portent que sur l’aide promise. Quand elle ne correspond pas à leur situation, le projet s’arrête.
 - 03
 
 #### Une demande partagée entre plusieurs entreprises.
 Sur les plateformes, la même demande part chez plusieurs entreprises. Le propriétaire choisit souvent le moins cher, pas le mieux réalisé.
 
 ### Ce que nous vérifions avant votre visite
-Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses, pas de rendez-vous.
+Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.
 - Êtes-vous propriétaire de la maison et l’occupez-vous ?
 - Quels travaux envisagez-vous : murs, combles, rampants, planchers ?
 - De quelle année date la maison, à peu près ?
@@ -578,10 +578,10 @@ Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses
 - Quand souhaitez-vous faire les travaux ?
 
 ### À votre nom, autour de chez vous
-Facebook et Instagram, à 25 à 40 km de votre dépôt, avec vos photos de chantier. Exemples d’angles, écrits ensuite avec vous.
+Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d’annonces, rédigées ensuite avec vous.
 
 ### Vos questions, nos réponses
-Une autre question ? Écrivez-nous
+Une autre question ? Écrire à Martin sur WhatsApp
 
 **Est-ce compatible avec l’interdiction du démarchage ?**
 Oui. Nous ne démarchons personne. Nous rappelons uniquement des propriétaires qui ont rempli une demande et accepté d’être recontactés par votre entreprise. La preuve de leur accord est conservée.
@@ -590,10 +590,10 @@ Oui. Nous ne démarchons personne. Nous rappelons uniquement des propriétaires 
 Ce n’est pas obligatoire pour travailler avec nous. Si vous l’êtes, nous pouvons le mettre en avant dans vos annonces. Nous ne promettons jamais d’aide au propriétaire.
 
 **Combien cela coûte-t-il ?**
-Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l’appel de 15 minutes, avant toute décision.
+Le prix dépend de votre métier, de votre secteur et du nombre d’équipes. Vous l’avez pendant l’appel de 15 minutes, avant toute décision.
 
-**Y a-t-il un engagement ?**
-Non. Aucune durée minimale : vous restez parce que l’agenda se remplit.
+**Y a-t-il une durée d’engagement ?**
+Non. Aucune durée minimale.
 
 **Qui rappelle les propriétaires ?**
 Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda.
@@ -617,7 +617,7 @@ Adresse : https://bartierandco.com/google-ads/
 Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.
 
 Google Ads
-Un propriétaire tape « couvreur » et le nom de sa ville. Il tombe sur vous. Nous le rappelons en moins de 5 minutes, avant vos concurrents.
+Un propriétaire tape « couvreur » et le nom de sa ville. Il voit votre annonce. Nous le rappelons en moins de 5 minutes, en semaine de 8 h à 19 h.
 Mis à jour le 18 novembre 2026
 
 ### Quand Google est le bon canal
@@ -635,13 +635,13 @@ Le propriétaire compare déjà des entreprises. Être là et rappeler vite fait
 #### Les secteurs denses
 Assez de recherches locales pour qu’une campagne tienne toute l’année.
 
-### Une campagne qui ne paie que les bonnes recherches
+### Une campagne réglée pour écarter les mauvaises recherches
 Chaque clic coûte. L’essentiel du travail consiste à écarter ceux qui ne deviendront jamais des chantiers.
 - Campagnes par métier et par commune de votre zone
 - Recherches inutiles exclues : gratuit, pas cher, emploi, formation, bricolage
 - Une page dédiée à votre entreprise, rapide sur mobile
 - Chaque appel et chaque formulaire suivis jusqu’au rendez-vous
-- Rappel en moins de 5 minutes, qualification, rendez-vous dans votre agenda
+- Rappel en moins de 5 minutes en semaine, projet vérifié, rendez-vous dans votre agenda
 
 ### Votre compte, votre budget, vos chiffres
 Tout est créé à votre nom. Vous gardez ce qui a été construit, même si vous arrêtez.
@@ -651,10 +651,10 @@ Tout est créé à votre nom. Vous gardez ce qui a été construit, même si vou
 
 ### Deux canaux, deux demandes
 Google capte ceux qui cherchent déjà. Meta touche ceux qui n’ont pas encore cherché. Nous choisissons selon votre métier et votre secteur.
-Google Ads Meta Ads La demande Exprimée : le propriétaire cherche Suscitée : il n’a pas encore cherché Typiquement Urgences, projets mûrs Rénovation, entretien, projets à venir Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Qualifier au téléphone
+Google Ads Meta Ads La demande Exprimée : le propriétaire cherche Suscitée : il n’a pas encore cherché Typiquement Urgences, projets mûrs Rénovation, entretien, projets à venir Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Trier au téléphone
 
 ### Vos questions, nos réponses
-Une autre question ? Écrivez-nous
+Une autre question ? Écrire à Martin sur WhatsApp
 
 **Google Ads ou Meta, lequel choisir ?**
 Les deux se complètent. Google capte ceux qui cherchent déjà, Meta ceux qui y pensent. Nous recommandons l’un, l’autre ou les deux selon votre métier et votre secteur, pendant l’appel.
@@ -666,13 +666,13 @@ Il dépend de votre métier et de la concurrence dans votre secteur. Nous l’es
 Oui. Le compte est à votre nom, vous gardez l’accès et l’historique, même si vous arrêtez.
 
 **Qui rappelle les demandes ?**
-Notre équipe, en moins de 5 minutes, en semaine de 8 h à 19 h. Vous ne recevez que des rendez-vous qualifiés.
+Notre équipe, en moins de 5 minutes, en semaine de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda.
 
 **Sur quelles recherches apparaissez-vous ?**
 Sur les recherches de votre métier dans vos communes, comme « couvreur » suivi du nom de la ville. Les recherches inutiles sont exclues : gratuit, pas cher, emploi, formation, bricolage.
 
 **Combien de temps avant les premières demandes ?**
-La campagne est prête 24 à 48 heures après notre appel. Les premières demandes arrivent dès que les annonces tournent, en général dans la première semaine, selon les recherches de votre secteur.
+La campagne est prête 24 à 48 heures après notre appel. Les annonces tournent dès la première semaine. Le rythme des demandes dépend ensuite des recherches dans votre secteur.
 
 ### À lire aussi
 - Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
@@ -685,10 +685,10 @@ La campagne est prête 24 à 48 heures après notre appel. Les premières demand
 
 Adresse : https://bartierandco.com/meta-ads/
 
-Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et qualifiés.
+Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et vérifiés.
 
 Meta Ads · Facebook et Instagram
-Des annonces à votre nom, vues par les propriétaires à 25 à 40 km de votre dépôt. Chaque demande rappelée en moins de 5 minutes, puis vérifiée.
+Des annonces à votre nom, vues par les propriétaires dans un rayon de 25 à 40 km autour de votre dépôt. Chaque demande est rappelée en moins de 5 minutes en semaine, puis vérifiée.
 Mis à jour le 18 novembre 2026
 
 ### Des annonces qui vous ressemblent
@@ -706,7 +706,7 @@ Vos chantiers, votre équipe. Rien ne convainc mieux un voisin.
 #### Des angles de saison
 Après les intempéries, avant l’hiver, au printemps pour la rénovation.
 
-### Rien ne part sans être vérifié
+### Chaque demande vérifiée au téléphone
 Une demande Facebook n’est qu’un début. Le tri se fait au téléphone, pas dans votre agenda.
 - Formulaire avec questions de tri et accord explicite d’être recontacté
 - Preuve du consentement conservée pour chaque demande
@@ -716,17 +716,17 @@ Une demande Facebook n’est qu’un début. Le tri se fait au téléphone, pas 
 - Flyers dans les rues voisines de chaque chantier signé
 
 ### Votre page, votre compte, vos chiffres
-Tout est créé à votre nom, et le reste si vous arrêtez.
+Tout est créé à votre nom, et tout vous reste si vous arrêtez.
 - Page Facebook et compte publicitaire à votre nom
 - Budget payé directement à Meta
 - Toutes les statistiques des annonces visibles
 
 ### Deux canaux, deux demandes
 Google capte ceux qui cherchent déjà. Meta touche ceux qui n’ont pas encore cherché. Nous choisissons selon votre métier et votre secteur.
-Google Ads Meta Ads La demande Exprimée : le propriétaire cherche Suscitée : il n’a pas encore cherché Typiquement Urgences, projets mûrs Rénovation, entretien, projets à venir Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Qualifier au téléphone
+Google Ads Meta Ads La demande Exprimée : le propriétaire cherche Suscitée : il n’a pas encore cherché Typiquement Urgences, projets mûrs Rénovation, entretien, projets à venir Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Trier au téléphone
 
 ### Vos questions, nos réponses
-Une autre question ? Écrivez-nous
+Une autre question ? Écrire à Martin sur WhatsApp
 
 **Faut-il une page Facebook ?**
 Oui, à votre nom. Si vous n’en avez pas, nous la créons avec vous pendant la mise en place.
@@ -759,7 +759,7 @@ Adresse : https://bartierandco.com/devis-travaux/
 
 Décrivez vos travaux en 1 minute : rappel en moins de 5 min et un seul artisan local vient chiffrer. Toiture, façade, fenêtres, charpente, isolation. Gratuit.
 
-Décrivez vos travaux en 1 minute. On vous rappelle en 5, et la visite est fixée.
+Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
 - Un seul artisan
@@ -819,8 +819,8 @@ Pour ne pas oublier le rendez-vous.
 #### L’artisan chiffre chez vous
 Visite et devis offerts. Vous décidez, sans engagement.
 
-### Pas cinq appels. Un seul.
-Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, un seul artisan vous appelle.
+### Pas cinq entreprises. Un seul artisan.
+Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, nous vous rappelons, puis un seul artisan s’occupe de votre projet.
 Site de devis classique Bartier & Co Qui vous appelle Souvent plusieurs entreprises Nous, puis un seul artisan Avant la visite Vous répétez votre projet Votre besoin est déjà vérifié Le rendez-vous Vous relancez les artisans Fixé pendant notre appel Avant le jour J Rien Rappel par SMS Vos coordonnées Partagées entre entreprises Transmises à un seul artisan Le prix pour vous Gratuit Gratuit
 
 ### Fuite de toiture ? Les 5 bons réflexes
@@ -849,31 +849,31 @@ Les prix en ligne sont des moyennes. Ce qui compte, c’est votre chantier. La v
 Surface, matériau (tuiles, ardoise, bac acier), état de la charpente, accès au toit.
 Rénovation de toiture : de 60 à 500 €/m², pose comprise. L’écart dépend de ce qui est refait : couverture seule, isolation, charpente.
 Source : QuelleEnergie, consulté le 18/11/2026
-Tout sur toiture
+Voir la page Toiture
 
 #### Prix d’un ravalement de façade
 Surface, état du support, finition, échafaudage.
 Ravalement de façade : de 40 à 160 €/m² en moyenne.
 Source : Obat, mis à jour le 30/10/2024
-Tout sur façade
+Voir la page Façade
 
 #### Prix de fenêtres posées
 Nombre et taille des ouvertures, matériau, vitrage, type de pose.
 Fenêtre PVC double vitrage, fournie et posée en remplacement : de 870 à 1 170 € TTC, 1 020 € en moyenne.
 Source : La Maison Saint-Gobain, mis à jour le 13/02/2026
-Tout sur fenêtres et portes
+Voir la page Fenêtres et portes
 
 #### Prix de travaux de charpente
 État du bois, portée, traitement, accès au chantier.
 Rénovation de charpente en bois : 150 €/m² en moyenne, de 40 à 250 €/m² selon l’état et la surface.
 Source : Obat, mis à jour le 28/10/2024
-Tout sur charpente
+Voir la page Charpente
 
 #### Prix de l’isolation des combles
 Surface, technique, isolant, aides possibles.
 Isolation des combles perdus, pose comprise : 40 €/m² si l’accès se fait par l’intérieur, 45 €/m² par le toit.
 Source : La Maison Saint-Gobain, mis à jour le 06/07/2026
-Tout sur isolation
+Voir la page Isolation
 ou appelez le 07 81 01 89 36
 
 ### Reconnaître un artisan sérieux
@@ -903,7 +903,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
 
 **Le rendez-vous**
 - Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
@@ -928,13 +928,13 @@ Oui. Notre service est gratuit pour vous : ce sont les artisans partenaires qui 
 Non. L’artisan vient voir le chantier et vous remet son devis sans frais pour vous. Vous restez libre de ne pas donner suite.
 
 **Combien d’entreprises vont m’appeler ?**
-Une seule : nous d’abord, pour vérifier votre projet, puis l’artisan retenu. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
+Une seule entreprise de travaux : l’artisan retenu. Avant lui, nous vous appelons pour vérifier votre projet. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
 
 **Et si le devis ne me convient pas ?**
 Vous ne signez rien. Vous restez libre de refuser le devis ou de le comparer, sans frais et sans avoir à vous justifier.
 
 **Pourquoi passer par vous plutôt que chercher seul ?**
-Pour gagner du temps et éviter les relances. Un seul appel, un artisan local disponible, et la date de visite fixée pendant l’appel. Vous ne racontez votre projet qu’une fois.
+Pour gagner du temps et éviter les relances. Un seul appel, l’artisan de votre secteur, et la date de visite fixée pendant l’appel. Vous ne racontez votre projet qu’une fois.
 
 **Comment trouver un bon couvreur près de chez moi ?**
 Cherchez un artisan local, immatriculé, assuré en décennale, qui se déplace pour voir le toit avant de chiffrer. Décrivez vos travaux ici : nous vous présentons le couvreur partenaire de votre secteur.
@@ -981,7 +981,7 @@ Nous rappelons du lundi au vendredi, de 8 h à 19 h. Une demande envoyée en deh
 **Que faites-vous de mes données ?**
 Elles servent uniquement à traiter votre demande et à la transmettre à l’artisan retenu, à personne d’autre. Vous pouvez demander leur suppression à contact@bartierandco.com.
 
-### Votre maison mérite le bon artisan.
+### Décrivez vos travaux. Nous fixons la visite.
 1 minute pour décrire vos travaux. 1 appel pour fixer la visite. 1 artisan de votre secteur.
 ou appelez le 07 81 01 89 36
 
@@ -993,7 +993,7 @@ Adresse : https://bartierandco.com/devis-travaux/toiture/
 
 Réfection de toiture, fuite, tuiles, zinguerie, démoussage. Décrivez vos travaux en 1 minute : un seul couvreur de votre secteur vient chiffrer. Gratuit.
 
-Décrivez vos travaux en 1 minute. On vous rappelle en 5, et la visite est fixée.
+Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
 - Un seul artisan
@@ -1069,8 +1069,8 @@ Pour ne pas oublier le rendez-vous.
 #### L’artisan chiffre chez vous
 Visite et devis offerts. Vous décidez, sans engagement.
 
-### Pas cinq appels. Un seul.
-Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, un seul artisan vous appelle.
+### Pas cinq entreprises. Un seul artisan.
+Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, nous vous rappelons, puis un seul artisan s’occupe de votre projet.
 Site de devis classique Bartier & Co Qui vous appelle Souvent plusieurs entreprises Nous, puis un seul artisan Avant la visite Vous répétez votre projet Votre besoin est déjà vérifié Le rendez-vous Vous relancez les artisans Fixé pendant notre appel Avant le jour J Rien Rappel par SMS Vos coordonnées Partagées entre entreprises Transmises à un seul artisan Le prix pour vous Gratuit Gratuit
 
 ### Reconnaître un artisan sérieux
@@ -1100,7 +1100,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
 
 **Le rendez-vous**
 - Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
@@ -1143,7 +1143,7 @@ Oui. Notre service est gratuit pour vous : ce sont les artisans partenaires qui 
 Non. L’artisan vient voir le chantier et vous remet son devis sans frais pour vous. Vous restez libre de ne pas donner suite.
 
 **Combien d’entreprises vont m’appeler ?**
-Une seule : nous d’abord, pour vérifier votre projet, puis l’artisan retenu. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
+Une seule entreprise de travaux : l’artisan retenu. Avant lui, nous vous appelons pour vérifier votre projet. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
 
 **Et si le devis ne me convient pas ?**
 Vous ne signez rien. Vous restez libre de refuser le devis ou de le comparer, sans frais et sans avoir à vous justifier.
@@ -1161,7 +1161,7 @@ Tous les devis de travaux
 - Charpente
 - Isolation des combles et des murs
 
-### Votre maison mérite le bon artisan.
+### Décrivez vos travaux. Nous fixons la visite.
 1 minute pour décrire vos travaux. 1 appel pour fixer la visite. 1 artisan de votre secteur.
 ou appelez le 07 81 01 89 36
 
@@ -1173,7 +1173,7 @@ Adresse : https://bartierandco.com/devis-travaux/ravalement-facade/
 
 Ravalement de façade, fissures, enduit, peinture, isolation par l’extérieur. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer. Gratuit.
 
-Décrivez vos travaux en 1 minute. On vous rappelle en 5, et la visite est fixée.
+Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
 - Un seul artisan
@@ -1230,8 +1230,8 @@ Pour ne pas oublier le rendez-vous.
 #### L’artisan chiffre chez vous
 Visite et devis offerts. Vous décidez, sans engagement.
 
-### Pas cinq appels. Un seul.
-Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, un seul artisan vous appelle.
+### Pas cinq entreprises. Un seul artisan.
+Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, nous vous rappelons, puis un seul artisan s’occupe de votre projet.
 Site de devis classique Bartier & Co Qui vous appelle Souvent plusieurs entreprises Nous, puis un seul artisan Avant la visite Vous répétez votre projet Votre besoin est déjà vérifié Le rendez-vous Vous relancez les artisans Fixé pendant notre appel Avant le jour J Rien Rappel par SMS Vos coordonnées Partagées entre entreprises Transmises à un seul artisan Le prix pour vous Gratuit Gratuit
 
 ### Reconnaître un artisan sérieux
@@ -1261,7 +1261,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
 
 **Le rendez-vous**
 - Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
@@ -1298,7 +1298,7 @@ Oui. Notre service est gratuit pour vous : ce sont les artisans partenaires qui 
 Non. L’artisan vient voir le chantier et vous remet son devis sans frais pour vous. Vous restez libre de ne pas donner suite.
 
 **Combien d’entreprises vont m’appeler ?**
-Une seule : nous d’abord, pour vérifier votre projet, puis l’artisan retenu. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
+Une seule entreprise de travaux : l’artisan retenu. Avant lui, nous vous appelons pour vérifier votre projet. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
 
 **Et si le devis ne me convient pas ?**
 Vous ne signez rien. Vous restez libre de refuser le devis ou de le comparer, sans frais et sans avoir à vous justifier.
@@ -1316,7 +1316,7 @@ Tous les devis de travaux
 - Charpente
 - Isolation des combles et des murs
 
-### Votre maison mérite le bon artisan.
+### Décrivez vos travaux. Nous fixons la visite.
 1 minute pour décrire vos travaux. 1 appel pour fixer la visite. 1 artisan de votre secteur.
 ou appelez le 07 81 01 89 36
 
@@ -1328,7 +1328,7 @@ Adresse : https://bartierandco.com/devis-travaux/fenetres/
 
 Fenêtres PVC, alu ou bois, porte d’entrée, baie vitrée, volets. Décrivez vos travaux en 1 minute : un seul menuisier local vient chiffrer. Gratuit.
 
-Décrivez vos travaux en 1 minute. On vous rappelle en 5, et la visite est fixée.
+Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
 - Un seul artisan
@@ -1385,8 +1385,8 @@ Pour ne pas oublier le rendez-vous.
 #### L’artisan chiffre chez vous
 Visite et devis offerts. Vous décidez, sans engagement.
 
-### Pas cinq appels. Un seul.
-Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, un seul artisan vous appelle.
+### Pas cinq entreprises. Un seul artisan.
+Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, nous vous rappelons, puis un seul artisan s’occupe de votre projet.
 Site de devis classique Bartier & Co Qui vous appelle Souvent plusieurs entreprises Nous, puis un seul artisan Avant la visite Vous répétez votre projet Votre besoin est déjà vérifié Le rendez-vous Vous relancez les artisans Fixé pendant notre appel Avant le jour J Rien Rappel par SMS Vos coordonnées Partagées entre entreprises Transmises à un seul artisan Le prix pour vous Gratuit Gratuit
 
 ### Reconnaître un artisan sérieux
@@ -1416,7 +1416,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
 
 **Le rendez-vous**
 - Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
@@ -1453,7 +1453,7 @@ Oui. Notre service est gratuit pour vous : ce sont les artisans partenaires qui 
 Non. L’artisan vient voir le chantier et vous remet son devis sans frais pour vous. Vous restez libre de ne pas donner suite.
 
 **Combien d’entreprises vont m’appeler ?**
-Une seule : nous d’abord, pour vérifier votre projet, puis l’artisan retenu. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
+Une seule entreprise de travaux : l’artisan retenu. Avant lui, nous vous appelons pour vérifier votre projet. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
 
 **Et si le devis ne me convient pas ?**
 Vous ne signez rien. Vous restez libre de refuser le devis ou de le comparer, sans frais et sans avoir à vous justifier.
@@ -1471,7 +1471,7 @@ Tous les devis de travaux
 - Charpente
 - Isolation des combles et des murs
 
-### Votre maison mérite le bon artisan.
+### Décrivez vos travaux. Nous fixons la visite.
 1 minute pour décrire vos travaux. 1 appel pour fixer la visite. 1 artisan de votre secteur.
 ou appelez le 07 81 01 89 36
 
@@ -1483,7 +1483,7 @@ Adresse : https://bartierandco.com/devis-travaux/charpente/
 
 Réparation et renfort, traitement du bois, extension, surélévation. Décrivez vos travaux en 1 minute : un seul charpentier local vient chiffrer. Gratuit.
 
-Décrivez vos travaux en 1 minute. On vous rappelle en 5, et la visite est fixée.
+Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
 - Un seul artisan
@@ -1540,8 +1540,8 @@ Pour ne pas oublier le rendez-vous.
 #### L’artisan chiffre chez vous
 Visite et devis offerts. Vous décidez, sans engagement.
 
-### Pas cinq appels. Un seul.
-Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, un seul artisan vous appelle.
+### Pas cinq entreprises. Un seul artisan.
+Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, nous vous rappelons, puis un seul artisan s’occupe de votre projet.
 Site de devis classique Bartier & Co Qui vous appelle Souvent plusieurs entreprises Nous, puis un seul artisan Avant la visite Vous répétez votre projet Votre besoin est déjà vérifié Le rendez-vous Vous relancez les artisans Fixé pendant notre appel Avant le jour J Rien Rappel par SMS Vos coordonnées Partagées entre entreprises Transmises à un seul artisan Le prix pour vous Gratuit Gratuit
 
 ### Reconnaître un artisan sérieux
@@ -1571,7 +1571,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
 
 **Le rendez-vous**
 - Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
@@ -1590,7 +1590,7 @@ Mis à jour le 18 novembre 2026
 Une autre question ? 07 81 01 89 36
 
 **Combien coûtent des travaux de charpente ?**
-Il dépend surtout de ces points : état du bois, portée, traitement, accès au chantier. Seule une visite permet un devis fiable, et elle est gratuite.
+Le prix dépend surtout de ces points : état du bois, portée, traitement, accès au chantier. Seule une visite permet un devis fiable, et elle est gratuite.
 
 **Faut-il un permis pour une surélévation ?**
 Une surélévation crée de la surface : selon la surface ajoutée et le plan local d’urbanisme, il faut une déclaration préalable ou un permis de construire. Renseignez-vous en mairie avant de signer le devis.
@@ -1611,7 +1611,7 @@ Oui. Notre service est gratuit pour vous : ce sont les artisans partenaires qui 
 Non. L’artisan vient voir le chantier et vous remet son devis sans frais pour vous. Vous restez libre de ne pas donner suite.
 
 **Combien d’entreprises vont m’appeler ?**
-Une seule : nous d’abord, pour vérifier votre projet, puis l’artisan retenu. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
+Une seule entreprise de travaux : l’artisan retenu. Avant lui, nous vous appelons pour vérifier votre projet. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
 
 **Et si le devis ne me convient pas ?**
 Vous ne signez rien. Vous restez libre de refuser le devis ou de le comparer, sans frais et sans avoir à vous justifier.
@@ -1629,7 +1629,7 @@ Tous les devis de travaux
 - Fenêtres et portes
 - Isolation des combles et des murs
 
-### Votre maison mérite le bon artisan.
+### Décrivez vos travaux. Nous fixons la visite.
 1 minute pour décrire vos travaux. 1 appel pour fixer la visite. 1 artisan de votre secteur.
 ou appelez le 07 81 01 89 36
 
@@ -1641,7 +1641,7 @@ Adresse : https://bartierandco.com/devis-travaux/isolation/
 
 Isolation des combles perdus ou aménagés, des murs par l’extérieur, de la toiture. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer.
 
-Décrivez vos travaux en 1 minute. On vous rappelle en 5, et la visite est fixée.
+Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
 - Un seul artisan
@@ -1698,8 +1698,8 @@ Pour ne pas oublier le rendez-vous.
 #### L’artisan chiffre chez vous
 Visite et devis offerts. Vous décidez, sans engagement.
 
-### Pas cinq appels. Un seul.
-Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, un seul artisan vous appelle.
+### Pas cinq entreprises. Un seul artisan.
+Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, nous vous rappelons, puis un seul artisan s’occupe de votre projet.
 Site de devis classique Bartier & Co Qui vous appelle Souvent plusieurs entreprises Nous, puis un seul artisan Avant la visite Vous répétez votre projet Votre besoin est déjà vérifié Le rendez-vous Vous relancez les artisans Fixé pendant notre appel Avant le jour J Rien Rappel par SMS Vos coordonnées Partagées entre entreprises Transmises à un seul artisan Le prix pour vous Gratuit Gratuit
 
 ### Reconnaître un artisan sérieux
@@ -1729,7 +1729,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
 
 **Le rendez-vous**
 - Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
@@ -1747,8 +1747,8 @@ Mis à jour le 18 novembre 2026
 ### Devis isolation : vos questions
 Une autre question ? 07 81 01 89 36
 
-**Combien coûtent des travaux de isolation ?**
-Il dépend surtout de ces points : surface, technique, isolant, aides possibles. Seule une visite permet un devis fiable, et elle est gratuite.
+**Combien coûtent des travaux d’isolation ?**
+Le prix dépend surtout de ces points : surface, technique, isolant, aides possibles. Seule une visite permet un devis fiable, et elle est gratuite.
 
 **Faut-il une autorisation pour isoler par l’extérieur ?**
 En général oui : l’isolation par l’extérieur change l’aspect de la façade et demande une déclaration préalable en mairie.
@@ -1760,7 +1760,7 @@ Les aides publiques dépendent des travaux, de vos revenus et de l’année. Ell
 Des combles perdus ne sont pas habitables : on isole le plancher, c’est le chantier le plus simple. Des combles aménagés sont habitables : on isole sous la toiture.
 
 **Faut-il une entreprise RGE ?**
-Pour obtenir des aides publiques, oui. Dites-le lors de notre appel : nous en tenons compte pour vous présenter l’artisan.
+Pour obtenir des aides publiques, oui. Dites-le lors de notre appel : nous vous disons si l’artisan de votre secteur est certifié RGE.
 
 **Est-ce vraiment gratuit ?**
 Oui. Notre service est gratuit pour vous : ce sont les artisans partenaires qui nous rémunèrent. Vous ne payez que les travaux, et seulement si vous acceptez le devis.
@@ -1769,7 +1769,7 @@ Oui. Notre service est gratuit pour vous : ce sont les artisans partenaires qui 
 Non. L’artisan vient voir le chantier et vous remet son devis sans frais pour vous. Vous restez libre de ne pas donner suite.
 
 **Combien d’entreprises vont m’appeler ?**
-Une seule : nous d’abord, pour vérifier votre projet, puis l’artisan retenu. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
+Une seule entreprise de travaux : l’artisan retenu. Avant lui, nous vous appelons pour vérifier votre projet. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises.
 
 **Et si le devis ne me convient pas ?**
 Vous ne signez rien. Vous restez libre de refuser le devis ou de le comparer, sans frais et sans avoir à vous justifier.
@@ -1787,7 +1787,7 @@ Tous les devis de travaux
 - Fenêtres et portes
 - Charpente
 
-### Votre maison mérite le bon artisan.
+### Décrivez vos travaux. Nous fixons la visite.
 1 minute pour décrire vos travaux. 1 appel pour fixer la visite. 1 artisan de votre secteur.
 ou appelez le 07 81 01 89 36
 
@@ -1800,11 +1800,11 @@ Adresse : https://bartierandco.com/qui-sommes-nous/
 Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.
 
 Qui sommes-nous
-Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous remplissons l’agenda des artisans du bâtiment, partout en France.
+Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.
 Mis à jour le 18 novembre 2026
 
 ### Un bon artisan ne devrait pas courir après les devis
-Les artisans que nous accompagnons ont du métier et des clients satisfaits. Ce qui leur manque, c’est un flux régulier de projets sérieux.
+Un bon artisan a du métier et des clients satisfaits. Ce qui lui manque, c’est un flux régulier de projets sérieux.
 Les plateformes revendent la même demande à plusieurs entreprises. Le bouche-à-oreille ne se commande pas. Et personne ne peut rappeler depuis un toit.
 Nous avons construit un système simple : des annonces locales, un rappel en moins de 5 minutes, et un rendez-vous réservé à un seul artisan par secteur.
 
@@ -1812,18 +1812,18 @@ Nous avons construit un système simple : des annonces locales, un rappel en moi
 - 01
 
 #### Un interlocuteur, pas un standard
-Vous avez le numéro de Charles et de Martin. L’un de nous répond.
+Vous avez le numéro direct de Martin. Il vous répond sous un jour ouvré.
 - 02
 
 #### Des engagements écrits
-Exclusivité, un artisan par secteur, rappel en 5 minutes, sans engagement de durée.
+Exclusivité, un seul artisan par métier et par secteur, rappel en moins de 5 minutes en semaine, aucune durée minimale. Tout est dans le contrat.
 - 03
 
 #### Des chiffres vérifiables
 Le budget est sur votre compte, et chaque rendez-vous est suivi jusqu’au chantier signé.
 
 ### Le départ, en 4 étapes
-Une heure de votre temps, une seule fois. Ensuite, les rendez-vous arrivent.
+Un appel de 15 minutes, puis 24 à 48 heures de mise en place. Les annonces tournent dès la première semaine.
 Jour 1
 
 #### Un appel de 15 minutes
@@ -1849,7 +1849,7 @@ Cofondateur · Head of Performance
 
 #### Martin Barthélémy
 Cofondateur · Head of Sales
-Une question avant de vous lancer ? Martin vous répond directement, du lundi au vendredi de 8 h à 19 h.
+Une question avant de vous lancer ? Appelez Martin en semaine, de 8 h à 19 h, ou écrivez-lui : il répond sous un jour ouvré.
 Appeler le 07 81 01 89 36
 
 ### Bartier & Co en bref
@@ -1894,7 +1894,7 @@ Comment nous trouvons les propriétaires et fixons vos visites.
 La demande n’est proposée qu’à vous, nous rappelons nous-mêmes le propriétaire, et vous ne vous déplacez qu’une fois le rendez-vous fixé.
 
 **Comment trouver des chantiers quand on est artisan ?**
-Pour trouver des chantiers, un artisan a cinq canaux : le bouche-à-oreille, les plateformes de devis, les apporteurs d’affaires, les flyers et les annonces locales. Nous misons sur les annonces locales à votre nom, sur Google et sur Facebook et Instagram : chaque demande est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda. Les 8 canaux sont comparés dans notre guide.
+Un artisan a huit canaux pour trouver des chantiers, du bouche-à-oreille aux annonces locales : ils sont comparés dans notre guide. Nous misons sur les annonces locales à votre nom, sur Google et sur Facebook et Instagram : chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
 
 **Qu’est-ce qu’un rendez-vous qualifié ?**
 C’est une visite fixée chez un propriétaire dont nous avons vérifié le projet au téléphone : il est propriétaire, il sait quels travaux il veut, sa commune est dans votre zone et son délai est clair. Vous ne vous déplacez que pour ces visites.
@@ -1918,7 +1918,7 @@ Le prix dépend de votre métier, de votre secteur et du nombre d’équipes. Vo
 Vous, directement à Meta ou Google, depuis des comptes à votre nom. Vous voyez chaque euro dépensé.
 
 **Y a-t-il une durée d’engagement ?**
-Non. Aucune durée minimale : vous restez parce que l’agenda se remplit.
+Non. Aucune durée minimale.
 
 **Que se passe-t-il si l’objectif n’est pas atteint ?**
 Nous continuons sans facturer. C’est écrit dans le contrat, avec nos autres engagements.
@@ -1980,21 +1980,21 @@ Une demande partagée est une demande de devis vendue à plusieurs entreprises. 
 ### Quelle différence entre une demande de devis et un rendez-vous qualifié ?
 Le vocabulaire marketing mélange tout, et les plateformes parlent de « leads ». Pour un artisan, il n’y a que trois questions : combien d’entreprises reçoivent la même demande, qui rappelle le propriétaire, et qu’est-ce qui a été vérifié avant que vous vous déplaciez.
 
-### La demande partagée : la même fiche vendue plusieurs fois
-Vous recevez un nom, un numéro et une description du projet. D’autres entreprises reçoivent la même fiche, au même moment. Le propriétaire est appelé plusieurs fois, compare les prix, et retient souvent le premier qui rappelle ou le moins cher.
+### La demande partagée : la même demande vendue plusieurs fois
+Vous recevez un nom, un numéro et une description du projet. D’autres entreprises reçoivent la même demande, au même moment. Le propriétaire est appelé plusieurs fois, compare les prix, et retient souvent le premier qui rappelle ou le moins cher.
 
 ### La demande exclusive : exclusive jusqu’où ?
-La fiche n’est vendue qu’à vous. C’est mieux, mais vérifiez ce que recouvre le mot. Exclusif pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c’est vous, le soir, la demande a souvent refroidi.
+La demande n’est vendue qu’à vous. C’est mieux, mais vérifiez ce que recouvre le mot. Exclusif pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c’est vous, le soir, la demande a souvent refroidi.
 
 ### Le rendez-vous qualifié : ce qui a été vérifié
-Quelqu’un a rappelé le propriétaire, vérifié qu’il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez une visite dans votre agenda, pas une fiche à traiter.
+Quelqu’un a rappelé le propriétaire, vérifié qu’il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez une visite dans votre agenda, pas un nom à rappeler.
 
 ### Demande partagée, demande exclusive, rendez-vous qualifié : le comparatif
 - Demande partagée | Demande exclusive | Rendez-vous qualifié
 - Entreprises sur la même demande | Plusieurs | Une | Une
 - Qui rappelle | Vous | Vous | Le prestataire
 - Projet vérifié | Rarement | Parfois | Oui
-- Ce que vous recevez | Une fiche | Une fiche | Une visite fixée
+- Ce que vous recevez | Un nom et un numéro | Un nom et un numéro | Une visite fixée
 
 ### Combien coûte vraiment une demande ?
 Le prix affiché d’une demande ne dit pas grand-chose. Ce qui compte, c’est le coût par chantier signé : le prix des demandes divisé par le nombre de chantiers qu’elles vous ont fait signer.
@@ -2024,7 +2024,7 @@ Source : CNIL, prospection par téléphone, Code de la consommation, L223-1 et s
 - Qu’est-ce qui est vérifié avant de me transmettre la demande ?
 - Que se passe-t-il si le propriétaire n’est pas joignable ou n’est pas sérieux ?
 - Y a-t-il une durée d’engagement minimale ?
-Nos réponses sont sur la page Engagements. Les définitions sont dans notre lexique.
+Nos réponses sont dans nos engagements, sur la page d’accueil. Les définitions sont dans notre lexique.
 
 ### Questions fréquentes
 
@@ -2068,8 +2068,8 @@ Sur Google, le prix du clic dépend du métier et de la concurrence locale. Sur 
 
 ### Ce que chaque canal exige après le clic
 - Google : écarter les recherches inutiles (gratuit, emploi, bricolage) et répondre vite, car le propriétaire appelle plusieurs entreprises.
-- Meta : qualifier au téléphone, car une partie des demandes est encore au stade de l’idée.
-Dans les deux cas, la demande doit être rappelée en quelques minutes. C’est là que la plupart des campagnes perdent leurs meilleurs projets.
+- Meta : trier au téléphone, car une partie des demandes est encore au stade de l’idée.
+Dans les deux cas, la demande doit être rappelée en quelques minutes. C’est souvent là que se perdent les meilleurs projets.
 
 ### Google Ads ou Meta Ads : le tableau
 - Google Ads | Meta Ads (Facebook, Instagram)
@@ -2176,7 +2176,7 @@ Au bout de quelques mois, la dernière colonne vous dit où partent vos chantier
 ### Questions fréquentes
 
 #### Combien de fois faut-il relancer un devis ?
-Trois fois au plus : un SMS le jour de l’envoi, un appel quelques jours après, puis un dernier message deux à trois semaines plus tard.
+Trois relances au plus : un appel quelques jours après l’envoi, un SMS une semaine plus tard, puis un dernier message deux à trois semaines plus tard. Le SMS du jour de l’envoi sert seulement à confirmer la réception.
 
 #### Faut-il relancer par téléphone ou par SMS ?
 Les deux. L’appel sert à répondre aux questions, le SMS à ne pas déranger. Commencez par confirmer la réception du devis par SMS le jour même.
@@ -2257,14 +2257,14 @@ Depuis le 11 août 2026, appeler un particulier pour lui proposer des travaux de
 Source : CNIL, prospection par téléphone, Code de la consommation, L223-1 et suivants. Définition dans notre lexique.
 
 ### Notre approche, et ses limites
-Bartier & Co combine deux canaux de cette liste, les annonces locales sur Google et sur Facebook et Instagram, avec l’étape où se perdent le plus de chantiers : le rappel. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda. Un seul artisan par métier et par secteur.
+Bartier & Co combine deux canaux de cette liste, les annonces locales sur Google et sur Facebook et Instagram, avec l’étape où beaucoup de chantiers se perdent : le rappel. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda. Un seul artisan par métier et par secteur.
 Ce n’est pas un remplacement du bouche-à-oreille : c’est un flux en plus, sans durée d’engagement. Voir comment ça marche.
 
 #### Votre secteur est-il libre ?
 Un seul artisan par métier et par secteur. Visites déjà fixées, sans durée d’engagement.
 
 ### Vos questions sur la recherche de chantiers
-Une autre question ? Écrivez-nous
+Une autre question ? Écrire à Martin sur WhatsApp
 
 **Quel est le meilleur site pour trouver des chantiers ?**
 Aucun site n’est le meilleur pour tous les artisans. Comparez trois points : à combien d’entreprises la même demande est proposée, qui rappelle le propriétaire, et combien vous coûte un chantier signé.
@@ -2343,7 +2343,7 @@ Si vous préférez recevoir des visites déjà fixées, réservées à un seul a
 Un seul artisan par métier et par secteur. Visites déjà fixées, sans durée d’engagement.
 
 ### Habitatpresto Pro : vos questions
-Une autre question ? Écrivez-nous
+Une autre question ? Écrire à Martin sur WhatsApp
 
 **Combien coûte Habitatpresto Pro ?**
 Le prix n’est pas publié. Selon Habitatpresto, il dépend des départements et des catégories choisis, et des frais de mise en service s’ajoutent à l’abonnement mensuel.
@@ -2440,11 +2440,11 @@ Une demande de devis est le message laissé par un particulier qui envisage des 
 
 #### Demande partagée
 Une demande partagée est une demande de devis vendue à plusieurs entreprises en même temps, le « lead partagé » des plateformes. Le propriétaire reçoit plusieurs appels, et le choix se fait souvent sur la rapidité du rappel ou sur le prix.
-Voir aussi : demande partagée, demande exclusive, rendez-vous qualifié
+Voir aussi : l’article sur la demande partagée, la demande exclusive et le rendez-vous qualifié
 
 #### Demande exclusive
 Une demande exclusive est une demande de devis transmise à une seule entreprise, le « lead exclusif » des plateformes. Elle n’est proposée à aucun concurrent, mais l’artisan doit encore rappeler le propriétaire et vérifier son projet lui-même.
-Voir aussi : demande partagée, demande exclusive, rendez-vous qualifié
+Voir aussi : l’article sur la demande partagée, la demande exclusive et le rendez-vous qualifié
 
 #### Rendez-vous qualifié
 Un rendez-vous qualifié est une visite déjà fixée chez un propriétaire dont le projet a été vérifié au téléphone : il est propriétaire, il sait quels travaux il veut, sa commune est dans la zone de l’artisan et son délai est clair.

@@ -1,7 +1,7 @@
 {
  "artisan_form_notice": "Vos coordonnées servent à vous rappeler au sujet de cette demande, rien d'autre. Aucune revente. <a href=\"/confidentialite/\">Vos données et vos droits</a>",
  "particulier_form_notice": "Votre numéro n'est transmis qu'à un seul artisan partenaire, à personne d'autre. La loi interdit tout démarchage téléphonique sans votre accord préalable. Votre accord vaut pour ce projet, un an au plus. Vous pouvez le retirer à tout moment et en demander la preuve. <a href=\"/conditions-du-service/\">Conditions du service</a> · <a href=\"/confidentialite/\">Vos données et vos droits</a>",
- "particulier_consent_label": "Je demande à être rappelé par Bartier & Co au sujet de ces travaux, dès maintenant ou à la réouverture (lundi au vendredi, 8 h à 19 h). Ma demande ne sera transmise à un seul artisan partenaire qu'avec mon accord au téléphone, une fois son nom donné.",
+ "particulier_consent_label": "Je demande à être rappelé par Bartier & Co au sujet de ces travaux, dès maintenant ou à la réouverture (lundi au vendredi, 8 h à 19 h). Ma demande ne sera transmise qu'à un seul artisan partenaire, et seulement avec mon accord au téléphone, une fois son nom donné.",
  "banner_title": "Cookies : à vous de choisir",
  "banner_text": "Avec votre accord, nous mesurons l'audience et l'efficacité de nos publicités, et Google et Meta peuvent vous montrer nos annonces sur leurs services. Sans accord, aucun traceur de mesure ou de publicité. Vous pouvez changer d'avis à tout moment. <a href=\"/cookies/\">Liste des traceurs et des sociétés</a>",
  "banner_accept": "Tout accepter",

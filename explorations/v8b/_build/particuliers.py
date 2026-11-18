@@ -57,7 +57,7 @@ TRADES = [
 BRIEF = [
     ("Le service", "Bartier &amp; Co met en relation les propriétaires avec un artisan du bâtiment de leur secteur pour des travaux de toiture, façade, fenêtres, charpente ou isolation."),
     ("Le prix pour vous", "Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier &amp; Co."),
-    ("Le délai", "Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante."),
+    ("Le délai", "Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante."),
     ("Le rendez-vous", "Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite."),
     ("Combien d’artisans", "Un seul par métier et par secteur. Vos coordonnées ne vont à personne d’autre."),
     ("La zone", "Selon votre commune. Si aucun artisan partenaire ne la couvre, nous vous le disons dès l’appel."),
@@ -86,11 +86,11 @@ FAQ = [
     ("La visite et le devis de l’artisan sont-ils payants ?",
      "Non. L’artisan vient voir le chantier et vous remet son devis sans frais pour vous. Vous restez libre de ne pas donner suite."),
     ("Combien d’entreprises vont m’appeler ?",
-     "Une seule : nous d’abord, pour vérifier votre projet, puis l’artisan retenu. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises."),
+     "Une seule entreprise de travaux : l’artisan retenu. Avant lui, nous vous appelons pour vérifier votre projet. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises."),
     ("Et si le devis ne me convient pas ?",
      "Vous ne signez rien. Vous restez libre de refuser le devis ou de le comparer, sans frais et sans avoir à vous justifier."),
     ("Pourquoi passer par vous plutôt que chercher seul ?",
-     "Pour gagner du temps et éviter les relances. Un seul appel, un artisan local disponible, et la date de visite fixée pendant l’appel. Vous ne racontez votre projet qu’une fois."),
+     "Pour gagner du temps et éviter les relances. Un seul appel, l’artisan de votre secteur, et la date de visite fixée pendant l’appel. Vous ne racontez votre projet qu’une fois."),
     ("Comment trouver un bon couvreur près de chez moi ?",
      "Cherchez un artisan local, immatriculé, assuré en décennale, qui se déplace pour voir le toit avant de chiffrer. Décrivez vos travaux ici : nous vous présentons le couvreur partenaire de votre secteur."),
     ("Combien coûte une réfection de toiture ?",
@@ -191,8 +191,8 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
       {crumbs}
-      <h1 class="pf-h1"><span class="pf-kw">Devis toiture, façade, fenêtres, isolation</span><span class="pf-big">Pas cinq <span class="pf-who">artisans</span>.<br>Un seul. Le bon.</span></h1>
-      <p class="lead">Décrivez vos travaux en 1 minute.<br>On vous rappelle en 5, et la visite est fixée.</p>
+      <h1 class="pf-h1"><span class="pf-kw">Devis toiture, façade, fenêtres, isolation</span><span class="pf-big">Pas cinq <span class="pf-who">artisans</span>.<br>Un seul, près de chez vous.</span></h1>
+      <p class="lead">Décrivez vos travaux en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
       {trust("d-only")}
       <p class="pf-call d-only">Pressé&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p>
     </div>
@@ -247,11 +247,11 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <li><span class="pf-t">Avant la visite</span><h3>Rappel par SMS</h3><p>Pour ne pas oublier le rendez-vous.</p></li>
     <li><span class="pf-t">Le jour J</span><h3>L’artisan chiffre chez vous</h3><p>Visite et devis offerts. Vous décidez, sans engagement.</p></li>
   </ol>
-  {band("Prêt&nbsp;? C’est gratuit.", "Commencer", "1 minute, 5 questions.")}
+  {band("Prêt&nbsp;? C’est gratuit.", "Décrire mes travaux", "1 minute, 5 questions.")}
 </section>"""
 
     compare = f"""<section class="sheet" data-tone="tint">
-  <div class="grid sp-head"><h2 data-split>Pas cinq appels. Un seul.</h2><p>Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, un seul artisan vous appelle.</p></div>
+  <div class="grid sp-head"><h2 data-split>Pas cinq entreprises. Un seul artisan.</h2><p>Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, nous vous rappelons, puis un seul artisan s’occupe de votre projet.</p></div>
   <div class="sp-table" role="table" aria-label="Site de devis classique et Bartier &amp; Co">
     <div class="sp-row is-head" role="row"><span role="columnheader"></span><span role="columnheader">Site de devis classique</span><span role="columnheader">Bartier &amp; Co</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Qui vous appelle</span><span role="cell">Souvent plusieurs entreprises</span><span role="cell">Nous, puis un seul artisan</span></div>
@@ -261,7 +261,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <div class="sp-row" role="row"><span role="rowheader">Vos coordonnées</span><span role="cell">Partagées entre entreprises</span><span role="cell">Transmises à un seul artisan</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le prix pour vous</span><span role="cell">Gratuit</span><span role="cell">Gratuit</span></div>
   </div>
-  {band("Un seul artisan. Le bon.", "Être rappelé gratuitement")}
+  {band("Un seul artisan, de votre secteur.", "Être rappelé gratuitement")}
 </section>"""
 
     leak = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in LEAK)
@@ -271,7 +271,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick()}</a><span class="pf-prio">Rappel prioritaire</span></p>
 </section>"""
 
-    prices = "".join(f'<li><h3>{t[8]}</h3><p>{t[9]}</p><p class="pf-ref">{REF[t[0]][0]}</p><p class="pf-src">Source&nbsp;: {REF[t[0]][1]}</p><a class="link pf-more" href="/devis-travaux/{SLUG[t[0]]}/">Tout sur {t[1].lower()}</a></li>' for t in TRADES)
+    prices = "".join(f'<li><h3>{t[8]}</h3><p>{t[9]}</p><p class="pf-ref">{REF[t[0]][0]}</p><p class="pf-src">Source&nbsp;: {REF[t[0]][1]}</p><a class="link pf-more" href="/devis-travaux/{SLUG[t[0]]}/">Voir la page {t[1]}</a></li>' for t in TRADES)
     price = f"""<section class="sheet" id="prix" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Combien vont coûter vos travaux&nbsp;?</h2><p>Les prix en ligne sont des moyennes. Ce qui compte, c’est votre chantier. La visite est gratuite.</p></div>
   <ul class="pf-prices">{prices}</ul>
@@ -297,7 +297,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 
     end = f"""<section class="sheet pf-end" data-tone="accent">
   <div class="grid pf-end-grid">
-    <h2 data-split>Votre maison mérite le bon artisan.</h2>
+    <h2 data-split>Décrivez vos travaux. Nous fixons la visite.</h2>
     <div><p class="pf-season"></p><p>1 minute pour décrire vos travaux. 1 appel pour fixer la visite. 1 artisan de votre secteur.</p><a class="btn pf-btn-inv" href="#projet"><span>Décrire mes travaux</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></div>
   </div>
 </section>
@@ -488,7 +488,7 @@ var q=new URLSearchParams(location.search),t=q.get("travaux")||f.dataset.preset;
 if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,true);if(q.get("besoin")==="fuite")pickLeak()}
 (function(){var l=document.querySelector(".pf-live"),t=l&&l.querySelector(".pf-live-t"),w=nextOpen();
   if(l){if(!w){l.classList.add("is-on");t.textContent="Disponibles maintenant · rappel en moins de 5 min"}else t.textContent="Rappel "+w+" · demandes enregistrées 24 h/24"}
-  var m=new Date().getMonth(),se=document.querySelector(".pf-season"),S=["Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Printemps : la saison des rénovations. Les agendas se remplissent vite.","Printemps : la saison des rénovations. Les agendas se remplissent vite.","Printemps : la saison des rénovations. Les agendas se remplissent vite.","Été : réservez maintenant pour une visite avant la rentrée.","Été : réservez maintenant pour une visite avant la rentrée.","Été : réservez maintenant pour une visite avant la rentrée.","Automne : faites vérifier votre toit avant l’hiver.","Automne : faites vérifier votre toit avant l’hiver.","Automne : faites vérifier votre toit avant l’hiver.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité."];
+  var m=new Date().getMonth(),se=document.querySelector(".pf-season"),S=["Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité."];
   if(se)se.textContent=S[m]})();
 function nextOpen(){var d=new Date(),day=d.getDay(),h=d.getHours()+d.getMinutes()/60;
   if(day>=1&&day<=5&&h>=8&&h<19)return "";
@@ -612,7 +612,7 @@ PAGES = {
         faq=[("Faut-il une autorisation pour isoler par l’extérieur ?", "En général oui : l’isolation par l’extérieur change l’aspect de la façade et demande une déclaration préalable en mairie."),
              ("Quelles aides pour isoler ses combles ?", "Les aides publiques dépendent des travaux, de vos revenus et de l’année. Elles demandent une entreprise certifiée RGE. Vérifiez votre éligibilité sur france-renov.gouv.fr avant de signer."),
              ("Combles perdus ou aménagés : quelle différence ?", "Des combles perdus ne sont pas habitables : on isole le plancher, c’est le chantier le plus simple. Des combles aménagés sont habitables : on isole sous la toiture."),
-             ("Faut-il une entreprise RGE ?", "Pour obtenir des aides publiques, oui. Dites-le lors de notre appel : nous en tenons compte pour vous présenter l’artisan.")],
+             ("Faut-il une entreprise RGE ?", "Pour obtenir des aides publiques, oui. Dites-le lors de notre appel : nous vous disons si l’artisan de votre secteur est certifié RGE.")],
         brief="Un seul artisan de votre secteur pour isoler vos combles, vos murs ou votre toiture. Visite et devis offerts."),
 }
 
@@ -627,8 +627,8 @@ def build_trade(img, phone, phone_txt, crumbs, key):
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
       {crumbs}
-      <h1 class="pf-h1"><span class="pf-kw">{P["kw"]}</span><span class="pf-big">Pas cinq <span class="pf-who">{t[2]}</span>.<br>Un seul. Le bon.</span></h1>
-      <p class="lead">Décrivez vos travaux en 1 minute.<br>On vous rappelle en 5, et la visite est fixée.</p>
+      <h1 class="pf-h1"><span class="pf-kw">{P["kw"]}</span><span class="pf-big">Pas cinq <span class="pf-who">{t[2]}</span>.<br>Un seul, près de chez vous.</span></h1>
+      <p class="lead">Décrivez vos travaux en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
       {trust("d-only")}
     </div>
     {form}
@@ -684,7 +684,7 @@ def trade_faq(key):
     if key in price_q:
         out.append((price_q[key], general[price_q[key]]))
     else:
-        out.append((f"Combien coûtent des travaux de {t[1].lower()} ?", f"Il dépend surtout de ces points : {t[9][0].lower()}{t[9][1:]} Seule une visite permet un devis fiable, et elle est gratuite."))
+        out.append(({"charpente": "Combien coûtent des travaux de charpente ?", "isolation": "Combien coûtent des travaux d’isolation ?"}.get(key, f"Combien coûtent des travaux de {t[1].lower()} ?"), f"Le prix dépend surtout de ces points : {t[9][0].lower()}{t[9][1:]} Seule une visite permet un devis fiable, et elle est gratuite."))
     out += P["faq"]
     if key == "toiture":
         out.append(("J’ai une fuite de toiture, que faire tout de suite ?", general["J’ai une fuite de toiture, que faire tout de suite ?"]))

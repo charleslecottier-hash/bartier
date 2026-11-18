@@ -128,8 +128,8 @@ import urllib.parse as _u
 def wa(msg): return WA + "?text=" + _u.quote(msg)
 QUESTIONS = [
     ("Mon secteur est-il encore libre ?", "Bonjour Martin, je suis artisan à [ville] ([métier]). Mon secteur est-il encore libre ?"),
-    ("Comment se passent les rendez-vous ?", "Bonjour Martin, j'aimerais comprendre comment vous trouvez et qualifiez les rendez-vous."),
-    ("Combien cela coûterait pour moi ?", "Bonjour Martin, je voudrais connaître le prix pour mon entreprise ([métier], [ville])."),
+    ("Comment se passent les rendez-vous ?", "Bonjour Martin, j'aimerais comprendre comment vous trouvez et vérifiez les rendez-vous."),
+    ("Combien cela me coûterait-il ?", "Bonjour Martin, je voudrais connaître le prix pour mon entreprise ([métier], [ville])."),
 ]
 qs = "\n".join(f'      <a class="wa-q" href="{html.escape(wa(m))}" target="_blank" rel="noopener" data-wa="question">{q.replace(" ?", "&nbsp;?")}</a>' for q, m in QUESTIONS)
 WA_HTML = f"""<div class="wa" id="wa">
@@ -546,7 +546,7 @@ def split(title, intro, items, tone="light", cls=""):
 </section>"""
 
 
-def faq(items, title="Vos questions, nos réponses", aside='Une autre question ? <a class="link" href="#contact">Écrivez-nous</a>', sid=None):
+def faq(items, title="Vos questions, nos réponses", aside='Une autre question ? <a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20j%E2%80%99ai%20une%20question%20avant%20de%20me%20lancer." target="_blank" rel="noopener" data-wa="faq">Écrire à Martin sur WhatsApp</a>', sid=None):
     rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in items)
     sid_attr = f' id="{sid}"' if sid else ""
     return f"""<section class="faq sheet"{sid_attr} data-kind="faq" data-tone="paper">
@@ -580,7 +580,7 @@ COMPARE = """<section class="sheet" data-tone="light">
     <div class="sp-row" role="row"><span role="rowheader">La demande</span><span role="cell">Exprimée : le propriétaire cherche</span><span role="cell">Suscitée : il n'a pas encore cherché</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Typiquement</span><span role="cell">Urgences, projets mûrs</span><span role="cell">Rénovation, entretien, projets à venir</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le volume</span><span role="cell">Limité aux recherches locales</span><span role="cell">Tous les propriétaires du rayon</span></div>
-    <div class="sp-row" role="row"><span role="rowheader">Le point clé</span><span role="cell">Écarter les recherches inutiles</span><span role="cell">Qualifier au téléphone</span></div>
+    <div class="sp-row" role="row"><span role="rowheader">Le point clé</span><span role="cell">Écarter les recherches inutiles</span><span role="cell">Trier au téléphone</span></div>
   </div>
 </section>"""
 
@@ -629,17 +629,17 @@ paths = ["/"]
 # ——— Métiers ———
 for t in TRADES:
     path = f"/metiers/{t['slug']}/"
-    short = f"Votre agenda rempli de propriétaires qui préparent {PROJECT[t['slug']]}. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning."
+    short = f"Des propriétaires qui préparent {PROJECT[t['slug']]}. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda."
     meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes, visite dans votre agenda."
     if len(meta_desc) > 158:  # descriptions courtes : la phrase s'arrête au rappel
         meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes."
     angles = "\n".join(f"""    <li><div class="ad-card"><p class="ad-meta">Votre entreprise · Sponsorisé</p><p class="ad-angle">{a}</p><p class="ad-text">{b}</p><p class="ad-cta">Demander une visite</p></div></li>""" for a, b in t["angles"])
-    trade_faq = t["faq"] + [("Combien cela coûte-t-il ?", "Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l'appel de 15 minutes, avant toute décision."),
-                            ("Y a-t-il un engagement ?", "Non. Aucune durée minimale : vous restez parce que l'agenda se remplit."),
+    trade_faq = t["faq"] + [("Combien cela coûte-t-il ?", "Le prix dépend de votre métier, de votre secteur et du nombre d'équipes. Vous l'avez pendant l'appel de 15 minutes, avant toute décision."),
+                            ("Y a-t-il une durée d'engagement ?", "Non. Aucune durée minimale."),
                             ("Qui rappelle les propriétaires ?", "Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
                             ("En combien de temps arrivent les premiers rendez-vous ?", "La mise en place prend 24 à 48 heures après notre appel, et les annonces tournent dès la première semaine. Le rythme dépend ensuite de votre secteur et de la saison.")]
     body = "\n\n".join([
-        top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Ce que nous vérifions", "#appel")),
+        top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Voir ce que nous vérifions", "#appel")),
         f"""<section class="sheet" data-tone="paper">
   <div class="grid sp-split">
     <div><h2 data-split>Ce que nous allons chercher</h2><p>Des chantiers qui valent le déplacement. Le reste est écarté avant d'arriver chez vous.</p></div>
@@ -652,12 +652,12 @@ for t in TRADES:
         cols(t["problems"], "Le métier est bon. Les demandes, moins.", "Ce que nous entendons chez les artisans de votre métier."),
         f"""<section class="sheet" id="appel" data-tone="dark">
   <div class="grid sp-split">
-    <div><h2 data-split>Ce que nous vérifions avant votre visite</h2><p>Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Pas de bonnes réponses, pas de rendez-vous.</p></div>
+    <div><h2 data-split>Ce que nous vérifions avant votre visite</h2><p>Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.</p></div>
     <ol class="sp-list is-num">{''.join(f'<li>{q}</li>' for q in t['questions'])}</ol>
   </div>
 </section>""",
         f"""<section class="sheet" data-tone="tint">
-  <div class="grid sp-head"><h2 data-split>À votre nom, autour de chez vous</h2><p>Facebook et Instagram, à 25 à 40 km de votre dépôt, avec vos photos de chantier. Exemples d'angles, écrits ensuite avec vous.</p></div>
+  <div class="grid sp-head"><h2 data-split>À votre nom, autour de chez vous</h2><p>Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d'annonces, rédigées ensuite avec vous.</p></div>
   <ul class="sp-cols is-cards">
 {angles}
   </ul>
@@ -677,7 +677,7 @@ _mb = (ROOT / "_build" / "metiers_blocs.html").read_text(encoding="utf-8")
 _blk = {k: re.search(r'<section class="[^"]*" id="%s"[\s\S]*?</section>' % k, _mb).group(0) for k in ("sectors", "gallery", "calendar")}
 HUB_SECTORS = _blk["sectors"].replace(
     "<p>Uniquement les métiers où un chantier vaut plusieurs milliers d’euros. Pas de dépannage, pas de petits travaux.</p>",
-    "<p>Cinq métiers, et pour chacun un seul artisan par secteur. Cliquez sur un métier pour voir ce que nous allons chercher pour vous.</p>", 1)
+    "<p>Cliquez sur un métier pour voir les chantiers que nous allons chercher.</p>", 1)
 HUB_GALLERY = _blk["gallery"]
 HUB_SEASONS = _blk["calendar"].replace('data-tone="light"', 'data-tone="paper"', 1)
 _rows = "\n".join(
@@ -706,7 +706,7 @@ HUB_FAQ = [
 write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & Co",
       "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, partout en France. Un seul artisan par secteur.",
       "\n\n".join([
-          top("Métiers", "Uniquement les métiers où un chantier compte.", "Des chantiers de plusieurs milliers d'euros. Pas de dépannage, pas de petits travaux.", crumbs(("Métiers", "/metiers/")), "Une équipe d"),
+          top("Métiers", "Cinq métiers, des chantiers de plusieurs milliers d'euros.", "Pas de dépannage, pas de petits travaux. Un seul artisan par métier et par secteur.", crumbs(("Métiers", "/metiers/")), "Une équipe d"),
           HUB_SECTORS,
           label_tables(HUB_TABLE),
           HUB_GALLERY,
@@ -732,15 +732,15 @@ paths.insert(1, "/metiers/")
 write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
       "Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.",
       "\n\n".join([
-          top("Google Ads", "Soyez trouvé au moment où ils cherchent.", "Un propriétaire tape « couvreur » et le nom de sa ville. Il tombe sur vous. Nous le rappelons en moins de 5 minutes, avant vos concurrents.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_ANIM),
+          top("Google Ads", "Soyez trouvé au moment où ils cherchent.", "Un propriétaire tape « couvreur » et le nom de sa ville. Il voit votre annonce. Nous le rappelons en moins de 5 minutes, en semaine de 8 h à 19 h.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_ANIM),
           cols([("Les urgences", "Fuite, tuiles envolées, gouttière arrachée : la demande est immédiate."),
                 ("Les projets mûrs", "Le propriétaire compare déjà des entreprises. Être là et rappeler vite fait la différence."),
                 ("Les secteurs denses", "Assez de recherches locales pour qu'une campagne tienne toute l'année.")],
                "Quand Google est le bon canal", "La demande existe déjà. Il faut la capter avant les autres."),
-          split("Une campagne qui ne paie que les bonnes recherches", "Chaque clic coûte. L'essentiel du travail consiste à écarter ceux qui ne deviendront jamais des chantiers.",
+          split("Une campagne réglée pour écarter les mauvaises recherches", "Chaque clic coûte. L'essentiel du travail consiste à écarter ceux qui ne deviendront jamais des chantiers.",
                 ["Campagnes par métier et par commune de votre zone", "Recherches inutiles exclues : gratuit, pas cher, emploi, formation, bricolage",
                  "Une page dédiée à votre entreprise, rapide sur mobile", "Chaque appel et chaque formulaire suivis jusqu'au rendez-vous",
-                 "Rappel en moins de 5 minutes, qualification, rendez-vous dans votre agenda"], tone="paper"),
+                 "Rappel en moins de 5 minutes en semaine, projet vérifié, rendez-vous dans votre agenda"], tone="paper"),
           split("Votre compte, votre budget, vos chiffres", "Tout est créé à votre nom. Vous gardez ce qui a été construit, même si vous arrêtez.",
                 ["Compte Google Ads à votre nom", "Budget payé directement à Google", "Chaque recherche, chaque clic, chaque euro visibles"]),
           COMPARE,
@@ -754,18 +754,18 @@ paths.append("/google-ads/")
 
 # ——— Meta Ads ———
 write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & Co",
-      "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et qualifiés.",
+      "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et vérifiés.",
       "\n\n".join([
-          top("Meta Ads · Facebook et Instagram", "Remplissez votre agenda avant qu'ils ne cherchent.", "Des annonces à votre nom, vues par les propriétaires à 25 à 40 km de votre dépôt. Chaque demande rappelée en moins de 5 minutes, puis vérifiée.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_ANIM),
+          top("Meta Ads · Facebook et Instagram", "Touchez les propriétaires avant qu'ils ne cherchent.", "Des annonces à votre nom, vues par les propriétaires dans un rayon de 25 à 40 km autour de votre dépôt. Chaque demande est rappelée en moins de 5 minutes en semaine, puis vérifiée.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_ANIM),
           cols([("Un rayon autour du dépôt", "25 à 40 km, réglés commune par commune selon vos chantiers."),
                 ("Vos vraies photos", "Vos chantiers, votre équipe. Rien ne convainc mieux un voisin."),
                 ("Des angles de saison", "Après les intempéries, avant l'hiver, au printemps pour la rénovation.")],
                "Des annonces qui vous ressemblent", "Au nom de votre entreprise, avec vos chantiers."),
-          split("Rien ne part sans être vérifié", "Une demande Facebook n'est qu'un début. Le tri se fait au téléphone, pas dans votre agenda.",
+          split("Chaque demande vérifiée au téléphone", "Une demande Facebook n'est qu'un début. Le tri se fait au téléphone, pas dans votre agenda.",
                 ["Formulaire avec questions de tri et accord explicite d'être recontacté", "Preuve du consentement conservée pour chaque demande",
                  "Rappel en moins de 5 minutes, en semaine de 8 h à 19 h", "Propriétaire, projet, commune et délai vérifiés",
                  "Rendez-vous dans votre agenda, rappels la veille et deux heures avant", "Flyers dans les rues voisines de chaque chantier signé"], tone="paper"),
-          split("Votre page, votre compte, vos chiffres", "Tout est créé à votre nom, et le reste si vous arrêtez.",
+          split("Votre page, votre compte, vos chiffres", "Tout est créé à votre nom, et tout vous reste si vous arrêtez.",
                 ["Page Facebook et compte publicitaire à votre nom", "Budget payé directement à Meta", "Toutes les statistiques des annonces visibles"]),
           COMPARE,
           faq(META_FAQ),
@@ -785,13 +785,13 @@ if "confidentialite" in LEGAL_READY and NOTICES.get("particulier_form_notice"):
 pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH)))
 pf_top = absolutize(BODY_OPEN)
 pf_top = pf_top.replace('class="link" href="/devis-travaux/"', 'class="link" href="/devis-travaux/" aria-current="page"', 1)
-pf_top = re.sub(r'<p class="hdr-tag">[^<]*', '<p class="hdr-tag">Vos travaux, un artisan de confiance', pf_top, count=1)
+pf_top = re.sub(r'<p class="hdr-tag">[^<]*', '<p class="hdr-tag">Vos travaux, un seul artisan près de chez vous', pf_top, count=1)
 pf_top = pf_top.replace('<a class="hdr-cta" href="#contact"><span>Mon secteur</span>', '<a class="hdr-cta" href="#projet"><span>Mon devis</span>', 1)
 pf_top = pf_top.replace('<span>Appeler Martin</span>', '<span>Nous appeler</span>', 1)
 pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Décrire mes travaux</a>', 1)
-pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Des artisans de confiance près de chez vous</p>')
+pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un seul artisan près de chez vous, sans frais</p>')
 pf_tail = absolutize(TAIL)
-pf_tail = pf_tail.replace('<p>Vous faites le chantier.<br>Nous remplissons votre&nbsp;agenda.</p>', '<p>Un projet de travaux&nbsp;?<br>Un seul artisan, le bon.</p>', 1)
+pf_tail = pf_tail.replace('<p>Vous faites le chantier.<br>Nous remplissons votre&nbsp;agenda.</p>', '<p>Un projet de travaux&nbsp;?<br>Un seul artisan, près de chez vous.</p>', 1)
 pf_tail = pf_tail.replace('<a class="btn" href="#contact"><span>Vérifier mon secteur</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
 pf_tail = pf_tail.replace('<small>Cofondateur · Head of Sales</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
 pf_tail = pf_tail.replace('<b>Parler à Martin<span>, Head of Sales</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
@@ -846,19 +846,19 @@ DUO = ('<figure class="pg-photo frame"><img src="/assets/photos/fondateurs-barti
 write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
       "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.",
       "\n\n".join([
-          top("Qui sommes-nous", "Deux fondateurs. Un seul objectif : votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous remplissons l'agenda des artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), visual=DUO),
+          top("Qui sommes-nous", "Deux fondateurs. Un seul objectif : votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), visual=DUO),
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>Un bon artisan ne devrait pas courir après les devis</h2></div>
     <div class="prose">
-      <p>Les artisans que nous accompagnons ont du métier et des clients satisfaits. Ce qui leur manque, c'est un flux régulier de projets sérieux.</p>
+      <p>Un bon artisan a du métier et des clients satisfaits. Ce qui lui manque, c'est un flux régulier de projets sérieux.</p>
       <p>Les plateformes revendent la même demande à plusieurs entreprises. Le bouche-à-oreille ne se commande pas. Et personne ne peut rappeler depuis un toit.</p>
       <p>Nous avons construit un système simple : des annonces locales, un rappel en moins de 5 minutes, et un rendez-vous réservé à un seul artisan par secteur.</p>
     </div>
   </div>
 </section>""",
-          cols([("Un interlocuteur, pas un standard", "Vous avez le numéro de Charles et de Martin. L'un de nous répond."),
-                ("Des engagements écrits", "Exclusivité, un artisan par secteur, rappel en 5 minutes, sans engagement de durée."),
+          cols([("Un interlocuteur, pas un standard", "Vous avez le numéro direct de Martin. Il vous répond sous un jour ouvré."),
+                ("Des engagements écrits", "Exclusivité, un seul artisan par métier et par secteur, rappel en moins de 5 minutes en semaine, aucune durée minimale. Tout est dans le contrat."),
                 ("Des chiffres vérifiables", "Le budget est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
                "Comment nous travaillons", "", tone="paper"),
           (ROOT / "_build" / "demarrage.html").read_text(encoding="utf-8").split("-->", 1)[1].strip(),
@@ -1122,7 +1122,7 @@ nf_body = """<section class="sheet pg-top" data-tone="light">
       <p class="kick">Erreur 404</p>
       <h1>Cette page n’existe pas.</h1>
       <p class="lead">Vous cherchiez peut-être l’une de ces deux portes d’entrée.</p>
-      <div class="actions"><a class="btn" href="/devis-travaux/"><span>J’ai des travaux à faire</span></a><a class="link" href="/#contact">Je suis artisan</a></div>
+      <div class="actions"><a class="btn" href="/devis-travaux/"><span>Décrire mes travaux</span></a><a class="link" href="/#contact">Vérifier mon secteur</a></div>
     </div>
   </div>
 </section>"""
