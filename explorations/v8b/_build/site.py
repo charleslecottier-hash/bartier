@@ -679,7 +679,7 @@ _mb = (ROOT / "_build" / "metiers_blocs.html").read_text(encoding="utf-8")
 _blk = {k: re.search(r'<section class="[^"]*" id="%s"[\s\S]*?</section>' % k, _mb).group(0) for k in ("sectors", "gallery", "calendar")}
 HUB_SECTORS = _blk["sectors"].replace(
     "<p>Uniquement les métiers où un chantier vaut plusieurs milliers d’euros. Pas de dépannage, pas de petits travaux.</p>",
-    "<p>Pour chacun, voyez les chantiers que nous allons chercher pour vous.</p>", 1)
+    "", 1)
 HUB_GALLERY = _blk["gallery"]
 HUB_SEASONS = _blk["calendar"].replace('data-tone="light"', 'data-tone="paper"', 1)
 _rows = "\n".join(
@@ -708,7 +708,7 @@ HUB_FAQ = [
 write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & Co",
       "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, partout en France. Un seul artisan par métier et par secteur.",
       "\n\n".join([
-          top("Métiers", "Des clients pour cinq métiers du bâtiment.", "Couvreurs, façadiers, menuisiers, charpentiers et entreprises d'isolation : nous trouvons des propriétaires qui ont un vrai projet, près de chez vous. Un seul artisan par métier et par secteur géographique.", crumbs(("Métiers", "/metiers/")), "Artisan souriant"),
+          top("Métiers", "Des clients pour cinq métiers du bâtiment.", "Nous trouvons des propriétaires avec un vrai projet, près de chez vous. Un seul artisan par métier et par secteur.", crumbs(("Métiers", "/metiers/")), "Artisan souriant"),
           HUB_SECTORS,
           label_tables(HUB_TABLE),
           HUB_GALLERY,
