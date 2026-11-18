@@ -41,8 +41,9 @@ def esc(t):
 # La source de l'accueil est _build/home.src.html ; index.html est le fichier généré.
 home = (ROOT / "_build" / "home.src.html").read_text(encoding="utf-8")
 
-NAV = [("Métiers", "/metiers/"), ("Google Ads", "/google-ads/"), ("Meta Ads", "/meta-ads/"),
-       ("Qui sommes-nous", "/qui-sommes-nous/"), ("Blog", "/blog/"), ("Questions", "/questions/"), ("Particuliers", "/devis-travaux/")]
+# Menu court : Google Ads, Meta Ads et Blog sont dans le pied de page
+NAV = [("Comment ça marche", "#services"), ("Métiers", "/metiers/"), ("Qui sommes-nous", "/qui-sommes-nous/"),
+       ("Questions", "/questions/"), ("Particuliers", "/devis-travaux/")]
 nav_html = "\n".join(f'      <a class="link" href="{h}">{t}</a>' for t, h in NAV)
 menu_html = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in NAV) + '\n    <a href="#contact">Contact</a>'
 home = re.sub(r'(<nav class="hdr-nav" aria-label="Menu">)[\s\S]*?(</nav>)', r"\1\n" + nav_html + r"\n    \2", home, count=1)
@@ -288,10 +289,11 @@ BODY_OPEN = home[home.index("</head>"):home.index("<main>") + len("<main>")]
 CONTACT = home[home.rindex('<section', 0, home.index('id="contact"')):]
 CONTACT = CONTACT[:CONTACT.index("</section>") + len("</section>")]
 TAIL = home[home.index("</main>"):]
-TEAM = home[home.index('<section class="team sheet"'):]
+_eq = (ROOT / "_build" / "equipe.html").read_text(encoding="utf-8")  # section équipe : sur Qui sommes-nous seulement
+TEAM = _eq[_eq.index('<section class="team sheet"'):]
 TEAM = TEAM[:TEAM.index("</section>") + len("</section>")]
 # catalogue des photos : celles de l'accueil et celles des sections déplacées sur la page Métiers
-IMGS = {html.unescape(a): u for u, a in re.findall(r'<img [^>]*?src="([^"]+)" alt="([^"]+)"', home + (ROOT / "_build" / "metiers_blocs.html").read_text(encoding="utf-8") + (ROOT / "_build" / "photos_catalogue.html").read_text(encoding="utf-8"))}
+IMGS = {html.unescape(a): u for u, a in re.findall(r'<img [^>]*?src="([^"]+)" alt="([^"]+)"', home + (ROOT / "_build" / "metiers_blocs.html").read_text(encoding="utf-8") + (ROOT / "_build" / "photos_catalogue.html").read_text(encoding="utf-8") + (ROOT / "_build" / "accueil_retire.html").read_text(encoding="utf-8") + _eq)}
 
 
 def img(alt_start):
