@@ -280,7 +280,6 @@ def absolutize(block):
 EXTRA_CSS = """<style>
 /* Pages intérieures */
 .pg-photo.mk{position:relative;display:grid;place-items:center;aspect-ratio:auto;height:auto;min-height:440px;padding:clamp(20px,3vw,40px);background:var(--paper);border-radius:var(--r);overflow:hidden}
-.pg-photo img{filter:grayscale(1) contrast(1.05)}
 .mk::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 70% 20%,color-mix(in oklab,var(--accent) 16%,transparent),transparent 70%)}
 .mk-tag{position:absolute;top:14px;right:14px;padding:.3em .6em;font-size:.72rem;background:var(--bg);color:var(--muted);border-radius:var(--r)}
 .mk-g{position:relative;width:min(100%,460px);background:var(--bg);border-radius:12px;padding:18px;box-shadow:0 24px 50px -24px rgba(10,20,36,.35);font-family:Arial,Helvetica,sans-serif}
@@ -557,7 +556,8 @@ paths = ["/"]
 # ——— Métiers ———
 for t in TRADES:
     path = f"/metiers/{t['slug']}/"
-    short = f"Votre agenda rempli de propriétaires qui préparent {PROJECT[t['slug']]}. Chaque demande est rappelée en moins de cinq minutes, vérifiée, puis posée dans votre planning."
+    short = f"Votre agenda rempli de propriétaires qui préparent {PROJECT[t['slug']]}. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning."
+    meta_desc = f"Des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes, visite fixée dans votre agenda. Un seul par secteur."
     angles = "\n".join(f"""    <li><div class="ad-card"><p class="ad-meta">Votre entreprise · Sponsorisé</p><p class="ad-angle">{a}</p><p class="ad-text">{b}</p><p class="ad-cta">Demander une visite</p></div></li>""" for a, b in t["angles"])
     trade_faq = t["faq"] + [("Combien cela coûte-t-il ?", "Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l'appel de quinze minutes, avant toute décision."),
                             ("Y a-t-il un engagement ?", "Non. Aucune durée minimale : vous restez parce que l'agenda se remplit.")]
@@ -588,7 +588,7 @@ for t in TRADES:
         faq(trade_faq),
     ])
     body = body.replace('class="sp-two"', 'class="sp-two"')
-    write(path, f"{t['title']} | Bartier & Co", short, body, nav="/metiers/", metier=t["radio"],
+    write(path, f"{t['title']} | Bartier & Co", meta_desc, body, nav="/metiers/", metier=t["radio"],
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "areaServed": ["FR"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}},
               bc_ld(("Métiers", "/metiers/"), (t["name"], path)), faq_ld(trade_faq)]})
@@ -741,7 +741,7 @@ posts = []
 for a in ARTICLES:
     url, alt = img(COVER[a["slug"]])
     posts.append(f'    <li class="post"><a class="post-link" href="/blog/{a["slug"]}/"><p class="post-meta soft"><time datetime="{TODAY}">17 nov. 2026</time><br>{a["tag"]}</p><h3 class="post-title">{a["short"]}</h3><figure class="post-photo frame" data-wipe><img src="{url}" alt="{html.escape(alt)}" width="900" height="676"></figure></a></li>')
-write("/blog/", "Blog : trouver des chantiers, publicité, relance de devis | Bartier & Co",
+write("/blog/", "Blog artisans : chantiers, publicité, devis | Bartier & Co",
       "Des articles courts et concrets pour les artisans du bâtiment : trouver des chantiers, publicité locale, relance de devis, rendez-vous qualifiés.",
       "\n\n".join([
           top("Blog", "Plus de chantiers, moins de soirées au téléphone.", "Des articles courts et concrets, écrits pour les artisans du bâtiment.", crumbs(("Blog", "/blog/"))),
@@ -753,6 +753,8 @@ write("/blog/", "Blog : trouver des chantiers, publicité, relance de devis | Ba
       ]), nav="/blog/", schema={"@context": "https://schema.org", "@graph": [{"@type": "Blog", "name": "Blog Bartier & Co", "url": SITE + "/blog/", "inLanguage": "fr-FR"}, bc_ld(("Blog", "/blog/"))]})
 paths.append("/blog/")
 
+SEO_TITLE = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Lead partagé, lead exclusif ou rendez-vous qualifié ?",
+             "relance-devis-artisan": "Relance de devis : calendrier, SMS et script d'appel"}
 for a in ARTICLES:
     path = f"/blog/{a['slug']}/"
     meta = f'<p class="post-meta-line"><span>Par Charles Le Cottier, cofondateur · Head of Performance</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>{a["minutes"]} min de lecture</span></p>'
@@ -771,7 +773,7 @@ for a in ARTICLES:
   </div>
 </section>""",
     ])
-    write(path, f"{a['short']} | Bartier & Co", a["desc"], body, nav="/blog/",
+    write(path, SEO_TITLE.get(a["slug"]) or f"{a['short']} | Bartier & Co", a["desc"], body, nav="/blog/",
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "BlogPosting", "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": TODAY + "T09:00:00+01:00", "inLanguage": "fr-FR",
                "mainEntityOfPage": SITE + path, "author": {"@type": "Person", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/"},

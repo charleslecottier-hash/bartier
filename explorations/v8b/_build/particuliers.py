@@ -11,7 +11,7 @@ CONSENT = "J’accepte d’être rappelé par Bartier &amp; Co au sujet de ce pr
 PRIVACY = "Votre numéro n’est transmis qu’à un seul artisan partenaire, à personne d’autre."
 UPDATED = "2026-11-18"
 UPDATED_TXT = "18 novembre 2026"
-TITLE = "Devis toiture, façade, fenêtres, isolation : un artisan local | Bartier & Co"
+TITLE = "Devis toiture, façade, fenêtres, isolation | Bartier & Co"
 DESC = ("Décrivez vos travaux en 1 minute : rappel en moins de 5 min et un seul artisan local vient chiffrer. "
         "Toiture, façade, fenêtres, charpente, isolation. Gratuit.")
 
@@ -379,7 +379,7 @@ CSS = """<style id="pf-css">
 .pf-trades{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);margin:0;padding:0 var(--cell);list-style:none}
 .pf-trade{display:flex;flex-direction:column;gap:.6rem;min-width:0}
 .pf-trade figure{aspect-ratio:4 / 3;margin:0 0 .4rem}
-.pf-trade img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.pf-trade img{width:100%;height:100%;object-fit:cover}
 .pf-trade h3{font:400 1.35rem/1.15 var(--f-display);letter-spacing:-.02em}
 .pf-trade p{font-size:.92rem;line-height:1.45;color:var(--muted);flex:1}
 .pf-pick.link{align-self:flex-start;font-size:.92rem;white-space:normal}
@@ -538,7 +538,7 @@ SLUG = {"toiture": "toiture", "facade": "ravalement-facade", "fenetres": "fenetr
 
 PAGES = {
     "toiture": dict(
-        title="Devis toiture : réfection, fuite, zinguerie | Un couvreur près de chez vous",
+        title="Devis toiture gratuit : un couvreur près de chez vous",
         desc="Réfection de toiture, fuite, tuiles, zinguerie, démoussage. Décrivez vos travaux en 1 minute : un seul couvreur de votre secteur vient chiffrer. Gratuit.",
         kw="Devis toiture près de chez vous", h2="Vos travaux de toiture", price_h2="Prix d’une réfection de toiture",
         needs=[("Réfection complète", "Dépose de l’ancienne couverture, écran sous-toiture, tuiles ou ardoises neuves."),
@@ -550,7 +550,7 @@ PAGES = {
              ("Combien de temps dure une réfection de toiture ?", "Cela dépend de la surface, de la météo et de l’état de la charpente. Le couvreur vous donne un délai dans son devis.")],
         brief="Un seul couvreur de votre secteur, choisi pour vos travaux de toiture : réfection, fuite, zinguerie ou démoussage. Visite et devis offerts."),
     "facade": dict(
-        title="Ravalement de façade : devis gratuit | Un artisan près de chez vous",
+        title="Ravalement de façade : devis gratuit près de chez vous",
         desc="Ravalement de façade, fissures, enduit, peinture, isolation par l’extérieur. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer. Gratuit.",
         kw="Ravalement de façade près de chez vous", h2="Vos travaux de façade", price_h2="Prix d’un ravalement de façade",
         needs=[("Ravalement complet", "Nettoyage, reprise du support, enduit ou peinture de finition."),
@@ -562,7 +562,7 @@ PAGES = {
              ("Peut-on isoler en même temps que le ravalement ?", "Oui, c’est le bon moment pour une isolation par l’extérieur. Réalisée par une entreprise RGE, elle peut ouvrir droit à des aides : vérifiez-les sur france-renov.gouv.fr.")],
         brief="Un seul artisan façade de votre secteur pour votre ravalement : nettoyage, fissures, enduit, peinture ou isolation par l’extérieur. Visite et devis offerts."),
     "fenetres": dict(
-        title="Devis fenêtres PVC, alu, bois : pose par un menuisier près de chez vous",
+        title="Devis fenêtres PVC, alu, bois : un menuisier près de chez vous",
         desc="Fenêtres PVC, alu ou bois, porte d’entrée, baie vitrée, volets. Décrivez vos travaux en 1 minute : un seul menuisier local vient chiffrer. Gratuit.",
         kw="Devis fenêtres et portes près de chez vous", h2="Vos travaux de fenêtres et portes", price_h2="Prix de fenêtres posées",
         needs=[("Remplacement de fenêtres", "PVC, aluminium ou bois, double vitrage, sur mesure."),
@@ -574,7 +574,7 @@ PAGES = {
              ("Faut-il une autorisation pour changer ses fenêtres ?", "Remplacer à l’identique ne demande en général rien. Changer l’aspect, le matériau, la couleur ou le découpage demande une déclaration préalable en mairie.")],
         brief="Un seul menuisier de votre secteur pour vos fenêtres, portes, baies vitrées ou volets. Visite et devis offerts."),
     "charpente": dict(
-        title="Devis charpente : réparation, traitement | Un charpentier près de chez vous",
+        title="Devis charpente : un charpentier près de chez vous",
         desc="Réparation et renfort, traitement du bois, extension, surélévation. Décrivez vos travaux en 1 minute : un seul charpentier local vient chiffrer. Gratuit.",
         kw="Devis charpente près de chez vous", h2="Vos travaux de charpente", price_h2="Prix de travaux de charpente",
         needs=[("Réparation et renfort", "Pièces de bois abîmées remplacées ou doublées."),
@@ -586,7 +586,7 @@ PAGES = {
              ("Faut-il refaire la couverture en même temps ?", "Souvent, oui : la charpente est alors à nu et les deux chantiers se coordonnent. Le charpentier et le couvreur peuvent travailler ensemble.")],
         brief="Un seul charpentier de votre secteur pour réparer, traiter ou créer votre charpente. Visite et devis offerts."),
     "isolation": dict(
-        title="Isolation des combles et des murs : devis gratuit | Un artisan près de chez vous",
+        title="Isolation combles et murs : devis gratuit près de chez vous",
         desc="Isolation des combles perdus ou aménagés, des murs par l’extérieur, de la toiture. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer.",
         kw="Isolation des combles et des murs près de chez vous", h2="Vos travaux d’isolation", price_h2="Prix de l’isolation des combles",
         needs=[("Combles perdus", "Isolant soufflé ou déroulé sur le plancher des combles."),
@@ -702,7 +702,7 @@ CSS_TRADE = """<style id="pf-css-2">
 .pf-more{margin-top:8px;display:inline-block;font-size:.88rem}
 .pf-prices li{display:flex;flex-direction:column;gap:4px}
 .pf-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,48px);padding:0 var(--cell);align-items:start}
-.pf-ph{aspect-ratio:4 / 3;margin:0}.pf-ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.pf-ph{aspect-ratio:4 / 3;margin:0}.pf-ph img{width:100%;height:100%;object-fit:cover}
 .pf-needs{grid-template-columns:1fr 1fr;padding:0}
 .pf-refbox{display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:56ch;padding:0 var(--cell)}
 .pf-refbox .pf-ref{font:400 clamp(1.3rem,2vw,1.7rem)/1.25 var(--f-display);letter-spacing:-.01em}

@@ -148,3 +148,41 @@ mark.todo{padding:.1em .4em;border-radius:var(--r);background:#FFE9A8;color:#4d3
   @media (min-width:761px){.giant{font-size:min(17vw,40svh)}}
 }
 @supports not (overflow:clip){body{overflow-x:hidden}}
+
+/* ——— Finitions (audit unslop) ———
+   Les sélecteurs ont exprès une spécificité un peu plus forte : cette feuille est lue avant la feuille propre à chaque page. */
+:root{--muted:#6c727c}
+.fact-num{color:#8f959d}
+strong,b{font-weight:600}
+.svc-points{align-items:flex-end}
+.person-photo.ph-wait{aspect-ratio:auto;width:72px;height:72px;margin-bottom:1rem}
+.person-photo.ph-wait span{font-size:1.5rem;letter-spacing:-.02em}
+.pf-time .pf-t{text-transform:none;letter-spacing:0;font-weight:500}
+ol.pf-time li::before{border-radius:var(--r)}
+a.pf-sticky{box-shadow:0 14px 30px -14px rgba(10,20,36,.55)}
+.ad-card .ad-angle{text-transform:none;letter-spacing:0}
+.ad-card .ad-cta{padding:.55em .8em;border-radius:var(--r);background:var(--paper);font-size:.85rem;font-weight:400}
+.pg-photo.mk::before{background:none}
+.pg-photo .ph-steps li{border-radius:var(--r)}
+.ca-out::before{display:none}
+.calc input[type=range]::-webkit-slider-thumb{box-shadow:0 0 0 1px var(--accent)}
+.calc input[type=range]::-webkit-slider-runnable-track{border-radius:var(--r)}
+.calc input[type=range]::-moz-range-track{border-radius:var(--r)}
+.calc input[type=range]::-moz-range-progress{border-radius:var(--r)}
+.plan-top{min-height:36px}
+@media (min-width:761px){
+  .pg-grid .pg-text:only-child{grid-column:1 / 4}
+}
+@media (max-width:760px){
+  .link{background-position:0 calc(50% + .78em)}
+  .link.pf-more{display:inline-flex;align-self:flex-start}
+  .pf-src .link{display:inline;min-height:0;background-position:0 100%}
+  .link.pf-pick{min-height:0;padding:12px 0 .2em;background-position:0 100%}
+  .rng-h output{flex:none}
+  .rng-h label{min-width:0}
+  .prose table{font-size:.9rem}
+  .prose th,.prose td{min-width:0;padding:.7rem .6rem}
+  .prose th:first-child,.prose td:first-child{min-width:5.5em}
+  .crumbs a{display:inline-flex;align-items:center;min-height:40px}
+  .crumbs{align-items:center;row-gap:0}
+}
