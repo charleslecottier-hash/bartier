@@ -704,14 +704,14 @@ HUB_GALLERY = _blk["gallery"]
 HUB_SEASONS = _blk["calendar"].replace('data-tone="light"', 'data-tone="paper"', 1)
 _lj = lambda xs: ", ".join([xs[0]] + [x[:1].lower() + x[1:] for x in xs[1:]])  # liste dans une phrase : minuscule après la virgule
 _rows = "\n".join(
-    f'<tr><td><a href="/metiers/{t["slug"]}/">{t["name"]}</a></td><td>{_lj(t["keep"][:3])}</td><td>{_lj(t["drop"][:2])}</td></tr>'
+    f'<tr><td class="mt-name"><a href="/metiers/{t["slug"]}/">{t["name"]}</a></td><td class="mt-keep">{_lj(t["keep"][:3])}</td><td class="mt-drop">{_lj(t["drop"][:2])}</td></tr>'
     for t in TRADES)
 HUB_TABLE = f"""<section class="sheet" id="par-metier" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>Selon votre métier, les petits travaux sont écartés dès l'appel.</h2></div>
   <div class="grid art-grid">
     <div class="prose is-wide">
-<table>
-<thead><tr><th>Votre métier</th><th>Les chantiers que nous cherchons</th><th>Ceux que nous écartons</th></tr></thead>
+<table class="mt-table">
+<thead><tr><th>Votre métier</th><th class="mt-keep">Les chantiers que nous cherchons</th><th class="mt-drop">Ceux que nous écartons</th></tr></thead>
 <tbody>
 {_rows}
 </tbody>

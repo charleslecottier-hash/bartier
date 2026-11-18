@@ -845,3 +845,61 @@ ol.sp-cols:not(.is-cards) p{color:#5b616b}
   ol.sp-cols:not(.is-cards) > li,ol.sp-cols:not(.is-cards) > li + li{padding:20px}
   .sp-split > ul.sp-list:not(.is-num){padding:4px 20px}
 }
+
+/* ——— Métiers, « Selon votre métier… » : le tableau devient une fiche (coches pour ce que nous cherchons, croix pour ce que nous écartons) ——— */
+#par-metier .prose.is-wide{max-width:none}
+#par-metier .mt-table{width:100%;margin:0;background:#fff;border-radius:12px;box-shadow:0 0 0 1px var(--rule),0 24px 48px -28px rgba(10,20,36,.28);overflow:hidden}
+#par-metier .mt-table .mt-name a{font:400 1.2rem/1.25 var(--f-display);letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+#par-metier .mt-table .mt-name a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:4px}
+#par-metier .mt-table td.mt-drop{color:#5b616b}
+@media (min-width:761px){
+  #par-metier .mt-table{display:table;table-layout:fixed;border-collapse:separate;border-spacing:0;font-size:1rem}
+  #par-metier .mt-table th{padding:16px 24px;background:#fff;font-weight:400;font-size:.88rem;color:#5b616b;text-align:left;border-bottom:1px solid var(--rule)}
+  #par-metier .mt-table th:first-child{width:22%}
+  #par-metier .mt-table th.mt-keep{width:44%}
+  #par-metier .mt-table td{padding:20px 24px;vertical-align:top;border-bottom:1px solid var(--rule);line-height:1.5}
+  #par-metier .mt-table tr:last-child td{border-bottom:0}
+  #par-metier .mt-table .mt-keep,#par-metier .mt-table .mt-drop{padding-left:64px;background-repeat:no-repeat;background-size:24px 24px;background-position:24px 18px}
+  #par-metier .mt-table th.mt-keep,#par-metier .mt-table th.mt-drop{background-position:24px 13px}
+  #par-metier .mt-table .mt-keep{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='14' fill='%23E6ECFC'/%3E%3Cpath d='M9.5 14.5l3 3 6-7' fill='none' stroke='%232D5BE3' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+  #par-metier .mt-table .mt-drop{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='14' fill='%23EEF0F3'/%3E%3Cpath d='M11 11l6 6M17 11l-6 6' fill='none' stroke='%235b616b' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E")}
+  #par-metier .mt-table tbody tr:hover td{background-color:#fafbfd}
+}
+@media (max-width:760px){
+  #par-metier .mt-table{padding:4px 20px}
+  #par-metier .mt-table tr:last-child{border-bottom:0}
+  #par-metier .mt-table td.mt-keep,#par-metier .mt-table td.mt-drop{padding-left:32px;background-repeat:no-repeat;background-size:20px 20px;background-position:0 2px}
+  #par-metier .mt-table td.mt-keep{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='14' fill='%23E6ECFC'/%3E%3Cpath d='M9.5 14.5l3 3 6-7' fill='none' stroke='%232D5BE3' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+  #par-metier .mt-table td.mt-drop{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='14' fill='%23EEF0F3'/%3E%3Cpath d='M11 11l6 6M17 11l-6 6' fill='none' stroke='%235b616b' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E")}
+}
+
+@media (max-width:760px){#par-metier .mt-table td.mt-keep::before,#par-metier .mt-table td.mt-drop::before{content:none}}
+/* ——— Métiers, « Des annonces pour chaque saison » : une carte par saison, l'annonce lancée en pastille ——— */
+#calendar .ss-list{gap:12px;padding:0 var(--cell)}
+#calendar .season{gap:12px;padding:24px;border-top:0;border-radius:12px;background:#fff;box-shadow:0 0 0 1px var(--rule),0 16px 40px -28px rgba(10,20,36,.28)}
+#calendar .season-when{font-size:.84rem;color:#5b616b}
+#calendar .season h3{margin:0;font-size:clamp(1.9rem,2.4vw,2.4rem)}
+#calendar .season-need{margin:0;color:var(--ink)}
+#calendar .season-do{align-self:flex-start;margin:auto 0 0;padding:6px 12px;border-radius:6px;background:var(--tint);color:var(--accent);font-size:.9rem;line-height:1.35}
+@media (max-width:760px){#calendar .ss-list{gap:8px}#calendar .season{padding:20px}}
+
+/* ——— « Bartier & Co en bref » : une fiche d'identité, deux faits par ligne, l'intitulé à gauche ——— */
+.pf-brief .pf-dl{grid-column:2 / -1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;row-gap:0;margin:0 var(--cell);padding:8px 28px;background:#fff;border-radius:12px;box-shadow:0 0 0 1px var(--rule),0 24px 48px -28px rgba(10,20,36,.28)}
+.pf-brief .pf-dl > div{display:grid;grid-template-columns:136px minmax(0,1fr);column-gap:16px;align-items:baseline;padding:16px 0;border-top:0;border-bottom:1px solid var(--rule)}
+.pf-brief .pf-dl > div:nth-last-child(-n+2){border-bottom:0}
+.pf-brief .pf-dl dt{margin:0;font-size:.84rem;line-height:1.4;color:#5b616b}
+.pf-brief .pf-dl dd{margin:0;font-size:.98rem;line-height:1.45;color:var(--ink)}
+.pf-brief .pf-upd{grid-column:2 / -1;margin:12px var(--cell) 0}
+@media (max-width:1023px){.pf-brief .pf-dl{grid-template-columns:minmax(0,1fr)}.pf-brief .pf-dl > div:nth-last-child(-n+2){border-bottom:1px solid var(--rule)}.pf-brief .pf-dl > div:last-child{border-bottom:0}}
+@media (max-width:760px){
+  .pf-brief .pf-dl,.pf-brief .pf-upd{grid-column:1 / -1;margin-left:0;margin-right:0}
+  .pf-brief .pf-dl{padding:4px 20px}
+  .pf-brief .pf-dl > div{grid-template-columns:minmax(0,1fr);row-gap:4px;padding:14px 0}
+}
+
+/* Qui sommes-nous, « Bartier & Co en bref » : la même fiche d'identité */
+.prose .facts-dl{grid-template-columns:minmax(0,1fr);gap:0;padding:8px 28px;background:#fff;border-radius:12px;box-shadow:0 0 0 1px var(--rule),0 24px 48px -28px rgba(10,20,36,.28)}
+.prose .facts-dl > div{display:grid;grid-template-columns:120px minmax(0,1fr);column-gap:16px;align-items:baseline;padding:16px 0;border-top:0;border-bottom:1px solid var(--rule)}
+.prose .facts-dl > div:last-child{border-bottom:0}
+.prose .facts-dl dt{margin:0;font-size:.84rem;color:#5b616b}
+@media (max-width:760px){.prose .facts-dl{padding:4px 20px}.prose .facts-dl > div{grid-template-columns:minmax(0,1fr);row-gap:4px;padding:14px 0}}
