@@ -210,13 +210,13 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   </div>
 </section>"""
 
-    promise = f"""<section class="sheet pf-promise" id="promesse" data-tone="dark">
+    promise = f"""<section class="sheet pf-promise" id="promesse" data-tone="accent">
   <div class="grid sp-head"><h2 data-split>Fini les artisans qui ne rappellent pas.</h2><p>Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.</p></div>
   <ul class="pf-proms">
-    <li><b>5&nbsp;min</b><span>pour vous rappeler, du lundi au vendredi de 8 h à 19 h</span></li>
-    <li><b>1&nbsp;appel</b><span>et la date de visite est fixée avec l’artisan</span></li>
-    <li><b>1&nbsp;SMS</b><span>pour vous rappeler le rendez-vous avant la visite</span></li>
-    <li><b>0&nbsp;€</b><span>pour vous&nbsp;: visite et devis offerts, sans engagement</span></li>
+    <li><b>5<small>min</small></b><span>pour vous rappeler, du lundi au vendredi de 8 h à 19 h</span></li>
+    <li><b>1<small>appel</small></b><span>et la date de visite est fixée avec l’artisan</span></li>
+    <li><b>1<small>SMS</small></b><span>pour vous rappeler le rendez-vous avant la visite</span></li>
+    <li><b>0<small>€</small></b><span>pour vous&nbsp;: visite et devis offerts, sans engagement</span></li>
   </ul>
   <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Décrire mes travaux</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
 </section>"""
