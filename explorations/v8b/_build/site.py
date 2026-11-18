@@ -486,7 +486,7 @@ def label_tables(frag):
 
 
 MAJ_HTML = '<p class="pg-upd">Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></p>'
-REVIEW = {"/trouver-des-chantiers/habitatpresto-pro/"}  # pages à faire valider : jamais indexées, absentes du plan du site
+REVIEW = set()  # pages à faire valider : jamais indexées, absentes du plan du site (fiche Habitatpresto validée le 18/11/2026)
 
 
 def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None, dated=True):
