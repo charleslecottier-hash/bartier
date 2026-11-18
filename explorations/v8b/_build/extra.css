@@ -305,3 +305,8 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 @media (max-width:760px){
   .art-grid .prose tbody th[scope=row]{display:block;padding:0 0 4px;border:0;font-size:1rem}
 }
+
+/* ——— Portraits des fondateurs : déjà en noir et blanc dans le fichier, pas de filtre à calculer ——— */
+.person-photo img{filter:none;width:100%;height:100%;object-fit:cover}
+.person{scroll-margin-top:calc(var(--hdr) + 24px)}
+.post-meta-line a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}

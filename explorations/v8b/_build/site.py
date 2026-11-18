@@ -199,6 +199,9 @@ home = re.sub(r"(<body[^>]*>\n?)", lambda m: m.group(1) + LD_BODY, home, count=1
 
 # Données structurées, adresse canonique et balises de partage de l'accueil (toujours régénérées)
 FOUNDERS = [("charles", "Charles Le Cottier", "Cofondateur, Head of Performance"), ("martin", "Martin Barthélémy", "Cofondateur, Head of Sales")]
+PORTRAIT = {"charles": "charles-le-cottier", "martin": "martin-barthelemy"}
+def portrait(k):
+    return SITE + f"/assets/photos/{PORTRAIT[k]}-700x875-nb.webp"
 ORG_REF = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "url": SITE + "/"}
 ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "alternateName": "Bartier and Co",
        "slogan": "Faire équipe. Faire la différence.", "url": SITE + "/", "logo": SITE + "/assets/logo-bartier.png", "image": SITE + "/assets/og.png",
@@ -210,7 +213,7 @@ ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "
        "knowsAbout": ["Google Ads", "Meta Ads", "Publicité locale", "Couverture", "Ravalement de façade", "Menuiserie extérieure", "Charpente", "Isolation"],
        "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434"],
        "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de 5 minutes, visites de devis fixées directement dans leur agenda.",
-       "founder": [{"@type": "Person", "@id": f"{SITE}/qui-sommes-nous/#{k}", "name": n, "jobTitle": j} for k, n, j in FOUNDERS]}
+       "founder": [{"@type": "Person", "@id": f"{SITE}/qui-sommes-nous/#{k}", "name": n, "jobTitle": j, "image": portrait(k)} for k, n, j in FOUNDERS]}
 home = re.sub(r'<link rel="canonical"[^>]*>\n?', "", home)
 home = re.sub(r'<script type="application/ld\+json">[\s\S]*?</script>\n?', "", home)
 home = re.sub(r'<meta (?:property="og:|name="twitter:)[^>]*>\n?', "", home)
@@ -833,7 +836,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
       schema={"@context": "https://schema.org", "@graph": [
           {"@type": "AboutPage", "name": "Qui sommes-nous", "url": SITE + "/qui-sommes-nous/", "inLanguage": "fr-FR", "mainEntity": {"@id": SITE + "/#org"}},
           dict(ORG, founder=[{"@id": f"{SITE}/qui-sommes-nous/#{k}"} for k, n, j in FOUNDERS]),
-          *[{"@type": "Person", "@id": f"{SITE}/qui-sommes-nous/#{k}", "name": n, "jobTitle": j, "worksFor": {"@id": SITE + "/#org"}} for k, n, j in FOUNDERS],
+          *[{"@type": "Person", "@id": f"{SITE}/qui-sommes-nous/#{k}", "name": n, "jobTitle": j, "image": portrait(k), "url": f"{SITE}/qui-sommes-nous/#{k}", "worksFor": {"@id": SITE + "/#org"}} for k, n, j in FOUNDERS],
           bc_ld(("Qui sommes-nous", "/qui-sommes-nous/"))]})
 paths.append("/qui-sommes-nous/")
 
@@ -868,7 +871,7 @@ for a in ARTICLES:
     a["minutes"] = max(3, round(len(re.sub(r"<[^>]+>", " ", a["body"]).split()) / 200))
 for a in ARTICLES:
     path = f"/blog/{a['slug']}/"
-    meta = f'<p class="post-meta-line"><span>Par Charles Le Cottier, cofondateur · Head of Performance</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
+    meta = f'<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur · Head of Performance</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
     body = "\n\n".join([
         top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta, photo=COVER[a["slug"]], dated=False).replace('class="pg-photo frame"', 'class="pg-photo frame is-color"', 1),
         f"""<section class="sheet" data-tone="light">
@@ -889,13 +892,13 @@ for a in ARTICLES:
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "BlogPosting", "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": "@@MAJ@@", "inLanguage": "fr-FR",
                "mainEntityOfPage": SITE + path, "image": [img(COVER[a["slug"]])[0]],
-               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/"},
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               bc_ld(("Blog", "/blog/"), (a["short"], path))] + ([faq_ld(a["faq"])] if a.get("faq") else [])})
     paths.append(path)
 
 # ——— Guides : comment trouver des chantiers, fiche Habitatpresto Pro (_build/contenu.py) ———
-AUTHOR_META = '<p class="post-meta-line"><span>Par Charles Le Cottier, cofondateur · Head of Performance</span></p>'
+AUTHOR_META = '<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur · Head of Performance</span></p>'
 
 
 def guide(G, kick, crumb_items, faq_title, links):
@@ -920,7 +923,7 @@ def guide(G, kick, crumb_items, faq_title, links):
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Article", "headline": fr(G["h1"]), "description": fr(G["desc"]), "datePublished": "2026-11-18", "dateModified": "@@MAJ@@",
                "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"],
-               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/"},
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               faq_ld(G["faq"]), bc_ld(*crumb_items)]})
     paths.append(G["path"])
