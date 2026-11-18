@@ -709,7 +709,7 @@ HUB_FAQ = [
 write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & Co",
       "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, partout en France. Un seul artisan par métier et par secteur.",
       "\n\n".join([
-          top("Métiers", "Des clients pour cinq métiers du bâtiment.", "Nous trouvons des propriétaires avec un vrai projet, près de chez vous. Un seul artisan par métier et par secteur.", crumbs(("Métiers", "/metiers/")), "Artisan souriant"),
+          top("Métiers", "Quel que soit votre métier, nous trouvons vos clients.", "Des propriétaires avec un vrai projet, près de chez vous. Un seul artisan par métier et par secteur.", crumbs(("Métiers", "/metiers/")), "Artisan souriant"),
           HUB_SECTORS,
           label_tables(HUB_TABLE),
           HUB_GALLERY,
