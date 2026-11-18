@@ -563,6 +563,3 @@ h1,h2,h3{text-wrap:balance}
 .wa.is-mini:not(.is-open) .wa-fab b,.wa.is-mini:not(.is-open) .wa-fab .wa-dot{display:none}
 .wa.is-mini:not(.is-open) .wa-fab{padding:.55rem}
 .wa.is-mini:not(.is-open) .wa-fab:hover b,.wa.is-mini:not(.is-open) .wa-fab:focus-visible b{display:inline}
-
-/* ——— Métiers, téléphone : le long titre de la galerie garde une taille de titre raisonnable ——— */
-@media (max-width:760px){#gallery .gl-head h2{font-size:clamp(1.55rem,6.6vw,2rem);line-height:1.12}}
