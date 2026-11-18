@@ -159,15 +159,15 @@ Trouvez des chantiers de couverture : des propriétaires qui préparent une ré
 Couvreurs-zingueurs · Partout en France
 Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite.
 
-### Ce que nous allons chercher
+### Les chantiers de couverture que nous cherchons pour vous
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
-Ce que nous cherchons
+Projets retenus
 - Réfection complète de toiture
 - Rénovation de toiture avec isolation
 - Démoussage et hydrofuge d’une toiture entière
 - Zinguerie complète : gouttières, chéneaux, noues
 - Remplacement de couverture après un sinistre
-Ce que nous écartons
+Projets écartés
 - Une tuile à remettre en place
 - Une petite fuite à dépanner
 - Les locataires et les demandes hors de votre zone
@@ -197,10 +197,10 @@ Les questions de notre appel 6 questions
 - Dans quelle commune se trouve-t-elle ?
 - Quand souhaitez-vous faire les travaux ?
 
-### À votre nom, autour de chez vous
+### Des annonces à votre nom, autour de votre dépôt
 Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d’annonces, rédigées ensuite avec vous.
 
-### Vos questions, nos réponses
+### Les questions des couvreurs-zingueurs
 Une autre question ? Écrire à Martin sur WhatsApp
 
 **Vous m’envoyez aussi de petits dépannages ?**
@@ -239,15 +239,15 @@ Chantiers de menuiserie extérieure : des propriétaires qui préparent le remp
 Menuisiers poseurs · Partout en France
 Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite.
 
-### Ce que nous allons chercher
+### Les chantiers de menuiserie que nous cherchons pour vous
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
-Ce que nous cherchons
+Projets retenus
 - Remplacement de toutes les fenêtres d’une maison
 - Baies coulissantes et galandages
 - Portes d’entrée sur mesure
 - Volets roulants posés avec les fenêtres
 - Portails et clôtures en aluminium
-Ce que nous écartons
+Projets écartés
 - Une seule fenêtre à changer
 - La pose de matériel acheté ailleurs
 - Les locataires et les demandes hors de votre zone
@@ -277,10 +277,10 @@ Les questions de notre appel 6 questions
 - Dans quelle commune se trouve la maison ?
 - Quand souhaitez-vous faire les travaux ?
 
-### À votre nom, autour de chez vous
+### Des annonces à votre nom, autour de votre dépôt
 Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d’annonces, rédigées ensuite avec vous.
 
-### Vos questions, nos réponses
+### Les questions des menuisiers poseurs
 Une autre question ? Écrire à Martin sur WhatsApp
 
 **Les propriétaires savent-ils que vous ne vendez pas d’aides ?**
@@ -319,14 +319,14 @@ Trouvez des chantiers de façade : des propriétaires qui préparent un ravalem
 Façadiers · Partout en France
 Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite.
 
-### Ce que nous allons chercher
+### Les chantiers de façade que nous cherchons pour vous
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
-Ce que nous cherchons
+Projets retenus
 - Ravalement complet de maison
 - Isolation thermique par l’extérieur
 - Enduit, crépi et peinture de façade
 - Traitement des fissures et imperméabilisation
-Ce que nous écartons
+Projets écartés
 - Un simple nettoyage haute pression
 - Les petites retouches
 - Les locataires et les demandes hors de votre zone
@@ -356,10 +356,10 @@ Les questions de notre appel 6 questions
 - Dans quelle commune se trouve la maison ?
 - Quand souhaitez-vous faire les travaux ?
 
-### À votre nom, autour de chez vous
+### Des annonces à votre nom, autour de votre dépôt
 Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d’annonces, rédigées ensuite avec vous.
 
-### Vos questions, nos réponses
+### Les questions des façadiers
 Une autre question ? Écrire à Martin sur WhatsApp
 
 **Travaillez-vous avec les copropriétés ?**
@@ -398,14 +398,14 @@ Trouvez des chantiers de charpente : des propriétaires qui préparent un proje
 Charpentiers · Partout en France
 Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite.
 
-### Ce que nous allons chercher
+### Les chantiers de charpente que nous cherchons pour vous
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
-Ce que nous cherchons
+Projets retenus
 - Rénovation ou remplacement de charpente
 - Surélévation de maison
 - Traitement de charpente sur une maison entière
 - Extension à ossature bois
-Ce que nous écartons
+Projets écartés
 - Les abris de jardin et petits ouvrages
 - Les projets sans calendrier
 - Les locataires et les demandes hors de votre zone
@@ -434,10 +434,10 @@ Les questions de notre appel 5 questions
 - Dans quelle commune se trouve la maison ?
 - Quand souhaitez-vous commencer les travaux ?
 
-### À votre nom, autour de chez vous
+### Des annonces à votre nom, autour de votre dépôt
 Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d’annonces, rédigées ensuite avec vous.
 
-### Vos questions, nos réponses
+### Les questions des charpentiers
 Une autre question ? Écrire à Martin sur WhatsApp
 
 **Mes chantiers ont des cycles longs. Est-ce adapté ?**
@@ -476,14 +476,14 @@ Trouvez des chantiers d’isolation : des propriétaires qui préparent l’iso
 Entreprises d’isolation · Partout en France
 Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite.
 
-### Ce que nous allons chercher
+### Les chantiers d’isolation que nous cherchons pour vous
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
-Ce que nous cherchons
+Projets retenus
 - Isolation thermique par l’extérieur
 - Isolation des combles aménagés et des rampants
 - Isolation des combles perdus avec d’autres travaux
 - Isolation par l’intérieur d’une maison entière
-Ce que nous écartons
+Projets écartés
 - Les demandes d’offres à prix symbolique
 - Les projets dont l’éligibilité aux aides est la seule motivation
 - Les locataires et les demandes hors de votre zone
@@ -513,10 +513,10 @@ Les questions de notre appel 6 questions
 - Dans quelle commune se trouve-t-elle ?
 - Quand souhaitez-vous faire les travaux ?
 
-### À votre nom, autour de chez vous
+### Des annonces à votre nom, autour de votre dépôt
 Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d’annonces, rédigées ensuite avec vous.
 
-### Vos questions, nos réponses
+### Les questions des entreprises d’isolation
 Une autre question ? Écrire à Martin sur WhatsApp
 
 **Est-ce compatible avec l’interdiction du démarchage ?**
@@ -1766,10 +1766,10 @@ Un SMS après chaque visite : devis envoyé ou chantier signé. Nous ajustons le
 Pas de standard. Vous parlez aux fondateurs, du premier appel au lancement de vos annonces.
 
 #### Charles Le Cottier
-Cofondateur Responsable des annonces
+Co-fondateur
 
 #### Martin Barthélémy
-Cofondateur Responsable commercial
+Co-fondateur
 Une question avant de vous lancer ? Appelez Martin en semaine, de 8 h à 19 h, ou écrivez-lui.
 Appeler le 07 81 01 89 36
 
@@ -1779,7 +1779,7 @@ Appeler le 07 81 01 89 36
 - Bartier & Co, SAS. 6 rue Saint-Bon, 75004 Paris.
 
 **Fondateurs**
-- Charles Le Cottier, responsable des annonces. Martin Barthélémy, responsable commercial.
+- Charles Le Cottier et Martin Barthélémy, co-fondateurs.
 
 **Activité**
 - Trouver des clients aux artisans du bâtiment : annonces locales Google et Meta, rappel des demandes en moins de 5 minutes, visites fixées dans l’agenda.
@@ -1893,7 +1893,7 @@ Adresse : https://bartierandco.com/blog/lead-partage-lead-exclusif-rendez-vous-q
 Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer.
 
 Comprendre
-Par Charles Le Cottier, cofondateur · Responsable des annonces Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
+Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
 Une demande partagée est une demande de devis vendue à plusieurs entreprises. Une demande exclusive n’est vendue qu’à vous, mais c’est à vous de rappeler. Un rendez-vous qualifié est une visite déjà fixée, chez un propriétaire dont le projet a été vérifié.
 
 ### Quelle différence entre une demande de devis et un rendez-vous qualifié ?
@@ -1973,7 +1973,7 @@ Adresse : https://bartierandco.com/blog/google-ads-ou-meta-ads-artisan/
 Google capte ceux qui cherchent déjà, Meta touche ceux qui n’ont pas encore cherché. Comment choisir selon votre métier et votre secteur.
 
 Publicité
-Par Charles Le Cottier, cofondateur · Responsable des annonces Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
+Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
 Google Ads capte une demande qui existe déjà : le propriétaire cherche un artisan. Meta Ads (Facebook et Instagram) suscite une demande chez des propriétaires qui n’ont pas encore cherché. Le premier convient aux urgences et aux projets mûrs, le second aux rénovations et à l’entretien.
 
 ### Demande exprimée ou demande suscitée
@@ -2043,7 +2043,7 @@ Adresse : https://bartierandco.com/blog/relance-devis-artisan/
 Un devis de rénovation se relance. Un calendrier simple, trois SMS prêts à copier et un script d’appel de deux minutes.
 
 Méthode
-Par Charles Le Cottier, cofondateur · Responsable des annonces Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
+Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
 Relancez un devis de rénovation par un appel, quelques jours après l’envoi, puis par SMS si vous n’avez pas de réponse. Arrêtez après trois tentatives sans retour, en laissant la porte ouverte. Chaque relance sert à savoir où en est le projet.
 
 ### Quand relancer un devis ?
@@ -2173,8 +2173,7 @@ Sur un mois
 
 **Demandes signées**
 - 1 sur 2
-Coût par chantier signé 150 €
-Le moins cher au final
+Coût par chantier signé 150 € Le moins cher au final
 
 ### Où se perdent les chantiers ?
 Après la demande, quatre moments font perdre le chantier.

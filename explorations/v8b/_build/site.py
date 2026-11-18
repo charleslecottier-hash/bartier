@@ -48,22 +48,25 @@ NAV = [("Comment ça marche", "#services"), ("Métiers", "/metiers/"), ("Google 
 NAV_SUB = {"#services": [("Notre méthode", "Annonces, rappel, visite dans votre agenda", "#services"),
                          ("Comment trouver des chantiers", "Les 8 canaux comparés", "/trouver-des-chantiers/")],
            # « Métiers » ouvre la liste des cinq métiers
-           "/metiers/": [("Couverture et zinguerie", "Réfections de toiture", "/metiers/couverture/"),
-                         ("Façade et ravalement", "Ravalements complets", "/metiers/facade/"),
-                         ("Menuiserie extérieure", "Fenêtres, baies et portes d'entrée", "/metiers/menuiserie-exterieure/"),
-                         ("Charpente", "Projets prêts à démarrer", "/metiers/charpente/"),
-                         ("Isolation", "Propriétaires qui ont fait la demande", "/metiers/isolation/"),
-                         ("Tous les métiers", "Les chantiers que nous cherchons", "/metiers/")]}
+           "/metiers/": [("Couverture et zinguerie", "", "/metiers/couverture/"),
+                         ("Façade et ravalement", "", "/metiers/facade/"),
+                         ("Menuiserie extérieure", "", "/metiers/menuiserie-exterieure/"),
+                         ("Charpente", "", "/metiers/charpente/"),
+                         ("Isolation", "", "/metiers/isolation/"),
+                         ("Tous les métiers", "", "/metiers/")]}
 NAV_CHEV = '<svg class="dd-chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>'
+def _dd_link(st, sd, sh, parent):
+    cls = ' class="is-all"' if sh == parent else ""
+    return f'<a href="{sh}"{cls}><b>{st}</b>' + (f"<small>{sd}</small>" if sd else "") + "</a>"
 def _nav_item(t, h):
     if h in NAV_SUB:
-        sub = "".join(f'<a href="{sh}"><b>{st}</b><small>{sd}</small></a>' for st, sd, sh in NAV_SUB[h])
+        sub = "".join(_dd_link(st, sd, sh, h) for st, sd, sh in NAV_SUB[h])
         return f'      <div class="hdr-dd"><a class="link hdr-dd-t" href="{h}" aria-haspopup="true">{t}{NAV_CHEV}</a><div class="hdr-dd-menu">{sub}</div></div>'
     return f'      <a class="link" href="{h}">{t}</a>'
 nav_html = "\n".join(_nav_item(t, h) for t, h in NAV)
 def _menu_item(t, h):  # sur téléphone : « Comment ça marche » et « Métiers » s'ouvrent comme des listes
     if h in NAV_SUB:
-        sub = "".join(f'<a href="{sh}"><b>{st}</b><small>{sd}</small></a>' for st, sd, sh in NAV_SUB[h])
+        sub = "".join(_dd_link(st, sd, sh, h) for st, sd, sh in NAV_SUB[h])
         return f'    <details class="menu-dd"><summary>{t}{NAV_CHEV}</summary><div class="menu-dd-list">{sub}</div></details>'
     return f'    <a href="{h}">{t}</a>'
 menu_html = "\n".join(_menu_item(t, h) for t, h in NAV) + '\n    <a href="#contact">Contact</a>'
@@ -158,7 +161,7 @@ WA_HTML = f"""<div class="wa" id="wa">
   <div class="wa-panel" id="wa-panel" role="dialog" aria-modal="false" aria-labelledby="wa-title">
     <div class="wa-head">
       <span class="wa-av" aria-hidden="true">MB</span>
-      <p id="wa-title"><b>Martin Barthélémy</b><small>Cofondateur · Responsable commercial</small></p>
+      <p id="wa-title"><b>Martin Barthélémy</b><small>Co-fondateur</small></p>
       <button class="wa-x" type="button" aria-label="Fermer" data-wa-close>×</button>
     </div>
     <div class="wa-body">
@@ -173,7 +176,7 @@ WA_HTML = f"""<div class="wa" id="wa">
     </div>
   </div>
   <div class="wa-tip" role="status"><button class="wa-tip-go" type="button"><b>Une question&nbsp;?</b> Martin vous répond sur WhatsApp.</button><button class="wa-tip-x" type="button" aria-label="Fermer">×</button></div>
-  <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel" aria-label="Écrire à Martin sur WhatsApp ou l’appeler"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, responsable commercial</span></b></button>
+  <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel" aria-label="Écrire à Martin sur WhatsApp ou l’appeler"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, co-fondateur</span></b></button>
 </div>
 <script>
 (function(){{var w=document.getElementById('wa');if(!w)return;var b=w.querySelector('.wa-fab');
@@ -219,7 +222,7 @@ home = re.sub(r'<div class="ld" id="ld"[\s\S]*?</script>\n', "", home)
 # Écran d'attente retiré le 18/11/2026 : la page s'affiche tout de suite (LD_HEAD et LD_BODY ne sont plus insérés).
 
 # Données structurées, adresse canonique et balises de partage de l'accueil (toujours régénérées)
-FOUNDERS = [("charles", "Charles Le Cottier", "Cofondateur, responsable des annonces"), ("martin", "Martin Barthélémy", "Cofondateur, responsable commercial")]
+FOUNDERS = [("charles", "Charles Le Cottier", "Co-fondateur"), ("martin", "Martin Barthélémy", "Co-fondateur")]
 PORTRAIT = {"charles": "charles-le-cottier", "martin": "martin-barthelemy"}
 def portrait(k):
     return SITE + f"/assets/photos/{PORTRAIT[k]}-700x875-nb.webp"
@@ -475,11 +478,13 @@ def with_form(body, contact, after=2):
     return body[:i] + "\n\n" + contact + body[i:]
 
 
-def write(path, title, desc, body, nav=None, schema=None, metier=None, form_after=2):
+def write(path, title, desc, body, nav=None, schema=None, metier=None, form_after=2, form_h2=None):
     top = absolutize(BODY_OPEN)
     if nav:
         top = top.replace(f'class="link" href="{nav}"', f'class="link" href="{nav}" aria-current="page"', 1)
     contact = CONTACT.replace(f'name="metier" value="{metier}"', f'name="metier" value="{metier}" checked', 1) if metier else CONTACT
+    if form_h2:  # pages métiers : un titre de formulaire plus clair que celui de l'accueil
+        contact = re.sub(r"<h2 data-split>[^<]*</h2>", f"<h2 data-split>{form_h2}</h2>", contact, count=1)
     doc = head(title, desc, path, schema) + top + "\n" + with_form(fr(body), contact, form_after) + "\n" + absolutize(TAIL)
     out = ROOT / path.strip("/") / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -652,6 +657,26 @@ EXTRA_CSS = EXTRA_CSS.replace("</style>", ANIM_CSS + "</style>", 1)
 
 PHOTO = {"couverture": "Un couvreur pose", "facade": "Une façade en rénovation", "menuiserie-exterieure": "Un menuisier pose",
          "charpente": "Une charpente en bois", "isolation": "Isolation d"}
+# Titres des pages métiers : le métier écrit en clair
+TRADE_NOUN = {"couverture": "de couverture", "menuiserie-exterieure": "de menuiserie", "facade": "de façade", "charpente": "de charpente", "isolation": "d'isolation"}
+TRADE_SOLO = {"couverture": "Un seul couvreur par secteur", "menuiserie-exterieure": "Un seul menuisier par secteur", "facade": "Un seul façadier par secteur",
+              "charpente": "Un seul charpentier par secteur", "isolation": "Une seule entreprise d'isolation par secteur"}
+# Annonces d'exemple des pages métiers : trois par métier, chacune avec sa photo, des personnes plutôt que des toits
+AD_EXTRA = {"charpente": [("Aménager les combles", "Transformer vos combles en pièce à vivre ? Faites vérifier votre charpente par un charpentier de votre secteur. Visite et chiffrage à domicile.")],
+            "isolation": [("Un chauffage qui tourne sans arrêt", "Vous chauffez, et la maison reste froide ? Faites étudier l'isolation de vos combles par une entreprise de votre secteur.")]}
+AD_PHOTOS = {  # « u: » photo Unsplash (texte alternatif), sinon fichier local de /assets/photos (4:5, voir _build/stock/SOURCES.md)
+    "couverture": ["couvreur-repare-toiture-ardoise", "u:Couvreur au travail sur une toiture", "u:Un couvreur pose des tuiles"],
+    "menuiserie-exterieure": ["u:Une personne consulte son téléphone chez elle", "u:Un menuisier pose une fenêtre", "menuisier-dans-son-atelier"],
+    "facade": ["artisan-enduit-mur-pierre", "u:Un propriétaire voit une annonce locale", "artisan-souriant-chantier-renovation"],
+    "charpente": ["charpentier-sur-charpente-bois", "charpentier-travaille-poutre-bois", "deux-personnes-etudient-plans-travaux"],
+    "isolation": ["femme-froid-dans-son-salon", "artisan-souriant-chantier-renovation", "u:Une personne consulte son téléphone chez elle"]}
+def _ad_src(ph, w):
+    h = w * 5 // 4
+    if ph.startswith("u:"):
+        url, _ = img(ph[2:])
+        return re.sub(r"([?&])h=\d+", rf"\g<1>h={h}", re.sub(r"([?&])w=\d+", rf"\g<1>w={w}", url))
+    return f"/assets/photos/{ph}-{w}x{h}.webp"
+
 # En-tête des pages métiers : une visite déjà posée dans l'agenda, sur la photo (illustration, sans nom ni adresse)
 VISIT = {"couverture": "Réfection de toiture", "facade": "Ravalement de façade", "menuiserie-exterieure": "Fenêtres de toute la maison",
          "charpente": "Reprise de charpente", "isolation": "Isolation des combles"}
@@ -669,7 +694,7 @@ for t in TRADES:
     if len(meta_desc) > 158:  # encore trop longue : « Trouvez des chantiers » devient « Chantiers »
         meta_desc = meta_desc.replace("Trouvez des chantiers", "Chantiers", 1)
     _ad_url, _ad_alt = img(PHOTO[t["slug"]])
-    angles = "\n".join(f"""    <li><div class="ad-card"><div class="ad-head"><span class="ad-av" aria-hidden="true">VE</span><p class="ad-meta"><b>Votre entreprise</b><span>Sponsorisé</span></p></div><p class="ad-text">{b}</p><figure class="ad-img is-color"><img src="{_ad_url}" alt="" width="1200" height="800" style="object-position:50% {pos}"></figure><div class="ad-bar"><p class="ad-angle">{a}</p><p class="ad-cta">Demander une visite</p></div></div></li>""" for (a, b), pos in zip(t["angles"], ("30%", "55%", "80%")))
+    angles = "\n".join(f"""    <li><div class="ad-card"><div class="ad-head"><span class="ad-av" aria-hidden="true">VE</span><p class="ad-meta"><b>Votre entreprise</b><span>Sponsorisé</span></p></div><p class="ad-text">{b}</p><figure class="ad-img is-color"><img src="{_ad_src(ph, 800)}" srcset="{_ad_src(ph, 480)} 480w, {_ad_src(ph, 800)} 800w" sizes="(max-width: 760px) 86vw, 25vw" alt="" width="800" height="1000" loading="lazy" decoding="async"></figure><div class="ad-bar"><p class="ad-angle">{a}</p><p class="ad-cta">Demander une visite</p></div></div></li>""" for (a, b), ph in zip(t["angles"] + AD_EXTRA.get(t["slug"], []), AD_PHOTOS[t["slug"]]))
     trade_faq = t["faq"] + [("Combien ça coûte ?", "Un devis personnalisé, en fonction de vos objectifs. Martin vous le présente pendant l'appel de 15 minutes, et vous décidez ensuite, à tête reposée."),
                             ("Faut-il s'engager sur une durée ?", "Non, aucune durée minimale. Vous restez libre d'arrêter quand vous le souhaitez."),
                             ("Qui rappelle les propriétaires ?", "Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
@@ -680,11 +705,11 @@ for t in TRADES:
             .replace("</figure>", VISIT_CARD.format(VISIT[t["slug"]]) + "</figure>", 1),
         f"""<section class="sheet tr-hunt" data-tone="paper">
   <div class="grid sp-split">
-    <div><h2 data-split>Ce que nous allons chercher</h2><p>Des chantiers qui valent le déplacement. Le reste est écarté avant d'arriver chez vous.</p></div>
+    <div><h2 data-split>Les chantiers {TRADE_NOUN[t['slug']]} que nous cherchons pour vous</h2><p>Des chantiers qui valent le déplacement. Le reste est écarté avant d'arriver chez vous.</p></div>
     <div class="sp-two tr-card">
-      <p class="tr-card-k"><b>Ce que nous cherchons</b></p>
+      <p class="tr-card-k"><b>Projets retenus</b></p>
       <ul class="sp-list">{''.join(f'<li>{x}</li>' for x in t['keep'])}</ul>
-      <p class="tr-card-k is-no"><b>Ce que nous écartons</b></p>
+      <p class="tr-card-k is-no"><b>Projets écartés</b></p>
       <ul class="sp-list is-no">{''.join(f'<li>{x}</li>' for x in t['drop'])}</ul>
     </div>
   </div>
@@ -697,16 +722,16 @@ for t in TRADES:
     <ol class="sp-list is-num">{''.join(f'<li>{q}</li>' for q in t['questions'])}</ol></div>
   </div>
 </section>""",
-        f"""<section class="sheet" data-tone="tint">
-  <div class="grid sp-head"><h2 data-split>À votre nom, autour de chez vous</h2><p>Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d'annonces, rédigées ensuite avec vous.</p></div>
+        f"""<section class="sheet tr-ads" data-tone="tint">
+  <div class="grid sp-head"><h2 data-split>Des annonces à votre nom, autour de votre dépôt</h2><p>Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d'annonces, rédigées ensuite avec vous.</p></div>
   <ul class="sp-cols is-cards">
 {angles}
   </ul>
 </section>""",
-        faq(trade_faq),
+        faq(trade_faq, f"Les questions des {t['who'].lower()}"),
         more("Autres métiers", "Tous les métiers", "/metiers/", [(TRADE_LABEL[x["slug"]], f"/metiers/{x['slug']}/") for x in TRADES if x["slug"] != t["slug"]]),
     ])
-    write(path, f"{t['title']} | Bartier & Co", meta_desc, body, nav="/metiers/", metier=t["radio"],
+    write(path, f"{t['title']} | Bartier & Co", meta_desc, body, nav="/metiers/", metier=t["radio"], form_h2=TRADE_SOLO[t["slug"]],
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "description": fr(meta_desc), "url": SITE + path,
                "areaServed": {"@type": "Country", "name": "France"}, "provider": ORG_REF},
@@ -835,8 +860,8 @@ pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un se
 pf_tail = absolutize(TAIL)
 pf_tail = pf_tail.replace('<p>Faire équipe.<br>Faire la différence.</p>', '<p>Un projet de travaux&nbsp;?<br>Un seul artisan, près de chez vous.</p>', 1)
 pf_tail = pf_tail.replace('<a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
-pf_tail = pf_tail.replace('<small>Cofondateur · Responsable commercial</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
-pf_tail = pf_tail.replace('<b>Parler à Martin<span>, responsable commercial</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
+pf_tail = pf_tail.replace('<small>Co-fondateur</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
+pf_tail = pf_tail.replace('<b>Parler à Martin<span>, co-fondateur</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
 pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', lambda m: '<p class="wa-bubble">Bonjour. Un projet de travaux ou une question&nbsp;? Écrivez-moi, je vous réponds personnellement.</p>\n      <p class="wa-k">Choisissez une question, ou écrivez la vôtre&nbsp;:</p>\n' + "\n".join(
     f'      <a class="wa-q" href="{html.escape(wa(m))}" target="_blank" rel="noopener" data-wa="question-particulier">{q}</a>' for q, m in [
         ("Combien vont coûter mes travaux&nbsp;?", "Bonjour, j'ai un projet de travaux ([toiture, façade, fenêtres...]) à [ville]. Combien cela peut-il coûter ?"),
@@ -891,8 +916,8 @@ TEAM_ABOUT = """<section class="team-about sheet" id="equipe" data-kind="team" d
     </div>
     <div class="ta-body">
       <ul class="ta-people">
-        <li id="charles"><img src="/assets/photos/charles-le-cottier-360x450-nb.webp" alt="Portrait de Charles Le Cottier, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Charles Le Cottier</h3><p>Cofondateur<br>Responsable des annonces</p></div></li>
-        <li id="martin"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Martin Barthélémy</h3><p>Cofondateur<br>Responsable commercial</p></div></li>
+        <li id="charles"><img src="/assets/photos/charles-le-cottier-360x450-nb.webp" alt="Portrait de Charles Le Cottier, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Charles Le Cottier</h3><p>Co-fondateur</p></div></li>
+        <li id="martin"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Martin Barthélémy</h3><p>Co-fondateur</p></div></li>
       </ul>
       <p class="ta-note">Une question avant de vous lancer ? Appelez Martin en semaine, de 8&nbsp;h à 19&nbsp;h, ou écrivez-lui.</p>
       <div class="ta-acts">
@@ -932,7 +957,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
     <div class="prose">
       <dl class="facts-dl">
         <div><dt>Société</dt><dd>Bartier & Co, SAS. 6 rue Saint-Bon, 75004 Paris.</dd></div>
-        <div><dt>Fondateurs</dt><dd>Charles Le Cottier, responsable des annonces. Martin Barthélémy, responsable commercial.</dd></div>
+        <div><dt>Fondateurs</dt><dd>Charles Le Cottier et Martin Barthélémy, co-fondateurs.</dd></div>
         <div><dt>Activité</dt><dd>Trouver des clients aux artisans du bâtiment : annonces locales Google et Meta, rappel des demandes en moins de 5 minutes, visites fixées dans l'agenda.</dd></div>
         <div><dt>Métiers</dt><dd><a href="/metiers/couverture/">Couverture</a>, <a href="/metiers/facade/">façade</a>, <a href="/metiers/menuiserie-exterieure/">menuiserie extérieure</a>, <a href="/metiers/charpente/">charpente</a>, <a href="/metiers/isolation/">isolation</a>.</dd></div>
         <div><dt>Zone</dt><dd>France. Un seul artisan par métier et par secteur, sans engagement de durée.</dd></div>
@@ -996,7 +1021,7 @@ for a in ARTICLES:
     a["minutes"] = max(3, round(len(re.sub(r"<[^>]+>", " ", a["body"]).split()) / 200))
 for a in ARTICLES:
     path = f"/blog/{a['slug']}/"
-    meta = f'<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur · Responsable des annonces</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
+    meta = f'<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, co-fondateur</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
     body = "\n\n".join([
         top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta, photo=COVER[a["slug"]], dated=False).replace('class="pg-photo frame"', 'class="pg-photo frame is-color"', 1),
         f"""<section class="sheet" data-tone="light">
@@ -1017,13 +1042,13 @@ for a in ARTICLES:
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "BlogPosting", "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": "@@MAJ@@", "inLanguage": "fr-FR",
                "mainEntityOfPage": SITE + path, "image": [img(COVER[a["slug"]])[0]],
-               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, responsable des annonces", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Co-fondateur", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               bc_ld(("Blog", "/blog/"), (a["short"], path))] + ([faq_ld(a["faq"])] if a.get("faq") else [])})
     paths.append(path)
 
 # ——— Guides : comment trouver des chantiers, fiche Habitatpresto Pro (_build/contenu.py) ———
-AUTHOR_META = '<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur · Responsable des annonces</span></p>'
+AUTHOR_META = '<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, co-fondateur</span></p>'
 
 
 def _gd_slug(s):
@@ -1062,7 +1087,7 @@ def guide(G, kick, crumb_items, faq_title, links):
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Article", "headline": fr(G["h1"]), "description": fr(G["desc"]), "datePublished": "2026-11-18", "dateModified": "@@MAJ@@",
                "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"],
-               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, responsable des annonces", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Co-fondateur", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               faq_ld(G["faq"]), bc_ld(*crumb_items)]})
     paths.append(G["path"])
@@ -1107,8 +1132,8 @@ def pillar_page(G):
                 f'<div><dt>Dépensé</dt><dd>{d}</dd></div><div><dt>Demandes reçues</dt><dd>{n}</dd></div>'
                 f'<div><dt>Prix d\'une demande</dt><dd>{per}</dd></div><div><dt>Chantiers signés</dt><dd>{s}</dd></div>'
                 f'<div class="is-rate"><dt>Demandes signées</dt><dd>{rate}</dd></div></dl>'
-                f'<p class="tc-slip-tot"><span>Coût par chantier signé</span><b>{res}</b></p>'
-                + ('<p class="tc-stamp">Le moins cher au final</p>' if win else "") + "</article>")
+                f'<p class="tc-slip-tot"><span>Coût par chantier signé</span><b>{res}</b>'
+                + ('<small class="tc-win">Le moins cher au final</small>' if win else "") + "</p></article>")
     trades = " · ".join(f'<a class="link" href="/metiers/{sl}/">{lb}</a>' for lb, sl in [("Couverture", "couverture"), ("Façade", "facade"), ("Menuiserie", "menuiserie-exterieure"), ("Charpente", "charpente"), ("Isolation", "isolation")])
     faq_items = [G["faq"][i] for i in (0, 1, 3, 5)]
     body = "\n\n".join([
@@ -1168,7 +1193,7 @@ def pillar_page(G):
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Article", "headline": fr(G["h1"]), "description": fr(G["desc"]), "datePublished": "2026-11-18", "dateModified": "@@MAJ@@",
                "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"],
-               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, responsable des annonces", "url": SITE + "/qui-sommes-nous/#charles"},
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Co-fondateur", "url": SITE + "/qui-sommes-nous/#charles"},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               faq_ld(faq_items), bc_ld(("Trouver des chantiers", G["path"]))]})
     paths.append(G["path"])
