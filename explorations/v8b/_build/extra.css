@@ -527,3 +527,8 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
   .ta-head,.ta-body{grid-column:1 / -1}
   .ta-people img{width:60px;height:60px}
 }
+
+/* ——— Clavier : lien « Aller au contenu », visible seulement quand il reçoit le focus ——— */
+.skip{position:fixed;left:12px;top:-80px;z-index:1000;padding:.75rem 1rem;border-radius:var(--r);background:var(--ink);color:var(--bg);font-size:.95rem;text-decoration:none;transition:top .2s}
+.skip:focus{top:12px;outline:2px solid var(--accent);outline-offset:2px}
+main:focus{outline:none}

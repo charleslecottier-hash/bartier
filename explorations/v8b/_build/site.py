@@ -1212,6 +1212,9 @@ for f in PAGES_OUT:
     doc = IMG.localize(doc, SITE).replace('<link rel="preconnect" href="https://images.unsplash.com">\n', "")
     doc = re.sub(r"<img [^>]*>", real_dims, doc)
     doc = typo(doc)
+    if "<main>" in doc and 'class="skip"' not in doc:  # clavier : aller directement au contenu
+        doc = doc.replace("<main>", '<main id="contenu" tabindex="-1">', 1)
+        doc = re.sub(r"(<body[^>]*>)", r'\1\n<a class="skip" href="#contenu">Aller au contenu</a>', doc, count=1)
     _parts = doc.split('<div class="fq-list">')  # Microsoft : ne pas cacher les réponses importantes
     doc = _parts[0] + "".join('<div class="fq-list">' + s.replace('<details class="fq">', '<details class="fq" open>', 2) for s in _parts[1:])
     _rel = f.relative_to(ROOT)
