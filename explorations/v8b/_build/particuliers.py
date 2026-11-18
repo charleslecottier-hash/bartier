@@ -56,6 +56,7 @@ BRIEF = [
     ("Le service", "Bartier &amp; Co met en relation les propriétaires avec un artisan du bâtiment de leur secteur pour des travaux de toiture, façade, fenêtres, charpente ou isolation."),
     ("Le prix pour vous", "Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier &amp; Co."),
     ("Le délai", "Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante."),
+    ("Le rendez-vous", "Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite."),
     ("Combien d’artisans", "Un seul par métier et par secteur. Vos coordonnées ne sont jamais revendues."),
     ("La zone", "Partout en France, avec des artisans locaux."),
 ]
@@ -83,6 +84,10 @@ FAQ = [
      "Non. L’artisan vient voir le chantier et vous remet son devis sans frais pour vous. Vous restez libre de ne pas donner suite."),
     ("Combien d’entreprises vont m’appeler ?",
      "Une seule : nous d’abord, pour vérifier votre projet, puis l’artisan retenu. Vos coordonnées ne sont ni revendues ni envoyées à plusieurs entreprises."),
+    ("Et si le devis ne me convient pas ?",
+     "Vous ne signez rien. Vous restez libre de refuser le devis ou de le comparer, sans frais et sans avoir à vous justifier."),
+    ("Pourquoi passer par vous plutôt que chercher seul ?",
+     "Pour gagner du temps et éviter les relances. Un seul appel, un artisan local disponible, et la date de visite fixée pendant l’appel. Vous ne racontez votre projet qu’une fois."),
     ("Comment trouver un bon couvreur près de chez moi ?",
      "Cherchez un artisan local, immatriculé, assuré en décennale, qui se déplace pour voir le toit avant de chiffrer. Décrivez vos travaux ici : nous vous présentons le couvreur partenaire de votre secteur."),
     ("Combien coûte une réfection de toiture ?",
@@ -120,8 +125,9 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     tiles = "".join(f'<button type="button" class="pf-tile" data-v="{t[0]}">{t[1]}</button>' for t in TRADES) + \
         '<button type="button" class="pf-tile" data-v="autre">Autre projet</button>'
     form = f"""<div class="pf-card" id="projet">
+      <p class="pf-live" aria-live="polite"><i></i><span class="pf-live-t">Rappel en moins de 5 minutes, en semaine</span></p>
       <form class="pf-form" novalidate aria-label="Demande de devis de travaux">
-        <div class="pf-top"><p class="pf-count">Étape <b class="pf-n">1</b> sur 5</p><button type="button" class="pf-back" hidden>← Retour</button></div>
+        <div class="pf-top"><p class="pf-count">Étape <b class="pf-n">1</b> sur 5 · 1 minute</p><button type="button" class="pf-back" hidden>← Retour</button></div>
         <p class="pf-bar"><i></i></p>
         <fieldset class="pf-step is-on" data-step="1"><legend>Quels travaux&nbsp;?</legend><div class="pf-grid">{tiles}</div><input type="hidden" name="travaux"></fieldset>
         <fieldset class="pf-step" data-step="2"><legend>Précisez votre besoin</legend><div class="pf-list pf-need"></div><input type="hidden" name="besoin"></fieldset>
@@ -132,7 +138,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
           <button type="button" class="pf-opt" data-v="Propriétaire occupant">Propriétaire, j’y habite</button><button type="button" class="pf-opt" data-v="Propriétaire bailleur">Propriétaire, je loue le logement</button><button type="button" class="pf-opt" data-v="Locataire">Locataire</button>
         </div><input type="hidden" name="statut">
           <p class="pf-note pf-tenant" hidden>Les travaux sur le toit, la façade ou les fenêtres se décident avec le propriétaire. Transmettez-lui cette page&nbsp;: la demande lui prend une minute.</p></fieldset>
-        <fieldset class="pf-step" data-step="5"><legend>Où et comment vous joindre&nbsp;?</legend>
+        <fieldset class="pf-step" data-step="5"><legend>Dernière étape&nbsp;: où vous joindre&nbsp;?</legend>
           <div class="pf-fields">
             <label class="pf-f"><span>Code postal du chantier</span><input name="code_postal" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="Ex. 80000" required></label>
             <label class="pf-f"><span>Prénom</span><input name="prenom" autocomplete="given-name" placeholder="Votre prénom" required></label>
@@ -142,13 +148,14 @@ def build(img, phone, phone_txt, crumbs, parts=False):
           <input class="pf-hp" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
           <p class="pf-err" role="alert" hidden></p>
           <button type="submit" class="btn pf-submit"><span>Être rappelé gratuitement</span>{tick()}</button>
-          <p class="pf-small">Gratuit, sans engagement. Vos coordonnées ne sont jamais revendues.</p>
+          <p class="pf-small">Gratuit, sans engagement. Votre numéro n’est transmis qu’à l’artisan retenu, jamais revendu.</p>
         </fieldset>
         <div class="pf-done" hidden>
           <span class="pf-ok">{check()}</span>
           <p class="pf-done-h">C’est noté<span class="pf-name"></span>.</p>
           <p class="pf-when"></p>
-          <ol class="pf-next"><li>Nous vérifions votre projet avec vous au téléphone.</li><li>Nous vous présentons l’artisan de votre secteur.</li><li>Il vient voir le chantier et vous remet son devis.</li></ol>
+          <p class="pf-keep">Gardez votre téléphone à portée de main.</p>
+          <ol class="pf-next"><li>Nous vérifions votre projet avec vous.</li><li>Pendant l’appel, nous fixons la date de visite avec l’artisan de votre secteur.</li><li>Vous recevez un rappel par SMS avant la visite.</li><li>L’artisan chiffre chez vous, sans frais.</li></ol>
           <a class="pf-wa" href="https://wa.me/33781018936" target="_blank" rel="noopener" data-wa="particulier">Envoyer aussi ma demande sur WhatsApp</a>
         </div>
       </form>
@@ -159,7 +166,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <div class="pf-intro">
       {crumbs}
       <h1 class="pf-h1"><span class="pf-kw">Devis toiture, façade, fenêtres, isolation</span><span class="pf-big">Pas cinq <span class="pf-who">artisans</span>.<br>Un seul. Le bon.</span></h1>
-      <p class="lead">Décrivez vos travaux en 1 minute.<br>On vous rappelle en 5.</p>
+      <p class="lead">Décrivez vos travaux en 1 minute.<br>On vous rappelle en 5, et la visite est fixée.</p>
       {trust("d-only")}
       <p class="pf-call d-only">Pressé&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p>
     </div>
@@ -175,6 +182,17 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <dl class="pf-dl">{brief}</dl>
     <p class="pf-upd">Mis à jour le <time datetime="{UPDATED}">{UPDATED_TXT}</time></p>
   </div>
+</section>"""
+
+    promise = f"""<section class="sheet pf-promise" id="promesse" data-tone="dark">
+  <div class="grid sp-head"><h2 data-split>Fini les artisans qui ne rappellent pas.</h2><p>Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.</p></div>
+  <ul class="pf-proms">
+    <li><b>5&nbsp;min</b><span>pour vous rappeler, du lundi au vendredi de 8 h à 19 h</span></li>
+    <li><b>1&nbsp;appel</b><span>et la date de visite est fixée avec l’artisan</span></li>
+    <li><b>1&nbsp;SMS</b><span>pour vous rappeler le rendez-vous avant la visite</span></li>
+    <li><b>0&nbsp;€</b><span>pour vous&nbsp;: visite et devis offerts, sans engagement</span></li>
+  </ul>
+  <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Fixer ma visite</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
 </section>"""
 
     def band(text, btn, sub=""):
@@ -194,12 +212,14 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   {band("Vos travaux ne sont pas dans la liste&nbsp;?", "Décrire mes travaux", "Décrivez-les quand même. On trouve l’artisan.")}
 </section>"""
 
-    steps = f"""<section class="sheet" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Votre devis en 3 étapes</h2><p>1 minute pour vous. Le reste, on s’en occupe.</p></div>
-  <ol class="sp-cols">
-    <li><span class="sp-n">01</span><h3>Décrivez vos travaux</h3><p>5 questions. 1 minute. Aucun compte à créer.</p></li>
-    <li><span class="sp-n">02</span><h3>On vous rappelle</h3><p>En moins de 5 minutes, du lundi au vendredi de 8 h à 19 h.</p></li>
-    <li><span class="sp-n">03</span><h3>L’artisan chiffre chez vous</h3><p>Visite et devis offerts. Vous décidez, sans engagement.</p></li>
+    steps = f"""<section class="sheet" id="etapes" data-tone="paper">
+  <div class="grid sp-head"><h2 data-split>Votre devis, étape par étape</h2><p>1 minute pour vous. Le reste, on s’en occupe.</p></div>
+  <ol class="pf-time">
+    <li><span class="pf-t">Maintenant</span><h3>Décrivez vos travaux</h3><p>5 questions, 1 minute. Aucun compte à créer.</p></li>
+    <li><span class="pf-t">Dans 5 minutes</span><h3>On vous rappelle</h3><p>Une vraie personne vérifie votre besoin, en semaine de 8 h à 19 h.</p></li>
+    <li><span class="pf-t">Pendant l’appel</span><h3>La visite est fixée</h3><p>Directement dans l’agenda de l’artisan de votre secteur.</p></li>
+    <li><span class="pf-t">Avant la visite</span><h3>Rappel par SMS</h3><p>Pour ne pas oublier le rendez-vous.</p></li>
+    <li><span class="pf-t">Le jour J</span><h3>L’artisan chiffre chez vous</h3><p>Visite et devis offerts. Vous décidez, sans engagement.</p></li>
   </ol>
   {band("Prêt&nbsp;? C’est gratuit.", "Commencer", "1 minute, 5 questions.")}
 </section>"""
@@ -210,6 +230,8 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <div class="sp-row is-head" role="row"><span role="columnheader"></span><span role="columnheader">Site de devis classique</span><span role="columnheader">Bartier &amp; Co</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Qui vous appelle</span><span role="cell">Souvent plusieurs entreprises</span><span role="cell">Nous, puis un seul artisan</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Avant la visite</span><span role="cell">Vous répétez votre projet</span><span role="cell">Votre besoin est déjà vérifié</span></div>
+    <div class="sp-row" role="row"><span role="rowheader">Le rendez-vous</span><span role="cell">Vous relancez les artisans</span><span role="cell">Fixé pendant notre appel</span></div>
+    <div class="sp-row" role="row"><span role="rowheader">Avant le jour J</span><span role="cell">Rien</span><span role="cell">Rappel par SMS</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Vos coordonnées</span><span role="cell">Partagées entre entreprises</span><span role="cell">Jamais revendues</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le prix pour vous</span><span role="cell">Gratuit</span><span role="cell">Gratuit</span></div>
   </div>
@@ -250,14 +272,14 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     end = f"""<section class="sheet pf-end" data-tone="accent">
   <div class="grid pf-end-grid">
     <h2 data-split>Votre maison mérite le bon artisan.</h2>
-    <div><p>1 minute pour décrire vos travaux. 1 appel pour tout vérifier. 1 artisan de votre secteur.</p><a class="btn pf-btn-inv" href="#projet"><span>Décrire mes travaux</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></div>
+    <div><p class="pf-season"></p><p>1 minute pour décrire vos travaux. 1 appel pour fixer la visite. 1 artisan de votre secteur.</p><a class="btn pf-btn-inv" href="#projet"><span>Décrire mes travaux</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></div>
   </div>
 </section>
 <a class="pf-sticky" href="#projet">Décrire mes travaux<span>1 min · gratuit</span></a>"""
 
     if parts:
-        return dict(form=form, steps=steps, compare=compare, leak=leak, serious=serious, end=end)
-    return "\n\n".join([hero, trades, steps, compare, leak, price, serious, brief, faq, end])
+        return dict(form=form, promise=promise, steps=steps, compare=compare, leak=leak, serious=serious, end=end)
+    return "\n\n".join([hero, promise, trades, steps, compare, leak, price, serious, brief, faq, end])
 
 
 def schema(SITE, faq_ld, bc_ld):
@@ -355,6 +377,24 @@ CSS = """<style id="pf-css">
 .pf-end h2{grid-column:1 / 3;font:300 clamp(2.2rem,4.4vw,4rem)/1 var(--f-display);letter-spacing:-.04em}
 .pf-end-grid > div{grid-column:3 / 5;display:flex;flex-direction:column;align-items:flex-start;gap:1.2rem}
 .pf-btn-inv{background:#fff;color:var(--accent)}
+.pf-live{display:flex;align-items:center;gap:8px;margin:-4px 0 14px;font-size:.85rem;color:var(--muted)}
+.pf-live i{width:9px;height:9px;border-radius:50%;background:#b8bec6;flex:none}
+.pf-live.is-on{color:#137333}.pf-live.is-on i{background:#1e8e3e;box-shadow:0 0 0 0 rgba(30,142,62,.5);animation:pfPulse 2s infinite}
+@keyframes pfPulse{70%{box-shadow:0 0 0 7px rgba(30,142,62,0)}100%{box-shadow:0 0 0 0 rgba(30,142,62,0)}}
+.pf-keep{margin-top:6px;font-weight:500}
+.pf-proms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin:0;padding:0 var(--cell);list-style:none}
+.pf-proms li{display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:1px solid rgba(255,255,255,.25)}
+.pf-proms b{font:300 clamp(2.6rem,4.6vw,4.2rem)/1 var(--f-display);letter-spacing:-.04em;color:#fff}
+.pf-proms span{font-size:.95rem;line-height:1.45;color:rgba(255,255,255,.75)}
+.pf-promise .pf-mid .link{color:#fff}
+.pf-time{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;margin:0;padding:0 var(--cell);list-style:none}
+.pf-time li{position:relative;padding-top:22px;border-top:2px solid var(--accent)}
+.pf-time li::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--paper)}
+.pf-t{display:block;margin-bottom:8px;font-size:.8rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.04em}
+.pf-time h3{margin-bottom:6px;font:400 1.2rem/1.15 var(--f-display)}
+.pf-time p{font-size:.92rem;line-height:1.45;color:var(--muted)}
+.pf-season{font-weight:500}
+.pf-season:empty{display:none}
 .pf-end-call{color:#fff}
 .pf-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;margin:clamp(32px,4vw,56px) var(--cell) 0;padding:clamp(18px,2vw,26px) clamp(18px,2.4vw,32px);border:1px solid var(--accent);border-radius:var(--r);background:color-mix(in oklab,var(--accent) 5%,var(--bg))}
 .pf-band p{display:flex;flex-direction:column;gap:4px;font:400 clamp(1.2rem,1.8vw,1.55rem)/1.2 var(--f-display);letter-spacing:-.015em;color:var(--ink)}
@@ -363,7 +403,7 @@ CSS = """<style id="pf-css">
 .pf-sticky{position:fixed;left:14px;right:78px;bottom:14px;z-index:89;display:none;flex-direction:column;justify-content:center;min-height:52px;padding:6px 18px;border-radius:var(--r);background:var(--accent);color:#fff;font-weight:500;text-decoration:none;box-shadow:0 14px 30px -12px rgba(45,91,227,.6);transform:translateY(140%);transition:transform .35s var(--ease)}
 .pf-sticky span{font-size:.75rem;font-weight:400;opacity:.85}
 .pf-sticky.is-on{transform:none}
-@media (max-width:1024px){.pf-trades,.pf-prices,.pf-howto,.pf-checks{grid-template-columns:repeat(2,minmax(0,1fr))}.pf-dl{grid-column:1 / -1}.pf-brief h2{grid-column:1 / -1}}
+@media (max-width:1024px){.pf-trades,.pf-prices,.pf-howto,.pf-checks,.pf-proms{grid-template-columns:repeat(2,minmax(0,1fr))}.pf-time{grid-template-columns:repeat(3,minmax(0,1fr))}.pf-dl{grid-column:1 / -1}.pf-brief h2{grid-column:1 / -1}}
 @media (max-width:760px){
   .m-only{display:block}.d-only{display:none}
   .pf-intro,.pf-card,.pf-mtrust,.pf-end h2,.pf-end-grid > div{grid-column:1 / -1}
@@ -381,6 +421,9 @@ CSS = """<style id="pf-css">
   .pf-prices,.pf-howto,.pf-checks{grid-template-columns:1fr}
   .pf-sticky{display:flex}
   .pf-band{flex-direction:column;align-items:stretch}.pf-band .btn{justify-content:center}
+  .pf-proms{grid-template-columns:1fr 1fr;gap:22px 14px}.pf-proms b{font-size:2.6rem}
+  .pf-time{grid-template-columns:1fr;gap:0;border-left:2px solid var(--accent);margin-left:calc(var(--cell) + 5px);padding-left:20px}
+  .pf-time li{border-top:0;padding:0 0 22px}.pf-time li::before{left:-27px;top:3px}
 }
 </style>"""
 
@@ -409,6 +452,10 @@ back.addEventListener("click",function(){if(cur>0)show(cur-1)});
 document.querySelectorAll(".pf-pick").forEach(function(a){a.addEventListener("click",function(){pickTrade(a.dataset.v,true);if(a.dataset.need==="fuite")pickLeak()})});
 var q=new URLSearchParams(location.search),t=q.get("travaux")||f.dataset.preset;
 if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,true);if(q.get("besoin")==="fuite")pickLeak()}
+(function(){var l=document.querySelector(".pf-live"),t=l&&l.querySelector(".pf-live-t"),w=nextOpen();
+  if(l){if(!w){l.classList.add("is-on");t.textContent="Disponibles maintenant · rappel en moins de 5 min"}else t.textContent="Rappel "+w+" · demandes enregistrées 24 h/24"}
+  var m=new Date().getMonth(),se=document.querySelector(".pf-season"),S=["Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Printemps : la saison des rénovations. Les agendas se remplissent vite.","Printemps : la saison des rénovations. Les agendas se remplissent vite.","Printemps : la saison des rénovations. Les agendas se remplissent vite.","Été : réservez maintenant pour une visite avant la rentrée.","Été : réservez maintenant pour une visite avant la rentrée.","Été : réservez maintenant pour une visite avant la rentrée.","Automne : faites vérifier votre toit avant l’hiver.","Automne : faites vérifier votre toit avant l’hiver.","Automne : faites vérifier votre toit avant l’hiver.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité."];
+  if(se)se.textContent=S[m]})();
 function nextOpen(){var d=new Date(),day=d.getDay(),h=d.getHours()+d.getMinutes()/60;
   if(day>=1&&day<=5&&h>=8&&h<19)return "";
   if(day>=1&&day<=4&&h>=19)return "demain dès 8 h";if(day>=1&&day<=5&&h<8)return "ce matin dès 8 h";return "lundi dès 8 h"}
@@ -539,7 +586,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     <div class="pf-intro">
       {crumbs}
       <h1 class="pf-h1"><span class="pf-kw">{P["kw"]}</span><span class="pf-big">Pas cinq <span class="pf-who">{t[2]}</span>.<br>Un seul. Le bon.</span></h1>
-      <p class="lead">Décrivez vos travaux en 1 minute.<br>On vous rappelle en 5.</p>
+      <p class="lead">Décrivez vos travaux en 1 minute.<br>On vous rappelle en 5, et la visite est fixée.</p>
       {trust("d-only")}
     </div>
     {form}
@@ -581,7 +628,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
   <div class="grid sp-head"><h2 data-split>Autres travaux</h2><p><a class="link" href="/devis-travaux/">Tous les devis de travaux</a></p></div>
   <ul class="pf-olist">{others}</ul>
 </section>"""
-    seq = [hero, needs, price] + ([blocks["leak"]] if key == "toiture" else []) + [blocks["steps"], blocks["compare"], blocks["serious"], brief, faq, others, blocks["end"]]
+    seq = [hero, blocks["promise"], needs, price] + ([blocks["leak"]] if key == "toiture" else []) + [blocks["steps"], blocks["compare"], blocks["serious"], brief, faq, others, blocks["end"]]
     return "\n\n".join(seq)
 
 
@@ -599,7 +646,7 @@ def trade_faq(key):
     out += P["faq"]
     if key == "toiture":
         out.append(("J’ai une fuite de toiture, que faire tout de suite ?", general["J’ai une fuite de toiture, que faire tout de suite ?"]))
-    out += [(q, general[q]) for q in ["Est-ce vraiment gratuit ?", "La visite et le devis de l’artisan sont-ils payants ?", "Combien d’entreprises vont m’appeler ?", "Où intervenez-vous ?"]]
+    out += [(q, general[q]) for q in ["Est-ce vraiment gratuit ?", "La visite et le devis de l’artisan sont-ils payants ?", "Combien d’entreprises vont m’appeler ?", "Et si le devis ne me convient pas ?", "Où intervenez-vous ?"]]
     return out
 
 
