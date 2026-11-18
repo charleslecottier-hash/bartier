@@ -504,3 +504,5 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 /* Page Métiers : titre-phrase de la galerie, sur toute la largeur */
 #gallery .gl-head h2{grid-column:1 / -1;max-width:30ch}
 #par-metier .sp-head h2{grid-column:1 / -1;max-width:30ch}
+/* En-têtes avec maquette de téléphone (Meta Ads, Google Ads) : le texte en haut, le bouton visible sans défiler */
+@media (min-width:761px){.pg-grid:has(.mk){align-items:start}}
