@@ -150,7 +150,7 @@ WA_HTML = f"""<div class="wa" id="wa">
     </div>
   </div>
   <div class="wa-tip" role="status"><button class="wa-tip-go" type="button"><b>Une question&nbsp;?</b> Martin vous répond sur WhatsApp.</button><button class="wa-tip-x" type="button" aria-label="Fermer">×</button></div>
-  <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, Head of Sales</span></b></button>
+  <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel" aria-label="Écrire à Martin sur WhatsApp ou l’appeler"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, Head of Sales</span></b></button>
 </div>
 <script>
 (function(){{var w=document.getElementById('wa');if(!w)return;var b=w.querySelector('.wa-fab');
@@ -622,6 +622,7 @@ pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', l
         ("Combien vont coûter mes travaux&nbsp;?", "Bonjour, j'ai un projet de travaux ([toiture, façade, fenêtres...]) à [ville]. Combien cela peut-il coûter ?"),
         ("Un artisan peut-il passer cette semaine&nbsp;?", "Bonjour, j'ai des travaux à faire à [ville]. Un artisan peut-il passer cette semaine ?"),
         ("J’ai une fuite, que faire&nbsp;?", "Bonjour, j'ai une fuite de toiture à [ville]. Que dois-je faire ?")]) + "\n      ", pf_tail, count=1)
+pf_tail = pf_tail.replace('href="#contact"', 'href="/#contact"')
 pf_schema = PF.schema(SITE, faq_ld, bc_ld)
 def pf_write(path, title, desc, body, schema):
     doc = head(title, desc, path, schema) + PF.CSS + PF.CSS_TRADE + "\n" + pf_top + "\n" + fr(body) + "\n" + pf_tail
@@ -719,6 +720,7 @@ nf_body = """<section class="sheet pg-top" data-tone="light">
   </div>
 </section>"""
 nf = head("Page introuvable | Bartier & Co", "Cette page n'existe pas.", "/404.html") + absolutize(BODY_OPEN) + "\n" + fr(nf_body) + "\n" + absolutize(TAIL)
+nf = nf.replace('href="#contact"', 'href="/#contact"')
 nf = re.sub(r'<link rel="canonical"[^>]*>\n?', "", nf)
 (ROOT / "404.html").write_text(nf, encoding="utf-8")
 

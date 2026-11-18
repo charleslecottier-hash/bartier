@@ -342,7 +342,7 @@ ARTICLES = [
 <li>Que se passe-t-il si le propriétaire n'est pas joignable ou n'est pas sérieux ?</li>
 <li>Y a-t-il une durée d'engagement minimale ?</li>
 </ol>
-<p>Nos réponses sont sur la page <a href="/#engagements">Engagements</a>.</p>
+<p>Nos réponses sont sur la page <a href="/#principles">Engagements</a>.</p>
 """,
     },
     {

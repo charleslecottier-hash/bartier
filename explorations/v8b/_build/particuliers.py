@@ -149,7 +149,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
           <p class="pf-done-h">C’est noté<span class="pf-name"></span>.</p>
           <p class="pf-when"></p>
           <ol class="pf-next"><li>Nous vérifions votre projet avec vous au téléphone.</li><li>Nous vous présentons l’artisan de votre secteur.</li><li>Il vient voir le chantier et vous remet son devis.</li></ol>
-          <a class="pf-wa" target="_blank" rel="noopener" data-wa="particulier">Envoyer aussi ma demande sur WhatsApp</a>
+          <a class="pf-wa" href="https://wa.me/33781018936" target="_blank" rel="noopener" data-wa="particulier">Envoyer aussi ma demande sur WhatsApp</a>
         </div>
       </form>
     </div>"""
