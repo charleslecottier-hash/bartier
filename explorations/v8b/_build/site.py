@@ -42,7 +42,7 @@ def esc(t):
 home = (ROOT / "_build" / "home.src.html").read_text(encoding="utf-8")
 
 NAV = [("Métiers", "/metiers/"), ("Google Ads", "/google-ads/"), ("Meta Ads", "/meta-ads/"),
-       ("Qui sommes-nous", "/qui-sommes-nous/"), ("Blog", "/blog/"), ("Questions", "/#faq"), ("Particuliers", "/devis-travaux/")]
+       ("Qui sommes-nous", "/qui-sommes-nous/"), ("Blog", "/blog/"), ("Questions", "/questions/"), ("Particuliers", "/devis-travaux/")]
 nav_html = "\n".join(f'      <a class="link" href="{h}">{t}</a>' for t, h in NAV)
 menu_html = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in NAV) + '\n    <a href="#contact">Contact</a>'
 home = re.sub(r'(<nav class="hdr-nav" aria-label="Menu">)[\s\S]*?(</nav>)', r"\1\n" + nav_html + r"\n    \2", home, count=1)
@@ -225,9 +225,7 @@ _ld = {"@context": "https://schema.org", "@graph": [ORG, {"@type": "WebSite", "@
 # Questions-réponses visibles de l'accueil, reprises telles quelles
 _txt = lambda s: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", s))).replace("'", "’").strip()
 _qa = re.findall(r'<details class="fq"><summary><span>(.*?)</span>.*?<div class="fq-a">(.*?)</div>\s*</details>', home, flags=re.S)
-if _qa:
-    _ld["@graph"].append({"@type": "FAQPage", "@id": SITE + "/#faq-page", "mainEntity": [
-        {"@type": "Question", "name": _txt(q), "acceptedAnswer": {"@type": "Answer", "text": _txt(a)}} for q, a in _qa]})
+# Les questions de l'accueil sont aussi sur /questions/ : le balisage FAQPage n'y figure qu'une fois, sur cette page-là.
 home = home.replace("</head>", (
     f'<link rel="canonical" href="{SITE}/">\n'
     f'<meta property="og:type" content="website">\n<meta property="og:locale" content="fr_FR">\n<meta property="og:site_name" content="Bartier &amp; Co">\n'
@@ -446,12 +444,21 @@ def head(title, desc, path, schema=None):
     return h + f'<link rel="canonical" href="{SITE}{path}">\n' + og + ld + EXTRA_CSS
 
 
+def with_form(body, contact, after=2):
+    """Le formulaire vient après les deux premières sections : le bouton « Vérifier mon secteur » ne fait plus traverser toute la page."""
+    ends = [m.end() for m in re.finditer(r"</section>", body)]
+    if len(ends) <= after:
+        return body + "\n\n" + contact
+    i = ends[after - 1]
+    return body[:i] + "\n\n" + contact + body[i:]
+
+
 def write(path, title, desc, body, nav=None, schema=None, metier=None):
     top = absolutize(BODY_OPEN)
     if nav:
         top = top.replace(f'class="link" href="{nav}"', f'class="link" href="{nav}" aria-current="page"', 1)
     contact = CONTACT.replace(f'name="metier" value="{metier}"', f'name="metier" value="{metier}" checked', 1) if metier else CONTACT
-    doc = head(title, desc, path, schema) + top + "\n" + fr(body) + "\n\n" + contact + "\n" + absolutize(TAIL)
+    doc = head(title, desc, path, schema) + top + "\n" + with_form(fr(body), contact) + "\n" + absolutize(TAIL)
     out = ROOT / path.strip("/") / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, encoding="utf-8")
@@ -540,11 +547,12 @@ def split(title, intro, items, tone="light", cls=""):
 </section>"""
 
 
-def faq(items, title="Vos questions, nos réponses"):
+def faq(items, title="Vos questions, nos réponses", aside='Une autre question ? <a class="link" href="#contact">Écrivez-nous</a>', sid=None):
     rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in items)
-    return f"""<section class="faq sheet" data-kind="faq" data-tone="paper">
+    sid_attr = f' id="{sid}"' if sid else ""
+    return f"""<section class="faq sheet"{sid_attr} data-kind="faq" data-tone="paper">
   <div class="grid fq-grid">
-    <div class="fq-head"><h2 data-split>{title}</h2><p>Une autre question ? <a class="link" href="#contact">Écrivez-nous</a></p></div>
+    <div class="fq-head"><h2 data-split>{title}</h2><p>{aside}</p></div>
     <div class="fq-list">
 {rows}
     </div>
@@ -854,6 +862,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
                 ("Des engagements écrits", "Exclusivité, un artisan par secteur, rappel en 5 minutes, sans engagement de durée."),
                 ("Des chiffres vérifiables", "Le budget est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
                "Comment nous travaillons", "", tone="paper"),
+          (ROOT / "_build" / "demarrage.html").read_text(encoding="utf-8").split("-->", 1)[1].strip(),
           re.sub(r'<figure class="person-photo[\s\S]*?</figure>\s*', "", TEAM.replace('id="team"', 'id="equipe"').replace('data-tone="paper"', 'data-tone="dark"', 1)),  # portraits déjà en tête de page
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
@@ -878,6 +887,19 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
           *[{"@type": "Person", "@id": f"{SITE}/qui-sommes-nous/#{k}", "name": n, "jobTitle": j, "image": portrait(k), "url": f"{SITE}/qui-sommes-nous/#{k}", "worksFor": {"@id": SITE + "/#org"}} for k, n, j in FOUNDERS],
           bc_ld(("Qui sommes-nous", "/qui-sommes-nous/"))]})
 paths.append("/qui-sommes-nous/")
+
+# ——— Questions : toutes les questions des artisans, par thème ———
+import questions as QS
+_qs_all = [qa for g in QS.GROUPS for qa in g[3]]
+write("/questions/", "Questions fréquentes des artisans | Bartier & Co",
+      "Prix, engagement, publicité, exclusivité, rappel en 5 minutes, cadre légal : les réponses aux questions des artisans du bâtiment.",
+      "\n\n".join([
+          top("Questions", "Vos questions, nos réponses", "Ce que les artisans nous demandent avant de commencer : la méthode, le prix, les engagements et le cadre légal.", crumbs(("Questions", "/questions/"))),
+          *[faq(items, title=title, aside=intro, sid=sid) for sid, title, intro, items in QS.GROUPS],
+          more("Aller plus loin", "Le lexique", "/lexique/", [("Comment trouver des chantiers", "/trouver-des-chantiers/"), ("Google Ads pour artisans", "/google-ads/"), ("Meta Ads pour artisans", "/meta-ads/")]),
+      ]), nav="/questions/",
+      schema={"@context": "https://schema.org", "@graph": [bc_ld(("Questions", "/questions/")), dict(faq_ld(_qs_all), **{"@id": SITE + "/questions/#faq-page"})]})
+paths.append("/questions/")
 
 # ——— Blog ———
 COVER = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Tuiles de toiture", "google-ads-ou-meta-ads-artisan": "Une personne consulte", "relance-devis-artisan": "Un artisan prépare"}
@@ -1080,7 +1102,7 @@ lx_body = "\n\n".join([
     </div>
   </div>
 </section>""",
-    more("Passer à l'action", "Toutes les questions fréquentes", "/#faq", [("Vous êtes artisan : vérifier votre secteur", "/#contact"), ("Vous êtes propriétaire : décrire vos travaux", "/devis-travaux/")]),
+    more("Passer à l'action", "Toutes les questions fréquentes", "/questions/", [("Vous êtes artisan : vérifier votre secteur", "/#contact"), ("Vous êtes propriétaire : décrire vos travaux", "/devis-travaux/")]),
 ])
 _lx_clean = lambda s: re.sub("<[^>]+>", "", fr(s))
 write_plain("/lexique/", "Lexique des chantiers et des travaux | Bartier & Co",

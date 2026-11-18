@@ -582,6 +582,7 @@ art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['
 - [Devis travaux, pour les particuliers]({SITE}/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de 5 minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
 - [Comment trouver des chantiers]({SITE}/trouver-des-chantiers/) : les 8 canaux comparés (bouche-à-oreille, fiche Google, plateformes de devis, apporteurs d'affaires, sous-traitance, annonces locales, flyers, réseaux), avec le calcul du coût par chantier signé.
 - [Lexique]({SITE}/lexique/) : définitions courtes (demande de devis, rendez-vous qualifié, coût par chantier signé, taux de signature, garanties, déclaration préalable, RGE, démarchage en 2026), avec leurs sources officielles.
+- [Questions fréquentes]({SITE}/questions/) : prix, engagement, publicité, exclusivité, rappel des demandes, cadre légal, métiers.
 - [Contenu complet du site](https://bartierandco.com/llms-full.txt) : le texte de toutes les pages en un seul fichier.
 
 ## Questions fréquentes

@@ -108,7 +108,7 @@ PILLAR = dict(
 
 <h2>Notre approche, et ses limites</h2>
 <p>Bartier & Co combine deux canaux de cette liste, les annonces locales sur Google et sur Facebook et Instagram, avec l'étape où se perdent le plus de chantiers : le rappel. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda. Un seul artisan par métier et par secteur.</p>
-<p>Ce n'est pas un remplacement du bouche-à-oreille : c'est un flux en plus, sans durée d'engagement. <a href="/#process">Voir comment ça marche</a>.</p>
+<p>Ce n'est pas un remplacement du bouche-à-oreille : c'est un flux en plus, sans durée d'engagement. <a href="/#services">Voir comment ça marche</a>.</p>
 """,
     faq=[
         ("Quel est le meilleur site pour trouver des chantiers ?", "Aucun site n'est le meilleur pour tous les artisans. Comparez trois points : à combien d'entreprises la même demande est proposée, qui rappelle le propriétaire, et combien vous coûte un chantier signé."),
@@ -171,7 +171,7 @@ HP = dict(
 </ol>
 
 <h2>Une autre approche</h2>
-<p>Si vous préférez recevoir des visites déjà fixées, réservées à un seul artisan par métier et par secteur, sans durée d'engagement, voyez <a href="/#process">comment travaille Bartier & Co</a>. Pour comparer tous les canaux : <a href="/trouver-des-chantiers/">comment trouver des chantiers</a>.</p>
+<p>Si vous préférez recevoir des visites déjà fixées, réservées à un seul artisan par métier et par secteur, sans durée d'engagement, voyez <a href="/#services">comment travaille Bartier & Co</a>. Pour comparer tous les canaux : <a href="/trouver-des-chantiers/">comment trouver des chantiers</a>.</p>
 """,
     faq=[
         ("Combien coûte Habitatpresto Pro ?", "Le prix n'est pas publié. Selon Habitatpresto, il dépend des départements et des catégories choisis, et des frais de mise en service s'ajoutent à l'abonnement mensuel."),
