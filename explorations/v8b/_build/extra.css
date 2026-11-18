@@ -437,7 +437,7 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 }
 
 /* ——— En-tête : Google Ads et Meta Ads dans le menu ; « Questions » passe dans le menu déroulant tant que la place manque ——— */
-@media (min-width:901px) and (max-width:1799px){.hdr-nav a[href="/questions/"]{display:none}}
+@media (min-width:901px) and (max-width:1799px){.hdr-nav > a[href="/questions/"]{display:none}}
 /* Petits portables et tablettes à l'horizontale : bouton menu, comme sur téléphone */
 @media (min-width:901px) and (max-width:1279px){
   .hdr-in{grid-template-columns:1fr auto auto;border-inline:0;margin-inline:0;padding-left:calc(var(--pad) - var(--cell))}

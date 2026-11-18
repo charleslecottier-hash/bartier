@@ -44,9 +44,10 @@ home = (ROOT / "_build" / "home.src.html").read_text(encoding="utf-8")
 # Menu : le Blog est dans le pied de page
 NAV = [("Comment ça marche", "#services"), ("Métiers", "/metiers/"), ("Google Ads", "/google-ads/"), ("Meta Ads", "/meta-ads/"),
        ("Qui sommes-nous", "/qui-sommes-nous/"), ("Questions", "/questions/"), ("Particuliers", "/devis-travaux/")]
-# « Comment ça marche » ouvre une petite liste : la méthode, puis le guide pour trouver des chantiers
-NAV_SUB = {"#services": [("Notre méthode", "Annonces, rappel, visite dans votre agenda", "#services"),
-                         ("Comment trouver des chantiers", "Les 8 canaux comparés", "/trouver-des-chantiers/")],
+# « Comment ça marche » ouvre une petite liste : le guide, les questions, puis la méthode sous un filet (comme « Métiers »)
+NAV_SUB = {"#services": [("Comment trouver des chantiers", "", "/trouver-des-chantiers/"),
+                         ("Questions fréquentes", "", "/questions/"),
+                         ("Notre méthode", "", "#services")],
            # « Métiers » ouvre la liste des cinq métiers
            "/metiers/": [("Couverture et zinguerie", "", "/metiers/couverture/"),
                          ("Façade et ravalement", "", "/metiers/facade/"),
