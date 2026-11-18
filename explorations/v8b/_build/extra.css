@@ -503,3 +503,4 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 .fq-a p{color:color-mix(in oklab,var(--ink) 78%,var(--bg));font-size:clamp(.98rem,1.1vw,1.06rem);line-height:1.5}
 /* Page Métiers : titre-phrase de la galerie, sur toute la largeur */
 #gallery .gl-head h2{grid-column:1 / -1;max-width:30ch}
+#par-metier .sp-head h2{grid-column:1 / -1;max-width:30ch}
