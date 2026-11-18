@@ -7,6 +7,8 @@
 # listes numérotées, date de mise à jour visible, sources officielles en lien, données structurées alignées sur le texte.
 
 PATH = "/devis-travaux/"
+CONSENT = "J’accepte d’être rappelé par Bartier &amp; Co au sujet de ce projet et mis en relation avec un artisan partenaire."
+PRIVACY = ""
 UPDATED = "2026-11-18"
 UPDATED_TXT = "18 novembre 2026"
 TITLE = "Devis toiture, façade, fenêtres, isolation : un artisan local | Bartier & Co"
@@ -145,19 +147,28 @@ def build(img, phone, phone_txt, crumbs, parts=False):
             <label class="pf-f"><span>Prénom</span><input name="prenom" autocomplete="given-name" placeholder="Votre prénom" required></label>
             <label class="pf-f is-wide"><span>Téléphone</span><input name="telephone" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" required></label>
           </div>
-          <label class="pf-consent"><input type="checkbox" name="consentement" required><span>J’accepte d’être rappelé par Bartier &amp; Co au sujet de ce projet et mis en relation avec un artisan partenaire.</span></label>
+          <label class="pf-consent"><input type="checkbox" name="consentement" required><span>{CONSENT}</span></label>
           <input class="pf-hp" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
           <p class="pf-err" role="alert" hidden></p>
           <button type="submit" class="btn pf-submit"><span>Être rappelé gratuitement</span>{tick()}</button>
-          <p class="pf-small">Gratuit, sans engagement. Votre numéro n’est transmis qu’à l’artisan retenu, jamais revendu.</p>
+          <p class="pf-small">Gratuit, sans engagement. Votre numéro n’est transmis qu’à l’artisan retenu, jamais revendu. {PRIVACY}</p>
         </fieldset>
         <div class="pf-done" hidden>
+          <div class="pf-manual">
+            <p class="pf-done-k">Dernière étape</p>
+            <p class="pf-done-h"><span class="pf-name2">Envoyez</span> votre demande.</p>
+            <p class="pf-when">Votre message est déjà rédigé. Nous vous répondons en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h.</p>
+            <a class="pf-wa pf-send" href="https://wa.me/33781018936" target="_blank" rel="noopener" data-wa="particulier-envoi">Envoyer ma demande sur WhatsApp</a>
+            <a class="pf-call" href="tel:{phone}">ou appeler le {phone_txt}</a>
+          </div>
+          <div class="pf-sent">
           <span class="pf-ok">{check()}</span>
           <p class="pf-done-h">C’est noté<span class="pf-name"></span>.</p>
-          <p class="pf-when"></p>
+          <p class="pf-when pf-when-sent"></p>
           <p class="pf-keep">Gardez votre téléphone à portée de main.</p>
           <ol class="pf-next"><li>Nous vérifions votre projet avec vous.</li><li>Pendant l’appel, nous fixons la date de visite avec l’artisan de votre secteur.</li><li>Vous recevez un rappel par SMS avant la visite.</li><li>L’artisan chiffre chez vous, sans frais.</li></ol>
           <a class="pf-wa" href="https://wa.me/33781018936" target="_blank" rel="noopener" data-wa="particulier">Envoyer aussi ma demande sur WhatsApp</a>
+          </div>
         </div>
       </form>
     </div>"""
@@ -346,6 +357,13 @@ CSS = """<style id="pf-css">
 .pf-ok{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--accent);color:#fff}
 .pf-ok svg{width:26px;height:26px}
 .pf-done-h{margin-top:14px;font:400 1.8rem/1.1 var(--f-display);letter-spacing:-.02em}
+.pf-done[data-state="sent"] .pf-manual,.pf-done[data-state="manual"] .pf-sent{display:none}
+.pf-done-k{font-size:.85rem;color:var(--accent)}
+.pf-manual .pf-done-h{margin-top:6px}
+.pf-manual .pf-when{margin-bottom:16px}
+.pf-send{width:100%;justify-content:center;min-height:56px;font-size:1.02rem}
+.pf-call{display:inline-flex;align-items:center;min-height:44px;margin-top:4px;color:inherit;font-size:.95rem;text-underline-offset:.25em}
+.pf-submit[disabled]{opacity:.7;cursor:progress}
 .pf-when{margin-top:8px;font-size:1rem;line-height:1.45}
 .pf-next{margin:18px 0;padding-left:1.2rem;display:grid;gap:6px;font-size:.95rem}
 .pf-wa{display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border-radius:var(--r);background:#25D366;color:#0A1424;font-weight:500;text-decoration:none}
@@ -470,12 +488,17 @@ f.addEventListener("submit",function(e){e.preventDefault();var err=f.querySelect
   if(bad.length){bad.forEach(function(b){b[0].setAttribute("aria-invalid","true")});err.textContent="Il manque "+bad.map(function(b){return b[1]}).join(", ")+".";err.hidden=false;bad[0][0].focus();return}
   err.hidden=true;if(val("site_web"))return;
   var tr=LABEL[val("travaux")]||"Autre projet",msg="Bonjour, je souhaite être rappelé pour des travaux : "+tr+" ("+val("besoin")+"), "+val("delai").toLowerCase()+". "+val("statut")+", code postal "+val("code_postal")+". "+val("prenom")+", "+val("telephone")+".";
-  dl("particulier_demande",{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut")});
-  var done=f.querySelector(".pf-done");f.querySelector(".pf-name").textContent=", "+val("prenom");
-  var w=nextOpen();f.querySelector(".pf-when").textContent=w?"Nous vous rappelons "+w+" au "+val("telephone")+".":"Nous vous rappelons dans les 5 minutes au "+val("telephone")+".";
-  f.querySelector(".pf-wa").href="https://wa.me/33781018936?text="+encodeURIComponent(msg);
-  steps.forEach(function(s){s.classList.remove("is-on")});f.querySelector(".pf-top").style.display="none";f.querySelector(".pf-bar").style.display="none";done.hidden=false;
-  document.getElementById("projet").scrollIntoView({behavior:"smooth",block:"start"})});
+  var done=f.querySelector(".pf-done"),btn=f.querySelector(".pf-submit"),lab=btn.querySelector("span"),old=lab.textContent;
+  f.querySelector(".pf-name").textContent=", "+val("prenom");f.querySelector(".pf-name2").textContent=val("prenom")+", envoyez";
+  var w=nextOpen();f.querySelector(".pf-when-sent").textContent=w?"Nous vous rappelons "+w+" au "+val("telephone")+".":"Nous vous rappelons dans les 5 minutes au "+val("telephone")+".";
+  f.querySelectorAll(".pf-wa").forEach(function(a){a.href="https://wa.me/33781018936?text="+encodeURIComponent(msg)});
+  var fin=false,end=function(sent){if(fin)return;fin=true;btn.disabled=false;lab.textContent=old;
+    dl("particulier_demande",{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),envoi:sent?"auto":"manuel"});
+    done.setAttribute("data-state",sent?"sent":"manual");steps.forEach(function(s){s.classList.remove("is-on")});f.querySelector(".pf-top").style.display="none";f.querySelector(".pf-bar").style.display="none";done.hidden=false;
+    document.getElementById("projet").scrollIntoView({behavior:"smooth",block:"start"})};
+  var body={type:"particulier",fields:{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),code_postal:val("code_postal"),prenom:val("prenom"),telephone:val("telephone")},consent:{text:f.querySelector(".pf-consent span").textContent,at:new Date().toISOString()},page:location.pathname,site_web:""};
+  btn.disabled=true;lab.textContent="Envoi…";var t=setTimeout(function(){end(false)},6000);
+  try{fetch("/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
 var sticky=document.querySelector(".pf-sticky"),card=document.getElementById("projet"),endS=document.querySelector(".pf-end");
 if(sticky&&"IntersectionObserver" in window){var vis=new Set();var io=new IntersectionObserver(function(es){es.forEach(function(x){x.isIntersecting?vis.add(x.target):vis.delete(x.target)});sticky.classList.toggle("is-on",vis.size===0&&scrollY>200)},{threshold:0});[card,endS,document.querySelector(".ftr")].forEach(function(x){x&&io.observe(x)});
   addEventListener("scroll",function(){if(scrollY<=200)sticky.classList.remove("is-on");else if(vis.size===0)sticky.classList.add("is-on")},{passive:true})}

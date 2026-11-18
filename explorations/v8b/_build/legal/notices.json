@@ -1,0 +1,20 @@
+{
+ "artisan_form_notice": "Vos coordonnées servent à vous rappeler au sujet de cette demande, rien d'autre. Aucune revente. <a href=\"/confidentialite/\">Vos données et vos droits</a>",
+ "particulier_form_notice": "Vos coordonnées servent à vous rappeler et à vous présenter un seul artisan partenaire. Aucune revente. Vous pouvez tout arrêter à tout moment. <a href=\"/confidentialite/\">Vos données et vos droits</a>",
+ "particulier_consent_label": "J'accepte d'être rappelé par Bartier & Co au sujet de ce projet, et que ma demande soit transmise à un seul artisan partenaire.",
+ "banner_title": "Cookies : à vous de choisir",
+ "banner_text": "Avec votre accord, nous mesurons l'audience du site et l'efficacité de nos publicités, avec Google et Meta. Sans accord, rien n'est déposé. <a href=\"/cookies/\">En savoir plus</a>",
+ "banner_accept": "Tout accepter",
+ "banner_refuse": "Tout refuser",
+ "banner_customize": "Personnaliser mes choix",
+ "prefs_title": "Vos choix de cookies",
+ "prefs_intro": "Choisissez ce que vous acceptez. Le site fonctionne dans tous les cas.",
+ "prefs_necessary_title": "Nécessaires",
+ "prefs_necessary_text": "Ils retiennent votre choix et l'affichage du site. Aucun suivi.",
+ "prefs_audience_title": "Mesure d'audience",
+ "prefs_audience_text": "Google Analytics : pages vues et provenance des visites, pour améliorer le site.",
+ "prefs_ads_title": "Publicité",
+ "prefs_ads_text": "Google Ads et Pixel Meta : savoir quelles annonces amènent des demandes, et vous présenter nos annonces.",
+ "prefs_save": "Enregistrer mes choix",
+ "footer_manage": "Gérer mes cookies"
+}

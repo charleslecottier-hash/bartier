@@ -244,6 +244,8 @@ _cc = re.sub(r"^/\*[\s\S]*?\*/\n", "", _cc)
 _cc = _cc.replace("__TEXTS__", json.dumps({k: fr(v) for k, v in CC_TEXTS.items()}, ensure_ascii=False)).replace("__TAGS__", json.dumps(TAGS))
 _cc = "\n".join(l.strip() for l in _cc.splitlines() if l.strip())
 (ROOT / "assets" / "js" / "consent.js").write_text(_cc, encoding="utf-8")
+if NOTICES.get("artisan_form_notice") and "confidentialite" in LEGAL_READY:
+    home = re.sub(r'<p class="dq-legal">.*?</p>', lambda m: f'<p class="dq-legal">{fr(NOTICES["artisan_form_notice"])}</p>', home, count=1, flags=re.S)
 import hashlib
 CC_TAG = f'<script src="/assets/js/consent.js?v={hashlib.sha1(_cc.encode()).hexdigest()[:8]}" defer></script>'
 home = re.sub(r'<script src="/assets/js/consent\.js[^"]*" defer></script>\n?', "", home)
@@ -649,6 +651,10 @@ paths.append("/meta-ads/")
 
 # ——— Particuliers : capter la demande des propriétaires ———
 import particuliers as PF
+if NOTICES.get("particulier_consent_label"):
+    PF.CONSENT = html.escape(NOTICES["particulier_consent_label"], quote=False)
+if "confidentialite" in LEGAL_READY:
+    PF.PRIVACY = '<a href="/confidentialite/">Vos données et vos droits</a>'
 pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH)))
 pf_top = absolutize(BODY_OPEN)
 pf_top = pf_top.replace('class="link" href="/devis-travaux/"', 'class="link" href="/devis-travaux/" aria-current="page"', 1)
@@ -772,6 +778,74 @@ for a in ARTICLES:
                "publisher": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}},
               bc_ld(("Blog", "/blog/"), (a["short"], path))]})
     paths.append(path)
+
+# ——— Pages légales : _build/legal/<slug>.html (fragment HTML, métadonnées JSON en commentaire sur la première ligne) ———
+# Informations de la société encore inconnues : à renseigner ici dès qu'elles existent. Une information vide s'affiche « à compléter ».
+COMPANY = {"SIREN": "", "RCS_VILLE": "", "CAPITAL": "", "TVA": "", "DIRECTEUR_PUBLICATION": "", "MEDIATEUR": "", "TEL_HEBERGEUR": ""}
+TOKEN_LABEL = {"SIREN": "numéro SIREN", "RCS_VILLE": "ville du greffe", "CAPITAL": "montant du capital", "TVA": "numéro de TVA",
+               "DIRECTEUR_PUBLICATION": "nom du directeur de la publication", "MEDIATEUR": "nom et coordonnées du médiateur", "TEL_HEBERGEUR": "numéro de téléphone"}
+MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+legal_missing = set()
+
+
+def legal_fill(frag):
+    def tok(m):
+        k = m.group(1)
+        if COMPANY.get(k):
+            return html.escape(COMPANY[k])
+        legal_missing.add(k)
+        return f'<mark class="todo">{TOKEN_LABEL.get(k, k)} à compléter</mark>'
+    frag = re.sub(r"\{\{([A-Z_]+)\}\}", tok, frag)
+    def table(m):  # chaque cellule porte le titre de sa colonne : sur téléphone le tableau devient une liste
+        heads = [re.sub(r"<[^>]+>", "", h) for h in re.findall(r"<th>(.*?)</th>", m.group(0), flags=re.S)]
+        def row(r):
+            cells = iter(heads)
+            return re.sub(r"<td>", lambda c: f'<td data-label="{html.escape(next(cells, ""))}">', r.group(0))
+        return re.sub(r"<tr>(?:(?!</tr>).)*</tr>", row, m.group(0), flags=re.S)
+    return re.sub(r"<table>.*?</table>", table, frag, flags=re.S)
+
+
+def write_plain(path, title, desc, body, schema=None):
+    """Page sans formulaire artisan : les liens #contact renvoient à l'accueil."""
+    fix = lambda s: s.replace('href="#contact"', 'href="/#contact"')
+    doc = head(title, desc, path, schema) + fix(absolutize(BODY_OPEN)) + "\n" + fr(body) + "\n" + fix(absolutize(TAIL))
+    out = ROOT / path.strip("/") / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(doc, encoding="utf-8")
+    return path
+
+
+LEGAL_NAV = [(s, json.loads(re.match(r"<!--\s*(\{.*?\})\s*-->", (ROOT / "_build" / "legal" / f"{s}.html").read_text(encoding="utf-8")).group(1))) for s in LEGAL_READY]
+for slug, meta in LEGAL_NAV:
+    raw = (ROOT / "_build" / "legal" / f"{slug}.html").read_text(encoding="utf-8")
+    frag = legal_fill(raw[raw.index("-->") + 3:].strip())
+    path = f"/{slug}/"
+    y, mth, d = meta["updated"].split("-")
+    others = "".join(f'<a href="/{s}/"{" aria-current=\"page\"" if s == slug else ""}>{m["title"].replace(" pour les particuliers", "")}</a>' for s, m in LEGAL_NAV)
+    body = f"""<section class="sheet pg-top lg-top" data-tone="light">
+  <div class="grid pg-grid">
+    <div class="pg-text">
+      {crumbs((meta["title"], path))}
+      <p class="kick">Informations légales</p>
+      <h1>{meta["title"]}</h1>
+      <p class="post-meta-line"><span>Mise à jour le <time datetime="{meta["updated"]}">{int(d)} {MONTHS[int(mth) - 1]} {y}</time></span></p>
+      <nav class="lg-nav" aria-label="Pages légales">{others}</nav>
+    </div>
+  </div>
+</section>
+
+<section class="sheet lg" data-tone="light">
+  <div class="grid">
+    <div class="prose lg-prose">
+{frag}
+    </div>
+  </div>
+</section>"""
+    write_plain(path, f'{meta["title"]} | Bartier & Co', meta["description"], body,
+                schema={"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": fr(meta["title"]), "url": SITE + path, "inLanguage": "fr-FR", "dateModified": meta["updated"], "isPartOf": {"@id": SITE + "/#website"}}, bc_ld((meta["title"], path))]})
+    paths.append(path)
+if legal_missing:
+    print("Pages légales : informations à compléter :", ", ".join(sorted(legal_missing)))
 
 # ——— Page 404 ———
 nf_body = """<section class="sheet pg-top" data-tone="light">
