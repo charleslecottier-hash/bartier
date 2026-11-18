@@ -682,15 +682,16 @@ HUB_SECTORS = _blk["sectors"].replace(
     "", 1)
 HUB_GALLERY = _blk["gallery"]
 HUB_SEASONS = _blk["calendar"].replace('data-tone="light"', 'data-tone="paper"', 1)
+_lj = lambda xs: ", ".join([xs[0]] + [x[:1].lower() + x[1:] for x in xs[1:]])  # liste dans une phrase : minuscule après la virgule
 _rows = "\n".join(
-    f'<tr><td><a href="/metiers/{t["slug"]}/">{t["name"]}</a></td><td>{", ".join(t["keep"][:3])}</td><td>{", ".join(t["drop"][:2])}</td></tr>'
+    f'<tr><td><a href="/metiers/{t["slug"]}/">{t["name"]}</a></td><td>{_lj(t["keep"][:3])}</td><td>{_lj(t["drop"][:2])}</td></tr>'
     for t in TRADES)
 HUB_TABLE = f"""<section class="sheet" id="par-metier" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Ce que nous cherchons, métier par métier</h2><p>Les chantiers qui valent le déplacement passent. Le reste est écarté au téléphone, avant d'arriver dans votre agenda.</p></div>
+  <div class="grid sp-head"><h2 data-split>Les chantiers que nous allons chercher pour vous</h2><p>Selon votre métier. Les petits travaux sont écartés au téléphone, avant d'arriver dans votre agenda.</p></div>
   <div class="grid art-grid">
     <div class="prose is-wide">
 <table>
-<thead><tr><th>Métier</th><th>Chantiers que nous cherchons</th><th>Ce que nous écartons</th></tr></thead>
+<thead><tr><th>Votre métier</th><th>Les chantiers que nous cherchons</th><th>Ceux que nous écartons</th></tr></thead>
 <tbody>
 {_rows}
 </tbody>
