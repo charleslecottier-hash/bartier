@@ -463,12 +463,12 @@ def with_form(body, contact, after=2):
     return body[:i] + "\n\n" + contact + body[i:]
 
 
-def write(path, title, desc, body, nav=None, schema=None, metier=None):
+def write(path, title, desc, body, nav=None, schema=None, metier=None, form_after=2):
     top = absolutize(BODY_OPEN)
     if nav:
         top = top.replace(f'class="link" href="{nav}"', f'class="link" href="{nav}" aria-current="page"', 1)
     contact = CONTACT.replace(f'name="metier" value="{metier}"', f'name="metier" value="{metier}" checked', 1) if metier else CONTACT
-    doc = head(title, desc, path, schema) + top + "\n" + with_form(fr(body), contact) + "\n" + absolutize(TAIL)
+    doc = head(title, desc, path, schema) + top + "\n" + with_form(fr(body), contact, form_after) + "\n" + absolutize(TAIL)
     out = ROOT / path.strip("/") / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, encoding="utf-8")
@@ -866,7 +866,7 @@ TEAM_ABOUT = """<section class="team-about sheet" id="equipe" data-kind="team" d
         <li id="charles"><img src="/assets/photos/charles-le-cottier-360x450-nb.webp" alt="Portrait de Charles Le Cottier, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Charles Le Cottier</h3><p>Cofondateur<br>Responsable des annonces</p></div></li>
         <li id="martin"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Martin Barthélémy</h3><p>Cofondateur<br>Responsable commercial</p></div></li>
       </ul>
-      <p class="ta-note">Une question avant de vous lancer ? Appelez Martin en semaine, de 8&nbsp;h à 19&nbsp;h, ou écrivez-lui : il répond sous un jour ouvré.</p>
+      <p class="ta-note">Une question avant de vous lancer ? Appelez Martin en semaine, de 8&nbsp;h à 19&nbsp;h, ou écrivez-lui.</p>
       <div class="ta-acts">
         <a class="dq-wa" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan.%20Mon%20secteur%20est-il%20encore%20libre%20%3F" target="_blank" rel="noopener" data-wa="team">Écrire à Martin sur WhatsApp</a>
         <a class="link" href="tel:+33781018936">Appeler le 07 81 01 89 36</a>
@@ -1039,8 +1039,87 @@ def guide(G, kick, crumb_items, faq_title, links):
 
 
 _art = {x["slug"]: (x["short"], f"/blog/{x['slug']}/") for x in ARTICLES}
-guide(CT.PILLAR, "Guide", [("Trouver des chantiers", CT.PILLAR["path"])], "Vos questions sur la recherche de chantiers",
-      [_art["google-ads-ou-meta-ads-artisan"], _art["relance-devis-artisan"], _art["lead-partage-lead-exclusif-rendez-vous-qualifie"], ("Lexique des chantiers et des travaux", "/lexique/")])
+# ——— Trouver des chantiers : page courte et visuelle (8 cartes, un calcul, 4 pertes, notre approche, 4 questions) ———
+WA_BOOK = "https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes."
+TICK_SVG = '<svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>'
+TC_CHANNELS = [  # nom, coût, ce qu'il faut, demande partagée ? (ok / part / mix)
+    ("Bouche-à-oreille", "Du temps", "Des clients contents", "ok", "Rien que pour vous"),
+    ("Fiche Google", "Gratuit", "Des photos et des avis", "mix", "Comparée à d'autres fiches"),
+    ("Plateformes de devis", "Un abonnement ou un prix par demande", "Rappeler très vite", "part", "Souvent partagée"),
+    ("Apporteur d'affaires", "Une commission sur le chantier", "Un contrat écrit", "mix", "Selon le contrat"),
+    ("Sous-traitance", "Une marge plus faible", "Un réseau d'entreprises générales", "ok", "Rien que pour vous"),
+    ("Annonces locales", "Le budget publicitaire et la gestion", "Un rappel rapide", "ok", "Rien que pour vous"),
+    ("Flyers et panneaux", "L'impression et la distribution", "Des chantiers dans le quartier", "ok", "Rien que pour vous"),
+    ("Réseaux professionnels", "Une cotisation et du temps", "Une présence régulière", "ok", "Rien que pour vous"),
+]
+def pillar_page(G):
+    cards = "\n".join(
+        f'    <li class="tc-card{" is-us" if n == "Annonces locales" else ""}"><span class="tc-n">{i:02d}</span><h3>{n}</h3>'
+        f'<p class="tc-cost"><span>Coût</span>{c}</p><p class="tc-need"><span>Il faut</span>{w}</p><p class="tc-tag is-{k}">{lab}</p>'
+        + ('<p class="tc-us-k">C\'est ce que nous faisons pour vous</p>' if n == "Annonces locales" else "") + "</li>"
+        for i, (n, c, w, k, lab) in enumerate(TC_CHANNELS, 1))
+    loss = [("Le rappel tardif", "Rappelé le soir, le propriétaire a pu parler à un concurrent."),
+            ("La visite inutile", "Un locataire, un projet dans trois ans, une commune hors zone."),
+            ("Le devis envoyé tard", "Entre-temps, le propriétaire a reçu d'autres devis."),
+            ("Le devis jamais relancé", 'Un appel et un SMS suffisent souvent. <a class="link" href="/blog/relance-devis-artisan/">La méthode</a>')]
+    loss_html = "\n".join(f'    <li><span class="tc-n">{i:02d}</span><h3>{h}</h3><p>{p}</p></li>' for i, (h, p) in enumerate(loss, 1))
+    def ab(k, d, n, per, s, res, win=False):
+        return (f'<div class="tc-abc{" is-win" if win else ""}"><p class="tc-abk">{k}</p><dl>'
+                f'<div><dt>Dépensé</dt><dd>{d}</dd></div><div><dt>Demandes</dt><dd>{n} <small>({per} l\'une)</small></dd></div>'
+                f'<div><dt>Chantiers signés</dt><dd>{s}</dd></div></dl><p class="tc-abr"><b>{res}</b> par chantier signé</p>'
+                + ('<p class="tc-win">Le moins cher au final</p>' if win else "") + "</div>")
+    trades = " · ".join(f'<a class="link" href="/metiers/{sl}/">{lb}</a>' for lb, sl in [("Couverture", "couverture"), ("Façade", "facade"), ("Menuiserie", "menuiserie-exterieure"), ("Charpente", "charpente"), ("Isolation", "isolation")])
+    faq_items = [G["faq"][i] for i in (0, 1, 3, 5)]
+    body = "\n\n".join([
+        top("Guide", G["h1"], "Huit façons de trouver des chantiers, comparées. La bonne est celle qui vous coûte le moins par chantier signé.",
+            crumbs(("Trouver des chantiers", G["path"])), meta=AUTHOR_META, dated=True),
+        f"""<section class="sheet tc-sec" id="canaux" data-tone="light">
+  <div class="grid sp-head"><h2 data-split>Les 8 canaux pour trouver des chantiers</h2><p>Ce que chacun vous coûte, et si la demande est pour vous seul.</p></div>
+  <ol class="tc-cards">
+{cards}
+  </ol>
+  <p class="tc-foot">Plateformes : lisez leurs conditions avant de signer. Exemple : <a class="link" href="/trouver-des-chantiers/habitatpresto-pro/">Habitatpresto Pro</a>.</p>
+</section>""",
+        f"""<section class="sheet tc-sec" id="calcul-cout" data-tone="paper">
+  <div class="grid sp-head"><h2 data-split>Comment calculer le coût par chantier signé ?</h2><p>Additionnez ce que le canal vous a coûté, puis divisez par les chantiers signés grâce à lui.</p></div>
+  <p class="tc-formula">Dépenses du canal <i>÷</i> chantiers signés <i>=</i> <b>coût par chantier signé</b></p>
+  <div class="tc-ab">
+    {ab("Canal A", "400 €", "40", "10 €", "2", "200 €")}
+    {ab("Canal B", "900 €", "12", "75 €", "6", "150 €", True)}
+  </div>
+  <p class="tc-foot">Chiffres d'exemple, ce ne sont pas des moyennes. La demande la moins chère ne donne pas le chantier le moins cher.</p>
+</section>""",
+        f"""<section class="sheet tc-sec" id="pertes" data-tone="light">
+  <div class="grid sp-head"><h2 data-split>Où se perdent les chantiers ?</h2><p>Après la demande, quatre moments font perdre le chantier.</p></div>
+  <ol class="tc-loss">
+{loss_html}
+  </ol>
+  <aside class="tc-law"><p class="tc-law-k">Depuis le 11 août 2026</p><p>Appeler un particulier pour lui proposer des travaux demande son accord préalable. Pour la rénovation énergétique, c'est interdit. Rappeler quelqu'un qui l'a demandé reste possible, avec la preuve de sa demande.</p>
+    <p class="tc-src">Sources : <a href="https://www.cnil.fr/fr/prospection-commerciale-par-telephone-hors-automate-dappel-quelles-sont-les-regles" target="_blank" rel="noopener">CNIL</a>, <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069565/LEGISCTA000032221441/2026-08-11" target="_blank" rel="noopener">Code de la consommation, L223-1</a>. <a href="/lexique/#demarchage-telephonique">Définition</a></p></aside>
+</section>""",
+        f"""<section class="sheet tc-us" id="approche" data-tone="dark">
+  <div class="grid tc-us-grid">
+    <h2 data-split>Notre approche</h2>
+    <div class="tc-us-txt">
+      <p>Nous combinons les annonces locales et le rappel de chaque demande client en moins de 5 minutes. La visite arrive dans votre agenda. Un seul artisan par métier et par secteur.</p>
+      <p>Le bouche-à-oreille reste votre premier canal. Nous vous apportons des demandes en plus, sans durée d'engagement.</p>
+      <div class="actions"><a class="btn" href="{WA_BOOK}" target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span>{TICK_SVG}</a><a class="link" href="/#services">Voir comment ça marche</a></div>
+      <p class="tc-trades">Par métier : {trades}</p>
+    </div>
+  </div>
+</section>""",
+        faq(faq_items, title="Vos questions sur la recherche de chantiers"),
+        more("À lire aussi", "Tous les articles", "/blog/", [_art["google-ads-ou-meta-ads-artisan"], _art["relance-devis-artisan"], _art["lead-partage-lead-exclusif-rendez-vous-qualifie"], ("Lexique des chantiers et des travaux", "/lexique/")]),
+    ])
+    write(G["path"], G["title"], G["desc"], body, nav=None, form_after=5,
+          schema={"@context": "https://schema.org", "@graph": [
+              {"@type": "Article", "headline": fr(G["h1"]), "description": fr(G["desc"]), "datePublished": "2026-11-18", "dateModified": "@@MAJ@@",
+               "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"],
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, responsable des annonces", "url": SITE + "/qui-sommes-nous/#charles"},
+               "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
+              faq_ld(faq_items), bc_ld(("Trouver des chantiers", G["path"]))]})
+    paths.append(G["path"])
+pillar_page(CT.PILLAR)
 guide(CT.HP, "Plateforme de devis", [("Trouver des chantiers", CT.PILLAR["path"]), ("Habitatpresto Pro", CT.HP["path"])], "Habitatpresto Pro : vos questions",
       [("Comment trouver des chantiers : 8 canaux comparés", CT.PILLAR["path"]), _art["lead-partage-lead-exclusif-rendez-vous-qualifie"], ("Lexique des chantiers et des travaux", "/lexique/")])
 

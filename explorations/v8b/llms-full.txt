@@ -1767,7 +1767,7 @@ Cofondateur Responsable des annonces
 
 #### Martin Barthélémy
 Cofondateur Responsable commercial
-Une question avant de vous lancer ? Appelez Martin en semaine, de 8 h à 19 h, ou écrivez-lui : il répond sous un jour ouvré.
+Une question avant de vous lancer ? Appelez Martin en semaine, de 8 h à 19 h, ou écrivez-lui.
 Appeler le 07 81 01 89 36
 
 ### Bartier & Co en bref
@@ -2117,67 +2117,117 @@ Adresse : https://bartierandco.com/trouver-des-chantiers/
 Les 8 canaux pour trouver des chantiers quand on est artisan, comparés par coût du chantier signé : bouche-à-oreille, fiche Google, plateformes, annonces.
 
 Guide
-Un artisan du bâtiment trouve ses chantiers par 8 canaux : le bouche-à-oreille, la fiche Google, les plateformes de devis, les apporteurs d’affaires, la sous-traitance, les annonces locales, les flyers et panneaux de chantier, et les réseaux professionnels. Le bon canal est celui qui vous coûte le moins par chantier signé.
+Huit façons de trouver des chantiers, comparées. La bonne est celle qui vous coûte le moins par chantier signé.
 Par Charles Le Cottier, cofondateur · Responsable des annonces
 Mis à jour le 18 novembre 2026
 
 ### Les 8 canaux pour trouver des chantiers
-Pour comparer deux canaux, trois questions suffisent : ce que vous payez, à combien d’entreprises la même demande est proposée, et qui rappelle le propriétaire.
-- Canal | Ce que vous payez | Demande partagée ? | Qui rappelle | Ce qu’il faut pour que ça marche
-- Bouche-à-oreille | Rien, sinon du temps | Non | Le client vous appelle | Des chantiers récents et des clients contents
-- Fiche Google | Rien | Non, mais le propriétaire compare plusieurs fiches | Le client vous appelle | Une fiche complète, des photos, des avis
-- Plateformes de devis | Un abonnement ou un prix par demande | Souvent, selon la plateforme | Vous | Rappeler très vite et relancer chaque devis
-- Apporteur d’affaires | Une commission sur le chantier signé | Selon le contrat | Vous, ou l’apporteur | Un contrat écrit : commission, zone, durée
-- Sous-traitance | Une marge plus faible | Non | L’entreprise principale | Un réseau d’entreprises générales ou d’architectes
-- Annonces locales (Google, Facebook, Instagram) | Le budget publicitaire et la gestion des campagnes | Non | Vous, ou votre prestataire | Une zone bien réglée, un tri au téléphone, un rappel rapide
-- Flyers et panneaux de chantier | L’impression et la distribution | Non | Le client vous appelle | Des chantiers en cours dans le quartier
-- Réseaux professionnels | Une cotisation, du temps | Non | Le client ou le prescripteur vous appelle | Une présence régulière et des recommandations
-Les plateformes de devis ne fonctionnent pas toutes de la même façon : lisez leurs conditions avant de signer. Exemple : ce que disent les conditions d’Habitatpresto Pro.
+Ce que chacun vous coûte, et si la demande est pour vous seul.
+- 01
+
+#### Bouche-à-oreille
+Coût Du temps
+Il faut Des clients contents
+Rien que pour vous
+- 02
+
+#### Fiche Google
+Coût Gratuit
+Il faut Des photos et des avis
+Comparée à d’autres fiches
+- 03
+
+#### Plateformes de devis
+Coût Un abonnement ou un prix par demande
+Il faut Rappeler très vite
+Souvent partagée
+- 04
+
+#### Apporteur d’affaires
+Coût Une commission sur le chantier
+Il faut Un contrat écrit
+Selon le contrat
+- 05
+
+#### Sous-traitance
+Coût Une marge plus faible
+Il faut Un réseau d’entreprises générales
+Rien que pour vous
+- 06
+
+#### Annonces locales
+Coût Le budget publicitaire et la gestion
+Il faut Un rappel rapide
+Rien que pour vous
+C’est ce que nous faisons pour vous
+- 07
+
+#### Flyers et panneaux
+Coût L’impression et la distribution
+Il faut Des chantiers dans le quartier
+Rien que pour vous
+- 08
+
+#### Réseaux professionnels
+Coût Une cotisation et du temps
+Il faut Une présence régulière
+Rien que pour vous
+Plateformes : lisez leurs conditions avant de signer. Exemple : Habitatpresto Pro.
 
 ### Comment calculer le coût par chantier signé ?
-Additionnez tout ce qu’un canal vous a coûté sur une période : abonnement, publicité, commissions, impression. Divisez par le nombre de chantiers signés grâce à ce canal sur la même période.
-Coût par chantier signé = dépenses du canal ÷ chantiers signés grâce à ce canal
-Exemple, avec des chiffres choisis pour le calcul (ce ne sont pas des moyennes) :
-- Canal A | Canal B
-- Dépenses du mois | 400 € | 900 €
-- Demandes reçues | 40, soit 10 € la demande | 12, soit 75 € la demande
-- Chantiers signés | 2 | 6
-- Coût par chantier signé | 200 € | 150 €
-La demande la moins chère ne donne pas le chantier le moins cher. Comptez aussi votre temps : les appels, les visites qui ne donnent rien, les devis jamais signés. Le taux de signature de vos devis complète le calcul.
+Additionnez ce que le canal vous a coûté, puis divisez par les chantiers signés grâce à lui.
+Dépenses du canal ÷ chantiers signés = coût par chantier signé
+Canal A
 
-### Quels canaux sont gratuits ?
-Le bouche-à-oreille, la fiche Google, le panneau de chantier et les prescripteurs ne coûtent presque rien en argent. Ils coûtent du temps, et ils mettent des mois à donner un flux régulier.
-- Fiche Google : renseignez votre métier, votre zone, vos horaires et des photos, puis demandez un avis après chaque chantier. Google classe les fiches locales selon trois critères : la pertinence, la distance et la notoriété.
-- Panneau de chantier : votre nom, votre métier et votre numéro, lisibles depuis la rue.
-- Voisinage : un mot dans les boîtes aux lettres des rues voisines, avant et pendant le chantier.
-- Prescripteurs : architectes, maîtres d’œuvre, autres corps de métier, fournisseurs.
-Source : Google, aide de la fiche d’établissement.
+**Dépensé**
+- 400 €
 
-### Quel canal choisir selon votre métier ?
-- Métier | Ce que cherchent les propriétaires | Canaux qui conviennent
-- Couverture | Réfections et rénovations de toiture | Google, Facebook et Instagram, panneau de chantier
-- Façade | Ravalements, souvent repoussés | Facebook et Instagram, flyers dans les rues voisines
-- Menuiserie extérieure | Remplacement de fenêtres et de portes | Facebook et Instagram, fiche Google, fournisseurs
-- Charpente | Projets liés à la toiture ou à une extension | Prescripteurs (couvreurs, architectes), Google
-- Isolation | Projets souvent liés aux aides | Annonces locales, en respectant les règles propres à la rénovation énergétique
-Pour aller plus loin : Google Ads ou Meta Ads : qui capte quelle demande.
+**Demandes**
+- 40 (10 € l’une)
 
-### Où se perdent les chantiers après la demande ?
-- Le rappel tardif : un propriétaire rappelé le soir a pu parler entre-temps à un concurrent.
-- La visite inutile : un locataire, un projet pour dans trois ans, une commune hors zone. Quelques questions au téléphone l’évitent.
-- Le devis envoyé tard : plus il arrive tard, plus le propriétaire a reçu d’autres devis.
-- Le devis jamais relancé : un appel et un SMS suffisent souvent. Voir la relance de devis.
+**Chantiers signés**
+- 2
+200 € par chantier signé
+Canal B
 
-### Ce que la loi interdit depuis 2026
-Depuis le 11 août 2026, appeler un particulier pour lui proposer des travaux demande son accord préalable, sauf contrat en cours. Pour la rénovation énergétique, la prospection par téléphone est interdite. Rappeler un propriétaire qui vous a lui-même demandé d’être contacté reste possible, si vous gardez la preuve de sa demande.
-Source : CNIL, prospection par téléphone, Code de la consommation, L223-1 et suivants. Définition dans notre lexique.
+**Dépensé**
+- 900 €
 
-### Notre approche, et ses limites
-Bartier & Co combine deux canaux de cette liste, les annonces locales sur Google et sur Facebook et Instagram, avec l’étape où beaucoup de chantiers se perdent : le rappel. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda. Un seul artisan par métier et par secteur.
-Le bouche-à-oreille reste votre premier canal. Nos annonces vous apportent des demandes en plus, sans durée d’engagement. Voir comment ça marche.
+**Demandes**
+- 12 (75 € l’une)
 
-#### Votre secteur est-il libre ?
-Un seul artisan par métier et par secteur. Visites déjà fixées, sans durée d’engagement.
+**Chantiers signés**
+- 6
+150 € par chantier signé
+Le moins cher au final
+Chiffres d’exemple, ce ne sont pas des moyennes. La demande la moins chère ne donne pas le chantier le moins cher.
+
+### Où se perdent les chantiers ?
+Après la demande, quatre moments font perdre le chantier.
+- 01
+
+#### Le rappel tardif
+Rappelé le soir, le propriétaire a pu parler à un concurrent.
+- 02
+
+#### La visite inutile
+Un locataire, un projet dans trois ans, une commune hors zone.
+- 03
+
+#### Le devis envoyé tard
+Entre-temps, le propriétaire a reçu d’autres devis.
+- 04
+
+#### Le devis jamais relancé
+Un appel et un SMS suffisent souvent. La méthode
+Depuis le 11 août 2026
+Appeler un particulier pour lui proposer des travaux demande son accord préalable. Pour la rénovation énergétique, c’est interdit. Rappeler quelqu’un qui l’a demandé reste possible, avec la preuve de sa demande.
+Sources : CNIL, Code de la consommation, L223-1. Définition
+
+### Notre approche
+Nous combinons les annonces locales et le rappel de chaque demande client en moins de 5 minutes. La visite arrive dans votre agenda. Un seul artisan par métier et par secteur.
+Le bouche-à-oreille reste votre premier canal. Nous vous apportons des demandes en plus, sans durée d’engagement.
+Par métier : Couverture · Façade · Menuiserie · Charpente · Isolation
 
 ### Vos questions sur la recherche de chantiers
 Une autre question ? Écrire à Martin sur WhatsApp
@@ -2188,14 +2238,8 @@ Aucun site n’est le meilleur pour tous les artisans. Comparez trois points : �
 **Comment trouver des chantiers gratuitement ?**
 Par le bouche-à-oreille, une fiche Google complète avec des avis, un panneau sur chaque chantier et des prescripteurs comme les architectes. C’est gratuit en argent, mais cela demande du temps et plusieurs mois.
 
-**Comment trouver des chantiers chez les particuliers ?**
-Visez les propriétaires de votre secteur : la fiche Google et les annonces Google pour ceux qui cherchent déjà, les annonces Facebook et Instagram et les flyers pour ceux qui y pensent. Depuis août 2026, ne les appelez que s’ils l’ont demandé.
-
 **Faut-il payer pour avoir des chantiers ?**
 Non, mais les canaux gratuits sont lents. Payer a du sens quand le coût par chantier signé reste nettement inférieur à votre marge sur le chantier.
-
-**Combien de temps faut-il pour remplir son agenda ?**
-Cela dépend du canal, du métier et de la saison. Le bouche-à-oreille et la fiche Google demandent des mois. Des annonces locales apportent des demandes dès leur lancement, à condition de rappeler chaque demande vite.
 
 **Les plateformes de devis valent-elles le coup ?**
 Cela dépend de leurs conditions. Avant de signer, demandez à combien d’artisans chaque demande est envoyée, la durée d’engagement, le prix réel et ce qui se passe pour une demande non valable.
