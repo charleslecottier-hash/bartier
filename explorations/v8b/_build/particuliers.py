@@ -80,6 +80,11 @@ SERIOUS = [
     ("Aucune pression", "Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement »."),
 ]
 
+import html as _html, re as _re
+SERIOUS_LD = {"@type": "ItemList", "name": "Reconnaître un artisan sérieux : 5 points à vérifier avant de signer",
+              "itemListElement": [{"@type": "ListItem", "position": i, "name": a, "description": _html.unescape(_re.sub("<[^>]+>", "", b)).replace("\xa0", " ")}
+                                  for i, (a, b) in enumerate(SERIOUS, 1)]}
+
 FAQ = [
     ("Est-ce vraiment gratuit ?",
      "Oui. Notre service est gratuit pour vous : ce sont les artisans partenaires qui nous rémunèrent. Vous ne payez que les travaux, et seulement si vous acceptez le devis."),
@@ -280,8 +285,10 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 
     serious = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in SERIOUS)
     serious = f"""<section class="sheet" id="artisan-serieux" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Reconnaître un artisan sérieux</h2><p>5 points à vérifier avant de signer. Avec nous ou sans nous.</p></div>
-  <ul class="pf-checks">{serious}</ul>
+  <div class="grid pf-ser">
+    <div class="pf-ser-head"><h2 data-split>Reconnaître un artisan sérieux</h2><p>5 points à vérifier avant de signer. Avec nous ou sans nous.</p></div>
+    <ul class="pf-checks pf-checklist">{serious}</ul>
+  </div>
   {band("Un artisan local, qui se déplace avant de chiffrer.", "Décrire mes travaux")}
 </section>"""
 
@@ -323,7 +330,7 @@ def schema(SITE, faq_ld, bc_ld):
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Gratuit pour le particulier, sans engagement"},
          "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Travaux", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": t[5], "description": clean(t[6])}} for t in TRADES]}},
         {"@type": "HowTo", "name": "Fuite de toiture ? Les 5 bons réflexes", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]},
-        faq_ld(FAQ), bc_ld(("Devis travaux", PATH))]}
+        SERIOUS_LD, faq_ld(FAQ), bc_ld(("Devis travaux", PATH))]}
 
 
 CSS = """<style id="pf-css">
@@ -714,7 +721,7 @@ def trade_schema(SITE, faq_ld, bc_ld, key):
          "areaServed": {"@type": "Country", "name": "France"}, "audience": {"@type": "Audience", "audienceType": "Propriétaires de maison"},
          "provider": {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "url": SITE + "/"},
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Gratuit pour le particulier : mise en relation, visite et devis de l'artisan"}},
-        faq_ld(trade_faq(key)), bc_ld(("Devis travaux", PATH), (t[1], path))]
+        SERIOUS_LD, faq_ld(trade_faq(key)), bc_ld(("Devis travaux", PATH), (t[1], path))]
     if key == "toiture":
         graph.append({"@type": "HowTo", "name": "Fuite de toiture ? Les 5 bons réflexes", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]})
     return {"@context": "https://schema.org", "@graph": graph}
