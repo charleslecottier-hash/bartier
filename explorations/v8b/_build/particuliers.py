@@ -59,6 +59,7 @@ BRIEF = [
     ("Le rendez-vous", "Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite."),
     ("Combien d’artisans", "Un seul par métier et par secteur. Vos coordonnées ne sont jamais revendues."),
     ("La zone", "Partout en France, avec des artisans locaux."),
+    ("La société", "Bartier &amp; Co SAS, 6 rue Saint-Bon, 75004 Paris."),
 ]
 
 LEAK = [
