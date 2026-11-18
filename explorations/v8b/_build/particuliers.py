@@ -329,7 +329,7 @@ CSS = """<style id="pf-css">
 .pf-call span{flex-basis:100%;color:var(--muted);font-size:.82rem}
 .pf-card{grid-column:3 / 5;scroll-margin-top:calc(var(--hdr) + 16px);padding:clamp(20px,2.4vw,32px);background:var(--bg);border:1px solid var(--rule);border-radius:var(--r);box-shadow:0 30px 70px -40px rgba(10,20,36,.45)}
 .pf-top{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--muted)}
-.pf-back{border:0;background:none;color:var(--ink);font:inherit;cursor:pointer;padding:.3rem 0}
+.pf-back{display:inline-flex;align-items:center;min-height:44px;margin:-8px 0;border:0;background:none;color:var(--ink);font:inherit;cursor:pointer;padding:0 0 0 12px}
 .pf-bar{height:4px;margin:12px 0 22px;background:var(--paper);border-radius:2px;overflow:hidden}
 .pf-bar i{display:block;height:100%;width:20%;background:var(--accent);transition:width .45s var(--ease)}
 .pf-step{display:none;margin:0;padding:0;border:0;min-width:0}

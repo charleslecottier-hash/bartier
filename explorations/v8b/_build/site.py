@@ -219,6 +219,12 @@ if LIVE:
 _ht = html.unescape(re.search(r"<title>(.*?)</title>", home).group(1))
 _hd = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', home).group(1))
 _ld = {"@context": "https://schema.org", "@graph": [ORG, {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}]}
+# Questions-réponses visibles de l'accueil, reprises telles quelles
+_txt = lambda s: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", s))).replace("'", "’").strip()
+_qa = re.findall(r'<details class="fq"><summary><span>(.*?)</span>.*?<div class="fq-a">(.*?)</div>\s*</details>', home, flags=re.S)
+if _qa:
+    _ld["@graph"].append({"@type": "FAQPage", "@id": SITE + "/#faq-page", "mainEntity": [
+        {"@type": "Question", "name": _txt(q), "acceptedAnswer": {"@type": "Answer", "text": _txt(a)}} for q, a in _qa]})
 home = home.replace("</head>", (
     f'<link rel="canonical" href="{SITE}/">\n'
     f'<meta property="og:type" content="website">\n<meta property="og:locale" content="fr_FR">\n<meta property="og:site_name" content="Bartier &amp; Co">\n'
@@ -959,7 +965,7 @@ def typo(doc):
     parts = re.split(r"(<script[\s\S]*?</script>|<style[\s\S]*?</style>|<textarea[\s\S]*?</textarea>|<!--[\s\S]*?-->|<[^>]+>)", doc)
     for i in range(0, len(parts), 2):
         if parts[i].strip():
-            parts[i] = re.sub(r" ([;:?!»])", r"&nbsp;\1", parts[i]).replace("« ", "«&nbsp;")
+            parts[i] = re.sub(r" ([;:?!»])", r"&nbsp;\1", parts[i]).replace("« ", "«&nbsp;").replace("'", "’")
     return "".join(parts)
 
 

@@ -252,3 +252,7 @@ a.pf-sticky{box-shadow:0 14px 30px -14px rgba(10,20,36,.55)}
 .hero-intro .lead{text-wrap:balance}
 /* quand le formulaire de contact est juste au-dessus, le pied de page ne répète pas le bouton */
 main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
+/* étapes et tarifs sur téléphone : même écart tête → contenu que les autres sections */
+.pc-grid,.fe-grid{row-gap:var(--gap-head)}
+/* curseurs du calcul : zone tactile de 44 px, sans déplacer la mise en page */
+.calc input[type=range]{height:44px;margin-block:-7px}
