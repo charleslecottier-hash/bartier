@@ -45,7 +45,7 @@ home = re.sub(r'(<div class="menu" id="menu">\s*<nav aria-label="Menu">)[\s\S]*?
 # Héros : le résultat rêvé, en un mot
 home = re.sub(r'<h1 class="giant" style="--len:\d+">[^<]*</h1>', '<h1 class="giant" style="--len:8">Complet.</h1>', home, count=1)
 home = re.sub(r'<p class="hero-tag">.*?</p>', '', home)
-home = home.replace('Complet.</h1>', 'Complet.</h1><p class="hero-tag">Faire équipe. <span>Faire différence.</span></p>', 1)
+home = home.replace('Complet.</h1>', 'Complet.</h1><p class="hero-tag">Faire équipe. <span>Faire la différence.</span></p>', 1)
 home = re.sub(r'(<div class="hero-intro">\s*<p class="lead">)[^<]*(</p>)',
               r"\1Des propriétaires avec un vrai projet, directement dans votre agenda. Il ne vous reste qu’à chiffrer.\2", home, count=1)
 
