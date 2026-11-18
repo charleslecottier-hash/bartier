@@ -44,8 +44,9 @@ home = (ROOT / "_build" / "home.src.html").read_text(encoding="utf-8")
 # Menu : le Blog est dans le pied de page
 NAV = [("Comment ça marche", "#services"), ("Métiers", "/metiers/"), ("Google Ads", "/google-ads/"), ("Meta Ads", "/meta-ads/"),
        ("Qui sommes-nous", "/qui-sommes-nous/"), ("Questions", "/questions/"), ("Particuliers", "/devis-travaux/")]
-# « Comment ça marche » ouvre une petite liste : le guide, les questions, puis la méthode sous un filet (comme « Métiers »)
-NAV_SUB = {"#services": [("Comment trouver des chantiers", "", "/trouver-des-chantiers/"),
+# « Comment ça marche » ouvre une petite liste : l'accueil, le guide, les questions, puis la méthode sous un filet (comme « Métiers »)
+NAV_SUB = {"#services": [("Accueil", "", "/"),
+                         ("Comment trouver des chantiers", "", "/trouver-des-chantiers/"),
                          ("Questions fréquentes", "", "/questions/"),
                          ("Notre méthode", "", "#services")],
            # « Métiers » ouvre la liste des cinq métiers
@@ -480,7 +481,7 @@ def with_form(body, contact, after=2):
 
 
 def write(path, title, desc, body, nav=None, schema=None, metier=None, form_after=2, form_h2=None):
-    top = absolutize(BODY_OPEN)
+    top = absolutize(BODY_OPEN).replace('aria-label="Bartier &amp; Co, retour en haut"', 'aria-label="Bartier &amp; Co, accueil"')  # pages intérieures : le logo ramène à l'accueil
     if nav:
         top = top.replace(f'class="link" href="{nav}"', f'class="link" href="{nav}" aria-current="page"', 1)
     contact = CONTACT.replace(f'name="metier" value="{metier}"', f'name="metier" value="{metier}" checked', 1) if metier else CONTACT
