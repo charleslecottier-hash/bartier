@@ -735,7 +735,7 @@ paths.insert(1, "/metiers/")
 write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
       "Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.",
       "\n\n".join([
-          top("Google Ads", "Soyez trouvé au moment où ils cherchent.", "Un propriétaire tape « couvreur » et le nom de sa ville. Il voit votre annonce. Nous le rappelons en moins de 5 minutes, en semaine de 8 h à 19 h.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_ANIM),
+          top("Google Ads", "Soyez trouvé au moment où vos clients cherchent un artisan.", "Un propriétaire tape « couvreur » et le nom de sa ville. Il voit votre annonce. Nous le rappelons en moins de 5 minutes, en semaine de 8 h à 19 h.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_ANIM),
           cols([("Les urgences", "Fuite, tuiles envolées, gouttière arrachée : la demande est immédiate."),
                 ("Les projets mûrs", "Le propriétaire compare déjà des entreprises. Être là et rappeler vite fait la différence."),
                 ("Les secteurs denses", "Assez de recherches locales pour qu'une campagne tienne toute l'année.")],
