@@ -797,10 +797,14 @@ for k in PF.SLUG:
     pf_write(sub, PF.PAGES[k]["title"], PF.PAGES[k]["desc"], body, PF.trade_schema(SITE, faq_ld, bc_ld, k))
 
 # ——— Qui sommes-nous ———
+# En tête de page : les deux fondateurs côte à côte (image composée depuis _build/portraits/, sans métadonnées)
+DUO = ('<figure class="pg-photo frame"><img src="/assets/photos/fondateurs-bartier-co-1200x900-nb.webp" '
+       'srcset="/assets/photos/fondateurs-bartier-co-480x360-nb.webp 480w, /assets/photos/fondateurs-bartier-co-800x600-nb.webp 800w, /assets/photos/fondateurs-bartier-co-1200x900-nb.webp 1200w" '
+       'sizes="(max-width: 760px) 100vw, 50vw" alt="Charles Le Cottier et Martin Barthélémy, cofondateurs de Bartier &amp; Co" width="1200" height="900"></figure>')
 write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
       "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.",
       "\n\n".join([
-          top("Qui sommes-nous", "Deux fondateurs. Un seul objectif : votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous remplissons l'agenda des artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), "Un artisan rencontre"),
+          top("Qui sommes-nous", "Deux fondateurs. Un seul objectif : votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous remplissons l'agenda des artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), visual=DUO),
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>Un bon artisan ne devrait pas courir après les devis</h2></div>
@@ -815,7 +819,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
                 ("Des engagements écrits", "Exclusivité, un artisan par secteur, rappel en 5 minutes, sans engagement de durée."),
                 ("Des chiffres vérifiables", "Le budget est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
                "Comment nous travaillons", "", tone="paper"),
-          TEAM.replace('id="team"', 'id="equipe"'),
+          re.sub(r'<figure class="person-photo[\s\S]*?</figure>\s*', "", TEAM.replace('id="team"', 'id="equipe"')),  # portraits déjà en tête de page
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>Bartier & Co en bref</h2></div>
