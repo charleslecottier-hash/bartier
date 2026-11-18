@@ -375,3 +375,6 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 /* ——— Chiffres clés : « 24–48 » sur une ligne, même taille pour les quatre chiffres ——— */
 .fact-num{white-space:nowrap;font-size:clamp(3rem,5.6vw,5.4rem)}
 @media (max-width:760px){.fact-num{font-size:3rem}}
+
+/* ——— Fluidité : éléments animés sur leur propre calque, pour ne pas repeindre toute la section ——— */
+[data-shutter] .person-photo,.vc-row.is-live .vc-track,[data-parallax] img{will-change:transform}
