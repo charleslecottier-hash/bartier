@@ -419,3 +419,30 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 .dq-team .link{color:inherit}
 .hdr-nav a[href="/devis-travaux/"]{opacity:.7}
 @media (max-width:760px){.how .rule-item{display:flex;flex-direction:column;gap:.4rem;padding-block:18px}.how .rule-n{padding-top:0}}
+
+/* ——— Ouverture plein écran : la photo couvre tout, le texte passe par-dessus ——— */
+.hero.is-cover .hero-pin{isolation:isolate}
+.hero.is-cover .hero-window{position:absolute;inset:0;z-index:-1;min-height:0;border-radius:0;grid-area:auto;background:var(--ink)}
+.hero.is-cover .hero-window img{object-position:62% 40%}
+.hero.is-cover .hero-window::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,36,.88) 0%,rgba(10,20,36,.66) 45%,rgba(10,20,36,.2) 100%)}
+.hero.is-cover .hero-grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:1fr auto auto 1fr;grid-template-areas:". . . ." "word word word ." "intro intro . ." ". . . .";row-gap:clamp(18px,2.2vw,30px)}
+.hero.is-cover .hero-kick{color:rgba(255,255,255,.78)}
+.hero.is-cover .hero-h1{color:#fff}
+.hero.is-cover .hero-h1 span + span{color:#a9c1ff}
+.hero.is-cover .lead{color:rgba(255,255,255,.92);max-width:40ch}
+.hero.is-cover .cta-note{color:rgba(255,255,255,.8)}
+@media (max-width:1023px){
+  .hero.is-cover .hero-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:1fr auto auto;grid-template-areas:"." "word" "intro";row-gap:18px}
+  .hero.is-cover .hero-window::after{background:linear-gradient(0deg,rgba(10,20,36,.92) 0%,rgba(10,20,36,.72) 50%,rgba(10,20,36,.28) 100%)}
+}
+
+/* ——— En-tête : Google Ads et Meta Ads dans le menu ; « Questions » passe dans le menu déroulant tant que la place manque ——— */
+@media (min-width:901px) and (max-width:1799px){.hdr-nav a[href="/questions/"]{display:none}}
+/* Petits portables et tablettes à l'horizontale : bouton menu, comme sur téléphone */
+@media (min-width:901px) and (max-width:1279px){
+  .hdr-in{grid-template-columns:1fr auto auto;border-inline:0;margin-inline:0;padding-left:calc(var(--pad) - var(--cell))}
+  .hdr-tag,.hdr-nav,.hdr-side .hdr-login{display:none}
+  .hdr-side{grid-column:auto;grid-template-columns:auto}
+  .hdr-cta{padding-inline:1.1rem 1.6rem}
+  .hdr-menu{display:inline-grid;align-self:center;margin:0 var(--pad) 0 .6rem}
+}

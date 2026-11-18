@@ -41,9 +41,9 @@ def esc(t):
 # La source de l'accueil est _build/home.src.html ; index.html est le fichier généré.
 home = (ROOT / "_build" / "home.src.html").read_text(encoding="utf-8")
 
-# Menu court : Google Ads, Meta Ads et Blog sont dans le pied de page
-NAV = [("Comment ça marche", "#services"), ("Métiers", "/metiers/"), ("Qui sommes-nous", "/qui-sommes-nous/"),
-       ("Questions", "/questions/"), ("Particuliers", "/devis-travaux/")]
+# Menu : le Blog est dans le pied de page
+NAV = [("Comment ça marche", "#services"), ("Métiers", "/metiers/"), ("Google Ads", "/google-ads/"), ("Meta Ads", "/meta-ads/"),
+       ("Qui sommes-nous", "/qui-sommes-nous/"), ("Questions", "/questions/"), ("Particuliers", "/devis-travaux/")]
 nav_html = "\n".join(f'      <a class="link" href="{h}">{t}</a>' for t, h in NAV)
 menu_html = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in NAV) + '\n    <a href="#contact">Contact</a>'
 home = re.sub(r'(<nav class="hdr-nav" aria-label="Menu">)[\s\S]*?(</nav>)', r"\1\n" + nav_html + r"\n    \2", home, count=1)
@@ -518,7 +518,7 @@ def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None, date
       <p class="kick">{kick}</p>
       <h1>{h1}</h1>
       {lead_html}{meta}
-      <div class="actions"><a class="btn" href="#contact"><span>Vérifier si mon secteur est libre</span><svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>{second}</div>
+      <div class="actions"><a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span><svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>{second}</div>
     </div>
     {fig}
   </div>
@@ -788,13 +788,13 @@ pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_T
 pf_top = absolutize(BODY_OPEN)
 pf_top = pf_top.replace('class="link" href="/devis-travaux/"', 'class="link" href="/devis-travaux/" aria-current="page"', 1)
 pf_top = re.sub(r'<p class="hdr-tag">[^<]*', '<p class="hdr-tag">Vos travaux, un seul artisan près de chez vous', pf_top, count=1)
-pf_top = pf_top.replace('<a class="hdr-cta" href="#contact"><span>Mon secteur</span>', '<a class="hdr-cta" href="#projet"><span>Mon devis</span>', 1)
+pf_top = pf_top.replace('<a class="hdr-cta" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="header"><span>Réserver un appel</span>', '<a class="hdr-cta" href="#projet"><span>Mon devis</span>', 1)
 pf_top = pf_top.replace('<span>Appeler Martin</span>', '<span>Nous appeler</span>', 1)
 pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Décrire mes travaux</a>', 1)
 pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un seul artisan près de chez vous, sans frais</p>')
 pf_tail = absolutize(TAIL)
 pf_tail = pf_tail.replace('<p>Faire équipe.<br>Faire la différence.</p>', '<p>Un projet de travaux&nbsp;?<br>Un seul artisan, près de chez vous.</p>', 1)
-pf_tail = pf_tail.replace('<a class="btn" href="#contact"><span>Vérifier si mon secteur est libre</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
+pf_tail = pf_tail.replace('<a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
 pf_tail = pf_tail.replace('<small>Cofondateur · Head of Sales</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
 pf_tail = pf_tail.replace('<b>Parler à Martin<span>, Head of Sales</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
 pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', lambda m: '<p class="wa-bubble">Bonjour. Un projet de travaux ou une question&nbsp;? Écrivez-moi, je vous réponds personnellement.</p>\n      <p class="wa-k">Choisissez une question, ou écrivez la vôtre&nbsp;:</p>\n' + "\n".join(
@@ -944,7 +944,7 @@ for a in ARTICLES:
     <aside class="art-aside">
       <h3>Votre secteur est-il libre ?</h3>
       <p>Un seul artisan par métier et par secteur.</p>
-      <a class="btn" href="#contact"><span>Vérifier si mon secteur est libre</span></a>
+      <a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span></a>
     </aside>
   </div>
 </section>""",
@@ -974,7 +974,7 @@ def guide(G, kick, crumb_items, faq_title, links):
     <aside class="art-aside">
       <h3>Votre secteur est-il libre ?</h3>
       <p>Un seul artisan par métier et par secteur. Visites déjà fixées, sans durée d'engagement.</p>
-      <a class="btn" href="#contact"><span>Vérifier si mon secteur est libre</span></a>
+      <a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span></a>
     </aside>
   </div>
 </section>""",
@@ -1124,7 +1124,7 @@ nf_body = """<section class="sheet pg-top" data-tone="light">
       <p class="kick">Erreur 404</p>
       <h1>Cette page n’existe pas.</h1>
       <p class="lead">Vous cherchiez peut-être l’une de ces deux portes d’entrée.</p>
-      <div class="actions"><a class="btn" href="/devis-travaux/"><span>Décrire mes travaux</span></a><a class="link" href="/#contact">Vérifier si mon secteur est libre</a></div>
+      <div class="actions"><a class="btn" href="/devis-travaux/"><span>Décrire mes travaux</span></a><a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener">Réserver un appel</a></div>
     </div>
   </div>
 </section>"""
