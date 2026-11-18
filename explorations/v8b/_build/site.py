@@ -45,7 +45,7 @@ home = re.sub(r'(<div class="menu" id="menu">\s*<nav aria-label="Menu">)[\s\S]*?
 # Héros : le résultat rêvé, en un mot
 home = re.sub(r'<h1 class="giant" style="--len:\d+">[^<]*</h1>', '<h1 class="giant" style="--len:8">Complet.</h1>', home, count=1)
 home = re.sub(r'(<div class="hero-intro">\s*<p class="lead">)[^<]*(</p>)',
-              r"\1Votre agenda, rempli toute l’année. Des propriétaires qui ont un vrai projet, rappelés en moins de cinq minutes et installés dans votre planning. Il ne vous reste qu’à chiffrer.\2", home, count=1)
+              r"\1Des propriétaires avec un vrai projet, directement dans votre agenda. Il ne vous reste qu’à chiffrer.\2", home, count=1)
 
 # Métiers : chaque nom mène à sa page
 SLUG = {"Couverture": "couverture", "Menuiserie": "menuiserie-exterieure", "Isolation": "isolation", "Charpente": "charpente", "Façade": "facade"}
@@ -150,6 +150,7 @@ b.addEventListener('click',function(){{set(!w.classList.contains('is-open'))}});
 w.querySelector('[data-wa-close]').addEventListener('click',function(){{set(false);b.focus()}});
 document.addEventListener('keydown',function(e){{if(e.key==='Escape')set(false)}});
 document.addEventListener('click',function(e){{if(!w.contains(e.target))set(false)}});
+try{{if(!sessionStorage.getItem('bc-wa')){{setTimeout(function(){{if(w.classList.contains('is-away')||w.classList.contains('is-open'))return;set(true);try{{sessionStorage.setItem('bc-wa','1')}}catch(e){{}}}},window.innerWidth<761?7000:4500);}}}}catch(e){{}}
 w.querySelectorAll('[data-wa]').forEach(function(a){{a.addEventListener('click',function(){{(window.dataLayer=window.dataLayer||[]).push({{event:'contact_martin',canal:a.dataset.wa}})}})}});
 }})();
 </script>
@@ -158,6 +159,31 @@ home = re.sub(r'<style id="wa-css">[\s\S]*?</style>\n', "", home)
 home = re.sub(r'<div class="wa" id="wa">[\s\S]*?</script>\n', "", home)
 home = home.replace("</head>", WA_CSS + "</head>", 1)
 home = home.replace("</body>", WA_HTML + "</body>", 1)
+
+LD_HEAD = """<style id="ld-css">
+.ld{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,3vw,40px);background:#0A1424;color:#fff;transition:transform .7s cubic-bezier(.7,0,.2,1)}
+.ld.is-out{transform:translateY(-100%)}
+.ld-skip .ld{display:none}
+.ld-logo{width:min(46vw,220px);aspect-ratio:6314 / 918;background:currentColor;-webkit-mask:url(/assets/logo-bartier-wordmark.svg) left center / contain no-repeat;mask:url(/assets/logo-bartier-wordmark.svg) left center / contain no-repeat}
+.ld-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.ld-row p{max-width:22ch;color:rgba(255,255,255,.6);font:400 .9rem/1.4 var(--f-text)}
+.ld-n{font:300 clamp(4.5rem,14vw,11rem)/.8 var(--f-display);letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.ld-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:#2D5BE3;transform:scaleX(0);transform-origin:0 50%}
+html.ld-on{overflow:hidden}
+</style>
+<script>try{if(sessionStorage.getItem('bc-ld'))document.documentElement.classList.add('ld-skip');else document.documentElement.classList.add('ld-on')}catch(e){}</script>
+"""
+LD_BODY = """<div class="ld" id="ld" aria-hidden="true"><span class="ld-logo"></span><div class="ld-row"><p>Des clients pour les artisans du bâtiment</p><span class="ld-n"><span id="ld-n">0</span>%</span></div><i class="ld-bar" id="ld-bar"></i></div>
+<script>(function(){var l=document.getElementById('ld'),h=document.documentElement;if(!l||h.classList.contains('ld-skip')){if(l)l.remove();return}
+var n=document.getElementById('ld-n'),b=document.getElementById('ld-bar'),t0=performance.now(),D=matchMedia('(prefers-reduced-motion: reduce)').matches?200:1300;
+function f(t){var k=Math.max(0,Math.min(1,(t-t0)/D)),e=1-Math.pow(1-k,3);n.textContent=Math.round(e*100);b.style.transform='scaleX('+e+')';if(k<1)requestAnimationFrame(f);else done()}
+function done(){try{sessionStorage.setItem('bc-ld','1')}catch(e){}setTimeout(function(){l.classList.add('is-out');h.classList.remove('ld-on');setTimeout(function(){l.remove()},800)},180)}
+requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.remove();h.classList.remove('ld-on')}},4000)})();</script>
+"""
+home = re.sub(r'<style id="ld-css">[\s\S]*?</script>\n', "", home)
+home = re.sub(r'<div class="ld" id="ld"[\s\S]*?</script>\n', "", home)
+home = home.replace("</head>", LD_HEAD + "</head>", 1)
+home = re.sub(r"(<body[^>]*>\n?)", lambda m: m.group(1) + LD_BODY, home, count=1)
 
 # Données structurées et adresse canonique de l'accueil
 if '"@type":"Organization"' not in home:
@@ -457,6 +483,11 @@ META_MOCK = f"""<figure class="pg-photo mk" aria-label="Exemple d’annonce Face
   <figcaption class="mk-tag">Exemple</figcaption>
 </figure>"""
 
+from anim import meta_anim, google_anim, ANIM_CSS, ANIM_JS
+GOOGLE_ANIM = google_anim(ROOF_URL) + ANIM_JS
+META_ANIM = meta_anim(ROOF_URL) + ANIM_JS
+EXTRA_CSS = EXTRA_CSS.replace("</style>", ANIM_CSS + "</style>", 1)
+
 PHOTO = {"couverture": "Un couvreur pose", "facade": "Une façade en rénovation", "menuiserie-exterieure": "Un menuisier pose",
          "charpente": "Une charpente en bois", "isolation": "Isolation d"}
 paths = ["/"]
@@ -518,7 +549,7 @@ paths.insert(1, "/metiers/")
 write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
       "Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de cinq minutes.",
       "\n\n".join([
-          top("Google Ads", "Soyez trouvé au moment où ils cherchent.", "Un propriétaire tape « couvreur » et le nom de sa ville. Il tombe sur vous. Nous le rappelons en moins de cinq minutes, avant vos concurrents.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_MOCK),
+          top("Google Ads", "Soyez trouvé au moment où ils cherchent.", "Un propriétaire tape « couvreur » et le nom de sa ville. Il tombe sur vous. Nous le rappelons en moins de cinq minutes, avant vos concurrents.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_ANIM),
           cols([("Les urgences", "Fuite, tuiles envolées, gouttière arrachée : la demande est immédiate."),
                 ("Les projets mûrs", "Le propriétaire compare déjà des entreprises. Être là et rappeler vite fait la différence."),
                 ("Les secteurs denses", "Assez de recherches locales pour qu'une campagne tienne toute l'année.")],
@@ -539,7 +570,7 @@ paths.append("/google-ads/")
 write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & Co",
       "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de cinq minutes et qualifiés.",
       "\n\n".join([
-          top("Meta Ads · Facebook et Instagram", "Remplissez votre agenda avant qu'ils ne cherchent.", "Des annonces à votre nom, vues par les propriétaires à 25 à 40 km de votre dépôt. Chaque demande rappelée en moins de cinq minutes, puis vérifiée.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_MOCK),
+          top("Meta Ads · Facebook et Instagram", "Remplissez votre agenda avant qu'ils ne cherchent.", "Des annonces à votre nom, vues par les propriétaires à 25 à 40 km de votre dépôt. Chaque demande rappelée en moins de cinq minutes, puis vérifiée.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_ANIM),
           cols([("Un rayon autour du dépôt", "25 à 40 km, réglés commune par commune selon vos chantiers."),
                 ("Vos vraies photos", "Vos chantiers, votre équipe. Rien ne convainc mieux un voisin."),
                 ("Des angles de saison", "Après les intempéries, avant l'hiver, au printemps pour la rénovation.")],
