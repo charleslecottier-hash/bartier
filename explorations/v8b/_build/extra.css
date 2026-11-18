@@ -690,3 +690,16 @@ main section.sheet.tc-sec,main section.sheet.tc-us{padding-top:clamp(64px,6.5vw,
   .tc-loss{grid-template-columns:minmax(0,1fr);row-gap:24px}
   .tc-us-grid h2,.tc-us-txt{grid-column:1 / -1}
 }
+
+/* ——— Google Ads et Meta Ads : l'animation posée sur une photo du terrain (noir et blanc, voile marine), comme l'ouverture de l'accueil ———
+   L'animation elle-même ne change pas : seuls le fond, le cadre du téléphone, les étapes et l'étiquette « Exemple ». */
+.pg-photo.mk.has-scene{isolation:isolate;background:var(--ink);border-radius:var(--r)}
+.pg-photo.mk.has-scene .mk-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.pg-photo.mk.has-scene::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,20,36,.5) 0%,rgba(10,20,36,.72) 55%,rgba(10,20,36,.9) 100%)}
+.has-scene .ph{box-shadow:inset 0 0 0 1.5px #2b3242,0 0 0 1px rgba(255,255,255,.14),0 48px 96px -32px rgba(0,0,0,.75)}
+.has-scene .ph-steps{gap:4px;padding:4px;border-radius:10px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.pg-photo.has-scene .ph-steps li{padding:6px 12px;border-radius:6px;background:transparent;color:rgba(255,255,255,.62)}
+.pg-photo.has-scene .ph-steps li.is-done{color:rgba(255,255,255,.88)}
+.pg-photo.has-scene .ph-steps li.is-on{background:#fff;color:var(--ink)}
+.has-scene .mk-tag{top:16px;right:16px;padding:4px 8px;border-radius:6px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+@media (max-width:420px){.pg-photo.has-scene .ph-steps{flex-wrap:nowrap}.pg-photo.has-scene .ph-steps li{padding:6px 8px;font-size:.72rem;white-space:nowrap}}

@@ -629,8 +629,13 @@ META_MOCK = f"""<figure class="pg-photo mk" aria-label="Exemple d’annonce Face
 
 from anim import meta_anim, google_anim, ANIM_CSS, ANIM_JS
 ROOF_AD = re.sub(r"w=\d+", "w=720", re.sub(r"h=\d+", "h=480", ROOF_URL)) + "&amp;bc=color"
-GOOGLE_ANIM = google_anim(ROOF_AD) + ANIM_JS
-META_ANIM = meta_anim(ROOF_AD) + ANIM_JS
+def _anim_scene(anim, key):
+    """Fond de l'animation : une photo du terrain en noir et blanc sous un voile marine, le téléphone reste en couleur."""
+    url, _alt = img(key)
+    return (anim.replace('<figure class="pg-photo mk mk-anim"', '<figure class="pg-photo mk mk-anim has-scene"', 1)
+                .replace('<div class="ph" data-flow', f'<img class="mk-bg" src="{url}" alt="" width="1200" height="800">\n  <div class="ph" data-flow', 1))
+GOOGLE_ANIM = _anim_scene(google_anim(ROOF_AD), "Un couvreur pose des tuiles") + ANIM_JS
+META_ANIM = _anim_scene(meta_anim(ROOF_AD), "Une rue résidentielle") + ANIM_JS
 EXTRA_CSS = EXTRA_CSS.replace("</style>", ANIM_CSS + "</style>", 1)
 
 PHOTO = {"couverture": "Un couvreur pose", "facade": "Une façade en rénovation", "menuiserie-exterieure": "Un menuisier pose",
