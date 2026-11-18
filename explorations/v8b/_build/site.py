@@ -723,7 +723,7 @@ write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & C
     </div>
   </div>
 </section>""",
-          faq(HUB_FAQ, title="Votre métier est-il concerné ?"),
+          faq(HUB_FAQ, title="Des questions ?"),
       ]), nav="/metiers/", schema={"@context": "https://schema.org", "@graph": [
           bc_ld(("Métiers", "/metiers/")),
           {"@type": "ItemList", "name": "Métiers du bâtiment accompagnés par Bartier & Co", "itemListElement": [
