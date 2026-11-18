@@ -652,12 +652,17 @@ EXTRA_CSS = EXTRA_CSS.replace("</style>", ANIM_CSS + "</style>", 1)
 
 PHOTO = {"couverture": "Un couvreur pose", "facade": "Une façade en rénovation", "menuiserie-exterieure": "Un menuisier pose",
          "charpente": "Une charpente en bois", "isolation": "Isolation d"}
+# En-tête des pages métiers : une visite déjà posée dans l'agenda, sur la photo (illustration, sans nom ni adresse)
+VISIT = {"couverture": "Réfection de toiture", "facade": "Ravalement de façade", "menuiserie-exterieure": "Fenêtres de toute la maison",
+         "charpente": "Reprise de charpente", "isolation": "Isolation des combles"}
+VISIT_CARD = ('<div class="tr-visit" aria-hidden="true"><p class="tr-visit-k"><span>Visite de devis</span><b>Mardi, 14 h 30</b></p>'
+              '<p class="tr-visit-t">{}</p><ul><li>Propriétaire rappelé</li><li>Projet vérifié</li></ul></div>')
 paths = ["/"]
 
 # ——— Métiers ———
 for t in TRADES:
     path = f"/metiers/{t['slug']}/"
-    short = f"Des propriétaires qui préparent {PROJECT[t['slug']]}. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda."
+    short = "Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite."
     meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en moins de 5 minutes, visite dans votre agenda."
     if len(meta_desc) > 158:  # descriptions courtes : la phrase s'arrête au rappel
         meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en moins de 5 minutes."
@@ -670,7 +675,9 @@ for t in TRADES:
                             ("Qui rappelle les propriétaires ?", "Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
                             ("En combien de temps arrivent les premiers rendez-vous ?", "L'intégration prend 24 à 48 heures après notre appel, puis 3 à 5 jours pour lancer vos annonces. Le rythme dépend ensuite de votre secteur et de la saison.")]
     body = "\n\n".join([
-        top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Voir ce que nous vérifions", "#appel")),
+        top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Voir ce que nous vérifions", "#appel"))
+            .replace('<section class="sheet pg-top"', '<section class="sheet pg-top is-trade"', 1)
+            .replace("</figure>", VISIT_CARD.format(VISIT[t["slug"]]) + "</figure>", 1),
         f"""<section class="sheet tr-hunt" data-tone="paper">
   <div class="grid sp-split">
     <div><h2 data-split>Ce que nous allons chercher</h2><p>Des chantiers qui valent le déplacement. Le reste est écarté avant d'arriver chez vous.</p></div>

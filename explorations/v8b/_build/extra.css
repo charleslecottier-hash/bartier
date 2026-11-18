@@ -982,3 +982,24 @@ section.ws-cols ol.sp-cols h3{font-size:clamp(1.3rem,1.7vw,1.6rem)}
 .menu nav .menu-dd-list a b{font-weight:500}
 .menu nav .menu-dd-list a small{font-size:.85rem;line-height:1.35;color:#5b616b}
 .menu nav .menu-dd-list a:active{box-shadow:inset 2px 0 0 var(--accent)}
+
+/* Pages métiers, en-tête : titre plus serré, grande photo à hauteur du texte, une visite posée dans l'agenda */
+@media (min-width:761px){
+  .pg-top.is-trade .pg-grid{align-items:center}
+  .pg-top.is-trade .pg-text h1{font-size:clamp(2.6rem,4.3vw,4.3rem)}
+  .pg-top.is-trade .pg-text .lead{max-width:48ch;text-wrap:pretty}
+  .pg-top.is-trade .pg-photo{position:relative;overflow:visible;align-self:stretch;aspect-ratio:auto;min-height:clamp(440px,38vw,620px)}
+  .pg-top.is-trade .pg-photo img{position:absolute;inset:0;border-radius:var(--r)}
+}
+.tr-visit{position:absolute;left:-40px;bottom:40px;z-index:2;display:grid;gap:8px;width:min(300px,78%);padding:16px 20px 18px;background:#fff;color:var(--ink);border-radius:12px;box-shadow:0 0 0 1px rgba(10,20,36,.06),0 24px 48px -20px rgba(10,20,36,.45)}
+.tr-visit p{margin:0}
+.tr-visit-k{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.84rem;color:#5b616b}
+.tr-visit-k span{display:inline-flex;align-items:center;gap:8px}
+.tr-visit-k span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.tr-visit-k b{font-weight:500;color:var(--ink);white-space:nowrap}
+.tr-visit-t{font:400 1.25rem/1.2 var(--f-display);letter-spacing:-.015em}
+.tr-visit ul{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0;padding:0;list-style:none;font-size:.84rem;color:#5b616b}
+.tr-visit li{display:inline-flex;align-items:center;gap:6px}
+.tr-visit li::before{content:"";flex:none;width:16px;height:16px;border-radius:50%;background:var(--tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%232D5BE3' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat}
+@media (max-width:760px){.tr-visit{display:none}}
+@media (min-width:761px) and (max-width:1280px){.tr-visit{left:16px;bottom:16px}}
