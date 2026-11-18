@@ -516,7 +516,7 @@ def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None, date
       <p class="kick">{kick}</p>
       <h1>{h1}</h1>
       {lead_html}{meta}
-      <div class="actions"><a class="btn" href="#contact"><span>Vérifier mon secteur</span><svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>{second}</div>
+      <div class="actions"><a class="btn" href="#contact"><span>Vérifier si mon secteur est libre</span><svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>{second}</div>
     </div>
     {fig}
   </div>
@@ -704,7 +704,7 @@ HUB_FAQ = [
     ("Les demandes changent-elles selon la saison ?", "Oui. Les fuites en hiver, les réfections et les ravalements au printemps, l'entretien et les menuiseries à l'automne. Les annonces suivent les saisons pour garder un agenda régulier."),
 ]
 write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & Co",
-      "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, partout en France. Un seul artisan par secteur.",
+      "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, partout en France. Un seul artisan par métier et par secteur.",
       "\n\n".join([
           top("Métiers", "Cinq métiers, des chantiers de plusieurs milliers d'euros.", "Pas de dépannage, pas de petits travaux. Un seul artisan par métier et par secteur.", crumbs(("Métiers", "/metiers/")), "Une équipe d"),
           HUB_SECTORS,
@@ -792,7 +792,7 @@ pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Dé
 pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un seul artisan près de chez vous, sans frais</p>')
 pf_tail = absolutize(TAIL)
 pf_tail = pf_tail.replace('<p>Faire équipe.<br>Faire la différence.</p>', '<p>Un projet de travaux&nbsp;?<br>Un seul artisan, près de chez vous.</p>', 1)
-pf_tail = pf_tail.replace('<a class="btn" href="#contact"><span>Vérifier mon secteur</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
+pf_tail = pf_tail.replace('<a class="btn" href="#contact"><span>Vérifier si mon secteur est libre</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
 pf_tail = pf_tail.replace('<small>Cofondateur · Head of Sales</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
 pf_tail = pf_tail.replace('<b>Parler à Martin<span>, Head of Sales</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
 pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', lambda m: '<p class="wa-bubble">Bonjour. Un projet de travaux ou une question&nbsp;? Écrivez-moi, je vous réponds personnellement.</p>\n      <p class="wa-k">Choisissez une question, ou écrivez la vôtre&nbsp;:</p>\n' + "\n".join(
@@ -853,7 +853,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
     <div class="prose">
       <p>Un bon artisan a du métier et des clients satisfaits. Ce qui lui manque, c'est un flux régulier de projets sérieux.</p>
       <p>Les plateformes revendent la même demande à plusieurs entreprises. Le bouche-à-oreille ne se commande pas. Et personne ne peut rappeler depuis un toit.</p>
-      <p>Nous avons construit un système simple : des annonces locales, un rappel en moins de 5 minutes, et un rendez-vous réservé à un seul artisan par secteur.</p>
+      <p>Nous avons construit un système simple : des annonces locales, un rappel en moins de 5 minutes, et une visite réservée à un seul artisan par métier et par secteur.</p>
     </div>
   </div>
 </section>""",
@@ -942,7 +942,7 @@ for a in ARTICLES:
     <aside class="art-aside">
       <h3>Votre secteur est-il libre ?</h3>
       <p>Un seul artisan par métier et par secteur.</p>
-      <a class="btn" href="#contact"><span>Vérifier mon secteur</span></a>
+      <a class="btn" href="#contact"><span>Vérifier si mon secteur est libre</span></a>
     </aside>
   </div>
 </section>""",
@@ -972,7 +972,7 @@ def guide(G, kick, crumb_items, faq_title, links):
     <aside class="art-aside">
       <h3>Votre secteur est-il libre ?</h3>
       <p>Un seul artisan par métier et par secteur. Visites déjà fixées, sans durée d'engagement.</p>
-      <a class="btn" href="#contact"><span>Vérifier mon secteur</span></a>
+      <a class="btn" href="#contact"><span>Vérifier si mon secteur est libre</span></a>
     </aside>
   </div>
 </section>""",
@@ -1122,7 +1122,7 @@ nf_body = """<section class="sheet pg-top" data-tone="light">
       <p class="kick">Erreur 404</p>
       <h1>Cette page n’existe pas.</h1>
       <p class="lead">Vous cherchiez peut-être l’une de ces deux portes d’entrée.</p>
-      <div class="actions"><a class="btn" href="/devis-travaux/"><span>Décrire mes travaux</span></a><a class="link" href="/#contact">Vérifier mon secteur</a></div>
+      <div class="actions"><a class="btn" href="/devis-travaux/"><span>Décrire mes travaux</span></a><a class="link" href="/#contact">Vérifier si mon secteur est libre</a></div>
     </div>
   </div>
 </section>"""

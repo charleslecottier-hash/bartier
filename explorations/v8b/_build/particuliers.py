@@ -218,7 +218,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <li><b>1&nbsp;SMS</b><span>pour vous rappeler le rendez-vous avant la visite</span></li>
     <li><b>0&nbsp;€</b><span>pour vous&nbsp;: visite et devis offerts, sans engagement</span></li>
   </ul>
-  <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Fixer ma visite</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
+  <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Décrire mes travaux</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
 </section>"""
 
     def band(text, btn, sub=""):
@@ -239,10 +239,10 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 </section>"""
 
     steps = f"""<section class="sheet" id="etapes" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Votre devis, étape par étape</h2><p>1 minute pour vous. Le reste, on s’en occupe.</p></div>
+  <div class="grid sp-head"><h2 data-split>Votre devis, étape par étape</h2><p>1 minute pour vous. Le reste, nous nous en occupons.</p></div>
   <ol class="pf-time">
     <li><span class="pf-t">Maintenant</span><h3>Décrivez vos travaux</h3><p>5 questions, 1 minute. Aucun compte à créer.</p></li>
-    <li><span class="pf-t">Dans 5 minutes</span><h3>On vous rappelle</h3><p>Une vraie personne vérifie votre besoin, en semaine de 8 h à 19 h.</p></li>
+    <li><span class="pf-t">En moins de 5 minutes</span><h3>Nous vous rappelons</h3><p>Une vraie personne vérifie votre besoin, en semaine de 8 h à 19 h.</p></li>
     <li><span class="pf-t">Pendant l’appel</span><h3>La visite est fixée</h3><p>Directement dans l’agenda de l’artisan de votre secteur.</p></li>
     <li><span class="pf-t">Avant la visite</span><h3>Rappel par SMS</h3><p>Pour ne pas oublier le rendez-vous.</p></li>
     <li><span class="pf-t">Le jour J</span><h3>L’artisan chiffre chez vous</h3><p>Visite et devis offerts. Vous décidez, sans engagement.</p></li>
@@ -261,7 +261,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <div class="sp-row" role="row"><span role="rowheader">Vos coordonnées</span><span role="cell">Partagées entre entreprises</span><span role="cell">Transmises à un seul artisan</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le prix pour vous</span><span role="cell">Gratuit</span><span role="cell">Gratuit</span></div>
   </div>
-  {band("Un seul artisan, de votre secteur.", "Être rappelé gratuitement")}
+  {band("Un seul artisan, de votre secteur.", "Décrire mes travaux")}
 </section>"""
 
     leak = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in LEAK)
@@ -275,14 +275,14 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     price = f"""<section class="sheet" id="prix" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Combien vont coûter vos travaux&nbsp;?</h2><p>Les prix en ligne sont des moyennes. Ce qui compte, c’est votre chantier. La visite est gratuite.</p></div>
   <ul class="pf-prices">{prices}</ul>
-  <p class="pf-mid"><a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
+  <p class="pf-mid"><a class="btn" href="#projet"><span>Décrire mes travaux</span>{tick()}</a><a class="link" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
 </section>"""
 
     serious = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in SERIOUS)
     serious = f"""<section class="sheet" id="artisan-serieux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Reconnaître un artisan sérieux</h2><p>5 points à vérifier avant de signer. Avec nous ou sans nous.</p></div>
   <ul class="pf-checks">{serious}</ul>
-  {band("Un artisan local, qui se déplace avant de chiffrer.", "Trouver mon artisan")}
+  {band("Un artisan local, qui se déplace avant de chiffrer.", "Décrire mes travaux")}
 </section>"""
 
     rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in FAQ)
@@ -644,7 +644,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     price = f"""<section class="sheet" id="prix" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>{P["price_h2"]}</h2><p>{t[9]}</p></div>
   <div class="pf-refbox"><p class="pf-ref">{REF[key][0]}</p><p class="pf-src">Source&nbsp;: {REF[key][1]}</p><p>Ce repère reste une moyenne. Seule une visite permet un devis fiable, et elle ne vous coûte rien.</p>
-  <a class="btn" href="#projet"><span>Obtenir mon devis</span>{tick()}</a></div>
+  <a class="btn" href="#projet"><span>Décrire mes travaux</span>{tick()}</a></div>
 </section>"""
     brief = [("Le service", P["brief"])] + BRIEF[1:]
     brief = "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in brief)

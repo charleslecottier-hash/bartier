@@ -399,3 +399,6 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 
 /* ——— Plus d'animation d'ouverture : la phrase qui apparaissait sur la photo agrandie n'a plus lieu d'être ——— */
 .hero:not(.is-live) .hero-statement{display:none}
+
+/* ——— Petits téléphones : les boutons au libellé long tiennent dans l'écran ——— */
+@media (max-width:400px){.btn{font-size:.9rem;padding-inline:1.05em;white-space:normal;text-align:left;line-height:1.25}}
