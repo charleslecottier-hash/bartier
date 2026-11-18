@@ -44,6 +44,8 @@ home = re.sub(r'(<div class="menu" id="menu">\s*<nav aria-label="Menu">)[\s\S]*?
 
 # Héros : le résultat rêvé, en un mot
 home = re.sub(r'<h1 class="giant" style="--len:\d+">[^<]*</h1>', '<h1 class="giant" style="--len:8">Complet.</h1>', home, count=1)
+home = re.sub(r'<p class="hero-tag">.*?</p>', '', home)
+home = home.replace('Complet.</h1>', 'Complet.</h1><p class="hero-tag">Faire équipe. <span>Faire différence.</span></p>', 1)
 home = re.sub(r'(<div class="hero-intro">\s*<p class="lead">)[^<]*(</p>)',
               r"\1Des propriétaires avec un vrai projet, directement dans votre agenda. Il ne vous reste qu’à chiffrer.\2", home, count=1)
 
@@ -110,7 +112,13 @@ WA_CSS = """<style id="wa-css">
 .sheet::before,.ruled::before,.ftr::before{background:linear-gradient(var(--rule),var(--rule)) 0 0/1px 100% no-repeat,linear-gradient(var(--rule),var(--rule)) 100% 0/1px 100% no-repeat}
 .ftr-base{flex-direction:column;align-items:flex-start;gap:.7rem}.ftr-base span:first-child{margin-right:0}
 .pg-top{padding-top:calc(var(--hdr) + 32px)}.sector-name{transform:none!important}}
-@media (prefers-reduced-motion:reduce){.wa-panel,.wa-fab{transition:none}}
+.wa-tip{position:absolute;right:0;bottom:calc(100% + 10px);display:none;align-items:flex-start;gap:4px;width:max-content;max-width:min(270px,calc(100vw - 28px));padding:4px 4px 4px 0;border-radius:14px 14px 4px 14px;background:var(--bg);color:var(--ink);box-shadow:0 14px 34px -12px rgba(10,20,36,.45),0 0 0 1px var(--rule);animation:waTip .45s cubic-bezier(.2,.8,.2,1)}
+.wa.is-tip .wa-tip{display:flex}
+.wa-tip-go{flex:1;padding:10px 4px 10px 14px;border:0;background:none;color:inherit;font:inherit;font-size:.9rem;line-height:1.35;text-align:left;cursor:pointer}
+.wa-tip-go b{font-weight:600}
+.wa-tip-x{width:30px;height:30px;border:0;background:none;color:var(--muted);font-size:1.2rem;cursor:pointer;flex:none}
+@keyframes waTip{from{opacity:0;transform:translateY(8px) scale(.96)}}
+@media (prefers-reduced-motion:reduce){.wa-panel,.wa-fab{transition:none}.wa-tip{animation:none}}
 </style>
 """
 WA_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.5 3.9c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>'
@@ -141,16 +149,19 @@ WA_HTML = f"""<div class="wa" id="wa">
       <p class="wa-foot">Lundi au vendredi, 8 h à 19 h · {PHONE_TXT}</p>
     </div>
   </div>
+  <div class="wa-tip" role="status"><button class="wa-tip-go" type="button"><b>Une question&nbsp;?</b> Martin vous répond sur WhatsApp.</button><button class="wa-tip-x" type="button" aria-label="Fermer">×</button></div>
   <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, Head of Sales</span></b></button>
 </div>
 <script>
 (function(){{var w=document.getElementById('wa');if(!w)return;var b=w.querySelector('.wa-fab');
-function set(o){{w.classList.toggle('is-open',o);b.setAttribute('aria-expanded',String(o));}}
+function set(o){{w.classList.remove('is-tip');w.classList.toggle('is-open',o);b.setAttribute('aria-expanded',String(o));}}
 b.addEventListener('click',function(){{set(!w.classList.contains('is-open'))}});
+w.querySelector('.wa-tip-go').addEventListener('click',function(){{set(true)}});
+w.querySelector('.wa-tip-x').addEventListener('click',function(){{w.classList.remove('is-tip')}});
 w.querySelector('[data-wa-close]').addEventListener('click',function(){{set(false);b.focus()}});
 document.addEventListener('keydown',function(e){{if(e.key==='Escape')set(false)}});
 document.addEventListener('click',function(e){{if(!w.contains(e.target))set(false)}});
-try{{if(!sessionStorage.getItem('bc-wa')){{setTimeout(function(){{if(w.classList.contains('is-away')||w.classList.contains('is-open'))return;set(true);try{{sessionStorage.setItem('bc-wa','1')}}catch(e){{}}}},window.innerWidth<761?7000:4500);}}}}catch(e){{}}
+try{{if(!sessionStorage.getItem('bc-wa')){{setTimeout(function(){{if(w.classList.contains('is-away')||w.classList.contains('is-open'))return;if(window.innerWidth<761)w.classList.add('is-tip');else set(true);try{{sessionStorage.setItem('bc-wa','1')}}catch(e){{}}}},window.innerWidth<761?7000:4500);}}}}catch(e){{}}
 w.querySelectorAll('[data-wa]').forEach(function(a){{a.addEventListener('click',function(){{(window.dataLayer=window.dataLayer||[]).push({{event:'contact_martin',canal:a.dataset.wa}})}})}});
 }})();
 </script>
