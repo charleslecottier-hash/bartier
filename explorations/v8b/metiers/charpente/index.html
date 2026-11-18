@@ -112,6 +112,15 @@
 @media (max-width:760px){.dq-tiles,.dq-tiles.is-3{grid-template-columns:minmax(0,1fr)}.dq-tile span{min-height:56px}.dq-zone{grid-template-columns:minmax(0,1fr)}.dq-fields{grid-template-columns:minmax(0,1fr)}.dq{padding:20px}}
 @media (prefers-reduced-motion:reduce){.dq-step.is-on{animation:none}.dq-bar i{transition:none}}
 /* —— Ajouts Bartier & Co —— */
+.ss-side{grid-column:3 / 5;align-self:end;display:flex;flex-direction:column;gap:1rem}
+@media (max-width:760px){.ss-side{grid-column:1 / -1}}
+.ss-side p{align-self:auto}
+.ss-key{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-size:.82rem;color:var(--muted)}
+.ss-key span::before{content:"";display:inline-block;width:.6em;height:.6em;margin-right:.45em;border-radius:50%;background:var(--ink);vertical-align:.05em}
+.ss-key .is-do::before{background:var(--accent)}
+.season-need{font:400 1.15rem/1.25 var(--f-display);letter-spacing:-.015em}
+.season-do{font-size:.95rem;color:var(--accent)}
+.season-do::before{content:"→ "}
 .hero-tag{margin-top:clamp(18px,2.2vw,34px);padding-left:.12em;font:300 clamp(1.25rem,2.3vw,2.25rem)/1.1 var(--f-display);letter-spacing:-.025em;color:var(--ink)}
 .hero-tag span{color:var(--accent)}
 @media (max-width:760px){.hero-tag{margin-top:14px;font-size:1.3rem}}

@@ -112,6 +112,15 @@
 @media (max-width:760px){.dq-tiles,.dq-tiles.is-3{grid-template-columns:minmax(0,1fr)}.dq-tile span{min-height:56px}.dq-zone{grid-template-columns:minmax(0,1fr)}.dq-fields{grid-template-columns:minmax(0,1fr)}.dq{padding:20px}}
 @media (prefers-reduced-motion:reduce){.dq-step.is-on{animation:none}.dq-bar i{transition:none}}
 /* —— Ajouts Bartier & Co —— */
+.ss-side{grid-column:3 / 5;align-self:end;display:flex;flex-direction:column;gap:1rem}
+@media (max-width:760px){.ss-side{grid-column:1 / -1}}
+.ss-side p{align-self:auto}
+.ss-key{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-size:.82rem;color:var(--muted)}
+.ss-key span::before{content:"";display:inline-block;width:.6em;height:.6em;margin-right:.45em;border-radius:50%;background:var(--ink);vertical-align:.05em}
+.ss-key .is-do::before{background:var(--accent)}
+.season-need{font:400 1.15rem/1.25 var(--f-display);letter-spacing:-.015em}
+.season-do{font-size:.95rem;color:var(--accent)}
+.season-do::before{content:"→ "}
 .hero-tag{margin-top:clamp(18px,2.2vw,34px);padding-left:.12em;font:300 clamp(1.25rem,2.3vw,2.25rem)/1.1 var(--f-display);letter-spacing:-.025em;color:var(--ink)}
 .hero-tag span{color:var(--accent)}
 @media (max-width:760px){.hero-tag{margin-top:14px;font-size:1.3rem}}
@@ -487,13 +496,13 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
 <section class="seasons sheet" id="calendar" data-kind="seasons" data-tone="light">
   <div class="grid ss-head">
     <h2 data-split>Un agenda rempli en toute saison</h2>
-    <p>Vos clients ne pensent pas à leur maison au même moment de l’année. Nos annonces suivent leurs saisons, avec un temps d’avance sur votre planning.</p>
+    <div class="ss-side"><p>Chaque saison a ses demandes. Nos annonces ont un temps d’avance.</p><p class="ss-key"><span>Ils cherchent</span><span class="is-do">Nous lançons</span></p></div>
   </div>
   <ol class="grid ss-list">
-    <li class="season"><p class="season-when">Déc. – fév.</p><h3>Hiver</h3><dl><div><dt>Les propriétaires pensent à</dt><dd>Fuites, tuiles envolées après les tempêtes, maison froide.</dd></div><div><dt>Nous lançons</dt><dd>Annonces « vérification après intempéries » et isolation. Nous remplissons déjà votre printemps.</dd></div></dl></li>
-    <li class="season"><p class="season-when">Mars – mai</p><h3>Printemps</h3><dl><div><dt>Les propriétaires pensent à</dt><dd>Réfection de toiture, ravalement, démoussage&nbsp;: les projets repoussés reviennent.</dd></div><div><dt>Nous lançons</dt><dd>Annonces rénovation dans votre rayon. Les chantiers de l’été se signent maintenant.</dd></div></dl></li>
-    <li class="season"><p class="season-when">Juin – août</p><h3>Été</h3><dl><div><dt>Les propriétaires pensent à</dt><dd>Vos équipes sont sur les chantiers&nbsp;; les demandes ralentissent en août.</dd></div><div><dt>Nous lançons</dt><dd>Flyers autour de vos échafaudages, relance des devis en attente. La rentrée se prépare.</dd></div></dl></li>
-    <li class="season"><p class="season-when">Sept. – nov.</p><h3>Automne</h3><dl><div><dt>Les propriétaires pensent à</dt><dd>Entretien avant l’hiver, gouttières, fenêtres qui laissent passer le froid.</dd></div><div><dt>Nous lançons</dt><dd>Annonces entretien et menuiserie, puis vérification dès les premiers coups de vent.</dd></div></dl></li>
+    <li class="season"><p class="season-when">Déc. – fév.</p><h3>Hiver</h3><p class="season-need">Fuites, tuiles envolées</p><p class="season-do">Annonces après tempête</p></li>
+    <li class="season"><p class="season-when">Mars – mai</p><h3>Printemps</h3><p class="season-need">Réfection, ravalement</p><p class="season-do">Annonces rénovation</p></li>
+    <li class="season"><p class="season-when">Juin – août</p><h3>Été</h3><p class="season-need">Les demandes ralentissent</p><p class="season-do">Flyers et relance des devis</p></li>
+    <li class="season"><p class="season-when">Sept. – nov.</p><h3>Automne</h3><p class="season-need">Préparer l’hiver</p><p class="season-do">Annonces entretien, menuiserie</p></li>
   </ol>
 </section>
 
