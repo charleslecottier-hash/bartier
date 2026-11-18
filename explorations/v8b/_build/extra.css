@@ -329,3 +329,8 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
   .hdr-nav{gap:.45rem .9rem;font-size:.82rem}
   .hdr-nav a[href="/blog/"]{display:none}
 }
+
+/* ——— Page Métiers : tableau pleine largeur ——— */
+.art-grid .prose.is-wide{grid-column:1 / -1;max-width:none}
+.prose td a{font-weight:500}
+@media (min-width:761px){.prose.is-wide th:first-child,.prose.is-wide td:first-child{width:22%}}

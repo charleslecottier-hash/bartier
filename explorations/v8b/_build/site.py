@@ -293,7 +293,8 @@ CONTACT = CONTACT[:CONTACT.index("</section>") + len("</section>")]
 TAIL = home[home.index("</main>"):]
 TEAM = home[home.index('<section class="team sheet"'):]
 TEAM = TEAM[:TEAM.index("</section>") + len("</section>")]
-IMGS = {html.unescape(a): u for u, a in re.findall(r'<img [^>]*?src="([^"]+)" alt="([^"]+)"', home)}
+# catalogue des photos : celles de l'accueil et celles des sections déplacées sur la page Métiers
+IMGS = {html.unescape(a): u for u, a in re.findall(r'<img [^>]*?src="([^"]+)" alt="([^"]+)"', home + (ROOT / "_build" / "metiers_blocs.html").read_text(encoding="utf-8") + (ROOT / "_build" / "photos_catalogue.html").read_text(encoding="utf-8"))}
 
 
 def img(alt_start):
@@ -664,26 +665,60 @@ for t in TRADES:
               bc_ld(("Métiers", "/metiers/"), (t["name"], path)), faq_ld(trade_faq)]})
     paths.append(path)
 
-hub_items = "\n".join(f'    <li class="sector"><h2 class="sector-name"><a href="/metiers/{t["slug"]}/">{t["name"].split(" et ")[0]}</a></h2><p class="sector-note">{esc(", ".join(t["keep"][:3]))}</p></li>' for t in TRADES)
+# ——— Page Métiers : tous les métiers, ce que nous cherchons, photos de chantier, saisons, méthode, questions ———
+_mb = (ROOT / "_build" / "metiers_blocs.html").read_text(encoding="utf-8")
+_blk = {k: re.search(r'<section class="[^"]*" id="%s"[\s\S]*?</section>' % k, _mb).group(0) for k in ("sectors", "gallery", "calendar")}
+HUB_SECTORS = _blk["sectors"].replace(
+    "<p>Uniquement les métiers où un chantier vaut plusieurs milliers d’euros. Pas de dépannage, pas de petits travaux.</p>",
+    "<p>Cinq métiers, et pour chacun un seul artisan par secteur. Cliquez sur un métier pour voir ce que nous allons chercher pour vous.</p>", 1)
+HUB_GALLERY = _blk["gallery"]
+HUB_SEASONS = _blk["calendar"].replace('data-tone="light"', 'data-tone="paper"', 1)
+_rows = "\n".join(
+    f'<tr><td><a href="/metiers/{t["slug"]}/">{t["name"]}</a></td><td>{", ".join(t["keep"][:3])}</td><td>{", ".join(t["drop"][:2])}</td></tr>'
+    for t in TRADES)
+HUB_TABLE = f"""<section class="sheet" id="par-metier" data-tone="paper">
+  <div class="grid sp-head"><h2 data-split>Ce que nous cherchons, métier par métier</h2><p>Les chantiers qui valent le déplacement passent. Le reste est écarté au téléphone, avant d'arriver dans votre agenda.</p></div>
+  <div class="grid art-grid">
+    <div class="prose is-wide">
+<table>
+<thead><tr><th>Métier</th><th>Chantiers que nous cherchons</th><th>Ce que nous écartons</th></tr></thead>
+<tbody>
+{_rows}
+</tbody>
+</table>
+    </div>
+  </div>
+</section>"""
+HUB_FAQ = [
+    ("Quels métiers du bâtiment accompagnez-vous ?", "Cinq métiers où un chantier vaut plusieurs milliers d'euros : la couverture et la zinguerie, la menuiserie extérieure, la façade et le ravalement, la charpente et l'isolation."),
+    ("Mon métier n'est pas dans la liste : est-ce possible ?", "Parlons-en si vos chantiers dépassent plusieurs milliers d'euros et se vendent chez des propriétaires. Nous vous disons pendant l'appel si la méthode peut marcher pour vous."),
+    ("Pourquoi écarter les petits dépannages ?", "Parce qu'ils coûtent une demi-journée pour un petit montant. Nos annonces et nos questions au téléphone visent des chantiers qui valent le déplacement."),
+    ("Travaillez-vous avec deux artisans du même métier dans la même zone ?", "Non. Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d'autre."),
+    ("Les demandes changent-elles selon la saison ?", "Oui. Les fuites en hiver, les réfections et les ravalements au printemps, l'entretien et les menuiseries à l'automne. Les annonces suivent les saisons pour garder un agenda régulier."),
+]
 write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & Co",
       "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, partout en France. Un seul artisan par secteur.",
       "\n\n".join([
           top("Métiers", "Uniquement les métiers où un chantier compte.", "Des chantiers de plusieurs milliers d'euros. Pas de dépannage, pas de petits travaux.", crumbs(("Métiers", "/metiers/")), "Une équipe d"),
-          f"""<section class="sectors sheet" data-kind="industries" data-tone="tint">
-  <ul class="sc-list">
-{hub_items}
-  </ul>
-</section>""",
+          HUB_SECTORS,
+          label_tables(HUB_TABLE),
+          HUB_GALLERY,
+          HUB_SEASONS,
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>La même méthode pour chaque métier</h2></div>
     <div class="prose">
       <p>Des annonces locales à votre nom, sur <a href="/google-ads/">Google</a> et sur <a href="/meta-ads/">Facebook et Instagram</a>. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda.</p>
-      <p>Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d'autre.</p>
+      <p>Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d'autre. Pour comparer avec les autres façons de trouver des clients : <a href="/trouver-des-chantiers/">comment trouver des chantiers</a>.</p>
     </div>
   </div>
 </section>""",
-      ]), nav="/metiers/", schema={"@context": "https://schema.org", "@graph": [bc_ld(("Métiers", "/metiers/"))]})
+          faq(HUB_FAQ, title="Vos questions sur les métiers"),
+      ]), nav="/metiers/", schema={"@context": "https://schema.org", "@graph": [
+          bc_ld(("Métiers", "/metiers/")),
+          {"@type": "ItemList", "name": "Métiers du bâtiment accompagnés par Bartier & Co", "itemListElement": [
+              {"@type": "ListItem", "position": i, "name": fr(t["name"]), "url": f"{SITE}/metiers/{t['slug']}/"} for i, t in enumerate(TRADES, 1)]},
+          faq_ld(HUB_FAQ)]})
 paths.insert(1, "/metiers/")
 
 # ——— Google Ads ———

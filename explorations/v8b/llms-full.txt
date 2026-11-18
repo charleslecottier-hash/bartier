@@ -128,54 +128,6 @@ Fini Avec Bartier & Co
 Attendre que le bouche-à-oreille reprenne.
 Fini Avec Bartier & Co
 
-### Sur le terrain, avec vous
-Nos annonces montrent vos vrais chantiers, et nos flyers partent dans les rues où votre échafaudage est déjà monté.
-
-### Les métiers que nous servons
-Uniquement les métiers où un chantier vaut plusieurs milliers d’euros. Pas de dépannage, pas de petits travaux.
-
-#### Couverture
-Réfection, rénovation, zinguerie, démoussage
-
-#### Menuiserie
-Fenêtres, baies coulissantes, portes d’entrée
-
-#### Isolation
-Murs par l’extérieur, combles, rampants
-
-#### Charpente
-Rénovation, surélévation, extension bois
-
-#### Façade
-Ravalement, enduit, traitement des fissures
-
-#### Le vôtre ?
-Si un chantier dépasse plusieurs milliers d’euros, parlons-en.
-
-### Un agenda rempli en toute saison
-Chaque saison a ses demandes. Nos annonces ont un temps d’avance.
-Ils cherchent Nous lançons
-Déc. – fév.
-
-#### Hiver
-Fuites, tuiles envolées
-Annonces après tempête
-Mars – mai
-
-#### Printemps
-Réfection, ravalement
-Annonces rénovation
-Juin – août
-
-#### Été
-Les demandes ralentissent
-Flyers et relance des devis
-Sept. – nov.
-
-#### Automne
-Préparer l’hiver
-Annonces entretien, menuiserie
-
 ### Un prix clair, sur appel
 Il dépend de votre métier, de votre secteur et de votre volume. Vous l’avez en 15 minutes, avant toute décision.
 
@@ -249,18 +201,6 @@ Les couvreurs, les façadiers, les menuisiers extérieurs, les charpentiers et l
 **Je suis un particulier : comment trouver un artisan ?**
 Décrivez vos travaux sur la page Devis travaux. C’est gratuit : nous vous rappelons en moins de 5 minutes en semaine puis, avec votre accord, nous fixons la visite d’un seul artisan partenaire de votre secteur.
 
-### Le blog
-Tout lire
-17 nov. 2026 Comprendre
-
-#### Demande partagée, demande exclusive, rendez-vous qualifié : les différences
-17 nov. 2026 Publicité
-
-#### Google Ads ou Meta Ads : qui capte quelle demande ?
-17 nov. 2026 Méthode
-
-#### Relance de devis : calendrier, SMS et script d’appel
-
 ---
 
 ## Trouver des chantiers par métier du bâtiment
@@ -273,24 +213,84 @@ Métiers
 Des chantiers de plusieurs milliers d’euros. Pas de dépannage, pas de petits travaux.
 Mis à jour le 18 novembre 2026
 
-### Couverture
-Réfection complète de toiture, Rénovation de toiture avec isolation, Démoussage et hydrofuge d’une toiture entière
+### Les métiers que nous servons
+Cinq métiers, et pour chacun un seul artisan par secteur. Cliquez sur un métier pour voir ce que nous allons chercher pour vous.
 
-### Menuiserie extérieure
-Remplacement de toutes les fenêtres d’une maison, Baies coulissantes et galandages, Portes d’entrée sur mesure
+#### Couverture
+Réfection, rénovation, zinguerie, démoussage
 
-### Façade
-Ravalement complet de maison, Isolation thermique par l’extérieur, Enduit, crépi et peinture de façade
+#### Menuiserie
+Fenêtres, baies coulissantes, portes d’entrée
 
-### Charpente
-Rénovation ou remplacement de charpente, Surélévation de maison, Traitement de charpente sur une maison entière
+#### Isolation
+Murs par l’extérieur, combles, rampants
 
-### Isolation
-Isolation thermique par l’extérieur, Isolation des combles aménagés et des rampants, Isolation des combles perdus avec d’autres travaux
+#### Charpente
+Rénovation, surélévation, extension bois
+
+#### Façade
+Ravalement, enduit, traitement des fissures
+
+#### Le vôtre ?
+Si un chantier dépasse plusieurs milliers d’euros, parlons-en.
+
+### Ce que nous cherchons, métier par métier
+Les chantiers qui valent le déplacement passent. Le reste est écarté au téléphone, avant d’arriver dans votre agenda.
+- Métier | Chantiers que nous cherchons | Ce que nous écartons
+- Couverture et zinguerie | Réfection complète de toiture, Rénovation de toiture avec isolation, Démoussage et hydrofuge d’une toiture entière | Une tuile à remettre en place, Une petite fuite à dépanner
+- Menuiserie extérieure | Remplacement de toutes les fenêtres d’une maison, Baies coulissantes et galandages, Portes d’entrée sur mesure | Une seule fenêtre à changer, La pose de matériel acheté ailleurs
+- Façade et ravalement | Ravalement complet de maison, Isolation thermique par l’extérieur, Enduit, crépi et peinture de façade | Un simple nettoyage haute pression, Les petites retouches
+- Charpente | Rénovation ou remplacement de charpente, Surélévation de maison, Traitement de charpente sur une maison entière | Les abris de jardin et petits ouvrages, Les projets sans calendrier
+- Isolation | Isolation thermique par l’extérieur, Isolation des combles aménagés et des rampants, Isolation des combles perdus avec d’autres travaux | Les demandes d’offres à prix symbolique, Les projets dont l’éligibilité aux aides est la seule motivation
+
+### Sur le terrain, avec vous
+Nos annonces montrent vos vrais chantiers, et nos flyers partent dans les rues où votre échafaudage est déjà monté.
+
+### Un agenda rempli en toute saison
+Chaque saison a ses demandes. Nos annonces ont un temps d’avance.
+Ils cherchent Nous lançons
+Déc. – fév.
+
+#### Hiver
+Fuites, tuiles envolées
+Annonces après tempête
+Mars – mai
+
+#### Printemps
+Réfection, ravalement
+Annonces rénovation
+Juin – août
+
+#### Été
+Les demandes ralentissent
+Flyers et relance des devis
+Sept. – nov.
+
+#### Automne
+Préparer l’hiver
+Annonces entretien, menuiserie
 
 ### La même méthode pour chaque métier
 Des annonces locales à votre nom, sur Google et sur Facebook et Instagram. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda.
-Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d’autre.
+Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d’autre. Pour comparer avec les autres façons de trouver des clients : comment trouver des chantiers.
+
+### Vos questions sur les métiers
+Une autre question ? Écrivez-nous
+
+**Quels métiers du bâtiment accompagnez-vous ?**
+Cinq métiers où un chantier vaut plusieurs milliers d’euros : la couverture et la zinguerie, la menuiserie extérieure, la façade et le ravalement, la charpente et l’isolation.
+
+**Mon métier n’est pas dans la liste : est-ce possible ?**
+Parlons-en si vos chantiers dépassent plusieurs milliers d’euros et se vendent chez des propriétaires. Nous vous disons pendant l’appel si la méthode peut marcher pour vous.
+
+**Pourquoi écarter les petits dépannages ?**
+Parce qu’ils coûtent une demi-journée pour un petit montant. Nos annonces et nos questions au téléphone visent des chantiers qui valent le déplacement.
+
+**Travaillez-vous avec deux artisans du même métier dans la même zone ?**
+Non. Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d’autre.
+
+**Les demandes changent-elles selon la saison ?**
+Oui. Les fuites en hiver, les réfections et les ravalements au printemps, l’entretien et les menuiseries à l’automne. Les annonces suivent les saisons pour garder un agenda régulier.
 
 ---
 
