@@ -687,7 +687,7 @@ _rows = "\n".join(
     f'<tr><td><a href="/metiers/{t["slug"]}/">{t["name"]}</a></td><td>{_lj(t["keep"][:3])}</td><td>{_lj(t["drop"][:2])}</td></tr>'
     for t in TRADES)
 HUB_TABLE = f"""<section class="sheet" id="par-metier" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Selon votre métier. Les petits travaux sont écartés au téléphone, avant d'arriver dans votre agenda.</h2></div>
+  <div class="grid sp-head"><h2 data-split>Selon votre métier, les petits travaux sont écartés dès l'appel.</h2></div>
   <div class="grid art-grid">
     <div class="prose is-wide">
 <table>
