@@ -528,7 +528,25 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://bartierandco.com/sitemap.xml
@@ -551,7 +569,7 @@ art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['
 - [Devis travaux, pour les particuliers]({SITE}/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de cinq minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
 
 ## Pour les particuliers
-Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et devis de l'artisan compris. Rappel en moins de 5 minutes du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Un seul artisan par métier et par secteur ; les coordonnées ne sont jamais revendues.
+Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et devis de l'artisan compris. Rappel en moins de 5 minutes du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Un seul artisan par métier et par secteur : la demande lui est transmise avec l'accord du propriétaire, et à personne d'autre. Les artisans partenaires rémunèrent Bartier & Co.
 - [Devis toiture]({SITE}/devis-travaux/toiture/) : réfection, fuite, zinguerie, démoussage.
 - [Ravalement de façade]({SITE}/devis-travaux/ravalement-facade/) : ravalement, fissures, enduit, peinture, isolation par l'extérieur.
 - [Fenêtres et portes]({SITE}/devis-travaux/fenetres/) : fenêtres PVC, alu ou bois, porte d'entrée, baie vitrée, volets.
@@ -567,6 +585,13 @@ Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et dev
 - Contact : contact@bartierandco.com
 - Facebook : https://www.facebook.com/profile.php?id=61596597124434
 - Téléphone et WhatsApp : 07 81 01 89 36 (Martin Barthélémy, Head of Sales)
+- Horaires : du lundi au vendredi, de 8 h à 19 h.
+
+## Informations légales
+- [Conditions du service pour les particuliers](https://bartierandco.com/conditions-du-service/) : fonctionnement de la mise en relation, choix de l'artisan partenaire, gratuité, réclamations.
+- [Politique de confidentialité](https://bartierandco.com/confidentialite/) : données collectées, durées, droits.
+- [Politique cookies](https://bartierandco.com/cookies/)
+- [Mentions légales](https://bartierandco.com/mentions-legales/)
 """, encoding="utf-8")
 
 print("pages générées :", len(paths) - 7, "+ robots.txt, sitemap.xml, llms.txt")
