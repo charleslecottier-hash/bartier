@@ -828,3 +828,20 @@ section.pf-leak[data-tone="accent"] .pf-howto li::before,section.pf-leak[data-to
 section.tr-call[data-tone="accent"] .sp-split > div:first-child p{color:#fff}
 .tr-call .tr-card{grid-column:3 / 5}
 @media (max-width:760px){.tr-card{padding:4px 20px 8px}.tr-call .tr-card{grid-column:1 / -1}}
+
+/* ——— Passe design (textes inchangés) : les blocs numérotés deviennent des cartes, les listes à cocher des fiches ——— */
+ol.sp-cols:not(.is-cards){gap:12px;padding:0 var(--cell);border-top:0}
+ol.sp-cols:not(.is-cards) > li,ol.sp-cols:not(.is-cards) > li + li{gap:12px;padding:24px;border:0;border-radius:12px;background:#fff;box-shadow:0 0 0 1px var(--rule),0 16px 40px -28px rgba(10,20,36,.28)}
+ol.sp-cols:not(.is-cards) .sp-n{display:grid;place-items:center;width:32px;height:32px;margin-bottom:4px;border-radius:50%;background:var(--tint);color:var(--accent);font:400 .84rem/1 var(--f-text);letter-spacing:0;font-variant-numeric:tabular-nums}
+ol.sp-cols:not(.is-cards) h3{font-size:clamp(1.25rem,1.6vw,1.5rem)}
+ol.sp-cols:not(.is-cards) p{color:#5b616b}
+.sp-split > ul.sp-list:not(.is-num){margin:0 var(--cell);padding:8px 28px;border-top:0;border-radius:12px;background:#fff;color:var(--ink);box-shadow:0 0 0 1px var(--rule),0 24px 48px -28px rgba(10,20,36,.28)}
+.sp-split > ul.sp-list:not(.is-num) li{grid-template-columns:28px minmax(0,1fr);gap:16px;align-items:center;padding:14px 0}
+.sp-split > ul.sp-list:not(.is-num) li:last-child{border-bottom:0}
+.sp-split > ul.sp-list:not(.is-num) li::before{content:"";width:28px;height:28px;margin:0;border:0;border-radius:50%;transform:none;background:var(--tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%232D5BE3' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.tr-card{margin:0 var(--cell)}
+@media (max-width:760px){
+  ol.sp-cols:not(.is-cards){gap:8px}
+  ol.sp-cols:not(.is-cards) > li,ol.sp-cols:not(.is-cards) > li + li{padding:20px}
+  .sp-split > ul.sp-list:not(.is-num){padding:4px 20px}
+}
