@@ -599,7 +599,9 @@ paths = ["/"]
 for t in TRADES:
     path = f"/metiers/{t['slug']}/"
     short = f"Votre agenda rempli de propriétaires qui préparent {PROJECT[t['slug']]}. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning."
-    meta_desc = f"Des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes, visite fixée dans votre agenda. Un seul par secteur."
+    meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes, visite dans votre agenda."
+    if len(meta_desc) > 158:  # descriptions courtes : la phrase s'arrête au rappel
+        meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes."
     angles = "\n".join(f"""    <li><div class="ad-card"><p class="ad-meta">Votre entreprise · Sponsorisé</p><p class="ad-angle">{a}</p><p class="ad-text">{b}</p><p class="ad-cta">Demander une visite</p></div></li>""" for a, b in t["angles"])
     trade_faq = t["faq"] + [("Combien cela coûte-t-il ?", "Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l'appel de 15 minutes, avant toute décision."),
                             ("Y a-t-il un engagement ?", "Non. Aucune durée minimale : vous restez parce que l'agenda se remplit."),
@@ -833,7 +835,7 @@ write("/blog/", "Blog artisans : chantiers, publicité, devis | Bartier & Co",
       ]), nav="/blog/", schema={"@context": "https://schema.org", "@graph": [{"@type": "Blog", "name": "Blog Bartier & Co", "url": SITE + "/blog/", "inLanguage": "fr-FR"}, bc_ld(("Blog", "/blog/"))]})
 paths.append("/blog/")
 
-SEO_TITLE = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Lead partagé, lead exclusif ou rendez-vous qualifié ?",
+SEO_TITLE = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Demande partagée, exclusive ou rendez-vous qualifié ?",
              "relance-devis-artisan": "Relance de devis : calendrier, SMS et script d'appel",
              "google-ads-ou-meta-ads-artisan": "Google Ads ou Meta Ads pour un artisan : que choisir ?"}
 for a in ARTICLES:
@@ -932,6 +934,58 @@ for slug, meta in LEGAL_NAV:
 if legal_missing:
     print("Pages légales : informations à compléter :", ", ".join(sorted(legal_missing)))
 
+# ——— Lexique : définitions courtes et autonomes, sources officielles (_build/lexique.py) ———
+import lexique as LX
+
+
+def lx_items(items):
+    out = []
+    for slug, term, definition, links, srcs in items:
+        more = []
+        if links:
+            more.append("Voir aussi : " + ", ".join(f'<a href="{h}">{t}</a>' for h, t in links))
+        if srcs:
+            more.append("Source : " + ", ".join(f'<a href="{LX.SRC[k][1]}" target="_blank" rel="noopener">{LX.SRC[k][0]}</a>' for k in srcs))
+        more_html = f'<p class="lx-more">{" · ".join(more)}</p>' if more else ""
+        out.append(f'      <div class="lx-item" id="{slug}"><h3>{term}</h3><p>{definition}</p>{more_html}</div>')
+    return "\n".join(out)
+
+
+LX_UPDATED = "2026-11-18"
+lx_body = "\n\n".join([
+    top("Lexique", "Lexique des chantiers et des travaux",
+        "Les mots que croisent artisans et propriétaires, expliqués en deux ou trois phrases, avec la source officielle quand elle existe.",
+        crumbs(("Lexique", "/lexique/")), meta=f'<p class="lx-upd">Mis à jour le <time datetime="{LX_UPDATED}">18 novembre 2026</time></p>'),
+    f"""<section class="sheet lx" id="clients" data-tone="light">
+  <div class="grid sp-split">
+    <div><h2 data-split>Trouver des clients</h2><p>Pour les artisans du bâtiment : demandes, rendez-vous, coûts et règles d'appel.</p></div>
+    <div class="lx-list">
+{lx_items(LX.CLIENTS)}
+    </div>
+  </div>
+</section>""",
+    f"""<section class="sheet lx" id="travaux" data-tone="paper">
+  <div class="grid sp-split">
+    <div><h2 data-split>Travaux, garanties et règles</h2><p>Pour les propriétaires, et pour les artisans qui leur répondent.</p></div>
+    <div class="lx-list">
+{lx_items(LX.TRAVAUX)}
+    </div>
+  </div>
+</section>""",
+    more("Passer à l'action", "Toutes les questions fréquentes", "/#faq", [("Vous êtes artisan : vérifier votre secteur", "/#contact"), ("Vous êtes propriétaire : décrire vos travaux", "/devis-travaux/")]),
+])
+_lx_clean = lambda s: re.sub("<[^>]+>", "", fr(s))
+write_plain("/lexique/", "Lexique des chantiers et des travaux | Bartier & Co",
+            "Définitions claires pour artisans et particuliers : demande de devis, rendez-vous qualifié, garantie décennale, déclaration préalable, RGE, démarchage.",
+            lx_body.replace('href="#contact"', 'href="/#contact"'),
+            schema={"@context": "https://schema.org", "@graph": [
+                {"@type": "DefinedTermSet", "@id": SITE + "/lexique/#lexique", "name": "Lexique des chantiers et des travaux", "url": SITE + "/lexique/",
+                 "inLanguage": "fr-FR", "dateModified": LX_UPDATED, "publisher": ORG_REF,
+                 "hasDefinedTerm": [{"@type": "DefinedTerm", "@id": f"{SITE}/lexique/#{s}", "name": _lx_clean(t), "description": _lx_clean(d),
+                                     "url": f"{SITE}/lexique/#{s}", "inDefinedTermSet": {"@id": SITE + "/lexique/#lexique"}} for s, t, d, _, _ in LX.CLIENTS + LX.TRAVAUX]},
+                bc_ld(("Lexique", "/lexique/"))]})
+paths.append("/lexique/")
+
 # ——— Page 404 ———
 nf_body = """<section class="sheet pg-top" data-tone="light">
   <div class="grid pg-grid">
@@ -1011,8 +1065,8 @@ for f in PAGES_OUT:
         if slug not in LEGAL_READY:
             doc = re.sub(rf'\s*<a href="/{slug}/">[^<]*</a>', "", doc)
     rob = '<meta name="robots" content="noindex">'
-    if LIVE:
-        doc = doc.replace(rob + "\n", "").replace(rob, "")
+    if LIVE:  # en ligne : indexation et extraits longs autorisés (moteurs de réponse)
+        doc = doc.replace(rob, '<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">', 1).replace(rob + "\n", "").replace(rob, "")
     if doc.count(rob) > 1:
         i = doc.index(rob) + len(rob)
         doc = doc[:i] + doc[i:].replace(rob + "\n", "").replace(rob, "")

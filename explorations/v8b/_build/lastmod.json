@@ -1,23 +1,23 @@
 {
  "/": {
   "date": "2026-11-18",
-  "sig": "7d40e9873b637172"
+  "sig": "ec7ec6743aac960a"
  },
  "/blog/": {
   "date": "2026-11-18",
-  "sig": "073c6c1208c983c7"
+  "sig": "382836d5da24b876"
  },
  "/blog/google-ads-ou-meta-ads-artisan/": {
   "date": "2026-11-18",
-  "sig": "fa36b60bcbac0d96"
+  "sig": "7cf76264af2849d0"
  },
  "/blog/lead-partage-lead-exclusif-rendez-vous-qualifie/": {
   "date": "2026-11-18",
-  "sig": "87812738b08b843d"
+  "sig": "347dc5e6ff92b18e"
  },
  "/blog/relance-devis-artisan/": {
   "date": "2026-11-18",
-  "sig": "93a70e85958d477e"
+  "sig": "c495cb80e0f90d11"
  },
  "/conditions-du-service/": {
   "date": "2026-11-18",
@@ -29,35 +29,39 @@
  },
  "/cookies/": {
   "date": "2026-11-18",
-  "sig": "f82d54f93483ecd1"
+  "sig": "7694db0a3ca7ea2f"
  },
  "/devis-travaux/": {
   "date": "2026-11-18",
-  "sig": "343ddb81519cfb24"
+  "sig": "b9454aa53fcf82d3"
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-18",
-  "sig": "e8cdee905447b547"
+  "sig": "c14935e1c5add540"
  },
  "/devis-travaux/fenetres/": {
   "date": "2026-11-18",
-  "sig": "9654be8de037443a"
+  "sig": "0b4ee9b73413f82f"
  },
  "/devis-travaux/isolation/": {
   "date": "2026-11-18",
-  "sig": "7e19fe1f5fac9537"
+  "sig": "6bfa5f08c80f86b8"
  },
  "/devis-travaux/ravalement-facade/": {
   "date": "2026-11-18",
-  "sig": "23ff45ee06dfa6ec"
+  "sig": "6d119e60b28fc32b"
  },
  "/devis-travaux/toiture/": {
   "date": "2026-11-18",
-  "sig": "a93b71a80e7f1d59"
+  "sig": "949b8da349739f59"
  },
  "/google-ads/": {
   "date": "2026-11-18",
-  "sig": "5cb48193dc6c085d"
+  "sig": "8523643b3ba242e6"
+ },
+ "/lexique/": {
+  "date": "2026-11-18",
+  "sig": "34425df11c42876b"
  },
  "/mentions-legales/": {
   "date": "2026-11-18",
@@ -65,7 +69,7 @@
  },
  "/meta-ads/": {
   "date": "2026-11-18",
-  "sig": "b6b8070ff4fdb022"
+  "sig": "1ce839f548e5d14e"
  },
  "/metiers/": {
   "date": "2026-11-18",

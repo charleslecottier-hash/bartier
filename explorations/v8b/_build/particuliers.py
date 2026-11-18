@@ -111,6 +111,8 @@ FAQ = [
      "C’est l’assurance qui couvre, pendant 10 ans après la fin des travaux, les dommages qui menacent la solidité du bâtiment ou le rendent impropre à son usage. Elle est obligatoire pour les artisans du bâtiment, et le nom de l’assureur doit figurer sur le devis."),
     ("Faut-il une autorisation de la mairie pour ses travaux ?",
      "Souvent, oui, dès que l’aspect extérieur change : matériau ou couleur de la toiture, façade, fenêtres. Il faut alors une déclaration préalable. Des travaux à l’identique n’en demandent en général pas, sauf en secteur protégé ou si votre commune l’impose : le service urbanisme de la mairie vous le confirme."),
+    ("Le devis est-il obligatoire ?",
+     "Oui pour un dépannage, une réparation ou un entretien à domicile : l’artisan doit remettre un devis détaillé avant d’intervenir. Pour les autres travaux, demandez-en toujours un : une fois accepté, il engage l’artisan au prix indiqué."),
     ("Combien de devis faut-il demander ?",
      "Aucune règle ne l’impose. Pour de gros travaux, comparer deux ou trois devis est courant. Avec nous, un artisan local vient chiffrer chez vous, et vous restez libre de demander d’autres devis."),
     ("Quand l’artisan vient-il chez moi ?",
@@ -648,7 +650,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     brief = "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in brief)
     brief = f"""<section class="sheet pf-brief" data-tone="light" aria-labelledby="pf-brief-h">
   <div class="grid pf-brief-grid">
-    <h2 id="pf-brief-h">En bref</h2>
+    <h2 id="pf-brief-h">Devis {t[1].lower()} : l’essentiel</h2>
     <dl class="pf-dl">{brief}</dl>
     <p class="pf-upd">Mis à jour le <time datetime="{UPDATED}">{UPDATED_TXT}</time></p>
   </div>
@@ -657,7 +659,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in faq_items)
     faq = f"""<section class="faq sheet" id="questions" data-kind="faq" data-tone="paper">
   <div class="grid fq-grid">
-    <div class="fq-head"><h2 data-split>Vos questions</h2><p>Une autre question&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p></div>
+    <div class="fq-head"><h2 data-split>Devis {t[1].lower()} : vos questions</h2><p>Une autre question&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p></div>
     <div class="fq-list">
 {rows}
     </div>

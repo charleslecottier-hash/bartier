@@ -261,3 +261,20 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 .fq-a a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .fq-a a:hover{color:var(--accent)}
 [data-tone="dark"] .fq-a a{color:var(--bg)}
+
+/* ——— Lexique ——— */
+.lx .sp-split > .lx-list{grid-column:3 / 5}
+.lx-list{border-top:1px solid var(--rule)}
+.lx-item{padding:24px 0;border-bottom:1px solid var(--rule);scroll-margin-top:calc(var(--hdr) + 24px)}
+.lx-item h3{font:400 clamp(1.25rem,1.8vw,1.5rem)/1.2 var(--f-display);letter-spacing:-.015em;margin-bottom:12px}
+.lx-item p{max-width:62ch;font-size:1rem;line-height:1.6}
+.lx-item .lx-more{margin-top:12px;font-size:.88rem;line-height:1.5;color:var(--muted)}
+.lx-more a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.lx-item:target h3{color:var(--accent)}
+.lx-upd{margin-top:16px;font-size:.88rem;color:var(--muted)}
+@media (max-width:760px){
+  .lx .sp-split > .lx-list{grid-column:1 / -1}
+}
+@media (min-width:761px){
+  .lx .sp-split > div:first-child{position:sticky;top:calc(var(--hdr) + 40px)}
+}

@@ -4,7 +4,7 @@
 
 Ce fichier reprend le texte des pages du site. La version courte est https://bartierandco.com/llms.txt.
 
-## Bartier & Co — Des clients pour les artisans du bâtiment
+## Bartier & Co : des clients pour les artisans du bâtiment
 
 Adresse : https://bartierandco.com/
 
@@ -211,13 +211,13 @@ Une autre question ? Écrivez-nous
 La demande n’est proposée qu’à vous, nous rappelons nous-mêmes le propriétaire, et vous ne vous déplacez qu’une fois le rendez-vous fixé.
 
 **Comment trouver des chantiers quand on est artisan ?**
-Les canaux habituels sont le bouche-à-oreille, les plateformes de devis, les flyers et les annonces locales. Nous misons sur les annonces locales à votre nom, sur Google et sur Facebook et Instagram : chaque demande est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda.
+Pour trouver des chantiers, un artisan a cinq canaux : le bouche-à-oreille, les plateformes de devis, les apporteurs d’affaires, les flyers et les annonces locales. Nous misons sur les annonces locales à votre nom, sur Google et sur Facebook et Instagram : chaque demande est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda.
 
 **Qu’est-ce qu’un rendez-vous qualifié ?**
 C’est une visite fixée chez un propriétaire dont nous avons vérifié le projet au téléphone : il est propriétaire, il sait quels travaux il veut, sa commune est dans votre zone et son délai est clair. Vous ne vous déplacez que pour ces visites.
 
-**Lead exclusif ou lead partagé : quelle différence ?**
-Un lead partagé est vendu à plusieurs entreprises : le propriétaire reçoit plusieurs appels et compare surtout les prix. Un lead exclusif n’est envoyé qu’à une seule entreprise. Nous allons plus loin : la demande est rappelée et la visite fixée avant de vous être transmise. Lire l’article
+**Demande exclusive ou demande partagée : quelle différence ?**
+Une demande partagée est vendue à plusieurs entreprises : le propriétaire reçoit plusieurs appels et compare surtout les prix. Une demande exclusive n’est envoyée qu’à une seule entreprise. Les plateformes parlent de « lead ». Nous allons plus loin : la demande est rappelée et la visite fixée avant de vous être transmise. Lire l’article
 
 **Combien cela coûte-t-il ?**
 Il dépend de votre métier et de votre secteur. Vous avez un prix précis pendant l’appel de 15 minutes, avant toute décision.
@@ -238,7 +238,7 @@ La mise en place prend 48 heures après notre appel, et les annonces tournent d�
 Non. Notre équipe rappelle chaque demande en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous recevez la visite dans votre agenda, temps de trajet compris.
 
 **Est-ce légal de rappeler ces propriétaires ?**
-Oui. Depuis le 11 août 2026, appeler un particulier pour lui proposer des travaux demande son accord préalable. Nous ne démarchons personne : nous rappelons uniquement des propriétaires qui ont fait une demande et accepté d’être contactés. Leur accord est conservé.
+Oui. Depuis le 11 août 2026, appeler un particulier pour lui proposer des travaux demande son accord préalable (voir la règle). Nous ne démarchons personne : nous rappelons uniquement des propriétaires qui ont fait une demande et accepté d’être contactés. Leur accord est conservé.
 
 **Et si mon secteur est déjà pris par un concurrent ?**
 Nous vous le disons tout de suite, et nous vous prévenons dès qu’il se libère.
@@ -253,7 +253,7 @@ Décrivez vos travaux sur la page Devis travaux. C’est gratuit : nous vous rap
 Tout lire
 17 nov. 2026 Comprendre
 
-#### Lead partagé, lead exclusif, rendez-vous qualifié : les différences
+#### Demande partagée, demande exclusive, rendez-vous qualifié : les différences
 17 nov. 2026 Publicité
 
 #### Google Ads ou Meta Ads : qui capte quelle demande ?
@@ -297,7 +297,7 @@ Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés �
 
 Adresse : https://bartierandco.com/metiers/couverture/
 
-Des propriétaires qui préparent une réfection ou une rénovation de toiture, rappelés en 5 minutes, visite fixée dans votre agenda. Un seul par secteur.
+Trouvez des chantiers de couverture : des propriétaires qui préparent une réfection ou une rénovation de toiture, rappelés en 5 minutes.
 
 Couvreurs-zingueurs · Partout en France
 Votre agenda rempli de propriétaires qui préparent une réfection ou une rénovation de toiture. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
@@ -374,7 +374,7 @@ La mise en place prend 48 heures après notre appel, et les annonces tournent d�
 
 Adresse : https://bartierandco.com/metiers/menuiserie-exterieure/
 
-Des propriétaires qui préparent le remplacement de leurs fenêtres ou de leur porte, rappelés en 5 minutes, visite fixée dans votre agenda. Un seul par secteur.
+Trouvez des chantiers de menuiserie extérieure : des propriétaires qui préparent le remplacement de leurs fenêtres ou de leur porte, rappelés en 5 minutes.
 
 Menuisiers poseurs · Partout en France
 Votre agenda rempli de propriétaires qui préparent le remplacement de leurs fenêtres ou de leur porte. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
@@ -451,7 +451,7 @@ La mise en place prend 48 heures après notre appel, et les annonces tournent d�
 
 Adresse : https://bartierandco.com/metiers/facade/
 
-Des propriétaires qui préparent un ravalement ou une isolation par l’extérieur, rappelés en 5 minutes, visite fixée dans votre agenda. Un seul par secteur.
+Trouvez des chantiers de façade : des propriétaires qui préparent un ravalement ou une isolation par l’extérieur, rappelés en 5 minutes.
 
 Façadiers · Partout en France
 Votre agenda rempli de propriétaires qui préparent un ravalement ou une isolation par l’extérieur. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
@@ -527,7 +527,7 @@ La mise en place prend 48 heures après notre appel, et les annonces tournent d�
 
 Adresse : https://bartierandco.com/metiers/charpente/
 
-Des propriétaires qui préparent un projet de charpente prêt à démarrer, rappelés en 5 minutes, visite fixée dans votre agenda. Un seul par secteur.
+Trouvez des chantiers de charpente : des propriétaires qui préparent un projet de charpente prêt à démarrer, rappelés en 5 minutes, visite dans votre agenda.
 
 Charpentiers · Partout en France
 Votre agenda rempli de propriétaires qui préparent un projet de charpente prêt à démarrer. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
@@ -602,7 +602,7 @@ La mise en place prend 48 heures après notre appel, et les annonces tournent d�
 
 Adresse : https://bartierandco.com/metiers/isolation/
 
-Des propriétaires qui préparent l’isolation complète de leur maison, rappelés en 5 minutes, visite fixée dans votre agenda. Un seul par secteur.
+Trouvez des chantiers d’isolation : des propriétaires qui préparent l’isolation complète de leur maison, rappelés en 5 minutes, visite dans votre agenda.
 
 Entreprises d’isolation · Partout en France
 Votre agenda rempli de propriétaires qui préparent l’isolation complète de leur maison. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning.
@@ -738,7 +738,7 @@ Sur les recherches de votre métier dans vos communes, comme « couvreur » suiv
 La campagne est prête 48 heures après notre appel. Les premières demandes arrivent dès que les annonces tournent, en général dans la première semaine, selon les recherches de votre secteur.
 
 ### À lire aussi
-- Lead partagé, exclusif ou rendez-vous qualifié : ce qui change pour vous
+- Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
 - Google Ads ou Meta Ads : qui capte quelle demande
 - Tous les articles
 
@@ -809,7 +809,7 @@ En général 25 à 40 km autour de votre dépôt, réglés commune par commune s
 Oui, c’est ce qui convainc le mieux un voisin. Vos vraies photos de chantier et de votre équipe passent avant les images de banque.
 
 ### À lire aussi
-- Lead partagé, exclusif ou rendez-vous qualifié : ce qui change pour vous
+- Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
 - Google Ads ou Meta Ads : qui capte quelle demande
 - Tous les articles
 
@@ -1028,6 +1028,9 @@ C’est l’assurance qui couvre, pendant 10 ans après la fin des travaux, les 
 **Faut-il une autorisation de la mairie pour ses travaux ?**
 Souvent, oui, dès que l’aspect extérieur change : matériau ou couleur de la toiture, façade, fenêtres. Il faut alors une déclaration préalable. Des travaux à l’identique n’en demandent en général pas, sauf en secteur protégé ou si votre commune l’impose : le service urbanisme de la mairie vous le confirme.
 
+**Le devis est-il obligatoire ?**
+Oui pour un dépannage, une réparation ou un entretien à domicile : l’artisan doit remettre un devis détaillé avant d’intervenir. Pour les autres travaux, demandez-en toujours un : une fois accepté, il engage l’artisan au prix indiqué.
+
 **Combien de devis faut-il demander ?**
 Aucune règle ne l’impose. Pour de gros travaux, comparer deux ou trois devis est courant. Avec nous, un artisan local vient chiffrer chez vous, et vous restez libre de demander d’autres devis.
 
@@ -1150,7 +1153,7 @@ Obligatoire pour les aides à l’isolation. Annuaire officiel : france-renov.go
 #### Aucune pression
 Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
 
-### En bref
+### Devis toiture : l’essentiel
 
 **Le service**
 - Un seul couvreur de votre secteur, choisi pour vos travaux de toiture : réfection, fuite, zinguerie ou démoussage. Visite et devis offerts.
@@ -1174,7 +1177,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.
 Mis à jour le 18 novembre 2026
 
-### Vos questions
+### Devis toiture : vos questions
 Une autre question ? 07 81 01 89 36
 
 **Combien coûte une réfection de toiture ?**
@@ -1311,7 +1314,7 @@ Obligatoire pour les aides à l’isolation. Annuaire officiel : france-renov.go
 #### Aucune pression
 Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
 
-### En bref
+### Devis façade : l’essentiel
 
 **Le service**
 - Un seul artisan façade de votre secteur pour votre ravalement : nettoyage, fissures, enduit, peinture ou isolation par l’extérieur. Visite et devis offerts.
@@ -1335,7 +1338,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.
 Mis à jour le 18 novembre 2026
 
-### Vos questions
+### Devis façade : vos questions
 Une autre question ? 07 81 01 89 36
 
 **Combien coûte un ravalement de façade ?**
@@ -1466,7 +1469,7 @@ Obligatoire pour les aides à l’isolation. Annuaire officiel : france-renov.go
 #### Aucune pression
 Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
 
-### En bref
+### Devis fenêtres et portes : l’essentiel
 
 **Le service**
 - Un seul menuisier de votre secteur pour vos fenêtres, portes, baies vitrées ou volets. Visite et devis offerts.
@@ -1490,7 +1493,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.
 Mis à jour le 18 novembre 2026
 
-### Vos questions
+### Devis fenêtres et portes : vos questions
 Une autre question ? 07 81 01 89 36
 
 **Combien coûte le remplacement d’une fenêtre ?**
@@ -1621,7 +1624,7 @@ Obligatoire pour les aides à l’isolation. Annuaire officiel : france-renov.go
 #### Aucune pression
 Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
 
-### En bref
+### Devis charpente : l’essentiel
 
 **Le service**
 - Un seul charpentier de votre secteur pour réparer, traiter ou créer votre charpente. Visite et devis offerts.
@@ -1645,7 +1648,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.
 Mis à jour le 18 novembre 2026
 
-### Vos questions
+### Devis charpente : vos questions
 Une autre question ? 07 81 01 89 36
 
 **Combien coûtent des travaux de charpente ?**
@@ -1779,7 +1782,7 @@ Obligatoire pour les aides à l’isolation. Annuaire officiel : france-renov.go
 #### Aucune pression
 Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
 
-### En bref
+### Devis isolation : l’essentiel
 
 **Le service**
 - Un seul artisan de votre secteur pour isoler vos combles, vos murs ou votre toiture. Visite et devis offerts.
@@ -1803,7 +1806,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.
 Mis à jour le 18 novembre 2026
 
-### Vos questions
+### Devis isolation : vos questions
 Une autre question ? 07 81 01 89 36
 
 **Combien coûtent des travaux de isolation ?**
@@ -1926,7 +1929,7 @@ Blog
 Des articles courts et concrets, écrits pour les artisans du bâtiment.
 17 nov. 2026 Comprendre
 
-### Lead partagé, exclusif ou rendez-vous qualifié : ce qui change pour vous
+### Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
 17 nov. 2026 Publicité
 
 ### Google Ads ou Meta Ads : qui capte quelle demande
@@ -1936,7 +1939,7 @@ Des articles courts et concrets, écrits pour les artisans du bâtiment.
 
 ---
 
-## Lead partagé, lead exclusif ou rendez-vous qualifié ?
+## Demande partagée, exclusive ou rendez-vous qualifié ?
 
 Adresse : https://bartierandco.com/blog/lead-partage-lead-exclusif-rendez-vous-qualifie/
 
@@ -1944,22 +1947,22 @@ Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que c
 
 Comprendre
 Par Charles Le Cottier, cofondateur · Head of Performance Publié le 17 novembre 2026 5 min de lecture
-Un lead partagé est une demande de devis vendue à plusieurs entreprises. Un lead exclusif n’est vendu qu’à vous, mais c’est à vous de rappeler. Un rendez-vous qualifié est une visite déjà fixée, chez un propriétaire dont le projet a été vérifié.
+Une demande partagée est une demande de devis vendue à plusieurs entreprises. Une demande exclusive n’est vendue qu’à vous, mais c’est à vous de rappeler. Un rendez-vous qualifié est une visite déjà fixée, chez un propriétaire dont le projet a été vérifié.
 
-### Trois choses différentes
-Le vocabulaire marketing mélange tout. Pour un artisan, il n’y a que trois questions : combien d’entreprises reçoivent la même demande, qui rappelle le propriétaire, et qu’est-ce qui a été vérifié avant que vous vous déplaciez.
+### Quelle différence entre une demande de devis et un rendez-vous qualifié ?
+Le vocabulaire marketing mélange tout, et les plateformes parlent de « leads ». Pour un artisan, il n’y a que trois questions : combien d’entreprises reçoivent la même demande, qui rappelle le propriétaire, et qu’est-ce qui a été vérifié avant que vous vous déplaciez.
 
-### Le lead partagé : la même fiche vendue plusieurs fois
+### La demande partagée : la même fiche vendue plusieurs fois
 Vous recevez un nom, un numéro et une description du projet. D’autres entreprises reçoivent la même fiche, au même moment. Le propriétaire est appelé plusieurs fois, compare les prix, et retient souvent le premier qui rappelle ou le moins cher.
 
-### Le lead exclusif : exclusif jusqu’où ?
+### La demande exclusive : exclusive jusqu’où ?
 La fiche n’est vendue qu’à vous. C’est mieux, mais vérifiez ce que recouvre le mot. Exclusif pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c’est vous, le soir, la demande a souvent refroidi.
 
 ### Le rendez-vous qualifié : ce qui a été vérifié
 Quelqu’un a rappelé le propriétaire, vérifié qu’il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez une visite dans votre agenda, pas une fiche à traiter.
 
-### Le tableau
-- Lead partagé | Lead exclusif | Rendez-vous qualifié
+### Demande partagée, demande exclusive, rendez-vous qualifié : le comparatif
+- Demande partagée | Demande exclusive | Rendez-vous qualifié
 - Entreprises sur la même demande | Plusieurs | Une | Une
 - Qui rappelle | Vous | Vous | Le prestataire
 - Projet vérifié | Rarement | Parfois | Oui
@@ -1971,7 +1974,7 @@ Quelqu’un a rappelé le propriétaire, vérifié qu’il est propriétaire occ
 - Qu’est-ce qui est vérifié avant de me transmettre la demande ?
 - Que se passe-t-il si le propriétaire n’est pas joignable ou n’est pas sérieux ?
 - Y a-t-il une durée d’engagement minimale ?
-Nos réponses sont sur la page Engagements.
+Nos réponses sont sur la page Engagements. Les définitions sont dans notre lexique.
 
 #### Votre secteur est-il libre ?
 Un seul artisan par métier et par secteur.
@@ -1999,7 +2002,7 @@ Sur Google, le propriétaire tape « couvreur » et le nom de sa ville. Il a un 
 ### Urgence ou projet de rénovation
 Une fuite après un coup de vent se cherche sur Google. Une toiture qui verdit, des fenêtres de vingt ans ou une façade fatiguée sont des projets que le propriétaire repousse : une annonce bien placée les fait avancer.
 
-### Le coût : ce qui dépend de vous
+### Combien coûte une campagne : ce qui dépend de vous
 Sur Google, le prix du clic dépend du métier et de la concurrence locale. Sur Meta, le budget se règle librement, mais toutes les demandes ne sont pas sérieuses. Dans les deux cas, le vrai coût est celui du chantier signé, pas celui du clic.
 
 ### Ce que chaque canal exige après le clic
@@ -2007,7 +2010,7 @@ Sur Google, le prix du clic dépend du métier et de la concurrence locale. Sur 
 - Meta : qualifier au téléphone, car une partie des demandes est encore au stade de l’idée.
 Dans les deux cas, la demande doit être rappelée en quelques minutes. C’est là que la plupart des campagnes perdent leurs meilleurs projets.
 
-### Notre choix, et ses limites
+### Google Ads ou Meta Ads : notre choix, et ses limites
 Nous commençons le plus souvent par Meta pour les métiers de rénovation (couverture, façade, menuiserie, isolation), parce que le volume se construit dans un rayon précis. Nous ajoutons Google quand votre secteur a assez de recherches locales. Ce n’est pas une règle : certains secteurs ruraux n’ont pas assez de recherches pour Google, et certains métiers vivent surtout de l’urgence.
 Voir aussi : Google Ads et Meta Ads.
 
@@ -2015,7 +2018,7 @@ Voir aussi : Google Ads et Meta Ads.
 Un seul artisan par métier et par secteur.
 
 ### À lire aussi
-- Lead partagé, exclusif ou rendez-vous qualifié : ce qui change pour vous
+- Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
 - Relance de devis : le calendrier, les SMS et le script
 - Tous les articles
 
@@ -2031,7 +2034,7 @@ Méthode
 Par Charles Le Cottier, cofondateur · Head of Performance Publié le 17 novembre 2026 5 min de lecture
 Relancez un devis de rénovation par un appel, quelques jours après l’envoi, puis par SMS si vous n’avez pas de réponse. Arrêtez après trois tentatives sans retour, en laissant la porte ouverte. Le but n’est pas d’insister : c’est de savoir où en est le projet.
 
-### Le calendrier
+### Quand relancer un devis ?
 - Quand | Quoi | Pourquoi
 - Le jour de l’envoi | SMS court | Confirmer que le devis est bien arrivé
 - Quelques jours après | Appel | Répondre aux questions avant qu’il compare
@@ -2039,29 +2042,29 @@ Relancez un devis de rénovation par un appel, quelques jours après l’envoi, 
 - Deux à trois semaines plus tard | Dernier SMS | Clore poliment et laisser la porte ouverte
 Adaptez le rythme au projet : une urgence se relance plus vite qu’une rénovation prévue pour le printemps.
 
-### Trois SMS prêts à copier
+### Trois SMS de relance prêts à copier
 Bonjour Madame Durand, c’est Julien de l’entreprise Martin Couverture. Je vous ai envoyé le devis pour votre toiture par e-mail. Dites-moi s’il est bien arrivé. Bonne journée.
 Bonjour Madame Durand, avez-vous pu regarder le devis pour la toiture ? Je peux vous rappeler pour en parler, à l’heure qui vous arrange.
 Bonjour Madame Durand, je ne veux pas vous déranger davantage. Si le projet revient, je reste disponible. Bonne continuation.
 Les noms sont des exemples. Gardez le vôtre, celui de l’entreprise, et le projet précis.
 
-### Un script d’appel de deux minutes
+### Un script d’appel de relance en deux minutes
 - Le contexte : « Bonjour, c’est Julien, je suis passé jeudi pour votre toiture. Vous avez deux minutes ? »
 - La question ouverte : « Qu’avez-vous pensé du devis ? »
 - L’écoute : le prix, le délai, une question technique, un autre devis.
 - La prochaine étape : « Je vous propose qu’on se rappelle vendredi, après que vous en aurez parlé ensemble. »
 
-### Quand arrêter
+### Quand arrêter de relancer un devis ?
 Après trois tentatives sans réponse, arrêtez. Un dernier message poli laisse une meilleure impression qu’un quatrième appel, et le propriétaire reviendra parfois quelques mois plus tard.
 
-### Mesurez
-Notez pour chaque devis : envoyé, relancé, signé ou perdu, et pourquoi. Au bout de quelques mois, vous saurez quels projets vous signez, et où partent les autres.
+### Comment mesurer l’effet de vos relances ?
+Notez pour chaque devis : envoyé, relancé, signé ou perdu, et pourquoi. Au bout de quelques mois, vous saurez quels projets vous signez, et où partent les autres. Votre taux de signature (devis signés ÷ devis envoyés × 100) dit si les relances paient.
 
 #### Votre secteur est-il libre ?
 Un seul artisan par métier et par secteur.
 
 ### À lire aussi
-- Lead partagé, exclusif ou rendez-vous qualifié : ce qui change pour vous
+- Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
 - Google Ads ou Meta Ads : qui capte quelle demande
 - Tous les articles
 
@@ -2124,3 +2127,108 @@ Ces conditions sont soumises au droit français. En cas de litige, vous pouvez s
 
 ### 11. Évolution de ces conditions
 Nous pouvons mettre ces conditions à jour. La version applicable est celle en ligne le jour où vous envoyez votre demande.
+
+---
+
+## Lexique des chantiers et des travaux
+
+Adresse : https://bartierandco.com/lexique/
+
+Définitions claires pour artisans et particuliers : demande de devis, rendez-vous qualifié, garantie décennale, déclaration préalable, RGE, démarchage.
+
+Lexique
+Les mots que croisent artisans et propriétaires, expliqués en deux ou trois phrases, avec la source officielle quand elle existe.
+Mis à jour le 18 novembre 2026
+
+### Trouver des clients
+Pour les artisans du bâtiment : demandes, rendez-vous, coûts et règles d’appel.
+
+#### Demande de devis
+Une demande de devis est le message laissé par un particulier qui envisage des travaux : nom, téléphone, commune et projet. Les plateformes parlent de « lead » ou de « contact ». Ce n’est pas encore un client : il faut le rappeler, vérifier le projet, puis fixer une visite.
+
+#### Demande partagée
+Une demande partagée est une demande de devis vendue à plusieurs entreprises en même temps, le « lead partagé » des plateformes. Le propriétaire reçoit plusieurs appels, et le choix se fait souvent sur la rapidité du rappel ou sur le prix.
+Voir aussi : demande partagée, demande exclusive, rendez-vous qualifié
+
+#### Demande exclusive
+Une demande exclusive est une demande de devis transmise à une seule entreprise, le « lead exclusif » des plateformes. Elle n’est proposée à aucun concurrent, mais l’artisan doit encore rappeler le propriétaire et vérifier son projet lui-même.
+Voir aussi : demande partagée, demande exclusive, rendez-vous qualifié
+
+#### Rendez-vous qualifié
+Un rendez-vous qualifié est une visite déjà fixée chez un propriétaire dont le projet a été vérifié au téléphone : il est propriétaire, il sait quels travaux il veut, sa commune est dans la zone de l’artisan et son délai est clair.
+Voir aussi : notre méthode
+
+#### Plateforme de devis
+Une plateforme de devis est un site qui recueille des demandes de travaux et les propose à des artisans, contre un abonnement ou un prix par contact. Selon la plateforme, une même demande peut être envoyée à plusieurs entreprises.
+
+#### Apporteur d’affaires
+Un apporteur d’affaires met un artisan en relation avec des clients et touche une commission sur les chantiers signés. Le montant de la commission et ses conditions doivent être écrits dans un contrat.
+
+#### Exclusivité de secteur
+L’exclusivité de secteur réserve une zone à un seul artisan d’un métier : les demandes de cette zone ne sont proposées à aucun concurrent. Chez Bartier & Co, c’est un artisan par métier et par secteur.
+Voir aussi : les métiers
+
+#### Rayon d’intervention
+Le rayon d’intervention est la distance autour du dépôt dans laquelle un artisan accepte des chantiers. Pour des annonces locales, il se règle commune par commune, souvent entre 25 et 40 km.
+Voir aussi : annonces Facebook et Instagram
+
+#### Annonces locales
+Les annonces locales sont des publicités montrées seulement aux habitants d’une zone. Sur Google, elles apparaissent quand quelqu’un cherche un artisan ; sur Facebook et Instagram, elles touchent les propriétaires du secteur avant qu’ils ne cherchent.
+Voir aussi : Google Ads, Meta Ads
+
+#### Taux de signature des devis
+Le taux de signature, aussi appelé taux de transformation, est la part des devis envoyés qui sont signés. Il se calcule ainsi : devis signés ÷ devis envoyés × 100. Par exemple, 6 devis signés sur 20 envoyés donnent 30 %.
+Voir aussi : relance de devis
+
+#### Coût par chantier signé
+Le coût par chantier signé additionne toutes les dépenses engagées pour trouver des clients sur une période (publicité, abonnements, commissions) et les divise par le nombre de chantiers signés. C’est le bon chiffre pour comparer deux canaux.
+Voir aussi : Google Ads ou Meta Ads
+
+#### Relance de devis
+La relance de devis consiste à recontacter le propriétaire après l’envoi du devis pour savoir où il en est. Un appel quelques jours après l’envoi, puis un SMS, suffisent souvent. Après trois tentatives sans réponse, mieux vaut arrêter.
+Voir aussi : relance de devis : calendrier, SMS et script
+
+#### Démarchage téléphonique (règle de 2026)
+Depuis le 11 août 2026, un professionnel ne peut plus appeler un particulier pour lui proposer un bien ou un service sans son accord préalable, sauf contrat en cours. Rappeler un particulier qui a lui-même demandé à être contacté reste possible, s’il en garde la preuve.
+Source : CNIL, prospection par téléphone, Code de la consommation, L223-1 et suivants
+
+### Travaux, garanties et règles
+Pour les propriétaires, et pour les artisans qui leur répondent.
+
+#### Devis
+Un devis est la proposition écrite et détaillée d’un artisan : travaux, matériaux, prix et délais. Une fois accepté, il engage l’artisan au prix indiqué. Pour un dépannage, une réparation ou un entretien à domicile, le devis est obligatoire avant toute intervention.
+Source : Service-Public, devis obligatoire
+
+#### Réception des travaux
+La réception est le moment où le propriétaire accepte les travaux, avec ou sans réserves, en général par un procès-verbal signé. Elle fait partir les garanties de 1, 2 et 10 ans.
+
+#### Garantie de parfait achèvement
+Pendant 1 an après la réception, l’artisan doit réparer tous les défauts signalés, qu’ils aient été notés à la réception ou qu’ils soient apparus ensuite. Elle est prévue par l’article 1792-6 du Code civil.
+
+#### Garantie biennale
+Pendant 2 ans après la réception, l’artisan doit réparer ou remplacer les équipements qui ne fonctionnent pas et qui se démontent sans abîmer le bâtiment, comme des volets roulants. Elle est prévue par l’article 1792-3 du Code civil.
+
+#### Garantie décennale
+La garantie décennale oblige l’artisan à réparer, pendant 10 ans après la réception, les dommages qui menacent la solidité du bâtiment ou le rendent impropre à son usage. L’assurance qui la couvre est obligatoire, et son nom doit figurer sur le devis.
+Source : Service-Public, garantie décennale
+
+#### Délai de rétractation
+Un contrat de travaux signé chez vous, hors du local de l’artisan, peut être annulé sans motif pendant 14 jours. Aucun paiement n’est dû avant 7 jours. Ces règles ne s’appliquent pas à une réparation urgente que vous avez vous-même demandée.
+Source : DGCCRF, contrats conclus hors établissement
+
+#### Déclaration préalable de travaux
+La déclaration préalable est l’autorisation à demander en mairie avant des travaux qui changent l’aspect extérieur d’une maison : matériau ou couleur de la toiture, façade, fenêtres. Des travaux à l’identique n’en demandent en général pas, sauf en secteur protégé.
+Voir aussi : devis de travaux · Source : Service-Public, déclaration préalable
+
+#### RGE (reconnu garant de l’environnement)
+RGE est une mention accordée aux entreprises du bâtiment engagées dans une démarche de qualité en rénovation énergétique. Elle est obligatoire pour que des travaux ouvrent droit à MaPrimeRénov’. Vérifiez qu’elle couvre le type de travaux prévu.
+Voir aussi : devis isolation · Source : Ministère de la Transition écologique, label RGE, annuaire France Rénov’
+
+#### SIREN
+Le SIREN est le numéro à 9 chiffres qui identifie une entreprise en France. Il se vérifie gratuitement sur l’Annuaire des entreprises de l’État : une entreprise introuvable ou radiée doit vous alerter.
+Voir aussi : reconnaître un artisan sérieux · Source : Annuaire des entreprises
+
+### Passer à l’action
+- Vous êtes artisan : vérifier votre secteur
+- Vous êtes propriétaire : décrire vos travaux
+- Toutes les questions fréquentes

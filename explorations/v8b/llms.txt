@@ -9,7 +9,17 @@
 - [Meta Ads](https://bartierandco.com/meta-ads/) : annonces Facebook et Instagram dans un rayon de 25 à 40 km autour du dépôt.
 - [Qui sommes-nous](https://bartierandco.com/qui-sommes-nous/) : les fondateurs et la façon de travailler.
 - [Devis travaux, pour les particuliers](https://bartierandco.com/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de 5 minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
+- [Lexique](https://bartierandco.com/lexique/) : définitions courtes (demande de devis, rendez-vous qualifié, coût par chantier signé, taux de signature, garanties, déclaration préalable, RGE, démarchage en 2026), avec leurs sources officielles.
 - [Contenu complet du site](https://bartierandco.com/llms-full.txt) : le texte de toutes les pages en un seul fichier.
+
+## Questions fréquentes
+- Qu'est-ce que Bartier & Co ? Une agence qui trouve des clients aux artisans du bâtiment : annonces locales à leur nom, rappel de chaque demande en moins de 5 minutes, visite fixée dans leur agenda.
+- Qu'est-ce qu'un rendez-vous qualifié ? Une visite déjà fixée chez un propriétaire dont le projet a été vérifié au téléphone : propriétaire, travaux, commune, délai.
+- Les demandes sont-elles partagées entre plusieurs artisans ? Non. Un seul artisan par métier et par secteur.
+- Y a-t-il une durée d'engagement ? Non, aucune durée minimale.
+- Combien coûte le service pour un artisan ? Le prix dépend du métier et du secteur ; il est donné pendant un appel de 15 minutes. Le budget publicitaire est payé directement à Meta ou à Google.
+- Est-ce gratuit pour un particulier ? Oui. La mise en relation, la visite et le devis de l'artisan sont gratuits pour le propriétaire.
+- Quand Bartier & Co rappelle-t-il ? En moins de 5 minutes, du lundi au vendredi de 8 h à 19 h ; en dehors de ces horaires, dès la réouverture.
 
 ## Pour les particuliers
 Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et devis de l'artisan compris. Rappel en moins de 5 minutes du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Un seul artisan par métier et par secteur : la demande lui est transmise avec l'accord du propriétaire, et à personne d'autre. Les artisans partenaires rémunèrent Bartier & Co.
@@ -20,7 +30,7 @@ Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et dev
 - [Isolation](https://bartierandco.com/devis-travaux/isolation/) : combles perdus ou aménagés, murs par l'extérieur, toiture.
 
 ## Articles
-- [Lead partagé, exclusif ou rendez-vous qualifié : ce qui change pour vous](https://bartierandco.com/blog/lead-partage-lead-exclusif-rendez-vous-qualifie/) : Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer.
+- [Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous](https://bartierandco.com/blog/lead-partage-lead-exclusif-rendez-vous-qualifie/) : Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer.
 - [Google Ads ou Meta Ads : qui capte quelle demande](https://bartierandco.com/blog/google-ads-ou-meta-ads-artisan/) : Google capte ceux qui cherchent déjà, Meta touche ceux qui n’ont pas encore cherché. Comment choisir selon votre métier et votre secteur.
 - [Relance de devis : le calendrier, les SMS et le script](https://bartierandco.com/blog/relance-devis-artisan/) : Un devis de plusieurs milliers d’euros se relance. Un calendrier simple, trois SMS prêts à copier et un script d’appel de deux minutes.
 

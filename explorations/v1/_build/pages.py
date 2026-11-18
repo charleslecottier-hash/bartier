@@ -308,28 +308,28 @@ ARTICLES = [
     {
         "slug": "lead-partage-lead-exclusif-rendez-vous-qualifie",
         "tag": "Comprendre",
-        "title": "Lead partagé, lead exclusif, rendez-vous qualifié : les différences pour un artisan",
-        "short": "Lead partagé, exclusif ou rendez-vous qualifié : ce qui change pour vous",
+        "title": "Demande partagée, demande exclusive, rendez-vous qualifié : les différences pour un artisan",
+        "short": "Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous",
         "desc": "Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer.",
         "minutes": 5,
         "body": """
-<p class="answer">Un <b>lead partagé</b> est une demande de devis vendue à plusieurs entreprises. Un <b>lead exclusif</b> n'est vendu qu'à vous, mais c'est à vous de rappeler. Un <b>rendez-vous qualifié</b> est une visite déjà fixée, chez un propriétaire dont le projet a été vérifié.</p>
+<p class="answer">Une <b>demande partagée</b> est une demande de devis vendue à plusieurs entreprises. Une <b>demande exclusive</b> n'est vendue qu'à vous, mais c'est à vous de rappeler. Un <b>rendez-vous qualifié</b> est une visite déjà fixée, chez un propriétaire dont le projet a été vérifié.</p>
 
-<h2>Trois choses différentes</h2>
-<p>Le vocabulaire marketing mélange tout. Pour un artisan, il n'y a que trois questions : combien d'entreprises reçoivent la même demande, qui rappelle le propriétaire, et qu'est-ce qui a été vérifié avant que vous vous déplaciez.</p>
+<h2>Quelle différence entre une demande de devis et un rendez-vous qualifié ?</h2>
+<p>Le vocabulaire marketing mélange tout, et les plateformes parlent de « leads ». Pour un artisan, il n'y a que trois questions : combien d'entreprises reçoivent la même demande, qui rappelle le propriétaire, et qu'est-ce qui a été vérifié avant que vous vous déplaciez.</p>
 
-<h2>Le lead partagé : la même fiche vendue plusieurs fois</h2>
+<h2>La demande partagée : la même fiche vendue plusieurs fois</h2>
 <p>Vous recevez un nom, un numéro et une description du projet. D'autres entreprises reçoivent la même fiche, au même moment. Le propriétaire est appelé plusieurs fois, compare les prix, et retient souvent le premier qui rappelle ou le moins cher.</p>
 
-<h2>Le lead exclusif : exclusif jusqu'où ?</h2>
+<h2>La demande exclusive : exclusive jusqu'où ?</h2>
 <p>La fiche n'est vendue qu'à vous. C'est mieux, mais vérifiez ce que recouvre le mot. Exclusif pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c'est vous, le soir, la demande a souvent refroidi.</p>
 
 <h2>Le rendez-vous qualifié : ce qui a été vérifié</h2>
 <p>Quelqu'un a rappelé le propriétaire, vérifié qu'il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez une visite dans votre agenda, pas une fiche à traiter.</p>
 
-<h2>Le tableau</h2>
+<h2>Demande partagée, demande exclusive, rendez-vous qualifié : le comparatif</h2>
 <table>
-<thead><tr><th></th><th>Lead partagé</th><th>Lead exclusif</th><th>Rendez-vous qualifié</th></tr></thead>
+<thead><tr><th></th><th>Demande partagée</th><th>Demande exclusive</th><th>Rendez-vous qualifié</th></tr></thead>
 <tbody>
 <tr><td>Entreprises sur la même demande</td><td>Plusieurs</td><td>Une</td><td>Une</td></tr>
 <tr><td>Qui rappelle</td><td>Vous</td><td>Vous</td><td>Le prestataire</td></tr>
@@ -346,7 +346,7 @@ ARTICLES = [
 <li>Que se passe-t-il si le propriétaire n'est pas joignable ou n'est pas sérieux ?</li>
 <li>Y a-t-il une durée d'engagement minimale ?</li>
 </ol>
-<p>Nos réponses sont sur la page <a href="/#principles">Engagements</a>.</p>
+<p>Nos réponses sont sur la page <a href="/#principles">Engagements</a>. Les définitions sont dans notre <a href="/lexique/#clients">lexique</a>.</p>
 """,
     },
     {
@@ -365,8 +365,8 @@ ARTICLES = [
 <h2>Urgence ou projet de rénovation</h2>
 <p>Une fuite après un coup de vent se cherche sur Google. Une toiture qui verdit, des fenêtres de vingt ans ou une façade fatiguée sont des projets que le propriétaire repousse : une annonce bien placée les fait avancer.</p>
 
-<h2>Le coût : ce qui dépend de vous</h2>
-<p>Sur Google, le prix du clic dépend du métier et de la concurrence locale. Sur Meta, le budget se règle librement, mais toutes les demandes ne sont pas sérieuses. Dans les deux cas, le vrai coût est celui du chantier signé, pas celui du clic.</p>
+<h2>Combien coûte une campagne : ce qui dépend de vous</h2>
+<p>Sur Google, le prix du clic dépend du métier et de la concurrence locale. Sur Meta, le budget se règle librement, mais toutes les demandes ne sont pas sérieuses. Dans les deux cas, le vrai coût est celui du <a href="/lexique/#cout-par-chantier-signe">chantier signé</a>, pas celui du clic.</p>
 
 <h2>Ce que chaque canal exige après le clic</h2>
 <ul>
@@ -375,7 +375,7 @@ ARTICLES = [
 </ul>
 <p>Dans les deux cas, la demande doit être rappelée en quelques minutes. C'est là que la plupart des campagnes perdent leurs meilleurs projets.</p>
 
-<h2>Notre choix, et ses limites</h2>
+<h2>Google Ads ou Meta Ads : notre choix, et ses limites</h2>
 <p>Nous commençons le plus souvent par Meta pour les métiers de rénovation (couverture, façade, menuiserie, isolation), parce que le volume se construit dans un rayon précis. Nous ajoutons Google quand votre secteur a assez de recherches locales. Ce n'est pas une règle : certains secteurs ruraux n'ont pas assez de recherches pour Google, et certains métiers vivent surtout de l'urgence.</p>
 <p>Voir aussi : <a href="/google-ads/">Google Ads</a> et <a href="/meta-ads/">Meta Ads</a>.</p>
 """,
@@ -390,7 +390,7 @@ ARTICLES = [
         "body": """
 <p class="answer">Relancez un devis de rénovation <b>par un appel</b>, quelques jours après l'envoi, puis <b>par SMS</b> si vous n'avez pas de réponse. Arrêtez après trois tentatives sans retour, en laissant la porte ouverte. Le but n'est pas d'insister : c'est de savoir où en est le projet.</p>
 
-<h2>Le calendrier</h2>
+<h2>Quand relancer un devis ?</h2>
 <table>
 <thead><tr><th>Quand</th><th>Quoi</th><th>Pourquoi</th></tr></thead>
 <tbody>
@@ -402,13 +402,13 @@ ARTICLES = [
 </table>
 <p>Adaptez le rythme au projet : une urgence se relance plus vite qu'une rénovation prévue pour le printemps.</p>
 
-<h2>Trois SMS prêts à copier</h2>
+<h2>Trois SMS de relance prêts à copier</h2>
 <blockquote>Bonjour Madame Durand, c'est Julien de l'entreprise Martin Couverture. Je vous ai envoyé le devis pour votre toiture par e-mail. Dites-moi s'il est bien arrivé. Bonne journée.</blockquote>
 <blockquote>Bonjour Madame Durand, avez-vous pu regarder le devis pour la toiture ? Je peux vous rappeler pour en parler, à l'heure qui vous arrange.</blockquote>
 <blockquote>Bonjour Madame Durand, je ne veux pas vous déranger davantage. Si le projet revient, je reste disponible. Bonne continuation.</blockquote>
 <p>Les noms sont des exemples. Gardez le vôtre, celui de l'entreprise, et le projet précis.</p>
 
-<h2>Un script d'appel de deux minutes</h2>
+<h2>Un script d'appel de relance en deux minutes</h2>
 <ol>
 <li><b>Le contexte</b> : « Bonjour, c'est Julien, je suis passé jeudi pour votre toiture. Vous avez deux minutes ? »</li>
 <li><b>La question ouverte</b> : « Qu'avez-vous pensé du devis ? »</li>
@@ -416,11 +416,11 @@ ARTICLES = [
 <li><b>La prochaine étape</b> : « Je vous propose qu'on se rappelle vendredi, après que vous en aurez parlé ensemble. »</li>
 </ol>
 
-<h2>Quand arrêter</h2>
+<h2>Quand arrêter de relancer un devis ?</h2>
 <p>Après trois tentatives sans réponse, arrêtez. Un dernier message poli laisse une meilleure impression qu'un quatrième appel, et le propriétaire reviendra parfois quelques mois plus tard.</p>
 
-<h2>Mesurez</h2>
-<p>Notez pour chaque devis : envoyé, relancé, signé ou perdu, et pourquoi. Au bout de quelques mois, vous saurez quels projets vous signez, et où partent les autres.</p>
+<h2>Comment mesurer l'effet de vos relances ?</h2>
+<p>Notez pour chaque devis : envoyé, relancé, signé ou perdu, et pourquoi. Au bout de quelques mois, vous saurez quels projets vous signez, et où partent les autres. Votre <a href="/lexique/#taux-de-signature">taux de signature</a> (devis signés ÷ devis envoyés × 100) dit si les relances paient.</p>
 """,
     },
 ]
@@ -580,7 +580,17 @@ art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['
 - [Meta Ads]({SITE}/meta-ads/) : annonces Facebook et Instagram dans un rayon de 25 à 40 km autour du dépôt.
 - [Qui sommes-nous]({SITE}/qui-sommes-nous/) : les fondateurs et la façon de travailler.
 - [Devis travaux, pour les particuliers]({SITE}/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de 5 minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
+- [Lexique]({SITE}/lexique/) : définitions courtes (demande de devis, rendez-vous qualifié, coût par chantier signé, taux de signature, garanties, déclaration préalable, RGE, démarchage en 2026), avec leurs sources officielles.
 - [Contenu complet du site](https://bartierandco.com/llms-full.txt) : le texte de toutes les pages en un seul fichier.
+
+## Questions fréquentes
+- Qu'est-ce que Bartier & Co ? Une agence qui trouve des clients aux artisans du bâtiment : annonces locales à leur nom, rappel de chaque demande en moins de 5 minutes, visite fixée dans leur agenda.
+- Qu'est-ce qu'un rendez-vous qualifié ? Une visite déjà fixée chez un propriétaire dont le projet a été vérifié au téléphone : propriétaire, travaux, commune, délai.
+- Les demandes sont-elles partagées entre plusieurs artisans ? Non. Un seul artisan par métier et par secteur.
+- Y a-t-il une durée d'engagement ? Non, aucune durée minimale.
+- Combien coûte le service pour un artisan ? Le prix dépend du métier et du secteur ; il est donné pendant un appel de 15 minutes. Le budget publicitaire est payé directement à Meta ou à Google.
+- Est-ce gratuit pour un particulier ? Oui. La mise en relation, la visite et le devis de l'artisan sont gratuits pour le propriétaire.
+- Quand Bartier & Co rappelle-t-il ? En moins de 5 minutes, du lundi au vendredi de 8 h à 19 h ; en dehors de ces horaires, dès la réouverture.
 
 ## Pour les particuliers
 Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et devis de l'artisan compris. Rappel en moins de 5 minutes du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Un seul artisan par métier et par secteur : la demande lui est transmise avec l'accord du propriétaire, et à personne d'autre. Les artisans partenaires rémunèrent Bartier & Co.
