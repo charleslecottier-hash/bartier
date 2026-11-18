@@ -105,13 +105,11 @@ Parlons-en : Martin vous dit si notre méthode peut marcher pour vous.
 ### Des annonces personnalisées, diffusées sur les canaux où se trouvent vos clients.
 
 ### Des annonces pour chaque saison
-Chaque saison a ses demandes. Nos annonces ont un temps d’avance.
-Les propriétaires cherchent Nous lançons
 Déc. – fév.
 
 #### Hiver
-Fuites, tuiles envolées
-Annonces après tempête
+Les rénovations se décident
+Annonces réfection de toiture
 Mars – mai
 
 #### Printemps
@@ -120,13 +118,13 @@ Annonces rénovation
 Juin – août
 
 #### Été
-Les demandes ralentissent
-Flyers et relance des devis
+Façades et charpentes
+Annonces ravalement et charpente
 Sept. – nov.
 
 #### Automne
-Préparer l’hiver
-Annonces entretien, menuiserie
+Isolation et fenêtres avant le froid
+Annonces isolation et menuiserie
 
 ### La même méthode pour chaque métier
 Des annonces locales à votre nom, sur Google et sur Facebook et Instagram. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda.
@@ -546,8 +544,8 @@ Un propriétaire tape « couvreur » et sa ville : il voit votre annonce. Nous r
 Quand le propriétaire cherche déjà un artisan : il faut être visible, et le rappeler avant les autres.
 - 01
 
-#### Les urgences
-Fuite, tuiles envolées, gouttière arrachée : le propriétaire veut quelqu’un tout de suite.
+#### Les gros projets
+Réfection complète, ravalement, toutes les fenêtres à changer : le propriétaire cherche une entreprise sérieuse près de chez lui.
 - 02
 
 #### Les projets déjà avancés

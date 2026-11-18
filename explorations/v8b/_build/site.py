@@ -738,7 +738,7 @@ write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
       "Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.",
       "\n\n".join([
           top("Google Ads", "Apparaissez sur Google quand vos clients cherchent un artisan.", "Un propriétaire tape « couvreur » et sa ville : il voit votre annonce. Nous rappelons chaque demande en moins de 5 minutes.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_ANIM),
-          cols([("Les urgences", "Fuite, tuiles envolées, gouttière arrachée : le propriétaire veut quelqu'un tout de suite."),
+          cols([("Les gros projets", "Réfection complète, ravalement, toutes les fenêtres à changer : le propriétaire cherche une entreprise sérieuse près de chez lui."),
                 ("Les projets déjà avancés", "Le propriétaire compare des entreprises. Celle qui le rappelle la première a souvent la visite."),
                 ("Les secteurs où les recherches sont nombreuses", "Assez de recherches autour de chez vous pour que la campagne tourne toute l'année.")],
                "Quand choisir Google ?", "Quand le propriétaire cherche déjà un artisan : il faut être visible, et le rappeler avant les autres."),
