@@ -56,7 +56,7 @@
   var CSS = ".cc,.cc-panel{font:400 .92rem/1.45 var(--f-text,system-ui,sans-serif);color:var(--ink,#0A1424)}" +
     ".cc{position:fixed;z-index:120;left:max(16px,env(safe-area-inset-left));bottom:max(16px,env(safe-area-inset-bottom));width:min(430px,calc(100vw - 32px));padding:20px 20px 16px;background:var(--bg,#fff);border:1px solid rgba(10,20,36,.16);border-radius:2px;box-shadow:0 18px 50px -18px rgba(10,20,36,.45)}" +
     ".cc h2,.cc-panel h2{margin:0 0 .4rem;font:400 1.15rem/1.2 var(--f-display,system-ui,sans-serif);letter-spacing:-.02em}" +
-    ".cc p,.cc-panel p{margin:0}.cc a,.cc-panel a{color:inherit;text-underline-offset:.2em}" +
+    ".cc p,.cc-panel p{margin:0}.cc a,.cc-panel a{color:inherit;text-decoration:underline;text-underline-offset:.2em}" +
     ".cc-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}" +
     ".cc-b{min-height:46px;padding:0 14px;border:1px solid var(--ink,#0A1424);border-radius:2px;background:var(--ink,#0A1424);color:var(--bg,#fff);font:500 .92rem/1 var(--f-text,system-ui,sans-serif);cursor:pointer}" +
     ".cc-b:hover,.cc-b:focus-visible{background:var(--accent,#2D5BE3);border-color:var(--accent,#2D5BE3)}" +
