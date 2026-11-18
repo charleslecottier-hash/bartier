@@ -265,7 +265,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 </section>"""
 
     leak = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in LEAK)
-    leak = f"""<section class="sheet pf-leak" id="fuite-toiture" data-tone="dark">
+    leak = f"""<section class="sheet pf-leak" id="fuite-toiture" data-tone="accent">
   <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;? Les 5 bons réflexes</h2><p>Dans l’ordre. Puis signalez-nous la fuite&nbsp;: rappel en priorité.</p></div>
   <ol class="pf-howto">{leak}</ol>
   <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick()}</a><span class="pf-prio">Rappel prioritaire</span></p>
@@ -305,7 +305,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 
     if parts:
         return dict(form=form, promise=promise, steps=steps, compare=compare, leak=leak, serious=serious, end=end)
-    return "\n\n".join([hero, promise, trades, steps, compare, leak, price, serious, brief, faq, end])
+    return "\n\n".join([hero, promise, trades, steps, leak, price, serious, brief, faq, end])  # tableau « Pas cinq entreprises » retiré
 
 
 def schema(SITE, faq_ld, bc_ld):
@@ -679,7 +679,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
   <div class="grid sp-head"><h2 data-split>Autres travaux</h2><p><a class="link" href="/devis-travaux/">Tous les devis de travaux</a></p></div>
   <ul class="pf-olist">{others}</ul>
 </section>"""
-    seq = [hero, blocks["promise"], needs, price] + ([blocks["leak"]] if key == "toiture" else []) + [blocks["steps"], blocks["compare"], blocks["serious"], brief, faq, others, blocks["end"]]
+    seq = [hero, blocks["promise"], needs, price] + ([blocks["leak"]] if key == "toiture" else []) + [blocks["steps"], blocks["serious"], brief, faq, others, blocks["end"]]
     return "\n\n".join(seq)
 
 
