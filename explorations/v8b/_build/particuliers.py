@@ -18,38 +18,38 @@ TRADES = [
     ("toiture", "Toiture", "couvreurs", "Un couvreur pose",
      ["Fuite ou dégât urgent", "Réfection complète", "Réparation, tuiles, zinguerie", "Démoussage, nettoyage"],
      "Toiture et couverture",
-     "Réfection de toiture, réparation de fuite, tuiles cassées, zinguerie et gouttières, démoussage.",
+     "Réfection, fuite, tuiles cassées, zinguerie, démoussage.",
      "Couvreur en train de réparer une toiture en tuiles",
      "Prix d’une réfection de toiture",
-     "La surface, le matériau (tuiles, ardoise, bac acier), l’état de la charpente et l’accès au toit."),
+     "Surface, matériau (tuiles, ardoise, bac acier), état de la charpente, accès au toit."),
     ("facade", "Façade", "façadiers", "Une façade en rénovation",
      ["Ravalement complet", "Fissures, réparation", "Nettoyage, peinture", "Isolation par l’extérieur"],
      "Ravalement de façade",
-     "Ravalement, reprise de fissures, enduit, nettoyage et peinture, isolation par l’extérieur.",
+     "Ravalement, fissures, enduit, peinture, isolation par l’extérieur.",
      "Façade de maison en cours de ravalement",
      "Prix d’un ravalement de façade",
-     "La surface, l’état du support, la finition choisie et l’échafaudage."),
+     "Surface, état du support, finition, échafaudage."),
     ("fenetres", "Fenêtres et portes", "menuisiers", "Un menuisier pose",
      ["Remplacer des fenêtres", "Porte d’entrée", "Baie vitrée", "Volets"],
      "Fenêtres et portes",
-     "Fenêtres PVC, alu ou bois, double vitrage, porte d’entrée, baie vitrée, volets roulants.",
+     "PVC, alu ou bois, double vitrage, porte d’entrée, baie vitrée, volets.",
      "Menuisier posant une fenêtre",
      "Prix de fenêtres posées",
-     "Le nombre et la taille des ouvertures, le matériau, le vitrage et le type de pose, en rénovation ou en dépose totale."),
+     "Nombre et taille des ouvertures, matériau, vitrage, type de pose."),
     ("charpente", "Charpente", "charpentiers", "Une charpente en bois",
      ["Réparation, renfort", "Traitement du bois", "Extension, surélévation", "Charpente neuve"],
      "Charpente",
-     "Réparation et renfort, traitement du bois, extension, surélévation, charpente neuve.",
+     "Réparation, traitement du bois, extension, surélévation.",
      "Charpente en bois en cours de pose",
      "Prix de travaux de charpente",
-     "L’état du bois, la portée, le traitement nécessaire et l’accès au chantier."),
+     "État du bois, portée, traitement, accès au chantier."),
     ("isolation", "Isolation", "artisans", "Isolation d",
      ["Combles", "Murs par l’extérieur", "Toiture", "Je ne sais pas encore"],
      "Isolation des combles et des murs",
-     "Isolation des combles perdus ou aménagés, des murs par l’extérieur, de la toiture.",
+     "Combles perdus ou aménagés, murs par l’extérieur, toiture.",
      "Isolation de combles en laine minérale",
      "Prix de l’isolation des combles",
-     "La surface, la technique, l’isolant choisi et les aides auxquelles vous avez droit."),
+     "Surface, technique, isolant, aides possibles."),
 ]
 
 BRIEF = [
@@ -61,19 +61,19 @@ BRIEF = [
 ]
 
 LEAK = [
-    ("Mettez-vous en sécurité", "Éloignez l’eau des prises et des appareils électriques. En cas de doute, coupez le courant de la pièce."),
-    ("Limitez les dégâts", "Placez des récipients, protégez le mobilier et épongez. Ne montez pas sur le toit, surtout par temps de pluie ou de vent."),
-    ("Prenez des photos", "Plafond, murs, objets abîmés et, si vous la voyez sans risque, la partie du toit touchée."),
-    ("Prévenez votre assureur", "Déclarez le dégât des eaux dans le délai prévu par votre contrat d’assurance habitation, souvent cinq jours ouvrés."),
-    ("Faites intervenir un couvreur", "Il trouve l’origine de la fuite, pose une protection provisoire si besoin, puis chiffre la réparation."),
+    ("Mettez-vous en sécurité", "Éloignez l’eau des prises. Au moindre doute, coupez le courant de la pièce."),
+    ("Limitez les dégâts", "Seaux, bâches, mobilier à l’abri. Ne montez jamais sur le toit."),
+    ("Prenez des photos", "Plafond, murs, objets abîmés. Votre assureur vous les demandera."),
+    ("Prévenez votre assureur", "Déclarez le dégât des eaux dans le délai de votre contrat, souvent cinq jours ouvrés."),
+    ("Faites intervenir un couvreur", "Il trouve l’origine de la fuite, protège si besoin et chiffre la réparation."),
 ]
 
 SERIOUS = [
-    ("Une entreprise immatriculée", 'Son numéro SIREN se vérifie gratuitement sur <a class="link" href="https://annuaire-entreprises.data.gouv.fr/" target="_blank" rel="noopener">annuaire-entreprises.data.gouv.fr</a>.'),
-    ("Une assurance décennale", "Elle est obligatoire pour les travaux de construction. Demandez l’attestation : l’assureur doit aussi figurer sur le devis."),
-    ("Un devis écrit et détaillé", "Matériaux, quantités, main-d’œuvre, délais et conditions de paiement, avant tout début de travaux."),
-    ("La mention RGE si vous visez des aides", 'Pour l’isolation, les aides publiques demandent une entreprise RGE. L’annuaire officiel est sur <a class="link" href="https://france-renov.gouv.fr/" target="_blank" rel="noopener">france-renov.gouv.fr</a>.'),
-    ("Pas de pression", "Méfiez-vous du démarchage « après la tempête » et des réductions valables seulement aujourd’hui. Un artisan sérieux vous laisse le temps de comparer."),
+    ("Une entreprise immatriculée", 'Son SIREN se vérifie en quelques secondes sur <a class="link" href="https://annuaire-entreprises.data.gouv.fr/" target="_blank" rel="noopener">annuaire-entreprises.data.gouv.fr</a>.'),
+    ("Une assurance décennale", "Obligatoire. Demandez l’attestation&nbsp;: l’assureur figure aussi sur le devis."),
+    ("Un devis écrit et détaillé", "Matériaux, main-d’œuvre, délais, paiement. Avant tout début de travaux."),
+    ("RGE si vous visez des aides", 'Obligatoire pour les aides à l’isolation. Annuaire officiel&nbsp;: <a class="link" href="https://france-renov.gouv.fr/" target="_blank" rel="noopener">france-renov.gouv.fr</a>.'),
+    ("Aucune pression", "Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement »."),
 ]
 
 FAQ = [
@@ -161,6 +161,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
       <h1 class="pf-h1"><span class="pf-kw">Devis toiture, façade, fenêtres, isolation</span><span class="pf-big">Pas cinq <span class="pf-who">artisans</span>.<br>Un seul. Le bon.</span></h1>
       <p class="lead">Décrivez vos travaux en 1 minute.<br>On vous rappelle en 5.</p>
       {trust("d-only")}
+      <p class="pf-call d-only">Pressé&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p>
     </div>
     {form}
     <div class="pf-mtrust m-only">{trust()}</div>
@@ -176,29 +177,35 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   </div>
 </section>"""
 
+    def band(text, btn, sub=""):
+        sub = f'<span class="pf-band-sub">{sub}</span>' if sub else ""
+        return f'<div class="pf-band"><p>{text}{sub}</p><a class="btn" href="#projet"><span>{btn}</span>{tick()}</a></div>'
+
     cards = []
     for k, l, who, photo, needs, h3, words, alt, ph, pr in TRADES:
         url, _ = img(photo)
         cards.append(f"""    <li class="pf-trade"><figure class="frame"><img src="{url}" alt="{alt}" width="900" height="676" loading="lazy"></figure>
       <h3><a class="pf-tl" href="/devis-travaux/{SLUG[k]}/">{h3}</a></h3><p>{words}</p><a class="link pf-pick" href="#projet" data-v="{k}">Devis {l.lower()}</a></li>""")
     trades = f"""<section class="sheet" id="travaux" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Toiture, façade, fenêtres, charpente, isolation</h2><p>Les gros travaux de la maison. Un artisan local pour chacun.</p></div>
+  <div class="grid sp-head"><h2 data-split>Toiture, façade, fenêtres, charpente, isolation</h2><p>Un artisan local pour chaque chantier.</p></div>
   <ul class="pf-trades">
 {chr(10).join(cards)}
   </ul>
+  {band("Vos travaux ne sont pas dans la liste&nbsp;?", "Décrire mes travaux", "Décrivez-les quand même. On trouve l’artisan.")}
 </section>"""
 
-    steps = """<section class="sheet" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Votre devis en 3 étapes</h2><p>Une minute de votre temps. Le reste, on s’en occupe.</p></div>
+    steps = f"""<section class="sheet" data-tone="paper">
+  <div class="grid sp-head"><h2 data-split>Votre devis en 3 étapes</h2><p>1 minute pour vous. Le reste, on s’en occupe.</p></div>
   <ol class="sp-cols">
-    <li><span class="sp-n">01</span><h3>Vous décrivez vos travaux</h3><p>Cinq questions, une minute. Pas de compte à créer.</p></li>
-    <li><span class="sp-n">02</span><h3>Nous vous rappelons</h3><p>En moins de cinq minutes, du lundi au vendredi de 8 h à 19 h. Nous vérifions votre besoin et vos disponibilités.</p></li>
-    <li><span class="sp-n">03</span><h3>Un artisan vient chiffrer</h3><p>L’artisan de votre secteur visite le chantier et vous remet son devis, sans frais. Vous décidez ensuite, sans engagement.</p></li>
+    <li><span class="sp-n">01</span><h3>Décrivez vos travaux</h3><p>5 questions. 1 minute. Aucun compte à créer.</p></li>
+    <li><span class="sp-n">02</span><h3>On vous rappelle</h3><p>En moins de 5 minutes, du lundi au vendredi de 8 h à 19 h.</p></li>
+    <li><span class="sp-n">03</span><h3>L’artisan chiffre chez vous</h3><p>Visite et devis offerts. Vous décidez, sans engagement.</p></li>
   </ol>
+  {band("Prêt&nbsp;? C’est gratuit.", "Commencer", "1 minute, 5 questions.")}
 </section>"""
 
-    compare = """<section class="sheet" data-tone="tint">
-  <div class="grid sp-head"><h2 data-split>Pas cinq appels. Un seul.</h2><p>Sur beaucoup de sites de devis, votre demande part chez plusieurs entreprises. Le téléphone sonne, et vous racontez cinq fois le même projet.</p></div>
+    compare = f"""<section class="sheet" data-tone="tint">
+  <div class="grid sp-head"><h2 data-split>Pas cinq appels. Un seul.</h2><p>Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, un seul artisan vous appelle.</p></div>
   <div class="sp-table" role="table" aria-label="Site de devis classique et Bartier &amp; Co">
     <div class="sp-row is-head" role="row"><span role="columnheader"></span><span role="columnheader">Site de devis classique</span><span role="columnheader">Bartier &amp; Co</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Qui vous appelle</span><span role="cell">Souvent plusieurs entreprises</span><span role="cell">Nous, puis un seul artisan</span></div>
@@ -206,26 +213,28 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <div class="sp-row" role="row"><span role="rowheader">Vos coordonnées</span><span role="cell">Partagées entre entreprises</span><span role="cell">Jamais revendues</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le prix pour vous</span><span role="cell">Gratuit</span><span role="cell">Gratuit</span></div>
   </div>
+  {band("Un seul artisan. Le bon.", "Être rappelé gratuitement")}
 </section>"""
 
     leak = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in LEAK)
     leak = f"""<section class="sheet pf-leak" id="fuite-toiture" data-tone="dark">
-  <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;? Les 5 bons réflexes</h2><p>Dans l’ordre. Ensuite, signalez-nous la fuite&nbsp;: les urgences sont rappelées en priorité.</p></div>
+  <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;? Les 5 bons réflexes</h2><p>Dans l’ordre. Puis signalez-nous la fuite&nbsp;: rappel en priorité.</p></div>
   <ol class="pf-howto">{leak}</ol>
   <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick()}</a><span class="pf-prio">Rappel prioritaire</span></p>
 </section>"""
 
     prices = "".join(f'<li><h3>{t[8]}</h3><p>{t[9]}</p><p class="pf-ref">{REF[t[0]][0]}</p><p class="pf-src">Source&nbsp;: {REF[t[0]][1]}</p><a class="link pf-more" href="/devis-travaux/{SLUG[t[0]]}/">Tout sur {t[1].lower()}</a></li>' for t in TRADES)
     price = f"""<section class="sheet" id="prix" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Combien vont coûter vos travaux&nbsp;?</h2><p>Les repères publiés en ligne sont des moyennes, souvent très larges. Voici ce qui fait vraiment le prix. La visite, elle, est gratuite.</p></div>
+  <div class="grid sp-head"><h2 data-split>Combien vont coûter vos travaux&nbsp;?</h2><p>Les prix en ligne sont des moyennes. Ce qui compte, c’est votre chantier. La visite est gratuite.</p></div>
   <ul class="pf-prices">{prices}</ul>
-  <p class="pf-mid"><a class="btn" href="#projet"><span>Obtenir mon devis</span>{tick()}</a></p>
+  <p class="pf-mid"><a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
 </section>"""
 
     serious = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in SERIOUS)
     serious = f"""<section class="sheet" id="artisan-serieux" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Reconnaître un artisan sérieux</h2><p>Cinq points à vérifier avant de signer. Avec nous ou sans nous.</p></div>
+  <div class="grid sp-head"><h2 data-split>Reconnaître un artisan sérieux</h2><p>5 points à vérifier avant de signer. Avec nous ou sans nous.</p></div>
   <ul class="pf-checks">{serious}</ul>
+  {band("Un artisan local, qui se déplace avant de chiffrer.", "Trouver mon artisan")}
 </section>"""
 
     rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in FAQ)
@@ -241,7 +250,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     end = f"""<section class="sheet pf-end" data-tone="accent">
   <div class="grid pf-end-grid">
     <h2 data-split>Votre maison mérite le bon artisan.</h2>
-    <div><p>Une minute pour décrire vos travaux. Un appel pour tout vérifier. Un artisan de votre secteur.</p><a class="btn pf-btn-inv" href="#projet"><span>Décrire mes travaux</span>{tick()}</a></div>
+    <div><p>1 minute pour décrire vos travaux. 1 appel pour tout vérifier. 1 artisan de votre secteur.</p><a class="btn pf-btn-inv" href="#projet"><span>Décrire mes travaux</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></div>
   </div>
 </section>
 <a class="pf-sticky" href="#projet">Décrire mes travaux<span>1 min · gratuit</span></a>"""
@@ -346,6 +355,11 @@ CSS = """<style id="pf-css">
 .pf-end h2{grid-column:1 / 3;font:300 clamp(2.2rem,4.4vw,4rem)/1 var(--f-display);letter-spacing:-.04em}
 .pf-end-grid > div{grid-column:3 / 5;display:flex;flex-direction:column;align-items:flex-start;gap:1.2rem}
 .pf-btn-inv{background:#fff;color:var(--accent)}
+.pf-end-call{color:#fff}
+.pf-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;margin:clamp(32px,4vw,56px) var(--cell) 0;padding:clamp(18px,2vw,26px) clamp(18px,2.4vw,32px);border:1px solid var(--accent);border-radius:var(--r);background:color-mix(in oklab,var(--accent) 5%,var(--bg))}
+.pf-band p{display:flex;flex-direction:column;gap:4px;font:400 clamp(1.2rem,1.8vw,1.55rem)/1.2 var(--f-display);letter-spacing:-.015em;color:var(--ink)}
+.pf-band-sub{font:400 .92rem/1.4 var(--f-text);letter-spacing:0;color:var(--muted)}
+.pf-call.d-only{font-size:.95rem}
 .pf-sticky{position:fixed;left:14px;right:78px;bottom:14px;z-index:89;display:none;flex-direction:column;justify-content:center;min-height:52px;padding:6px 18px;border-radius:var(--r);background:var(--accent);color:#fff;font-weight:500;text-decoration:none;box-shadow:0 14px 30px -12px rgba(45,91,227,.6);transform:translateY(140%);transition:transform .35s var(--ease)}
 .pf-sticky span{font-size:.75rem;font-weight:400;opacity:.85}
 .pf-sticky.is-on{transform:none}
@@ -366,6 +380,7 @@ CSS = """<style id="pf-css">
   .pf-trade h3{font-size:1.1rem}.pf-trade p{display:none}
   .pf-prices,.pf-howto,.pf-checks{grid-template-columns:1fr}
   .pf-sticky{display:flex}
+  .pf-band{flex-direction:column;align-items:stretch}.pf-band .btn{justify-content:center}
 }
 </style>"""
 
@@ -535,6 +550,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     needs = f"""<section class="sheet" id="travaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>{P["h2"]}</h2><p>{t[6]}</p></div>
   <div class="pf-split"><figure class="frame pf-ph"><img src="{url}" alt="{t[7]}" width="1200" height="900" loading="lazy"></figure><ul class="pf-checks pf-needs">{needs}</ul></div>
+  <div class="pf-band"><p>Devis {t[1].lower()} en 1 minute<span class="pf-band-sub">Visite et devis offerts. Sans engagement.</span></p><a class="btn" href="#projet"><span>Décrire mes travaux</span>{tick()}</a></div>
 </section>"""
     price = f"""<section class="sheet" id="prix" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>{P["price_h2"]}</h2><p>{t[9]}</p></div>
@@ -579,7 +595,7 @@ def trade_faq(key):
     if key in price_q:
         out.append((price_q[key], general[price_q[key]]))
     else:
-        out.append((f"Combien coûtent des travaux de {t[1].lower()} ?", f"Le prix dépend de {t[9][0].lower()}{t[9][1:]} Seule une visite permet un devis fiable."))
+        out.append((f"Combien coûtent des travaux de {t[1].lower()} ?", f"Il dépend surtout de ces points : {t[9][0].lower()}{t[9][1:]} Seule une visite permet un devis fiable, et elle est gratuite."))
     out += P["faq"]
     if key == "toiture":
         out.append(("J’ai une fuite de toiture, que faire tout de suite ?", general["J’ai une fuite de toiture, que faire tout de suite ?"]))

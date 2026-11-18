@@ -216,7 +216,7 @@ CONTACT = CONTACT[:CONTACT.index("</section>") + len("</section>")]
 TAIL = home[home.index("</main>"):]
 TEAM = home[home.index('<section class="team sheet"'):]
 TEAM = TEAM[:TEAM.index("</section>") + len("</section>")]
-IMGS = {html.unescape(a): u for u, a in re.findall(r'<img src="([^"]+)" alt="([^"]+)"', home)}
+IMGS = {html.unescape(a): u for u, a in re.findall(r'<img [^>]*?src="([^"]+)" alt="([^"]+)"', home)}
 
 
 def img(alt_start):
