@@ -564,7 +564,8 @@ html.ld-on{overflow:hidden}
 .pf-howto h3,.pf-checks h3,.pf-prices h3{margin-bottom:8px;font:400 1.2rem/1.15 var(--f-display);letter-spacing:-.01em}
 .pf-howto p,.pf-checks p,.pf-prices p{font-size:.92rem;line-height:1.5}
 .pf-leak .pf-howto p{color:rgba(255,255,255,.75)}
-.pf-mid{margin-top:clamp(28px,4vw,48px);padding:0 var(--cell)}
+.pf-mid{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.2rem;margin-top:clamp(28px,4vw,48px);padding:0 var(--cell)}
+.pf-prio{font-size:.9rem;color:#9fb6ff}
 .pf-end-grid{row-gap:24px;align-items:end}
 .pf-end h2{grid-column:1 / 3;font:300 clamp(2.2rem,4.4vw,4rem)/1 var(--f-display);letter-spacing:-.04em}
 .pf-end-grid > div{grid-column:3 / 5;display:flex;flex-direction:column;align-items:flex-start;gap:1.2rem}
@@ -648,7 +649,7 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
       <h1 class="pf-h1"><span class="pf-kw">Devis toiture, façade, fenêtres, isolation</span><span class="pf-big">Pas cinq <span class="pf-who">artisans</span>.<br>Un seul. Le bon.</span></h1>
       <p class="lead">Décrivez vos travaux en 1 minute.<br>On vous rappelle en 5.</p>
       <ul class="pf-trust d-only">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Gratuit</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Sans engagement</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Jamais revendu</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Visite et devis offerts</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Sans engagement</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Jamais revendu</li>
       </ul>
     </div>
     <div class="pf-card" id="projet">
@@ -686,7 +687,7 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
       </form>
     </div>
     <div class="pf-mtrust m-only"><ul class="pf-trust ">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Gratuit</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Sans engagement</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Jamais revendu</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Visite et devis offerts</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Sans engagement</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Jamais revendu</li>
       </ul></div>
   </div>
 </section>
@@ -712,7 +713,7 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
   <ol class="sp-cols">
     <li><span class="sp-n">01</span><h3>Vous décrivez vos travaux</h3><p>Cinq questions, une minute. Pas de compte à créer.</p></li>
     <li><span class="sp-n">02</span><h3>Nous vous rappelons</h3><p>En moins de cinq minutes, du lundi au vendredi de 8 h à 19 h. Nous vérifions votre besoin et vos disponibilités.</p></li>
-    <li><span class="sp-n">03</span><h3>Un artisan vient chiffrer</h3><p>L’artisan de votre secteur visite le chantier et vous remet son devis. Vous décidez ensuite, sans engagement.</p></li>
+    <li><span class="sp-n">03</span><h3>Un artisan vient chiffrer</h3><p>L’artisan de votre secteur visite le chantier et vous remet son devis, sans frais. Vous décidez ensuite, sans engagement.</p></li>
   </ol>
 </section>
 
@@ -728,9 +729,9 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
 </section>
 
 <section class="sheet pf-leak" id="fuite-toiture" data-tone="dark">
-  <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;? Les 5 bons réflexes</h2><p>Dans l’ordre. Ensuite, un couvreur trouve l’origine de la fuite.</p></div>
+  <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;? Les 5 bons réflexes</h2><p>Dans l’ordre. Ensuite, signalez-nous la fuite&nbsp;: les urgences sont rappelées en priorité.</p></div>
   <ol class="pf-howto"><li><h3>Mettez-vous en sécurité</h3><p>Éloignez l’eau des prises et des appareils électriques. En cas de doute, coupez le courant de la pièce.</p></li><li><h3>Limitez les dégâts</h3><p>Placez des récipients, protégez le mobilier et épongez. Ne montez pas sur le toit, surtout par temps de pluie ou de vent.</p></li><li><h3>Prenez des photos</h3><p>Plafond, murs, objets abîmés et, si vous la voyez sans risque, la partie du toit touchée.</p></li><li><h3>Prévenez votre assureur</h3><p>Déclarez le dégât des eaux dans le délai prévu par votre contrat d’assurance habitation, souvent cinq jours ouvrés.</p></li><li><h3>Faites intervenir un couvreur</h3><p>Il trouve l’origine de la fuite, pose une protection provisoire si besoin, puis chiffre la réparation.</p></li></ol>
-  <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span><svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a></p>
+  <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span><svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a><span class="pf-prio">Rappel prioritaire</span></p>
 </section>
 
 <section class="sheet" id="prix" data-tone="light">
@@ -747,7 +748,7 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
 <section class="sheet pf-brief" data-tone="paper" aria-labelledby="pf-brief-h">
   <div class="grid pf-brief-grid">
     <h2 id="pf-brief-h">Bartier &amp; Co en bref</h2>
-    <dl class="pf-dl"><div><dt>Le service</dt><dd>Bartier &amp; Co met en relation les propriétaires avec un artisan du bâtiment de leur secteur pour des travaux de toiture, façade, fenêtres, charpente ou isolation.</dd></div><div><dt>Le prix pour vous</dt><dd>Gratuit et sans engagement. Les artisans partenaires rémunèrent Bartier &amp; Co.</dd></div><div><dt>Le délai</dt><dd>Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Hors de ces horaires, dès l’ouverture suivante.</dd></div><div><dt>Combien d’artisans</dt><dd>Un seul par métier et par secteur. Vos coordonnées ne sont jamais revendues.</dd></div><div><dt>La zone</dt><dd>Partout en France, avec des artisans locaux.</dd></div></dl>
+    <dl class="pf-dl"><div><dt>Le service</dt><dd>Bartier &amp; Co met en relation les propriétaires avec un artisan du bâtiment de leur secteur pour des travaux de toiture, façade, fenêtres, charpente ou isolation.</dd></div><div><dt>Le prix pour vous</dt><dd>Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier &amp; Co.</dd></div><div><dt>Le délai</dt><dd>Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.</dd></div><div><dt>Combien d’artisans</dt><dd>Un seul par métier et par secteur. Vos coordonnées ne sont jamais revendues.</dd></div><div><dt>La zone</dt><dd>Partout en France, avec des artisans locaux.</dd></div></dl>
     <p class="pf-upd">Mis à jour le <time datetime="2026-11-18">18 novembre 2026</time></p>
   </div>
 </section>

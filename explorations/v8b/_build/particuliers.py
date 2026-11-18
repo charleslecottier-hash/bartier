@@ -54,8 +54,8 @@ TRADES = [
 
 BRIEF = [
     ("Le service", "Bartier &amp; Co met en relation les propriétaires avec un artisan du bâtiment de leur secteur pour des travaux de toiture, façade, fenêtres, charpente ou isolation."),
-    ("Le prix pour vous", "Gratuit et sans engagement. Les artisans partenaires rémunèrent Bartier &amp; Co."),
-    ("Le délai", "Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Hors de ces horaires, dès l’ouverture suivante."),
+    ("Le prix pour vous", "Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier &amp; Co."),
+    ("Le délai", "Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante."),
     ("Combien d’artisans", "Un seul par métier et par secteur. Vos coordonnées ne sont jamais revendues."),
     ("La zone", "Partout en France, avec des artisans locaux."),
 ]
@@ -112,7 +112,7 @@ def check():
 
 def trust(cls=""):
     return f"""<ul class="pf-trust {cls}">
-        <li>{check()}Gratuit</li><li>{check()}Sans engagement</li><li>{check()}Jamais revendu</li>
+        <li>{check()}Visite et devis offerts</li><li>{check()}Sans engagement</li><li>{check()}Jamais revendu</li>
       </ul>"""
 
 
@@ -193,7 +193,7 @@ def build(img, phone, phone_txt, crumbs):
   <ol class="sp-cols">
     <li><span class="sp-n">01</span><h3>Vous décrivez vos travaux</h3><p>Cinq questions, une minute. Pas de compte à créer.</p></li>
     <li><span class="sp-n">02</span><h3>Nous vous rappelons</h3><p>En moins de cinq minutes, du lundi au vendredi de 8 h à 19 h. Nous vérifions votre besoin et vos disponibilités.</p></li>
-    <li><span class="sp-n">03</span><h3>Un artisan vient chiffrer</h3><p>L’artisan de votre secteur visite le chantier et vous remet son devis. Vous décidez ensuite, sans engagement.</p></li>
+    <li><span class="sp-n">03</span><h3>Un artisan vient chiffrer</h3><p>L’artisan de votre secteur visite le chantier et vous remet son devis, sans frais. Vous décidez ensuite, sans engagement.</p></li>
   </ol>
 </section>"""
 
@@ -210,9 +210,9 @@ def build(img, phone, phone_txt, crumbs):
 
     leak = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in LEAK)
     leak = f"""<section class="sheet pf-leak" id="fuite-toiture" data-tone="dark">
-  <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;? Les 5 bons réflexes</h2><p>Dans l’ordre. Ensuite, un couvreur trouve l’origine de la fuite.</p></div>
+  <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;? Les 5 bons réflexes</h2><p>Dans l’ordre. Ensuite, signalez-nous la fuite&nbsp;: les urgences sont rappelées en priorité.</p></div>
   <ol class="pf-howto">{leak}</ol>
-  <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick()}</a></p>
+  <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick()}</a><span class="pf-prio">Rappel prioritaire</span></p>
 </section>"""
 
     prices = "".join(f'<li><h3>{t[8]}</h3><p>{t[9]}</p></li>' for t in TRADES)
@@ -338,7 +338,8 @@ CSS = """<style id="pf-css">
 .pf-howto h3,.pf-checks h3,.pf-prices h3{margin-bottom:8px;font:400 1.2rem/1.15 var(--f-display);letter-spacing:-.01em}
 .pf-howto p,.pf-checks p,.pf-prices p{font-size:.92rem;line-height:1.5}
 .pf-leak .pf-howto p{color:rgba(255,255,255,.75)}
-.pf-mid{margin-top:clamp(28px,4vw,48px);padding:0 var(--cell)}
+.pf-mid{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.2rem;margin-top:clamp(28px,4vw,48px);padding:0 var(--cell)}
+.pf-prio{font-size:.9rem;color:#9fb6ff}
 .pf-end-grid{row-gap:24px;align-items:end}
 .pf-end h2{grid-column:1 / 3;font:300 clamp(2.2rem,4.4vw,4rem)/1 var(--f-display);letter-spacing:-.04em}
 .pf-end-grid > div{grid-column:3 / 5;display:flex;flex-direction:column;align-items:flex-start;gap:1.2rem}
