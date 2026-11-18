@@ -771,3 +771,60 @@ section.pf-leak[data-tone="accent"] .pf-howto li::before,section.pf-leak[data-to
 @media (max-width:760px){
   .pf-ser-head,.pf-ser .pf-checklist{grid-column:1 / -1}
 }
+
+/* ——— « Reconnaître un artisan sérieux » (passe unslop) : une fiche « Avant de signer » posée à droite, le titre et l'action à gauche ——— */
+#artisan-serieux .pf-ser{align-items:center;row-gap:40px}
+.pf-ser-head{gap:20px}
+.pf-ser-cta{display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin:16px 0 0;font-size:.98rem;line-height:1.5;color:var(--ink);max-width:34ch}
+.pf-ser-card{grid-column:3 / 5;margin:0 var(--cell);padding:8px 28px 12px;background:#fff;border-radius:12px;box-shadow:0 0 0 1px var(--rule),0 24px 48px -28px rgba(10,20,36,.28)}
+.pf-ser-k{display:flex;justify-content:space-between;align-items:baseline;margin:0;padding:20px 0 16px;border-bottom:1px solid var(--rule);font-size:.9rem;color:#5b616b}
+.pf-ser-k b{font:400 1.15rem/1.2 var(--f-display);letter-spacing:-.01em;color:var(--ink)}
+.pf-ser-card .pf-checklist{grid-column:auto;padding:0;border-top:0}
+.pf-ser-card .pf-checklist li{padding:20px 0;column-gap:16px}
+.pf-ser-card .pf-checklist li:last-child{border-bottom:0}
+.pf-ser-card .pf-checklist h3{font-size:1.25rem}
+.pf-ser-card .pf-checklist p{font-size:.95rem}
+@media (max-width:760px){
+  .pf-ser-card{grid-column:1 / -1;margin:0;padding:4px 20px 8px}
+  .pf-ser-card .pf-checklist li{padding:16px 0}
+  .pf-ser-card .pf-checklist h3{font-size:1.12rem}
+}
+/* ——— « Bartier & Co en bref » : des faits courts, deux par ligne ——— */
+.pf-dl{grid-column:2 / -1;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px 32px;margin:0;padding:0 var(--cell)}
+.pf-dl > div{display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid var(--rule)}
+.pf-dl dt{font-size:.84rem;color:#5b616b}
+.pf-dl dd{margin:0;font-size:1rem;line-height:1.45;color:var(--ink)}
+@media (max-width:760px){.pf-dl{grid-column:1 / -1;grid-template-columns:1fr 1fr;gap:20px 16px}}
+
+/* Liens dans les phrases de la fiche : pas de hauteur tactile forcée au milieu d'une phrase */
+.pf-ser-card .pf-checklist p .link{display:inline;min-height:0}
+/* ——— « Combien vont coûter vos travaux ? » : le prix en grand, ce qui le fait varier en dessous, la source en petit ——— */
+#prix .pf-prices{gap:12px}
+#prix .pf-prices li{display:flex;flex-direction:column;gap:12px;padding:24px;border-top:0;border-radius:12px;background:#fff;box-shadow:0 0 0 1px var(--rule)}
+#prix .pf-prices h3{margin:0;font:400 1.05rem/1.25 var(--f-text);letter-spacing:0;color:#5b616b}
+.pf-fig{display:flex;flex-direction:column;gap:4px;margin:0}
+.pf-fig b{font:300 clamp(1.7rem,2.3vw,2.2rem)/1.05 var(--f-display);letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
+.pf-fig span{font-size:.92rem;line-height:1.4;color:var(--ink)}
+#prix .pf-why{margin:0;padding-top:12px;border-top:1px solid var(--rule);font-size:.9rem;line-height:1.5;color:#5b616b}
+#prix .pf-src{margin:0;font-size:.8rem;color:#5b616b}
+#prix .pf-more{margin-top:auto;align-self:flex-start}
+@media (max-width:760px){#prix .pf-prices li{padding:20px}}
+@media (min-width:1025px){.pf-fig b{font-size:clamp(1.45rem,1.75vw,1.9rem);white-space:nowrap}}
+
+/* ——— Pages métiers : mêmes fiches que les pages particuliers (carte blanche, coches), la vérification en bleu électrique ——— */
+.tr-card{display:block;padding:8px 28px 12px;background:#fff;border-radius:12px;box-shadow:0 0 0 1px var(--rule),0 24px 48px -28px rgba(10,20,36,.28);color:var(--ink)}
+.tr-card-k{display:flex;justify-content:space-between;align-items:baseline;margin:0;padding:20px 0 12px;font-size:.9rem;color:#5b616b}
+.tr-card-k b{font:400 1.15rem/1.2 var(--f-display);letter-spacing:-.01em;color:var(--ink)}
+.tr-card-k.is-no{margin-top:12px;border-top:1px solid var(--rule);padding-top:24px}
+.tr-card-k.is-no b{color:#5b616b}
+.tr-card .sp-list{border-top:0}
+.tr-card .sp-list li{grid-template-columns:28px minmax(0,1fr);gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule)}
+.tr-card .sp-list li:last-child{border-bottom:0}
+.tr-card .sp-list:not(.is-num) li::before{content:"";width:28px;height:28px;margin:0;border:0;border-radius:50%;transform:none;background:var(--tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%232D5BE3' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.tr-card .sp-list.is-no li{color:#5b616b;text-decoration:none}
+.tr-card .sp-list.is-no li::before{content:"";background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M5 5l6 6M11 5l-6 6' fill='none' stroke='%235b616b' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") center/14px no-repeat;color:transparent}
+.tr-card .sp-list.is-num li{grid-template-columns:28px minmax(0,1fr)}
+.tr-card .sp-list.is-num li::before{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--tint);color:var(--accent);font:400 .8rem/1 var(--f-text);font-variant-numeric:tabular-nums}
+section.tr-call[data-tone="accent"] .sp-split > div:first-child p{color:#fff}
+.tr-call .tr-card{grid-column:3 / 5}
+@media (max-width:760px){.tr-card{padding:4px 20px 8px}.tr-call .tr-card{grid-column:1 / -1}}

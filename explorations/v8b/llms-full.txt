@@ -161,11 +161,13 @@ Des propriétaires qui préparent une réfection ou une rénovation de toiture. 
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
+Ce que nous cherchons
 - Réfection complète de toiture
 - Rénovation de toiture avec isolation
 - Démoussage et hydrofuge d’une toiture entière
 - Zinguerie complète : gouttières, chéneaux, noues
 - Remplacement de couverture après un sinistre
+Ce que nous écartons
 - Une tuile à remettre en place
 - Une petite fuite à dépanner
 - Les locataires et les demandes hors de votre zone
@@ -187,6 +189,7 @@ Sur les plateformes, le propriétaire reçoit plusieurs appels pour la même toi
 
 ### Ce que nous vérifions avant votre visite
 Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.
+Les questions de notre appel 6 questions
 - Êtes-vous propriétaire de la maison et l’occupez-vous ?
 - Quels travaux envisagez-vous : réfection, rénovation, démoussage, zinguerie, fuite ?
 - Quel est le matériau de la toiture et quel est son âge, à peu près ?
@@ -238,11 +241,13 @@ Des propriétaires qui préparent le remplacement de leurs fenêtres ou de leur 
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
+Ce que nous cherchons
 - Remplacement de toutes les fenêtres d’une maison
 - Baies coulissantes et galandages
 - Portes d’entrée sur mesure
 - Volets roulants posés avec les fenêtres
 - Portails et clôtures en aluminium
+Ce que nous écartons
 - Une seule fenêtre à changer
 - La pose de matériel acheté ailleurs
 - Les locataires et les demandes hors de votre zone
@@ -264,6 +269,7 @@ Entre la visite et la décision, il peut s’écouler des semaines. Sans relance
 
 ### Ce que nous vérifions avant votre visite
 Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.
+Les questions de notre appel 6 questions
 - Êtes-vous propriétaire de la maison et l’occupez-vous ?
 - Combien de menuiseries souhaitez-vous remplacer ?
 - Quel matériau envisagez-vous : PVC, aluminium, bois ?
@@ -315,10 +321,12 @@ Des propriétaires qui préparent un ravalement ou une isolation par l’extéri
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
+Ce que nous cherchons
 - Ravalement complet de maison
 - Isolation thermique par l’extérieur
 - Enduit, crépi et peinture de façade
 - Traitement des fissures et imperméabilisation
+Ce que nous écartons
 - Un simple nettoyage haute pression
 - Les petites retouches
 - Les locataires et les demandes hors de votre zone
@@ -340,6 +348,7 @@ Sur les plateformes, plusieurs façadiers reçoivent la même demande. Le propri
 
 ### Ce que nous vérifions avant votre visite
 Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.
+Les questions de notre appel 6 questions
 - Êtes-vous propriétaire de la maison et l’occupez-vous ?
 - Quels travaux envisagez-vous : ravalement, isolation par l’extérieur, fissures, peinture ?
 - Combien d’étages et quelle surface de façade, à peu près ?
@@ -391,10 +400,12 @@ Des propriétaires qui préparent un projet de charpente prêt à démarrer. Cha
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
+Ce que nous cherchons
 - Rénovation ou remplacement de charpente
 - Surélévation de maison
 - Traitement de charpente sur une maison entière
 - Extension à ossature bois
+Ce que nous écartons
 - Les abris de jardin et petits ouvrages
 - Les projets sans calendrier
 - Les locataires et les demandes hors de votre zone
@@ -416,6 +427,7 @@ Le propriétaire compare des devis sans voir la différence entre deux charpente
 
 ### Ce que nous vérifions avant votre visite
 Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.
+Les questions de notre appel 5 questions
 - Êtes-vous propriétaire de la maison et l’occupez-vous ?
 - Quel est votre projet : rénovation, remplacement, surélévation, extension, traitement ?
 - Où en sont les plans et les démarches administratives ?
@@ -466,10 +478,12 @@ Des propriétaires qui préparent l’isolation complète de leur maison. Chaque
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
+Ce que nous cherchons
 - Isolation thermique par l’extérieur
 - Isolation des combles aménagés et des rampants
 - Isolation des combles perdus avec d’autres travaux
 - Isolation par l’intérieur d’une maison entière
+Ce que nous écartons
 - Les demandes d’offres à prix symbolique
 - Les projets dont l’éligibilité aux aides est la seule motivation
 - Les locataires et les demandes hors de votre zone
@@ -491,6 +505,7 @@ Sur les plateformes, la même demande part chez plusieurs entreprises. Le propri
 
 ### Ce que nous vérifions avant votre visite
 Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.
+Les questions de notre appel 6 questions
 - Êtes-vous propriétaire de la maison et l’occupez-vous ?
 - Quels travaux envisagez-vous : murs, combles, rampants, planchers ?
 - De quelle année date la maison, à peu près ?
@@ -761,38 +776,40 @@ Rappel prioritaire
 Les prix en ligne sont des moyennes. Ce qui compte, c’est votre chantier. La visite est gratuite.
 
 #### Prix d’une réfection de toiture
-Surface, matériau (tuiles, ardoise, bac acier), état de la charpente, accès au toit.
-Rénovation de toiture : de 60 à 500 €/m², pose comprise. L’écart dépend de ce qui est refait : couverture seule, isolation, charpente.
+60 à 500 €/m² Rénovation, pose comprise
+Varie selon : surface, matériau (tuiles, ardoise, bac acier), état de la charpente, accès au toit.
 Source : QuelleEnergie, consulté le 18/11/2026
 Voir la page Toiture
 
 #### Prix d’un ravalement de façade
-Surface, état du support, finition, échafaudage.
-Ravalement de façade : de 40 à 160 €/m² en moyenne.
+40 à 160 €/m² Ravalement, en moyenne
+Varie selon : surface, état du support, finition, échafaudage.
 Source : Obat, mis à jour le 30/10/2024
 Voir la page Façade
 
 #### Prix de fenêtres posées
-Nombre et taille des ouvertures, matériau, vitrage, type de pose.
-Fenêtre PVC double vitrage, fournie et posée en remplacement : de 870 à 1 170 € TTC, 1 020 € en moyenne.
+870 à 1 170 € Fenêtre PVC double vitrage posée, TTC
+Varie selon : nombre et taille des ouvertures, matériau, vitrage, type de pose.
 Source : La Maison Saint-Gobain, mis à jour le 13/02/2026
 Voir la page Fenêtres et portes
 
 #### Prix de travaux de charpente
-État du bois, portée, traitement, accès au chantier.
-Rénovation de charpente en bois : 150 €/m² en moyenne, de 40 à 250 €/m² selon l’état et la surface.
+40 à 250 €/m² Rénovation en bois, 150 €/m² en moyenne
+Varie selon : état du bois, portée, traitement, accès au chantier.
 Source : Obat, mis à jour le 28/10/2024
 Voir la page Charpente
 
 #### Prix de l’isolation des combles
-Surface, technique, isolant, aides possibles.
-Isolation des combles perdus, pose comprise : 40 €/m² si l’accès se fait par l’intérieur, 45 €/m² par le toit.
+40 à 45 €/m² Combles perdus, pose comprise
+Varie selon : surface, technique, isolant, aides possibles.
 Source : La Maison Saint-Gobain, mis à jour le 06/07/2026
 Voir la page Isolation
 ou appelez le 07 81 01 89 36
 
 ### Reconnaître un artisan sérieux
 5 points à vérifier avant de signer. Avec nous ou sans nous.
+Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
+Avant de signer 5 points
 
 #### Une entreprise immatriculée
 Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
@@ -812,22 +829,22 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 ### Bartier & Co en bref
 
 **Le service**
-- Bartier & Co met en relation les propriétaires avec un artisan du bâtiment de leur secteur pour des travaux de toiture, façade, fenêtres, charpente ou isolation.
+- Un artisan de votre secteur pour vos travaux de toiture, façade, fenêtres, charpente ou isolation.
 
 **Le prix pour vous**
-- Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
 
 **Le rendez-vous**
-- Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
 
 **Combien d’artisans**
-- Un seul par métier et par secteur. Vos coordonnées ne vont à personne d’autre.
+- Un seul. Vos coordonnées ne vont à personne d’autre.
 
 **La zone**
-- Selon votre commune. Si aucun artisan partenaire ne la couvre, nous vous le disons dès l’appel.
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.
@@ -986,6 +1003,8 @@ Visite et devis offerts. Vous décidez, sans engagement.
 
 ### Reconnaître un artisan sérieux
 5 points à vérifier avant de signer. Avec nous ou sans nous.
+Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
+Avant de signer 5 points
 
 #### Une entreprise immatriculée
 Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
@@ -1008,19 +1027,19 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Un seul couvreur de votre secteur, choisi pour vos travaux de toiture : réfection, fuite, zinguerie ou démoussage. Visite et devis offerts.
 
 **Le prix pour vous**
-- Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
 
 **Le rendez-vous**
-- Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
 
 **Combien d’artisans**
-- Un seul par métier et par secteur. Vos coordonnées ne vont à personne d’autre.
+- Un seul. Vos coordonnées ne vont à personne d’autre.
 
 **La zone**
-- Selon votre commune. Si aucun artisan partenaire ne la couvre, nous vous le disons dès l’appel.
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.
@@ -1143,6 +1162,8 @@ Visite et devis offerts. Vous décidez, sans engagement.
 
 ### Reconnaître un artisan sérieux
 5 points à vérifier avant de signer. Avec nous ou sans nous.
+Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
+Avant de signer 5 points
 
 #### Une entreprise immatriculée
 Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
@@ -1165,19 +1186,19 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Un seul artisan façade de votre secteur pour votre ravalement : nettoyage, fissures, enduit, peinture ou isolation par l’extérieur. Visite et devis offerts.
 
 **Le prix pour vous**
-- Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
 
 **Le rendez-vous**
-- Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
 
 **Combien d’artisans**
-- Un seul par métier et par secteur. Vos coordonnées ne vont à personne d’autre.
+- Un seul. Vos coordonnées ne vont à personne d’autre.
 
 **La zone**
-- Selon votre commune. Si aucun artisan partenaire ne la couvre, nous vous le disons dès l’appel.
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.
@@ -1294,6 +1315,8 @@ Visite et devis offerts. Vous décidez, sans engagement.
 
 ### Reconnaître un artisan sérieux
 5 points à vérifier avant de signer. Avec nous ou sans nous.
+Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
+Avant de signer 5 points
 
 #### Une entreprise immatriculée
 Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
@@ -1316,19 +1339,19 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Un seul menuisier de votre secteur pour vos fenêtres, portes, baies vitrées ou volets. Visite et devis offerts.
 
 **Le prix pour vous**
-- Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
 
 **Le rendez-vous**
-- Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
 
 **Combien d’artisans**
-- Un seul par métier et par secteur. Vos coordonnées ne vont à personne d’autre.
+- Un seul. Vos coordonnées ne vont à personne d’autre.
 
 **La zone**
-- Selon votre commune. Si aucun artisan partenaire ne la couvre, nous vous le disons dès l’appel.
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.
@@ -1445,6 +1468,8 @@ Visite et devis offerts. Vous décidez, sans engagement.
 
 ### Reconnaître un artisan sérieux
 5 points à vérifier avant de signer. Avec nous ou sans nous.
+Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
+Avant de signer 5 points
 
 #### Une entreprise immatriculée
 Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
@@ -1467,19 +1492,19 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Un seul charpentier de votre secteur pour réparer, traiter ou créer votre charpente. Visite et devis offerts.
 
 **Le prix pour vous**
-- Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
 
 **Le rendez-vous**
-- Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
 
 **Combien d’artisans**
-- Un seul par métier et par secteur. Vos coordonnées ne vont à personne d’autre.
+- Un seul. Vos coordonnées ne vont à personne d’autre.
 
 **La zone**
-- Selon votre commune. Si aucun artisan partenaire ne la couvre, nous vous le disons dès l’appel.
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.
@@ -1599,6 +1624,8 @@ Visite et devis offerts. Vous décidez, sans engagement.
 
 ### Reconnaître un artisan sérieux
 5 points à vérifier avant de signer. Avec nous ou sans nous.
+Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
+Avant de signer 5 points
 
 #### Une entreprise immatriculée
 Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
@@ -1621,19 +1648,19 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Un seul artisan de votre secteur pour isoler vos combles, vos murs ou votre toiture. Visite et devis offerts.
 
 **Le prix pour vous**
-- Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier & Co.
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
 
 **Le délai**
-- Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante.
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
 
 **Le rendez-vous**
-- Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite.
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
 
 **Combien d’artisans**
-- Un seul par métier et par secteur. Vos coordonnées ne vont à personne d’autre.
+- Un seul. Vos coordonnées ne vont à personne d’autre.
 
 **La zone**
-- Selon votre commune. Si aucun artisan partenaire ne la couvre, nous vous le disons dès l’appel.
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
 - Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris.

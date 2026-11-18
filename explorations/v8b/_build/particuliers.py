@@ -55,12 +55,12 @@ TRADES = [
 ]
 
 BRIEF = [
-    ("Le service", "Bartier &amp; Co met en relation les propriétaires avec un artisan du bâtiment de leur secteur pour des travaux de toiture, façade, fenêtres, charpente ou isolation."),
-    ("Le prix pour vous", "Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier &amp; Co."),
-    ("Le délai", "Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les dégâts urgents. Hors de ces horaires, dès l’ouverture suivante."),
-    ("Le rendez-vous", "Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite."),
-    ("Combien d’artisans", "Un seul par métier et par secteur. Vos coordonnées ne vont à personne d’autre."),
-    ("La zone", "Selon votre commune. Si aucun artisan partenaire ne la couvre, nous vous le disons dès l’appel."),
+    ("Le service", "Un artisan de votre secteur pour vos travaux de toiture, façade, fenêtres, charpente ou isolation."),
+    ("Le prix pour vous", "Gratuit, visite et devis compris. Les artisans nous rémunèrent."),
+    ("Le délai", "Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture."),
+    ("Le rendez-vous", "Fixé pendant notre appel, rappelé par SMS avant la visite."),
+    ("Combien d’artisans", "Un seul. Vos coordonnées ne vont à personne d’autre."),
+    ("La zone", "Selon votre commune. Hors zone, nous vous le disons à l’appel."),
     ("La société", "Bartier &amp; Co SAS, 6 rue Saint-Bon, 75004 Paris."),
 ]
 
@@ -276,7 +276,11 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick()}</a><span class="pf-prio">Rappel prioritaire</span></p>
 </section>"""
 
-    prices = "".join(f'<li><h3>{t[8]}</h3><p>{t[9]}</p><p class="pf-ref">{REF[t[0]][0]}</p><p class="pf-src">Source&nbsp;: {REF[t[0]][1]}</p><a class="link pf-more" href="/devis-travaux/{SLUG[t[0]]}/">Voir la page {t[1]}</a></li>' for t in TRADES)
+    # le chiffre d'abord (repris tel quel de la source citée), puis ce qui le fait varier
+    FIG = {"toiture": ("60 à 500\u00a0€/m²", "Rénovation, pose comprise"), "facade": ("40 à 160\u00a0€/m²", "Ravalement, en moyenne"),
+           "fenetres": ("870 à 1\u00a0170\u00a0€", "Fenêtre PVC double vitrage posée, TTC"), "charpente": ("40 à 250\u00a0€/m²", "Rénovation en bois, 150\u00a0€/m² en moyenne"),
+           "isolation": ("40 à 45\u00a0€/m²", "Combles perdus, pose comprise")}
+    prices = "".join(f'<li><h3>{t[8]}</h3><p class="pf-fig"><b>{FIG[t[0]][0]}</b><span>{FIG[t[0]][1]}</span></p><p class="pf-why">Varie selon&nbsp;: {t[9][0].lower() + t[9][1:]}</p><p class="pf-src">Source&nbsp;: {REF[t[0]][1]}</p><a class="link pf-more" href="/devis-travaux/{SLUG[t[0]]}/">Voir la page {t[1]}</a></li>' for t in TRADES)
     price = f"""<section class="sheet" id="prix" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Combien vont coûter vos travaux&nbsp;?</h2><p>Les prix en ligne sont des moyennes. Ce qui compte, c’est votre chantier. La visite est gratuite.</p></div>
   <ul class="pf-prices">{prices}</ul>
@@ -286,10 +290,10 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     serious = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in SERIOUS)
     serious = f"""<section class="sheet" id="artisan-serieux" data-tone="light">
   <div class="grid pf-ser">
-    <div class="pf-ser-head"><h2 data-split>Reconnaître un artisan sérieux</h2><p>5 points à vérifier avant de signer. Avec nous ou sans nous.</p></div>
-    <ul class="pf-checks pf-checklist">{serious}</ul>
+    <div class="pf-ser-head"><h2 data-split>Reconnaître un artisan sérieux</h2><p>5 points à vérifier avant de signer. Avec nous ou sans nous.</p>
+      <p class="pf-ser-cta"><span>Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.</span><a class="btn" href="#projet"><span>Décrire mes travaux</span>{tick()}</a></p></div>
+    <div class="pf-ser-card"><p class="pf-ser-k"><b>Avant de signer</b><span>5 points</span></p><ul class="pf-checks pf-checklist">{serious}</ul></div>
   </div>
-  {band("Un artisan local, qui se déplace avant de chiffrer.", "Décrire mes travaux")}
 </section>"""
 
     rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in FAQ)

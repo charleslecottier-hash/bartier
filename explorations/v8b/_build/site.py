@@ -659,20 +659,23 @@ for t in TRADES:
                             ("En combien de temps arrivent les premiers rendez-vous ?", "L'intégration prend 24 à 48 heures après notre appel, puis 3 à 5 jours pour lancer vos annonces. Le rythme dépend ensuite de votre secteur et de la saison.")]
     body = "\n\n".join([
         top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Voir ce que nous vérifions", "#appel")),
-        f"""<section class="sheet" data-tone="paper">
+        f"""<section class="sheet tr-hunt" data-tone="paper">
   <div class="grid sp-split">
     <div><h2 data-split>Ce que nous allons chercher</h2><p>Des chantiers qui valent le déplacement. Le reste est écarté avant d'arriver chez vous.</p></div>
-    <div class="sp-two">
+    <div class="sp-two tr-card">
+      <p class="tr-card-k"><b>Ce que nous cherchons</b></p>
       <ul class="sp-list">{''.join(f'<li>{x}</li>' for x in t['keep'])}</ul>
-      <ul class="sp-list is-no" style="margin-top:2rem">{''.join(f'<li>{x}</li>' for x in t['drop'])}</ul>
+      <p class="tr-card-k is-no"><b>Ce que nous écartons</b></p>
+      <ul class="sp-list is-no">{''.join(f'<li>{x}</li>' for x in t['drop'])}</ul>
     </div>
   </div>
 </section>""",
         cols(t["problems"], "Le métier est bon. Les demandes, moins.", "Ce qui coince souvent dans votre métier."),
-        f"""<section class="sheet" id="appel" data-tone="dark">
+        f"""<section class="sheet tr-call" id="appel" data-tone="accent">
   <div class="grid sp-split">
     <div><h2 data-split>Ce que nous vérifions avant votre visite</h2><p>Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.</p></div>
-    <ol class="sp-list is-num">{''.join(f'<li>{q}</li>' for q in t['questions'])}</ol>
+    <div class="tr-card is-call"><p class="tr-card-k"><b>Les questions de notre appel</b><span>{len(t['questions'])} questions</span></p>
+    <ol class="sp-list is-num">{''.join(f'<li>{q}</li>' for q in t['questions'])}</ol></div>
   </div>
 </section>""",
         f"""<section class="sheet" data-tone="tint">
