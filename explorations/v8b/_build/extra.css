@@ -323,7 +323,7 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 @media (min-width:901px) and (max-width:1439px){
   .hdr-tag{display:none}
   .hdr-nav{gap:.45rem 1rem;font-size:.84rem}
-  .hdr-nav a[href$="#faq"]{display:none}
+  .hdr-nav a[href="/questions/"]{display:none}
 }
 @media (min-width:901px) and (max-width:1100px){
   .hdr-nav{gap:.45rem .9rem;font-size:.82rem}
@@ -388,3 +388,14 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 .hero-steps li{align-items:flex-start}
 .hero-steps span{flex:none;margin-top:-.05em}
 @media (min-width:1280px){.hero-steps{flex-wrap:nowrap;white-space:normal;gap:.55rem;font-size:1rem}}
+
+/* ——— Ouverture sur ordinateur : titre et étapes groupés, centrés ; photo sur toute la hauteur ——— */
+@media (min-width:1024px){
+  .hero-grid{grid-template-rows:1fr auto auto 1fr;grid-template-areas:". . . window" "word word word window" "intro intro . window" ". . . window";row-gap:clamp(18px,2.2vw,30px)}
+  .hero-intro{align-self:start}
+}
+.hero-alt{margin:0;font-size:.9rem;color:var(--soft)}
+.hero-alt .link{color:var(--ink);margin-left:.35em}
+
+/* ——— Plus d'animation d'ouverture : la phrase qui apparaissait sur la photo agrandie n'a plus lieu d'être ——— */
+.hero:not(.is-live) .hero-statement{display:none}
