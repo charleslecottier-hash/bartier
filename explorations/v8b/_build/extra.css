@@ -563,3 +563,46 @@ h1,h2,h3{text-wrap:balance}
 .wa.is-mini:not(.is-open) .wa-fab b,.wa.is-mini:not(.is-open) .wa-fab .wa-dot{display:none}
 .wa.is-mini:not(.is-open) .wa-fab{padding:.55rem}
 .wa.is-mini:not(.is-open) .wa-fab:hover b,.wa.is-mini:not(.is-open) .wa-fab:focus-visible b{display:inline}
+
+/* ——— En-tête : « Comment ça marche » ouvre une liste (la méthode, puis le guide pour trouver des chantiers) ——— */
+.hdr-dd{position:relative;display:inline-flex;align-items:center}
+.hdr-dd-t{display:inline-flex;align-items:center;gap:.4em}
+.dd-chev{width:9px;height:6px;flex:none;transition:transform .25s var(--ease)}
+.hdr-dd-menu{position:absolute;top:calc(100% + 12px);left:-14px;z-index:60;display:grid;gap:2px;min-width:290px;padding:8px;background:var(--bg);color:var(--ink);border-radius:var(--r);box-shadow:0 22px 48px -22px rgba(10,20,36,.5),0 0 0 1px rgba(10,20,36,.08);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility 0s .2s}
+.hdr-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.hdr-dd:hover .hdr-dd-menu,.hdr-dd:focus-within .hdr-dd-menu{opacity:1;visibility:visible;transform:none;transition:opacity .2s,transform .2s}
+.hdr-dd:hover .dd-chev,.hdr-dd:focus-within .dd-chev{transform:rotate(180deg)}
+.hdr-dd-menu a{display:grid;gap:2px;padding:10px 12px;border-radius:calc(var(--r) - 2px);color:var(--ink);text-decoration:none;white-space:normal}
+.hdr-dd-menu b{font-weight:500;font-size:.95rem;line-height:1.3}
+.hdr-dd-menu small{font-size:.82rem;line-height:1.35;color:#5b616b}
+.hdr-dd-menu a:hover,.hdr-dd-menu a:focus-visible{background:var(--paper);outline:none}
+.hdr-dd-menu a:hover b{color:var(--accent)}
+
+/* ——— Guides (Trouver des chantiers, fiche plateforme) : sommaire en tête, texte large et lisible, tableaux à pleine largeur ——— */
+.pg-grid > .gd-toc{grid-column:3 / 5;align-self:end;padding:clamp(20px,2vw,28px);background:var(--paper);border-radius:var(--r)}
+.gd-toc-k{margin:0 0 .5rem;font-size:.85rem;color:#5b616b}
+.gd-toc ol{margin:0;padding:0;list-style:none;counter-reset:gd}
+.gd-toc li{counter-increment:gd;border-top:1px solid var(--rule)}
+.gd-toc a{display:flex;gap:.9rem;padding:.7rem 0;color:var(--ink);text-decoration:none;font-size:1rem;line-height:1.35}
+.gd-toc a::before{content:counter(gd,decimal-leading-zero);min-width:1.6em;color:var(--accent);font-variant-numeric:tabular-nums}
+.gd-toc a:hover{color:var(--accent)}
+section.sheet.gd-body{padding-top:clamp(40px,4.5vw,72px)}
+.gd-body .art-grid .prose{position:relative;max-width:none;padding-right:clamp(16px,2.4vw,40px);background:var(--bg)}
+.gd-body .prose > :not(table){max-width:70ch}
+.gd-body .prose > h2:first-child{margin-top:0}
+.gd-body .prose h2{scroll-margin-top:calc(var(--hdr) + 24px)}
+@media (min-width:761px){
+  .gd-body .prose table{display:table;width:100%;font-size:.95rem}
+  .gd-body .prose table:not(:has(th:nth-child(4))){max-width:760px}
+  .gd-body .prose th{padding:.85rem .9rem;text-align:left;font-weight:500;background:var(--paper)}
+  .gd-body .prose td{padding:.85rem .9rem;vertical-align:top}
+  .gd-body .prose td:first-child{font-weight:500}
+}
+@media (max-width:760px){
+  .pg-grid > .gd-toc{grid-column:1 / -1}
+  .gd-body .art-grid .prose{padding-right:0}
+}
+
+/* En-tête : avec la flèche de « Comment ça marche », les liens restent sur une ligne */
+@media (min-width:1280px){.hdr-nav{column-gap:1.15rem}}
+@media (min-width:1280px) and (max-width:1365px){.hdr-nav{column-gap:.75rem;font-size:.8rem}}

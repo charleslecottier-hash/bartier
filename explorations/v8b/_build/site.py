@@ -44,8 +44,17 @@ home = (ROOT / "_build" / "home.src.html").read_text(encoding="utf-8")
 # Menu : le Blog est dans le pied de page
 NAV = [("Comment ça marche", "#services"), ("Métiers", "/metiers/"), ("Google Ads", "/google-ads/"), ("Meta Ads", "/meta-ads/"),
        ("Qui sommes-nous", "/qui-sommes-nous/"), ("Questions", "/questions/"), ("Particuliers", "/devis-travaux/")]
-nav_html = "\n".join(f'      <a class="link" href="{h}">{t}</a>' for t, h in NAV)
-menu_html = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in NAV) + '\n    <a href="#contact">Contact</a>'
+# « Comment ça marche » ouvre une petite liste : la méthode, puis le guide pour trouver des chantiers
+NAV_SUB = {"#services": [("Notre méthode", "Annonces, rappel, visite dans votre agenda", "#services"),
+                         ("Comment trouver des chantiers", "Les 8 canaux comparés", "/trouver-des-chantiers/")]}
+NAV_CHEV = '<svg class="dd-chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>'
+def _nav_item(t, h):
+    if h in NAV_SUB:
+        sub = "".join(f'<a href="{sh}"><b>{st}</b><small>{sd}</small></a>' for st, sd, sh in NAV_SUB[h])
+        return f'      <div class="hdr-dd"><a class="link hdr-dd-t" href="{h}" aria-haspopup="true">{t}{NAV_CHEV}</a><div class="hdr-dd-menu">{sub}</div></div>'
+    return f'      <a class="link" href="{h}">{t}</a>'
+nav_html = "\n".join(_nav_item(t, h) for t, h in NAV)
+menu_html = "\n".join(f'    <a href="{h}">{t}</a>' + ("\n    <a href=\"/trouver-des-chantiers/\">Comment trouver des chantiers</a>" if h == "#services" else "") for t, h in NAV) + '\n    <a href="#contact">Contact</a>'
 home = re.sub(r'(<nav class="hdr-nav" aria-label="Menu">)[\s\S]*?(</nav>)', r"\1\n" + nav_html + r"\n    \2", home, count=1)
 home = re.sub(r'(<div class="menu" id="menu">\s*<nav aria-label="Menu">)[\s\S]*?(</nav>)', r"\1\n" + menu_html + r"\n  \2", home, count=1)
 
@@ -580,7 +589,7 @@ COMPARE = """<section class="sheet" data-tone="light">
   <div class="sp-table" role="table" aria-label="Google Ads et Meta Ads">
     <div class="sp-row is-head" role="row"><span role="columnheader"></span><span role="columnheader">Google Ads</span><span role="columnheader">Meta Ads</span></div>
     <div class="sp-row" role="row"><span role="rowheader">La demande</span><span role="cell">Le propriétaire cherche déjà</span><span role="cell">Le propriétaire n'a pas encore cherché</span></div>
-    <div class="sp-row" role="row"><span role="rowheader">Typiquement</span><span role="cell">Urgences, projets mûrs</span><span role="cell">Rénovation, entretien, projets à venir</span></div>
+    <div class="sp-row" role="row"><span role="rowheader">Typiquement</span><span role="cell">Projets déjà avancés</span><span role="cell">Rénovations pas encore lancées</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le volume</span><span role="cell">Limité aux recherches locales</span><span role="cell">Tous les propriétaires du rayon</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le point clé</span><span role="cell">Écarter les recherches inutiles</span><span role="cell">Trier au téléphone</span></div>
   </div>
@@ -987,13 +996,27 @@ for a in ARTICLES:
 AUTHOR_META = '<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur · Responsable des annonces</span></p>'
 
 
+def _gd_slug(s):
+    import unicodedata
+    s = unicodedata.normalize("NFKD", re.sub("<[^>]+>", "", s)).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")[:48]
+
+
 def guide(G, kick, crumb_items, faq_title, links):
+    toc = []
+    def _h2(m):  # chaque partie reçoit une ancre, reprise dans le sommaire en tête de page
+        sid = _gd_slug(m.group(1))
+        toc.append((sid, re.sub("<[^>]+>", "", m.group(1)).rstrip(" ?")))
+        return f'<h2 id="{sid}">{m.group(1)}</h2>'
+    art = re.sub(r"<h2>(.*?)</h2>", _h2, label_tables(G['body']))
+    toc_html = ('<nav class="gd-toc" aria-label="Dans ce guide"><p class="gd-toc-k">Dans ce guide</p><ol>'
+                + "".join(f'<li><a href="#{i}">{x}</a></li>' for i, x in toc) + "</ol></nav>")
     body = "\n\n".join([
-        top(kick, G["h1"], G["lead"], crumbs(*crumb_items), meta=AUTHOR_META, dated=True),
-        f"""<section class="sheet" data-tone="light">
+        top(kick, G["h1"], G["lead"], crumbs(*crumb_items), meta=AUTHOR_META, dated=True, visual=toc_html),
+        f"""<section class="sheet gd-body" data-tone="light">
   <div class="grid art-grid">
     <article class="prose">
-{label_tables(G['body'])}
+{art}
     </article>
     <aside class="art-aside">
       <h3>Votre secteur est-il libre ?</h3>

@@ -571,7 +571,7 @@ Tout est créé à votre nom. Vous gardez ce qui a été construit, même si vou
 
 ### Deux canaux, deux demandes
 Google capte ceux qui cherchent déjà. Meta touche ceux qui n’ont pas encore cherché. Nous choisissons selon votre métier et votre secteur.
-Google Ads Meta Ads La demande Le propriétaire cherche déjà Le propriétaire n’a pas encore cherché Typiquement Urgences, projets mûrs Rénovation, entretien, projets à venir Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Trier au téléphone
+Google Ads Meta Ads La demande Le propriétaire cherche déjà Le propriétaire n’a pas encore cherché Typiquement Projets déjà avancés Rénovations pas encore lancées Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Trier au téléphone
 
 ### Vos questions, nos réponses
 Une autre question ? Écrire à Martin sur WhatsApp
@@ -642,7 +642,7 @@ Tout est créé à votre nom, et tout vous reste si vous arrêtez.
 
 ### Deux canaux, deux demandes
 Google capte ceux qui cherchent déjà. Meta touche ceux qui n’ont pas encore cherché. Nous choisissons selon votre métier et votre secteur.
-Google Ads Meta Ads La demande Le propriétaire cherche déjà Le propriétaire n’a pas encore cherché Typiquement Urgences, projets mûrs Rénovation, entretien, projets à venir Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Trier au téléphone
+Google Ads Meta Ads La demande Le propriétaire cherche déjà Le propriétaire n’a pas encore cherché Typiquement Projets déjà avancés Rénovations pas encore lancées Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Trier au téléphone
 
 ### Vos questions, nos réponses
 Une autre question ? Écrire à Martin sur WhatsApp
@@ -2155,7 +2155,7 @@ Source : Google, aide de la fiche d’établissement.
 
 ### Quel canal choisir selon votre métier ?
 - Métier | Ce que cherchent les propriétaires | Canaux qui conviennent
-- Couverture | Urgences (fuite, tuiles) et réfections | Google pour les urgences, Facebook et Instagram pour la réfection, panneau de chantier
+- Couverture | Réfections et rénovations de toiture | Google, Facebook et Instagram, panneau de chantier
 - Façade | Ravalements, souvent repoussés | Facebook et Instagram, flyers dans les rues voisines
 - Menuiserie extérieure | Remplacement de fenêtres et de portes | Facebook et Instagram, fiche Google, fournisseurs
 - Charpente | Projets liés à la toiture ou à une extension | Prescripteurs (couvreurs, architectes), Google

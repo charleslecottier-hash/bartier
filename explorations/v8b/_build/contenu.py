@@ -85,7 +85,7 @@ PILLAR = dict(
 <table>
 <thead><tr><th>Métier</th><th>Ce que cherchent les propriétaires</th><th>Canaux qui conviennent</th></tr></thead>
 <tbody>
-<tr><td><a href="/metiers/couverture/">Couverture</a></td><td>Urgences (fuite, tuiles) et réfections</td><td>Google pour les urgences, Facebook et Instagram pour la réfection, panneau de chantier</td></tr>
+<tr><td><a href="/metiers/couverture/">Couverture</a></td><td>Réfections et rénovations de toiture</td><td>Google, Facebook et Instagram, panneau de chantier</td></tr>
 <tr><td><a href="/metiers/facade/">Façade</a></td><td>Ravalements, souvent repoussés</td><td>Facebook et Instagram, flyers dans les rues voisines</td></tr>
 <tr><td><a href="/metiers/menuiserie-exterieure/">Menuiserie extérieure</a></td><td>Remplacement de fenêtres et de portes</td><td>Facebook et Instagram, fiche Google, fournisseurs</td></tr>
 <tr><td><a href="/metiers/charpente/">Charpente</a></td><td>Projets liés à la toiture ou à une extension</td><td>Prescripteurs (couvreurs, architectes), Google</td></tr>

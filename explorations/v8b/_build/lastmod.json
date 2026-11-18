@@ -57,7 +57,7 @@
  },
  "/google-ads/": {
   "date": "2026-11-18",
-  "sig": "04120d73089a908f"
+  "sig": "b0fce53607457222"
  },
  "/lexique/": {
   "date": "2026-11-18",
@@ -69,7 +69,7 @@
  },
  "/meta-ads/": {
   "date": "2026-11-18",
-  "sig": "2baa4936a27377e5"
+  "sig": "68783a385ff6efa6"
  },
  "/metiers/": {
   "date": "2026-11-18",
@@ -105,10 +105,10 @@
  },
  "/trouver-des-chantiers/": {
   "date": "2026-11-18",
-  "sig": "8198388e1542fd4c"
+  "sig": "a42049bcfdb5e996"
  },
  "/trouver-des-chantiers/habitatpresto-pro/": {
   "date": "2026-11-18",
-  "sig": "da43a0095c97d1d6"
+  "sig": "3f2d8e5f5a7fcb5a"
  }
 }

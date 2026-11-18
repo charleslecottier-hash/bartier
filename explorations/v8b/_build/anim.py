@@ -107,7 +107,7 @@ def meta_anim(roof):
 
 
 def google_anim(roof):
-    sugg = ["couvreur amiens <b>devis réfection toiture</b>", "couvreur amiens <b>prix au m2</b>", "couvreur amiens <b>urgence fuite</b>", "couvreur amiens <b>avis</b>"]
+    sugg = ["couvreur amiens <b>devis réfection toiture</b>", "couvreur amiens <b>prix au m2</b>", "couvreur amiens <b>rénovation toiture</b>", "couvreur amiens <b>avis</b>"]
     search = f"""<div class="sc sc-search is-on">
       <div class="gs-field">{MAG}<span class="gs-q" data-t=""></span><i class="caret"></i></div>
       <ul class="gs-sug">{"".join(f"<li>{MAG}<span>{s}</span></li>" for s in sugg)}</ul>
