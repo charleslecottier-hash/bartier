@@ -222,7 +222,7 @@ def trade_page(t):
       </article>""" for a, b in t["angles"])
     faq = "\n".join(
         f"""      <details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>""" for q, a in t["faq"] + [
-            ("Combien cela coûte-t-il ?", "Cela dépend de votre secteur et du nombre de rendez-vous que vous pouvez absorber. Nous vous donnons un prix précis pendant l'appel de quinze minutes, avant toute décision."),
+            ("Combien cela coûte-t-il ?", "Cela dépend de votre secteur et du nombre de rendez-vous que vous pouvez absorber. Nous vous donnons un prix précis pendant l'appel de 15 minutes, avant toute décision."),
             ("Y a-t-il un engagement ?", "Non. Aucune durée minimale."),
         ])
     other_links = "\n".join(f'      <li><a href="/metiers/{o["slug"]}/">{esc(o["name"])} <span aria-hidden="true">→</span></a></li>' for o in others)

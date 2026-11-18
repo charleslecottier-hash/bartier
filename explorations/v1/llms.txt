@@ -1,6 +1,6 @@
 # Bartier & Co
 
-> Bartier & Co trouve des clients aux artisans du bâtiment à gros chantiers (couverture, façade, menuiserie extérieure, charpente, isolation) partout en France. Bartier & Co diffuse des annonces locales (Meta Ads, Google Ads), rappelle chaque demande en moins de cinq minutes en semaine de 8 h à 19 h, vérifie le projet et fixe la visite chez le propriétaire, directement dans l'agenda de l'artisan. Les rendez-vous ne sont proposés qu'à un seul artisan par métier et par secteur. Sans engagement de durée. Société : Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris (France). Fondateurs : Charles Le Cottier et Martin Barthélémy.
+> Bartier & Co trouve des clients aux artisans du bâtiment à gros chantiers (couverture, façade, menuiserie extérieure, charpente, isolation) partout en France. Bartier & Co diffuse des annonces locales (Meta Ads, Google Ads), rappelle chaque demande en moins de 5 minutes en semaine de 8 h à 19 h, vérifie le projet et fixe la visite chez le propriétaire, directement dans l'agenda de l'artisan. Les rendez-vous ne sont proposés qu'à un seul artisan par métier et par secteur. Sans engagement de durée. Société : Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris (France). Fondateurs : Charles Le Cottier et Martin Barthélémy.
 
 ## Pages principales
 - [Accueil](https://bartierandco.com/) : la méthode, les engagements et le formulaire pour vérifier si un secteur est libre.
@@ -8,7 +8,7 @@
 - [Google Ads](https://bartierandco.com/google-ads/) : campagnes locales pour capter les propriétaires qui cherchent déjà un artisan.
 - [Meta Ads](https://bartierandco.com/meta-ads/) : annonces Facebook et Instagram dans un rayon de 25 à 40 km autour du dépôt.
 - [Qui sommes-nous](https://bartierandco.com/qui-sommes-nous/) : les fondateurs et la façon de travailler.
-- [Devis travaux, pour les particuliers](https://bartierandco.com/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de cinq minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
+- [Devis travaux, pour les particuliers](https://bartierandco.com/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de 5 minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
 - [Contenu complet du site](https://bartierandco.com/llms-full.txt) : le texte de toutes les pages en un seul fichier.
 
 ## Pour les particuliers

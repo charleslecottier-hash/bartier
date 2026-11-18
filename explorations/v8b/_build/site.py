@@ -48,12 +48,7 @@ menu_html = "\n".join(f'    <a href="{h}">{t}</a>' for t, h in NAV) + '\n    <a 
 home = re.sub(r'(<nav class="hdr-nav" aria-label="Menu">)[\s\S]*?(</nav>)', r"\1\n" + nav_html + r"\n    \2", home, count=1)
 home = re.sub(r'(<div class="menu" id="menu">\s*<nav aria-label="Menu">)[\s\S]*?(</nav>)', r"\1\n" + menu_html + r"\n  \2", home, count=1)
 
-# Héros : le résultat rêvé, en un mot
-home = re.sub(r'<h1 class="giant" style="--len:\d+">[^<]*</h1>', '<h1 class="giant" style="--len:8">Complet.</h1>', home, count=1)
-home = re.sub(r'<p class="hero-tag">.*?</p>', '', home)
-home = home.replace('Complet.</h1>', 'Complet.</h1><p class="hero-tag">Faire équipe. <span>Faire la différence.</span></p>', 1)
-home = re.sub(r'(<div class="hero-intro">\s*<p class="lead">)[^<]*(</p>)',
-              r"\1Des propriétaires avec un vrai projet, directement dans votre agenda. Il ne vous reste qu’à chiffrer.\2", home, count=1)
+# Héros : écrit dans _build/home.src.html. Le mot géant est décoratif (<p class="giant">), le titre principal est la phrase d'accroche (<h1 class="lead">).
 
 # Métiers : chaque nom mène à sa page
 SLUG = {"Couverture": "couverture", "Menuiserie": "menuiserie-exterieure", "Isolation": "isolation", "Charpente": "charpente", "Façade": "facade"}
@@ -355,7 +350,7 @@ EXTRA_CSS = """<style>
 .crumbs a{color:inherit}
 .kick{font-size:.88rem;color:var(--accent)}
 [data-tone="dark"] .kick,[data-tone="accent"] .kick{color:var(--soft)}
-.sp-head{row-gap:24px;margin-bottom:clamp(40px,5vw,72px)}
+.sp-head{row-gap:24px;margin-bottom:var(--gap-head)}
 .sp-head h2{grid-column:1 / 3}
 .sp-head p{grid-column:3 / 5;align-self:end;max-width:44ch}
 .sp-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule)}
@@ -365,8 +360,8 @@ EXTRA_CSS = """<style>
 [data-tone="dark"] .sp-n{color:var(--soft)}
 .sp-cols h3{font:300 clamp(1.35rem,1.8vw,1.7rem)/1.15 var(--f-display);letter-spacing:-.03em}
 .sp-cols p{font-size:.95rem;color:var(--soft);max-width:40ch}
-.sp-split{row-gap:32px;align-items:start}
-.sp-split > div:first-child{grid-column:1 / 3;display:flex;flex-direction:column;gap:1.2rem}
+.sp-split{row-gap:var(--gap-head);align-items:start}
+.sp-split > div:first-child{grid-column:1 / 3;display:flex;flex-direction:column;gap:24px}
 .sp-split > div:first-child p{max-width:38ch;color:var(--soft)}
 .sp-split > .sp-list,.sp-split > .prose,.sp-split > .sp-two{grid-column:3 / 5}
 .sp-list{border-top:1px solid var(--rule)}
@@ -527,6 +522,20 @@ def faq(items, title="Vos questions, nos réponses"):
 </section>"""
 
 
+def more(title, all_text, all_href, links):
+    """Bande de liens vers les pages voisines (autres métiers, autres articles)."""
+    items = "".join(f'<li><a class="link" href="{h}">{t}</a></li>' for t, h in list(links) + [(all_text, all_href)])
+    return f"""<section class="sheet more" data-tone="light">
+  <div class="grid sp-split">
+    <div><h2 data-split>{title}</h2></div>
+    <ul class="more-list">{items}</ul>
+  </div>
+</section>"""
+
+
+TRADE_LABEL = {"couverture": "Couvreurs", "menuiserie-exterieure": "Menuisiers", "facade": "Façadiers", "charpente": "Charpentiers", "isolation": "Entreprises d'isolation"}
+READ_ADS = [(a["short"], f"/blog/{a['slug']}/") for a in ARTICLES if a["slug"] in ("google-ads-ou-meta-ads-artisan", "lead-partage-lead-exclusif-rendez-vous-qualifie")]
+
 COMPARE = """<section class="sheet" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Deux canaux, deux demandes</h2><p>Google capte ceux qui cherchent déjà. Meta touche ceux qui n'ont pas encore cherché. Nous choisissons selon votre métier et votre secteur.</p></div>
   <div class="sp-table" role="table" aria-label="Google Ads et Meta Ads">
@@ -586,7 +595,7 @@ for t in TRADES:
     short = f"Votre agenda rempli de propriétaires qui préparent {PROJECT[t['slug']]}. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis posée dans votre planning."
     meta_desc = f"Des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en 5 minutes, visite fixée dans votre agenda. Un seul par secteur."
     angles = "\n".join(f"""    <li><div class="ad-card"><p class="ad-meta">Votre entreprise · Sponsorisé</p><p class="ad-angle">{a}</p><p class="ad-text">{b}</p><p class="ad-cta">Demander une visite</p></div></li>""" for a, b in t["angles"])
-    trade_faq = t["faq"] + [("Combien cela coûte-t-il ?", "Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l'appel de quinze minutes, avant toute décision."),
+    trade_faq = t["faq"] + [("Combien cela coûte-t-il ?", "Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l'appel de 15 minutes, avant toute décision."),
                             ("Y a-t-il un engagement ?", "Non. Aucune durée minimale : vous restez parce que l'agenda se remplit.")]
     body = "\n\n".join([
         top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Ce que nous vérifions", "#appel")),
@@ -613,8 +622,8 @@ for t in TRADES:
   </ul>
 </section>""",
         faq(trade_faq),
+        more("Autres métiers", "Tous les métiers", "/metiers/", [(TRADE_LABEL[x["slug"]], f"/metiers/{x['slug']}/") for x in TRADES if x["slug"] != t["slug"]]),
     ])
-    body = body.replace('class="sp-two"', 'class="sp-two"')
     write(path, f"{t['title']} | Bartier & Co", meta_desc, body, nav="/metiers/", metier=t["radio"],
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "description": fr(meta_desc), "url": SITE + path,
@@ -661,6 +670,7 @@ write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
                 ["Compte Google Ads à votre nom", "Budget payé directement à Google", "Chaque recherche, chaque clic, chaque euro visibles"]),
           COMPARE,
           faq(GOOGLE_FAQ),
+          more("À lire aussi", "Tous les articles", "/blog/", READ_ADS),
       ]), nav="/google-ads/",
       schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Google Ads pour artisans du bâtiment", "serviceType": "Publicité locale sur Google", "url": SITE + "/google-ads/",
                                                             "description": "Campagnes Google Ads locales pour les artisans du bâtiment : les propriétaires qui cherchent un artisan dans leur secteur sont rappelés en moins de 5 minutes.",
@@ -684,6 +694,7 @@ write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & 
                 ["Page Facebook et compte publicitaire à votre nom", "Budget payé directement à Meta", "Toutes les statistiques des annonces visibles"]),
           COMPARE,
           faq(META_FAQ),
+          more("À lire aussi", "Tous les articles", "/blog/", READ_ADS),
       ]), nav="/meta-ads/",
       schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Publicité Facebook et Instagram pour artisans du bâtiment", "serviceType": "Publicité locale sur Facebook et Instagram", "url": SITE + "/meta-ads/",
                                                             "description": "Annonces Facebook et Instagram au nom de l'artisan, dans un rayon de 25 à 40 km autour de son dépôt. Chaque demande est rappelée en moins de 5 minutes.",
@@ -768,7 +779,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
   </div>
 </section>""",
           cols([("Un interlocuteur, pas un standard", "Vous avez le numéro de Charles et de Martin. L'un de nous répond."),
-                ("Des engagements écrits", "Exclusivité, un artisan par secteur, rappel en cinq minutes, sans engagement de durée."),
+                ("Des engagements écrits", "Exclusivité, un artisan par secteur, rappel en 5 minutes, sans engagement de durée."),
                 ("Des chiffres vérifiables", "Le budget est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
                "Comment nous travaillons", "", tone="paper"),
           TEAM.replace('id="team"', 'id="equipe"'),
@@ -834,6 +845,7 @@ for a in ARTICLES:
     </aside>
   </div>
 </section>""",
+        more("À lire aussi", "Tous les articles", "/blog/", [(x["short"], f"/blog/{x['slug']}/") for x in ARTICLES if x["slug"] != a["slug"]]),
     ])
     write(path, SEO_TITLE.get(a["slug"]) or f"{a['short']} | Bartier & Co", a["desc"], body, nav="/blog/",
           schema={"@context": "https://schema.org", "@graph": [
@@ -930,6 +942,27 @@ nf = re.sub(r'<link rel="canonical"[^>]*>\n?', "", nf)
 
 # ——— Passe finale sur toutes les pages : images différées et hébergées chez nous, une seule balise robots ———
 import images as IMG
+
+
+def real_dims(m):
+    """Les attributs width et height d'une photo sont ceux du fichier servi (son nom les porte)."""
+    tag = m.group(0)
+    s = re.search(r'\ssrc="/assets/photos/[\w.-]+?-(\d+)x(\d+)(?:-nb|-brut)?\.webp"', tag)
+    if not s or ' width="' not in tag or ' height="' not in tag:
+        return tag
+    tag = re.sub(r'\swidth="\d+"', f' width="{s.group(1)}"', tag, count=1)
+    return re.sub(r'\sheight="\d+"', f' height="{s.group(2)}"', tag, count=1)
+
+
+def typo(doc):
+    """Typographie française dans le texte visible : espace insécable avant ; : ? ! » et après «."""
+    parts = re.split(r"(<script[\s\S]*?</script>|<style[\s\S]*?</style>|<textarea[\s\S]*?</textarea>|<!--[\s\S]*?-->|<[^>]+>)", doc)
+    for i in range(0, len(parts), 2):
+        if parts[i].strip():
+            parts[i] = re.sub(r" ([;:?!»])", r"&nbsp;\1", parts[i]).replace("« ", "«&nbsp;")
+    return "".join(parts)
+
+
 PAGES_OUT = sorted(f for f in ROOT.rglob("*.html") if not (f.name == "8b-original.html" or "_build" in f.parts or "_video" in f.parts))
 for f in PAGES_OUT:
     IMG.scan(f.read_text(encoding="utf-8"))
@@ -962,6 +995,10 @@ for f in PAGES_OUT:
         return tag.replace("<img ", f'<img srcset="{", ".join(cands)}"{sz} ', 1)
     doc = re.sub(r"<img [^>]*>", srcset, doc)
     doc = IMG.localize(doc, SITE).replace('<link rel="preconnect" href="https://images.unsplash.com">\n', "")
+    doc = re.sub(r"<img [^>]*>", real_dims, doc)
+    doc = typo(doc)
+    if 'name="theme-color"' not in doc:
+        doc = doc.replace("</title>", '</title>\n<meta name="theme-color" content="#ffffff">', 1)
     for slug in LEGAL_SLUGS:  # pas de lien vers une page légale qui n'existe pas encore
         if slug not in LEGAL_READY:
             doc = re.sub(rf'\s*<a href="/{slug}/">[^<]*</a>', "", doc)

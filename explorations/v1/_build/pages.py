@@ -183,13 +183,13 @@ GOOGLE_FAQ = [
     ("Google Ads ou Meta, lequel choisir ?", "Les deux se complètent. Google capte ceux qui cherchent déjà, Meta ceux qui y pensent. Nous recommandons l'un, l'autre ou les deux selon votre métier et votre secteur, pendant l'appel."),
     ("Quel budget prévoir ?", "Il dépend de votre métier et de la concurrence dans votre secteur. Nous l'estimons avec vous avant de démarrer. Vous le payez directement à Google."),
     ("Le compte Google Ads est-il à moi ?", "Oui. Le compte est à votre nom, vous gardez l'accès et l'historique, même si vous arrêtez."),
-    ("Qui rappelle les demandes ?", "Notre équipe, en moins de cinq minutes, en semaine de 8 h à 19 h. Vous ne recevez que des rendez-vous qualifiés."),
+    ("Qui rappelle les demandes ?", "Notre équipe, en moins de 5 minutes, en semaine de 8 h à 19 h. Vous ne recevez que des rendez-vous qualifiés."),
 ]
 page("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
-     "Campagnes Google Ads locales pour couvreurs, façadiers et menuisiers : captez les propriétaires qui cherchent déjà, rappelés en moins de cinq minutes.",
+     "Campagnes Google Ads locales pour couvreurs, façadiers et menuisiers : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.",
      "\n\n".join([
          hero("Google Ads", "Captez les propriétaires qui cherchent déjà.",
-              "Ils tapent « couvreur » et le nom de leur ville. Nous faisons en sorte qu'ils tombent sur vous, puis nous les rappelons en moins de cinq minutes.",
+              "Ils tapent « couvreur » et le nom de leur ville. Nous faisons en sorte qu'ils tombent sur vous, puis nous les rappelons en moins de 5 minutes.",
               crumbs(("Google Ads", "/google-ads/")), ("Comparer avec Meta", "/meta-ads/")),
          cols([("Les urgences", "Fuite, tuiles envolées, gouttière arrachée : la demande est immédiate."),
                ("Les projets mûrs", "Le propriétaire compare déjà des entreprises. Il faut être là, et rappeler vite."),
@@ -201,7 +201,7 @@ page("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
                      "Exclusion des recherches inutiles : gratuit, pas cher, emploi, formation, bricolage",
                      "Une page dédiée à votre entreprise, rapide sur mobile",
                      "Chaque appel et chaque formulaire suivis jusqu'au rendez-vous",
-                     "Rappel en moins de cinq minutes, qualification, rendez-vous dans votre agenda"], grey=True),
+                     "Rappel en moins de 5 minutes, qualification, rendez-vous dans votre agenda"], grey=True),
          split_list("Ce qui reste à vous", "Votre compte, votre budget, vos chiffres.",
                     "Vous ne dépendez pas de nous pour garder ce qui a été construit.",
                     ["Le compte Google Ads est à votre nom",
@@ -224,10 +224,10 @@ META_FAQ = [
     ("Les demandes Facebook sont-elles sérieuses ?", "Pas toutes. C'est pourquoi chaque demande est rappelée et vérifiée avant d'arriver dans votre agenda : propriétaire, projet, commune, délai."),
 ]
 page("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & Co",
-     "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de cinq minutes et qualifiés.",
+     "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et qualifiés.",
      "\n\n".join([
          hero("Meta Ads · Facebook et Instagram", "Touchez les propriétaires avant qu'ils ne cherchent.",
-              "Des annonces à votre nom, à 25 à 40 km de votre dépôt. Chaque demande est rappelée en moins de cinq minutes, puis qualifiée.",
+              "Des annonces à votre nom, à 25 à 40 km de votre dépôt. Chaque demande est rappelée en moins de 5 minutes, puis qualifiée.",
               crumbs(("Meta Ads", "/meta-ads/")), ("Comparer avec Google", "/google-ads/")),
          cols([("Un rayon autour du dépôt", "25 à 40 km, réglés commune par commune selon vos chantiers."),
                ("Vos vraies photos", "Vos chantiers, votre équipe. Rien de plus convaincant pour un voisin."),
@@ -237,7 +237,7 @@ page("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & C
                     "Une demande Facebook n'est qu'un début. Le tri se fait au téléphone.",
                     ["Formulaire avec questions de tri et accord explicite d'être recontacté",
                      "Preuve du consentement conservée pour chaque demande",
-                     "Rappel en moins de cinq minutes, en semaine de 8 h à 19 h",
+                     "Rappel en moins de 5 minutes, en semaine de 8 h à 19 h",
                      "Propriétaire, projet, commune et délai vérifiés",
                      "Rendez-vous dans votre agenda, rappels au propriétaire la veille et deux heures avant",
                      "Flyers distribués dans les rues voisines de chaque chantier signé"], grey=True),
@@ -268,12 +268,12 @@ page("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
     <div class="prose">
       <p>Les artisans que nous rencontrons ont du métier et des clients satisfaits. Ce qui leur manque, c'est un flux régulier de projets sérieux.</p>
       <p>Les plateformes revendent la même demande à plusieurs entreprises. Le bouche-à-oreille ne se commande pas. Et personne n'a le temps de rappeler depuis un toit.</p>
-      <p>Nous avons donc construit un système simple : des annonces locales, un rappel en moins de cinq minutes, et un rendez-vous réservé à un seul artisan.</p>
+      <p>Nous avons donc construit un système simple : des annonces locales, un rappel en moins de 5 minutes, et un rendez-vous réservé à un seul artisan.</p>
     </div>
   </div>
 </section>""",
          cols([("Un interlocuteur, pas un standard", "Vous avez le numéro de Charles et de Martin. L'un de nous répond."),
-               ("Des engagements écrits", "Exclusivité, un artisan par secteur, rappel en cinq minutes, sans engagement de durée."),
+               ("Des engagements écrits", "Exclusivité, un artisan par secteur, rappel en 5 minutes, sans engagement de durée."),
                ("Des chiffres vérifiables", "Le budget publicitaire est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
               "Comment nous travaillons", "Simple, joignable, honnête.", grey=True),
          """<section class="section">
@@ -543,6 +543,15 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
+User-agent: MistralAI-Index
+Allow: /
+
+User-agent: Meta-WebIndexer
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
 User-agent: DuckAssistBot
 Allow: /
 
@@ -558,7 +567,7 @@ urls = "\n".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{TODAY}</lastmod></url>" 
 art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['desc'])}" for a in ARTICLES)
 (ROOT / "llms.txt").write_text(f"""# Bartier & Co
 
-> Bartier & Co trouve des clients aux artisans du bâtiment à gros chantiers (couverture, façade, menuiserie extérieure, charpente, isolation) partout en France. Bartier & Co diffuse des annonces locales (Meta Ads, Google Ads), rappelle chaque demande en moins de cinq minutes en semaine de 8 h à 19 h, vérifie le projet et fixe la visite chez le propriétaire, directement dans l'agenda de l'artisan. Les rendez-vous ne sont proposés qu'à un seul artisan par métier et par secteur. Sans engagement de durée. Société : Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris (France). Fondateurs : Charles Le Cottier et Martin Barthélémy.
+> Bartier & Co trouve des clients aux artisans du bâtiment à gros chantiers (couverture, façade, menuiserie extérieure, charpente, isolation) partout en France. Bartier & Co diffuse des annonces locales (Meta Ads, Google Ads), rappelle chaque demande en moins de 5 minutes en semaine de 8 h à 19 h, vérifie le projet et fixe la visite chez le propriétaire, directement dans l'agenda de l'artisan. Les rendez-vous ne sont proposés qu'à un seul artisan par métier et par secteur. Sans engagement de durée. Société : Bartier & Co SAS, 6 rue Saint-Bon, 75004 Paris (France). Fondateurs : Charles Le Cottier et Martin Barthélémy.
 
 ## Pages principales
 - [Accueil]({SITE}/) : la méthode, les engagements et le formulaire pour vérifier si un secteur est libre.
@@ -566,7 +575,7 @@ art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['
 - [Google Ads]({SITE}/google-ads/) : campagnes locales pour capter les propriétaires qui cherchent déjà un artisan.
 - [Meta Ads]({SITE}/meta-ads/) : annonces Facebook et Instagram dans un rayon de 25 à 40 km autour du dépôt.
 - [Qui sommes-nous]({SITE}/qui-sommes-nous/) : les fondateurs et la façon de travailler.
-- [Devis travaux, pour les particuliers]({SITE}/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de cinq minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
+- [Devis travaux, pour les particuliers]({SITE}/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de 5 minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
 - [Contenu complet du site](https://bartierandco.com/llms-full.txt) : le texte de toutes les pages en un seul fichier.
 
 ## Pour les particuliers

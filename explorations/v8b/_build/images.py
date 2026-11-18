@@ -1,4 +1,4 @@
-"""Photos du site : téléchargées une fois, passées en noir et blanc, recadrées et servies depuis /assets/img/.
+"""Photos du site : téléchargées une fois, étalonnées, recadrées et servies depuis /assets/photos/.
 
 Chaque adresse images.unsplash.com rencontrée dans une page devient un fichier local :
     /assets/photos/<nom>-<largeur>x<hauteur>[-nb|-brut].webp
@@ -100,7 +100,7 @@ def variant(pid, w, h=None, mode=""):
         im = treat(im, mode)
         if tw <= 1200:
             im = im.filter(ImageFilter.UnsharpMask(radius=0.7, percent=30, threshold=2))
-        im.save(out, "WEBP", quality=80, method=6)
+        im.save(out, "WEBP", quality=74 if tw >= 1000 else 78, method=6)
     return "/assets/photos/" + name
 
 
@@ -125,7 +125,7 @@ def localize(doc, site=""):
     doc = URL_RE.sub(rep, doc)
     if site:
         doc = re.sub(r'(<script type="application/ld\+json">)(.*?)(</script>)',
-                     lambda m: m.group(1) + m.group(2).replace('"/assets/photos/', f'"{site}/assets/img/') + m.group(3), doc, flags=re.S)
+                     lambda m: m.group(1) + m.group(2).replace('"/assets/photos/', f'"{site}/assets/photos/') + m.group(3), doc, flags=re.S)
     return doc
 
 

@@ -308,7 +308,7 @@ def schema(SITE, faq_ld, bc_ld):
          "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "19:00"},
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Gratuit pour le particulier, sans engagement"},
          "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Travaux", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": t[5], "description": clean(t[6])}} for t in TRADES]}},
-        {"@type": "HowTo", "name": "Fuite de toiture : que faire en urgence", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]},
+        {"@type": "HowTo", "name": "Fuite de toiture ? Les 5 bons réflexes", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]},
         faq_ld(FAQ), bc_ld(("Devis travaux", PATH))]}
 
 
@@ -690,7 +690,7 @@ def trade_schema(SITE, faq_ld, bc_ld, key):
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Gratuit pour le particulier : mise en relation, visite et devis de l'artisan"}},
         faq_ld(trade_faq(key)), bc_ld(("Devis travaux", PATH), (t[1], path))]
     if key == "toiture":
-        graph.append({"@type": "HowTo", "name": "Fuite de toiture : que faire en urgence", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]})
+        graph.append({"@type": "HowTo", "name": "Fuite de toiture ? Les 5 bons réflexes", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]})
     return {"@context": "https://schema.org", "@graph": graph}
 
 
@@ -711,36 +711,36 @@ CSS_TRADE = """<style id="pf-css-2">
 /* Aération mobile */
 @media (max-width:760px){
   :root{--sp:76px}
-  .pf-hero{padding-top:calc(var(--hdr) + 26px);padding-bottom:60px}
-  .pf-hero-grid{row-gap:26px}
-  .pf-intro{gap:1.05rem}
-  .pf-h1{gap:.75rem}
-  .pf-card{padding:22px 18px}
+  .pf-hero{padding-top:calc(var(--hdr) + 24px);padding-bottom:60px}
+  .pf-hero-grid{row-gap:24px}
+  .pf-intro{gap:16px}
+  .pf-h1{gap:12px}
+  .pf-card{padding:24px 20px}
   .pf-live{margin:0 0 16px}
-  .pf-bar{margin:14px 0 24px}
-  .pf-step legend{margin-bottom:18px}
-  .pf-grid,.pf-list{gap:10px}
-  .pf-tile,.pf-opt{min-height:58px}
-  .pf-fields{gap:14px;margin-bottom:18px}
-  .pf-trust{gap:.65rem 1.1rem}
-  .sp-head{row-gap:16px;margin-bottom:36px}
+  .pf-bar{margin:16px 0 24px}
+  .pf-step legend{margin-bottom:16px}
+  .pf-grid,.pf-list{gap:12px}
+  .pf-tile,.pf-opt{min-height:56px}
+  .pf-fields{gap:16px;margin-bottom:20px}
+  .pf-trust{gap:12px 16px}
+  .sp-head{row-gap:24px;margin-bottom:40px}
   .sp-head p{line-height:1.55}
-  .pf-proms{gap:30px 18px}
-  .pf-proms li{padding-top:18px;gap:10px}
-  .pf-trades{gap:30px 14px}
-  .pf-trade{gap:.7rem}
-  .pf-howto,.pf-checks,.pf-prices{gap:30px}
-  .pf-howto li,.pf-checks li,.pf-prices li{padding-top:18px}
-  .pf-howto h3,.pf-checks h3,.pf-prices h3{margin-bottom:10px}
+  .pf-proms{gap:32px 16px}
+  .pf-proms li{padding-top:16px;gap:12px}
+  .pf-trades{gap:32px 16px}
+  .pf-trade{gap:12px}
+  .pf-howto,.pf-checks,.pf-prices{gap:32px}
+  .pf-howto li,.pf-checks li,.pf-prices li{padding-top:16px}
+  .pf-howto h3,.pf-checks h3,.pf-prices h3{margin-bottom:12px}
   .pf-howto p,.pf-checks p,.pf-prices p,.pf-time p,.pf-trade p{font-size:.95rem;line-height:1.55}
-  .pf-time li{padding-bottom:30px}
+  .pf-time li{padding-bottom:32px}
   .pf-time h3{margin-bottom:8px}
-  .sp-row > *{padding-top:1.1rem;padding-bottom:1.1rem}
-  .pf-band{margin-top:40px;padding:22px 20px;gap:18px}
-  .pf-mid{margin-top:36px;gap:1rem 1.2rem}
-  .pf-dl{gap:26px}
+  .sp-row > *{padding-top:16px;padding-bottom:16px}
+  .pf-band{margin-top:40px;padding:24px 20px;gap:16px}
+  .pf-mid{margin-top:40px;gap:16px 20px}
+  .pf-dl{gap:24px}
   .pf-end-grid{row-gap:28px}
-  .pf-end-grid > div{gap:1.4rem}
+  .pf-end-grid > div{gap:24px}
   .fq summary{padding-top:1.5rem;padding-bottom:1.5rem}
 }
 </style>"""

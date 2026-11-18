@@ -50,6 +50,15 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
+User-agent: MistralAI-Index
+Allow: /
+
+User-agent: Meta-WebIndexer
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
 User-agent: DuckAssistBot
 Allow: /
 
