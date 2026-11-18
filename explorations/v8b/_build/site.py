@@ -843,6 +843,27 @@ for k in PF.SLUG:
 
 # ——— Qui sommes-nous ———
 # En tête de page : les deux fondateurs côte à côte (image composée depuis _build/portraits/, sans métadonnées)
+# Qui vous répond : titre à gauche, les deux fondateurs et le contact de Martin à droite
+TEAM_ABOUT = """<section class="team-about sheet" id="equipe" data-kind="team" data-tone="dark">
+  <div class="grid ta-grid">
+    <div class="ta-head">
+      <h2 data-split>Qui vous répond ?<br> Nous.</h2>
+      <p>Pas de standard. Vous parlez aux fondateurs, du premier appel à l'onboarding.</p>
+    </div>
+    <div class="ta-body">
+      <ul class="ta-people">
+        <li id="charles"><img src="/assets/photos/charles-le-cottier-360x450-nb.webp" alt="Portrait de Charles Le Cottier, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Charles Le Cottier</h3><p>Cofondateur · Head of Performance</p></div></li>
+        <li id="martin"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Martin Barthélémy</h3><p>Cofondateur · Head of Sales</p></div></li>
+      </ul>
+      <p class="ta-note">Une question avant de vous lancer ? Appelez Martin en semaine, de 8&nbsp;h à 19&nbsp;h, ou écrivez-lui : il répond sous un jour ouvré.</p>
+      <div class="ta-acts">
+        <a class="dq-wa" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan.%20Mon%20secteur%20est-il%20encore%20libre%20%3F" target="_blank" rel="noopener" data-wa="team">Écrire à Martin sur WhatsApp</a>
+        <a class="link" href="tel:+33781018936">Appeler le 07 81 01 89 36</a>
+      </div>
+    </div>
+  </div>
+</section>"""
+
 DUO = ('<figure class="pg-photo frame"><img src="/assets/photos/fondateurs-bartier-co-1200x900-nb.webp" '
        'srcset="/assets/photos/fondateurs-bartier-co-480x360-nb.webp 480w, /assets/photos/fondateurs-bartier-co-800x600-nb.webp 800w, /assets/photos/fondateurs-bartier-co-1200x900-nb.webp 1200w" '
        'sizes="(max-width: 760px) 100vw, 50vw" alt="Charles Le Cottier et Martin Barthélémy, cofondateurs de Bartier &amp; Co" width="1200" height="900"></figure>')
@@ -852,11 +873,11 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
           top("Qui sommes-nous", "Deux fondateurs. Un seul objectif : votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), visual=DUO),
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
-    <div><h2 data-split>Un bon artisan ne devrait pas courir après les devis</h2></div>
+    <div><h2 data-split>Vous n'avez pas à courir après les devis</h2></div>
     <div class="prose">
-      <p>Un bon artisan a du métier et des clients satisfaits. Ce qui lui manque, c'est un flux régulier de projets sérieux.</p>
-      <p>Les plateformes revendent la même demande à plusieurs entreprises. Le bouche-à-oreille ne se commande pas. Et personne ne peut rappeler depuis un toit.</p>
-      <p>Nous avons construit un système simple : des annonces locales, un rappel en moins de 5 minutes, et une visite réservée à un seul artisan par métier et par secteur.</p>
+      <p>Vous avez du métier et des clients satisfaits. Ce qui vous manque, ce sont des projets sérieux, chaque semaine.</p>
+      <p>Les plateformes vendent la même demande à vous et à vos concurrents. Le bouche-à-oreille ne se commande pas. Et quand vous êtes sur un toit, vous ne pouvez pas répondre au téléphone.</p>
+      <p>Alors nous nous en occupons pour vous : des annonces près de chez vous, chaque demande rappelée en moins de 5 minutes, et des visites rien que pour vous dans votre métier et votre secteur.</p>
     </div>
   </div>
 </section>""",
@@ -865,7 +886,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
                 ("Des chiffres vérifiables", "Le budget est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
                "Comment nous travaillons", "", tone="paper"),
           (ROOT / "_build" / "demarrage.html").read_text(encoding="utf-8").split("-->", 1)[1].strip(),
-          re.sub(r'<figure class="person-photo[\s\S]*?</figure>\s*', "", TEAM.replace('id="team"', 'id="equipe"').replace('data-tone="paper"', 'data-tone="dark"', 1)),  # portraits déjà en tête de page
+          TEAM_ABOUT,
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>Bartier & Co en bref</h2></div>

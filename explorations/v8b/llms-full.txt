@@ -1723,10 +1723,10 @@ Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Bar
 Qui sommes-nous
 Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.
 
-### Un bon artisan ne devrait pas courir après les devis
-Un bon artisan a du métier et des clients satisfaits. Ce qui lui manque, c’est un flux régulier de projets sérieux.
-Les plateformes revendent la même demande à plusieurs entreprises. Le bouche-à-oreille ne se commande pas. Et personne ne peut rappeler depuis un toit.
-Nous avons construit un système simple : des annonces locales, un rappel en moins de 5 minutes, et une visite réservée à un seul artisan par métier et par secteur.
+### Vous n’avez pas à courir après les devis
+Vous avez du métier et des clients satisfaits. Ce qui vous manque, ce sont des projets sérieux, chaque semaine.
+Les plateformes vendent la même demande à vous et à vos concurrents. Le bouche-à-oreille ne se commande pas. Et quand vous êtes sur un toit, vous ne pouvez pas répondre au téléphone.
+Alors nous nous en occupons pour vous : des annonces près de chez vous, chaque demande rappelée en moins de 5 minutes, et des visites rien que pour vous dans votre métier et votre secteur.
 
 ### Comment nous travaillons
 - 01
