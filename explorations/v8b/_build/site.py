@@ -14,7 +14,12 @@ import runpy
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 V1 = ROOT.parent / "v1" / "_build"
 SITE = "https://bartierandco.com"
-TODAY = "2026-11-17"
+TODAY = "2026-11-17"  # date de publication des trois premiers articles
+BUILD = __import__("datetime").date.today().isoformat()
+# Mise en ligne : passer LIVE à True le jour où bartierandco.com pointe vers ce site.
+# Tant que LIVE est False, toutes les pages portent « noindex » (la préversion ne doit pas être référencée).
+LIVE = False
+INDEXNOW_KEY = "9e243e36d5aa224c04b988c6e4c145d3"  # clé publique IndexNow (Bing, et donc ChatGPT), servie à /<clé>.txt
 NB = " "
 
 M = runpy.run_path(str(V1 / "metiers.py"))
@@ -197,14 +202,35 @@ home = re.sub(r'<div class="ld" id="ld"[\s\S]*?</script>\n', "", home)
 home = home.replace("</head>", LD_HEAD + "</head>", 1)
 home = re.sub(r"(<body[^>]*>\n?)", lambda m: m.group(1) + LD_BODY, home, count=1)
 
-# Données structurées et adresse canonique de l'accueil
-if '"@type":"Organization"' not in home:
-    ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "address": {"@type": "PostalAddress", "streetAddress": "6 rue Saint-Bon", "postalCode": "75004", "addressLocality": "Paris", "addressCountry": "FR"}, "url": SITE + "/", "logo": SITE + "/assets/logo-bartier.png", "email": "contact@bartierandco.com", "areaServed": ["FR"], "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434"],
-         "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de 5 minutes, visites de devis fixées directement dans leur agenda.",
-         "founder": [{"@type": "Person", "name": "Charles Le Cottier"}, {"@type": "Person", "name": "Martin Barthélémy"}]},
-        {"@type": "WebSite", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}]}
-    home = home.replace("</head>", f'<link rel="canonical" href="{SITE}/">\n<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False, separators=(",", ":"))}</script>\n</head>', 1)
+# Données structurées, adresse canonique et balises de partage de l'accueil (toujours régénérées)
+FOUNDERS = [("charles", "Charles Le Cottier", "Cofondateur, Head of Performance"), ("martin", "Martin Barthélémy", "Cofondateur, Head of Sales")]
+ORG_REF = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "url": SITE + "/"}
+ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "alternateName": "Bartier and Co",
+       "slogan": "Faire équipe. Faire la différence.", "url": SITE + "/", "logo": SITE + "/assets/logo-bartier.png", "image": SITE + "/assets/og.png",
+       "email": "contact@bartierandco.com", "telephone": PHONE,
+       "address": {"@type": "PostalAddress", "streetAddress": "6 rue Saint-Bon", "postalCode": "75004", "addressLocality": "Paris", "addressCountry": "FR"},
+       "contactPoint": {"@type": "ContactPoint", "telephone": PHONE, "email": "contact@bartierandco.com", "contactType": "customer service", "areaServed": "FR", "availableLanguage": "French",
+                        "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "19:00"}},
+       "areaServed": {"@type": "Country", "name": "France"},
+       "knowsAbout": ["Google Ads", "Meta Ads", "Publicité locale", "Couverture", "Ravalement de façade", "Menuiserie extérieure", "Charpente", "Isolation"],
+       "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434"],
+       "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de 5 minutes, visites de devis fixées directement dans leur agenda.",
+       "founder": [{"@type": "Person", "@id": f"{SITE}/qui-sommes-nous/#{k}", "name": n, "jobTitle": j} for k, n, j in FOUNDERS]}
+home = re.sub(r'<link rel="canonical"[^>]*>\n?', "", home)
+home = re.sub(r'<script type="application/ld\+json">[\s\S]*?</script>\n?', "", home)
+home = re.sub(r'<meta (?:property="og:|name="twitter:)[^>]*>\n?', "", home)
+if LIVE:
+    home = home.replace('<meta name="robots" content="noindex">', "", 1)
+_ht = html.unescape(re.search(r"<title>(.*?)</title>", home).group(1))
+_hd = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', home).group(1))
+_ld = {"@context": "https://schema.org", "@graph": [ORG, {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}]}
+home = home.replace("</head>", (
+    f'<link rel="canonical" href="{SITE}/">\n'
+    f'<meta property="og:type" content="website">\n<meta property="og:locale" content="fr_FR">\n<meta property="og:site_name" content="Bartier &amp; Co">\n'
+    f'<meta property="og:title" content="{html.escape(_ht)}">\n<meta property="og:description" content="{html.escape(_hd)}">\n'
+    f'<meta property="og:url" content="{SITE}/">\n<meta property="og:image" content="{SITE}/assets/og.png">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
+    f'<meta name="twitter:card" content="summary_large_image">\n'
+    f'<script type="application/ld+json">{json.dumps(_ld, ensure_ascii=False, separators=(",", ":"))}</script>\n</head>'), 1)
 (ROOT / "index.html").write_text(home, encoding="utf-8")
 
 # Feuille complémentaire (_build/extra.css), injectée dans toutes les pages
@@ -256,6 +282,7 @@ home = home.replace("</body>", CC_TAG + "\n</body>", 1)
 HEAD = home[:home.index("</head>")]
 HEAD = re.sub(r'<link rel="canonical"[^>]*>\n?', "", HEAD)
 HEAD = re.sub(r'<script type="application/ld\+json">[\s\S]*?</script>\n?', "", HEAD)
+HEAD = re.sub(r'<meta (?:property="og:|name="twitter:)[^>]*>\n?', "", HEAD)
 BODY_OPEN = home[home.index("</head>"):home.index("<main>") + len("<main>")]
 CONTACT = home[home.rindex('<section', 0, home.index('id="contact"')):]
 CONTACT = CONTACT[:CONTACT.index("</section>") + len("</section>")]
@@ -590,12 +617,13 @@ for t in TRADES:
     body = body.replace('class="sp-two"', 'class="sp-two"')
     write(path, f"{t['title']} | Bartier & Co", meta_desc, body, nav="/metiers/", metier=t["radio"],
           schema={"@context": "https://schema.org", "@graph": [
-              {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "areaServed": ["FR"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}},
+              {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "description": fr(meta_desc), "url": SITE + path,
+               "areaServed": {"@type": "Country", "name": "France"}, "provider": ORG_REF},
               bc_ld(("Métiers", "/metiers/"), (t["name"], path)), faq_ld(trade_faq)]})
     paths.append(path)
 
-hub_items = "\n".join(f'    <li class="sector"><h3 class="sector-name"><a href="/metiers/{t["slug"]}/">{t["name"].split(" et ")[0]}</a></h3><p class="sector-note">{esc(", ".join(t["keep"][:3]))}</p></li>' for t in TRADES)
-write("/metiers/", "Métiers : des clients pour chaque corps de métier | Bartier & Co",
+hub_items = "\n".join(f'    <li class="sector"><h2 class="sector-name"><a href="/metiers/{t["slug"]}/">{t["name"].split(" et ")[0]}</a></h2><p class="sector-note">{esc(", ".join(t["keep"][:3]))}</p></li>' for t in TRADES)
+write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & Co",
       "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, partout en France. Un seul artisan par secteur.",
       "\n\n".join([
           top("Métiers", "Uniquement les métiers où un chantier compte.", "Des chantiers de plusieurs milliers d'euros. Pas de dépannage, pas de petits travaux.", crumbs(("Métiers", "/metiers/")), "Une équipe d"),
@@ -603,6 +631,15 @@ write("/metiers/", "Métiers : des clients pour chaque corps de métier | Bartie
   <ul class="sc-list">
 {hub_items}
   </ul>
+</section>""",
+          """<section class="sheet" data-tone="light">
+  <div class="grid sp-split">
+    <div><h2 data-split>La même méthode pour chaque métier</h2></div>
+    <div class="prose">
+      <p>Des annonces locales à votre nom, sur <a href="/google-ads/">Google</a> et sur <a href="/meta-ads/">Facebook et Instagram</a>. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda.</p>
+      <p>Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d'autre.</p>
+    </div>
+  </div>
 </section>""",
       ]), nav="/metiers/", schema={"@context": "https://schema.org", "@graph": [bc_ld(("Métiers", "/metiers/"))]})
 paths.insert(1, "/metiers/")
@@ -625,7 +662,9 @@ write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
           COMPARE,
           faq(GOOGLE_FAQ),
       ]), nav="/google-ads/",
-      schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Google Ads pour artisans du bâtiment", "areaServed": ["FR"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}}, bc_ld(("Google Ads", "/google-ads/")), faq_ld(GOOGLE_FAQ)]})
+      schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Google Ads pour artisans du bâtiment", "serviceType": "Publicité locale sur Google", "url": SITE + "/google-ads/",
+                                                            "description": "Campagnes Google Ads locales pour les artisans du bâtiment : les propriétaires qui cherchent un artisan dans leur secteur sont rappelés en moins de 5 minutes.",
+                                                            "areaServed": {"@type": "Country", "name": "France"}, "provider": ORG_REF}, bc_ld(("Google Ads", "/google-ads/")), faq_ld(GOOGLE_FAQ)]})
 paths.append("/google-ads/")
 
 # ——— Meta Ads ———
@@ -646,7 +685,9 @@ write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & 
           COMPARE,
           faq(META_FAQ),
       ]), nav="/meta-ads/",
-      schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Publicité Facebook et Instagram pour artisans du bâtiment", "areaServed": ["FR"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}}, bc_ld(("Meta Ads", "/meta-ads/")), faq_ld(META_FAQ)]})
+      schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Publicité Facebook et Instagram pour artisans du bâtiment", "serviceType": "Publicité locale sur Facebook et Instagram", "url": SITE + "/meta-ads/",
+                                                            "description": "Annonces Facebook et Instagram au nom de l'artisan, dans un rayon de 25 à 40 km autour de son dépôt. Chaque demande est rappelée en moins de 5 minutes.",
+                                                            "areaServed": {"@type": "Country", "name": "France"}, "provider": ORG_REF}, bc_ld(("Meta Ads", "/meta-ads/")), faq_ld(META_FAQ)]})
 paths.append("/meta-ads/")
 
 # ——— Particuliers : capter la demande des propriétaires ———
@@ -731,8 +772,28 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
                 ("Des chiffres vérifiables", "Le budget est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
                "Comment nous travaillons", "", tone="paper"),
           TEAM.replace('id="team"', 'id="equipe"'),
+          """<section class="sheet" data-tone="light">
+  <div class="grid sp-split">
+    <div><h2 data-split>Bartier & Co en bref</h2></div>
+    <div class="prose">
+      <dl class="facts-dl">
+        <div><dt>Société</dt><dd>Bartier & Co, SAS. 6 rue Saint-Bon, 75004 Paris.</dd></div>
+        <div><dt>Fondateurs</dt><dd>Charles Le Cottier, Head of Performance. Martin Barthélémy, Head of Sales.</dd></div>
+        <div><dt>Activité</dt><dd>Trouver des clients aux artisans du bâtiment : annonces locales Google et Meta, rappel des demandes en moins de 5 minutes, visites fixées dans l'agenda.</dd></div>
+        <div><dt>Métiers</dt><dd><a href="/metiers/couverture/">Couverture</a>, <a href="/metiers/facade/">façade</a>, <a href="/metiers/menuiserie-exterieure/">menuiserie extérieure</a>, <a href="/metiers/charpente/">charpente</a>, <a href="/metiers/isolation/">isolation</a>.</dd></div>
+        <div><dt>Zone</dt><dd>France. Un seul artisan par métier et par secteur, sans engagement de durée.</dd></div>
+        <div><dt>Particuliers</dt><dd><a href="/devis-travaux/">Mise en relation gratuite</a> avec un artisan partenaire.</dd></div>
+        <div><dt>Contact</dt><dd><a href="tel:+33781018936">07 81 01 89 36</a>, <a href="mailto:contact@bartierandco.com">contact@bartierandco.com</a>. Du lundi au vendredi, de 8 h à 19 h.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>""",
       ]), nav="/qui-sommes-nous/",
-      schema={"@context": "https://schema.org", "@graph": [{"@type": "AboutPage", "name": "Qui sommes-nous", "url": SITE + "/qui-sommes-nous/"}, bc_ld(("Qui sommes-nous", "/qui-sommes-nous/"))]})
+      schema={"@context": "https://schema.org", "@graph": [
+          {"@type": "AboutPage", "name": "Qui sommes-nous", "url": SITE + "/qui-sommes-nous/", "inLanguage": "fr-FR", "mainEntity": {"@id": SITE + "/#org"}},
+          dict(ORG, founder=[{"@id": f"{SITE}/qui-sommes-nous/#{k}"} for k, n, j in FOUNDERS]),
+          *[{"@type": "Person", "@id": f"{SITE}/qui-sommes-nous/#{k}", "name": n, "jobTitle": j, "worksFor": {"@id": SITE + "/#org"}} for k, n, j in FOUNDERS],
+          bc_ld(("Qui sommes-nous", "/qui-sommes-nous/"))]})
 paths.append("/qui-sommes-nous/")
 
 # ——— Blog ———
@@ -740,7 +801,7 @@ COVER = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Tuiles de toiture",
 posts = []
 for a in ARTICLES:
     url, alt = img(COVER[a["slug"]])
-    posts.append(f'    <li class="post"><a class="post-link" href="/blog/{a["slug"]}/"><p class="post-meta soft"><time datetime="{TODAY}">17 nov. 2026</time><br>{a["tag"]}</p><h3 class="post-title">{a["short"]}</h3><figure class="post-photo frame" data-wipe><img src="{url}" alt="{html.escape(alt)}" width="900" height="676"></figure></a></li>')
+    posts.append(f'    <li class="post"><a class="post-link" href="/blog/{a["slug"]}/"><p class="post-meta soft"><time datetime="{TODAY}">17 nov. 2026</time><br>{a["tag"]}</p><h2 class="post-title">{a["short"]}</h2><figure class="post-photo frame" data-wipe><img src="{url}" alt="{html.escape(alt)}" width="900" height="676"></figure></a></li>')
 write("/blog/", "Blog artisans : chantiers, publicité, devis | Bartier & Co",
       "Des articles courts et concrets pour les artisans du bâtiment : trouver des chantiers, publicité locale, relance de devis, rendez-vous qualifiés.",
       "\n\n".join([
@@ -754,7 +815,8 @@ write("/blog/", "Blog artisans : chantiers, publicité, devis | Bartier & Co",
 paths.append("/blog/")
 
 SEO_TITLE = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Lead partagé, lead exclusif ou rendez-vous qualifié ?",
-             "relance-devis-artisan": "Relance de devis : calendrier, SMS et script d'appel"}
+             "relance-devis-artisan": "Relance de devis : calendrier, SMS et script d'appel",
+             "google-ads-ou-meta-ads-artisan": "Google Ads ou Meta Ads pour un artisan : que choisir ?"}
 for a in ARTICLES:
     path = f"/blog/{a['slug']}/"
     meta = f'<p class="post-meta-line"><span>Par Charles Le Cottier, cofondateur · Head of Performance</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>{a["minutes"]} min de lecture</span></p>'
@@ -776,8 +838,9 @@ for a in ARTICLES:
     write(path, SEO_TITLE.get(a["slug"]) or f"{a['short']} | Bartier & Co", a["desc"], body, nav="/blog/",
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "BlogPosting", "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": TODAY + "T09:00:00+01:00", "inLanguage": "fr-FR",
-               "mainEntityOfPage": SITE + path, "author": {"@type": "Person", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/"},
-               "publisher": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}},
+               "mainEntityOfPage": SITE + path, "image": [img(COVER[a["slug"]])[0]],
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur, Head of Performance", "url": SITE + "/qui-sommes-nous/"},
+               "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               bc_ld(("Blog", "/blog/"), (a["short"], path))]})
     paths.append(path)
 
@@ -903,6 +966,8 @@ for f in PAGES_OUT:
         if slug not in LEGAL_READY:
             doc = re.sub(rf'\s*<a href="/{slug}/">[^<]*</a>', "", doc)
     rob = '<meta name="robots" content="noindex">'
+    if LIVE:
+        doc = doc.replace(rob + "\n", "").replace(rob, "")
     if doc.count(rob) > 1:
         i = doc.index(rob) + len(rob)
         doc = doc[:i] + doc[i:].replace(rob + "\n", "").replace(rob, "")
@@ -910,17 +975,47 @@ for f in PAGES_OUT:
 
 # ——— vercel.json : redirections utiles et en-têtes ———
 (ROOT / "vercel.json").write_text(json.dumps({
-    "redirects": [{"source": "/particuliers", "destination": "/devis-travaux/", "permanent": True},
-                  {"source": "/devis", "destination": "/devis-travaux/", "permanent": True},
-                  {"source": "/toiture", "destination": "/devis-travaux/toiture/", "permanent": True}],
+    # une seule adresse par page : /blog et /blog/index.html renvoient vers /blog/
+    "cleanUrls": True, "trailingSlash": True,
+    "redirects": [{"source": s, "destination": d, "permanent": True} for s, d in [
+        ("/particuliers", "/devis-travaux/"), ("/particuliers/", "/devis-travaux/"), ("/devis", "/devis-travaux/"), ("/devis/", "/devis-travaux/"),
+        ("/toiture", "/devis-travaux/toiture/"), ("/toiture/", "/devis-travaux/toiture/")]],
     "headers": [{"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"},
+                                                {"key": "X-Frame-Options", "value": "SAMEORIGIN"},
                                                 {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
                                                 {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"}]},
-                {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400"}]}]}, indent=2), encoding="utf-8")
+                {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400"}]},
+                {"source": "/assets/photos/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=2592000"}]},
+                {"source": "/assets/fonts/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+                {"source": "/assets/js/(gsap|ScrollTrigger|SplitText|lenis)(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}, indent=2), encoding="utf-8")
 
 # ——— Fichiers SEO et GEO ———
 for f in ["robots.txt", "llms.txt"]:
     (ROOT / f).write_text((V1.parent / f).read_text(encoding="utf-8"), encoding="utf-8")
-urls = "\n".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{TODAY}</lastmod></url>" for p in paths)
+# Date de dernière modification : elle ne change que si le texte de la page change (empreinte gardée dans _build/lastmod.json).
+import hashlib as _h
+_lm_file = ROOT / "_build" / "lastmod.json"
+_lm = json.loads(_lm_file.read_text(encoding="utf-8")) if _lm_file.exists() else {}
+def _page_text(p):
+    d = (ROOT / p.strip("/") / "index.html").read_text(encoding="utf-8")
+    m = d[d.index("<main"):d.index("</main>")] if "<main" in d else d
+    m = re.sub(r"<(script|style|svg)[\s\S]*?</\1>", " ", m)
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", m))).strip()
+for p in paths:
+    sig = _h.sha1(_page_text(p).encode()).hexdigest()[:16]
+    if _lm.get(p, {}).get("sig") != sig:
+        _lm[p] = {"sig": sig, "date": BUILD}
+_lm = {p: _lm[p] for p in paths}
+_lm_file.write_text(json.dumps(_lm, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+urls = "\n".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{_lm[p]['date']}</lastmod></url>" for p in paths)
+(ROOT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
+import llmsfull
+(ROOT / "llms-full.txt").write_text(llmsfull.build(ROOT, SITE, [p for p in paths if p not in ("/mentions-legales/", "/confidentialite/", "/cookies/")]), encoding="utf-8")
+_keep = IMG.used()
+for _f in (ROOT / "assets" / "photos").glob("*.webp"):
+    if _f.name not in _keep:
+        _f.unlink()
+if LIVE and legal_missing:
+    raise SystemExit("Mise en ligne impossible : informations légales manquantes : " + ", ".join(sorted(legal_missing)))
 (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n', encoding="utf-8")
 print(len(paths), "pages :", ", ".join(paths))

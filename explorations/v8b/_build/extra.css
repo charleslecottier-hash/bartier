@@ -193,3 +193,9 @@ a.pf-sticky{box-shadow:0 14px 30px -14px rgba(10,20,36,.55)}
   .pg-top .pg-text h1{font-size:2.3rem}
   .pg-top .pg-text{gap:1.1rem}
 }
+
+/* ——— Fiche de la société (page Qui sommes-nous) ——— */
+.prose .facts-dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px 28px;margin:0;max-width:none}
+.prose .facts-dl div{margin:0;padding-top:12px;border-top:1px solid var(--rule)}
+.prose .facts-dl dt{margin-bottom:4px;font-size:.84rem;color:var(--muted)}
+.prose .facts-dl dd{margin:0;font-size:.98rem;line-height:1.5}

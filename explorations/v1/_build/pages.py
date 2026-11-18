@@ -567,6 +567,7 @@ art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['
 - [Meta Ads]({SITE}/meta-ads/) : annonces Facebook et Instagram dans un rayon de 25 à 40 km autour du dépôt.
 - [Qui sommes-nous]({SITE}/qui-sommes-nous/) : les fondateurs et la façon de travailler.
 - [Devis travaux, pour les particuliers]({SITE}/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de cinq minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
+- [Contenu complet du site](https://bartierandco.com/llms-full.txt) : le texte de toutes les pages en un seul fichier.
 
 ## Pour les particuliers
 Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et devis de l'artisan compris. Rappel en moins de 5 minutes du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Un seul artisan par métier et par secteur : la demande lui est transmise avec l'accord du propriétaire, et à personne d'autre. Les artisans partenaires rémunèrent Bartier & Co.

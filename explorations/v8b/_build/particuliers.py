@@ -49,7 +49,7 @@ TRADES = [
      ["Combles", "Murs par l’extérieur", "Toiture", "Je ne sais pas encore"],
      "Isolation des combles et des murs",
      "Combles perdus ou aménagés, murs par l’extérieur, toiture.",
-     "Isolation de combles en laine minérale",
+     "Maison ancienne aux murs extérieurs rénovés",
      "Prix de l’isolation des combles",
      "Surface, technique, isolant, aides possibles."),
 ]
