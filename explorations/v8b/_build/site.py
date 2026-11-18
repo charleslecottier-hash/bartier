@@ -757,7 +757,7 @@ for a in ARTICLES:
     path = f"/blog/{a['slug']}/"
     meta = f'<p class="post-meta-line"><span>Par Charles Le Cottier, cofondateur · Head of Performance</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>{a["minutes"]} min de lecture</span></p>'
     body = "\n\n".join([
-        top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta),
+        top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta, photo=COVER[a["slug"]]).replace('class="pg-photo frame"', 'class="pg-photo frame is-color"', 1),
         f"""<section class="sheet" data-tone="light">
   <div class="grid art-grid">
     <article class="prose">
