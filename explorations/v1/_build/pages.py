@@ -185,7 +185,7 @@ GOOGLE_FAQ = [
     ("Le compte Google Ads est-il à moi ?", "Oui. Le compte est à votre nom, vous gardez l'accès et l'historique, même si vous arrêtez."),
     ("Qui rappelle les demandes ?", "Notre équipe, en moins de 5 minutes, en semaine de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
     ("Sur quelles recherches apparaissez-vous ?", "Sur les recherches de votre métier dans vos communes, comme « couvreur » suivi du nom de la ville. Les recherches inutiles sont exclues : gratuit, pas cher, emploi, formation, bricolage."),
-    ("Combien de temps avant les premières demandes ?", "La campagne est prête 24 à 48 heures après notre appel. Les annonces tournent dès la première semaine. Le rythme des demandes dépend ensuite des recherches dans votre secteur."),
+    ("Combien de temps avant les premières demandes ?", "L'intégration prend 24 à 48 heures après notre appel, puis 3 à 5 jours pour lancer vos annonces. Le rythme des demandes dépend ensuite des recherches dans votre secteur."),
 ]
 page("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
      "Campagnes Google Ads locales pour couvreurs, façadiers et menuisiers : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.",

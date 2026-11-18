@@ -639,7 +639,7 @@ for t in TRADES:
     trade_faq = t["faq"] + [("Combien cela coûte-t-il ?", "Le prix dépend de votre métier, de votre secteur et du nombre d'équipes. Vous l'avez pendant l'appel de 15 minutes, avant toute décision."),
                             ("Y a-t-il une durée d'engagement ?", "Non. Aucune durée minimale."),
                             ("Qui rappelle les propriétaires ?", "Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
-                            ("En combien de temps arrivent les premiers rendez-vous ?", "La mise en place prend 24 à 48 heures après notre appel, et les annonces tournent dès la première semaine. Le rythme dépend ensuite de votre secteur et de la saison.")]
+                            ("En combien de temps arrivent les premiers rendez-vous ?", "L'intégration prend 24 à 48 heures après notre appel, puis 3 à 5 jours pour lancer vos annonces. Le rythme dépend ensuite de votre secteur et de la saison.")]
     body = "\n\n".join([
         top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Voir ce que nous vérifions", "#appel")),
         f"""<section class="sheet" data-tone="paper">
