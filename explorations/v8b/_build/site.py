@@ -718,9 +718,9 @@ write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & C
           HUB_SEASONS,
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
-    <div><h2 data-split>La même méthode pour chaque métier</h2></div>
+    <div><h2 data-split>Une méthode adaptée à votre métier</h2></div>
     <div class="prose">
-      <p>Des annonces locales à votre nom, sur <a href="/google-ads/">Google</a> et sur <a href="/meta-ads/">Facebook et Instagram</a>. Chaque demande est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda.</p>
+      <p>Des annonces locales à votre nom, sur <a href="/google-ads/">Google</a> et sur <a href="/meta-ads/">Facebook et Instagram</a>. Chaque demande client est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda.</p>
       <p>Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d'autre. Pour comparer avec les autres façons de trouver des clients : <a href="/trouver-des-chantiers/">comment trouver des chantiers</a>.</p>
     </div>
   </div>
