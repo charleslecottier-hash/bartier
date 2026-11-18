@@ -707,6 +707,49 @@ for a in ARTICLES:
               bc_ld(("Blog", "/blog/"), (a["short"], path))]})
     paths.append(path)
 
+# ——— Page 404 ———
+nf_body = """<section class="sheet pg-top" data-tone="light">
+  <div class="grid pg-grid">
+    <div class="pg-text">
+      <p class="kick">Erreur 404</p>
+      <h1>Cette page n’existe pas.</h1>
+      <p class="lead">Vous cherchiez peut-être l’une de ces deux portes d’entrée.</p>
+      <div class="actions"><a class="btn" href="/devis-travaux/"><span>J’ai des travaux à faire</span></a><a class="link" href="/#contact">Je suis artisan</a></div>
+    </div>
+  </div>
+</section>"""
+nf = head("Page introuvable | Bartier & Co", "Cette page n'existe pas.", "/404.html") + absolutize(BODY_OPEN) + "\n" + fr(nf_body) + "\n" + absolutize(TAIL)
+nf = re.sub(r'<link rel="canonical"[^>]*>\n?', "", nf)
+(ROOT / "404.html").write_text(nf, encoding="utf-8")
+
+# ——— Passe finale sur toutes les pages : images différées, une seule balise robots ———
+for f in ROOT.rglob("*.html"):
+    if f.name == "8b-original.html" or "_build" in f.parts or "_video" in f.parts:
+        continue
+    doc = f.read_text(encoding="utf-8")
+    first = doc.find("<img ", doc.find("<main>") if "<main>" in doc else 0)
+    def lazy(m):
+        tag = m.group(0)
+        if m.start() == first or "loading=" in tag:
+            return tag
+        return tag.replace("<img ", '<img loading="lazy" decoding="async" ', 1)
+    doc = re.sub(r"<img [^>]*>", lazy, doc)
+    rob = '<meta name="robots" content="noindex">'
+    if doc.count(rob) > 1:
+        i = doc.index(rob) + len(rob)
+        doc = doc[:i] + doc[i:].replace(rob + "\n", "").replace(rob, "")
+    f.write_text(doc, encoding="utf-8")
+
+# ——— vercel.json : redirections utiles et en-têtes ———
+(ROOT / "vercel.json").write_text(json.dumps({
+    "redirects": [{"source": "/particuliers", "destination": "/devis-travaux/", "permanent": True},
+                  {"source": "/devis", "destination": "/devis-travaux/", "permanent": True},
+                  {"source": "/toiture", "destination": "/devis-travaux/toiture/", "permanent": True}],
+    "headers": [{"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"},
+                                                {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+                                                {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"}]},
+                {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400"}]}]}, indent=2), encoding="utf-8")
+
 # ——— Fichiers SEO et GEO ———
 for f in ["robots.txt", "llms.txt"]:
     (ROOT / f).write_text((V1.parent / f).read_text(encoding="utf-8"), encoding="utf-8")
