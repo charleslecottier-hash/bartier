@@ -603,13 +603,15 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
 <table>
 <thead><tr><th>Nom</th><th>Déposé par</th><th>À quoi il sert</th><th>Durée</th></tr></thead>
 <tbody>
-<tr><td data-label="Nom">_gcl_au</td><td data-label="Déposé par">Google Ads (Google Ireland Limited)</td><td data-label="À quoi il sert">Relier une demande à l’annonce cliquée</td><td data-label="Durée">90 jours</td></tr>
+<tr><td data-label="Nom">_gcl_au, _gcl_aw et autres cookies _gcl_*</td><td data-label="Déposé par">Google Ads (Google Ireland Limited)</td><td data-label="À quoi il sert">Relier une demande à l’annonce cliquée</td><td data-label="Durée">90 jours</td></tr>
+<tr><td data-label="Nom">bc_src (stockage de session)</td><td data-label="Déposé par">Bartier & Co</td><td data-label="À quoi il sert">Retenir l’annonce d’origine pour la joindre à votre demande</td><td data-label="Durée">Jusqu’à la fermeture de l’onglet</td></tr>
 <tr><td data-label="Nom">_fbp, _fbc</td><td data-label="Déposé par">Pixel Meta (Meta Platforms Ireland Limited)</td><td data-label="À quoi il sert">Relier une demande à l’annonce vue sur Facebook ou Instagram</td><td data-label="Durée">90 jours</td></tr>
+<tr><td data-label="Nom">Cookies des domaines doubleclick.net, google.com et facebook.com (par exemple IDE)</td><td data-label="Déposé par">Google et Meta, sur leurs propres domaines</td><td data-label="À quoi il sert">Vous présenter nos annonces sur leurs services</td><td data-label="Durée">Fixée par Google et Meta. IDE : 13 mois</td></tr>
 </tbody>
 </table>
 <p>Google et Meta traitent ces données selon leurs propres règles : <a href="https://policies.google.com/privacy?hl=fr">règles de confidentialité de Google</a>, <a href="https://www.facebook.com/privacy/policy/">politique de confidentialité de Meta</a>.</p>
 <h2 id="refus">Si vous refusez</h2>
-<p>Rien ne change pour vous : toutes les pages et les deux formulaires restent accessibles. Si vous retirez un accord déjà donné, nous effaçons les cookies correspondants et nous arrêtons la mesure.</p>
+<p>Rien ne change pour vous : toutes les pages et les deux formulaires restent accessibles. Si vous retirez un accord déjà donné, nous effaçons les cookies déposés sur notre site et nous arrêtons la mesure.</p>
 <h2 id="navigateur">Réglages de votre navigateur</h2>
 <p>Votre navigateur permet aussi de bloquer ou d’effacer les cookies de tous les sites. La CNIL explique comment faire : <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs/comment-se-proteger/maitriser-votre-navigateur">maîtriser votre navigateur</a>.</p>
 <h2 id="plus">En savoir plus</h2>
@@ -710,8 +712,8 @@ f.addEventListener('input',function(e){var x=e.target;if(x===cp){x.value=x.value
 f.querySelectorAll('.dq-next').forEach(function(b){b.addEventListener('click',function(){if(ok(cur))show(cur+1,true)})});
 back.addEventListener('click',function(){show(cur-1,true)});
 cp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();if(ok(cur))show(cur+1,true)}});
-var keys=['utm_source','utm_medium','utm_campaign','utm_content','gclid','fbclid'],q=new URLSearchParams(location.search),st={};try{st=JSON.parse(sessionStorage.getItem('bc_src')||'{}')}catch(e){}
-keys.forEach(function(k){if(q.get(k))st[k]=q.get(k);if(st[k]&&f.elements[k])f.elements[k].value=st[k]});try{sessionStorage.setItem('bc_src',JSON.stringify(st))}catch(e){}
+var keys=['utm_source','utm_medium','utm_campaign','utm_content','gclid','fbclid'],q=new URLSearchParams(location.search),st={},ads=false;try{ads=!!(JSON.parse(localStorage.getItem('bc-consent')||'null')||{}).p}catch(e){}if(ads)try{st=JSON.parse(sessionStorage.getItem('bc_src')||'{}')}catch(e){}
+keys.forEach(function(k){if(q.get(k))st[k]=q.get(k);if(st[k]&&f.elements[k])f.elements[k].value=st[k]});if(ads)try{sessionStorage.setItem('bc_src',JSON.stringify(st))}catch(e){}
 f.elements.page.value=location.pathname;
 var pre=f.querySelector('input[name=metier]:checked');show(pre?1:0,false);
 function finish(sent){var name=val('prenom')?', '+val('prenom'):'',lab=f.querySelector('input[name=metier]:checked'),cap=f.querySelector('input[name=capacite]:checked');
@@ -769,7 +771,7 @@ try{if(!sessionStorage.getItem('bc-wa')){setTimeout(function(){if(w.classList.co
 w.querySelectorAll('[data-wa]').forEach(function(a){a.addEventListener('click',function(){(window.dataLayer=window.dataLayer||[]).push({event:'contact_martin',canal:a.dataset.wa})})});
 })();
 </script>
-<script src="/assets/js/consent.js?v=15f0a355" defer></script>
+<script src="/assets/js/consent.js?v=7e040ff4" defer></script>
 </body>
 </html>
 <!-- Made with 8B AI Website Builder https://8b.com/ from a single prompt -->

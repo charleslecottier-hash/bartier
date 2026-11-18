@@ -8,7 +8,7 @@
 
 PATH = "/devis-travaux/"
 CONSENT = "J’accepte d’être rappelé par Bartier &amp; Co au sujet de ce projet et mis en relation avec un artisan partenaire."
-PRIVACY = ""
+PRIVACY = "Votre numéro n’est transmis qu’à un seul artisan partenaire, à personne d’autre."
 UPDATED = "2026-11-18"
 UPDATED_TXT = "18 novembre 2026"
 TITLE = "Devis toiture, façade, fenêtres, isolation : un artisan local | Bartier & Co"
@@ -59,8 +59,8 @@ BRIEF = [
     ("Le prix pour vous", "Gratuit et sans engagement, visite et devis de l’artisan compris. Les artisans partenaires rémunèrent Bartier &amp; Co."),
     ("Le délai", "Rappel en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h, en priorité pour les fuites et dégâts urgents. Hors de ces horaires, dès l’ouverture suivante."),
     ("Le rendez-vous", "Fixé pendant notre appel, directement dans l’agenda de l’artisan, puis rappelé par SMS avant la visite."),
-    ("Combien d’artisans", "Un seul par métier et par secteur. Vos coordonnées ne sont jamais revendues."),
-    ("La zone", "Partout en France, avec des artisans locaux."),
+    ("Combien d’artisans", "Un seul par métier et par secteur. Vos coordonnées ne vont à personne d’autre."),
+    ("La zone", "Selon votre commune. Si aucun artisan partenaire ne la couvre, nous vous le disons dès l’appel."),
     ("La société", "Bartier &amp; Co SAS, 6 rue Saint-Bon, 75004 Paris."),
 ]
 
@@ -86,7 +86,7 @@ FAQ = [
     ("La visite et le devis de l’artisan sont-ils payants ?",
      "Non. L’artisan vient voir le chantier et vous remet son devis sans frais pour vous. Vous restez libre de ne pas donner suite."),
     ("Combien d’entreprises vont m’appeler ?",
-     "Une seule : nous d’abord, pour vérifier votre projet, puis l’artisan retenu. Vos coordonnées ne sont ni revendues ni envoyées à plusieurs entreprises."),
+     "Une seule : nous d’abord, pour vérifier votre projet, puis l’artisan retenu. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises."),
     ("Et si le devis ne me convient pas ?",
      "Vous ne signez rien. Vous restez libre de refuser le devis ou de le comparer, sans frais et sans avoir à vous justifier."),
     ("Pourquoi passer par vous plutôt que chercher seul ?",
@@ -104,9 +104,9 @@ FAQ = [
     ("Puis-je obtenir des aides pour mes travaux ?",
      "Certains travaux de rénovation énergétique, comme l’isolation, peuvent ouvrir droit à des aides publiques s’ils sont réalisés par une entreprise certifiée RGE. Les conditions changent chaque année : vérifiez-les sur france-renov.gouv.fr et parlez-en lors de notre appel."),
     ("Où intervenez-vous ?",
-     "Partout en France, avec des artisans locaux. Si aucun artisan partenaire ne couvre encore votre commune, nous vous le disons dès l’appel."),
+     "Là où un artisan partenaire couvre votre commune. Sinon, nous vous le disons dès l’appel et votre demande n’est transmise à personne."),
     ("Que faites-vous de mes données ?",
-     "Elles servent uniquement à traiter votre demande et à la transmettre à l’artisan retenu. Elles ne sont jamais revendues. Vous pouvez demander leur suppression à contact@bartierandco.com."),
+     "Elles servent uniquement à traiter votre demande et à la transmettre à l’artisan retenu, à personne d’autre. Vous pouvez demander leur suppression à contact@bartierandco.com."),
 ]
 
 
@@ -120,7 +120,7 @@ def check():
 
 def trust(cls=""):
     return f"""<ul class="pf-trust {cls}">
-        <li>{check()}Visite et devis offerts</li><li>{check()}Sans engagement</li><li>{check()}Jamais revendu</li>
+        <li>{check()}Visite et devis offerts</li><li>{check()}Sans engagement</li><li>{check()}Un seul artisan</li>
       </ul>"""
 
 
@@ -151,7 +151,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
           <input class="pf-hp" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
           <p class="pf-err" role="alert" hidden></p>
           <button type="submit" class="btn pf-submit"><span>Être rappelé gratuitement</span>{tick()}</button>
-          <p class="pf-small">Gratuit, sans engagement. Votre numéro n’est transmis qu’à l’artisan retenu, jamais revendu. {PRIVACY}</p>
+          <p class="pf-small">Gratuit, sans engagement. {PRIVACY}</p>
         </fieldset>
         <div class="pf-done" hidden>
           <div class="pf-manual">
@@ -159,7 +159,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
             <p class="pf-done-h"><span class="pf-name2">Envoyez</span> votre demande.</p>
             <p class="pf-when">Votre message est déjà rédigé. Nous vous répondons en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h.</p>
             <a class="pf-wa pf-send" href="https://wa.me/33781018936" target="_blank" rel="noopener" data-wa="particulier-envoi">Envoyer ma demande sur WhatsApp</a>
-            <a class="pf-call" href="tel:{phone}">ou appeler le {phone_txt}</a>
+            <a class="pf-ortel" href="tel:{phone}">ou appeler le {phone_txt}</a>
           </div>
           <div class="pf-sent">
           <span class="pf-ok">{check()}</span>
@@ -221,7 +221,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <ul class="pf-trades">
 {chr(10).join(cards)}
   </ul>
-  {band("Vos travaux ne sont pas dans la liste&nbsp;?", "Décrire mes travaux", "Décrivez-les quand même. On trouve l’artisan.")}
+  {band("Vos travaux ne sont pas dans la liste&nbsp;?", "Décrire mes travaux", "Décrivez-les quand même. Nous vous disons si un artisan partenaire peut s’en charger.")}
 </section>"""
 
     steps = f"""<section class="sheet" id="etapes" data-tone="paper">
@@ -244,7 +244,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <div class="sp-row" role="row"><span role="rowheader">Avant la visite</span><span role="cell">Vous répétez votre projet</span><span role="cell">Votre besoin est déjà vérifié</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le rendez-vous</span><span role="cell">Vous relancez les artisans</span><span role="cell">Fixé pendant notre appel</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Avant le jour J</span><span role="cell">Rien</span><span role="cell">Rappel par SMS</span></div>
-    <div class="sp-row" role="row"><span role="rowheader">Vos coordonnées</span><span role="cell">Partagées entre entreprises</span><span role="cell">Jamais revendues</span></div>
+    <div class="sp-row" role="row"><span role="rowheader">Vos coordonnées</span><span role="cell">Partagées entre entreprises</span><span role="cell">Transmises à un seul artisan</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le prix pour vous</span><span role="cell">Gratuit</span><span role="cell">Gratuit</span></div>
   </div>
   {band("Un seul artisan. Le bon.", "Être rappelé gratuitement")}
@@ -353,7 +353,8 @@ CSS = """<style id="pf-css">
 .pf-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .pf-err{margin-bottom:12px;color:#d93025;font-size:.9rem}
 .pf-submit{width:100%;justify-content:center;min-height:56px;font-size:1.02rem}
-.pf-small{margin-top:10px;text-align:center;font-size:.8rem;color:var(--muted)}
+.pf-small{margin-top:12px;font-size:.76rem;line-height:1.5;color:var(--muted)}
+.pf-small a{white-space:nowrap}
 .pf-ok{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--accent);color:#fff}
 .pf-ok svg{width:26px;height:26px}
 .pf-done-h{margin-top:14px;font:400 1.8rem/1.1 var(--f-display);letter-spacing:-.02em}
@@ -362,7 +363,7 @@ CSS = """<style id="pf-css">
 .pf-manual .pf-done-h{margin-top:6px}
 .pf-manual .pf-when{margin-bottom:16px}
 .pf-send{width:100%;justify-content:center;min-height:56px;font-size:1.02rem}
-.pf-call{display:inline-flex;align-items:center;min-height:44px;margin-top:4px;color:inherit;font-size:.95rem;text-underline-offset:.25em}
+.pf-ortel{display:inline-flex;align-items:center;min-height:44px;margin-top:4px;color:inherit;font-size:.95rem;text-underline-offset:.25em}
 .pf-submit[disabled]{opacity:.7;cursor:progress}
 .pf-when{margin-top:8px;font-size:1rem;line-height:1.45}
 .pf-next{margin:18px 0;padding-left:1.2rem;display:grid;gap:6px;font-size:.95rem}

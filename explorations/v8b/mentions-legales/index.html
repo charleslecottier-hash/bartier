@@ -589,10 +589,10 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
 <h2 id="publication">Directeur de la publication</h2>
 <p><mark class="todo">nom du directeur de la publication à compléter</mark>, représentant légal de Bartier & Co.</p>
 <h2 id="hebergeur">Hébergeur</h2>
-<p>Le site est hébergé par Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis. Téléphone : <mark class="todo">numéro de téléphone à compléter</mark>. Site : <a href="https://vercel.com">vercel.com</a>.</p>
+<p>Le site est hébergé par Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis. Téléphone : +1 559 288 7060. Site : <a href="https://vercel.com">vercel.com</a>.</p>
 <h2 id="activite">Activité</h2>
 <p>Bartier & Co est une agence d’acquisition de clients pour les artisans du bâtiment : publicité locale, rappel des demandes et prise de rendez-vous. Elle propose aussi aux particuliers un service gratuit de mise en relation avec un artisan partenaire. Ce service est décrit dans les <a href="/conditions-du-service/">conditions du service</a>.</p>
-<p>Bartier & Co ne réalise aucun travaux. Les devis et les travaux relèvent de la seule responsabilité de l’artisan qui les établit et les exécute.</p>
+<p>Bartier & Co ne réalise pas de travaux. Les devis et les travaux relèvent de l’artisan qui les établit et les exécute.</p>
 <h2 id="propriete">Propriété intellectuelle</h2>
 <p>Les textes, la mise en page, le logo et la marque Bartier & Co appartiennent à Bartier & Co ou sont utilisés avec l’accord de leurs auteurs. Les photographies proviennent de banques d’images sous licence. Toute reproduction du site, même partielle, demande notre accord écrit. Les courtes citations sont permises si la source est indiquée.</p>
 <h2 id="responsabilite">Contenu du site</h2>
@@ -601,7 +601,7 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
 <h2 id="donnees">Données personnelles et cookies</h2>
 <p>L’usage de vos données est décrit dans la <a href="/confidentialite/">politique de confidentialité</a>. Les cookies sont décrits dans la <a href="/cookies/">politique cookies</a>. Vous pouvez modifier votre choix à tout moment : <a href="#cookies">Gérer mes cookies</a>.</p>
 <h2 id="droit">Droit applicable</h2>
-<p>Le site et ces mentions sont soumis au droit français. En cas de différend, écrivez-nous d’abord : la plupart des questions se règlent en un échange. Les particuliers conservent tous les droits que leur donne le Code de la consommation, dont le recours à un médiateur (voir les <a href="/conditions-du-service/#reclamation">conditions du service</a>).</p>
+<p>Le site et ces mentions sont soumis au droit français. En cas de différend, écrivez-nous d’abord : la plupart des questions se règlent en un échange. Les particuliers conservent tous les droits que leur donne le Code de la consommation. Les réclamations sont décrites dans les <a href="/conditions-du-service/#reclamation">conditions du service</a>.</p>
     </div>
   </div>
 </section>
@@ -698,8 +698,8 @@ f.addEventListener('input',function(e){var x=e.target;if(x===cp){x.value=x.value
 f.querySelectorAll('.dq-next').forEach(function(b){b.addEventListener('click',function(){if(ok(cur))show(cur+1,true)})});
 back.addEventListener('click',function(){show(cur-1,true)});
 cp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();if(ok(cur))show(cur+1,true)}});
-var keys=['utm_source','utm_medium','utm_campaign','utm_content','gclid','fbclid'],q=new URLSearchParams(location.search),st={};try{st=JSON.parse(sessionStorage.getItem('bc_src')||'{}')}catch(e){}
-keys.forEach(function(k){if(q.get(k))st[k]=q.get(k);if(st[k]&&f.elements[k])f.elements[k].value=st[k]});try{sessionStorage.setItem('bc_src',JSON.stringify(st))}catch(e){}
+var keys=['utm_source','utm_medium','utm_campaign','utm_content','gclid','fbclid'],q=new URLSearchParams(location.search),st={},ads=false;try{ads=!!(JSON.parse(localStorage.getItem('bc-consent')||'null')||{}).p}catch(e){}if(ads)try{st=JSON.parse(sessionStorage.getItem('bc_src')||'{}')}catch(e){}
+keys.forEach(function(k){if(q.get(k))st[k]=q.get(k);if(st[k]&&f.elements[k])f.elements[k].value=st[k]});if(ads)try{sessionStorage.setItem('bc_src',JSON.stringify(st))}catch(e){}
 f.elements.page.value=location.pathname;
 var pre=f.querySelector('input[name=metier]:checked');show(pre?1:0,false);
 function finish(sent){var name=val('prenom')?', '+val('prenom'):'',lab=f.querySelector('input[name=metier]:checked'),cap=f.querySelector('input[name=capacite]:checked');
@@ -757,7 +757,7 @@ try{if(!sessionStorage.getItem('bc-wa')){setTimeout(function(){if(w.classList.co
 w.querySelectorAll('[data-wa]').forEach(function(a){a.addEventListener('click',function(){(window.dataLayer=window.dataLayer||[]).push({event:'contact_martin',canal:a.dataset.wa})})});
 })();
 </script>
-<script src="/assets/js/consent.js?v=15f0a355" defer></script>
+<script src="/assets/js/consent.js?v=7e040ff4" defer></script>
 </body>
 </html>
 <!-- Made with 8B AI Website Builder https://8b.com/ from a single prompt -->

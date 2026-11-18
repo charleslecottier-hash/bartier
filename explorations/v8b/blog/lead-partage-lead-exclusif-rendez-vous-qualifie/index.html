@@ -789,8 +789,8 @@ f.addEventListener('input',function(e){var x=e.target;if(x===cp){x.value=x.value
 f.querySelectorAll('.dq-next').forEach(function(b){b.addEventListener('click',function(){if(ok(cur))show(cur+1,true)})});
 back.addEventListener('click',function(){show(cur-1,true)});
 cp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();if(ok(cur))show(cur+1,true)}});
-var keys=['utm_source','utm_medium','utm_campaign','utm_content','gclid','fbclid'],q=new URLSearchParams(location.search),st={};try{st=JSON.parse(sessionStorage.getItem('bc_src')||'{}')}catch(e){}
-keys.forEach(function(k){if(q.get(k))st[k]=q.get(k);if(st[k]&&f.elements[k])f.elements[k].value=st[k]});try{sessionStorage.setItem('bc_src',JSON.stringify(st))}catch(e){}
+var keys=['utm_source','utm_medium','utm_campaign','utm_content','gclid','fbclid'],q=new URLSearchParams(location.search),st={},ads=false;try{ads=!!(JSON.parse(localStorage.getItem('bc-consent')||'null')||{}).p}catch(e){}if(ads)try{st=JSON.parse(sessionStorage.getItem('bc_src')||'{}')}catch(e){}
+keys.forEach(function(k){if(q.get(k))st[k]=q.get(k);if(st[k]&&f.elements[k])f.elements[k].value=st[k]});if(ads)try{sessionStorage.setItem('bc_src',JSON.stringify(st))}catch(e){}
 f.elements.page.value=location.pathname;
 var pre=f.querySelector('input[name=metier]:checked');show(pre?1:0,false);
 function finish(sent){var name=val('prenom')?', '+val('prenom'):'',lab=f.querySelector('input[name=metier]:checked'),cap=f.querySelector('input[name=capacite]:checked');
@@ -848,7 +848,7 @@ try{if(!sessionStorage.getItem('bc-wa')){setTimeout(function(){if(w.classList.co
 w.querySelectorAll('[data-wa]').forEach(function(a){a.addEventListener('click',function(){(window.dataLayer=window.dataLayer||[]).push({event:'contact_martin',canal:a.dataset.wa})})});
 })();
 </script>
-<script src="/assets/js/consent.js?v=15f0a355" defer></script>
+<script src="/assets/js/consent.js?v=7e040ff4" defer></script>
 </body>
 </html>
 <!-- Made with 8B AI Website Builder https://8b.com/ from a single prompt -->

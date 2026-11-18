@@ -653,8 +653,8 @@ paths.append("/meta-ads/")
 import particuliers as PF
 if NOTICES.get("particulier_consent_label"):
     PF.CONSENT = html.escape(NOTICES["particulier_consent_label"], quote=False)
-if "confidentialite" in LEGAL_READY:
-    PF.PRIVACY = '<a href="/confidentialite/">Vos données et vos droits</a>'
+if "confidentialite" in LEGAL_READY and NOTICES.get("particulier_form_notice"):
+    PF.PRIVACY = NOTICES["particulier_form_notice"]
 pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH)))
 pf_top = absolutize(BODY_OPEN)
 pf_top = pf_top.replace('class="link" href="/devis-travaux/"', 'class="link" href="/devis-travaux/" aria-current="page"', 1)
@@ -781,7 +781,7 @@ for a in ARTICLES:
 
 # ——— Pages légales : _build/legal/<slug>.html (fragment HTML, métadonnées JSON en commentaire sur la première ligne) ———
 # Informations de la société encore inconnues : à renseigner ici dès qu'elles existent. Une information vide s'affiche « à compléter ».
-COMPANY = {"SIREN": "", "RCS_VILLE": "", "CAPITAL": "", "TVA": "", "DIRECTEUR_PUBLICATION": "", "MEDIATEUR": "", "TEL_HEBERGEUR": ""}
+COMPANY = {"SIREN": "", "RCS_VILLE": "", "CAPITAL": "", "TVA": "", "DIRECTEUR_PUBLICATION": "", "MEDIATEUR": "", "TEL_HEBERGEUR": "+1 559 288 7060"}
 TOKEN_LABEL = {"SIREN": "numéro SIREN", "RCS_VILLE": "ville du greffe", "CAPITAL": "montant du capital", "TVA": "numéro de TVA",
                "DIRECTEUR_PUBLICATION": "nom du directeur de la publication", "MEDIATEUR": "nom et coordonnées du médiateur", "TEL_HEBERGEUR": "numéro de téléphone"}
 MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]

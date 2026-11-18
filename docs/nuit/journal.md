@@ -9,3 +9,8 @@ Demande : tourner toute la nuit, améliorer (qualité, fluidité, SEO, GEO), aud
 | 04:05 | Vague 1 lancée (agents) : recherche Safari iOS, dossier juridique avec trois relecteurs, fonction d'envoi des formulaires | en cours |
 | 04:25 | Photo d'accueil : une seule image animée par transformations, animation jouée par le navigateur sur tactile, photos auto-hébergées en noir et blanc. Déployé | fait |
 | 04:35 | Vague 2 lancée (agents) : textes resserrés avec vérificateur, audits SEO et GEO, critique mobile | en cours |
+| 04:45 | Limite d'utilisation atteinte : les agents des vagues 1 et 2 se sont arrêtés (seule la recherche Safari a abouti) | interrompu |
+| 08:52 | Reprise. Nouveaux messages : compatible Safari, Chrome, Android ; skill unslop ; pas tout en noir et blanc | noté |
+| 09:00 | Photos en couleur étalonnée (noir et blanc gardé pour la photo d'ouverture), pied de page, bandeau cookies, skill unslop installé. Déployé | fait |
+| 09:05 | Pages légales rédigées et intégrées, relecture par deux agents lancée ; formulaires : erreurs précises, département reconnu, fin honnête. Déployé | fait |
+| 09:12 | Blog sur téléphone, solutions de repli pour anciens navigateurs (vérifiées par simulation). Déployé | fait |
