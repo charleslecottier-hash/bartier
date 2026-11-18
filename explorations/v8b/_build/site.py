@@ -199,7 +199,7 @@ home = re.sub(r"(<body[^>]*>\n?)", lambda m: m.group(1) + LD_BODY, home, count=1
 # Données structurées et adresse canonique de l'accueil
 if '"@type":"Organization"' not in home:
     ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "url": SITE + "/", "logo": SITE + "/assets/logo-bartier.png", "email": "contact@bartierandco.com", "areaServed": ["FR", "BE"], "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434"],
+        {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "url": SITE + "/", "logo": SITE + "/assets/logo-bartier.png", "email": "contact@bartierandco.com", "areaServed": ["FR"], "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434"],
          "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de cinq minutes, visites de devis fixées directement dans leur agenda.",
          "founder": [{"@type": "Person", "name": "Charles Le Cottier"}, {"@type": "Person", "name": "Martin Barthélémy"}]},
         {"@type": "WebSite", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}]}
@@ -511,7 +511,7 @@ for t in TRADES:
     trade_faq = t["faq"] + [("Combien cela coûte-t-il ?", "Il dépend de votre secteur et du volume que vous pouvez absorber. Vous avez un prix précis pendant l'appel de quinze minutes, avant toute décision."),
                             ("Y a-t-il un engagement ?", "Non. Aucune durée minimale : vous restez parce que l'agenda se remplit.")]
     body = "\n\n".join([
-        top(f"{t['who']} · France et Belgique", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Ce que nous vérifions", "#appel")),
+        top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Ce que nous vérifions", "#appel")),
         f"""<section class="sheet" data-tone="paper">
   <div class="grid sp-split">
     <div><h2 data-split>Ce que nous allons chercher</h2><p>Des chantiers qui valent le déplacement. Le reste est écarté avant d'arriver chez vous.</p></div>
@@ -539,13 +539,13 @@ for t in TRADES:
     body = body.replace('class="sp-two"', 'class="sp-two"')
     write(path, f"{t['title']} | Bartier & Co", short, body, nav="/metiers/", metier=t["radio"],
           schema={"@context": "https://schema.org", "@graph": [
-              {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "areaServed": ["FR", "BE"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}},
+              {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "areaServed": ["FR"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}},
               bc_ld(("Métiers", "/metiers/"), (t["name"], path)), faq_ld(trade_faq)]})
     paths.append(path)
 
 hub_items = "\n".join(f'    <li class="sector"><h3 class="sector-name"><a href="/metiers/{t["slug"]}/">{t["name"].split(" et ")[0]}</a></h3><p class="sector-note">{esc(", ".join(t["keep"][:3]))}</p></li>' for t in TRADES)
 write("/metiers/", "Métiers : des clients pour chaque corps de métier | Bartier & Co",
-      "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, en France et en Belgique. Un seul artisan par secteur.",
+      "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, partout en France. Un seul artisan par secteur.",
       "\n\n".join([
           top("Métiers", "Uniquement les métiers où un chantier compte.", "Des chantiers de plusieurs milliers d'euros. Pas de dépannage, pas de petits travaux.", crumbs(("Métiers", "/metiers/")), "Une équipe d"),
           f"""<section class="sectors sheet" data-kind="industries" data-tone="tint">
@@ -574,7 +574,7 @@ write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
           COMPARE,
           faq(GOOGLE_FAQ),
       ]), nav="/google-ads/",
-      schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Google Ads pour artisans du bâtiment", "areaServed": ["FR", "BE"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}}, bc_ld(("Google Ads", "/google-ads/")), faq_ld(GOOGLE_FAQ)]})
+      schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Google Ads pour artisans du bâtiment", "areaServed": ["FR"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}}, bc_ld(("Google Ads", "/google-ads/")), faq_ld(GOOGLE_FAQ)]})
 paths.append("/google-ads/")
 
 # ——— Meta Ads ———
@@ -595,14 +595,14 @@ write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & 
           COMPARE,
           faq(META_FAQ),
       ]), nav="/meta-ads/",
-      schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Publicité Facebook et Instagram pour artisans du bâtiment", "areaServed": ["FR", "BE"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}}, bc_ld(("Meta Ads", "/meta-ads/")), faq_ld(META_FAQ)]})
+      schema={"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Publicité Facebook et Instagram pour artisans du bâtiment", "areaServed": ["FR"], "provider": {"@type": "Organization", "name": "Bartier & Co", "url": SITE + "/"}}, bc_ld(("Meta Ads", "/meta-ads/")), faq_ld(META_FAQ)]})
 paths.append("/meta-ads/")
 
 # ——— Qui sommes-nous ———
 write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
       "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.",
       "\n\n".join([
-          top("Qui sommes-nous", "Deux fondateurs. Un seul objectif : votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous remplissons l'agenda des artisans du bâtiment, en France et en Belgique.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), "Un artisan rencontre"),
+          top("Qui sommes-nous", "Deux fondateurs. Un seul objectif : votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous remplissons l'agenda des artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), "Un artisan rencontre"),
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>Un bon artisan ne devrait pas courir après les devis</h2></div>

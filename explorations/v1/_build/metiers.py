@@ -252,7 +252,7 @@ def trade_page(t):
   <div class="wrap trade-hero">
     <div>
       <nav class="crumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><a href="/metiers/">Métiers</a><span aria-hidden="true">/</span><span aria-current="page">{esc(t["name"])}</span></nav>
-      <p class="kicker">{esc(t["who"])} · France et Belgique</p>
+      <p class="kicker">{esc(t["who"])} · Partout en France</p>
       <h1 id="h1">{nw(esc(t["h1"]))} {nw(esc(t["h1_em"]))}</h1>
       <p class="lead">{esc(short)}</p>
       <div class="ctas">
