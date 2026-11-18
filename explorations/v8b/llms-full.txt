@@ -72,11 +72,10 @@ Adresse : https://bartierandco.com/metiers/
 Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d’isolation, partout en France. Un seul artisan par métier et par secteur.
 
 Métiers
-Pas de dépannage, pas de petits travaux. Un seul artisan par métier et par secteur.
-Mis à jour le 18 novembre 2026
+Couvreurs, façadiers, menuisiers, charpentiers et entreprises d’isolation : nous trouvons des propriétaires qui ont un vrai projet, près de chez vous. Un seul artisan par métier et par secteur géographique.
 
-### Les métiers que nous accompagnons
-Cliquez sur un métier pour voir les chantiers que nous allons chercher.
+### Choisissez votre métier
+Pour chacun, voyez les chantiers que nous allons chercher pour vous.
 
 #### Couverture
 Réfection, rénovation, zinguerie, démoussage
@@ -164,7 +163,6 @@ Trouvez des chantiers de couverture : des propriétaires qui préparent une ré
 
 Couvreurs-zingueurs · Partout en France
 Des propriétaires qui préparent une réfection ou une rénovation de toiture. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
-Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
@@ -242,7 +240,6 @@ Trouvez des chantiers de menuiserie extérieure : des propriétaires qui prépa
 
 Menuisiers poseurs · Partout en France
 Des propriétaires qui préparent le remplacement de leurs fenêtres ou de leur porte. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
-Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
@@ -320,7 +317,6 @@ Trouvez des chantiers de façade : des propriétaires qui préparent un ravalem
 
 Façadiers · Partout en France
 Des propriétaires qui préparent un ravalement ou une isolation par l’extérieur. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
-Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
@@ -397,7 +393,6 @@ Trouvez des chantiers de charpente : des propriétaires qui préparent un proje
 
 Charpentiers · Partout en France
 Des propriétaires qui préparent un projet de charpente prêt à démarrer. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
-Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
@@ -473,7 +468,6 @@ Trouvez des chantiers d’isolation : des propriétaires qui préparent l’iso
 
 Entreprises d’isolation · Partout en France
 Des propriétaires qui préparent l’isolation complète de leur maison. Chaque demande est rappelée en moins de 5 minutes en semaine, vérifiée, puis la visite est fixée dans votre agenda.
-Mis à jour le 18 novembre 2026
 
 ### Ce que nous allons chercher
 Des chantiers qui valent le déplacement. Le reste est écarté avant d’arriver chez vous.
@@ -550,7 +544,6 @@ Campagnes Google Ads locales pour artisans du bâtiment : captez les propriéta
 
 Google Ads
 Un propriétaire tape « couvreur » et le nom de sa ville. Il voit votre annonce. Nous le rappelons en moins de 5 minutes, en semaine de 8 h à 19 h.
-Mis à jour le 18 novembre 2026
 
 ### Quand Google est le bon canal
 La demande existe déjà. Il faut la capter avant les autres.
@@ -621,7 +614,6 @@ Annonces Facebook et Instagram locales pour artisans du bâtiment : les propri�
 
 Meta Ads · Facebook et Instagram
 Des annonces à votre nom, vues par les propriétaires dans un rayon de 25 à 40 km autour de votre dépôt. Chaque demande est rappelée en moins de 5 minutes en semaine, puis vérifiée.
-Mis à jour le 18 novembre 2026
 
 ### Des annonces qui vous ressemblent
 Au nom de votre entreprise, avec vos chantiers.
@@ -1733,7 +1725,6 @@ Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Bar
 
 Qui sommes-nous
 Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.
-Mis à jour le 18 novembre 2026
 
 ### Un bon artisan ne devrait pas courir après les devis
 Un bon artisan a du métier et des clients satisfaits. Ce qui lui manque, c’est un flux régulier de projets sérieux.
@@ -1817,7 +1808,6 @@ Prix, engagement, publicité, exclusivité, rappel en 5 minutes, cadre légal :
 
 Questions
 Ce que les artisans nous demandent avant de commencer : la méthode, le prix, les engagements et le cadre légal.
-Mis à jour le 18 novembre 2026
 
 ### La méthode
 Comment nous trouvons les propriétaires et fixons vos visites.
@@ -1886,7 +1876,6 @@ Des articles courts et concrets pour les artisans du bâtiment : trouver des ch
 
 Blog
 Des articles courts et concrets, écrits pour les artisans du bâtiment.
-Mis à jour le 18 novembre 2026
 17 nov. 2026 Comprendre
 
 ### Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous

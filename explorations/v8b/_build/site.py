@@ -501,7 +501,7 @@ MAJ_HTML = '<p class="pg-upd">Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@<
 REVIEW = set()  # pages à faire valider : jamais indexées, absentes du plan du site (fiche Habitatpresto validée le 18/11/2026)
 
 
-def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None, dated=True):
+def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None, dated=False):
     second = f'<a class="link" href="{cta2[1]}">{cta2[0]}</a>' if cta2 else ""
     fig = ""
     if photo:
@@ -679,7 +679,7 @@ _mb = (ROOT / "_build" / "metiers_blocs.html").read_text(encoding="utf-8")
 _blk = {k: re.search(r'<section class="[^"]*" id="%s"[\s\S]*?</section>' % k, _mb).group(0) for k in ("sectors", "gallery", "calendar")}
 HUB_SECTORS = _blk["sectors"].replace(
     "<p>Uniquement les métiers où un chantier vaut plusieurs milliers d’euros. Pas de dépannage, pas de petits travaux.</p>",
-    "<p>Cliquez sur un métier pour voir les chantiers que nous allons chercher.</p>", 1)
+    "<p>Pour chacun, voyez les chantiers que nous allons chercher pour vous.</p>", 1)
 HUB_GALLERY = _blk["gallery"]
 HUB_SEASONS = _blk["calendar"].replace('data-tone="light"', 'data-tone="paper"', 1)
 _rows = "\n".join(
@@ -708,7 +708,7 @@ HUB_FAQ = [
 write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & Co",
       "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, partout en France. Un seul artisan par métier et par secteur.",
       "\n\n".join([
-          top("Métiers", "Cinq métiers, des chantiers de plusieurs milliers d'euros.", "Pas de dépannage, pas de petits travaux. Un seul artisan par métier et par secteur.", crumbs(("Métiers", "/metiers/")), "Une équipe d"),
+          top("Métiers", "Des clients pour cinq métiers du bâtiment.", "Couvreurs, façadiers, menuisiers, charpentiers et entreprises d'isolation : nous trouvons des propriétaires qui ont un vrai projet, près de chez vous. Un seul artisan par métier et par secteur géographique.", crumbs(("Métiers", "/metiers/")), "Artisan souriant"),
           HUB_SECTORS,
           label_tables(HUB_TABLE),
           HUB_GALLERY,
@@ -965,7 +965,7 @@ AUTHOR_META = '<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#ch
 
 def guide(G, kick, crumb_items, faq_title, links):
     body = "\n\n".join([
-        top(kick, G["h1"], G["lead"], crumbs(*crumb_items), meta=AUTHOR_META),
+        top(kick, G["h1"], G["lead"], crumbs(*crumb_items), meta=AUTHOR_META, dated=True),
         f"""<section class="sheet" data-tone="light">
   <div class="grid art-grid">
     <article class="prose">
@@ -1086,7 +1086,7 @@ LX_UPDATED = "2026-11-18"
 lx_body = "\n\n".join([
     top("Lexique", "Lexique des chantiers et des travaux",
         "Les mots que croisent artisans et propriétaires, expliqués en deux ou trois phrases, avec la source officielle quand elle existe.",
-        crumbs(("Lexique", "/lexique/"))),
+        crumbs(("Lexique", "/lexique/")), dated=True),
     f"""<section class="sheet lx" id="clients" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>Trouver des clients</h2><p>Pour les artisans du bâtiment : demandes, rendez-vous, coûts et règles d'appel.</p></div>
