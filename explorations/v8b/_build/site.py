@@ -819,7 +819,7 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
                 ("Des engagements écrits", "Exclusivité, un artisan par secteur, rappel en 5 minutes, sans engagement de durée."),
                 ("Des chiffres vérifiables", "Le budget est sur votre compte, et chaque rendez-vous est suivi jusqu'au chantier signé.")],
                "Comment nous travaillons", "", tone="paper"),
-          re.sub(r'<figure class="person-photo[\s\S]*?</figure>\s*', "", TEAM.replace('id="team"', 'id="equipe"')),  # portraits déjà en tête de page
+          re.sub(r'<figure class="person-photo[\s\S]*?</figure>\s*', "", TEAM.replace('id="team"', 'id="equipe"').replace('data-tone="paper"', 'data-tone="dark"', 1)),  # portraits déjà en tête de page
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>Bartier & Co en bref</h2></div>
