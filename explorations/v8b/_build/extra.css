@@ -507,4 +507,4 @@ main:has(> .check:last-child) + .ftr .ftr-lead .btn{display:none}
 /* En-têtes avec maquette de téléphone (Meta Ads, Google Ads) : le texte en haut, le bouton visible sans défiler */
 @media (min-width:761px){.pg-grid:has(.mk){align-items:start}}
 /* Écrans d'ordinateur peu hauts : moins d'espace au-dessus des en-têtes, le bouton reste dans le premier écran */
-@media (min-width:761px) and (max-height:780px){.pg-top{padding-top:calc(var(--hdr) + 28px)}}
+@media (min-width:761px) and (max-height:780px){section.sheet.pg-top{padding-top:calc(var(--hdr) + 28px)}}
