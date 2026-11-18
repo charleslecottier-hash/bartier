@@ -700,8 +700,8 @@ HUB_TABLE = f"""<section class="sheet" id="par-metier" data-tone="paper">
   </div>
 </section>"""
 HUB_FAQ = [
-    ("Quels métiers du bâtiment accompagnez-vous ?", "Cinq métiers où un chantier vaut plusieurs milliers d'euros : la couverture et la zinguerie, la menuiserie extérieure, la façade et le ravalement, la charpente et l'isolation."),
-    ("Mon métier n'est pas dans la liste : est-ce possible ?", "Parlons-en si vos chantiers dépassent plusieurs milliers d'euros et se vendent chez des propriétaires. Nous vous disons pendant l'appel si la méthode peut marcher pour vous."),
+    ("Quels métiers du bâtiment accompagnez-vous ?", "Cinq métiers : la couverture et la zinguerie, la menuiserie extérieure, la façade et le ravalement, la charpente et l'isolation."),
+    ("Mon métier n'est pas dans la liste : est-ce possible ?", "Parlons-en. Si vous travaillez chez des propriétaires, Martin vous dit pendant l'appel si notre méthode peut marcher pour vous."),
     ("Pourquoi écarter les petits dépannages ?", "Parce qu'ils coûtent une demi-journée pour un petit montant. Nos annonces et nos questions au téléphone visent des chantiers qui valent le déplacement."),
     ("Travaillez-vous avec deux artisans du même métier dans la même zone ?", "Non. Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d'autre."),
     ("Les demandes changent-elles selon la saison ?", "Oui. Les fuites en hiver, les réfections et les ravalements au printemps, l'entretien et les menuiseries à l'automne. Les annonces suivent les saisons pour garder un agenda régulier."),
@@ -723,7 +723,7 @@ write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & C
     </div>
   </div>
 </section>""",
-          faq(HUB_FAQ, title="Vos questions sur les métiers"),
+          faq(HUB_FAQ, title="Votre métier est-il concerné ?"),
       ]), nav="/metiers/", schema={"@context": "https://schema.org", "@graph": [
           bc_ld(("Métiers", "/metiers/")),
           {"@type": "ItemList", "name": "Métiers du bâtiment accompagnés par Bartier & Co", "itemListElement": [
