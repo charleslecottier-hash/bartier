@@ -33,27 +33,27 @@
  },
  "/devis-travaux/": {
   "date": "2026-11-19",
-  "sig": "98accab55d8a164c"
+  "sig": "24ca4a70572b8544"
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-19",
-  "sig": "086bbb0149e54501"
+  "sig": "21438ffdb9e5b453"
  },
  "/devis-travaux/fenetres/": {
   "date": "2026-11-19",
-  "sig": "e68303eadae31aa7"
+  "sig": "ed7cb23c6e11bf79"
  },
  "/devis-travaux/isolation/": {
   "date": "2026-11-19",
-  "sig": "f156168bdb498e7f"
+  "sig": "3483114c021acab8"
  },
  "/devis-travaux/ravalement-facade/": {
   "date": "2026-11-19",
-  "sig": "ba92d5ae838c68f1"
+  "sig": "e3454c42a6f95272"
  },
  "/devis-travaux/toiture/": {
   "date": "2026-11-19",
-  "sig": "909982ebe80395ce"
+  "sig": "65ec9c9ca8b037a9"
  },
  "/google-ads/": {
   "date": "2026-11-19",
@@ -105,10 +105,10 @@
  },
  "/trouver-des-chantiers/": {
   "date": "2026-11-19",
-  "sig": "d00ee3757d89b032"
+  "sig": "067a83a8245bc9dc"
  },
  "/trouver-des-chantiers/habitatpresto-pro/": {
-  "date": "2026-11-18",
-  "sig": "15a937c2fa6c9e16"
+  "date": "2026-11-19",
+  "sig": "0ae89427aef27209"
  }
 }

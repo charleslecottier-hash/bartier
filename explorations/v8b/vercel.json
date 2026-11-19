@@ -140,6 +140,15 @@
       ]
     },
     {
+      "source": "/(llms.txt|llms-full.txt)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
       "source": "/assets/(og.png|logo-bartier.png)",
       "headers": [
         {

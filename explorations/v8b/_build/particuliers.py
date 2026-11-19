@@ -55,7 +55,7 @@ TRADES = [
 ]
 
 BRIEF = [
-    ("Le service", "La mise en relation avec l’artisan partenaire de votre secteur, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation."),
+    ("Le service", "Bartier &amp; Co vous met gratuitement en relation avec l’artisan partenaire de votre secteur, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation."),
     ("Le prix pour vous", "Gratuit, visite et devis compris. Les artisans nous rémunèrent."),
     ("Le délai", "Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture."),
     ("Le rendez-vous", "Fixé pendant notre appel, rappelé par SMS avant la visite."),
@@ -68,7 +68,7 @@ LEAK = [
     ("Mettez-vous en sécurité", "Éloignez l’eau des prises. Au moindre doute, coupez le courant de la pièce."),
     ("Limitez les dégâts", "Seaux, bâches, mobilier à l’abri. Ne montez jamais sur le toit."),
     ("Prenez des photos", "Plafond, murs, objets abîmés. Votre assureur vous les demandera."),
-    ("Prévenez votre assureur", "Déclarez le dégât des eaux dans le délai de votre contrat&nbsp;: au moins cinq jours ouvrés."),
+    ("Prévenez votre assureur", "Déclarez le dégât des eaux dans le délai de votre contrat&nbsp;: au moins cinq jours ouvrés (Code des assurances, art. L113-2)."),
     ("Faites intervenir un couvreur", "Il trouve l’origine de la fuite, protège si besoin et chiffre la réparation."),
 ]
 
@@ -81,7 +81,7 @@ SERIOUS = [
 ]
 
 import html as _html, re as _re
-SERIOUS_LD = {"@type": "ItemList", "name": "Reconnaître un artisan sérieux : 5 points à vérifier avant de signer",
+SERIOUS_LD = {"@type": "ItemList", "name": "Comment reconnaître un artisan sérieux ? 5 points à vérifier avant de signer",
               "itemListElement": [{"@type": "ListItem", "position": i, "name": a, "description": _html.unescape(_re.sub("<[^>]+>", "", b)).replace("\xa0", " ")}
                                   for i, (a, b) in enumerate(SERIOUS, 1)]}
 
@@ -107,7 +107,7 @@ FAQ = [
     ("Combien coûte le remplacement d’une fenêtre ?",
      "Comptez de 870 à 1 170 € TTC pour une fenêtre PVC double vitrage posée en remplacement, selon La Maison Saint-Gobain (2026). Le prix change avec la taille, le matériau (PVC, alu, bois), le vitrage et le type de pose. Le devis détaille chaque fenêtre."),
     ("J’ai une fuite de toiture, que faire tout de suite ?",
-     "Éloignez l’eau des prises, protégez le mobilier, photographiez les dégâts et prévenez votre assureur dans le délai de votre contrat, au moins cinq jours ouvrés. Dans le formulaire, choisissez « Fuite ou dégât urgent » : ces demandes sont rappelées en priorité."),
+     "Éloignez l’eau des prises, protégez le mobilier, photographiez les dégâts et prévenez votre assureur dans le délai de votre contrat, au moins cinq jours ouvrés (Code des assurances, art. L113-2). Dans le formulaire, choisissez « Fuite ou dégât urgent » : ces demandes sont rappelées en priorité."),
     ("Puis-je obtenir des aides pour mes travaux ?",
      "Pour la rénovation énergétique, comme l’isolation, oui dans certains cas : MaPrimeRénov’, primes CEE des fournisseurs d’énergie, éco-prêt à taux zéro. Toutes demandent une entreprise certifiée RGE, et leurs conditions changent souvent : vérifiez votre cas sur france-renov.gouv.fr et parlez-en lors de notre appel."),
     ("Où intervenez-vous ?",
@@ -117,11 +117,11 @@ FAQ = [
     ("Comment savoir si un artisan est sérieux ?",
      "Vérifiez son immatriculation sur annuaire-entreprises.data.gouv.fr, demandez son attestation d’assurance décennale et un devis écrit et détaillé. Pour obtenir des aides, il doit être certifié RGE. Méfiez-vous des démarcheurs qui pressent ou annoncent un prix valable « aujourd’hui seulement »."),
     ("Qu’est-ce que l’assurance décennale ?",
-     "C’est l’assurance qui couvre, pendant 10 ans après la réception des travaux, les dommages qui menacent la solidité du bâtiment ou le rendent impropre à son usage. Elle est obligatoire pour les artisans du bâtiment, et le nom de l’assureur doit figurer sur le devis."),
+     "C’est l’assurance qui couvre, pendant 10 ans après la réception des travaux, les dommages qui menacent la solidité du bâtiment ou le rendent impropre à son usage. Elle est obligatoire pour les artisans du bâtiment (Code des assurances, art. L241-1), et le nom de l’assureur doit figurer sur le devis."),
     ("Faut-il une autorisation de la mairie pour ses travaux ?",
      "Souvent, oui, dès que l’aspect extérieur change : matériau ou couleur de la toiture, façade, fenêtres. Il faut alors une déclaration préalable. Des travaux à l’identique n’en demandent en général pas, sauf en secteur protégé ou si votre commune l’impose : le service urbanisme de la mairie vous le confirme."),
     ("Le devis est-il obligatoire ?",
-     "Oui pour un dépannage, une réparation ou un entretien à domicile de plus de 150 € TTC, ou si vous le demandez : l’artisan doit remettre un devis détaillé avant d’intervenir. Pour les autres travaux, demandez-en toujours un : une fois accepté, il engage l’artisan au prix indiqué."),
+     "Oui pour un dépannage, une réparation ou un entretien à domicile de plus de 150 € TTC, ou si vous le demandez : l’artisan doit remettre un devis détaillé avant d’intervenir (arrêté du 24 janvier 2017). Pour les autres travaux, demandez-en toujours un : une fois accepté, il engage l’artisan au prix indiqué."),
     ("Combien de devis faut-il demander ?",
      "Aucune règle ne l’impose. Pour de gros travaux, comparer deux ou trois devis est courant. Avec nous, un artisan local vient chiffrer chez vous, et vous restez libre de demander d’autres devis."),
     ("Quand l’artisan vient-il chez moi ?",
@@ -200,7 +200,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
       {crumbs}
-      <h1 class="pf-h1"><span class="pf-kw">Devis toiture, façade, fenêtres, isolation</span> <span class="pf-big">Pas cinq <span class="pf-who">artisans</span>. <br>Un seul, près de chez vous.</span></h1>
+      <h1 class="pf-h1"><span class="pf-kw">Devis toiture, façade, fenêtres, charpente, isolation</span> <span class="pf-big">Pas cinq <span class="pf-who">artisans</span>. <br>Un seul, près de chez vous.</span></h1>
       <p class="lead">Décrivez vos travaux en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
       {trust("d-only")}
       <p class="pf-call d-only">Pressé&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p>
@@ -222,10 +222,10 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     promise = f"""<section class="sheet pf-promise" id="promesse" data-tone="accent">
   <div class="grid sp-head"><h2 data-split>Fini les artisans qui ne rappellent pas.</h2><p>Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.</p></div>
   <ul class="pf-proms">
-    <li><b>5<small>min</small></b><span>pour vous rappeler, en semaine de 8 h à 19 h</span></li>
-    <li><b>1<small>appel</small></b><span>pour fixer la date de visite</span></li>
-    <li><b>1<small>SMS</small></b><span>de rappel avant la visite</span></li>
-    <li><b>0<small>€</small></b><span>pour vous&nbsp;: visite et devis offerts, sans engagement</span></li>
+    <li><b>5 <small>min</small></b> <span>pour vous rappeler, en semaine de 8 h à 19 h</span></li>
+    <li><b>1 <small>appel</small></b> <span>pour fixer la date de visite</span></li>
+    <li><b>1 <small>SMS</small></b> <span>de rappel avant la visite</span></li>
+    <li><b>0 <small>€</small></b> <span>pour vous&nbsp;: visite et devis offerts, sans engagement</span></li>
   </ul>
   <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
 </section>"""
@@ -272,7 +272,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     # le chiffre d'abord (repris tel quel de la source citée), puis ce qui le fait varier
     FIG = {"toiture": ("60 à 500\u00a0€/m²", "Rénovation, pose comprise"), "facade": ("40 à 160\u00a0€/m²", "Ravalement, en moyenne"),
            "fenetres": ("870 à 1\u00a0170\u00a0€", "Fenêtre PVC double vitrage posée, TTC"), "charpente": ("40 à 250\u00a0€/m²", "Rénovation en bois, 150\u00a0€/m² en moyenne"),
-           "isolation": ("40 à 45\u00a0€/m²", "Combles perdus, pose comprise")}
+           "isolation": ("40 à 45\u00a0€/m²", "Combles perdus, pose comprise, TTC")}
     prices = "".join(f'<li><h3>{t[8]}</h3><p class="pf-fig"><b>{FIG[t[0]][0]}</b><span>{FIG[t[0]][1]}</span></p><p class="pf-why">Varie selon&nbsp;: {t[9][0].lower() + t[9][1:]}</p><p class="pf-src">Source&nbsp;: {REF[t[0]][1]}</p><a class="link pf-more" href="/devis-travaux/{SLUG[t[0]]}/">Voir la page {t[1]}</a></li>' for t in TRADES)
     price = f"""<section class="sheet" id="prix" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Combien vont coûter vos travaux&nbsp;?</h2><p>Les prix en ligne sont des moyennes : seul l’artisan peut chiffrer votre chantier, après une visite gratuite.</p></div>
@@ -312,6 +312,11 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     return "\n\n".join([hero, promise, trades, leak, price, serious, brief, faq, end])  # tableau « Pas cinq entreprises » retiré
 
 
+# Questions aussi posées sur une page métier : balisées là-bas seulement (Google : une FAQ répétée se balise une fois)
+HUB_UNMARKED = {"Combien coûte une réfection de toiture ?", "Combien coûte un ravalement de façade ?",
+                "Combien coûte le remplacement d’une fenêtre ?", "J’ai une fuite de toiture, que faire tout de suite ?"}
+
+
 def link_graph(SITE, path, g):
     """Chaque nœud reçoit son identifiant ; la page pointe vers son service, son fil d'Ariane et sa FAQ."""
     url = SITE + path
@@ -349,7 +354,7 @@ def schema(SITE, faq_ld, bc_ld):
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Gratuit pour le particulier, sans engagement"},
          "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Travaux", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "@id": f"{SITE}{PATH}{SLUG[t[0]]}/#service", "url": f"{SITE}{PATH}{SLUG[t[0]]}/", "name": t[5], "description": clean(t[6])}} for t in TRADES]}},
         {"@type": "HowTo", "name": "Fuite de toiture ? Les 5 bons réflexes", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]},
-        SERIOUS_LD, faq_ld(FAQ), bc_ld(("Devis travaux", PATH))]}
+        SERIOUS_LD, faq_ld([qa for qa in FAQ if qa[0] not in HUB_UNMARKED]), bc_ld(("Devis travaux", PATH))]}
     return link_graph(SITE, PATH, g)
 
 
@@ -580,7 +585,7 @@ REF = {
                  _src("La Maison Saint-Gobain", "https://www.lamaisonsaintgobain.fr/guides-travaux/menuiseries-exterieures/prix-fenetre-pvc", "mis à jour le 13/02/2026")),
     "charpente": ("Rénovation de charpente en bois&nbsp;: 150 €/m² en moyenne, de 40 à 250 €/m² selon l’état et la surface.",
                   _src("Obat", "https://travaux.obat.fr/guides/tarif-charpentier/", "mis à jour le 28/10/2024")),
-    "isolation": ("Isolation des combles perdus, pose comprise&nbsp;: 40 €/m² si l’accès se fait par l’intérieur, 45 €/m² par le toit.",
+    "isolation": ("Isolation des combles perdus, pose comprise&nbsp;: 40 €/m² TTC si l’accès se fait par l’intérieur, 45 €/m² TTC par le toit.",
                   _src("La Maison Saint-Gobain", "https://www.lamaisonsaintgobain.fr/guides-travaux/isolation/prix-isolation-combles", "mis à jour le 06/07/2026")),
 }
 
@@ -590,7 +595,7 @@ PAGES = {
     "toiture": dict(
         title="Devis toiture gratuit : un couvreur près de chez vous",
         desc="Réfection de toiture, fuite, tuiles, zinguerie, démoussage. Décrivez vos travaux en 1 minute : un seul couvreur de votre secteur vient chiffrer. Gratuit.",
-        kw="Devis toiture près de chez vous", h2="Vos travaux de toiture", price_h2="Prix d’une réfection de toiture",
+        kw="Devis toiture gratuit", h2="Vos travaux de toiture", price_h2="Prix d’une réfection de toiture",
         needs=[("Réfection complète", "Dépose de l’ancienne couverture, écran sous-toiture, tuiles ou ardoises neuves."),
                ("Fuite et réparation", "Tuiles cassées ou déplacées, faîtage, solins, recherche de l’origine d’une fuite."),
                ("Zinguerie", "Gouttières, chéneaux, noues et descentes d’eau pluviale."),
@@ -599,23 +604,23 @@ PAGES = {
              ("Faut-il réparer ou refaire toute la toiture ?", "Quelques tuiles cassées ou une fuite localisée se réparent. Des fuites qui reviennent, une couverture poreuse ou une charpente abîmée imposent souvent une réfection. Le couvreur tranche lors de la visite."),
              ("Faut-il démousser sa toiture ?", "Les mousses retiennent l’humidité et abîment les tuiles avec le temps. Un démoussage est aussi l’occasion de faire vérifier l’état de la couverture."),
              ("Combien de temps dure une réfection de toiture ?", "Cela dépend de la surface, de la météo et de l’état de la charpente. Le couvreur vous donne un délai dans son devis.")],
-        brief="Le couvreur partenaire de votre secteur, pour vos travaux de toiture : réfection, fuite, zinguerie ou démoussage. Visite et devis offerts."),
+        brief="Bartier &amp; Co vous met gratuitement en relation avec le couvreur partenaire de votre secteur : réfection, fuite, zinguerie ou démoussage. Visite et devis offerts."),
     "facade": dict(
         title="Ravalement de façade : devis gratuit près de chez vous",
         desc="Ravalement de façade, fissures, enduit, peinture, isolation par l’extérieur. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer. Gratuit.",
-        kw="Ravalement de façade près de chez vous", h2="Vos travaux de façade", price_h2="Prix d’un ravalement de façade",
+        kw="Ravalement de façade : devis gratuit", h2="Vos travaux de façade", price_h2="Prix d’un ravalement de façade",
         needs=[("Ravalement complet", "Nettoyage, reprise du support, enduit ou peinture de finition."),
                ("Fissures", "Diagnostic de l’origine et reprise des fissures avant finition."),
                ("Nettoyage et peinture", "Façade rafraîchie quand le support est sain."),
                ("Isolation par l’extérieur", "Isolant posé sur les murs puis recouvert d’un enduit ou d’un bardage.")],
-        faq=[("Le ravalement est-il obligatoire ?", "À Paris et dans les communes inscrites sur une liste fixée par le préfet, la mairie peut imposer un ravalement au moins tous les dix ans. Ailleurs, la loi ne fixe pas de fréquence. Votre mairie vous dit si votre commune est concernée."),
+        faq=[("Le ravalement est-il obligatoire ?", "À Paris et dans les communes inscrites sur une liste fixée par le préfet, la mairie peut imposer un ravalement au moins tous les dix ans. Ailleurs, la loi ne fixe pas de fréquence (Code de la construction et de l’habitation). Votre mairie vous dit si votre commune est concernée."),
              ("Faut-il une autorisation pour un ravalement ?", "Un ravalement qui modifie l’aspect extérieur demande en général une déclaration préalable en mairie. Vérifiez aussi le plan local d’urbanisme de votre commune."),
              ("Peut-on isoler en même temps que le ravalement ?", "Oui, c’est le bon moment pour une isolation par l’extérieur. Réalisée par une entreprise RGE, elle peut ouvrir droit à des aides : vérifiez-les sur france-renov.gouv.fr.")],
-        brief="Un seul artisan façade de votre secteur pour votre ravalement : nettoyage, fissures, enduit, peinture ou isolation par l’extérieur. Visite et devis offerts."),
+        brief="Bartier &amp; Co vous met gratuitement en relation avec l’artisan façade partenaire de votre secteur : nettoyage, fissures, enduit, peinture ou isolation par l’extérieur. Visite et devis offerts."),
     "fenetres": dict(
         title="Devis fenêtres PVC, alu, bois : menuisier près de chez vous",
         desc="Fenêtres PVC, alu ou bois, porte d’entrée, baie vitrée, volets. Décrivez vos travaux en 1 minute : un seul menuisier local vient chiffrer. Gratuit.",
-        kw="Devis fenêtres et portes près de chez vous", h2="Vos travaux de fenêtres et portes", price_h2="Prix de fenêtres posées",
+        kw="Devis fenêtres et portes gratuit", h2="Vos travaux de fenêtres et portes", price_h2="Prix de fenêtres posées",
         needs=[("Remplacement de fenêtres", "PVC, aluminium ou bois, double vitrage, sur mesure."),
                ("Porte d’entrée", "Isolation, sécurité et style de la façade."),
                ("Baie vitrée", "Coulissante ou à galandage, création ou remplacement."),
@@ -623,11 +628,11 @@ PAGES = {
         faq=[("Pose en rénovation ou dépose totale ?", "En rénovation, la fenêtre neuve se pose sur l’ancien cadre : c’est plus rapide, mais la surface vitrée diminue un peu. En dépose totale, tout est retiré : c’est plus cher, avec un meilleur résultat. Le menuisier vous conseille lors de la visite."),
              ("PVC, aluminium ou bois ?", "Le PVC est le plus économique, l’aluminium permet des profils fins et de grandes baies, le bois apporte du cachet et demande plus d’entretien."),
              ("Faut-il une autorisation pour changer ses fenêtres ?", "Remplacer à l’identique ne demande en général rien. Changer l’aspect, le matériau, la couleur ou le découpage demande une déclaration préalable en mairie.")],
-        brief="Un seul menuisier de votre secteur pour vos fenêtres, portes, baies vitrées ou volets. Visite et devis offerts."),
+        brief="Bartier &amp; Co vous met gratuitement en relation avec le menuisier partenaire de votre secteur, pour vos fenêtres, portes, baies vitrées ou volets. Visite et devis offerts."),
     "charpente": dict(
         title="Devis charpente : un charpentier près de chez vous",
         desc="Réparation et renfort, traitement du bois, extension, surélévation. Décrivez vos travaux en 1 minute : un seul charpentier local vient chiffrer. Gratuit.",
-        kw="Devis charpente près de chez vous", h2="Vos travaux de charpente", price_h2="Prix de travaux de charpente",
+        kw="Devis charpente gratuit", h2="Vos travaux de charpente", price_h2="Prix de travaux de charpente",
         needs=[("Réparation et renfort", "Pièces de bois abîmées remplacées ou doublées."),
                ("Traitement du bois", "Contre les insectes et les champignons, en curatif ou en préventif."),
                ("Extension et surélévation", "Nouvelle charpente pour agrandir ou créer un étage."),
@@ -636,11 +641,11 @@ PAGES = {
              ("Quels signes montrent qu’une charpente est abîmée ?", "Du bois qui s’effrite, de la sciure ou de petits trous, des traces d’humidité, une toiture qui se déforme. Au moindre doute, faites-la inspecter."),
              ("Quand faut-il traiter une charpente ?", "En présence d’insectes ou de champignons, et en prévention lors d’une réfection de toiture, quand le bois est accessible."),
              ("Faut-il refaire la couverture en même temps ?", "Souvent, oui : la charpente est alors à nu et les deux chantiers se coordonnent. Le charpentier et le couvreur peuvent travailler ensemble.")],
-        brief="Un seul charpentier de votre secteur pour réparer, traiter ou créer votre charpente. Visite et devis offerts."),
+        brief="Bartier &amp; Co vous met gratuitement en relation avec le charpentier partenaire de votre secteur, pour réparer, traiter ou créer votre charpente. Visite et devis offerts."),
     "isolation": dict(
         title="Isolation combles et murs : devis gratuit près de chez vous",
         desc="Isolation des combles perdus ou aménagés, des murs par l’extérieur, de la toiture. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer.",
-        kw="Isolation des combles et des murs près de chez vous", h2="Vos travaux d’isolation", price_h2="Prix de l’isolation des combles",
+        kw="Isolation des combles et des murs : devis gratuit", h2="Vos travaux d’isolation", price_h2="Prix de l’isolation des combles",
         needs=[("Combles perdus", "Isolant soufflé ou déroulé sur le plancher des combles."),
                ("Combles aménagés", "Isolation sous les rampants, par l’intérieur."),
                ("Murs par l’extérieur", "Isolant posé sur la façade puis recouvert."),
@@ -649,7 +654,7 @@ PAGES = {
              ("Quelles aides pour isoler ses combles ?", "Les plus courantes sont MaPrimeRénov’ et les primes CEE des fournisseurs d’énergie. Leur montant dépend des travaux et de vos revenus, et toutes demandent une entreprise certifiée RGE. Les règles changent souvent : vérifiez votre cas sur france-renov.gouv.fr avant de signer."),
              ("Combles perdus ou aménagés : quelle différence ?", "Des combles perdus ne sont pas habitables : l’isolant se pose sur le plancher, c’est le chantier le plus simple. Des combles aménagés sont habitables : l’isolant se pose sous la toiture."),
              ("Faut-il une entreprise RGE ?", "Pour obtenir des aides publiques, oui. Dites-le lors de notre appel : nous vous disons si l’artisan de votre secteur est certifié RGE.")],
-        brief="Un seul artisan de votre secteur pour isoler vos combles, vos murs ou votre toiture. Visite et devis offerts."),
+        brief="Bartier &amp; Co vous met gratuitement en relation avec l’artisan partenaire de votre secteur, pour isoler vos combles, vos murs ou votre toiture. Visite et devis offerts."),
 }
 
 
@@ -721,7 +726,7 @@ def trade_faq(key):
         out.append((price_q[key], general[price_q[key]]))
     else:
         out.append({"charpente": ("Combien coûtent des travaux de charpente ?", "Comptez 150 €/m² en moyenne pour rénover une charpente en bois, de 40 à 250 €/m², selon Obat (chiffres 2024). Tout dépend de l’état du bois : remplacer quelques pièces coûte bien moins que refaire la charpente. Le charpentier le voit lors d’une visite gratuite."),
-                    "isolation": ("Combien coûtent des travaux d’isolation ?", "Pour des combles perdus, comptez environ 40 €/m² pose comprise si l’accès se fait par l’intérieur, 45 €/m² par le toit, selon La Maison Saint-Gobain (2026). Sous les rampants ou par l’extérieur, c’est plus cher. Seule une visite permet un devis fiable, et elle est gratuite.")}[key])
+                    "isolation": ("Combien coûtent des travaux d’isolation ?", "Pour des combles perdus, comptez environ 40 €/m² TTC pose comprise si l’accès se fait par l’intérieur, 45 €/m² par le toit, selon La Maison Saint-Gobain (2026). Sous les rampants ou par l’extérieur, c’est plus cher. Seule une visite permet un devis fiable, et elle est gratuite.")}[key])
     out += P["faq"]
     if key in ("toiture", "fenetres"):  # chantiers où l'on demande souvent une petite intervention
         out.append(("Prenez-vous aussi les petites réparations ?", general["Prenez-vous aussi les petites réparations ?"]))
@@ -739,11 +744,11 @@ def trade_schema(SITE, faq_ld, bc_ld, key):
     graph = [
         {"@type": "WebPage", "@id": SITE + path, "url": SITE + path, "name": P["title"], "description": P["desc"], "inLanguage": "fr-FR",
          "dateModified": "@@MAJ@@", "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}},
-        {"@type": "Service", "name": f"Devis {t[5].lower()}", "serviceType": t[5], "description": clean(P["brief"]), "url": SITE + path,
+        {"@type": "Service", "name": f"Devis {t[5].lower()}", "serviceType": f"Mise en relation avec un artisan : {t[5].lower()}", "description": clean(P["brief"]), "url": SITE + path,
          "areaServed": {"@type": "Country", "name": "France"}, "audience": {"@type": "Audience", "audienceType": "Propriétaires de maison"},
          "provider": {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "url": SITE + "/"},
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Gratuit pour le particulier : mise en relation, visite et devis de l'artisan"}},
-        SERIOUS_LD, faq_ld(trade_faq(key)), bc_ld(("Devis travaux", PATH), (t[1], path))]
+        SERIOUS_LD, faq_ld([qa for qa in trade_faq(key) if qa[0] != "Prenez-vous aussi les petites réparations ?"]), bc_ld(("Devis travaux", PATH), (t[1], path))]
     if key == "toiture":
         graph.append({"@type": "HowTo", "name": "Fuite de toiture ? Les 5 bons réflexes", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]})
     return link_graph(SITE, path, {"@context": "https://schema.org", "@graph": graph})

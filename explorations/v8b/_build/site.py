@@ -262,7 +262,7 @@ home = home[:_m.end()] + (
     f'<meta property="og:type" content="website">\n<meta property="og:locale" content="fr_FR">\n<meta property="og:site_name" content="Bartier &amp; Co">\n'
     f'<meta property="og:title" content="{html.escape(_ht)}">\n<meta property="og:description" content="{html.escape(_hd)}">\n'
     f'<meta property="og:url" content="{SITE}/">\n<meta property="og:image" content="{SITE}/assets/og.png">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
-    f'<meta property="og:image:alt" content="Bartier &amp; Co, des clients pour les artisans du bâtiment">\n<meta name="twitter:card" content="summary_large_image">\n') + home[_m.end():]
+    f'<meta property="og:image:alt" content="Logo Bartier &amp; Co et slogan : Faire équipe. Faire la différence.">\n<meta name="twitter:card" content="summary_large_image">\n') + home[_m.end():]
 home = home.replace("</head>", f'<script type="application/ld+json">{json.dumps(_ld, ensure_ascii=False, separators=(",", ":"))}</script>\n</head>', 1)
 (ROOT / "index.html").write_text(home, encoding="utf-8")
 
@@ -472,7 +472,7 @@ def head(title, desc, path, schema=None):
     og = (f'<meta property="og:type" content="website">\n<meta property="og:locale" content="fr_FR">\n<meta property="og:site_name" content="Bartier &amp; Co">\n'
           f'<meta property="og:title" content="{html.escape(fr(title))}">\n<meta property="og:description" content="{html.escape(fr(desc))}">\n'
           f'<meta property="og:url" content="{SITE}{path}">\n<meta property="og:image" content="{SITE}/assets/og.png">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
-          f'<meta property="og:image:alt" content="Bartier &amp; Co, des clients pour les artisans du bâtiment">\n<meta name="twitter:card" content="summary_large_image">\n')
+          f'<meta property="og:image:alt" content="Logo Bartier &amp; Co et slogan : Faire équipe. Faire la différence.">\n<meta name="twitter:card" content="summary_large_image">\n')
     if schema and "@graph" in schema:  # l'organisation et le site sont décrits sur chaque page : les références #org et #website se résolvent partout
         schema = dict(schema, **{"@graph": [dict(n) for n in schema["@graph"]]})  # copie : des nœuds sont partagés entre pages
         for n in schema["@graph"]:
@@ -1089,7 +1089,8 @@ def guide(G, kick, crumb_items, faq_title, links):
     toc_html = ('<nav class="gd-toc" aria-label="Dans ce guide"><p class="gd-toc-k">Dans ce guide</p><ol>'
                 + "".join(f'<li><a href="#{i}">{x}</a></li>' for i, x in toc) + "</ol></nav>")
     body = "\n\n".join([
-        top(kick, G["h1"], G["lead"], crumbs(*crumb_items), visual=toc_html),
+        top(kick, G["h1"], G["lead"], crumbs(*crumb_items), visual=toc_html,
+            meta='<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, co-fondateur</span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span></p>'),
         f"""<section class="sheet gd-body" data-tone="light">
   <div class="grid art-grid">
     <article class="prose">
@@ -1171,7 +1172,8 @@ def pillar_page(G):
     faq_items = [G["faq"][i] for i in (0, 1, 3, 5)]
     body = "\n\n".join([
         top("Guide", G["h1"], "Huit façons de trouver des chantiers, comparées. La bonne est celle qui vous coûte le moins par chantier signé.",
-            crumbs(("Trouver des chantiers", G["path"])), "Un menuisier pose une fenêtre"),
+            crumbs(("Trouver des chantiers", G["path"])), "Un menuisier pose une fenêtre",
+            meta='<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, co-fondateur</span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span></p>'),
         f"""<section class="sheet tc-sec" id="canaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Les 8 canaux pour trouver des chantiers</h2><p>Ce que chacun vous coûte, et si la demande est pour vous seul.</p></div>
   <table class="tc-table">
@@ -1541,6 +1543,7 @@ SECURITY_HEADERS = [
                 {"source": "/assets/fonts/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
                 {"source": "/assets/js/(gsap|ScrollTrigger|SplitText|lenis|consent)(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
                 {"source": "/404(.*)", "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]},
+                {"source": "/(llms.txt|llms-full.txt)", "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]},
                 {"source": "/assets/(og.png|logo-bartier.png)", "headers": [{"key": "Cross-Origin-Resource-Policy", "value": "cross-origin"}]}]}, indent=2), encoding="utf-8")
 
 # ——— Fichiers SEO et GEO ———
