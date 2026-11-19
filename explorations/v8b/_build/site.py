@@ -1109,6 +1109,14 @@ TC_CHANNELS = [  # nom, ce que vous payez, ce qu'il faut, la demande (ok : pour 
     ("Flyers et panneaux", "L'impression et la distribution", "Des chantiers dans le quartier", "ok", ""),
     ("Réseaux professionnels", "Une cotisation et du temps", "Une présence régulière", "ok", ""),
 ]
+FTR_DD_JS = """<script id="ftr-dd">(function(){var dd=[].slice.call(document.querySelectorAll(".ftr-dd"));if(!dd.length)return;
+var mq=window.matchMedia("(max-width: 760px)"),still=window.matchMedia("(prefers-reduced-motion: reduce)").matches,ease="cubic-bezier(.22,1,.36,1)";
+function sync(){dd.forEach(function(d){d.open=!mq.matches})}sync();if(mq.addEventListener)mq.addEventListener("change",sync);
+dd.forEach(function(d){var s=d.querySelector("summary"),l=d.querySelector(".ftr-links");s.addEventListener("click",function(e){e.preventDefault();if(!mq.matches)return;
+if(d.open){if(still||!l.animate){d.open=false;return}var a=l.animate([{height:l.scrollHeight+"px",opacity:1},{height:"0px",opacity:0}],{duration:200,easing:ease});a.onfinish=function(){d.open=false};return}
+d.open=true;if(!still&&l.animate)l.animate([{height:"0px",opacity:0},{height:l.scrollHeight+"px",opacity:1}],{duration:240,easing:ease})})})})();</script>"""
+
+
 MENU_DD_JS = """<script id="menu-dd">(function(){var dd=[].slice.call(document.querySelectorAll(".menu-dd"));if(!dd.length)return;
 var still=window.matchMedia("(prefers-reduced-motion: reduce)").matches,ease="cubic-bezier(.22,1,.36,1)";
 function shut(d,now){var l=d.querySelector(".menu-dd-list");if(!d.open)return;if(now||still||!l.animate){d.open=false;return}
@@ -1410,6 +1418,10 @@ for f in PAGES_OUT:
     doc = IMG.localize(doc, SITE).replace('<link rel="preconnect" href="https://images.unsplash.com">\n', "")
     doc = re.sub(r"<img [^>]*>", real_dims, doc)
     doc = typo(doc)
+    if '<nav class="ftr-col' in doc and 'class="ftr-dd"' not in doc:  # pied de page : groupes de liens repliables sur téléphone (ouverts sur ordinateur)
+        doc = re.sub(r'(<nav class="ftr-col[^"]*" aria-label="[^"]*">)\s*<p class="ftr-h">([^<]*)</p>(.*?)\s*</nav>',
+                     lambda m: m.group(1) + '<details class="ftr-dd" open><summary class="ftr-h">' + m.group(2) + NAV_CHEV + '</summary><div class="ftr-links">' + m.group(3).strip() + '</div></details></nav>', doc, flags=re.S)
+        doc = doc.replace("</body>", FTR_DD_JS + "\n</body>", 1)
     if 'class="menu-dd"' in doc and 'id="menu-dd"' not in doc:  # menu téléphone : sous-listes qui glissent
         doc = doc.replace("</body>", MENU_DD_JS + "\n</body>", 1)
     if 'id="calculateur"' in doc and 'id="tc-js"' not in doc:  # calculateur : script ajouté après la typo, qui changerait ses apostrophes
