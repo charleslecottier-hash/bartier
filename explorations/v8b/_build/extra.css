@@ -1242,3 +1242,28 @@ section.tr-ads .ad-img{height:auto}
   .ftr{padding-bottom:20px}
   .ftr .ftr-base{padding-right:56px}
 }
+
+/* ——— Téléphone, tout le site (passe 3) : accueil harmonisé, prix en défilement, cibles tactiles, liens longs ——— */
+@media (max-width:760px){
+  /* accueil : titres de section à la même échelle que le reste, chiffres moins massifs, engagements alignés */
+  main:not(.is-inner) .sheet h2{font-size:1.75rem;line-height:1.12;letter-spacing:-.02em}
+  .how-cards{gap:10px}
+  .how-card{gap:8px;padding:20px}
+  .how-n{font-size:2.25rem}
+  .how-card h3{font-size:1.5rem;line-height:1.15}
+  .pl-steps{row-gap:24px}
+  .pl-step:nth-child(n){padding-left:var(--cell)}
+  .pl-num{font-size:3rem}
+  .pl-step h3{font-size:1.1rem}
+  /* prix des travaux : cartes en défilement horizontal, la suivante dépasse pour inviter au geste */
+  #prix .pf-prices{display:grid;grid-auto-flow:column;grid-auto-columns:84%;grid-template-columns:none;gap:12px;padding:0 var(--cell) 8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+  #prix .pf-prices::-webkit-scrollbar{display:none}
+  #prix .pf-prices li{scroll-snap-align:center}
+  /* lien long sous le formulaire : passe à la ligne au lieu de dépasser de l'écran */
+  .dq-wa-link .link{white-space:normal;background:none;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em}
+  /* cibles tactiles */
+  .mt-table .mt-name a{display:inline-flex;align-items:center;min-height:40px}
+  a.pf-tl{display:inline-flex;align-items:center;min-height:40px}
+  .facts-dl dd a,.pf-dl dd a{display:inline-flex;align-items:center;min-height:36px}
+  .ftr .ftr-legal a,.ftr .ftr-cookies{min-height:36px;font-size:.8125rem}
+}
