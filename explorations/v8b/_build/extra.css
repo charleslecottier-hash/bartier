@@ -1344,3 +1344,12 @@ section.tr-ads .ad-img{height:auto}
   .ta-acts .link{align-self:flex-start}
   .team-about .ta-body{gap:20px}
 }
+
+/* ——— Téléphone (passe 6) : liens dans une phrase sans étirer l'interligne, lien WhatsApp sur une ligne, liste du blog resserrée ——— */
+@media (max-width:760px){
+  main .tc-foot .link,main .tc-trades .link,main .tc-loss p .link,main #services p > .link,main .fq-head p > .link{display:inline;min-height:0;padding:10px 0;background:none;white-space:normal;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em}
+  main .fq-head p{line-height:1.6}
+  .dq-wa-link .link{font-size:15px}
+  .is-inner .pg-top:has(.gd-toc){padding-bottom:32px}
+  .is-inner .journal.sheet{padding-top:8px}
+}
