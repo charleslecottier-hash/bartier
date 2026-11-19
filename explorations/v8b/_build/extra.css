@@ -1157,3 +1157,19 @@ section.tr-ads .ad-img{height:auto}
   .is-inner section.ws-cols ol.sp-cols .sp-n{font-size:2.75rem;margin-bottom:4px}
   .is-inner section.ws-cols ol.sp-cols{row-gap:32px}
 }
+
+/* ——— Téléphone, pages intérieures (2) : fuite en liste légère, repères de prix plus petits, fil d'Ariane sur une ligne, pied de page plus court ——— */
+@media (max-width:760px){
+  .is-inner .crumbs{flex-wrap:nowrap;overflow:hidden;white-space:nowrap}
+  .is-inner .crumbs > *{flex:none}
+  .is-inner .crumbs [aria-current="page"]{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .is-inner .pf-leak .pf-howto{gap:8px}
+  .is-inner .pf-leak .pf-howto li{display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:12px;row-gap:4px;padding:16px}
+  .is-inner .pf-leak .pf-howto li::before{grid-row:1 / 3;margin:2px 0 0;font:400 1rem/1.4 var(--f-text);letter-spacing:0;color:#c9d6ff}
+  .is-inner .pf-leak .pf-howto h3{font-size:1.0625rem!important;line-height:1.3!important}
+  .is-inner .pf-leak .pf-howto p{font-size:.92rem}
+  .is-inner .pf-ref{font-size:1.125rem;line-height:1.4}
+  main.is-inner ~ .ftr .ftr-word{margin-top:48px}
+  main.is-inner ~ .ftr .ftr-grid{row-gap:28px}
+  main.is-inner ~ .ftr .ftr-col:not(.ftr-lead) a{padding:4px 0}
+}
