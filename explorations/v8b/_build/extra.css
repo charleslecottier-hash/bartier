@@ -1280,3 +1280,7 @@ section.tr-ads .ad-img{height:auto}
   .ftr{padding-bottom:calc(20px + env(safe-area-inset-bottom))}
   .ftr .ftr-top{bottom:calc(20px + env(safe-area-inset-bottom))}
 }
+/* Bouton « retour en haut » : carré, flèche centrée (la règle générale des liens du pied de page le décentrait) */
+.ftr a.ftr-top{display:inline-grid;place-items:center;justify-content:center;width:44px;height:44px;min-height:44px;padding:0}
+.ftr a.ftr-top svg{display:block;width:16px;height:16px;margin:0}
+@media (max-width:760px){.ftr a.ftr-top{right:calc(var(--pad) + var(--cell))}.ftr .ftr-base{padding-right:64px}}
