@@ -1067,3 +1067,49 @@ section.tr-ads .ad-card{height:auto}
   .tc-calc-r{padding:16px 0 0;border-left:0;border-top:1px solid rgba(255,255,255,.3)}
 }
 section.tr-ads .ad-img{height:auto}
+
+/* ——— Téléphone, passe de finition : en-tête plus léger, menu en liste nette, titre avant la photo ——— */
+@media (max-width:900px){
+  :root{--hdr:56px}
+  .hdr-side{align-self:center;border-left:0}
+  .hdr-side a.hdr-cta{align-items:center;height:40px;padding:0 14px;border-radius:var(--r);overflow:hidden;font-size:.9rem;font-weight:500}
+  .hdr-side .hdr-cta .tick{display:none}
+  .hdr-menu{width:40px;height:40px;border-radius:var(--r);margin:0 var(--pad) 0 8px}
+  .menu{gap:24px;padding:8px var(--pad) calc(24px + env(safe-area-inset-bottom))}
+  .menu nav > a[href="/questions/"]{display:none}
+  .menu nav > a,.menu nav .menu-dd summary{padding:16px 0;border-bottom:1px solid rgba(10,20,36,.1);font:400 1.5rem/1.2 var(--f-display);letter-spacing:-.02em}
+  .menu nav .menu-dd{border-bottom:1px solid rgba(10,20,36,.1)}
+  .menu nav .menu-dd summary{border-bottom:0}
+  .menu nav .menu-dd summary .dd-chev{width:14px;height:9px;margin-right:2px}
+  .menu nav .menu-dd-list{margin:0 0 16px 2px;padding-left:16px;border-left:2px solid var(--tint)}
+  .menu nav .menu-dd-list a,.menu nav .menu-dd-list a:not(:has(small)){padding:10px 0;border-top:0;box-shadow:none;font:400 1.0625rem/1.35 var(--f-text);letter-spacing:0;color:#3d4553}
+  .menu nav .menu-dd-list a b{font-weight:400}
+  .menu nav .menu-dd-list a.is-all b{font-weight:500;color:var(--accent)}
+  .menu-foot{display:grid;gap:8px;font-size:1rem}
+  .menu-foot a.link{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 16px;border-radius:var(--r);font-weight:500}
+  .menu-foot a.link[href^="tel:"]{background:var(--ink);color:#fff}
+  .menu-foot a.link[href^="tel:"]::before{content:"";width:18px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z' fill='%23fff'/%3E%3C/svg%3E") center/18px no-repeat}
+  .menu-foot a.link[href^="mailto:"]{background:none;box-shadow:inset 0 0 0 1px rgba(10,20,36,.16);color:var(--ink)}
+}
+@media (max-width:760px){
+  section.sheet.pg-top{padding-top:calc(var(--hdr) + 20px)}
+  .pg-top .pg-grid{row-gap:24px}
+  .pg-top .pg-photo.frame{order:0}
+  .pg-top .pg-text{gap:16px}
+  .pg-top .crumbs{font-size:.84rem}
+  .wa-fab .wa-ico{width:48px;height:48px}
+}
+
+@media (max-width:760px){
+  /* annonces d'exemple : cartes de même hauteur, bandeau du bas sur deux lignes au plus */
+  section.tr-ads ul.sp-cols{align-items:stretch}
+  section.tr-ads .ad-card{height:100%}
+  section.tr-ads .ad-bar{margin-top:auto;gap:8px;padding:10px 12px}
+  section.tr-ads .ad-card .ad-angle{font-size:14px}
+  section.tr-ads .ad-card .ad-cta{padding:7px 10px;font-size:13px}
+  .tr-card-k span{white-space:nowrap}
+  /* barre « Décrire mes travaux » : texte sur une ligne, flèche à droite */
+  a.pf-sticky{flex-direction:row;align-items:center;justify-content:flex-start;gap:10px;padding:0 16px}
+  a.pf-sticky span{margin-left:auto;white-space:nowrap}
+  a.pf-sticky::after{content:"";flex:none;width:16px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+}
