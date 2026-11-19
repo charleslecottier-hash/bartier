@@ -640,7 +640,7 @@ META_MOCK = f"""<figure class="pg-photo mk" aria-label="Exemple d’annonce Face
       <p class="mk-text">Votre toiture a plus de 15 ans&nbsp;? Faites-la vérifier par un couvreur de votre secteur. Visite et chiffrage offerts.</p>
       <div class="mk-img"><img src="{ROOF_URL}" alt="" loading="lazy"></div>
       <div class="mk-cta"><span><small>toitures-lemaire.fr</small><b>Visite gratuite à domicile</b></span><em>Demander une visite</em></div>
-      <p class="mk-react"><span>👍 ❤️ 48</span><span>12 commentaires</span></p>
+      
     </div>
   </div>
   <figcaption class="mk-tag">Exemple</figcaption>
@@ -716,7 +716,7 @@ for t in TRADES:
     </div>
   </div>
 </section>""",
-        cols(t["problems"], "Ce qui vous coûte des chantiers aujourd'hui", "Ce qui coince souvent dans votre métier."),
+        cols([(h.rstrip("."), p) for h, p in t["problems"]], "Ce qui vous coûte des chantiers aujourd'hui", "Ce qui coince souvent dans votre métier."),
         f"""<section class="sheet tr-call" id="appel" data-tone="accent">
   <div class="grid sp-split">
     <div><h2 data-split>Ce que nous vérifions avant votre visite</h2><p>Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.</p></div>
@@ -775,7 +775,7 @@ HUB_FAQ = [
 write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & Co",
       "Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d'isolation, partout en France. Un seul artisan par métier et par secteur.",
       "\n\n".join([
-          top("Métiers", "Quel que soit votre métier, nous trouvons vos clients.", "Des propriétaires avec un vrai projet, près de chez vous. Un seul artisan par métier et par secteur.", crumbs(("Métiers", "/metiers/")), "Artisan souriant"),
+          top("Métiers", "Quel que soit votre métier, nous trouvons vos clients.", "Des propriétaires avec un projet concret, près de chez vous. Un seul artisan par métier et par secteur.", crumbs(("Métiers", "/metiers/")), "Artisan souriant"),
           HUB_SECTORS,
           label_tables(HUB_TABLE),
           HUB_GALLERY,
@@ -806,12 +806,12 @@ write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
                 ("Les projets déjà avancés", "Le propriétaire compare des entreprises. Celle qui le rappelle la première a souvent la visite."),
                 ("Les secteurs où les recherches sont nombreuses", "Assez de recherches autour de chez vous pour que la campagne tourne toute l'année.")],
                "Quand choisir Google ?", "Quand le propriétaire cherche déjà un artisan : il faut être visible, et le rappeler avant les autres."),
-          split("Une campagne réglée sur mesure", "Chaque clic coûte. L'essentiel du travail consiste à écarter ceux qui ne deviendront jamais des devis signés.",
+          split("Comment nous réglons votre campagne", "Chaque clic se paie : nous écartons ceux qui ne deviendront jamais des devis signés.",
                 ["Campagnes par métier et par commune de votre zone", "Recherches inutiles exclues : gratuit, pas cher, emploi, formation, bricolage",
-                 "Une page dédiée à votre entreprise, rapide sur mobile", "Chaque appel et chaque formulaire suivis jusqu'au rendez-vous",
+                 "Une page à votre nom, rapide sur mobile", "Chaque appel et chaque formulaire suivis jusqu'au rendez-vous",
                  "Rappel en moins de 5 minutes en semaine, projet vérifié, rendez-vous dans votre agenda"], tone="paper"),
-          split("Votre compte, votre budget, vos chiffres", "Tout est créé à votre nom. Vous gardez ce qui a été construit, même si vous arrêtez.",
-                ["Compte Google Ads à votre nom", "Budget payé directement à Google", "Chaque recherche, chaque clic, chaque euro visibles"]),
+          split("Tout est à votre nom", "Vous gardez ce qui a été construit, même si vous arrêtez.",
+                ["Compte Google Ads à votre nom", "Budget payé directement à Google", "Recherches, clics et dépenses visibles en détail"]),
           COMPARE.replace('class="sp-table"', 'class="sp-table is-google"', 1),  # page Google : la colonne Google est mise en avant
           faq(GOOGLE_FAQ),
           more("À lire aussi", "Tous les articles", "/blog/", READ_ADS),
@@ -827,14 +827,14 @@ write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & 
       "\n\n".join([
           top("Meta Ads · Facebook et Instagram", "Apparaissez sur Facebook et Instagram auprès de vos futurs clients.", "Des annonces à votre nom, vues par les propriétaires de votre secteur. Nous rappelons chaque demande en moins de 5 minutes.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_ANIM),
           cols([("Autour de votre dépôt", "Dans un rayon de 25 à 40 km, réglé commune par commune."),
-                ("Avec vos vraies photos", "Vos chantiers et votre équipe : rien ne convainc mieux un voisin."),
+                ("Avec vos photos de chantier", "Vos chantiers et votre équipe, plutôt que des images de banque."),
                 ("Au bon moment de l'année", "Après les intempéries, avant l'hiver, au printemps pour la rénovation.")],
                "Des annonces à votre nom", "Avec vos chantiers, montrées à vos futurs clients."),
           split("Chaque demande vérifiée au téléphone", "Nous appelons chaque personne qui répond à l'annonce. Seuls les projets sérieux arrivent dans votre agenda.",
                 ["Formulaire avec questions de tri et accord explicite d'être recontacté", "Preuve du consentement conservée pour chaque demande",
                  "Rappel en moins de 5 minutes, en semaine de 8 h à 19 h", "Propriétaire, projet, commune et délai vérifiés",
                  "Rendez-vous dans votre agenda, rappels la veille et deux heures avant", "Flyers dans les rues voisines de chaque chantier signé"], tone="paper"),
-          split("Votre page, votre compte, vos chiffres", "Tout est créé à votre nom, et tout vous reste si vous arrêtez.",
+          split("Tout est à votre nom", "Tout vous reste si vous arrêtez.",
                 ["Page Facebook et compte publicitaire à votre nom", "Budget payé directement à Meta", "Toutes les statistiques des annonces visibles"]),
           COMPARE,
           faq(META_FAQ),
@@ -913,8 +913,8 @@ for k in PF.SLUG:
 TEAM_ABOUT = """<section class="team-about sheet" id="equipe" data-kind="team" data-tone="dark">
   <div class="grid ta-grid">
     <div class="ta-head">
-      <h2 data-split>Qui vous répond ?<br> Nous.</h2>
-      <p>Pas de standard. Vous parlez aux fondateurs, du premier appel au lancement de vos annonces.</p>
+      <h2 data-split>Vous parlez aux fondateurs</h2>
+      <p>Du premier appel au lancement de vos annonces, sans standard.</p>
     </div>
     <div class="ta-body">
       <ul class="ta-people">
@@ -936,12 +936,12 @@ DUO = ('<figure class="pg-photo frame"><img src="/assets/photos/fondateurs-barti
 write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
       "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.",
       "\n\n".join([
-          top("Qui sommes-nous", "Deux fondateurs. Un seul objectif : votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), visual=DUO),
+          top("Qui sommes-nous", "Deux fondateurs au service de votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), visual=DUO),
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>Vous n'avez pas à courir après les devis</h2></div>
     <div class="prose">
-      <p>Vous avez du métier et des clients satisfaits. Ce qui vous manque, ce sont des projets sérieux, chaque semaine.</p>
+      <p>Vous avez du métier et des clients satisfaits, mais pas assez de projets sérieux chaque semaine.</p>
       <p>Les plateformes vendent la même demande à vous et à vos concurrents. Le bouche-à-oreille ne se commande pas. Et quand vous êtes sur un toit, vous ne pouvez pas répondre au téléphone.</p>
       <p>Alors nous nous en occupons pour vous : des annonces près de chez vous, chaque demande rappelée en moins de 5 minutes, et des visites rien que pour vous dans votre métier et votre secteur.</p>
     </div>
@@ -1144,7 +1144,7 @@ def pillar_page(G):
                 f'<div><dt>Prix d\'une demande</dt><dd>{per}</dd></div><div><dt>Chantiers signés</dt><dd>{s}</dd></div>'
                 f'<div class="is-rate"><dt>Demandes signées</dt><dd>{rate}</dd></div></dl>'
                 f'<p class="tc-slip-tot"><span>Coût par chantier signé</span><b>{res}</b>'
-                + ('<small class="tc-win">Le moins cher au final</small>' if win else "") + "</p></article>")
+                + ('<small class="tc-win">Le moins cher par chantier signé</small>' if win else "") + "</p></article>")
     trades = " · ".join(f'<a class="link" href="/metiers/{sl}/">{lb}</a>' for lb, sl in [("Couverture", "couverture"), ("Façade", "facade"), ("Menuiserie", "menuiserie-exterieure"), ("Charpente", "charpente"), ("Isolation", "isolation")])
     faq_items = [G["faq"][i] for i in (0, 1, 3, 5)]
     body = "\n\n".join([
@@ -1176,7 +1176,7 @@ def pillar_page(G):
       <p class="tc-calc-r"><span>Votre coût par chantier signé</span><output id="tc-r" for="tc-d tc-s" aria-live="polite">300 €</output><small id="tc-p">soit 10 % de votre marge</small></p>
     </div>
   </div>
-  <p class="tc-foot is-calc">Chiffres d'exemple, ce ne sont pas des moyennes. La demande la moins chère ne donne pas le chantier le moins cher.</p>
+  <p class="tc-foot is-calc">Chiffres d'exemple, pas des moyennes.</p>
 </section>""",
         f"""<section class="sheet tc-sec" id="pertes" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Où se perdent les chantiers ?</h2><p>Après la demande, quatre moments font perdre le chantier.</p></div>

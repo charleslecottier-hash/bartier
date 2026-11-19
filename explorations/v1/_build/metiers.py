@@ -59,7 +59,7 @@ TRADES = [
         "drop": ["Une tuile à remettre en place", "Une petite fuite à dépanner", "Les locataires et les demandes hors de votre zone"],
         "problems": [
             ("Trop de dépannages, pas assez de chantiers.", "Une tuile déplacée, une gouttière bouchée : vous vous déplacez pour un devis de quelques centaines d'euros, pendant qu'une réfection part chez un autre."),
-            ("Un planning qui suit la météo.", "Après un coup de vent, tout le monde appelle en même temps. Puis plus rien pendant des semaines. Difficile de prévoir le travail d'une équipe."),
+            ("Un planning qui suit la météo.", "Après un coup de vent, tout le monde appelle en même temps, puis plus rien pendant des semaines : difficile de prévoir le travail d'une équipe."),
             ("Une demande partagée entre plusieurs couvreurs.", "Sur les plateformes, le propriétaire reçoit plusieurs appels pour la même toiture. Il compare des prix, rarement la qualité du travail."),
         ],
         "questions": ["Êtes-vous propriétaire de la maison et l'occupez-vous ?", "Quels travaux envisagez-vous : réfection, rénovation, démoussage, zinguerie, fuite ?", "Quel est le matériau de la toiture et quel est son âge, à peu près ?", "Quelle est la taille de la maison ?", "Dans quelle commune se trouve-t-elle ?", "Quand souhaitez-vous faire les travaux ?"],

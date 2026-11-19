@@ -186,7 +186,7 @@ PLUS = {
     "lead-partage-lead-exclusif-rendez-vous-qualifie": dict(
         before="<h2>Les questions à poser avant de signer</h2>",
         insert=f"""<h2>Combien coûte vraiment une demande ?</h2>
-<p>Le prix affiché d'une demande ne dit pas grand-chose. Ce qui compte, c'est le <a href="/lexique/#cout-par-chantier-signe">coût par chantier signé</a> : le prix des demandes divisé par le nombre de chantiers qu'elles vous ont fait signer.</p>
+<p>Comparez plutôt le <a href="/lexique/#cout-par-chantier-signe">coût par chantier signé</a> : le prix des demandes divisé par le nombre de chantiers qu'elles vous ont fait signer.</p>
 <p>Exemple, avec des chiffres choisis pour le calcul (ce ne sont pas des moyennes) :</p>
 <table>
 <thead><tr><th></th><th>Demandes partagées</th><th>Demandes exclusives</th></tr></thead>
@@ -231,7 +231,7 @@ PLUS = {
 <tr><td>Typiquement</td><td>Urgences, projets mûrs</td><td>Rénovation, entretien, projets à venir</td></tr>
 <tr><td>Le ciblage</td><td>Les recherches, dans vos communes</td><td>Un rayon autour de votre dépôt</td></tr>
 <tr><td>Le point clé</td><td>Écarter les recherches inutiles</td><td>Trier les demandes au téléphone</td></tr>
-<tr><td>Ce qui convainc</td><td>Répondre vite</td><td>Vos vraies photos de chantier</td></tr>
+<tr><td>Ce qui convainc</td><td>Répondre vite</td><td>Vos photos de chantier</td></tr>
 </tbody>
 </table>
 

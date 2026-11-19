@@ -72,7 +72,7 @@ Adresse : https://bartierandco.com/metiers/
 Des clients pour couvreurs, menuisiers, façadiers, charpentiers et entreprises d’isolation, partout en France. Un seul artisan par métier et par secteur.
 
 Métiers
-Des propriétaires avec un vrai projet, près de chez vous. Un seul artisan par métier et par secteur.
+Des propriétaires avec un projet concret, près de chez vous. Un seul artisan par métier et par secteur.
 
 ### Choisissez votre métier
 
@@ -176,15 +176,15 @@ Projets écartés
 Ce qui coince souvent dans votre métier.
 - 01
 
-#### Trop de dépannages, pas assez de chantiers.
+#### Trop de dépannages, pas assez de chantiers
 Une tuile déplacée, une gouttière bouchée : vous vous déplacez pour un devis de quelques centaines d’euros, pendant qu’une réfection part chez un autre.
 - 02
 
-#### Un planning qui suit la météo.
-Après un coup de vent, tout le monde appelle en même temps. Puis plus rien pendant des semaines. Difficile de prévoir le travail d’une équipe.
+#### Un planning qui suit la météo
+Après un coup de vent, tout le monde appelle en même temps, puis plus rien pendant des semaines : difficile de prévoir le travail d’une équipe.
 - 03
 
-#### Une demande partagée entre plusieurs couvreurs.
+#### Une demande partagée entre plusieurs couvreurs
 Sur les plateformes, le propriétaire reçoit plusieurs appels pour la même toiture. Il compare des prix, rarement la qualité du travail.
 
 ### Ce que nous vérifions avant votre visite
@@ -256,15 +256,15 @@ Projets écartés
 Ce qui coince souvent dans votre métier.
 - 01
 
-#### Des propriétaires échaudés par les fausses promesses.
+#### Des propriétaires échaudés par les fausses promesses
 Le secteur a connu les offres trop belles et les aides annoncées à tort. Beaucoup de propriétaires arrivent méfiants, ou avec des attentes impossibles.
 - 02
 
-#### Une mise en concurrence avec les grandes enseignes.
+#### Une mise en concurrence avec les grandes enseignes
 Le propriétaire compare votre devis au prix d’une fenêtre en magasin. Sans échange avant la visite, il ne voit pas ce qui justifie l’écart.
 - 03
 
-#### Des projets qui s’endorment après le devis.
+#### Des projets qui s’endorment après le devis
 Entre la visite et la décision, il peut s’écouler des semaines. Sans relance, le projet passe au second plan, ou chez un concurrent.
 
 ### Ce que nous vérifions avant votre visite
@@ -335,15 +335,15 @@ Projets écartés
 Ce qui coince souvent dans votre métier.
 - 01
 
-#### Une décision qui se prend à deux.
+#### Une décision qui se prend à deux
 Un ravalement se décide en couple, après plusieurs devis. Une visite faite sans les deux décideurs est souvent une visite à refaire.
 - 02
 
-#### Des chantiers qui se signent au printemps.
+#### Des chantiers qui se signent au printemps
 Les propriétaires pensent à leur façade quand il fait beau. Pour travailler toute la belle saison, l’agenda doit se remplir dès l’hiver.
 - 03
 
-#### Une demande partagée entre plusieurs entreprises.
+#### Une demande partagée entre plusieurs entreprises
 Sur les plateformes, plusieurs façadiers reçoivent la même demande. Le propriétaire compare surtout des prix au mètre carré.
 
 ### Ce que nous vérifions avant votre visite
@@ -414,15 +414,15 @@ Projets écartés
 Ce qui coince souvent dans votre métier.
 - 01
 
-#### Des projets longs à mûrir.
+#### Des projets longs à mûrir
 Une surélévation ou une extension passe par des plans et des démarches. Beaucoup de demandes arrivent bien trop tôt pour signer.
 - 02
 
-#### Des demandes mêlées à la couverture.
+#### Des demandes mêlées à la couverture
 Les propriétaires ne distinguent pas toujours charpente et couverture. Sans tri, vous recevez des demandes qui ne relèvent pas de votre métier.
 - 03
 
-#### Un savoir-faire difficile à montrer.
+#### Un savoir-faire difficile à montrer
 Le propriétaire compare des devis sans voir la différence entre deux charpentes. La visite est le moment où tout se joue.
 
 ### Ce que nous vérifions avant votre visite
@@ -492,15 +492,15 @@ Projets écartés
 Ce qui coince souvent dans votre métier.
 - 01
 
-#### Un secteur abîmé par le démarchage.
+#### Un secteur abîmé par le démarchage
 Après des années d’appels non sollicités, les propriétaires se méfient. Le démarchage téléphonique dans la rénovation énergétique est d’ailleurs interdit.
 - 02
 
-#### Des demandes motivées par les seules aides.
+#### Des demandes motivées par les seules aides
 Beaucoup de demandes ne portent que sur l’aide promise. Quand le propriétaire n’y a pas droit, le projet s’arrête.
 - 03
 
-#### Une demande partagée entre plusieurs entreprises.
+#### Une demande partagée entre plusieurs entreprises
 Sur les plateformes, la même demande part chez plusieurs entreprises. Le propriétaire choisit souvent le moins cher.
 
 ### Ce que nous vérifions avant votre visite
@@ -570,19 +570,19 @@ Le propriétaire compare des entreprises. Celle qui le rappelle la première a s
 #### Les secteurs où les recherches sont nombreuses
 Assez de recherches autour de chez vous pour que la campagne tourne toute l’année.
 
-### Une campagne réglée sur mesure
-Chaque clic coûte. L’essentiel du travail consiste à écarter ceux qui ne deviendront jamais des devis signés.
+### Comment nous réglons votre campagne
+Chaque clic se paie : nous écartons ceux qui ne deviendront jamais des devis signés.
 - Campagnes par métier et par commune de votre zone
 - Recherches inutiles exclues : gratuit, pas cher, emploi, formation, bricolage
-- Une page dédiée à votre entreprise, rapide sur mobile
+- Une page à votre nom, rapide sur mobile
 - Chaque appel et chaque formulaire suivis jusqu’au rendez-vous
 - Rappel en moins de 5 minutes en semaine, projet vérifié, rendez-vous dans votre agenda
 
-### Votre compte, votre budget, vos chiffres
-Tout est créé à votre nom. Vous gardez ce qui a été construit, même si vous arrêtez.
+### Tout est à votre nom
+Vous gardez ce qui a été construit, même si vous arrêtez.
 - Compte Google Ads à votre nom
 - Budget payé directement à Google
-- Chaque recherche, chaque clic, chaque euro visibles
+- Recherches, clics et dépenses visibles en détail
 
 ### Deux canaux, deux demandes
 Google capte ceux qui cherchent déjà. Meta touche ceux qui n’ont pas encore cherché. Nous choisissons selon votre métier et votre secteur.
@@ -633,8 +633,8 @@ Avec vos chantiers, montrées à vos futurs clients.
 Dans un rayon de 25 à 40 km, réglé commune par commune.
 - 02
 
-#### Avec vos vraies photos
-Vos chantiers et votre équipe : rien ne convainc mieux un voisin.
+#### Avec vos photos de chantier
+Vos chantiers et votre équipe, plutôt que des images de banque.
 - 03
 
 #### Au bon moment de l’année
@@ -649,8 +649,8 @@ Nous appelons chaque personne qui répond à l’annonce. Seuls les projets sér
 - Rendez-vous dans votre agenda, rappels la veille et deux heures avant
 - Flyers dans les rues voisines de chaque chantier signé
 
-### Votre page, votre compte, vos chiffres
-Tout est créé à votre nom, et tout vous reste si vous arrêtez.
+### Tout est à votre nom
+Tout vous reste si vous arrêtez.
 - Page Facebook et compte publicitaire à votre nom
 - Budget payé directement à Meta
 - Toutes les statistiques des annonces visibles
@@ -678,7 +678,7 @@ Pas toutes. C’est pourquoi chaque demande est rappelée et vérifiée avant d�
 En général 25 à 40 km autour de votre dépôt, réglés commune par commune selon les chantiers que vous voulez.
 
 **Faut-il des photos de mes chantiers ?**
-Oui, c’est ce qui convainc le mieux un voisin. Vos vraies photos de chantier et de votre équipe passent avant les images de banque.
+Oui. Vos photos de chantier et de votre équipe passent avant les images de banque.
 
 ### À lire aussi
 - Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
@@ -754,7 +754,7 @@ Pour ne pas oublier le rendez-vous.
 Visite et devis offerts. Vous décidez, sans engagement.
 
 ### Fuite de toiture ? Les 5 bons réflexes
-Dans l’ordre. Puis signalez-nous la fuite : rappel en priorité.
+Suivez-les dans l’ordre, puis signalez-nous la fuite : nous vous rappelons en priorité.
 
 #### Mettez-vous en sécurité
 Éloignez l’eau des prises. Au moindre doute, coupez le courant de la pièce.
@@ -773,7 +773,7 @@ Il trouve l’origine de la fuite, protège si besoin et chiffre la réparation.
 Rappel prioritaire
 
 ### Combien vont coûter vos travaux ?
-Les prix en ligne sont des moyennes. Ce qui compte, c’est votre chantier. La visite est gratuite.
+Les prix en ligne sont des moyennes : seul l’artisan peut chiffrer votre chantier, après une visite gratuite.
 
 #### Prix d’une réfection de toiture
 60 à 500 €/m² Rénovation, pose comprise
@@ -960,7 +960,7 @@ Source : QuelleEnergie, consulté le 18/11/2026
 Ce repère reste une moyenne. Seule une visite permet un devis fiable, et elle ne vous coûte rien.
 
 ### Fuite de toiture ? Les 5 bons réflexes
-Dans l’ordre. Puis signalez-nous la fuite : rappel en priorité.
+Suivez-les dans l’ordre, puis signalez-nous la fuite : nous vous rappelons en priorité.
 
 #### Mettez-vous en sécurité
 Éloignez l’eau des prises. Au moindre doute, coupez le courant de la pièce.
@@ -1725,7 +1725,7 @@ Qui sommes-nous
 Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.
 
 ### Vous n’avez pas à courir après les devis
-Vous avez du métier et des clients satisfaits. Ce qui vous manque, ce sont des projets sérieux, chaque semaine.
+Vous avez du métier et des clients satisfaits, mais pas assez de projets sérieux chaque semaine.
 Les plateformes vendent la même demande à vous et à vos concurrents. Le bouche-à-oreille ne se commande pas. Et quand vous êtes sur un toit, vous ne pouvez pas répondre au téléphone.
 Alors nous nous en occupons pour vous : des annonces près de chez vous, chaque demande rappelée en moins de 5 minutes, et des visites rien que pour vous dans votre métier et votre secteur.
 
@@ -1752,7 +1752,7 @@ Votre métier, votre secteur, combien de chantiers vous pouvez prendre en plus. 
 Sous 24 à 48 heures
 
 #### L’intégration
-Accès à votre page, vos vraies photos de chantier, votre zone et vos disponibilités.
+Accès à votre page, vos photos de chantier, votre zone et vos disponibilités.
 3 à 5 jours après
 
 #### Les annonces tournent
@@ -1762,8 +1762,8 @@ Chaque semaine
 #### Vous faites les visites
 Un SMS après chaque visite : devis envoyé ou chantier signé. Nous ajustons les annonces.
 
-### Qui vous répond ? Nous.
-Pas de standard. Vous parlez aux fondateurs, du premier appel au lancement de vos annonces.
+### Vous parlez aux fondateurs
+Du premier appel au lancement de vos annonces, sans standard.
 
 #### Charles Le Cottier
 Co-fondateur
@@ -1893,7 +1893,7 @@ Adresse : https://bartierandco.com/blog/lead-partage-lead-exclusif-rendez-vous-q
 Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer.
 
 Comprendre
-Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
+Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 19 novembre 2026 4 min de lecture
 Une demande partagée est une demande de devis vendue à plusieurs entreprises. Une demande exclusive n’est vendue qu’à vous, mais c’est à vous de rappeler. Un rendez-vous qualifié est une visite déjà fixée, chez un propriétaire dont le projet a été vérifié.
 
 ### Quelle différence entre une demande de devis et un rendez-vous qualifié ?
@@ -1916,7 +1916,7 @@ Quelqu’un a rappelé le propriétaire, vérifié qu’il est propriétaire occ
 - Ce que vous recevez | Un nom et un numéro | Un nom et un numéro | Une visite fixée
 
 ### Combien coûte vraiment une demande ?
-Le prix affiché d’une demande ne dit pas grand-chose. Ce qui compte, c’est le coût par chantier signé : le prix des demandes divisé par le nombre de chantiers qu’elles vous ont fait signer.
+Comparez plutôt le coût par chantier signé : le prix des demandes divisé par le nombre de chantiers qu’elles vous ont fait signer.
 Exemple, avec des chiffres choisis pour le calcul (ce ne sont pas des moyennes) :
 - Demandes partagées | Demandes exclusives
 - Prix d’une demande | 25 € | 60 €
@@ -1973,7 +1973,7 @@ Adresse : https://bartierandco.com/blog/google-ads-ou-meta-ads-artisan/
 Google capte ceux qui cherchent déjà, Meta touche ceux qui n’ont pas encore cherché. Comment choisir selon votre métier et votre secteur.
 
 Publicité
-Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
+Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 19 novembre 2026 4 min de lecture
 Google Ads capte une demande qui existe déjà : le propriétaire cherche un artisan. Meta Ads (Facebook et Instagram) suscite une demande chez des propriétaires qui n’ont pas encore cherché. Le premier convient aux urgences et aux projets mûrs, le second aux rénovations et à l’entretien.
 
 ### Demande exprimée ou demande suscitée
@@ -1996,7 +1996,7 @@ Dans les deux cas, la demande doit être rappelée en quelques minutes. C’est 
 - Typiquement | Urgences, projets mûrs | Rénovation, entretien, projets à venir
 - Le ciblage | Les recherches, dans vos communes | Un rayon autour de votre dépôt
 - Le point clé | Écarter les recherches inutiles | Trier les demandes au téléphone
-- Ce qui convainc | Répondre vite | Vos vraies photos de chantier
+- Ce qui convainc | Répondre vite | Vos photos de chantier
 
 ### Combien de budget prévoir pour commencer ?
 Il n’existe pas de bon chiffre pour tous : le prix d’un clic dépend du métier, de la ville et de la saison. Partez de votre objectif : combien de chantiers voulez-vous signer par mois, et combien êtes-vous prêt à payer pour chacun ?
@@ -2173,7 +2173,7 @@ Sur un mois
 
 **Demandes signées**
 - 1 sur 2
-Coût par chantier signé 150 € Le moins cher au final
+Coût par chantier signé 150 € Le moins cher par chantier signé
 
 ### Où se perdent les chantiers ?
 Après la demande, quatre moments font perdre le chantier.

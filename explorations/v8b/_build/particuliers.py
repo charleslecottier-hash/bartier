@@ -271,7 +271,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 
     leak = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in LEAK)
     leak = f"""<section class="sheet pf-leak" id="fuite-toiture" data-tone="accent">
-  <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;? Les 5 bons réflexes</h2><p>Dans l’ordre. Puis signalez-nous la fuite&nbsp;: rappel en priorité.</p></div>
+  <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;? Les 5 bons réflexes</h2><p>Suivez-les dans l’ordre, puis signalez-nous la fuite&nbsp;: nous vous rappelons en priorité.</p></div>
   <ol class="pf-howto">{leak}</ol>
   <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick()}</a><span class="pf-prio">Rappel prioritaire</span></p>
 </section>"""
@@ -282,7 +282,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
            "isolation": ("40 à 45\u00a0€/m²", "Combles perdus, pose comprise")}
     prices = "".join(f'<li><h3>{t[8]}</h3><p class="pf-fig"><b>{FIG[t[0]][0]}</b><span>{FIG[t[0]][1]}</span></p><p class="pf-why">Varie selon&nbsp;: {t[9][0].lower() + t[9][1:]}</p><p class="pf-src">Source&nbsp;: {REF[t[0]][1]}</p><a class="link pf-more" href="/devis-travaux/{SLUG[t[0]]}/">Voir la page {t[1]}</a></li>' for t in TRADES)
     price = f"""<section class="sheet" id="prix" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Combien vont coûter vos travaux&nbsp;?</h2><p>Les prix en ligne sont des moyennes. Ce qui compte, c’est votre chantier. La visite est gratuite.</p></div>
+  <div class="grid sp-head"><h2 data-split>Combien vont coûter vos travaux&nbsp;?</h2><p>Les prix en ligne sont des moyennes : seul l’artisan peut chiffrer votre chantier, après une visite gratuite.</p></div>
   <ul class="pf-prices">{prices}</ul>
   <p class="pf-mid"><a class="btn" href="#projet"><span>Décrire mes travaux</span>{tick()}</a><a class="link" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
 </section>"""

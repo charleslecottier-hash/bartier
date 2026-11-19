@@ -225,7 +225,7 @@ META_FAQ = [
     ("Est-ce légal de rappeler ces personnes ?", "Oui. Le formulaire demande leur accord explicite pour être recontactées par votre entreprise, et la preuve est conservée. Nous ne démarchons personne."),
     ("Les demandes Facebook sont-elles sérieuses ?", "Pas toutes. C'est pourquoi chaque demande est rappelée et vérifiée avant d'arriver dans votre agenda : propriétaire, projet, commune, délai."),
     ("Dans quel rayon les annonces sont-elles diffusées ?", "En général 25 à 40 km autour de votre dépôt, réglés commune par commune selon les chantiers que vous voulez."),
-    ("Faut-il des photos de mes chantiers ?", "Oui, c'est ce qui convainc le mieux un voisin. Vos vraies photos de chantier et de votre équipe passent avant les images de banque."),
+    ("Faut-il des photos de mes chantiers ?", "Oui. Vos photos de chantier et de votre équipe passent avant les images de banque."),
 ]
 page("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & Co",
      "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et qualifiés.",
