@@ -1264,7 +1264,7 @@ section.tr-ads .ad-img{height:auto}
   /* cibles tactiles */
   .mt-table .mt-name a{display:inline-flex;align-items:center;min-height:40px}
   a.pf-tl{display:inline-flex;align-items:center;min-height:40px}
-  .facts-dl dd a,.pf-dl dd a{display:inline-flex;align-items:center;min-height:36px}
+  .facts-dl dd a,.pf-dl dd a{display:inline;padding:8px 0}
   .ftr .ftr-legal a,.ftr .ftr-cookies{min-height:36px;font-size:.8125rem}
 }
 
@@ -1331,4 +1331,16 @@ section.tr-ads .ad-img{height:auto}
   .btn:active,.hdr-cta:active,.pf-sticky:active{transform:scale(.98)}
   .dq-tile:active span,.pf-tile:active,.pf-opt:active{background:var(--paper)}
   .fq summary:active,.menu-dd summary:active,.ftr-dd > summary:active{opacity:.7}
+}
+
+/* Pied de page : l'adresse n'y figure plus (elle reste dans les mentions légales) ; le dernier contact reprend la mise en forme des autres */
+.ftr .ftr-contact li:last-child{flex-basis:auto;margin-top:0}
+
+/* ——— Qui sommes-nous, bas de page : fiche plus courte, liens sur des lignes régulières, boutons de contact alignés sur le reste du site ——— */
+.prose .facts-dl dd a{text-underline-offset:.22em}
+@media (max-width:760px){
+  .ta-acts{flex-direction:column;align-items:stretch;gap:12px}
+  .ta-acts .dq-wa{display:flex;align-items:center;justify-content:center;min-height:52px;width:100%}
+  .ta-acts .link{align-self:flex-start}
+  .team-about .ta-body{gap:20px}
 }

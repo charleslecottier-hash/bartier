@@ -232,7 +232,7 @@ ORG_REF = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co
 ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "alternateName": "Bartier and Co",
        "slogan": "Faire équipe. Faire la différence.", "url": SITE + "/", "logo": SITE + "/assets/logo-bartier.png", "image": SITE + "/assets/og.png",
        "email": "contact@bartierandco.com", "telephone": PHONE,
-       "address": {"@type": "PostalAddress", "streetAddress": "6 rue Saint-Bon", "postalCode": "75004", "addressLocality": "Paris", "addressCountry": "FR"},
+       "address": {"@type": "PostalAddress", "addressCountry": "FR"},
        "contactPoint": {"@type": "ContactPoint", "telephone": PHONE, "email": "contact@bartierandco.com", "contactType": "customer service", "areaServed": "FR", "availableLanguage": "French",
                         "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "19:00"}},
        "areaServed": {"@type": "Country", "name": "France"},
@@ -716,7 +716,7 @@ for t in TRADES:
     </div>
   </div>
 </section>""",
-        cols([(h.rstrip("."), p) for h, p in t["problems"]], "Ce qui vous coûte des chantiers aujourd'hui", "Ce qui coince souvent dans votre métier."),
+        cols([(h.rstrip("."), p) for h, p in t["problems"]], "Ce qui vous coûte des chantiers aujourd'hui", ""),
         f"""<section class="sheet tr-call" id="appel" data-tone="accent">
   <div class="grid sp-split">
     <div><h2 data-split>Ce que nous vérifions avant votre visite</h2><p>Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Si le projet ne correspond pas, pas de rendez-vous.</p></div>
@@ -725,7 +725,7 @@ for t in TRADES:
   </div>
 </section>""",
         f"""<section class="sheet tr-ads" data-tone="tint">
-  <div class="grid sp-head"><h2 data-split>Des annonces à votre nom, autour de votre dépôt</h2><p>Facebook et Instagram, dans un rayon de 25 à 40 km autour de votre dépôt, avec vos photos de chantier. Exemples d'annonces, rédigées ensuite avec vous.</p></div>
+  <div class="grid sp-head"><h2 data-split>Des annonces à votre nom, autour de votre dépôt</h2><p>Facebook et Instagram, dans un rayon de 25 à 40 km, avec vos photos de chantier. Exemples d'annonces, rédigées ensuite avec vous.</p></div>
   <ul class="sp-cols is-cards">
 {angles}
   </ul>
@@ -785,7 +785,7 @@ write("/metiers/", "Trouver des chantiers par métier du bâtiment | Bartier & C
     <div><h2 data-split>Une méthode adaptée à votre métier</h2></div>
     <div class="prose">
       <p>Des annonces locales à votre nom, sur <a href="/google-ads/">Google</a> et sur <a href="/meta-ads/">Facebook et Instagram</a>. Chaque demande client est rappelée en moins de 5 minutes, vérifiée, puis la visite est fixée dans votre agenda.</p>
-      <p>Un seul artisan par métier et par secteur : vos rendez-vous ne sont proposés à personne d'autre. Pour comparer avec les autres façons de trouver des clients : <a href="/trouver-des-chantiers/">comment trouver des chantiers</a>.</p>
+      <p>Pour comparer avec les autres façons de trouver des clients : <a href="/trouver-des-chantiers/">comment trouver des chantiers</a>.</p>
     </div>
   </div>
 </section>""",
@@ -958,13 +958,11 @@ write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
     <div><h2 data-split>Bartier & Co en bref</h2></div>
     <div class="prose">
       <dl class="facts-dl">
-        <div><dt>Société</dt><dd>Bartier & Co, SAS. 6 rue Saint-Bon, 75004 Paris.</dd></div>
-        <div><dt>Fondateurs</dt><dd>Charles Le Cottier et Martin Barthélémy, co-fondateurs.</dd></div>
+        <div><dt>Société</dt><dd>Bartier & Co, SAS. <a href="/mentions-legales/">Mentions légales</a>.</dd></div>
         <div><dt>Activité</dt><dd>Trouver des clients aux artisans du bâtiment : annonces locales Google et Meta, rappel des demandes en moins de 5 minutes, visites fixées dans l'agenda.</dd></div>
         <div><dt>Métiers</dt><dd><a href="/metiers/couverture/">Couverture</a>, <a href="/metiers/facade/">façade</a>, <a href="/metiers/menuiserie-exterieure/">menuiserie extérieure</a>, <a href="/metiers/charpente/">charpente</a>, <a href="/metiers/isolation/">isolation</a>.</dd></div>
         <div><dt>Zone</dt><dd>France. Un seul artisan par métier et par secteur, sans engagement de durée.</dd></div>
         <div><dt>Particuliers</dt><dd><a href="/devis-travaux/">Mise en relation gratuite</a> avec un artisan partenaire.</dd></div>
-        <div><dt>Contact</dt><dd><a href="tel:+33781018936">07 81 01 89 36</a>, <a href="mailto:contact@bartierandco.com">contact@bartierandco.com</a>. Du lundi au vendredi, de 8 h à 19 h.</dd></div>
       </dl>
     </div>
   </div>

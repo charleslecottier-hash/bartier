@@ -20,12 +20,12 @@
   "sig": "af053e86a1d525ac"
  },
  "/conditions-du-service/": {
-  "date": "2026-11-18",
-  "sig": "3b72023e3d41f7ec"
+  "date": "2026-11-19",
+  "sig": "bd2ade807f2a270c"
  },
  "/confidentialite/": {
-  "date": "2026-11-18",
-  "sig": "84de203f933c1fb0"
+  "date": "2026-11-19",
+  "sig": "e44ba8fba83c0134"
  },
  "/cookies/": {
   "date": "2026-11-18",
@@ -33,27 +33,27 @@
  },
  "/devis-travaux/": {
   "date": "2026-11-19",
-  "sig": "29de3747d47d52b9"
+  "sig": "6bd877f933fce5fd"
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-19",
-  "sig": "8ae13401253534b4"
+  "sig": "3b4a2d77067ecb11"
  },
  "/devis-travaux/fenetres/": {
   "date": "2026-11-19",
-  "sig": "351c9c3fa4f90663"
+  "sig": "139fc263496f59b5"
  },
  "/devis-travaux/isolation/": {
   "date": "2026-11-19",
-  "sig": "bb2c1ef894d82c42"
+  "sig": "a86cbfb98a129edc"
  },
  "/devis-travaux/ravalement-facade/": {
   "date": "2026-11-19",
-  "sig": "ddacd61a3877edee"
+  "sig": "b6e4a96fdb91e2df"
  },
  "/devis-travaux/toiture/": {
   "date": "2026-11-19",
-  "sig": "6872e9257a510287"
+  "sig": "c04cee76a4136ed3"
  },
  "/google-ads/": {
   "date": "2026-11-19",
@@ -73,27 +73,27 @@
  },
  "/metiers/": {
   "date": "2026-11-19",
-  "sig": "bdb1555985de0648"
+  "sig": "5fa120622e9a4658"
  },
  "/metiers/charpente/": {
   "date": "2026-11-19",
-  "sig": "a2683064760adedb"
+  "sig": "8ef08140a0664f63"
  },
  "/metiers/couverture/": {
   "date": "2026-11-19",
-  "sig": "e374d764a612608f"
+  "sig": "b4a48ee6c2e58e30"
  },
  "/metiers/facade/": {
   "date": "2026-11-19",
-  "sig": "72fa3c9ff399223b"
+  "sig": "a5f0aab34f716709"
  },
  "/metiers/isolation/": {
   "date": "2026-11-19",
-  "sig": "6e7a3bd6cf0d6ef2"
+  "sig": "ba06951efd53daaf"
  },
  "/metiers/menuiserie-exterieure/": {
   "date": "2026-11-19",
-  "sig": "dda02e568964b199"
+  "sig": "6fdb7dd0f88eccb0"
  },
  "/questions/": {
   "date": "2026-11-18",
@@ -101,7 +101,7 @@
  },
  "/qui-sommes-nous/": {
   "date": "2026-11-19",
-  "sig": "0420768d10e550f0"
+  "sig": "364baabefde2f108"
  },
  "/trouver-des-chantiers/": {
   "date": "2026-11-19",

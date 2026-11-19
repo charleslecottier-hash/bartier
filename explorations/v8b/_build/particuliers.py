@@ -61,7 +61,7 @@ BRIEF = [
     ("Le rendez-vous", "Fixé pendant notre appel, rappelé par SMS avant la visite."),
     ("Combien d’artisans", "Un seul. Vos coordonnées ne vont à personne d’autre."),
     ("La zone", "Selon votre commune. Hors zone, nous vous le disons à l’appel."),
-    ("La société", "Bartier &amp; Co SAS, 6 rue Saint-Bon, 75004 Paris."),
+    ("La société", "Bartier &amp; Co SAS. <a href=\"/mentions-legales/\">Mentions légales</a>."),
 ]
 
 LEAK = [
@@ -218,9 +218,9 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     promise = f"""<section class="sheet pf-promise" id="promesse" data-tone="accent">
   <div class="grid sp-head"><h2 data-split>Fini les artisans qui ne rappellent pas.</h2><p>Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.</p></div>
   <ul class="pf-proms">
-    <li><b>5<small>min</small></b><span>pour vous rappeler, du lundi au vendredi de 8 h à 19 h</span></li>
-    <li><b>1<small>appel</small></b><span>et la date de visite est fixée avec l’artisan</span></li>
-    <li><b>1<small>SMS</small></b><span>pour vous rappeler le rendez-vous avant la visite</span></li>
+    <li><b>5<small>min</small></b><span>pour vous rappeler, en semaine de 8 h à 19 h</span></li>
+    <li><b>1<small>appel</small></b><span>pour fixer la date de visite</span></li>
+    <li><b>1<small>SMS</small></b><span>de rappel avant la visite</span></li>
     <li><b>0<small>€</small></b><span>pour vous&nbsp;: visite et devis offerts, sans engagement</span></li>
   </ul>
   <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
@@ -247,12 +247,12 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <div class="grid sp-head"><h2 data-split>Votre devis, étape par étape</h2><p>1 minute pour vous. Le reste, nous nous en occupons.</p></div>
   <ol class="pf-time">
     <li><span class="pf-t">Maintenant</span><h3>Décrivez vos travaux</h3><p>5 questions, 1 minute. Aucun compte à créer.</p></li>
-    <li><span class="pf-t">En moins de 5 minutes</span><h3>Nous vous rappelons</h3><p>Une vraie personne vérifie votre besoin, en semaine de 8 h à 19 h.</p></li>
+    <li><span class="pf-t">En moins de 5 minutes</span><h3>Nous vous rappelons</h3><p>Une vraie personne vérifie votre besoin.</p></li>
     <li><span class="pf-t">Pendant l’appel</span><h3>La visite est fixée</h3><p>Directement dans l’agenda de l’artisan de votre secteur.</p></li>
-    <li><span class="pf-t">Avant la visite</span><h3>Rappel par SMS</h3><p>Pour ne pas oublier le rendez-vous.</p></li>
-    <li><span class="pf-t">Le jour J</span><h3>L’artisan chiffre chez vous</h3><p>Visite et devis offerts. Vous décidez, sans engagement.</p></li>
+    <li><span class="pf-t">Avant la visite</span><h3>Rappel par SMS</h3></li>
+    <li><span class="pf-t">Le jour J</span><h3>L’artisan chiffre chez vous</h3><p>Vous décidez, sans engagement.</p></li>
   </ol>
-  {band("Prêt&nbsp;? C’est gratuit.", "Obtenir mon devis gratuit", "1 minute, 5 questions.")}
+  {band("Prêt&nbsp;? C’est gratuit.", "Obtenir mon devis gratuit")}
 </section>"""
 
     compare = f"""<section class="sheet" data-tone="tint">
@@ -309,7 +309,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     end = f"""<section class="sheet pf-end" data-tone="accent">
   <div class="grid pf-end-grid">
     <h2 data-split>Décrivez vos travaux. Nous fixons la visite.</h2>
-    <div><p class="pf-season"></p><p>1 minute pour décrire vos travaux. 1 appel pour fixer la visite. 1 artisan de votre secteur.</p><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></div>
+    <div><p class="pf-season"></p><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></div>
   </div>
 </section>
 <a class="pf-sticky" href="#projet">Obtenir mon devis gratuit<span>1 min</span></a>"""
@@ -663,7 +663,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
 </section>"""
     price = f"""<section class="sheet" id="prix" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>{P["price_h2"]}</h2><p>{t[9]}</p></div>
-  <div class="pf-refbox"><p class="pf-ref">{REF[key][0]}</p><p class="pf-src">Source&nbsp;: {REF[key][1]}</p><p>Ce repère reste une moyenne. Seule une visite permet un devis fiable, et elle ne vous coûte rien.</p>
+  <div class="pf-refbox"><p class="pf-ref">{REF[key][0]}</p><p class="pf-src">Source&nbsp;: {REF[key][1]}</p><p>C’est une moyenne : seule une visite permet un devis fiable.</p>
   <a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a></div>
 </section>"""
     brief = [("Le service", P["brief"])] + BRIEF[1:]
