@@ -243,17 +243,6 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   {band("Vos travaux ne sont pas dans la liste&nbsp;?", "Obtenir mon devis gratuit", "Décrivez-les quand même. Nous vous disons si un artisan partenaire peut s’en charger.")}
 </section>"""
 
-    steps = f"""<section class="sheet" id="etapes" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Votre devis, étape par étape</h2><p>1 minute pour vous. Le reste, nous nous en occupons.</p></div>
-  <ol class="pf-time">
-    <li><span class="pf-t">Maintenant</span><h3>Décrivez vos travaux</h3><p>5 questions, 1 minute. Aucun compte à créer.</p></li>
-    <li><span class="pf-t">En moins de 5 minutes</span><h3>Nous vous rappelons</h3><p>Une vraie personne vérifie votre besoin.</p></li>
-    <li><span class="pf-t">Pendant l’appel</span><h3>La visite est fixée</h3><p>Directement dans l’agenda de l’artisan de votre secteur.</p></li>
-    <li><span class="pf-t">Avant la visite</span><h3>Rappel par SMS</h3></li>
-    <li><span class="pf-t">Le jour J</span><h3>L’artisan chiffre chez vous</h3><p>Vous décidez, sans engagement.</p></li>
-  </ol>
-  {band("Prêt&nbsp;? C’est gratuit.", "Obtenir mon devis gratuit")}
-</section>"""
 
     compare = f"""<section class="sheet" data-tone="tint">
   <div class="grid sp-head"><h2 data-split>Pas cinq entreprises. Un seul artisan.</h2><p>Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, nous vous rappelons, puis un seul artisan s’occupe de votre projet.</p></div>
@@ -315,8 +304,8 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 <a class="pf-sticky" href="#projet">Obtenir mon devis gratuit<span>1 min</span></a>"""
 
     if parts:
-        return dict(form=form, promise=promise, steps=steps, compare=compare, leak=leak, serious=serious, end=end)
-    return "\n\n".join([hero, promise, trades, steps, leak, price, serious, brief, faq, end])  # tableau « Pas cinq entreprises » retiré
+        return dict(form=form, promise=promise, compare=compare, leak=leak, serious=serious, end=end)
+    return "\n\n".join([hero, promise, trades, leak, price, serious, brief, faq, end])  # tableau « Pas cinq entreprises » retiré
 
 
 def schema(SITE, faq_ld, bc_ld):
@@ -679,7 +668,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in faq_items)
     faq = f"""<section class="faq sheet" id="questions" data-kind="faq" data-tone="paper">
   <div class="grid fq-grid">
-    <div class="fq-head"><h2 data-split>Devis {t[1].lower()} : vos questions</h2><p>Une autre question&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p></div>
+    <div class="fq-head"><h2 data-split>Devis {t[1].lower()} : vos questions</h2><p>Une autre question&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p><p><a class="link" href="/devis-travaux/#questions">Voir toutes les questions</a></p></div>
     <div class="fq-list">
 {rows}
     </div>
@@ -690,7 +679,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
   <div class="grid sp-head"><h2 data-split>Autres travaux</h2><p><a class="link" href="/devis-travaux/">Tous les devis de travaux</a></p></div>
   <ul class="pf-olist">{others}</ul>
 </section>"""
-    seq = [hero, blocks["promise"], needs, price] + ([blocks["leak"]] if key == "toiture" else []) + [blocks["steps"], blocks["serious"], brief, faq, others, blocks["end"]]
+    seq = [hero, blocks["promise"], needs, price] + ([blocks["leak"]] if key == "toiture" else []) + [blocks["serious"], brief, faq, others, blocks["end"]]
     return "\n\n".join(seq)
 
 
@@ -708,7 +697,6 @@ def trade_faq(key):
     out += P["faq"]
     if key == "toiture":
         out.append(("J’ai une fuite de toiture, que faire tout de suite ?", general["J’ai une fuite de toiture, que faire tout de suite ?"]))
-    out += [(q, general[q]) for q in ["Est-ce vraiment gratuit ?", "La visite et le devis de l’artisan sont-ils payants ?", "Combien d’entreprises vont m’appeler ?", "Et si le devis ne me convient pas ?", "Comment savoir si un artisan est sérieux ?", "Où intervenez-vous ?"]]
     return out
 
 

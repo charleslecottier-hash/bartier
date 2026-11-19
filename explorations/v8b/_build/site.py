@@ -576,12 +576,13 @@ def split(title, intro, items, tone="light", cls=""):
 </section>"""
 
 
-def faq(items, title="Vos questions, nos réponses", aside='Une autre question ? <a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20j%E2%80%99ai%20une%20question%20avant%20de%20me%20lancer." target="_blank" rel="noopener" data-wa="faq">Écrire à Martin sur WhatsApp</a>', sid=None):
+def faq(items, title="Vos questions, nos réponses", aside='Une autre question ? <a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20j%E2%80%99ai%20une%20question%20avant%20de%20me%20lancer." target="_blank" rel="noopener" data-wa="faq">Écrire à Martin sur WhatsApp</a>', sid=None, all_href=None):
     rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in items)
     sid_attr = f' id="{sid}"' if sid else ""
+    all_link = f'<p><a class="link" href="{all_href}">Voir toutes les questions</a></p>' if all_href else ""
     return f"""<section class="faq sheet"{sid_attr} data-kind="faq" data-tone="paper">
   <div class="grid fq-grid">
-    <div class="fq-head"><h2 data-split>{title}</h2><p>{aside}</p></div>
+    <div class="fq-head"><h2 data-split>{title}</h2><p>{aside}</p>{all_link}</div>
     <div class="fq-list">
 {rows}
     </div>
@@ -697,10 +698,7 @@ for t in TRADES:
         meta_desc = meta_desc.replace("Trouvez des chantiers", "Chantiers", 1)
     _ad_url, _ad_alt = img(PHOTO[t["slug"]])
     angles = "\n".join(f"""    <li><div class="ad-card"><div class="ad-head"><span class="ad-av" aria-hidden="true">VE</span><p class="ad-meta"><b>Votre entreprise</b><span>Sponsorisé</span></p></div><p class="ad-text">{b}</p><figure class="ad-img is-color"><img src="{_ad_src(ph, 800)}" srcset="{_ad_src(ph, 480)} 480w, {_ad_src(ph, 800)} 800w" sizes="(max-width: 760px) 86vw, 25vw" alt="" width="800" height="1000" loading="lazy" decoding="async"></figure><div class="ad-bar"><p class="ad-angle">{a}</p><p class="ad-cta">Demander une visite</p></div></div></li>""" for (a, b), ph in zip(t["angles"] + AD_EXTRA.get(t["slug"], []), AD_PHOTOS[t["slug"]]))
-    trade_faq = t["faq"] + [("Combien ça coûte ?", "Un devis personnalisé, en fonction de vos objectifs. Martin vous le présente pendant l'appel de 15 minutes, et vous décidez ensuite, à tête reposée."),
-                            ("Faut-il s'engager sur une durée ?", "Non, aucune durée minimale. Vous restez libre d'arrêter quand vous le souhaitez."),
-                            ("Qui rappelle les propriétaires ?", "Notre équipe, en moins de 5 minutes, du lundi au vendredi de 8 h à 19 h. Vous ne recevez que des visites vérifiées, directement dans votre agenda."),
-                            ("En combien de temps arrivent les premiers rendez-vous ?", "L'intégration prend 24 à 48 heures après notre appel, puis 3 à 5 jours pour lancer vos annonces. Le rythme dépend ensuite de votre secteur et de la saison.")]
+    trade_faq = t["faq"]  # les questions communes (prix, engagement, rappel, délais) sont sur /questions/
     body = "\n\n".join([
         top(f"{t['who']} · Partout en France", f"{t['h1']} {t['h1_em']}", short, crumbs(("Métiers", "/metiers/"), (t["name"], path)), PHOTO[t["slug"]], ("Voir ce que nous vérifions", "#appel"))
             .replace('<section class="sheet pg-top"', '<section class="sheet pg-top is-trade"', 1)
@@ -730,7 +728,7 @@ for t in TRADES:
 {angles}
   </ul>
 </section>""",
-        faq(trade_faq, f"Les questions des {t['who'].lower()}"),
+        faq(trade_faq, f"Les questions des {t['who'].lower()}", all_href="/questions/"),
         more("Autres métiers", "Tous les métiers", "/metiers/", [(TRADE_LABEL[x["slug"]], f"/metiers/{x['slug']}/") for x in TRADES if x["slug"] != t["slug"]]),
     ])
     write(path, f"{t['title']} | Bartier & Co", meta_desc, body, nav="/metiers/", metier=t["radio"], form_h2=TRADE_SOLO[t["slug"]],
