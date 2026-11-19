@@ -1284,3 +1284,23 @@ section.tr-ads .ad-img{height:auto}
 .ftr a.ftr-top{display:inline-grid;place-items:center;justify-content:center;width:44px;height:44px;min-height:44px;padding:0}
 .ftr a.ftr-top svg{display:block;width:16px;height:16px;margin:0}
 @media (max-width:760px){.ftr a.ftr-top{right:calc(var(--pad) + var(--cell))}.ftr .ftr-base{padding-right:64px}}
+@media (max-width:379px){
+  a.pf-sticky{right:70px;padding:0 12px;white-space:nowrap;font-size:.9rem}
+  a.pf-sticky span{display:none}
+}
+
+/* ——— Téléphone (passe 4) : métiers des particuliers en liste compacte, choix du formulaire en 2 colonnes, frise plus serrée ——— */
+@media (max-width:760px){
+  .pf-trades{grid-template-columns:minmax(0,1fr)!important;gap:0!important}
+  .pf-trade{display:grid!important;grid-template-columns:88px minmax(0,1fr);grid-template-rows:auto auto;column-gap:16px;row-gap:2px;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule)}
+  .pf-trade:first-child{border-top:1px solid var(--rule)}
+  .pf-trade figure{grid-row:1 / 3;width:88px;aspect-ratio:1 / 1;margin:0}
+  .pf-trade h3{align-self:end;margin:0;font-size:1.0625rem!important;line-height:1.25}
+  .pf-trade h3 a.pf-tl{min-height:0}
+  .pf-trade .pf-pick.link{align-self:start;min-height:32px;padding:4px 0 .2em;font-size:.88rem}
+  .dq-tiles,.dq-tiles.is-3{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px}
+  .dq-tile span{min-height:56px;padding:.7rem .85rem;font-size:.95rem}
+  .pf-time li{padding-bottom:20px}
+  .pf-time h3{margin-bottom:4px}
+}
+@media (max-width:760px){.is-inner ol.pf-time li{padding-bottom:18px}.is-inner ol.pf-time h3{margin-bottom:4px}.is-inner ol.pf-time .pf-t{margin-bottom:4px}}

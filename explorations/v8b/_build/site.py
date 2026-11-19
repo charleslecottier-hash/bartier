@@ -857,11 +857,11 @@ pf_top = pf_top.replace('class="link" href="/devis-travaux/"', 'class="link" hre
 pf_top = re.sub(r'<p class="hdr-tag">[^<]*', '<p class="hdr-tag">Vos travaux, un seul artisan près de chez vous', pf_top, count=1)
 pf_top = pf_top.replace('<a class="hdr-cta" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="header"><span>Réserver un appel</span>', '<a class="hdr-cta" href="#projet"><span>Mon devis</span>', 1)
 pf_top = pf_top.replace('<span>Appeler Martin</span>', '<span>Nous appeler</span>', 1)
-pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Décrire mes travaux</a>', 1)
+pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Obtenir mon devis gratuit</a>', 1)
 pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un seul artisan près de chez vous, sans frais</p>')
 pf_tail = absolutize(TAIL)
 pf_tail = pf_tail.replace('<p>Faire équipe.<br> Faire la différence.</p>', '<p>Un projet de travaux&nbsp;?<br> Un seul artisan, près de chez vous.</p>', 1)
-pf_tail = pf_tail.replace('<a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
+pf_tail = pf_tail.replace('<a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span>', '<a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>', 1)
 pf_tail = pf_tail.replace('<small>Co-fondateur</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
 pf_tail = pf_tail.replace('<b>Parler à Martin<span>, co-fondateur</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
 pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', lambda m: '<p class="wa-bubble">Bonjour. Un projet de travaux ou une question&nbsp;? Écrivez-moi, je vous réponds personnellement.</p>\n      <p class="wa-k">Choisissez une question, ou écrivez la vôtre&nbsp;:</p>\n' + "\n".join(
@@ -1347,7 +1347,7 @@ nf_body = """<section class="sheet pg-top" data-tone="light">
       <p class="kick">Erreur 404</p>
       <h1>Cette page n’existe pas.</h1>
       <p class="lead">Vous êtes propriétaire ou artisan ? Voici par où continuer.</p>
-      <div class="actions"><a class="btn" href="/devis-travaux/"><span>Décrire mes travaux</span></a><a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener">Réserver un appel</a></div>
+      <div class="actions"><a class="btn" href="/devis-travaux/"><span>Obtenir mon devis gratuit</span></a><a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener">Réserver un appel</a></div>
     </div>
   </div>
 </section>"""
