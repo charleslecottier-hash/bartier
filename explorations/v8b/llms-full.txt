@@ -30,19 +30,19 @@ Comment nous gérons vos annonces : sur Google, sur Facebook et Instagram.
 
 ### Nos engagements
 Écrits dans le contrat, les mêmes pour tous.
-24–48h
+24–48 h
 
 #### pour intégrer notre méthode
 Un appel, vos accès, vos photos de chantier et vos disponibilités. Le reste, nous le faisons.
-3–5jours
+3–5 jours
 
 #### pour lancer vos annonces
 Création des annonces, chauffe du compte publicitaire, puis la phase où l’algorithme apprend à trouver vos prospects.
-5min
+5 min
 
 #### pour rappeler chaque prospect
 En semaine, de 8 h à 19 h. Nous vérifions son projet pendant l’appel.
-100%
+100 %
 
 #### de vos rendez-vous rien que pour vous
 Un seul artisan par métier et par secteur. Rien n’est partagé ni revendu.
@@ -154,7 +154,7 @@ Oui. Les fuites en hiver, les réfections et les ravalements au printemps, l’e
 
 Adresse : https://bartierandco.com/metiers/couverture/
 
-Trouvez des chantiers de couverture : des propriétaires qui préparent une réfection ou une rénovation de toiture, rappelés en moins de 5 minutes.
+Chantiers de couverture : des propriétaires qui préparent une réfection ou une rénovation de toiture, rappelés en moins de 5 minutes, visite dans votre agenda.
 
 Couvreurs-zingueurs · Partout en France
 Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite.
@@ -290,7 +290,7 @@ Oui. Nous adaptons les annonces et les questions à ce que vous posez : matéria
 
 Adresse : https://bartierandco.com/metiers/facade/
 
-Trouvez des chantiers de façade : des propriétaires qui préparent un ravalement ou une isolation par l’extérieur, rappelés en moins de 5 minutes.
+Chantiers de façade : des propriétaires qui préparent un ravalement ou une isolation par l’extérieur, rappelés en moins de 5 minutes, visite dans votre agenda.
 
 Façadiers · Partout en France
 Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite.
@@ -357,7 +357,7 @@ Oui. Les annonces et les questions s’adaptent aux chantiers que vous voulez d�
 
 Adresse : https://bartierandco.com/metiers/charpente/
 
-Trouvez des chantiers de charpente : des propriétaires qui préparent un projet de charpente prêt à démarrer, rappelés en moins de 5 minutes.
+Chantiers de charpente : des propriétaires qui préparent un projet de charpente prêt à démarrer, rappelés en moins de 5 minutes et vérifiés avant la visite.
 
 Charpentiers · Partout en France
 Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite.
@@ -423,7 +423,7 @@ Oui. Ou, si vous faites aussi la couverture, les garder. Nous réglons le tri se
 
 Adresse : https://bartierandco.com/metiers/isolation/
 
-Trouvez des chantiers d’isolation : des propriétaires qui préparent l’isolation complète de leur maison, rappelés en moins de 5 minutes.
+Chantiers d’isolation : des propriétaires qui préparent l’isolation complète de leur maison, rappelés en moins de 5 minutes et vérifiés avant la visite.
 
 Entreprises d’isolation · Partout en France
 Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite.
@@ -490,7 +490,7 @@ Ce n’est pas obligatoire pour travailler avec nous. Si vous l’êtes, nous po
 
 Adresse : https://bartierandco.com/google-ads/
 
-Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.
+Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes, vérifiés avant la visite.
 
 Google Ads
 Un propriétaire tape « couvreur » et sa ville : il voit votre annonce. Nous rappelons chaque demande en moins de 5 minutes.
@@ -515,7 +515,7 @@ Chaque clic se paie : nous écartons ceux qui ne deviendront jamais des devis si
 - Campagnes par métier et par commune de votre zone
 - Recherches inutiles exclues : gratuit, pas cher, emploi, formation, bricolage
 - Une page à votre nom, rapide sur mobile
-- Chaque appel et chaque formulaire suivis jusqu’au rendez-vous
+- Chaque appel et chaque formulaire suivi jusqu’au rendez-vous
 - Rappel en moins de 5 minutes en semaine, projet vérifié, rendez-vous dans votre agenda
 
 ### Tout est à votre nom
@@ -560,7 +560,7 @@ L’intégration prend 24 à 48 heures après notre appel, puis 3 à 5 jours pou
 
 Adresse : https://bartierandco.com/meta-ads/
 
-Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et vérifiés.
+Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes, vérifiés à l’appel.
 
 Meta Ads · Facebook et Instagram
 Des annonces à votre nom, vues par les propriétaires de votre secteur. Nous rappelons chaque demande en moins de 5 minutes.
@@ -631,8 +631,9 @@ Oui. Vos photos de chantier et de votre équipe passent avant les images de banq
 
 Adresse : https://bartierandco.com/devis-travaux/
 
-Décrivez vos travaux en 1 minute : rappel en moins de 5 min et un seul artisan local vient chiffrer. Toiture, façade, fenêtres, charpente, isolation. Gratuit.
+Devis travaux gratuit : décrivez votre projet en 1 minute, rappel en moins de 5 min, un seul artisan local vient chiffrer. Toiture, façade, fenêtres, isolation.
 
+Pas cinq artisans. Un seul, près de chez vous.
 Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
@@ -670,23 +671,8 @@ Devis charpente
 Combles perdus ou aménagés, murs par l’extérieur, toiture.
 Devis isolation
 
-### Fuite de toiture ? Les 5 bons réflexes
-Suivez-les dans l’ordre, puis signalez-nous la fuite : nous vous rappelons en priorité.
-
-#### Mettez-vous en sécurité
-Éloignez l’eau des prises. Au moindre doute, coupez le courant de la pièce.
-
-#### Limitez les dégâts
-Seaux, bâches, mobilier à l’abri. Ne montez jamais sur le toit.
-
-#### Prenez des photos
-Plafond, murs, objets abîmés. Votre assureur vous les demandera.
-
-#### Prévenez votre assureur
-Votre contrat vous laisse au moins cinq jours ouvrés pour déclarer le sinistre (Code des assurances, art. L113-2). Faites-le sans attendre.
-
-#### Faites intervenir un couvreur
-Il trouve l’origine de la fuite, protège si besoin et chiffre la réparation.
+### Une fuite de toiture ?
+Signalez-la : nous vous rappelons en priorité. En attendant, suivez les 5 bons réflexes.
 Rappel prioritaire
 
 ### Combien vont coûter vos travaux ?
@@ -813,7 +799,7 @@ Là où un artisan partenaire couvre votre commune. Sinon, nous vous le disons d
 Dites-le-nous à l’appel. Si l’artisan partenaire de votre secteur ne prend pas ce type de chantier, nous vous le disons tout de suite, et votre demande n’est transmise à personne.
 
 **Comment savoir si un artisan est sérieux ?**
-Vérifiez son immatriculation sur annuaire-entreprises.data.gouv.fr, demandez son attestation d’assurance décennale et un devis écrit et détaillé. Pour obtenir des aides, il doit être certifié RGE. Méfiez-vous des démarcheurs qui pressent ou annoncent un prix valable « aujourd’hui seulement ».
+Vérifiez son immatriculation sur annuaire-entreprises.data.gouv.fr, demandez son attestation d’assurance décennale et un devis écrit et détaillé. Pour obtenir des aides, il doit être certifié RGE. Méfiez-vous des démarcheurs qui vous pressent ou annoncent un prix valable « aujourd’hui seulement ».
 
 **Qu’est-ce que l’assurance décennale ?**
 C’est l’assurance qui couvre, pendant 10 ans après la réception des travaux, les dommages qui menacent la solidité du bâtiment ou le rendent impropre à son usage. Elle est obligatoire pour les artisans du bâtiment (Code des assurances, art. L241-1), et le nom de l’assureur doit figurer sur le devis.
@@ -845,8 +831,9 @@ ou appelez le 07 81 01 89 36
 
 Adresse : https://bartierandco.com/devis-travaux/toiture/
 
-Réfection de toiture : de 60 à 500 €/m² pose comprise (QuelleEnergie). Décrivez vos travaux en 1 minute, un seul couvreur local vient chiffrer. Gratuit.
+Devis toiture gratuit. Réfection : de 60 à 500 €/m² pose comprise (QuelleEnergie). Décrivez vos travaux en 1 minute, un seul couvreur local vient chiffrer.
 
+Pas cinq couvreurs. Un seul, près de chez vous.
 Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
@@ -888,7 +875,7 @@ Source : QuelleEnergie, consulté le 18/11/2026
 - Isolation par l’extérieur (sarking) | 120 à 250 €/m² | QuelleEnergie
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
-### Fuite de toiture ? Les 5 bons réflexes
+### Fuite de toiture : que faire ? Les 5 bons réflexes
 Suivez-les dans l’ordre, puis signalez-nous la fuite : nous vous rappelons en priorité.
 
 #### Mettez-vous en sécurité
@@ -907,25 +894,8 @@ Votre contrat vous laisse au moins cinq jours ouvrés pour déclarer le sinistre
 Il trouve l’origine de la fuite, protège si besoin et chiffre la réparation.
 Rappel prioritaire
 
-### Comment reconnaître un artisan sérieux ?
-5 points à vérifier avant de signer. Avec nous ou sans nous.
-Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
-Avant de signer 5 points
-
-#### Une entreprise immatriculée
-Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
-
-#### Une assurance décennale
-Obligatoire. Demandez l’attestation : l’assureur figure aussi sur le devis.
-
-#### Un devis écrit et détaillé
-Matériaux, main-d’œuvre, délais, paiement. Avant tout début de travaux.
-
-#### RGE si vous visez des aides
-Obligatoire pour les aides à la rénovation énergétique. Annuaire officiel : france-renov.gouv.fr.
-
-#### Aucune pression
-Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
+### Avant de signer avec un couvreur
+Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (france-renov.gouv.fr), et l’absence de pression pour signer. Le détail des 5 points
 
 ### Devis toiture : l’essentiel
 
@@ -1000,6 +970,7 @@ Adresse : https://bartierandco.com/devis-travaux/ravalement-facade/
 
 Ravalement de façade, fissures, enduit, peinture, isolation par l’extérieur. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer. Gratuit.
 
+Pas cinq façadiers. Un seul, près de chez vous.
 Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
@@ -1038,25 +1009,8 @@ Source : La Maison Saint-Gobain, mis à jour le 25/08/2026
 - Ravalement avec isolant | 110 à 215 €/m² | Saint-Gobain, 08/2026
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
-### Comment reconnaître un artisan sérieux ?
-5 points à vérifier avant de signer. Avec nous ou sans nous.
-Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
-Avant de signer 5 points
-
-#### Une entreprise immatriculée
-Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
-
-#### Une assurance décennale
-Obligatoire. Demandez l’attestation : l’assureur figure aussi sur le devis.
-
-#### Un devis écrit et détaillé
-Matériaux, main-d’œuvre, délais, paiement. Avant tout début de travaux.
-
-#### RGE si vous visez des aides
-Obligatoire pour les aides à la rénovation énergétique. Annuaire officiel : france-renov.gouv.fr.
-
-#### Aucune pression
-Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
+### Avant de signer un devis de ravalement
+Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (france-renov.gouv.fr), et l’absence de pression pour signer. Le détail des 5 points
 
 ### Devis façade : l’essentiel
 
@@ -1113,12 +1067,13 @@ ou appelez le 07 81 01 89 36
 
 ---
 
-## Devis fenêtres PVC, alu, bois : menuisier près de chez vous
+## Fenêtre PVC posée : prix et devis gratuit près de chez vous
 
 Adresse : https://bartierandco.com/devis-travaux/fenetres/
 
-Fenêtres PVC, alu ou bois, porte d’entrée, baie vitrée, volets. Décrivez vos travaux en 1 minute : un seul menuisier local vient chiffrer. Gratuit.
+Fenêtre PVC posée : 870 à 1 170 € TTC (Saint-Gobain). Alu, bois, porte, volets : décrivez vos travaux en 1 minute, un seul menuisier local vient chiffrer.
 
+Pas cinq menuisiers. Un seul, près de chez vous.
 Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
@@ -1156,25 +1111,8 @@ Source : La Maison Saint-Gobain, mis à jour le 13/02/2026
 - Fenêtre PVC en création d’ouverture | environ 2 400 € TTC | Saint-Gobain, 02/2026
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
-### Comment reconnaître un artisan sérieux ?
-5 points à vérifier avant de signer. Avec nous ou sans nous.
-Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
-Avant de signer 5 points
-
-#### Une entreprise immatriculée
-Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
-
-#### Une assurance décennale
-Obligatoire. Demandez l’attestation : l’assureur figure aussi sur le devis.
-
-#### Un devis écrit et détaillé
-Matériaux, main-d’œuvre, délais, paiement. Avant tout début de travaux.
-
-#### RGE si vous visez des aides
-Obligatoire pour les aides à la rénovation énergétique. Annuaire officiel : france-renov.gouv.fr.
-
-#### Aucune pression
-Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
+### Avant de signer avec un menuisier
+Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (france-renov.gouv.fr), et l’absence de pression pour signer. Le détail des 5 points
 
 ### Devis fenêtres et portes : l’essentiel
 
@@ -1238,8 +1176,9 @@ ou appelez le 07 81 01 89 36
 
 Adresse : https://bartierandco.com/devis-travaux/charpente/
 
-Réparation et renfort, traitement du bois, extension, surélévation. Décrivez vos travaux en 1 minute : un seul charpentier local vient chiffrer. Gratuit.
+Devis charpente gratuit : réparation, renfort, traitement du bois, surélévation. Décrivez vos travaux en 1 minute, un seul charpentier local vient chiffrer.
 
+Pas cinq charpentiers. Un seul, près de chez vous.
 Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
@@ -1278,25 +1217,8 @@ Source : Obat, mis à jour le 28/10/2024
 - Traitement préventif ou curatif du bois | 40 à 180 €/m² | Obat, 10/2024
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
-### Comment reconnaître un artisan sérieux ?
-5 points à vérifier avant de signer. Avec nous ou sans nous.
-Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
-Avant de signer 5 points
-
-#### Une entreprise immatriculée
-Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
-
-#### Une assurance décennale
-Obligatoire. Demandez l’attestation : l’assureur figure aussi sur le devis.
-
-#### Un devis écrit et détaillé
-Matériaux, main-d’œuvre, délais, paiement. Avant tout début de travaux.
-
-#### RGE si vous visez des aides
-Obligatoire pour les aides à la rénovation énergétique. Annuaire officiel : france-renov.gouv.fr.
-
-#### Aucune pression
-Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
+### Avant de signer avec un charpentier
+Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (france-renov.gouv.fr), et l’absence de pression pour signer. Le détail des 5 points
 
 ### Devis charpente : l’essentiel
 
@@ -1359,6 +1281,7 @@ Adresse : https://bartierandco.com/devis-travaux/isolation/
 
 Isolation des combles perdus ou aménagés, des murs par l’extérieur, de la toiture. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer.
 
+Pas cinq artisans. Un seul, près de chez vous.
 Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
 - Sans engagement
@@ -1398,25 +1321,8 @@ Source : La Maison Saint-Gobain, mis à jour le 06/07/2026
 - Combles aménagés, par le toit | 240 €/m² TTC | Saint-Gobain, 07/2026
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
-### Comment reconnaître un artisan sérieux ?
-5 points à vérifier avant de signer. Avec nous ou sans nous.
-Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.
-Avant de signer 5 points
-
-#### Une entreprise immatriculée
-Son SIREN se vérifie en quelques secondes sur annuaire-entreprises.data.gouv.fr.
-
-#### Une assurance décennale
-Obligatoire. Demandez l’attestation : l’assureur figure aussi sur le devis.
-
-#### Un devis écrit et détaillé
-Matériaux, main-d’œuvre, délais, paiement. Avant tout début de travaux.
-
-#### RGE si vous visez des aides
-Obligatoire pour les aides à la rénovation énergétique. Annuaire officiel : france-renov.gouv.fr.
-
-#### Aucune pression
-Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
+### Avant de signer un devis d’isolation
+Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (france-renov.gouv.fr), et l’absence de pression pour signer. Le détail des 5 points
 
 ### Devis isolation : l’essentiel
 
@@ -1473,11 +1379,11 @@ ou appelez le 07 81 01 89 36
 
 ---
 
-## Qui sommes-nous
+## Qui sommes-nous : les fondateurs de Bartier & Co
 
 Adresse : https://bartierandco.com/qui-sommes-nous/
 
-Bartier & Co est une société française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.
+Bartier & Co, société fondée par Charles Le Cottier et Martin Barthélémy, trouve des clients aux artisans du bâtiment : un seul par métier et par secteur.
 
 Qui sommes-nous
 Bartier & Co est une société française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.
@@ -1553,7 +1459,7 @@ Appeler le 07 81 01 89 36
 
 Adresse : https://bartierandco.com/questions/
 
-Prix, engagement, publicité, exclusivité, rappel en moins de 5 minutes, cadre légal : les réponses aux questions des artisans du bâtiment.
+Prix, engagement, publicité, exclusivité, rappel en moins de 5 minutes, cadre légal : les réponses aux questions des artisans du bâtiment, en quelques lignes.
 
 Questions
 Ce que les artisans nous demandent avant de commencer : la méthode, le prix, les engagements et le cadre légal.
@@ -1621,7 +1527,7 @@ Décrivez vos travaux sur la page Devis travaux. C’est gratuit : nous vous rap
 
 Adresse : https://bartierandco.com/blog/
 
-Des articles courts et concrets pour les artisans du bâtiment : trouver des chantiers, publicité locale, relance de devis, rendez-vous qualifiés.
+Articles courts et concrets pour les artisans du bâtiment : trouver des chantiers, choisir sa publicité locale, relancer ses devis, comprendre les rendez-vous.
 
 Blog
 Des articles courts et concrets, écrits pour les artisans du bâtiment.
@@ -1641,7 +1547,7 @@ Des articles courts et concrets, écrits pour les artisans du bâtiment.
 
 Adresse : https://bartierandco.com/blog/lead-partage-lead-exclusif-rendez-vous-qualifie/
 
-Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer.
+Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer un contrat.
 
 Comprendre
 Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 19 novembre 2026 4 min de lecture
@@ -1721,7 +1627,7 @@ Un seul artisan par métier et par secteur.
 
 Adresse : https://bartierandco.com/blog/google-ads-ou-meta-ads-artisan/
 
-Google capte ceux qui cherchent déjà, Meta touche ceux qui n’ont pas encore cherché. Comment choisir selon votre métier et votre secteur.
+Google capte ceux qui cherchent déjà, Meta touche ceux qui n’ont pas encore cherché. Comment choisir selon votre métier, votre secteur et votre budget.
 
 Publicité
 Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 19 novembre 2026 4 min de lecture
@@ -1791,7 +1697,7 @@ Un seul artisan par métier et par secteur.
 
 Adresse : https://bartierandco.com/blog/relance-devis-artisan/
 
-Un devis de rénovation se relance. Un calendrier simple, trois SMS prêts à copier et un script d’appel de deux minutes.
+Un devis de rénovation se relance. Voici un calendrier simple, trois SMS prêts à copier, un script d’appel de deux minutes et le bon moment pour s’arrêter.
 
 Méthode
 Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
@@ -1882,7 +1788,7 @@ Ce que chacun vous coûte, et si la demande est pour vous seul.
 - 03 Plateformes de devis | Un abonnement ou un prix par demande | Rappeler très vite | Souvent partagée
 - 04 Apporteur d’affaires | Une commission sur le chantier | Un contrat écrit | Selon le contrat
 - 05 Sous-traitance | Une marge plus faible | Un réseau d’entreprises générales | Pour vous seul
-- 06 Annonces localesNotre métier | Le budget publicitaire et la gestion | Un rappel rapide | Pour vous seul
+- 06 Annonces locales Notre métier | Le budget publicitaire et la gestion | Un rappel rapide | Pour vous seul
 - 07 Flyers et panneaux | L’impression et la distribution | Des chantiers dans le quartier | Pour vous seul
 - 08 Réseaux professionnels | Une cotisation et du temps | Une présence régulière | Pour vous seul
 Plateformes : lisez leurs conditions avant de signer. Exemple : Habitatpresto Pro.
@@ -2085,7 +1991,7 @@ Rien à Bartier & Co : la mise en relation est gratuite et ne vous engage à rie
 Nous répondons de notre propre service. Rien dans ces conditions ne limite les droits que la loi vous donne en tant que consommateur.
 
 ### 6. Ce que nous vous demandons
-Décrire un projet réel, donner un numéro où vous êtes joignable, et prévenir l’artisan si vous ne pouvez pas être présent à la visite.
+Décrire un projet réel, donner un numéro auquel vous êtes joignable, et prévenir l’artisan si vous ne pouvez pas être présent à la visite.
 
 ### 7. Arrêter votre demande
 Vous pouvez arrêter à tout moment, sans motif et sans frais : dites-le pendant l’appel, ou écrivez à contact@bartierandco.com. Nous cessons de vous appeler et, si votre demande a déjà été transmise, nous prévenons l’artisan.
@@ -2114,7 +2020,7 @@ Définitions claires pour artisans et particuliers : demande de devis, rendez-v
 
 Lexique
 Les mots que croisent artisans et propriétaires, expliqués en deux ou trois phrases, avec la source officielle quand elle existe.
-Mis à jour le 18 novembre 2026
+Mis à jour le 19 novembre 2026
 
 ### Trouver des clients
 Pour les artisans du bâtiment : demandes, rendez-vous, coûts et règles d’appel.
@@ -2187,7 +2093,7 @@ Pendant 2 ans après la réception, l’artisan doit réparer ou remplacer les �
 
 #### Garantie décennale
 La garantie décennale oblige l’artisan à réparer, pendant 10 ans après la réception, les dommages qui menacent la solidité du bâtiment ou le rendent impropre à son usage. L’assurance qui la couvre est obligatoire, et son nom doit figurer sur le devis.
-Source : Service-Public, garantie décennale
+Voir aussi : reconnaître un artisan sérieux · Source : Service-Public, garantie décennale
 
 #### Délai de rétractation
 Un contrat de travaux signé chez vous, hors du local de l’artisan, peut être annulé sans motif pendant 14 jours. Aucun paiement n’est dû avant 7 jours. Ces règles ne s’appliquent pas à une réparation urgente que vous avez vous-même demandée.

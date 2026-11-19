@@ -21,7 +21,7 @@
  },
  "/conditions-du-service/": {
   "date": "2026-11-19",
-  "sig": "2bf95565db11382c"
+  "sig": "37f62f9a91f02522"
  },
  "/confidentialite/": {
   "date": "2026-11-19",
@@ -33,35 +33,35 @@
  },
  "/devis-travaux/": {
   "date": "2026-11-19",
-  "sig": "89c85ea3c2d053dd"
+  "sig": "02c61afd476c34d2"
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-19",
-  "sig": "13767606210684df"
+  "sig": "0930fe143ee64b9f"
  },
  "/devis-travaux/fenetres/": {
   "date": "2026-11-19",
-  "sig": "4c4f5cdc0b0a837f"
+  "sig": "94fd22ceb4870b84"
  },
  "/devis-travaux/isolation/": {
   "date": "2026-11-19",
-  "sig": "bd929ac9f4504ddb"
+  "sig": "28e5d657de51876f"
  },
  "/devis-travaux/ravalement-facade/": {
   "date": "2026-11-19",
-  "sig": "68928a27c2037b17"
+  "sig": "ae64802393e8cf92"
  },
  "/devis-travaux/toiture/": {
   "date": "2026-11-19",
-  "sig": "eb2048411269aa62"
+  "sig": "e2a2c6dc01344c36"
  },
  "/google-ads/": {
   "date": "2026-11-19",
-  "sig": "1aa6e9dcec5ae587"
+  "sig": "38b3709cc2247832"
  },
  "/lexique/": {
-  "date": "2026-11-18",
-  "sig": "08ccc5c1751355e4"
+  "date": "2026-11-19",
+  "sig": "2501d4069352b0c4"
  },
  "/mentions-legales/": {
   "date": "2026-11-19",

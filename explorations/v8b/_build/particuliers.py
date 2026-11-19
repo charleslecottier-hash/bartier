@@ -12,8 +12,8 @@ PRIVACY = "Votre numéro n’est transmis qu’à un seul artisan partenaire, à
 UPDATED = "2026-11-18"
 UPDATED_TXT = "18 novembre 2026"
 TITLE = "Devis travaux gratuit : toiture, façade, fenêtres, isolation"
-DESC = ("Décrivez vos travaux en 1 minute : rappel en moins de 5 min et un seul artisan local vient chiffrer. "
-        "Toiture, façade, fenêtres, charpente, isolation. Gratuit.")
+DESC = ("Devis travaux gratuit : décrivez votre projet en 1 minute, rappel en moins de 5 min, un seul artisan local vient chiffrer. "
+        "Toiture, façade, fenêtres, isolation.")
 
 TRADES = [
     # clé, libellé, artisan (titre dynamique), photo, besoins (étape 2), titre SEO, texte, alt, titre prix, ce qui fait le prix
@@ -115,7 +115,7 @@ FAQ = [
     ("Prenez-vous aussi les petites réparations ?",
      "Dites-le-nous à l’appel. Si l’artisan partenaire de votre secteur ne prend pas ce type de chantier, nous vous le disons tout de suite, et votre demande n’est transmise à personne."),
     ("Comment savoir si un artisan est sérieux ?",
-     "Vérifiez son immatriculation sur annuaire-entreprises.data.gouv.fr, demandez son attestation d’assurance décennale et un devis écrit et détaillé. Pour obtenir des aides, il doit être certifié RGE. Méfiez-vous des démarcheurs qui pressent ou annoncent un prix valable « aujourd’hui seulement »."),
+     "Vérifiez son immatriculation sur annuaire-entreprises.data.gouv.fr, demandez son attestation d’assurance décennale et un devis écrit et détaillé. Pour obtenir des aides, il doit être certifié RGE. Méfiez-vous des démarcheurs qui vous pressent ou annoncent un prix valable « aujourd’hui seulement »."),
     ("Qu’est-ce que l’assurance décennale ?",
      "C’est l’assurance qui couvre, pendant 10 ans après la réception des travaux, les dommages qui menacent la solidité du bâtiment ou le rendent impropre à son usage. Elle est obligatoire pour les artisans du bâtiment (Code des assurances, art. L241-1), et le nom de l’assureur doit figurer sur le devis."),
     ("Faut-il une autorisation de la mairie pour ses travaux ?",
@@ -200,7 +200,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
       {crumbs}
-      <h1 class="pf-h1"><span class="pf-kw">Devis travaux : toiture, façade, fenêtres, charpente, isolation</span> <span class="pf-big">Pas cinq <span class="pf-who">artisans</span>. <br>Un seul, près de chez vous.</span></h1>
+      <div class="pf-h1"><h1 class="pf-kw">Devis travaux : toiture, façade, fenêtres, charpente, isolation</h1> <p class="pf-big">Pas cinq <span class="pf-who">artisans</span>. <br>Un seul, près de chez vous.</p></div>
       <p class="lead">Décrivez vos travaux en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
       {trust("d-only")}
       <p class="pf-call d-only">Pressé&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p>
@@ -264,7 +264,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 
     leak = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in LEAK)
     leak = f"""<section class="sheet pf-leak" id="fuite-toiture" data-tone="accent">
-  <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;? Les 5 bons réflexes</h2><p>Suivez-les dans l’ordre, puis signalez-nous la fuite&nbsp;: nous vous rappelons en priorité.</p></div>
+  <div class="grid sp-head"><h2 data-split>Fuite de toiture&nbsp;: que faire&nbsp;? Les 5 bons réflexes</h2><p>Suivez-les dans l’ordre, puis signalez-nous la fuite&nbsp;: nous vous rappelons en priorité.</p></div>
   <ol class="pf-howto">{leak}</ol>
   <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick()}</a><span class="pf-prio">Rappel prioritaire</span></p>
 </section>"""
@@ -305,11 +305,15 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <div><p class="pf-season"></p><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></div>
   </div>
 </section>
-<a class="pf-sticky" href="#projet">Obtenir mon devis gratuit<span>1 min</span></a>"""
+<a class="pf-sticky" href="#projet">Obtenir mon devis gratuit <span>1 min</span></a>"""
 
+    leak_short = f"""<section class="sheet pf-leak is-short" id="fuite-toiture" data-tone="accent">
+  <div class="grid sp-head"><h2 data-split>Une fuite de toiture&nbsp;?</h2><p>Signalez-la&nbsp;: nous vous rappelons en priorité. En attendant, suivez <a class="link" href="/devis-travaux/toiture/#fuite-toiture">les 5 bons réflexes</a>.</p></div>
+  <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick()}</a><span class="pf-prio">Rappel prioritaire</span></p>
+</section>"""
     if parts:
         return dict(form=form, promise=promise, compare=compare, leak=leak, serious=serious, end=end)
-    return "\n\n".join([hero, promise, trades, leak, price, serious, brief, faq, end])  # tableau « Pas cinq entreprises » retiré
+    return "\n\n".join([hero, promise, trades, leak_short, price, serious, brief, faq, end])  # tableau « Pas cinq entreprises » retiré
 
 
 # Questions aussi posées sur une page métier : balisées là-bas seulement (Google : une FAQ répétée se balise une fois)
@@ -594,7 +598,7 @@ SLUG = {"toiture": "toiture", "facade": "ravalement-facade", "fenetres": "fenetr
 PAGES = {
     "toiture": dict(
         title="Devis toiture gratuit : un couvreur près de chez vous",
-        desc="Réfection de toiture : de 60 à 500 €/m² pose comprise (QuelleEnergie). Décrivez vos travaux en 1 minute, un seul couvreur local vient chiffrer. Gratuit.",
+        desc="Devis toiture gratuit. Réfection : de 60 à 500\u00a0€/m² pose comprise (QuelleEnergie). Décrivez vos travaux en 1 minute, un seul couvreur local vient chiffrer.",
         kw="Devis toiture gratuit", h2="Vos travaux de toiture", price_h2="Prix d’une réfection de toiture",
         needs=[("Réfection complète", "Dépose de l’ancienne couverture, écran sous-toiture, tuiles ou ardoises neuves."),
                ("Fuite et réparation", "Tuiles cassées ou déplacées, faîtage, solins, recherche de l’origine d’une fuite."),
@@ -621,8 +625,8 @@ PAGES = {
              ("Quelle TVA pour un ravalement ?", "Dans un logement de plus de deux ans, la TVA est de 10 % sur un ravalement, et de 5,5 % s’il s’accompagne d’une isolation qui améliore la performance énergétique (Code général des impôts, art. 279-0 bis et 278-0 bis A).")],
         brief="Bartier &amp; Co vous met gratuitement en relation avec l’artisan façade partenaire de votre secteur : nettoyage, fissures, enduit, peinture ou isolation par l’extérieur. Visite et devis offerts."),
     "fenetres": dict(
-        title="Devis fenêtres PVC, alu, bois : menuisier près de chez vous",
-        desc="Fenêtres PVC, alu ou bois, porte d’entrée, baie vitrée, volets. Décrivez vos travaux en 1 minute : un seul menuisier local vient chiffrer. Gratuit.",
+        title="Fenêtre PVC posée : prix et devis gratuit près de chez vous",
+        desc="Fenêtre PVC posée : 870 à 1\u00a0170\u00a0€ TTC (Saint-Gobain). Alu, bois, porte, volets : décrivez vos travaux en 1 minute, un seul menuisier local vient chiffrer.",
         kw="Devis fenêtres et portes gratuit", h2="Vos travaux de fenêtres et portes", price_h2="Prix d’une fenêtre PVC posée",
         needs=[("Remplacement de fenêtres", "PVC, aluminium ou bois, double vitrage, sur mesure."),
                ("Porte d’entrée", "Isolation, sécurité et style de la façade."),
@@ -635,7 +639,7 @@ PAGES = {
         brief="Bartier &amp; Co vous met gratuitement en relation avec le menuisier partenaire de votre secteur, pour vos fenêtres, portes, baies vitrées ou volets. Visite et devis offerts."),
     "charpente": dict(
         title="Devis charpente : un charpentier près de chez vous",
-        desc="Réparation et renfort, traitement du bois, extension, surélévation. Décrivez vos travaux en 1 minute : un seul charpentier local vient chiffrer. Gratuit.",
+        desc="Devis charpente gratuit : réparation, renfort, traitement du bois, surélévation. Décrivez vos travaux en 1 minute, un seul charpentier local vient chiffrer.",
         kw="Devis charpente gratuit", h2="Vos travaux de charpente", price_h2="Prix de travaux de charpente",
         needs=[("Réparation et renfort", "Pièces de bois abîmées remplacées ou doublées."),
                ("Traitement du bois", "Contre les insectes et les champignons, en curatif ou en préventif."),
@@ -696,7 +700,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
       {crumbs}
-      <h1 class="pf-h1"><span class="pf-kw">{P["kw"]}</span> <span class="pf-big">Pas cinq <span class="pf-who">{t[2]}</span>. <br>Un seul, près de chez vous.</span></h1>
+      <div class="pf-h1"><h1 class="pf-kw">{P["kw"]}</h1> <p class="pf-big">Pas cinq <span class="pf-who">{t[2]}</span>. <br>Un seul, près de chez vous.</p></div>
       <p class="lead">Décrivez vos travaux en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
       {trust("d-only")}
     </div>
@@ -708,7 +712,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     needs = f"""<section class="sheet" id="travaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>{P["h2"]}</h2><p>{t[6]}</p></div>
   <div class="pf-split"><figure class="frame pf-ph"><img src="{url}" alt="{t[7]}" width="1200" height="900" loading="lazy"></figure><ul class="pf-checks pf-needs">{needs}</ul></div>
-  <div class="pf-band"><p>Devis {t[1].lower()} en 1 minute<span class="pf-band-sub">Visite et devis offerts. Sans engagement.</span></p><a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a></div>
+  <div class="pf-band"><p>Devis {t[1].lower()} en 1 minute <span class="pf-band-sub">Visite et devis offerts. Sans engagement.</span></p><a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a></div>
 </section>"""
     price = f"""<section class="sheet" id="prix" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>{P["price_h2"]}</h2><p>{t[9]}</p></div>
@@ -739,7 +743,12 @@ def build_trade(img, phone, phone_txt, crumbs, key):
   <div class="grid sp-head"><h2 data-split>Autres travaux</h2><p><a class="link" href="/devis-travaux/">Tous les devis de travaux</a></p></div>
   <ul class="pf-olist">{others}</ul>
 </section>"""
-    seq = [hero, blocks["promise"], needs, price] + ([blocks["leak"]] if key == "toiture" else []) + [blocks["serious"], brief, faq, others, blocks["end"]]
+    ser_h = {"toiture": "Avant de signer avec un couvreur", "facade": "Avant de signer un devis de ravalement", "fenetres": "Avant de signer avec un menuisier",
+             "charpente": "Avant de signer avec un charpentier", "isolation": "Avant de signer un devis d’isolation"}[key]
+    serious = f"""<section class="sheet pf-ser-short" id="artisan-serieux" data-tone="light">
+  <div class="grid sp-head"><h2 data-split>{ser_h}</h2><p>Vérifiez cinq points&nbsp;: son immatriculation (<a class="link" href="https://annuaire-entreprises.data.gouv.fr/" target="_blank" rel="noopener">annuaire-entreprises.data.gouv.fr</a>), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (<a class="link" href="https://france-renov.gouv.fr/" target="_blank" rel="noopener">france-renov.gouv.fr</a>), et l’absence de pression pour signer. <a class="link" href="/devis-travaux/#artisan-serieux">Le détail des 5 points</a></p></div>
+</section>"""
+    seq = [hero, blocks["promise"], needs, price] + ([blocks["leak"]] if key == "toiture" else []) + [serious, brief, faq, others, blocks["end"]]
     return "\n\n".join(seq)
 
 

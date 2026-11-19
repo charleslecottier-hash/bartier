@@ -202,7 +202,7 @@ page("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
                     ["Campagnes par métier et par commune de votre zone",
                      "Exclusion des recherches inutiles : gratuit, pas cher, emploi, formation, bricolage",
                      "Une page dédiée à votre entreprise, rapide sur mobile",
-                     "Chaque appel et chaque formulaire suivis jusqu'au rendez-vous",
+                     "Chaque appel et chaque formulaire suivi jusqu'au rendez-vous",
                      "Rappel en moins de 5 minutes, qualification, rendez-vous dans votre agenda"], grey=True),
          split_list("Ce qui reste à vous", "Votre compte, votre budget, vos chiffres.",
                     "Vous ne dépendez pas de nous pour garder ce qui a été construit.",
@@ -310,7 +310,7 @@ ARTICLES = [
         "tag": "Comprendre",
         "title": "Demande partagée, demande exclusive, rendez-vous qualifié : les différences pour un artisan",
         "short": "Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous",
-        "desc": "Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer.",
+        "desc": "Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer un contrat.",
         "minutes": 5,
         "body": """
 <p class="answer">Une <b>demande partagée</b> est une demande de devis vendue à plusieurs entreprises. Une <b>demande exclusive</b> n'est vendue qu'à vous, mais c'est à vous de rappeler. Un <b>rendez-vous qualifié</b> est une visite déjà fixée, chez un propriétaire dont le projet a été vérifié.</p>
@@ -354,7 +354,7 @@ ARTICLES = [
         "tag": "Publicité",
         "title": "Google Ads ou Meta Ads pour un artisan du bâtiment : qui capte quelle demande",
         "short": "Google Ads ou Meta Ads : qui capte quelle demande",
-        "desc": "Google capte ceux qui cherchent déjà, Meta touche ceux qui n'ont pas encore cherché. Comment choisir selon votre métier et votre secteur.",
+        "desc": "Google capte ceux qui cherchent déjà, Meta touche ceux qui n'ont pas encore cherché. Comment choisir selon votre métier, votre secteur et votre budget.",
         "minutes": 4,
         "body": """
 <p class="answer"><b>Google Ads</b> capte une demande qui existe déjà : le propriétaire cherche un artisan. <b>Meta Ads</b> (Facebook et Instagram) suscite une demande chez des propriétaires qui n'ont pas encore cherché. Le premier convient aux urgences et aux projets mûrs, le second aux rénovations et à l'entretien.</p>
@@ -385,7 +385,7 @@ ARTICLES = [
         "tag": "Méthode",
         "title": "Relance de devis : calendrier, SMS et script d'appel pour artisans",
         "short": "Relance de devis : le calendrier, les SMS et le script",
-        "desc": "Un devis de rénovation se relance. Un calendrier simple, trois SMS prêts à copier et un script d'appel de deux minutes.",
+        "desc": "Un devis de rénovation se relance. Voici un calendrier simple, trois SMS prêts à copier, un script d'appel de deux minutes et le bon moment pour s'arrêter.",
         "minutes": 5,
         "body": """
 <p class="answer">Relancez un devis de rénovation <b>par un appel</b>, quelques jours après l'envoi, puis <b>par SMS</b> si vous n'avez pas de réponse. Arrêtez après trois tentatives sans retour, en laissant la porte ouverte. Chaque relance sert à savoir où en est le projet.</p>

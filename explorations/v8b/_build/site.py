@@ -710,11 +710,11 @@ paths = ["/"]
 for t in TRADES:
     path = f"/metiers/{t['slug']}/"
     short = "Chaque propriétaire est rappelé en moins de 5 minutes en semaine, et vérifié avant votre visite."
-    meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en moins de 5 minutes, visite dans votre agenda."
-    if len(meta_desc) > 158:  # descriptions courtes : la phrase s'arrête au rappel
-        meta_desc = f"{t['title'].replace('Trouver', 'Trouvez', 1)} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en moins de 5 minutes."
-    if len(meta_desc) > 158:  # encore trop longue : « Trouvez des chantiers » devient « Chantiers »
-        meta_desc = meta_desc.replace("Trouvez des chantiers", "Chantiers", 1)
+    _md_head = t['title'].replace('Trouver', 'Trouvez', 1)
+    _md = [f"{_md_head} : des propriétaires qui préparent {PROJECT[t['slug']]}, rappelés en moins de 5 minutes{end}"
+           for end in (", visite dans votre agenda.", " et vérifiés avant la visite.", " et vérifiés.", ".")]
+    _md += [x.replace("Trouvez des chantiers", "Chantiers", 1) for x in _md]
+    meta_desc = max((x for x in _md if len(x) <= 160), key=len)
     _ad_url, _ad_alt = img(PHOTO[t["slug"]])
     angles = "\n".join(f"""    <li><div class="ad-card"><div class="ad-head"><span class="ad-av" aria-hidden="true">VE</span><p class="ad-meta"><b>Votre entreprise</b><span>Sponsorisé</span></p></div><p class="ad-text">{b}</p><figure class="ad-img is-color"><img src="{_ad_src(ph, 800)}" srcset="{_ad_src(ph, 480)} 480w, {_ad_src(ph, 800)} 800w" sizes="(max-width: 760px) 86vw, 25vw" alt="" width="800" height="1000" loading="lazy" decoding="async"></figure><div class="ad-bar"><p class="ad-angle">{a}</p><p class="ad-cta">Demander une visite</p></div></div></li>""" for (a, b), ph in zip(t["angles"] + AD_EXTRA.get(t["slug"], []), AD_PHOTOS[t["slug"]]))
     trade_faq = t["faq"]  # les questions communes (prix, engagement, rappel, délais) sont sur /questions/
@@ -750,7 +750,7 @@ for t in TRADES:
         faq(trade_faq, f"Les questions des {t['who'].lower()}", all_href="/questions/"),
         more("Autres métiers", "Tous les métiers", "/metiers/", [(TRADE_LABEL[x["slug"]], f"/metiers/{x['slug']}/") for x in TRADES if x["slug"] != t["slug"]]),
     ])
-    write(path, f"{t['title']} | Bartier & Co", meta_desc, body, nav="/metiers/", metier=t["radio"], form_h2=TRADE_SOLO[t["slug"]],
+    write(path, f"{t['title']} | Bartier & Co" if len(t['title']) <= 45 else t['title'], meta_desc, body, nav="/metiers/", metier=t["radio"], form_h2=TRADE_SOLO[t["slug"]],
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Service", "name": fr(t["title"]), "serviceType": "Recherche de clients pour artisans du bâtiment", "audience": {"@type": "BusinessAudience", "audienceType": fr(t["who"])}, "description": fr(meta_desc), "url": SITE + path,
                "areaServed": {"@type": "Country", "name": "France"}, "provider": ORG_REF},
@@ -816,7 +816,7 @@ paths.insert(1, "/metiers/")
 
 # ——— Google Ads ———
 write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
-      "Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes.",
+      "Campagnes Google Ads locales pour artisans du bâtiment : captez les propriétaires qui cherchent déjà, rappelés en moins de 5 minutes, vérifiés avant la visite.",
       "\n\n".join([
           top("Google Ads", "Apparaissez sur Google quand vos clients cherchent un artisan.", "Un propriétaire tape « couvreur » et sa ville : il voit votre annonce. Nous rappelons chaque demande en moins de 5 minutes.", crumbs(("Google Ads", "/google-ads/")), None, ("Comparer avec Meta", "/meta-ads/"), visual=GOOGLE_ANIM),
           cols([("Les gros projets", "Réfection complète, ravalement, toutes les fenêtres à changer : le propriétaire cherche une entreprise sérieuse près de chez lui."),
@@ -825,7 +825,7 @@ write("/google-ads/", "Google Ads pour artisans du bâtiment | Bartier & Co",
                "Quand choisir Google ?", "Quand le propriétaire cherche déjà un artisan : il faut être visible, et le rappeler avant les autres."),
           split("Comment nous réglons votre campagne", "Chaque clic se paie : nous écartons ceux qui ne deviendront jamais des devis signés.",
                 ["Campagnes par métier et par commune de votre zone", "Recherches inutiles exclues : gratuit, pas cher, emploi, formation, bricolage",
-                 "Une page à votre nom, rapide sur mobile", "Chaque appel et chaque formulaire suivis jusqu'au rendez-vous",
+                 "Une page à votre nom, rapide sur mobile", "Chaque appel et chaque formulaire suivi jusqu'au rendez-vous",
                  "Rappel en moins de 5 minutes en semaine, projet vérifié, rendez-vous dans votre agenda"], tone="paper"),
           split("Tout est à votre nom", "Vous gardez ce qui a été construit, même si vous arrêtez.",
                 ["Compte Google Ads à votre nom", "Budget payé directement à Google", "Recherches, clics et dépenses visibles en détail"]),
@@ -840,7 +840,7 @@ paths.append("/google-ads/")
 
 # ——— Meta Ads ———
 write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & Co",
-      "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes et vérifiés.",
+      "Annonces Facebook et Instagram locales pour artisans du bâtiment : les propriétaires de votre secteur, rappelés en moins de 5 minutes, vérifiés à l’appel.",
       "\n\n".join([
           top("Meta Ads · Facebook et Instagram", "Apparaissez sur Facebook et Instagram auprès de vos futurs clients.", "Des annonces à votre nom, vues par les propriétaires de votre secteur. Nous rappelons chaque demande en moins de 5 minutes.", crumbs(("Meta Ads", "/meta-ads/")), None, ("Comparer avec Google", "/google-ads/"), visual=META_ANIM),
           cols([("Autour de votre dépôt", "Dans un rayon de 25 à 40 km, réglé commune par commune."),
@@ -954,8 +954,8 @@ TEAM_ABOUT = """<section class="team-about sheet" id="equipe" data-kind="team" d
 DUO = ('<figure class="pg-photo frame"><img src="/assets/photos/fondateurs-bartier-co-1200x900-nb.webp" '
        'srcset="/assets/photos/fondateurs-bartier-co-480x360-nb.webp 480w, /assets/photos/fondateurs-bartier-co-800x600-nb.webp 800w, /assets/photos/fondateurs-bartier-co-1200x900-nb.webp 1200w" '
        'sizes="(max-width: 760px) 100vw, 50vw" alt="Charles Le Cottier et Martin Barthélémy, cofondateurs de Bartier &amp; Co" width="1200" height="900"></figure>')
-write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
-      "Bartier & Co est une société française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.",
+write("/qui-sommes-nous/", "Qui sommes-nous : les fondateurs de Bartier & Co",
+      "Bartier & Co, société fondée par Charles Le Cottier et Martin Barthélémy, trouve des clients aux artisans du bâtiment : un seul par métier et par secteur.",
       "\n\n".join([
           top("Qui sommes-nous", "Deux fondateurs au service de votre agenda.", "Bartier & Co est une société française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), visual=DUO),
           """<section class="sheet" data-tone="light">
@@ -1000,7 +1000,7 @@ paths.append("/qui-sommes-nous/")
 import questions as QS
 _qs_all = [qa for g in QS.GROUPS for qa in g[3]]
 write("/questions/", "Questions fréquentes des artisans | Bartier & Co",
-      "Prix, engagement, publicité, exclusivité, rappel en moins de 5 minutes, cadre légal : les réponses aux questions des artisans du bâtiment.",
+      "Prix, engagement, publicité, exclusivité, rappel en moins de 5 minutes, cadre légal : les réponses aux questions des artisans du bâtiment, en quelques lignes.",
       "\n\n".join([
           top("Questions", "Vos questions, nos réponses", "Ce que les artisans nous demandent avant de commencer : la méthode, le prix, les engagements et le cadre légal.", crumbs(("Questions", "/questions/")),
               visual='<nav class="gd-toc" aria-label="Les sujets"><p class="gd-toc-k">Les sujets</p><ol>' + "".join(f'<li><a href="#{sid}">{title}<small>{len(items)} questions</small></a></li>' for sid, title, intro, items in QS.GROUPS) + '</ol></nav>'),
@@ -1017,7 +1017,7 @@ for a in ARTICLES:
     url, alt = img(COVER[a["slug"]])
     posts.append(f'    <li class="post"><a class="post-link" href="/blog/{a["slug"]}/"><p class="post-meta soft"><time datetime="{TODAY}">17 nov. 2026</time><br>{a["tag"]}</p><h2 class="post-title">{a["short"]}</h2><figure class="post-photo frame" data-wipe><img src="{url}" alt="{html.escape(alt)}" width="900" height="676"></figure></a></li>')
 write("/blog/", "Blog artisans : chantiers, publicité, devis | Bartier & Co",
-      "Des articles courts et concrets pour les artisans du bâtiment : trouver des chantiers, publicité locale, relance de devis, rendez-vous qualifiés.",
+      "Articles courts et concrets pour les artisans du bâtiment : trouver des chantiers, choisir sa publicité locale, relancer ses devis, comprendre les rendez-vous.",
       "\n\n".join([
           top("Blog", "Plus de chantiers, moins de soirées au téléphone.", "Des articles courts et concrets, écrits pour les artisans du bâtiment.", crumbs(("Blog", "/blog/")),
               visual='<nav class="gd-toc" aria-label="Les articles"><p class="gd-toc-k">Les articles</p><ol>' + "".join(f'<li><a href="/blog/{a["slug"]}/">{a["short"]}<small>{a["tag"]} · {a["minutes"]} min</small></a></li>' for a in ARTICLES) + '</ol></nav>'),
@@ -1419,6 +1419,26 @@ import csspurge as CSSPURGE
 _CONSENT_JS = (ROOT / "assets" / "js" / "consent.js").read_text(encoding="utf-8")
 
 
+_INL = r"(?:a|span|button|b|small|strong|em|time|label|mark|output)"
+_GLUE = re.compile(r"(</" + _INL + r">)(?=<" + _INL + r"\b)")
+_INL2 = r"(?:span|b|small|strong|em|time|mark|label|output)"
+_GLUE_IN = re.compile(r"([\wÀ-ÿ.?!:;)€%»])(<" + _INL2 + r"\b[^>]*>)(?=[\wÀ-ÿ0-9«(€%])")
+_GLUE_OUT = re.compile(r"([\wÀ-ÿ.?!:;)€%»]</" + _INL2 + r">)(?=[\wÀ-ÿ0-9«(])")
+def unglue(doc):
+    """Deux éléments en ligne collés (« 1 minuteVisite ») : une espace entre eux, pour les lecteurs qui ne voient pas
+    la mise en page (robots, lecteurs d'écran). Sans effet à l'écran : ces éléments sont posés en bloc ou en flex."""
+    i = doc.find("<body")
+    head, body = doc[:i], doc[i:]
+    parts = re.split(r"(<(?:script|style|svg|textarea|pre)\b[\s\S]*?</(?:script|style|svg|textarea|pre)>)", body)
+    for k in range(0, len(parts), 2):
+        parts[k] = _GLUE.sub(r"\1 ", parts[k])
+        # mot collé à un élément (« 24–48<small>h</small> », « 01<span>…</span>Bouche-à-oreille ») : une espace de taille nulle,
+        # lue par les robots, invisible à l'écran (affichage « contents », corps de 0)
+        parts[k] = _GLUE_IN.sub(r'\1<span class="u-sp"> </span>\2', parts[k])
+        parts[k] = _GLUE_OUT.sub(r'\1<span class="u-sp"> </span>', parts[k])
+    return head + "".join(parts)
+
+
 def hero_preload(doc):
     """La photo d'en-tête (fetchpriority="high") commence à se charger dès le début de la page, avant les styles."""
     if 'rel="preload" as="image"' in doc:
@@ -1510,6 +1530,9 @@ for f in PAGES_OUT:
     if re.fullmatch(r"/blog/[^/]+/", _page):
         doc = doc.replace('<meta property="og:type" content="website">', f'<meta property="og:type" content="article">\n<meta property="article:published_time" content="{TODAY}T09:00:00+01:00">', 1)
     doc = doc.replace('alt="Une chargée de rappel au téléphone"', 'alt="Appel de relance d’un devis"')
+    doc = doc.replace('alt="Isolation d&#39;un mur par l&#39;extérieur"', 'alt="Maison ancienne aux murs extérieurs rénovés"')  # la photo montre une façade rénovée
+    doc = re.sub(r'\b(alt|aria-label|title|placeholder)="([^"]*)"', lambda m: f'{m.group(1)}="' + re.sub(r"(?<=[A-Za-zÀ-ÿ])(&#39;|')(?=[A-Za-zÀ-ÿ])", "’", m.group(2)) + '"', doc)
+    doc = unglue(doc)
     doc = hero_preload(doc)
     doc = CSSPURGE.purge_doc(doc, _CONSENT_JS)  # vitesse : chaque page ne garde que le CSS qui peut la toucher
     f.write_text(doc, encoding="utf-8")

@@ -1399,3 +1399,8 @@ section.tr-ads .ad-img{height:auto}
 #prix .pf-tab th:first-child,#prix .pf-tab td:first-child{width:50%}
 #prix .pf-tab th:nth-child(2),#prix .pf-tab td:nth-child(2){padding-left:var(--cell)}
 }
+/* H1 des pages devis : le mot-clé seul, au style de l'ancienne accroche (la règle des H1 intérieurs ne s'applique pas) */
+@media (max-width:760px){.is-inner .pf-h1 h1.pf-kw{font-size:.85rem!important;line-height:1.35!important;letter-spacing:0!important;font-weight:500}}
+
+/* espace lue par les robots entre deux mots séparés seulement par la mise en page : invisible à l'écran */
+.u-sp{display:contents!important;font-size:0!important;letter-spacing:0!important;margin:0!important;padding:0!important}
