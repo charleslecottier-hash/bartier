@@ -860,7 +860,7 @@ pf_top = pf_top.replace('<span>Appeler Martin</span>', '<span>Nous appeler</span
 pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Décrire mes travaux</a>', 1)
 pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un seul artisan près de chez vous, sans frais</p>')
 pf_tail = absolutize(TAIL)
-pf_tail = pf_tail.replace('<p>Faire équipe.<br>Faire la différence.</p>', '<p>Un projet de travaux&nbsp;?<br>Un seul artisan, près de chez vous.</p>', 1)
+pf_tail = pf_tail.replace('<p>Faire équipe.<br> Faire la différence.</p>', '<p>Un projet de travaux&nbsp;?<br> Un seul artisan, près de chez vous.</p>', 1)
 pf_tail = pf_tail.replace('<a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span>', '<a class="btn" href="#projet"><span>Décrire mes travaux</span>', 1)
 pf_tail = pf_tail.replace('<small>Co-fondateur</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
 pf_tail = pf_tail.replace('<b>Parler à Martin<span>, co-fondateur</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)

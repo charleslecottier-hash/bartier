@@ -1227,3 +1227,18 @@ section.tr-ads .ad-img{height:auto}
   .ftr .ftr-links a{min-height:36px;padding:0;font-size:.92rem}
 }
 @media (max-width:760px){.ftr nav.ftr-col,.ftr nav.ftr-col.ftr-co{padding-inline:var(--cell)}}
+
+/* ——— Pied de page sur téléphone (3) : slogan sur une ligne, logo et mentions regroupés, moins de filets ——— */
+@media (max-width:760px){
+  .ftr .ftr-lead p br{display:none}
+  .ftr .ftr-lead p{font-size:1.125rem;line-height:1.3}
+  .ftr .ftr-lead{gap:14px;padding-bottom:20px}
+  .ftr .ftr-logo{width:118px;margin:24px var(--cell) 0}
+  .ftr .ftr-base{margin-top:12px;padding-top:0;border-top:0;gap:2px}
+  .ftr .ftr-base > span:first-child{font-size:.8rem}
+  .ftr .ftr-legal{gap:0 14px}
+  .ftr .ftr-legal a,.ftr .ftr-cookies{min-height:30px;font-size:.78rem}
+  .ftr .ftr-top{position:absolute;right:var(--pad);bottom:20px;width:40px;height:40px}
+  .ftr{padding-bottom:20px}
+  .ftr .ftr-base{padding-right:56px}
+}
