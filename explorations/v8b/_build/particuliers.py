@@ -51,11 +51,11 @@ TRADES = [
      "Combles perdus ou aménagés, murs par l’extérieur, toiture.",
      "Maison ancienne aux murs extérieurs rénovés",
      "Prix de l’isolation des combles",
-     "Surface, technique, isolant, aides possibles."),
+     "Surface, technique (combles perdus, rampants, murs), isolant."),
 ]
 
 BRIEF = [
-    ("Le service", "Un artisan de votre secteur pour vos travaux de toiture, façade, fenêtres, charpente ou isolation."),
+    ("Le service", "La mise en relation avec l’artisan partenaire de votre secteur, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation."),
     ("Le prix pour vous", "Gratuit, visite et devis compris. Les artisans nous rémunèrent."),
     ("Le délai", "Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture."),
     ("Le rendez-vous", "Fixé pendant notre appel, rappelé par SMS avant la visite."),
@@ -68,7 +68,7 @@ LEAK = [
     ("Mettez-vous en sécurité", "Éloignez l’eau des prises. Au moindre doute, coupez le courant de la pièce."),
     ("Limitez les dégâts", "Seaux, bâches, mobilier à l’abri. Ne montez jamais sur le toit."),
     ("Prenez des photos", "Plafond, murs, objets abîmés. Votre assureur vous les demandera."),
-    ("Prévenez votre assureur", "Déclarez le dégât des eaux dans le délai de votre contrat, souvent cinq jours ouvrés."),
+    ("Prévenez votre assureur", "Déclarez le dégât des eaux dans le délai de votre contrat&nbsp;: au moins cinq jours ouvrés."),
     ("Faites intervenir un couvreur", "Il trouve l’origine de la fuite, protège si besoin et chiffre la réparation."),
 ]
 
@@ -76,7 +76,7 @@ SERIOUS = [
     ("Une entreprise immatriculée", 'Son SIREN se vérifie en quelques secondes sur <a class="link" href="https://annuaire-entreprises.data.gouv.fr/" target="_blank" rel="noopener">annuaire-entreprises.data.gouv.fr</a>.'),
     ("Une assurance décennale", "Obligatoire. Demandez l’attestation&nbsp;: l’assureur figure aussi sur le devis."),
     ("Un devis écrit et détaillé", "Matériaux, main-d’œuvre, délais, paiement. Avant tout début de travaux."),
-    ("RGE si vous visez des aides", 'Obligatoire pour les aides à l’isolation. Annuaire officiel&nbsp;: <a class="link" href="https://france-renov.gouv.fr/" target="_blank" rel="noopener">france-renov.gouv.fr</a>.'),
+    ("RGE si vous visez des aides", 'Obligatoire pour les aides à la rénovation énergétique. Annuaire officiel&nbsp;: <a class="link" href="https://france-renov.gouv.fr/" target="_blank" rel="noopener">france-renov.gouv.fr</a>.'),
     ("Aucune pression", "Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement »."),
 ]
 
@@ -92,6 +92,8 @@ FAQ = [
      "Non. L’artisan vient voir le chantier et vous remet son devis sans frais pour vous. Vous restez libre de ne pas donner suite."),
     ("Combien d’entreprises vont m’appeler ?",
      "Une seule entreprise de travaux : l’artisan retenu. Avant lui, nous vous appelons pour vérifier votre projet. Vos coordonnées ne sont envoyées qu’à cet artisan, jamais à plusieurs entreprises."),
+    ("Comment l’artisan est-il choisi ?",
+     "C’est l’entreprise partenaire qui couvre votre métier et votre commune : nous n’en avons qu’une par secteur, et votre demande ne va qu’à elle. Elle nous confie sa publicité locale et nous rémunère, c’est pourquoi le service est gratuit pour vous. Avant de signer, vérifiez son immatriculation et son attestation décennale."),
     ("Et si le devis ne me convient pas ?",
      "Vous ne signez rien. Vous restez libre de refuser le devis ou de le comparer, sans frais et sans avoir à vous justifier."),
     ("Pourquoi passer par vous plutôt que chercher seul ?",
@@ -99,17 +101,19 @@ FAQ = [
     ("Comment trouver un bon couvreur près de chez moi ?",
      "Cherchez un artisan local, immatriculé, assuré en décennale, qui se déplace pour voir le toit avant de chiffrer. Décrivez vos travaux ici : nous vous présentons le couvreur partenaire de votre secteur."),
     ("Combien coûte une réfection de toiture ?",
-     "Le prix dépend de la surface, du matériau (tuiles, ardoise, bac acier), de l’état de la charpente et de l’accès au toit. Un prix au mètre carré trouvé en ligne reste une moyenne : seule une visite permet un devis fiable."),
+     "Comptez de 60 à 500 €/m², pose comprise, selon QuelleEnergie. L’écart vient de ce qui est refait : couverture seule, avec isolation ou avec la charpente. Le matériau (tuiles, ardoise, bac acier) et l’accès au toit comptent aussi. Seule une visite permet un devis fiable."),
     ("Combien coûte un ravalement de façade ?",
-     "Il dépend de la surface, de l’état du support, de la finition et de l’échafaudage. Des fissures ou un enduit abîmé changent fortement le prix : l’artisan les évalue lors de la visite."),
+     "En moyenne de 40 à 160 €/m², selon Obat (chiffres 2024). Le prix dépend de la surface, de l’état du support, de la finition et de l’échafaudage. Des fissures ou un enduit abîmé le font monter : l’artisan les évalue lors de la visite."),
     ("Combien coûte le remplacement d’une fenêtre ?",
-     "Il dépend de la taille, du matériau (PVC, alu, bois), du vitrage et du type de pose : en rénovation sur l’ancien cadre, ou en dépose totale. Le devis détaille chaque fenêtre."),
+     "Comptez de 870 à 1 170 € TTC pour une fenêtre PVC double vitrage posée en remplacement, selon La Maison Saint-Gobain (2026). Le prix change avec la taille, le matériau (PVC, alu, bois), le vitrage et le type de pose. Le devis détaille chaque fenêtre."),
     ("J’ai une fuite de toiture, que faire tout de suite ?",
-     "Éloignez l’eau des prises, protégez le mobilier, photographiez les dégâts et prévenez votre assureur dans le délai de votre contrat, souvent cinq jours ouvrés. Dans le formulaire, choisissez « Fuite ou dégât urgent » : ces demandes sont rappelées en priorité."),
+     "Éloignez l’eau des prises, protégez le mobilier, photographiez les dégâts et prévenez votre assureur dans le délai de votre contrat, au moins cinq jours ouvrés. Dans le formulaire, choisissez « Fuite ou dégât urgent » : ces demandes sont rappelées en priorité."),
     ("Puis-je obtenir des aides pour mes travaux ?",
-     "Certains travaux de rénovation énergétique, comme l’isolation, peuvent ouvrir droit à des aides publiques s’ils sont réalisés par une entreprise certifiée RGE. Les conditions changent chaque année : vérifiez-les sur france-renov.gouv.fr et parlez-en lors de notre appel."),
+     "Pour la rénovation énergétique, comme l’isolation, oui dans certains cas : MaPrimeRénov’, primes CEE des fournisseurs d’énergie, éco-prêt à taux zéro. Toutes demandent une entreprise certifiée RGE, et leurs conditions changent souvent : vérifiez votre cas sur france-renov.gouv.fr et parlez-en lors de notre appel."),
     ("Où intervenez-vous ?",
      "Là où un artisan partenaire couvre votre commune. Sinon, nous vous le disons dès l’appel et votre demande n’est transmise à personne."),
+    ("Prenez-vous aussi les petites réparations ?",
+     "Dites-le-nous à l’appel. Si l’artisan partenaire de votre secteur ne prend pas ce type de chantier, nous vous le disons tout de suite, et votre demande n’est transmise à personne."),
     ("Comment savoir si un artisan est sérieux ?",
      "Vérifiez son immatriculation sur annuaire-entreprises.data.gouv.fr, demandez son attestation d’assurance décennale et un devis écrit et détaillé. Pour obtenir des aides, il doit être certifié RGE. Méfiez-vous des démarcheurs qui pressent ou annoncent un prix valable « aujourd’hui seulement »."),
     ("Qu’est-ce que l’assurance décennale ?",
@@ -196,7 +200,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
       {crumbs}
-      <h1 class="pf-h1"><span class="pf-kw">Devis toiture, façade, fenêtres, isolation</span><span class="pf-big">Pas cinq <span class="pf-who">artisans</span>.<br>Un seul, près de chez vous.</span></h1>
+      <h1 class="pf-h1"><span class="pf-kw">Devis toiture, façade, fenêtres, isolation</span> <span class="pf-big">Pas cinq <span class="pf-who">artisans</span>. <br>Un seul, près de chez vous.</span></h1>
       <p class="lead">Décrivez vos travaux en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
       {trust("d-only")}
       <p class="pf-call d-only">Pressé&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p>
@@ -211,7 +215,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <div class="grid pf-brief-grid">
     <h2 id="pf-brief-h">Bartier &amp; Co en bref</h2>
     <dl class="pf-dl">{brief}</dl>
-    <p class="pf-upd">Mis à jour le <time datetime="{UPDATED}">{UPDATED_TXT}</time></p>
+    <p class="pf-upd">Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></p>
   </div>
 </section>"""
 
@@ -279,7 +283,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     serious = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in SERIOUS)
     serious = f"""<section class="sheet" id="artisan-serieux" data-tone="light">
   <div class="grid pf-ser">
-    <div class="pf-ser-head"><h2 data-split>Reconnaître un artisan sérieux</h2><p>5 points à vérifier avant de signer. Avec nous ou sans nous.</p>
+    <div class="pf-ser-head"><h2 data-split>Comment reconnaître un artisan sérieux&nbsp;?</h2><p>5 points à vérifier avant de signer. Avec nous ou sans nous.</p>
       <p class="pf-ser-cta"><span>Nos artisans partenaires sont locaux et se déplacent avant de chiffrer.</span><a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a></p></div>
     <div class="pf-ser-card"><p class="pf-ser-k"><b>Avant de signer</b><span>5 points</span></p><ul class="pf-checks pf-checklist">{serious}</ul></div>
   </div>
@@ -308,12 +312,34 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     return "\n\n".join([hero, promise, trades, leak, price, serious, brief, faq, end])  # tableau « Pas cinq entreprises » retiré
 
 
+def link_graph(SITE, path, g):
+    """Chaque nœud reçoit son identifiant ; la page pointe vers son service, son fil d'Ariane et sa FAQ."""
+    url = SITE + path
+    g = dict(g, **{"@graph": [dict(n) for n in g["@graph"]]})  # copie : SERIOUS_LD est partagé entre les pages
+    ids = {"Service": "#service", "FAQPage": "#questions", "HowTo": "#fuite-toiture", "BreadcrumbList": "#breadcrumb", "ItemList": "#artisan-serieux"}
+    for n in g["@graph"]:
+        if n.get("@type") in ids and "@id" not in n:
+            n["@id"] = url + ids[n["@type"]]
+    page = g["@graph"][0]
+    page["mainEntity"] = {"@id": url + "#service"}
+    page["breadcrumb"] = {"@id": url + "#breadcrumb"}
+    page["hasPart"] = [{"@id": n["@id"]} for n in g["@graph"][1:] if n.get("@type") in ("FAQPage", "HowTo", "ItemList")]
+    page["speakable"] = {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".pf-brief"]}
+    for n in g["@graph"]:
+        if n.get("@type") == "Service":
+            n["termsOfService"] = SITE + "/conditions-du-service/"
+            n["availableChannel"] = {"@type": "ServiceChannel", "serviceUrl": url + "#haut",
+                                     "servicePhone": {"@type": "ContactPoint", "telephone": "+33781018936", "contactType": "customer service", "availableLanguage": "French"}}
+            break
+    return g
+
+
 def schema(SITE, faq_ld, bc_ld):
     import re
     clean = lambda t: re.sub("<[^>]+>", "", t).replace("&amp;", "&")
-    return {"@context": "https://schema.org", "@graph": [
+    g = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebPage", "@id": SITE + PATH, "url": SITE + PATH, "name": TITLE, "description": DESC, "inLanguage": "fr-FR",
-         "dateModified": UPDATED + "T09:00:00+01:00", "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"},
+         "dateModified": "@@MAJ@@", "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"},
          "about": [{"@type": "Thing", "name": n} for n in ["Devis toiture", "Ravalement de façade", "Fenêtres", "Charpente", "Isolation des combles"]]},
         {"@type": "Service", "name": "Mise en relation avec un artisan du bâtiment", "serviceType": "Devis de travaux : toiture, façade, fenêtres, charpente, isolation",
          "description": clean(BRIEF[0][1]), "areaServed": {"@type": "Country", "name": "France"},
@@ -321,9 +347,10 @@ def schema(SITE, faq_ld, bc_ld):
          "provider": {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "url": SITE + "/"},
          "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "19:00"},
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Gratuit pour le particulier, sans engagement"},
-         "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Travaux", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": t[5], "description": clean(t[6])}} for t in TRADES]}},
+         "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Travaux", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "@id": f"{SITE}{PATH}{SLUG[t[0]]}/#service", "url": f"{SITE}{PATH}{SLUG[t[0]]}/", "name": t[5], "description": clean(t[6])}} for t in TRADES]}},
         {"@type": "HowTo", "name": "Fuite de toiture ? Les 5 bons réflexes", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]},
         SERIOUS_LD, faq_ld(FAQ), bc_ld(("Devis travaux", PATH))]}
+    return link_graph(SITE, PATH, g)
 
 
 CSS = """<style id="pf-css">
@@ -572,7 +599,7 @@ PAGES = {
              ("Faut-il réparer ou refaire toute la toiture ?", "Quelques tuiles cassées ou une fuite localisée se réparent. Des fuites qui reviennent, une couverture poreuse ou une charpente abîmée imposent souvent une réfection. Le couvreur tranche lors de la visite."),
              ("Faut-il démousser sa toiture ?", "Les mousses retiennent l’humidité et abîment les tuiles avec le temps. Un démoussage est aussi l’occasion de faire vérifier l’état de la couverture."),
              ("Combien de temps dure une réfection de toiture ?", "Cela dépend de la surface, de la météo et de l’état de la charpente. Le couvreur vous donne un délai dans son devis.")],
-        brief="Un seul couvreur de votre secteur, choisi pour vos travaux de toiture : réfection, fuite, zinguerie ou démoussage. Visite et devis offerts."),
+        brief="Le couvreur partenaire de votre secteur, pour vos travaux de toiture : réfection, fuite, zinguerie ou démoussage. Visite et devis offerts."),
     "facade": dict(
         title="Ravalement de façade : devis gratuit près de chez vous",
         desc="Ravalement de façade, fissures, enduit, peinture, isolation par l’extérieur. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer. Gratuit.",
@@ -581,7 +608,7 @@ PAGES = {
                ("Fissures", "Diagnostic de l’origine et reprise des fissures avant finition."),
                ("Nettoyage et peinture", "Façade rafraîchie quand le support est sain."),
                ("Isolation par l’extérieur", "Isolant posé sur les murs puis recouvert d’un enduit ou d’un bardage.")],
-        faq=[("Le ravalement est-il obligatoire ?", "Dans certaines communes, un arrêté impose un ravalement régulier, souvent tous les dix ans. Renseignez-vous auprès de votre mairie."),
+        faq=[("Le ravalement est-il obligatoire ?", "À Paris et dans les communes inscrites sur une liste fixée par le préfet, la mairie peut imposer un ravalement au moins tous les dix ans. Ailleurs, la loi ne fixe pas de fréquence. Votre mairie vous dit si votre commune est concernée."),
              ("Faut-il une autorisation pour un ravalement ?", "Un ravalement qui modifie l’aspect extérieur demande en général une déclaration préalable en mairie. Vérifiez aussi le plan local d’urbanisme de votre commune."),
              ("Peut-on isoler en même temps que le ravalement ?", "Oui, c’est le bon moment pour une isolation par l’extérieur. Réalisée par une entreprise RGE, elle peut ouvrir droit à des aides : vérifiez-les sur france-renov.gouv.fr.")],
         brief="Un seul artisan façade de votre secteur pour votre ravalement : nettoyage, fissures, enduit, peinture ou isolation par l’extérieur. Visite et devis offerts."),
@@ -619,7 +646,7 @@ PAGES = {
                ("Murs par l’extérieur", "Isolant posé sur la façade puis recouvert."),
                ("Toiture par l’extérieur", "Isolant posé sur la charpente lors d’une réfection, technique dite du sarking.")],
         faq=[("Faut-il une autorisation pour isoler par l’extérieur ?", "En général oui : l’isolation par l’extérieur change l’aspect de la façade et demande une déclaration préalable en mairie."),
-             ("Quelles aides pour isoler ses combles ?", "Les aides publiques dépendent des travaux, de vos revenus et de l’année. Elles demandent une entreprise certifiée RGE. Vérifiez votre éligibilité sur france-renov.gouv.fr avant de signer."),
+             ("Quelles aides pour isoler ses combles ?", "Les plus courantes sont MaPrimeRénov’ et les primes CEE des fournisseurs d’énergie. Leur montant dépend des travaux et de vos revenus, et toutes demandent une entreprise certifiée RGE. Les règles changent souvent : vérifiez votre cas sur france-renov.gouv.fr avant de signer."),
              ("Combles perdus ou aménagés : quelle différence ?", "Des combles perdus ne sont pas habitables : l’isolant se pose sur le plancher, c’est le chantier le plus simple. Des combles aménagés sont habitables : l’isolant se pose sous la toiture."),
              ("Faut-il une entreprise RGE ?", "Pour obtenir des aides publiques, oui. Dites-le lors de notre appel : nous vous disons si l’artisan de votre secteur est certifié RGE.")],
         brief="Un seul artisan de votre secteur pour isoler vos combles, vos murs ou votre toiture. Visite et devis offerts."),
@@ -636,7 +663,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
       {crumbs}
-      <h1 class="pf-h1"><span class="pf-kw">{P["kw"]}</span><span class="pf-big">Pas cinq <span class="pf-who">{t[2]}</span>.<br>Un seul, près de chez vous.</span></h1>
+      <h1 class="pf-h1"><span class="pf-kw">{P["kw"]}</span> <span class="pf-big">Pas cinq <span class="pf-who">{t[2]}</span>. <br>Un seul, près de chez vous.</span></h1>
       <p class="lead">Décrivez vos travaux en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
       {trust("d-only")}
     </div>
@@ -661,7 +688,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
   <div class="grid pf-brief-grid">
     <h2 id="pf-brief-h">Devis {t[1].lower()} : l’essentiel</h2>
     <dl class="pf-dl">{brief}</dl>
-    <p class="pf-upd">Mis à jour le <time datetime="{UPDATED}">{UPDATED_TXT}</time></p>
+    <p class="pf-upd">Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></p>
   </div>
 </section>"""
     faq_items = trade_faq(key)
@@ -693,8 +720,11 @@ def trade_faq(key):
     if key in price_q:
         out.append((price_q[key], general[price_q[key]]))
     else:
-        out.append(({"charpente": "Combien coûtent des travaux de charpente ?", "isolation": "Combien coûtent des travaux d’isolation ?"}.get(key, f"Combien coûtent des travaux de {t[1].lower()} ?"), f"Le prix dépend surtout de ces points : {t[9][0].lower()}{t[9][1:]} Seule une visite permet un devis fiable, et elle est gratuite."))
+        out.append({"charpente": ("Combien coûtent des travaux de charpente ?", "Comptez 150 €/m² en moyenne pour rénover une charpente en bois, de 40 à 250 €/m², selon Obat (chiffres 2024). Tout dépend de l’état du bois : remplacer quelques pièces coûte bien moins que refaire la charpente. Le charpentier le voit lors d’une visite gratuite."),
+                    "isolation": ("Combien coûtent des travaux d’isolation ?", "Pour des combles perdus, comptez environ 40 €/m² pose comprise si l’accès se fait par l’intérieur, 45 €/m² par le toit, selon La Maison Saint-Gobain (2026). Sous les rampants ou par l’extérieur, c’est plus cher. Seule une visite permet un devis fiable, et elle est gratuite.")}[key])
     out += P["faq"]
+    if key in ("toiture", "fenetres"):  # chantiers où l'on demande souvent une petite intervention
+        out.append(("Prenez-vous aussi les petites réparations ?", general["Prenez-vous aussi les petites réparations ?"]))
     if key == "toiture":
         out.append(("J’ai une fuite de toiture, que faire tout de suite ?", general["J’ai une fuite de toiture, que faire tout de suite ?"]))
     return out
@@ -708,7 +738,7 @@ def trade_schema(SITE, faq_ld, bc_ld, key):
     path = f"{PATH}{SLUG[key]}/"
     graph = [
         {"@type": "WebPage", "@id": SITE + path, "url": SITE + path, "name": P["title"], "description": P["desc"], "inLanguage": "fr-FR",
-         "dateModified": UPDATED + "T09:00:00+01:00", "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}},
+         "dateModified": "@@MAJ@@", "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}},
         {"@type": "Service", "name": f"Devis {t[5].lower()}", "serviceType": t[5], "description": clean(P["brief"]), "url": SITE + path,
          "areaServed": {"@type": "Country", "name": "France"}, "audience": {"@type": "Audience", "audienceType": "Propriétaires de maison"},
          "provider": {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "url": SITE + "/"},
@@ -716,7 +746,7 @@ def trade_schema(SITE, faq_ld, bc_ld, key):
         SERIOUS_LD, faq_ld(trade_faq(key)), bc_ld(("Devis travaux", PATH), (t[1], path))]
     if key == "toiture":
         graph.append({"@type": "HowTo", "name": "Fuite de toiture ? Les 5 bons réflexes", "step": [{"@type": "HowToStep", "position": i, "name": a, "text": clean(b)} for i, (a, b) in enumerate(LEAK, 1)]})
-    return {"@context": "https://schema.org", "@graph": graph}
+    return link_graph(SITE, path, {"@context": "https://schema.org", "@graph": graph})
 
 
 CSS_TRADE = """<style id="pf-css-2">

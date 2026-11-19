@@ -231,6 +231,7 @@ PORTRAIT = {"charles": "charles-le-cottier", "martin": "martin-barthelemy"}
 def portrait(k):
     return SITE + f"/assets/photos/{PORTRAIT[k]}-700x875-nb.webp"
 ORG_REF = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "url": SITE + "/"}
+WEBSITE = {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}
 ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "alternateName": "Bartier and Co",
        "slogan": "Faire équipe. Faire la différence.", "url": SITE + "/", "logo": SITE + "/assets/logo-bartier.png", "image": SITE + "/assets/og.png",
        "email": "contact@bartierandco.com", "telephone": PHONE,
@@ -240,13 +241,14 @@ ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "
        "areaServed": {"@type": "Country", "name": "France"},
        "knowsAbout": ["Google Ads", "Meta Ads", "Publicité locale", "Couverture", "Ravalement de façade", "Menuiserie extérieure", "Charpente", "Isolation"],
        "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434"],
-       "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de 5 minutes, visites de devis fixées directement dans leur agenda.",
+       "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de 5 minutes, visites de devis fixées directement dans leur agenda. Pour les propriétaires, mise en relation gratuite avec un artisan de leur secteur.",
+       "makesOffer": [{"@type": "Offer", "itemOffered": {"@id": SITE + u + "#service"}} for u in ("/devis-travaux/", "/google-ads/", "/meta-ads/")],
        "founder": [{"@type": "Person", "@id": f"{SITE}/qui-sommes-nous/#{k}", "name": n, "jobTitle": j, "image": portrait(k)} for k, n, j in FOUNDERS]}
+ORG_PAGE = {k: ORG[k] for k in ("@type", "@id", "name", "legalName", "url", "logo", "email", "telephone", "address", "description", "sameAs", "areaServed")}
 home = re.sub(r'<link rel="canonical"[^>]*>\n?', "", home)
 home = re.sub(r'<script type="application/ld\+json">[\s\S]*?</script>\n?', "", home)
 home = re.sub(r'<meta (?:property="og:|name="twitter:)[^>]*>\n?', "", home)
-if LIVE:
-    home = home.replace('<meta name="robots" content="noindex">', "", 1)
+# (en ligne, la balise robots de l'accueil est remplacée par la passe finale, comme partout : extraits longs autorisés)
 _ht = html.unescape(re.search(r"<title>(.*?)</title>", home).group(1))
 _hd = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', home).group(1))
 _ld = {"@context": "https://schema.org", "@graph": [ORG, {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}]}
@@ -254,13 +256,14 @@ _ld = {"@context": "https://schema.org", "@graph": [ORG, {"@type": "WebSite", "@
 _txt = lambda s: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", s))).replace("'", "’").strip()
 _qa = re.findall(r'<details class="fq"><summary><span>(.*?)</span>.*?<div class="fq-a">(.*?)</div>\s*</details>', home, flags=re.S)
 # Les questions de l'accueil sont aussi sur /questions/ : le balisage FAQPage n'y figure qu'une fois, sur cette page-là.
-home = home.replace("</head>", (
+_m = re.search(r'<meta name="description" content="[^"]*">\n?', home)
+home = home[:_m.end()] + (
     f'<link rel="canonical" href="{SITE}/">\n'
     f'<meta property="og:type" content="website">\n<meta property="og:locale" content="fr_FR">\n<meta property="og:site_name" content="Bartier &amp; Co">\n'
     f'<meta property="og:title" content="{html.escape(_ht)}">\n<meta property="og:description" content="{html.escape(_hd)}">\n'
     f'<meta property="og:url" content="{SITE}/">\n<meta property="og:image" content="{SITE}/assets/og.png">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
-    f'<meta name="twitter:card" content="summary_large_image">\n'
-    f'<script type="application/ld+json">{json.dumps(_ld, ensure_ascii=False, separators=(",", ":"))}</script>\n</head>'), 1)
+    f'<meta property="og:image:alt" content="Bartier &amp; Co, des clients pour les artisans du bâtiment">\n<meta name="twitter:card" content="summary_large_image">\n') + home[_m.end():]
+home = home.replace("</head>", f'<script type="application/ld+json">{json.dumps(_ld, ensure_ascii=False, separators=(",", ":"))}</script>\n</head>', 1)
 (ROOT / "index.html").write_text(home, encoding="utf-8")
 
 # Feuille complémentaire (_build/extra.css), injectée dans toutes les pages
@@ -469,8 +472,22 @@ def head(title, desc, path, schema=None):
     og = (f'<meta property="og:type" content="website">\n<meta property="og:locale" content="fr_FR">\n<meta property="og:site_name" content="Bartier &amp; Co">\n'
           f'<meta property="og:title" content="{html.escape(fr(title))}">\n<meta property="og:description" content="{html.escape(fr(desc))}">\n'
           f'<meta property="og:url" content="{SITE}{path}">\n<meta property="og:image" content="{SITE}/assets/og.png">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
-          f'<meta name="twitter:card" content="summary_large_image">\n')
-    return h + f'<link rel="canonical" href="{SITE}{path}">\n' + og + ld + EXTRA_CSS
+          f'<meta property="og:image:alt" content="Bartier &amp; Co, des clients pour les artisans du bâtiment">\n<meta name="twitter:card" content="summary_large_image">\n')
+    if schema and "@graph" in schema:  # l'organisation et le site sont décrits sur chaque page : les références #org et #website se résolvent partout
+        schema = dict(schema, **{"@graph": [dict(n) for n in schema["@graph"]]})  # copie : des nœuds sont partagés entre pages
+        for n in schema["@graph"]:
+            if n.get("@type") == "Service" and "@id" not in n:
+                n["@id"] = SITE + path + "#service"
+                break
+        have = {n.get("@id") for n in schema["@graph"] if n.get("@type") in ("Organization", "WebSite")}
+        if SITE + "/#org" not in have:
+            schema["@graph"].append(ORG_PAGE)
+        if SITE + "/#website" not in have:
+            schema["@graph"].append(WEBSITE)
+        ld = f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False, separators=(",", ":"))}</script>\n'
+    m = re.search(r'<meta name="description" content="[^"]*">\n?', h)
+    top_tags = f'<link rel="canonical" href="{SITE}{path}">\n' + og
+    return h[:m.end()] + top_tags + h[m.end():] + ld + EXTRA_CSS
 
 
 def with_form(body, contact, after=2):
@@ -1009,7 +1026,8 @@ write("/blog/", "Blog artisans : chantiers, publicité, devis | Bartier & Co",
 {chr(10).join(posts)}
   </ul>
 </section>""",
-      ]), nav="/blog/", schema={"@context": "https://schema.org", "@graph": [{"@type": "Blog", "name": "Blog Bartier & Co", "url": SITE + "/blog/", "inLanguage": "fr-FR"}, bc_ld(("Blog", "/blog/"))]})
+      ]), nav="/blog/", schema={"@context": "https://schema.org", "@graph": [{"@type": "Blog", "@id": SITE + "/blog/#blog", "name": "Blog Bartier & Co", "url": SITE + "/blog/", "inLanguage": "fr-FR",
+                                                                     "publisher": {"@id": SITE + "/#org"}, "blogPost": [{"@id": f"{SITE}/blog/{x['slug']}/#article"} for x in ARTICLES]}, bc_ld(("Blog", "/blog/"))]})
 paths.append("/blog/")
 
 SEO_TITLE = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Demande partagée, exclusive ou rendez-vous qualifié ?",
@@ -1044,7 +1062,7 @@ for a in ARTICLES:
     ])
     write(path, SEO_TITLE.get(a["slug"]) or f"{a['short']} | Bartier & Co", a["desc"], body, nav="/blog/",
           schema={"@context": "https://schema.org", "@graph": [
-              {"@type": "BlogPosting", "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": "@@MAJ@@", "inLanguage": "fr-FR",
+              {"@type": "BlogPosting", "@id": SITE + path + "#article", "isPartOf": {"@id": SITE + "/blog/#blog"}, "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": "@@MAJ@@", "inLanguage": "fr-FR",
                "mainEntityOfPage": SITE + path, "image": [img(COVER[a["slug"]])[0]],
                "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Co-fondateur", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
@@ -1464,11 +1482,14 @@ for f in PAGES_OUT:
         if slug not in LEGAL_READY:
             doc = re.sub(rf'\s*<a href="/{slug}/">[^<]*</a>', "", doc)
     rob = '<meta name="robots" content="noindex">'
-    if LIVE and _page not in REVIEW:  # en ligne : indexation et extraits longs autorisés (moteurs de réponse)
+    if LIVE and _page not in REVIEW and f.name != "404.html":  # en ligne (la page 404 reste toujours hors index) : indexation et extraits longs autorisés (moteurs de réponse)
         doc = doc.replace(rob, '<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">', 1).replace(rob + "\n", "").replace(rob, "")
     if doc.count(rob) > 1:
         i = doc.index(rob) + len(rob)
         doc = doc[:i] + doc[i:].replace(rob + "\n", "").replace(rob, "")
+    if re.fullmatch(r"/blog/[^/]+/", _page):
+        doc = doc.replace('<meta property="og:type" content="website">', f'<meta property="og:type" content="article">\n<meta property="article:published_time" content="{TODAY}T09:00:00+01:00">', 1)
+    doc = doc.replace('alt="Une chargée de rappel au téléphone"', 'alt="Appel de relance d’un devis"')
     doc = hero_preload(doc)
     doc = CSSPURGE.purge_doc(doc, _CONSENT_JS)  # vitesse : chaque page ne garde que le CSS qui peut la toucher
     f.write_text(doc, encoding="utf-8")
@@ -1518,7 +1539,9 @@ SECURITY_HEADERS = [
                 {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400"}]},
                 {"source": "/assets/photos/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=2592000"}]},
                 {"source": "/assets/fonts/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
-                {"source": "/assets/js/(gsap|ScrollTrigger|SplitText|lenis)(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}, indent=2), encoding="utf-8")
+                {"source": "/assets/js/(gsap|ScrollTrigger|SplitText|lenis|consent)(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+                {"source": "/404(.*)", "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]},
+                {"source": "/assets/(og.png|logo-bartier.png)", "headers": [{"key": "Cross-Origin-Resource-Policy", "value": "cross-origin"}]}]}, indent=2), encoding="utf-8")
 
 # ——— Fichiers SEO et GEO ———
 for f in ["robots.txt", "llms.txt"]:
