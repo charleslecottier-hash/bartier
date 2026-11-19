@@ -955,9 +955,9 @@ DUO = ('<figure class="pg-photo frame"><img src="/assets/photos/fondateurs-barti
        'srcset="/assets/photos/fondateurs-bartier-co-480x360-nb.webp 480w, /assets/photos/fondateurs-bartier-co-800x600-nb.webp 800w, /assets/photos/fondateurs-bartier-co-1200x900-nb.webp 1200w" '
        'sizes="(max-width: 760px) 100vw, 50vw" alt="Charles Le Cottier et Martin Barthélémy, cofondateurs de Bartier &amp; Co" width="1200" height="900"></figure>')
 write("/qui-sommes-nous/", "Qui sommes-nous | Bartier & Co",
-      "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.",
+      "Bartier & Co est une société française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.",
       "\n\n".join([
-          top("Qui sommes-nous", "Deux fondateurs au service de votre agenda.", "Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), visual=DUO),
+          top("Qui sommes-nous", "Deux fondateurs au service de votre agenda.", "Bartier & Co est une société française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.", crumbs(("Qui sommes-nous", "/qui-sommes-nous/")), visual=DUO),
           """<section class="sheet" data-tone="light">
   <div class="grid sp-split">
     <div><h2 data-split>Vous n'avez pas à courir après les devis</h2></div>
@@ -1109,7 +1109,7 @@ def guide(G, kick, crumb_items, faq_title, links):
     write(G["path"], G["title"], G["desc"], body, nav=None,
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Article", "headline": fr(G["h1"]), "description": fr(G["desc"]), "datePublished": "2026-11-18", "dateModified": "@@MAJ@@",
-               "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"],
+               "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"], "image": [SITE + "/assets/og.png"],
                "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Co-fondateur", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               faq_ld(G["faq"]), bc_ld(*crumb_items)]})
@@ -1227,7 +1227,7 @@ def pillar_page(G):
     write(G["path"], G["title"], G["desc"], body, nav=None, form_after=5,
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Article", "headline": fr(G["h1"]), "description": fr(G["desc"]), "datePublished": "2026-11-18", "dateModified": "@@MAJ@@",
-               "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"],
+               "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"], "image": [img("Un menuisier pose une fenêtre")[0]],
                "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Co-fondateur", "url": SITE + "/qui-sommes-nous/#charles"},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               faq_ld(faq_items), bc_ld(("Trouver des chantiers", G["path"]))]})
@@ -1561,7 +1561,7 @@ SECURITY_HEADERS = [
                 {"source": "/assets/fonts/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
                 {"source": "/assets/js/(gsap|ScrollTrigger|SplitText|lenis|consent)(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
                 {"source": "/404(.*)", "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]},
-                {"source": "/(llms.txt|llms-full.txt)", "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]},
+                {"source": f"/(llms.txt|llms-full.txt|{INDEXNOW_KEY}.txt)", "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]},
                 {"source": "/assets/(og.png|logo-bartier.png)", "headers": [{"key": "Cross-Origin-Resource-Policy", "value": "cross-origin"}]}]}, indent=2), encoding="utf-8")
 
 # ——— Fichiers SEO et GEO ———

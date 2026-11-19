@@ -571,7 +571,7 @@ urls = "\n".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{TODAY}</lastmod></url>" 
 art_lines = "\n".join(f"- [{fr(a['short'])}]({SITE}/blog/{a['slug']}/) : {fr(a['desc'])}" for a in ARTICLES)
 (ROOT / "llms.txt").write_text(f"""# Bartier & Co
 
-> Bartier & Co trouve des clients aux artisans du bâtiment à gros chantiers (couverture, façade, menuiserie extérieure, charpente, isolation) partout en France. Bartier & Co diffuse des annonces locales (Meta Ads, Google Ads), rappelle chaque demande en moins de 5 minutes en semaine de 8 h à 19 h, vérifie le projet et fixe la visite chez le propriétaire, directement dans l'agenda de l'artisan. Les rendez-vous ne sont proposés qu'à un seul artisan par métier et par secteur. Sans engagement de durée. Pour les propriétaires, la mise en relation avec un artisan de leur secteur est gratuite : {SITE}/devis-travaux/. Société : Bartier & Co SAS (France). Fondateurs : Charles Le Cottier et Martin Barthélémy.
+> Bartier & Co trouve des clients aux artisans du bâtiment à gros chantiers (couverture, façade, menuiserie extérieure, charpente, isolation) partout en France. Bartier & Co diffuse des annonces locales (Meta Ads, Google Ads), rappelle chaque demande en moins de 5 minutes en semaine de 8 h à 19 h, vérifie le projet et fixe la visite chez le propriétaire, directement dans l'agenda de l'artisan. Les rendez-vous ne sont proposés qu'à un seul artisan par métier et par secteur. Sans engagement de durée. Pour les propriétaires, la mise en relation avec un artisan de leur secteur est gratuite : {SITE}/devis-travaux/. Société : Bartier & Co, SAS française en cours d'immatriculation. Fondateurs : Charles Le Cottier et Martin Barthélémy.
 
 ## Pages principales
 - [Accueil]({SITE}/) : la méthode, les engagements et le formulaire pour vérifier si un secteur est libre.
@@ -609,6 +609,9 @@ Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et dev
 - [Fenêtres et portes]({SITE}/devis-travaux/fenetres/) : fenêtres PVC, alu ou bois, porte d'entrée, baie vitrée, volets.
 - [Charpente]({SITE}/devis-travaux/charpente/) : réparation, traitement, extension, surélévation.
 - [Isolation]({SITE}/devis-travaux/isolation/) : combles perdus ou aménagés, murs par l'extérieur, toiture.
+- [Fuite de toiture : les 5 bons réflexes]({SITE}/devis-travaux/toiture/#fuite-toiture)
+- [Combien vont coûter vos travaux : prix sourcés par métier]({SITE}/devis-travaux/#prix)
+- [Comment reconnaître un artisan sérieux : 5 points à vérifier]({SITE}/devis-travaux/#artisan-serieux)
 
 Prix indicatifs cités sur le site, d'après des sources tierces (seule une visite permet un devis fiable) :
 - Rénovation de toiture : 60 à 500 €/m², pose comprise (QuelleEnergie).

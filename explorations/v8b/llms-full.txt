@@ -627,7 +627,7 @@ Oui. Vos photos de chantier et de votre équipe passent avant les images de banq
 
 ---
 
-## Devis toiture, façade, fenêtres, isolation
+## Devis travaux gratuit : toiture, façade, fenêtres, isolation
 
 Adresse : https://bartierandco.com/devis-travaux/
 
@@ -683,7 +683,7 @@ Seaux, bâches, mobilier à l’abri. Ne montez jamais sur le toit.
 Plafond, murs, objets abîmés. Votre assureur vous les demandera.
 
 #### Prévenez votre assureur
-Déclarez le dégât des eaux dans le délai de votre contrat : au moins cinq jours ouvrés (Code des assurances, art. L113-2).
+Votre contrat vous laisse au moins cinq jours ouvrés pour déclarer le sinistre (Code des assurances, art. L113-2). Faites-le sans attendre.
 
 #### Faites intervenir un couvreur
 Il trouve l’origine de la fuite, protège si besoin et chiffre la réparation.
@@ -696,31 +696,31 @@ Les prix en ligne sont des moyennes : seul l’artisan peut chiffrer votre chant
 60 à 500 €/m² Rénovation, pose comprise
 Varie selon : surface, matériau (tuiles, ardoise, bac acier), état de la charpente, accès au toit.
 Source : QuelleEnergie, consulté le 18/11/2026
-Voir la page Toiture
+Prix et devis toiture
 
 #### Prix d’un ravalement de façade
 50 à 100 €/m² Ravalement, selon l’état de la façade
 Varie selon : surface, état du support, finition, échafaudage.
 Source : La Maison Saint-Gobain, mis à jour le 25/08/2026
-Voir la page Façade
+Prix et devis façade
 
 #### Prix de fenêtres posées
 870 à 1 170 € Fenêtre PVC double vitrage posée, TTC
 Varie selon : nombre et taille des ouvertures, matériau, vitrage, type de pose.
 Source : La Maison Saint-Gobain, mis à jour le 13/02/2026
-Voir la page Fenêtres et portes
+Prix et devis fenêtres
 
 #### Prix de travaux de charpente
 40 à 250 €/m² Rénovation en bois, 150 €/m² en moyenne
 Varie selon : état du bois, portée, traitement, accès au chantier.
 Source : Obat, mis à jour le 28/10/2024
-Voir la page Charpente
+Prix et devis charpente
 
 #### Prix de l’isolation des combles
 40 à 45 €/m² Combles perdus, pose comprise, TTC
 Varie selon : surface, technique (combles perdus, rampants, murs), isolant.
 Source : La Maison Saint-Gobain, mis à jour le 06/07/2026
-Voir la page Isolation
+Prix et devis isolation
 ou appelez le 07 81 01 89 36
 
 ### Comment reconnaître un artisan sérieux ?
@@ -764,7 +764,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
-- Bartier & Co SAS. Mentions légales.
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
 Mis à jour le 19 novembre 2026
 
 ### Vos questions sur les devis de travaux
@@ -801,10 +801,10 @@ Comptez de 50 à 100 €/m², selon La Maison Saint-Gobain (2026). Le prix dépe
 Comptez de 870 à 1 170 € TTC pour une fenêtre PVC double vitrage posée en remplacement, selon La Maison Saint-Gobain (2026). Le prix change avec la taille, le matériau (PVC, alu, bois), le vitrage et le type de pose. Le devis détaille chaque fenêtre.
 
 **J’ai une fuite de toiture, que faire tout de suite ?**
-Éloignez l’eau des prises, protégez le mobilier, photographiez les dégâts et prévenez votre assureur dans le délai de votre contrat, au moins cinq jours ouvrés (Code des assurances, art. L113-2). Dans le formulaire, choisissez « Fuite ou dégât urgent » : ces demandes sont rappelées en priorité.
+Éloignez l’eau des prises, protégez le mobilier, photographiez les dégâts et prévenez votre assureur sans attendre : votre contrat vous laisse au moins cinq jours ouvrés (Code des assurances, art. L113-2). Dans le formulaire, choisissez « Fuite ou dégât urgent » : ces demandes sont rappelées en priorité.
 
 **Puis-je obtenir des aides pour mes travaux ?**
-Pour la rénovation énergétique, comme l’isolation, oui dans certains cas : MaPrimeRénov’, primes CEE des fournisseurs d’énergie, éco-prêt à taux zéro. Toutes demandent une entreprise certifiée RGE, et leurs conditions changent souvent : vérifiez votre cas sur france-renov.gouv.fr et parlez-en lors de notre appel.
+Pour la rénovation énergétique, comme l’isolation, oui dans certains cas : MaPrimeRénov’, primes CEE des fournisseurs d’énergie, éco-prêt à taux zéro. Toutes demandent une entreprise certifiée RGE, et leurs conditions changent souvent : vérifiez votre cas sur france-renov.gouv.fr. Dans un logement de plus de deux ans, la TVA est aussi réduite : 10 % pour la rénovation, 5,5 % pour les travaux d’économie d’énergie (Code général des impôts, art. 279-0 bis et 278-0 bis A).
 
 **Où intervenez-vous ?**
 Là où un artisan partenaire couvre votre commune. Sinon, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
@@ -845,7 +845,7 @@ ou appelez le 07 81 01 89 36
 
 Adresse : https://bartierandco.com/devis-travaux/toiture/
 
-Réfection de toiture, fuite, tuiles, zinguerie, démoussage. Décrivez vos travaux en 1 minute : un seul couvreur de votre secteur vient chiffrer. Gratuit.
+Réfection de toiture : de 60 à 500 €/m² pose comprise (QuelleEnergie). Décrivez vos travaux en 1 minute, un seul couvreur local vient chiffrer. Gratuit.
 
 Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
 - Visite et devis offerts
@@ -879,7 +879,14 @@ Mousses et lichens retirés, état des tuiles vérifié au passage.
 Surface, matériau (tuiles, ardoise, bac acier), état de la charpente, accès au toit.
 Rénovation de toiture : de 60 à 500 €/m², pose comprise. L’écart dépend de ce qui est refait : couverture seule, isolation, charpente.
 Source : QuelleEnergie, consulté le 18/11/2026
-C’est une moyenne : seule une visite permet un devis fiable.
+- Travaux | Prix | Source
+- Entretien avec quelques réparations | 10 à 80 €/m² | QuelleEnergie
+- Nettoyage et démoussage | 25 à 35 €/m² | Saint-Gobain, 03/2026
+- Démoussage et traitement hydrofuge | 35 à 45 €/m² | Saint-Gobain, 03/2026
+- Remplacement de la couverture | 60 à 300 €/m² | QuelleEnergie
+- Remplacement de toute la toiture | 180 à 500 €/m² | QuelleEnergie
+- Isolation par l’extérieur (sarking) | 120 à 250 €/m² | QuelleEnergie
+Ce sont des moyennes : seule une visite permet un devis fiable.
 
 ### Fuite de toiture ? Les 5 bons réflexes
 Suivez-les dans l’ordre, puis signalez-nous la fuite : nous vous rappelons en priorité.
@@ -894,7 +901,7 @@ Seaux, bâches, mobilier à l’abri. Ne montez jamais sur le toit.
 Plafond, murs, objets abîmés. Votre assureur vous les demandera.
 
 #### Prévenez votre assureur
-Déclarez le dégât des eaux dans le délai de votre contrat : au moins cinq jours ouvrés (Code des assurances, art. L113-2).
+Votre contrat vous laisse au moins cinq jours ouvrés pour déclarer le sinistre (Code des assurances, art. L113-2). Faites-le sans attendre.
 
 #### Faites intervenir un couvreur
 Il trouve l’origine de la fuite, protège si besoin et chiffre la réparation.
@@ -941,7 +948,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
-- Bartier & Co SAS. Mentions légales.
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
 Mis à jour le 19 novembre 2026
 
 ### Devis toiture : vos questions
@@ -963,11 +970,17 @@ Les mousses retiennent l’humidité et abîment les tuiles avec le temps. Un d�
 **Combien de temps dure une réfection de toiture ?**
 Cela dépend de la surface, de la météo et de l’état de la charpente. Le couvreur vous donne un délai dans son devis.
 
+**L’assurance paie-t-elle la réparation du toit ?**
+Cela dépend de la cause. Après une tempête, la garantie tempête de l’assurance habitation joue en général (Code des assurances, art. L122-7). Si la fuite vient de l’usure ou d’un manque d’entretien, la réparation du toit reste le plus souvent à votre charge, même quand les dégâts intérieurs sont couverts. C’est votre contrat qui tranche.
+
+**Des aides pour refaire sa toiture ?**
+Refaire la couverture seule n’ouvre en général pas droit à MaPrimeRénov’ : les aides visent la rénovation énergétique, comme l’isolation de la toiture, réalisée par une entreprise RGE. La TVA est en revanche de 10 % dans un logement de plus de deux ans, et de 5,5 % si les travaux améliorent sa performance énergétique. Vérifiez votre cas sur france-renov.gouv.fr.
+
 **Prenez-vous aussi les petites réparations ?**
 Dites-le-nous à l’appel. Si l’artisan partenaire de votre secteur ne prend pas ce type de chantier, nous vous le disons tout de suite, et votre demande n’est transmise à personne.
 
 **J’ai une fuite de toiture, que faire tout de suite ?**
-Éloignez l’eau des prises, protégez le mobilier, photographiez les dégâts et prévenez votre assureur dans le délai de votre contrat, au moins cinq jours ouvrés (Code des assurances, art. L113-2). Dans le formulaire, choisissez « Fuite ou dégât urgent » : ces demandes sont rappelées en priorité.
+Éloignez l’eau des prises, protégez le mobilier, photographiez les dégâts et prévenez votre assureur sans attendre : votre contrat vous laisse au moins cinq jours ouvrés (Code des assurances, art. L113-2). Dans le formulaire, choisissez « Fuite ou dégât urgent » : ces demandes sont rappelées en priorité.
 
 ### Autres travaux
 Tous les devis de travaux
@@ -981,7 +994,7 @@ ou appelez le 07 81 01 89 36
 
 ---
 
-## Ravalement de façade : devis gratuit près de chez vous
+## Ravalement de façade : prix au m² et devis gratuit
 
 Adresse : https://bartierandco.com/devis-travaux/ravalement-facade/
 
@@ -1019,7 +1032,11 @@ Isolant posé sur les murs puis recouvert d’un enduit ou d’un bardage.
 Surface, état du support, finition, échafaudage.
 Ravalement de façade : de 50 à 100 €/m², selon l’état de la façade, les techniques et les matériaux.
 Source : La Maison Saint-Gobain, mis à jour le 25/08/2026
-C’est une moyenne : seule une visite permet un devis fiable.
+- Travaux | Prix | Source
+- Mise en peinture | 50 à 75 €/m² | Saint-Gobain, 08/2026
+- Projection d’enduit | 50 à 70 €/m² | Saint-Gobain, 08/2026
+- Ravalement avec isolant | 110 à 215 €/m² | Saint-Gobain, 08/2026
+Ce sont des moyennes : seule une visite permet un devis fiable.
 
 ### Comment reconnaître un artisan sérieux ?
 5 points à vérifier avant de signer. Avec nous ou sans nous.
@@ -1062,7 +1079,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
-- Bartier & Co SAS. Mentions légales.
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
 Mis à jour le 19 novembre 2026
 
 ### Devis façade : vos questions
@@ -1080,6 +1097,9 @@ Un ravalement qui modifie l’aspect extérieur demande en général une déclar
 
 **Peut-on isoler en même temps que le ravalement ?**
 Oui, c’est le bon moment pour une isolation par l’extérieur. Réalisée par une entreprise RGE, elle peut ouvrir droit à des aides : vérifiez-les sur france-renov.gouv.fr.
+
+**Quelle TVA pour un ravalement ?**
+Dans un logement de plus de deux ans, la TVA est de 10 % sur un ravalement, et de 5,5 % s’il s’accompagne d’une isolation qui améliore la performance énergétique (Code général des impôts, art. 279-0 bis et 278-0 bis A).
 
 ### Autres travaux
 Tous les devis de travaux
@@ -1127,11 +1147,14 @@ Coulissante ou à galandage, création ou remplacement.
 #### Volets
 Roulants, battants ou persiennes, motorisés ou non.
 
-### Prix de fenêtres posées
+### Prix d’une fenêtre PVC posée
 Nombre et taille des ouvertures, matériau, vitrage, type de pose.
 Fenêtre PVC double vitrage, fournie et posée en remplacement : de 870 à 1 170 € TTC, 1 020 € en moyenne.
 Source : La Maison Saint-Gobain, mis à jour le 13/02/2026
-C’est une moyenne : seule une visite permet un devis fiable.
+- Travaux | Prix | Source
+- Fenêtre PVC en remplacement | 870 à 1 170 € TTC | Saint-Gobain, 02/2026
+- Fenêtre PVC en création d’ouverture | environ 2 400 € TTC | Saint-Gobain, 02/2026
+Ce sont des moyennes : seule une visite permet un devis fiable.
 
 ### Comment reconnaître un artisan sérieux ?
 5 points à vérifier avant de signer. Avec nous ou sans nous.
@@ -1174,7 +1197,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
-- Bartier & Co SAS. Mentions légales.
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
 Mis à jour le 19 novembre 2026
 
 ### Devis fenêtres et portes : vos questions
@@ -1192,6 +1215,9 @@ Le PVC est le plus économique, l’aluminium permet des profils fins et de gran
 
 **Faut-il une autorisation pour changer ses fenêtres ?**
 Remplacer à l’identique ne demande en général rien. Changer l’aspect, le matériau, la couleur ou le découpage demande une déclaration préalable en mairie.
+
+**Des aides pour changer ses fenêtres ?**
+Remplacer du simple vitrage par des fenêtres performantes peut ouvrir droit à des aides à la rénovation énergétique, avec une entreprise RGE : vérifiez votre cas sur france-renov.gouv.fr. Dans un logement de plus de deux ans, la TVA est de 5,5 % pour des fenêtres qui améliorent la performance énergétique, et de 10 % sinon.
 
 **Prenez-vous aussi les petites réparations ?**
 Dites-le-nous à l’appel. Si l’artisan partenaire de votre secteur ne prend pas ce type de chantier, nous vous le disons tout de suite, et votre demande n’est transmise à personne.
@@ -1246,7 +1272,11 @@ Traditionnelle ou en fermettes, souvent avec la couverture.
 État du bois, portée, traitement, accès au chantier.
 Rénovation de charpente en bois : 150 €/m² en moyenne, de 40 à 250 €/m² selon l’état et la surface.
 Source : Obat, mis à jour le 28/10/2024
-C’est une moyenne : seule une visite permet un devis fiable.
+- Travaux | Prix | Source
+- Rénovation, charpente traditionnelle | 60 à 210 €/m² | Obat, 10/2024
+- Rénovation, charpente fermette | 50 à 250 €/m² | Obat, 10/2024
+- Traitement préventif ou curatif du bois | 40 à 180 €/m² | Obat, 10/2024
+Ce sont des moyennes : seule une visite permet un devis fiable.
 
 ### Comment reconnaître un artisan sérieux ?
 5 points à vérifier avant de signer. Avec nous ou sans nous.
@@ -1289,7 +1319,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
-- Bartier & Co SAS. Mentions légales.
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
 Mis à jour le 19 novembre 2026
 
 ### Devis charpente : vos questions
@@ -1323,7 +1353,7 @@ ou appelez le 07 81 01 89 36
 
 ---
 
-## Isolation combles et murs : devis gratuit près de chez vous
+## Isolation des combles et murs : prix et devis gratuit
 
 Adresse : https://bartierandco.com/devis-travaux/isolation/
 
@@ -1361,7 +1391,12 @@ Isolant posé sur la charpente lors d’une réfection, technique dite du sarkin
 Surface, technique (combles perdus, rampants, murs), isolant.
 Isolation des combles perdus, pose comprise : 40 €/m² TTC si l’accès se fait par l’intérieur, 45 €/m² TTC par le toit.
 Source : La Maison Saint-Gobain, mis à jour le 06/07/2026
-C’est une moyenne : seule une visite permet un devis fiable.
+- Travaux | Prix | Source
+- Combles perdus, accès par l’intérieur | 40 €/m² TTC | Saint-Gobain, 07/2026
+- Combles perdus, accès par le toit | 45 €/m² TTC | Saint-Gobain, 07/2026
+- Combles aménagés, par l’intérieur | 130 à 180 €/m² TTC | Saint-Gobain, 07/2026
+- Combles aménagés, par le toit | 240 €/m² TTC | Saint-Gobain, 07/2026
+Ce sont des moyennes : seule une visite permet un devis fiable.
 
 ### Comment reconnaître un artisan sérieux ?
 5 points à vérifier avant de signer. Avec nous ou sans nous.
@@ -1404,7 +1439,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 - Selon votre commune. Hors zone, nous vous le disons à l’appel.
 
 **La société**
-- Bartier & Co SAS. Mentions légales.
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
 Mis à jour le 19 novembre 2026
 
 ### Devis isolation : vos questions
@@ -1442,10 +1477,10 @@ ou appelez le 07 81 01 89 36
 
 Adresse : https://bartierandco.com/qui-sommes-nous/
 
-Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.
+Bartier & Co est une société française fondée par Charles Le Cottier et Martin Barthélémy. Des clients pour les artisans du bâtiment.
 
 Qui sommes-nous
-Bartier & Co est une SAS française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.
+Bartier & Co est une société française fondée par Charles Le Cottier et Martin Barthélémy. Nous trouvons des clients aux artisans du bâtiment, partout en France.
 
 ### Vous n’avez pas à courir après les devis
 Vous avez du métier et des clients satisfaits, mais pas assez de projets sérieux chaque semaine.

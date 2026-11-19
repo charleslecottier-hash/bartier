@@ -140,7 +140,7 @@
       ]
     },
     {
-      "source": "/(llms.txt|llms-full.txt)",
+      "source": "/(llms.txt|llms-full.txt|9e243e36d5aa224c04b988c6e4c145d3.txt)",
       "headers": [
         {
           "key": "X-Robots-Tag",
