@@ -174,7 +174,7 @@ ANIM_CSS = """
 .ad-t{padding:0 12px 9px;font-size:13px}
 .ad-img{height:172px;background:#ddd}.ad-img img{width:100%;height:100%;object-fit:cover}
 .ad-link{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 12px;background:#f0f2f5}
-.ad-link span{min-width:0}.ad-link small{display:block;color:#65676b;font-size:10.5px}.ad-link b{display:block;font-size:13px}
+.ad-link span{min-width:0}.ad-link small{display:block;color:#65676b;font-size:11px}.ad-link b{display:block;font-size:13px}
 .ad-cta{flex:none;padding:7px 10px;border-radius:6px;background:#e2e5e9;font-style:normal;font-weight:600;font-size:12.5px;transition:transform .15s,filter .15s}
 .ad-re{display:flex;justify-content:space-between;padding:8px 12px;color:#65676b;font-size:11.5px;border-bottom:1px solid #e4e6eb;margin:0 0}
 .ad-act{display:flex;justify-content:space-around;padding:8px 0 10px;color:#65676b;font-weight:600;font-size:12px}

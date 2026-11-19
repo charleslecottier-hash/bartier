@@ -1473,6 +1473,39 @@ for f in PAGES_OUT:
     doc = CSSPURGE.purge_doc(doc, _CONSENT_JS)  # vitesse : chaque page ne garde que le CSS qui peut la toucher
     f.write_text(doc, encoding="utf-8")
 
+# ——— Sécurité : politique de contenu (CSP) ———
+# Rien d'extérieur n'est chargé tant qu'aucun identifiant de mesure n'est configuré (TAGS). Si un identifiant Google ou Meta
+# est ajouté, ses adresses sont autorisées ici automatiquement (le bandeau cookies ne les charge qu'après accord).
+_G = bool(TAGS.get("ga4") or TAGS.get("gads"))
+_M = bool(TAGS.get("meta"))
+CSP_SCRIPT = ["'self'"] + (["https://www.googletagmanager.com", "https://www.googleadservices.com", "https://googleads.g.doubleclick.net"] if _G else []) + (["https://connect.facebook.net"] if _M else [])
+_CSP_NET = (["https://*.google-analytics.com", "https://*.analytics.google.com", "https://*.googletagmanager.com", "https://www.google.com",
+             "https://*.g.doubleclick.net", "https://www.googleadservices.com"] if _G else []) + (["https://www.facebook.com", "https://connect.facebook.net"] if _M else [])
+CSP_HEADER = "; ".join([
+    "default-src 'self'",
+    "script-src " + " ".join(CSP_SCRIPT + ["'unsafe-inline'"]),  # resserré page par page par les empreintes (balise meta)
+    "style-src 'self' 'unsafe-inline'",
+    "img-src " + " ".join(["'self'", "data:"] + _CSP_NET + (["https://www.google.fr"] if _G else [])),
+    "font-src 'self' data:",
+    "connect-src " + " ".join(["'self'"] + _CSP_NET),
+    "frame-src " + (" ".join(["https://td.doubleclick.net", "https://www.googletagmanager.com"]) if _G else "'none'"),
+    "media-src 'self'", "manifest-src 'self'", "worker-src 'self'",
+    "object-src 'none'", "base-uri 'self'", "form-action 'self'", "frame-ancestors 'none'",
+    "upgrade-insecure-requests"])
+SECURITY_HEADERS = [
+    {"key": "Content-Security-Policy", "value": CSP_HEADER},
+    {"key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload"},
+    {"key": "X-Content-Type-Options", "value": "nosniff"},
+    {"key": "X-Frame-Options", "value": "DENY"},
+    {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+    {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), bluetooth=(), hid=(), "
+                                           "magnetometer=(), gyroscope=(), accelerometer=(), display-capture=(), browsing-topics=()"},
+    {"key": "Cross-Origin-Opener-Policy", "value": "same-origin"},
+    {"key": "Cross-Origin-Resource-Policy", "value": "same-origin"},
+    {"key": "X-Permitted-Cross-Domain-Policies", "value": "none"},
+    {"key": "Origin-Agent-Cluster", "value": "?1"},
+]
+
 # ——— vercel.json : redirections utiles et en-têtes ———
 (ROOT / "vercel.json").write_text(json.dumps({
     # une seule adresse par page : /blog et /blog/index.html renvoient vers /blog/
@@ -1480,10 +1513,7 @@ for f in PAGES_OUT:
     "redirects": [{"source": s, "destination": d, "permanent": True} for s, d in [
         ("/particuliers", "/devis-travaux/"), ("/particuliers/", "/devis-travaux/"), ("/devis", "/devis-travaux/"), ("/devis/", "/devis-travaux/"),
         ("/toiture", "/devis-travaux/toiture/"), ("/toiture/", "/devis-travaux/toiture/")]],
-    "headers": [{"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"},
-                                                {"key": "X-Frame-Options", "value": "SAMEORIGIN"},
-                                                {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
-                                                {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"}]},
+    "headers": [{"source": "/(.*)", "headers": SECURITY_HEADERS},
                 {"source": "/(.*)", "has": [{"type": "host", "value": ".*\\.vercel\\.app"}], "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]},  # adresses Vercel : jamais indexées, seul bartierandco.com compte
                 {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400"}]},
                 {"source": "/assets/photos/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=2592000"}]},
@@ -1526,4 +1556,25 @@ for _f in (ROOT / "assets" / "photos").glob("*.webp"):
 if LIVE and legal_missing:
     raise SystemExit("Mise en ligne impossible : informations légales manquantes : " + ", ".join(sorted(legal_missing)))
 (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n', encoding="utf-8")
+# ——— Sécurité : seuls les scripts intégrés écrits ici peuvent s'exécuter (empreinte SHA-256 de chacun, page par page).
+# Le navigateur applique à la fois l'en-tête (vercel.json) et cette balise : un script injecté par un tiers serait refusé.
+import base64 as _b64
+_SCRIPT_RE = re.compile(r"<script\b([^>]*)>([\s\S]*?)</script>", re.I)
+def _csp_meta(doc):
+    hashes = []
+    for m in _SCRIPT_RE.finditer(doc):
+        attrs, body = m.group(1), m.group(2)
+        if re.search(r"\bsrc\s*=", attrs, re.I):
+            continue
+        t = re.search(r'\btype\s*=\s*"([^"]*)"', attrs, re.I)
+        if t and t.group(1).lower() not in ("", "text/javascript", "module", "application/javascript"):
+            continue  # données structurées (application/ld+json) : jamais exécutées
+        hashes.append("'sha256-" + _b64.b64encode(_h.sha256(body.encode("utf-8")).digest()).decode() + "'")
+    pol = "script-src " + " ".join(CSP_SCRIPT + sorted(set(hashes))) + "; object-src 'none'; base-uri 'self'"
+    doc = re.sub(r'<meta http-equiv="Content-Security-Policy"[^>]*>\n?', "", doc)
+    return doc.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta http-equiv="Content-Security-Policy" content="' + pol + '">', 1)
+for _f in [ROOT / p.strip("/") / "index.html" for p in paths] + [ROOT / "404.html"]:
+    _t = _f.read_text(encoding="utf-8")
+    assert '<meta charset="utf-8">' in _t, _f
+    _f.write_text(_csp_meta(_t), encoding="utf-8")
 print(len(paths), "pages :", ", ".join(paths))
