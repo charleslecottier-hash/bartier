@@ -560,9 +560,18 @@ h1,h2,h3{text-wrap:balance}
 
 /* ——— Bulle WhatsApp : libellé court, puis l'icône seule une fois la page entamée (elle ne cache plus le contenu) ——— */
 .wa-fab b span{display:none}
-.wa.is-mini:not(.is-open) .wa-fab b,.wa.is-mini:not(.is-open) .wa-fab .wa-dot{display:none}
+/* sur ordinateur, le libellé se replie en douceur ; sur téléphone la bulle est déjà une icône seule et ne bouge pas */
+@media (min-width:761px){
+.wa-fab{gap:0;transition:transform .3s var(--ease),padding .35s var(--ease)}
+.wa-fab .wa-dot,.wa-fab b{margin-left:.65rem;transition:max-width .35s var(--ease),width .35s var(--ease),margin .35s var(--ease),opacity .2s var(--ease)}
+.wa-fab .wa-dot{flex:none}
+.wa-fab b{display:inline-block;max-width:12em;overflow:hidden;white-space:nowrap}
 .wa.is-mini:not(.is-open) .wa-fab{padding:.55rem}
-.wa.is-mini:not(.is-open) .wa-fab:hover b,.wa.is-mini:not(.is-open) .wa-fab:focus-visible b{display:inline}
+.wa.is-mini:not(.is-open) .wa-fab .wa-dot{width:0;margin-left:0;opacity:0}
+.wa.is-mini:not(.is-open) .wa-fab b{max-width:0;margin-left:0;opacity:0}
+.wa.is-mini:not(.is-open) .wa-fab:hover b,.wa.is-mini:not(.is-open) .wa-fab:focus-visible b{max-width:12em;margin-left:.65rem;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){.wa-fab .wa-dot,.wa-fab b{transition:none}}
 
 /* ——— En-tête : « Comment ça marche » ouvre une liste (la méthode, puis le guide pour trouver des chantiers) ——— */
 .hdr-dd{position:relative;display:inline-flex;align-items:center}
