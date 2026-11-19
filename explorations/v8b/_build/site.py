@@ -1109,6 +1109,15 @@ TC_CHANNELS = [  # nom, ce que vous payez, ce qu'il faut, la demande (ok : pour 
     ("Flyers et panneaux", "L'impression et la distribution", "Des chantiers dans le quartier", "ok", ""),
     ("Réseaux professionnels", "Une cotisation et du temps", "Une présence régulière", "ok", ""),
 ]
+MENU_DD_JS = """<script id="menu-dd">(function(){var dd=[].slice.call(document.querySelectorAll(".menu-dd"));if(!dd.length)return;
+var still=window.matchMedia("(prefers-reduced-motion: reduce)").matches,ease="cubic-bezier(.22,1,.36,1)";
+function shut(d,now){var l=d.querySelector(".menu-dd-list");if(!d.open)return;if(now||still||!l.animate){d.open=false;return}
+var a=l.animate([{height:l.scrollHeight+"px",opacity:1},{height:"0px",opacity:0}],{duration:200,easing:ease});a.onfinish=function(){d.open=false}}
+dd.forEach(function(d){var s=d.querySelector("summary"),l=d.querySelector(".menu-dd-list");s.addEventListener("click",function(e){e.preventDefault();
+if(d.open){shut(d);return}dd.forEach(function(o){if(o!==d)shut(o,true)});d.open=true;
+if(!still&&l.animate)l.animate([{height:"0px",opacity:0},{height:l.scrollHeight+"px",opacity:1}],{duration:260,easing:ease})})})})();</script>"""
+
+
 TC_CALC_JS = r'''<script>(function(){var g=function(i){return document.getElementById(i)},d=g('tc-d'),s=g('tc-s'),m=g('tc-m'),r=g('tc-r'),q=g('tc-p');if(!d)return;
 var n=function(e){var v=e.value.replace(/[^0-9,.]/g,'').replace(',','.');return v===''?NaN:parseFloat(v)},f=function(x){return new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0}).format(x)};
 function run(){var a=n(d),b=n(s),c=n(m);if(!(a>=0)||!(b>0)){r.textContent='—';q.textContent=b===0?'Ajoutez au moins un chantier signé':'';return}
@@ -1401,6 +1410,8 @@ for f in PAGES_OUT:
     doc = IMG.localize(doc, SITE).replace('<link rel="preconnect" href="https://images.unsplash.com">\n', "")
     doc = re.sub(r"<img [^>]*>", real_dims, doc)
     doc = typo(doc)
+    if 'class="menu-dd"' in doc and 'id="menu-dd"' not in doc:  # menu téléphone : sous-listes qui glissent
+        doc = doc.replace("</body>", MENU_DD_JS + "\n</body>", 1)
     if 'id="calculateur"' in doc and 'id="tc-js"' not in doc:  # calculateur : script ajouté après la typo, qui changerait ses apostrophes
         doc = doc.replace("</body>", TC_CALC_JS.replace("<script>", '<script id="tc-js">', 1) + "\n</body>", 1)
     if 'id="wa"' in doc and "wa-mini" not in doc:  # bulle WhatsApp : réduite à l'icône une fois la page entamée, pour ne rien cacher
