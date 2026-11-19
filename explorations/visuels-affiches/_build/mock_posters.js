@@ -38,13 +38,19 @@ const posters = {
   'rue-particuliers': V('var(--accent)', '#fff', 'rgba(255,255,255,.09)', `
     <p style="position:relative;font-size:30px;opacity:.85">Vous êtes propriétaire&nbsp;?</p>
     <p class="d" style="position:relative;margin-top:34px;font-size:112px;line-height:.95">Pas cinq artisans.<br>Un seul, près de chez vous.</p>
-    <p style="position:relative;margin-top:40px;font-size:30px;line-height:1.35;opacity:.92">Toiture, façade, fenêtres, charpente, isolation. Visite et devis offerts.</p>
+    <p style="position:relative;margin-top:40px;font-size:34px;line-height:1.3;opacity:.92">Visite et devis offerts.</p>
     <p class="url" style="position:relative;margin-top:auto;font-size:26px;opacity:.9">bartierandco.com/devis-travaux</p>
     <div style="position:relative;margin-top:22px">${logo(230, '#fff')}</div>`),
   // Mur noir : les trois engagements en chiffres
   'mur-1-artisan': V('var(--ink)', '#fff', 'rgba(255,255,255,.07)', `${num('1', 'artisan', 'par secteur&nbsp;:<br>vous.', '#7da0ff', '#fff')}`),
   'mur-2-5-min': V('var(--accent)', '#fff', 'rgba(255,255,255,.10)', `${num('5', 'min', 'pour rappeler<br>chaque demande.', '#fff', '#fff')}`),
   'mur-3-0-mois': V('#fff', 'var(--ink)', 'rgba(10,20,36,.06)', `${num('0', 'mois', 'd’engagement.', 'var(--accent)', 'var(--ink)')}`),
+  // Abribus (format 120 x 176) : la promesse aux artisans
+  'abribus-artisans': [680, 1000, `<div class="p grid" style="width:680px;height:1000px;background:var(--ink);color:#fff;--g:rgba(255,255,255,.07);padding:60px 58px 52px">
+     <p style="position:relative;font-size:30px;color:#a9bcff">Artisans du bâtiment</p>
+     <p class="d" style="position:relative;margin-top:40px;font-size:128px;line-height:.93">Plus de<br>chantiers.<br><span style="color:#7da0ff">Moins de<br>téléphone.</span></p>
+     <p style="position:relative;margin-top:44px;font-size:32px;line-height:1.3;opacity:.9">Un seul artisan par métier<br>et par secteur.</p>
+     <div class="foot"><div>${logo(250, '#fff')}</div><p class="url" style="font-size:26px;opacity:.85;padding-bottom:6px">bartierandco.com</p></div></div>`],
   // Grand panneau : la promesse aux artisans
   'panneau-couverture': [1000, 520, `<div class="p grid" style="width:1000px;height:520px;background:var(--ink);color:#fff;--g:rgba(255,255,255,.07);padding:52px 60px 44px">
      <div style="position:relative">${logo(330, '#fff')}</div>
