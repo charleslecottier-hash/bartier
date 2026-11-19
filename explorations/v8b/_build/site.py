@@ -221,7 +221,9 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
 """
 home = re.sub(r'<style id="ld-css">[\s\S]*?</script>\n', "", home)
 home = re.sub(r'<div class="ld" id="ld"[\s\S]*?</script>\n', "", home)
-# Écran d'attente retiré le 18/11/2026 : la page s'affiche tout de suite (LD_HEAD et LD_BODY ne sont plus insérés).
+# Écran de chargement : remis le 19/11/2026 à la demande de Charles (il avait été retiré le 18/11). Une fois par visite.
+home = home.replace("</head>", LD_HEAD + "</head>", 1)
+home = re.sub(r"(<body[^>]*>\n?)", lambda m: m.group(1) + LD_BODY, home, count=1)
 
 # Données structurées, adresse canonique et balises de partage de l'accueil (toujours régénérées)
 FOUNDERS = [("charles", "Charles Le Cottier", "Co-fondateur"), ("martin", "Martin Barthélémy", "Co-fondateur")]
@@ -1376,14 +1378,41 @@ def typo(doc):
     return "".join(parts)
 
 
+# ——— Vitesse ———
+import csspurge as CSSPURGE
+_CONSENT_JS = (ROOT / "assets" / "js" / "consent.js").read_text(encoding="utf-8")
+
+
+def hero_preload(doc):
+    """La photo d'en-tête (fetchpriority="high") commence à se charger dès le début de la page, avant les styles."""
+    if 'rel="preload" as="image"' in doc:
+        return doc
+    m = re.search(r'<img\b[^>]*\bfetchpriority="high"[^>]*>', doc)
+    if not m:
+        return doc
+    tag = m.group(0)
+    srcset = re.search(r'\ssrcset="([^"]+)"', tag)
+    sizes = re.search(r'\ssizes="([^"]+)"', tag)
+    src = re.search(r'\ssrc="([^"]+)"', tag)
+    if srcset:
+        link = f'<link rel="preload" as="image" imagesrcset="{srcset.group(1)}"' + (f' imagesizes="{sizes.group(1)}"' if sizes else "") + ' fetchpriority="high">'
+    elif src:
+        link = f'<link rel="preload" as="image" href="{src.group(1)}" fetchpriority="high">'
+    else:
+        return doc
+    i = doc.find('<link rel="preload"')
+    i = i if i >= 0 else doc.index("</title>") + len("</title>")
+    return doc[:i] + link + "\n" + doc[i:]
+
+
 PAGES_OUT = sorted(f for f in ROOT.rglob("*.html") if not (f.name == "8b-original.html" or "_build" in f.parts or "_video" in f.parts))
 for f in PAGES_OUT:
     IMG.scan(f.read_text(encoding="utf-8"))
 for f in PAGES_OUT:
     doc = f.read_text(encoding="utf-8")
     first = doc.find("<img ", doc.find("<main>") if "<main>" in doc else 0)
-    hero = doc.find('<figure class="pg-photo frame"><img ', doc.find('class="sheet pg-top')) if 'class="sheet pg-top' in doc else -1
-    hero = hero + len('<figure class="pg-photo frame">') if hero >= 0 else -2
+    _hm = re.compile(r'<figure class="pg-photo frame[^"]*"><img ').search(doc, max(doc.find('class="sheet pg-top'), 0)) if 'class="sheet pg-top' in doc else None
+    hero = _hm.end() - len('<img ') if _hm else -2  # photo d'en-tête des pages intérieures (avec ou sans « is-color »)
     def lazy(m):
         tag = m.group(0)
         if m.start() == hero and "fetchpriority=" not in tag:
@@ -1442,6 +1471,8 @@ for f in PAGES_OUT:
     if doc.count(rob) > 1:
         i = doc.index(rob) + len(rob)
         doc = doc[:i] + doc[i:].replace(rob + "\n", "").replace(rob, "")
+    doc = hero_preload(doc)
+    doc = CSSPURGE.purge_doc(doc, _CONSENT_JS)  # vitesse : chaque page ne garde que le CSS qui peut la toucher
     f.write_text(doc, encoding="utf-8")
 
 # ——— vercel.json : redirections utiles et en-têtes ———
