@@ -1267,3 +1267,16 @@ section.tr-ads .ad-img{height:auto}
   .facts-dl dd a,.pf-dl dd a{display:inline-flex;align-items:center;min-height:36px}
   .ftr .ftr-legal a,.ftr .ftr-cookies{min-height:36px;font-size:.8125rem}
 }
+
+/* ——— iPhone : listes repliables sans flex sur <summary> (rendu identique sur Safari), bas de page au-dessus de la barre d'accueil ——— */
+@media (max-width:900px){
+  .menu nav .menu-dd summary{display:block;position:relative;padding-right:32px}
+  .menu nav .menu-dd summary .dd-chev{position:absolute;right:2px;top:50%;margin:-4px 0 0}
+  .menu nav .menu-dd[open] summary .dd-chev{transform:rotate(180deg)}
+}
+@media (max-width:760px){
+  .ftr .ftr-dd > summary.ftr-h{display:block;position:relative;min-height:0;padding:15px 32px 15px 0;line-height:1.4}
+  .ftr .ftr-dd > summary .dd-chev{position:absolute;right:2px;top:50%;margin-top:-4px}
+  .ftr{padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+  .ftr .ftr-top{bottom:calc(20px + env(safe-area-inset-bottom))}
+}
