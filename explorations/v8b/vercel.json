@@ -1,7 +1,17 @@
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": true,
   "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/index.html",
+      "destination": "/:path*/",
+      "permanent": true
+    },
     {
       "source": "/particuliers",
       "destination": "/devis-travaux/",

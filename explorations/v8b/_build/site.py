@@ -1461,7 +1461,10 @@ def hero_preload(doc):
     return doc[:i] + link + "\n" + doc[i:]
 
 
-PAGES_OUT = sorted(f for f in ROOT.rglob("*.html") if not (f.name == "8b-original.html" or "_build" in f.parts or "_video" in f.parts))
+# Vérification Google Search Console (méthode « fichier HTML ») : fichier fourni par Google, recopié à l'octet près, hors des pages
+GOOGLE_VERIFY = "google862e3c481c0cb4c7"
+(ROOT / f"{GOOGLE_VERIFY}.html").write_bytes(f"google-site-verification: {GOOGLE_VERIFY}.html".encode())
+PAGES_OUT = sorted(f for f in ROOT.rglob("*.html") if not (f.name == "8b-original.html" or f.name.startswith("google") or "_build" in f.parts or "_video" in f.parts))
 for f in PAGES_OUT:
     IMG.scan(f.read_text(encoding="utf-8"))
 for f in PAGES_OUT:
@@ -1586,8 +1589,11 @@ SECURITY_HEADERS = [
 # ——— vercel.json : redirections utiles et en-têtes ———
 (ROOT / "vercel.json").write_text(json.dumps({
     # une seule adresse par page : /blog et /blog/index.html renvoient vers /blog/
-    "cleanUrls": True, "trailingSlash": True,
+    # cleanUrls retiré : il redirigeait aussi le fichier de vérification Google. Toutes les pages sont des dossiers,
+    # les adresses en index.html sont redirigées par les deux règles ci-dessous.
+    "cleanUrls": False, "trailingSlash": True,
     "redirects": [{"source": s, "destination": d, "permanent": True} for s, d in [
+        ("/index.html", "/"), ("/:path*/index.html", "/:path*/"),
         ("/particuliers", "/devis-travaux/"), ("/particuliers/", "/devis-travaux/"), ("/devis", "/devis-travaux/"), ("/devis/", "/devis-travaux/"),
         ("/toiture", "/devis-travaux/toiture/"), ("/toiture/", "/devis-travaux/toiture/")]],
     "headers": [{"source": "/(.*)", "headers": SECURITY_HEADERS},
