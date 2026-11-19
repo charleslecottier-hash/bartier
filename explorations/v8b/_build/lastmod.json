@@ -21,7 +21,7 @@
  },
  "/conditions-du-service/": {
   "date": "2026-11-19",
-  "sig": "bd2ade807f2a270c"
+  "sig": "2bf95565db11382c"
  },
  "/confidentialite/": {
   "date": "2026-11-19",
@@ -33,7 +33,7 @@
  },
  "/devis-travaux/": {
   "date": "2026-11-19",
-  "sig": "24ca4a70572b8544"
+  "sig": "60fd0304fb236396"
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-19",
@@ -49,7 +49,7 @@
  },
  "/devis-travaux/ravalement-facade/": {
   "date": "2026-11-19",
-  "sig": "e3454c42a6f95272"
+  "sig": "fe3bee6dca04dce3"
  },
  "/devis-travaux/toiture/": {
   "date": "2026-11-19",
@@ -64,8 +64,8 @@
   "sig": "08ccc5c1751355e4"
  },
  "/mentions-legales/": {
-  "date": "2026-11-18",
-  "sig": "0800648ec1a9f9bf"
+  "date": "2026-11-19",
+  "sig": "c4f2cb83a64401b7"
  },
  "/meta-ads/": {
   "date": "2026-11-19",

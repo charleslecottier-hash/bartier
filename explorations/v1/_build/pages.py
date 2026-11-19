@@ -612,7 +612,7 @@ Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et dev
 
 Prix indicatifs cités sur le site, d'après des sources tierces (seule une visite permet un devis fiable) :
 - Rénovation de toiture : 60 à 500 €/m², pose comprise (QuelleEnergie).
-- Ravalement de façade : 40 à 160 €/m² en moyenne (Obat, chiffres 2024).
+- Ravalement de façade : 50 à 100 €/m², selon l'état de la façade (La Maison Saint-Gobain, 2026).
 - Fenêtre PVC double vitrage posée en remplacement : 870 à 1 170 € TTC (La Maison Saint-Gobain, 2026).
 - Rénovation de charpente en bois : 40 à 250 €/m², 150 €/m² en moyenne (Obat, chiffres 2024).
 - Isolation des combles perdus : environ 40 à 45 €/m², pose comprise (La Maison Saint-Gobain, 2026).

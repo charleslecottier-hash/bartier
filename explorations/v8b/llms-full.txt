@@ -699,9 +699,9 @@ Source : QuelleEnergie, consulté le 18/11/2026
 Voir la page Toiture
 
 #### Prix d’un ravalement de façade
-40 à 160 €/m² Ravalement, en moyenne
+50 à 100 €/m² Ravalement, selon l’état de la façade
 Varie selon : surface, état du support, finition, échafaudage.
-Source : Obat, mis à jour le 30/10/2024
+Source : La Maison Saint-Gobain, mis à jour le 25/08/2026
 Voir la page Façade
 
 #### Prix de fenêtres posées
@@ -795,7 +795,7 @@ Cherchez un artisan local, immatriculé, assuré en décennale, qui se déplace 
 Comptez de 60 à 500 €/m², pose comprise, selon QuelleEnergie. L’écart vient de ce qui est refait : couverture seule, avec isolation ou avec la charpente. Le matériau (tuiles, ardoise, bac acier) et l’accès au toit comptent aussi. Seule une visite permet un devis fiable.
 
 **Combien coûte un ravalement de façade ?**
-En moyenne de 40 à 160 €/m², selon Obat (chiffres 2024). Le prix dépend de la surface, de l’état du support, de la finition et de l’échafaudage. Des fissures ou un enduit abîmé le font monter : l’artisan les évalue lors de la visite.
+Comptez de 50 à 100 €/m², selon La Maison Saint-Gobain (2026). Le prix dépend de la surface, de l’état du support, de la finition et de l’échafaudage. Des fissures ou un enduit abîmé le font monter : l’artisan les évalue lors de la visite.
 
 **Combien coûte le remplacement d’une fenêtre ?**
 Comptez de 870 à 1 170 € TTC pour une fenêtre PVC double vitrage posée en remplacement, selon La Maison Saint-Gobain (2026). Le prix change avec la taille, le matériau (PVC, alu, bois), le vitrage et le type de pose. Le devis détaille chaque fenêtre.
@@ -1017,8 +1017,8 @@ Isolant posé sur les murs puis recouvert d’un enduit ou d’un bardage.
 
 ### Prix d’un ravalement de façade
 Surface, état du support, finition, échafaudage.
-Ravalement de façade : de 40 à 160 €/m² en moyenne.
-Source : Obat, mis à jour le 30/10/2024
+Ravalement de façade : de 50 à 100 €/m², selon l’état de la façade, les techniques et les matériaux.
+Source : La Maison Saint-Gobain, mis à jour le 25/08/2026
 C’est une moyenne : seule une visite permet un devis fiable.
 
 ### Comment reconnaître un artisan sérieux ?
@@ -1070,7 +1070,7 @@ Une autre question ? 07 81 01 89 36
 Voir toutes les questions
 
 **Combien coûte un ravalement de façade ?**
-En moyenne de 40 à 160 €/m², selon Obat (chiffres 2024). Le prix dépend de la surface, de l’état du support, de la finition et de l’échafaudage. Des fissures ou un enduit abîmé le font monter : l’artisan les évalue lors de la visite.
+Comptez de 50 à 100 €/m², selon La Maison Saint-Gobain (2026). Le prix dépend de la surface, de l’état du support, de la finition et de l’échafaudage. Des fissures ou un enduit abîmé le font monter : l’artisan les évalue lors de la visite.
 
 **Le ravalement est-il obligatoire ?**
 À Paris et dans les communes inscrites sur une liste fixée par le préfet, la mairie peut imposer un ravalement au moins tous les dix ans. Ailleurs, la loi ne fixe pas de fréquence (Code de la construction et de l’habitation). Votre mairie vous dit si votre commune est concernée.
@@ -2060,7 +2060,7 @@ Vos coordonnées servent à vous rappeler et à vous mettre en relation avec l�
 
 ### 9. Réclamation et médiation
 Un problème avec notre service ? Écrivez à contact@bartierandco.com, ou par courrier à l’adresse du siège indiquée dans les mentions légales. Nous répondons sous 10 jours ouvrés.
-Si notre réponse ne vous convient pas, vous pouvez saisir gratuitement le médiateur de la consommation : nom et coordonnées du médiateur à compléter. Vous avez un an à compter de votre réclamation écrite.
+Si notre réponse ne vous convient pas, vous pourrez saisir gratuitement le médiateur de la consommation : son nom et ses coordonnées figureront ici dès l’adhésion de Bartier & Co, en cours. Vous avez un an à compter de votre réclamation écrite.
 Un différend sur un devis ou sur des travaux concerne l’artisan : adressez-vous à lui. Nous pouvons vous aider à le joindre.
 
 ### 10. Droit applicable

@@ -18,7 +18,7 @@ TODAY = "2026-11-17"  # date de publication des trois premiers articles
 BUILD = __import__("datetime").date.today().isoformat()
 # Mise en ligne : passer LIVE à True le jour où bartierandco.com pointe vers ce site.
 # Tant que LIVE est False, toutes les pages portent « noindex » (la préversion ne doit pas être référencée).
-LIVE = False
+LIVE = True
 INDEXNOW_KEY = "9e243e36d5aa224c04b988c6e4c145d3"  # clé publique IndexNow (Bing, et donc ChatGPT), servie à /<clé>.txt
 NB = " "
 
@@ -1243,9 +1243,27 @@ TOKEN_LABEL = {"SIREN": "numéro SIREN", "RCS_VILLE": "ville du greffe", "CAPITA
                "DIRECTEUR_PUBLICATION": "nom du directeur de la publication", "MEDIATEUR": "nom et coordonnées du médiateur", "TEL_HEBERGEUR": "numéro de téléphone"}
 MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
 legal_missing = set()
+# Société en cours d'immatriculation (novembre 2026) : phrases d'attente, retirées d'elles-mêmes quand COMPANY est rempli
+EN_FORMATION = True
+PENDING = [
+    ("SIREN", "<li>Immatriculation : registre du commerce et des sociétés de {{RCS_VILLE}}, numéro {{SIREN}}</li>",
+     "<li>Immatriculation : en cours au registre du commerce et des sociétés. Le numéro SIREN figurera ici dès son attribution.</li>"),
+    ("CAPITAL", "<li>Forme : société par actions simplifiée (SAS) au capital de {{CAPITAL}}</li>",
+     "<li>Forme : société par actions simplifiée (SAS), en cours d’immatriculation</li>"),
+    ("TVA", "<li>TVA intracommunautaire : {{TVA}}</li>", "<li>TVA intracommunautaire : attribuée à l’immatriculation</li>"),
+    ("DIRECTEUR_PUBLICATION", "<p>{{DIRECTEUR_PUBLICATION}}, représentant légal de Bartier & Co.</p>",
+     "<p>Charles Le Cottier et Martin Barthélémy, co-fondateurs de Bartier & Co.</p>"),
+    ("MEDIATEUR", "vous pouvez saisir gratuitement le médiateur de la consommation : {{MEDIATEUR}}.",
+     "vous pourrez saisir gratuitement le médiateur de la consommation : son nom et ses coordonnées figureront ici dès l’adhésion de Bartier & Co, en cours."),
+]
 
 
 def legal_fill(frag):
+    if EN_FORMATION:
+        for k, old, new in PENDING:
+            if not COMPANY.get(k) and old in frag:
+                frag = frag.replace(old, new)
+                legal_missing.add(k)
     def tok(m):
         k = m.group(1)
         if COMPANY.get(k):
@@ -1579,8 +1597,10 @@ _keep = IMG.used()
 for _f in (ROOT / "assets" / "photos").glob("*.webp"):
     if _f.name not in _keep:
         _f.unlink()
-if LIVE and legal_missing:
+if LIVE and legal_missing and not EN_FORMATION:
     raise SystemExit("Mise en ligne impossible : informations légales manquantes : " + ", ".join(sorted(legal_missing)))
+if LIVE and legal_missing:
+    print("En ligne avec des mentions d'attente (société en cours d'immatriculation) :", ", ".join(sorted(legal_missing)))
 (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n', encoding="utf-8")
 # ——— Sécurité : seuls les scripts intégrés écrits ici peuvent s'exécuter (empreinte SHA-256 de chacun, page par page).
 # Le navigateur applique à la fois l'en-tête (vercel.json) et cette balise : un script injecté par un tiers serait refusé.

@@ -103,7 +103,7 @@ FAQ = [
     ("Combien coûte une réfection de toiture ?",
      "Comptez de 60 à 500 €/m², pose comprise, selon QuelleEnergie. L’écart vient de ce qui est refait : couverture seule, avec isolation ou avec la charpente. Le matériau (tuiles, ardoise, bac acier) et l’accès au toit comptent aussi. Seule une visite permet un devis fiable."),
     ("Combien coûte un ravalement de façade ?",
-     "En moyenne de 40 à 160 €/m², selon Obat (chiffres 2024). Le prix dépend de la surface, de l’état du support, de la finition et de l’échafaudage. Des fissures ou un enduit abîmé le font monter : l’artisan les évalue lors de la visite."),
+     "Comptez de 50 à 100 €/m², selon La Maison Saint-Gobain (2026). Le prix dépend de la surface, de l’état du support, de la finition et de l’échafaudage. Des fissures ou un enduit abîmé le font monter : l’artisan les évalue lors de la visite."),
     ("Combien coûte le remplacement d’une fenêtre ?",
      "Comptez de 870 à 1 170 € TTC pour une fenêtre PVC double vitrage posée en remplacement, selon La Maison Saint-Gobain (2026). Le prix change avec la taille, le matériau (PVC, alu, bois), le vitrage et le type de pose. Le devis détaille chaque fenêtre."),
     ("J’ai une fuite de toiture, que faire tout de suite ?",
@@ -270,7 +270,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 </section>"""
 
     # le chiffre d'abord (repris tel quel de la source citée), puis ce qui le fait varier
-    FIG = {"toiture": ("60 à 500\u00a0€/m²", "Rénovation, pose comprise"), "facade": ("40 à 160\u00a0€/m²", "Ravalement, en moyenne"),
+    FIG = {"toiture": ("60 à 500\u00a0€/m²", "Rénovation, pose comprise"), "facade": ("50 à 100\u00a0€/m²", "Ravalement, selon l’état de la façade"),
            "fenetres": ("870 à 1\u00a0170\u00a0€", "Fenêtre PVC double vitrage posée, TTC"), "charpente": ("40 à 250\u00a0€/m²", "Rénovation en bois, 150\u00a0€/m² en moyenne"),
            "isolation": ("40 à 45\u00a0€/m²", "Combles perdus, pose comprise, TTC")}
     prices = "".join(f'<li><h3>{t[8]}</h3><p class="pf-fig"><b>{FIG[t[0]][0]}</b><span>{FIG[t[0]][1]}</span></p><p class="pf-why">Varie selon&nbsp;: {t[9][0].lower() + t[9][1:]}</p><p class="pf-src">Source&nbsp;: {REF[t[0]][1]}</p><a class="link pf-more" href="/devis-travaux/{SLUG[t[0]]}/">Voir la page {t[1]}</a></li>' for t in TRADES)
@@ -579,8 +579,8 @@ def _src(name, url, date):
 REF = {
     "toiture": ("Rénovation de toiture&nbsp;: de 60 à 500 €/m², pose comprise. L’écart dépend de ce qui est refait&nbsp;: couverture seule, isolation, charpente.",
                 _src("QuelleEnergie", "https://www.quelleenergie.fr/prix-travaux/isolation/renovation-toiture", "consulté le 18/11/2026")),
-    "facade": ("Ravalement de façade&nbsp;: de 40 à 160 €/m² en moyenne.",
-               _src("Obat", "https://travaux.obat.fr/guides/tarif-facadier", "mis à jour le 30/10/2024")),
+    "facade": ("Ravalement de façade&nbsp;: de 50 à 100 €/m², selon l’état de la façade, les techniques et les matériaux.",
+               _src("La Maison Saint-Gobain", "https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade", "mis à jour le 25/08/2026")),
     "fenetres": ("Fenêtre PVC double vitrage, fournie et posée en remplacement&nbsp;: de 870 à 1&nbsp;170 € TTC, 1&nbsp;020 € en moyenne.",
                  _src("La Maison Saint-Gobain", "https://www.lamaisonsaintgobain.fr/guides-travaux/menuiseries-exterieures/prix-fenetre-pvc", "mis à jour le 13/02/2026")),
     "charpente": ("Rénovation de charpente en bois&nbsp;: 150 €/m² en moyenne, de 40 à 250 €/m² selon l’état et la surface.",
