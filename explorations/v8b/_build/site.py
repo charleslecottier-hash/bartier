@@ -1417,7 +1417,7 @@ for f in PAGES_OUT:
     if 'id="wa"' in doc and "wa-mini" not in doc:  # bulle WhatsApp : réduite à l'icône une fois la page entamée, pour ne rien cacher
         doc = doc.replace("</body>", '<script id="wa-mini">(function(){var w=document.getElementById("wa");if(!w)return;var f=function(){w.classList.toggle("is-mini",scrollY>innerHeight*1.1)};addEventListener("scroll",f,{passive:true});f()})();</script>\n</body>', 1)
     if "<main>" in doc and 'class="skip"' not in doc:  # clavier : aller directement au contenu
-        doc = doc.replace("<main>", '<main id="contenu" tabindex="-1">', 1)
+        doc = doc.replace("<main>", '<main id="contenu" tabindex="-1"' + ('' if f == ROOT / "index.html" else ' class="is-inner"') + '>', 1)  # is-inner : réglages téléphone des pages intérieures (l'accueil garde les siens)
         doc = re.sub(r"(<body[^>]*>)", r'\1\n<a class="skip" href="#contenu">Aller au contenu</a>', doc, count=1)
     _parts = doc.split('<div class="fq-list">')  # Microsoft : ne pas cacher les réponses importantes
     doc = _parts[0] + "".join('<div class="fq-list">' + s.replace('<details class="fq">', '<details class="fq" open>', 2) for s in _parts[1:])
