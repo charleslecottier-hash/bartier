@@ -239,7 +239,7 @@ page("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & C
               "Comment nous diffusons", "Des annonces locales, au nom de votre entreprise."),
          split_list("Du clic au rendez-vous", "Rien ne part sans être vérifié.",
                     "Une demande Facebook n'est qu'un début. Le tri se fait au téléphone.",
-                    ["Formulaire avec questions de tri et accord explicite d'être recontacté",
+                    ["Formulaire avec questions de tri et accord explicite pour être recontacté",
                      "Preuve du consentement conservée pour chaque demande",
                      "Rappel en moins de 5 minutes, en semaine de 8 h à 19 h",
                      "Propriétaire, projet, commune et délai vérifiés",
@@ -316,13 +316,13 @@ ARTICLES = [
 <p class="answer">Une <b>demande partagée</b> est une demande de devis vendue à plusieurs entreprises. Une <b>demande exclusive</b> n'est vendue qu'à vous, mais c'est à vous de rappeler. Un <b>rendez-vous qualifié</b> est une visite déjà fixée, chez un propriétaire dont le projet a été vérifié.</p>
 
 <h2>Quelle différence entre une demande de devis et un rendez-vous qualifié ?</h2>
-<p>Le vocabulaire marketing mélange tout, et les plateformes parlent de « leads ». Pour un artisan, il n'y a que trois questions : combien d'entreprises reçoivent la même demande, qui rappelle le propriétaire, et qu'est-ce qui a été vérifié avant que vous vous déplaciez.</p>
+<p>Le vocabulaire marketing mélange tout, et les plateformes parlent de « leads ». Pour un artisan, il n'y a que trois questions : combien d'entreprises reçoivent la même demande, qui rappelle le propriétaire, et ce qui a été vérifié avant que vous vous déplaciez.</p>
 
 <h2>La demande partagée : la même demande vendue plusieurs fois</h2>
 <p>Vous recevez un nom, un numéro et une description du projet. D'autres entreprises reçoivent la même demande, au même moment. Le propriétaire est appelé plusieurs fois, compare les prix, et retient souvent le premier qui rappelle ou le moins cher.</p>
 
 <h2>La demande exclusive : exclusive jusqu'où ?</h2>
-<p>La demande n'est vendue qu'à vous. C'est mieux, mais vérifiez ce que recouvre le mot. Exclusif pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c'est vous, le soir, la demande a souvent refroidi.</p>
+<p>La demande n'est vendue qu'à vous. C'est mieux, mais vérifiez ce que recouvre le mot. Exclusive pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c'est vous, le soir, la demande a souvent refroidi.</p>
 
 <h2>Le rendez-vous qualifié : ce qui a été vérifié</h2>
 <p>Quelqu'un a rappelé le propriétaire, vérifié qu'il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez directement une visite dans votre agenda, sans personne à rappeler.</p>
@@ -617,7 +617,7 @@ Prix indicatifs cités sur le site, d'après des sources tierces (seule une visi
 - Rénovation de toiture : 60 à 500 €/m², pose comprise (QuelleEnergie).
 - Ravalement de façade : 50 à 100 €/m², selon l'état de la façade (La Maison Saint-Gobain, 2026).
 - Fenêtre PVC double vitrage posée en remplacement : 870 à 1 170 € TTC (La Maison Saint-Gobain, 2026).
-- Rénovation de charpente en bois : 40 à 250 €/m², 150 €/m² en moyenne (Obat, chiffres 2024).
+- Rénovation de la charpente seule : 150 à 200 €/m² TTC, 180 à 250 €/m² TTC avec la couverture (Hellowatt, décembre 2025).
 - Isolation des combles perdus : environ 40 à 45 €/m², pose comprise (La Maison Saint-Gobain, 2026).
 
 ## Articles
@@ -628,7 +628,7 @@ Prix indicatifs cités sur le site, d'après des sources tierces (seule une visi
 - Le budget publicitaire est payé directement par l'artisan à Meta ou à Google.
 - Contact : contact@bartierandco.com
 - Facebook : https://www.facebook.com/profile.php?id=61596597124434
-- Téléphone et WhatsApp : 07 81 01 89 36 (Martin Barthélémy, co-fondateur)
+- Téléphone et WhatsApp : 07 81 01 89 36 (Martin Barthélémy, cofondateur)
 - Horaires : du lundi au vendredi, de 8 h à 19 h.
 
 ## Informations légales

@@ -49,7 +49,7 @@ TRADES = [
      ["Combles", "Murs par l’extérieur", "Toiture", "Je ne sais pas encore"],
      "Isolation des combles et des murs",
      "Combles perdus ou aménagés, murs par l’extérieur, toiture.",
-     "Maison ancienne aux murs extérieurs rénovés",
+     "Artisan posant de la laine isolante entre les montants d’un mur",
      "Prix de l’isolation des combles",
      "Surface, technique (combles perdus, rampants, murs), isolant."),
 ]
@@ -237,7 +237,8 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     cards = []
     for k, l, who, photo, needs, h3, words, alt, ph, pr in TRADES:
         url, _ = img(photo)
-        cards.append(f"""    <li class="pf-trade"><figure class="frame"><img src="{url}" alt="{alt}" width="900" height="676" loading="lazy" sizes="(max-width: 760px) 46vw, 18vw"></figure>
+        src_attr = f'srcset="{ISO_SRCSET}" src="{ISO_PHOTO}-1400x1050.webp"' if k == "isolation" else f'src="{url}"'
+        cards.append(f"""    <li class="pf-trade"><figure class="frame"><img {src_attr} alt="{alt}" width="900" height="676" loading="lazy" sizes="(max-width: 760px) 46vw, 18vw"></figure>
       <h3><a class="pf-tl" href="/devis-travaux/{SLUG[k]}/">{h3}</a></h3><p>{words}</p><a class="link pf-pick" href="#projet" data-v="{k}">Devis {l.lower()}</a></li>""")
     trades = f"""<section class="sheet" id="travaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Toiture, façade, fenêtres, charpente, isolation</h2><p>Un artisan local pour chaque chantier.</p></div>
@@ -271,7 +272,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 
     # le chiffre d'abord (repris tel quel de la source citée), puis ce qui le fait varier
     FIG = {"toiture": ("60 à 500\u00a0€/m²", "Rénovation, pose comprise"), "facade": ("50 à 100\u00a0€/m²", "Ravalement, selon l’état de la façade"),
-           "fenetres": ("870 à 1\u00a0170\u00a0€", "Fenêtre PVC double vitrage posée, TTC"), "charpente": ("40 à 250\u00a0€/m²", "Rénovation en bois, 150\u00a0€/m² en moyenne"),
+           "fenetres": ("870 à 1\u00a0170\u00a0€", "Fenêtre PVC double vitrage posée, TTC"), "charpente": ("150 à 200\u00a0€/m²", "Rénovation de la charpente seule, TTC"),
            "isolation": ("40 à 45\u00a0€/m²", "Combles perdus, pose comprise, TTC")}
     prices = "".join(f'<li><h3>{t[8]}</h3><p class="pf-fig"><b>{FIG[t[0]][0]}</b><span>{FIG[t[0]][1]}</span></p><p class="pf-why">Varie selon&nbsp;: {t[9][0].lower() + t[9][1:]}</p><p class="pf-src">Source&nbsp;: {REF[t[0]][1]}</p><a class="link pf-more" href="/devis-travaux/{SLUG[t[0]]}/">Prix et devis {SHORT[t[0]]}</a></li>' for t in TRADES)
     price = f"""<section class="sheet" id="prix" data-tone="light">
@@ -524,7 +525,7 @@ var q=new URLSearchParams(location.search),t=q.get("travaux")||f.dataset.preset;
 if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,true);if(q.get("besoin")==="fuite")pickLeak()}
 (function(){var l=document.querySelector(".pf-live"),t=l&&l.querySelector(".pf-live-t"),w=nextOpen();
   if(l){if(!w){l.classList.add("is-on");t.textContent="Disponibles maintenant · rappel en moins de 5 min"}else t.textContent="Rappel "+w+" · demandes enregistrées 24\u00a0h/24"}
-  var m=new Date().getMonth(),se=document.querySelector(".pf-season"),S=["Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité."];
+  var m=new Date().getMonth(),se=document.querySelector(".pf-season"),S=["Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité."];
   if(se)se.textContent=S[m]})();
 function nextOpen(){var d=new Date(),day=d.getDay(),h=d.getHours()+d.getMinutes()/60;
   if(day>=1&&day<=5&&h>=8&&h<19)return "";
@@ -586,12 +587,14 @@ REF = {
                _src("La Maison Saint-Gobain", "https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade", "mis à jour le 25/08/2026")),
     "fenetres": ("Fenêtre PVC double vitrage, fournie et posée en remplacement&nbsp;: de 870 à 1&nbsp;170 € TTC, 1&nbsp;020 € en moyenne.",
                  _src("La Maison Saint-Gobain", "https://www.lamaisonsaintgobain.fr/guides-travaux/menuiseries-exterieures/prix-fenetre-pvc", "mis à jour le 13/02/2026")),
-    "charpente": ("Rénovation de charpente en bois&nbsp;: 150 €/m² en moyenne, de 40 à 250 €/m² selon l’état et la surface.",
-                  _src("Obat", "https://travaux.obat.fr/guides/tarif-charpentier/", "mis à jour le 28/10/2024")),
+    "charpente": ("Rénovation de la charpente seule&nbsp;: de 150 à 200 €/m² TTC. Avec la couverture&nbsp;: de 180 à 250 €/m² TTC.",
+                  _src("Hellowatt", "https://www.hellowatt.fr/prime-energie/renovation-energetique/prix-m2", "mis à jour le 22/12/2025")),
     "isolation": ("Isolation des combles perdus, pose comprise&nbsp;: 40 €/m² TTC si l’accès se fait par l’intérieur, 45 €/m² TTC par le toit.",
                   _src("La Maison Saint-Gobain", "https://www.lamaisonsaintgobain.fr/guides-travaux/isolation/prix-isolation-combles", "mis à jour le 06/07/2026")),
 }
 
+ISO_PHOTO = "/assets/photos/artisan-pose-laine-isolante-mur"  # Pexels 6124239, voir _build/stock/SOURCES.md
+ISO_SRCSET = ", ".join(f"{ISO_PHOTO}-{w}x{w * 3 // 4}.webp {w}w" for w in (480, 800, 1200, 1400))
 SHORT = {"toiture": "toiture", "facade": "façade", "fenetres": "fenêtres", "charpente": "charpente", "isolation": "isolation"}
 SLUG = {"toiture": "toiture", "facade": "ravalement-facade", "fenetres": "fenetres", "charpente": "charpente", "isolation": "isolation"}
 
@@ -671,6 +674,7 @@ _SG_TOIT = ("Saint-Gobain, 03/2026", "https://www.lamaisonsaintgobain.fr/guides-
 _SG_FAC = ("Saint-Gobain, 08/2026", "https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade")
 _SG_FEN = ("Saint-Gobain, 02/2026", "https://www.lamaisonsaintgobain.fr/guides-travaux/menuiseries-exterieures/prix-fenetre-pvc")
 _OB_CH = ("Obat, 10/2024", "https://travaux.obat.fr/guides/tarif-charpentier/")
+_HW_CH = ("Hellowatt, 12/2025", "https://www.hellowatt.fr/prime-energie/renovation-energetique/prix-m2")
 _SG_ISO = ("Saint-Gobain, 07/2026", "https://www.lamaisonsaintgobain.fr/guides-travaux/isolation/prix-isolation-combles")
 DETAIL = {
     "toiture": [("Entretien avec quelques réparations", "10 à 80 €/m²", _QE), ("Nettoyage et démoussage", "25 à 35 €/m²", _SG_TOIT),
@@ -678,7 +682,7 @@ DETAIL = {
                 ("Remplacement de toute la toiture", "180 à 500 €/m²", _QE), ("Isolation par l’extérieur (sarking)", "120 à 250 €/m²", _QE)],
     "facade": [("Mise en peinture", "50 à 75 €/m²", _SG_FAC), ("Projection d’enduit", "50 à 70 €/m²", _SG_FAC), ("Ravalement avec isolant", "110 à 215 €/m²", _SG_FAC)],
     "fenetres": [("Fenêtre PVC en remplacement", "870 à 1\u00a0170 € TTC", _SG_FEN), ("Fenêtre PVC en création d’ouverture", "environ 2\u00a0400 € TTC", _SG_FEN)],
-    "charpente": [("Rénovation, charpente traditionnelle", "60 à 210 €/m²", _OB_CH), ("Rénovation, charpente fermette", "50 à 250 €/m²", _OB_CH),
+    "charpente": [("Rénovation de la charpente seule", "150 à 200 € TTC/m²", _HW_CH), ("Charpente et couverture", "180 à 250 € TTC/m²", _HW_CH),
                   ("Traitement préventif ou curatif du bois", "40 à 180 €/m²", _OB_CH)],
     "isolation": [("Combles perdus, accès par l’intérieur", "40 €/m² TTC", _SG_ISO), ("Combles perdus, accès par le toit", "45 €/m² TTC", _SG_ISO),
                   ("Combles aménagés, par l’intérieur", "130 à 180 €/m² TTC", _SG_ISO), ("Combles aménagés, par le toit", "240 €/m² TTC", _SG_ISO)],
@@ -696,6 +700,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     blocks = build(img, phone, phone_txt, crumbs, parts=True)
     form = blocks["form"].replace('<form class="pf-form"', f'<form class="pf-form" data-preset="{key}"', 1)
     url, _ = img(t[3])
+    ph_attr = (f'srcset="{ISO_SRCSET}" sizes="(max-width: 760px) 100vw, 50vw" src="{ISO_PHOTO}-1400x1050.webp"' if key == "isolation" else f'src="{url}"')
     hero = f"""<section class="sheet pf-hero" id="haut" data-tone="light">
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
@@ -711,7 +716,7 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     needs = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in P["needs"])
     needs = f"""<section class="sheet" id="travaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>{P["h2"]}</h2><p>{t[6]}</p></div>
-  <div class="pf-split"><figure class="frame pf-ph"><img src="{url}" alt="{t[7]}" width="1200" height="900" loading="lazy"></figure><ul class="pf-checks pf-needs">{needs}</ul></div>
+  <div class="pf-split"><figure class="frame pf-ph"><img {ph_attr} alt="{t[7]}" width="1200" height="900" loading="lazy"></figure><ul class="pf-checks pf-needs">{needs}</ul></div>
   <div class="pf-band"><p>Devis {t[1].lower()} en 1 minute <span class="pf-band-sub">Visite et devis offerts. Sans engagement.</span></p><a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a></div>
 </section>"""
     price = f"""<section class="sheet" id="prix" data-tone="paper">
@@ -762,7 +767,7 @@ def trade_faq(key):
     if key in price_q:
         out.append((price_q[key], general[price_q[key]]))
     else:
-        out.append({"charpente": ("Combien coûtent des travaux de charpente ?", "Comptez 150 €/m² en moyenne pour rénover une charpente en bois, de 40 à 250 €/m², selon Obat (chiffres 2024). Tout dépend de l’état du bois : remplacer quelques pièces coûte bien moins que refaire la charpente. Le charpentier le voit lors d’une visite gratuite."),
+        out.append({"charpente": ("Combien coûtent des travaux de charpente ?", "Comptez de 150 à 200 €/m² TTC pour rénover la charpente seule, et de 180 à 250 €/m² TTC avec la couverture, selon Hellowatt (2025). Tout dépend de l’état du bois : remplacer quelques pièces coûte bien moins que refaire la charpente. Le charpentier le voit lors d’une visite gratuite."),
                     "isolation": ("Combien coûtent des travaux d’isolation ?", "Pour des combles perdus, comptez environ 40 €/m² TTC pose comprise si l’accès se fait par l’intérieur, 45 €/m² par le toit, selon La Maison Saint-Gobain (2026). Sous les rampants ou par l’extérieur, c’est plus cher. Seule une visite permet un devis fiable, et elle est gratuite.")}[key])
     out += P["faq"]
     if key in ("toiture", "fenetres"):  # chantiers où l'on demande souvent une petite intervention

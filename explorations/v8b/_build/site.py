@@ -163,7 +163,7 @@ WA_HTML = f"""<div class="wa" id="wa">
   <div class="wa-panel" id="wa-panel" role="dialog" aria-modal="false" aria-labelledby="wa-title">
     <div class="wa-head">
       <span class="wa-av" aria-hidden="true">MB</span>
-      <p id="wa-title"><b>Martin Barthélémy</b><small>Co-fondateur</small></p>
+      <p id="wa-title"><b>Martin Barthélémy</b><small>Cofondateur</small></p>
       <button class="wa-x" type="button" aria-label="Fermer" data-wa-close>×</button>
     </div>
     <div class="wa-body">
@@ -178,7 +178,7 @@ WA_HTML = f"""<div class="wa" id="wa">
     </div>
   </div>
   <div class="wa-tip" role="status"><button class="wa-tip-go" type="button"><b>Une question&nbsp;?</b> Martin vous répond sur WhatsApp.</button><button class="wa-tip-x" type="button" aria-label="Fermer">×</button></div>
-  <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel" aria-label="Écrire à Martin sur WhatsApp ou l’appeler"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, co-fondateur</span></b></button>
+  <button class="wa-fab" type="button" aria-expanded="false" aria-controls="wa-panel" aria-label="Écrire à Martin sur WhatsApp ou l’appeler"><span class="wa-ico">{WA_SVG}</span><span class="wa-dot" aria-hidden="true"></span><b>Parler à Martin<span>, cofondateur</span></b></button>
 </div>
 <script>
 (function(){{var w=document.getElementById('wa');if(!w)return;var b=w.querySelector('.wa-fab');
@@ -226,7 +226,7 @@ home = home.replace("</head>", LD_HEAD + "</head>", 1)
 home = re.sub(r"(<body[^>]*>\n?)", lambda m: m.group(1) + LD_BODY, home, count=1)
 
 # Données structurées, adresse canonique et balises de partage de l'accueil (toujours régénérées)
-FOUNDERS = [("charles", "Charles Le Cottier", "Co-fondateur"), ("martin", "Martin Barthélémy", "Co-fondateur")]
+FOUNDERS = [("charles", "Charles Le Cottier", "Cofondateur"), ("martin", "Martin Barthélémy", "Cofondateur")]
 PORTRAIT = {"charles": "charles-le-cottier", "martin": "martin-barthelemy"}
 def portrait(k):
     return SITE + f"/assets/photos/{PORTRAIT[k]}-700x875-nb.webp"
@@ -848,9 +848,9 @@ write("/meta-ads/", "Publicité Facebook et Instagram pour artisans | Bartier & 
                 ("Au bon moment de l'année", "Après les intempéries, avant l'hiver, au printemps pour la rénovation.")],
                "Des annonces à votre nom", "Avec vos chantiers, montrées à vos futurs clients."),
           split("Chaque demande vérifiée au téléphone", "Nous appelons chaque personne qui répond à l'annonce. Seuls les projets sérieux arrivent dans votre agenda.",
-                ["Formulaire avec questions de tri et accord explicite d'être recontacté", "Preuve du consentement conservée pour chaque demande",
+                ["Formulaire avec questions de tri et accord explicite pour être recontacté", "Preuve du consentement conservée pour chaque demande",
                  "Rappel en moins de 5 minutes, en semaine de 8 h à 19 h", "Propriétaire, projet, commune et délai vérifiés",
-                 "Rendez-vous dans votre agenda, rappels la veille et deux heures avant", "Flyers dans les rues voisines de chaque chantier signé"], tone="paper"),
+                 "Rendez-vous dans votre agenda, rappel par SMS au propriétaire avant la visite", "Flyers dans les rues voisines de chaque chantier signé"], tone="paper"),
           split("Tout est à votre nom", "Tout vous reste si vous arrêtez.",
                 ["Page Facebook et compte publicitaire à votre nom", "Budget payé directement à Meta", "Toutes les statistiques des annonces visibles"]),
           COMPARE,
@@ -879,8 +879,8 @@ pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un se
 pf_tail = absolutize(TAIL)
 pf_tail = pf_tail.replace('<p>Faire équipe.<br> Faire la différence.</p>', '<p>Un projet de travaux&nbsp;?<br> Un seul artisan, près de chez vous.</p>', 1)
 pf_tail = pf_tail.replace('<a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span>', '<a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>', 1)
-pf_tail = pf_tail.replace('<small>Co-fondateur</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
-pf_tail = pf_tail.replace('<b>Parler à Martin<span>, co-fondateur</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
+pf_tail = pf_tail.replace('<small>Cofondateur</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
+pf_tail = pf_tail.replace('<b>Parler à Martin<span>, cofondateur</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
 pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', lambda m: '<p class="wa-bubble">Bonjour. Un projet de travaux ou une question&nbsp;? Écrivez-moi, je vous réponds personnellement.</p>\n      <p class="wa-k">Choisissez une question, ou écrivez la vôtre&nbsp;:</p>\n' + "\n".join(
     f'      <a class="wa-q" href="{html.escape(wa(m))}" target="_blank" rel="noopener" data-wa="question-particulier">{q}</a>' for q, m in [
         ("Combien vont coûter mes travaux&nbsp;?", "Bonjour, j'ai un projet de travaux ([toiture, façade, fenêtres...]) à [ville]. Combien cela peut-il coûter ?"),
@@ -939,8 +939,8 @@ TEAM_ABOUT = """<section class="team-about sheet" id="equipe" data-kind="team" d
     </div>
     <div class="ta-body">
       <ul class="ta-people">
-        <li id="charles"><img src="/assets/photos/charles-le-cottier-360x450-nb.webp" alt="Portrait de Charles Le Cottier, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Charles Le Cottier</h3><p>Co-fondateur</p></div></li>
-        <li id="martin"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Martin Barthélémy</h3><p>Co-fondateur</p></div></li>
+        <li id="charles"><img src="/assets/photos/charles-le-cottier-360x450-nb.webp" alt="Portrait de Charles Le Cottier, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Charles Le Cottier</h3><p>Cofondateur</p></div></li>
+        <li id="martin"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><div><h3>Martin Barthélémy</h3><p>Cofondateur</p></div></li>
       </ul>
       <p class="ta-note">Une question avant de vous lancer ? Appelez Martin en semaine, de 8&nbsp;h à 19&nbsp;h, ou écrivez-lui.</p>
       <div class="ta-acts">
@@ -1012,6 +1012,14 @@ paths.append("/questions/")
 
 # ——— Blog ———
 COVER = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Tuiles de toiture", "google-ads-ou-meta-ads-artisan": "Une personne consulte", "relance-devis-artisan": "Une chargée de rappel"}
+import contenu as CT
+for a in ARTICLES:
+    _p = CT.PLUS.get(a["slug"])
+    if _p and not a.get("faq"):
+        assert _p["before"] in a["body"], a["slug"]
+        a["body"] = a["body"].replace(_p["before"], _p["insert"] + _p["before"], 1) + _p["append"] + "\n" + CT.qa_html(_p["faq"]) + "\n"
+        a["faq"] = _p["faq"]
+    a["minutes"] = max(3, round(len(re.sub(r"<[^>]+>", " ", a["body"]).split()) / 200))
 posts = []
 for a in ARTICLES:
     url, alt = img(COVER[a["slug"]])
@@ -1033,17 +1041,9 @@ paths.append("/blog/")
 SEO_TITLE = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Demande partagée, exclusive ou rendez-vous qualifié ?",
              "relance-devis-artisan": "Relance de devis : calendrier, SMS et script d'appel",
              "google-ads-ou-meta-ads-artisan": "Google Ads ou Meta Ads pour un artisan : que choisir ?"}
-import contenu as CT
-for a in ARTICLES:
-    _p = CT.PLUS.get(a["slug"])
-    if _p and not a.get("faq"):
-        assert _p["before"] in a["body"], a["slug"]
-        a["body"] = a["body"].replace(_p["before"], _p["insert"] + _p["before"], 1) + _p["append"] + "\n" + CT.qa_html(_p["faq"]) + "\n"
-        a["faq"] = _p["faq"]
-    a["minutes"] = max(3, round(len(re.sub(r"<[^>]+>", " ", a["body"]).split()) / 200))
 for a in ARTICLES:
     path = f"/blog/{a['slug']}/"
-    meta = f'<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, co-fondateur</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
+    meta = f'<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
     body = "\n\n".join([
         top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta, photo=COVER[a["slug"]], dated=False).replace('class="pg-photo frame"', 'class="pg-photo frame is-color"', 1),
         f"""<section class="sheet" data-tone="light">
@@ -1064,13 +1064,13 @@ for a in ARTICLES:
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "BlogPosting", "@id": SITE + path + "#article", "isPartOf": {"@id": SITE + "/blog/#blog"}, "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": "@@MAJ@@", "inLanguage": "fr-FR",
                "mainEntityOfPage": SITE + path, "image": [img(COVER[a["slug"]])[0]],
-               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Co-fondateur", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               bc_ld(("Blog", "/blog/"), (a["short"], path))] + ([faq_ld(a["faq"])] if a.get("faq") else [])})
     paths.append(path)
 
 # ——— Guides : comment trouver des chantiers, fiche Habitatpresto Pro (_build/contenu.py) ———
-AUTHOR_META = '<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, co-fondateur</span></p>'
+AUTHOR_META = '<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur</span></p>'
 
 
 def _gd_slug(s):
@@ -1090,7 +1090,7 @@ def guide(G, kick, crumb_items, faq_title, links):
                 + "".join(f'<li><a href="#{i}">{x}</a></li>' for i, x in toc) + "</ol></nav>")
     body = "\n\n".join([
         top(kick, G["h1"], G["lead"], crumbs(*crumb_items), visual=toc_html,
-            meta='<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, co-fondateur</span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span></p>'),
+            meta='<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur</span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span></p>'),
         f"""<section class="sheet gd-body" data-tone="light">
   <div class="grid art-grid">
     <article class="prose">
@@ -1110,7 +1110,7 @@ def guide(G, kick, crumb_items, faq_title, links):
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Article", "headline": fr(G["h1"]), "description": fr(G["desc"]), "datePublished": "2026-11-18", "dateModified": "@@MAJ@@",
                "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"], "image": [SITE + "/assets/og.png"],
-               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Co-fondateur", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               faq_ld(G["faq"]), bc_ld(*crumb_items)]})
     paths.append(G["path"])
@@ -1173,7 +1173,7 @@ def pillar_page(G):
     body = "\n\n".join([
         top("Guide", G["h1"], "Huit façons de trouver des chantiers, comparées. La bonne est celle qui vous coûte le moins par chantier signé.",
             crumbs(("Trouver des chantiers", G["path"])), "Un menuisier pose une fenêtre",
-            meta='<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, co-fondateur</span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span></p>'),
+            meta='<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur</span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span></p>'),
         f"""<section class="sheet tc-sec" id="canaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Les 8 canaux pour trouver des chantiers</h2><p>Ce que chacun vous coûte, et si la demande est pour vous seul.</p></div>
   <table class="tc-table">
@@ -1228,7 +1228,7 @@ def pillar_page(G):
           schema={"@context": "https://schema.org", "@graph": [
               {"@type": "Article", "headline": fr(G["h1"]), "description": fr(G["desc"]), "datePublished": "2026-11-18", "dateModified": "@@MAJ@@",
                "inLanguage": "fr-FR", "mainEntityOfPage": SITE + G["path"], "image": [img("Un menuisier pose une fenêtre")[0]],
-               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Co-fondateur", "url": SITE + "/qui-sommes-nous/#charles"},
+               "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur", "url": SITE + "/qui-sommes-nous/#charles"},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
               faq_ld(faq_items), bc_ld(("Trouver des chantiers", G["path"]))]})
     paths.append(G["path"])
@@ -1251,8 +1251,8 @@ PENDING = [
     ("CAPITAL", "<li>Forme : société par actions simplifiée (SAS) au capital de {{CAPITAL}}</li>",
      "<li>Forme : société par actions simplifiée (SAS), en cours d’immatriculation</li>"),
     ("TVA", "<li>TVA intracommunautaire : {{TVA}}</li>", "<li>TVA intracommunautaire : attribuée à l’immatriculation</li>"),
-    ("DIRECTEUR_PUBLICATION", "<p>{{DIRECTEUR_PUBLICATION}}, représentant légal de Bartier & Co.</p>",
-     "<p>Charles Le Cottier et Martin Barthélémy, co-fondateurs de Bartier & Co.</p>"),
+    ("DIRECTEUR_PUBLICATION", '<h2 id="publication">Directeur de la publication</h2>\n<p>{{DIRECTEUR_PUBLICATION}}, représentant légal de Bartier & Co.</p>',
+     '<h2 id="publication">Directeurs de la publication</h2>\n<p>Charles Le Cottier et Martin Barthélémy, cofondateurs de Bartier & Co.</p>'),
     ("MEDIATEUR", "vous pouvez saisir gratuitement le médiateur de la consommation : {{MEDIATEUR}}.",
      "vous pourrez saisir gratuitement le médiateur de la consommation : son nom et ses coordonnées figureront ici dès l’adhésion de Bartier & Co, en cours."),
 ]
@@ -1530,9 +1530,22 @@ for f in PAGES_OUT:
     if re.fullmatch(r"/blog/[^/]+/", _page):
         doc = doc.replace('<meta property="og:type" content="website">', f'<meta property="og:type" content="article">\n<meta property="article:published_time" content="{TODAY}T09:00:00+01:00">', 1)
     doc = doc.replace('alt="Une chargée de rappel au téléphone"', 'alt="Appel de relance d’un devis"')
-    doc = doc.replace('alt="Isolation d&#39;un mur par l&#39;extérieur"', 'alt="Maison ancienne aux murs extérieurs rénovés"')  # la photo montre une façade rénovée
-    doc = re.sub(r'\b(alt|aria-label|title|placeholder)="([^"]*)"', lambda m: f'{m.group(1)}="' + re.sub(r"(?<=[A-Za-zÀ-ÿ])(&#39;|')(?=[A-Za-zÀ-ÿ])", "’", m.group(2)) + '"', doc)
+    doc = re.sub(r'alt="Isolation d(?:&#39;|&#x27;|\'|’)un mur par l(?:&#39;|&#x27;|\'|’)extérieur"', 'alt="Maison ancienne aux murs extérieurs rénovés"', doc)  # la photo montre une façade rénovée
+    doc = re.sub(r'(<meta (?:name="description"|property="og:(?:title|description|image:alt)"|name="twitter:[a-z]+") content=")([^"]*)(")',
+                 lambda m: m.group(1) + re.sub(r" ([:;?!»])", "\u00a0\\1", m.group(2)).replace("« ", "«\u00a0") + m.group(3), doc)
+    doc = re.sub(r'\b(alt|aria-label|title|placeholder|data-label)="([^"]*)"', lambda m: f'{m.group(1)}="' + re.sub(r"(?<=[A-Za-zÀ-ÿ])(&#39;|&#x27;|')(?=[A-Za-zÀ-ÿ])", "’", m.group(2)) + '"', doc)
     doc = unglue(doc)
+    # Vitesse : les bibliothèques d'animation ne bloquent plus l'affichage (defer) ; le script qui les utilise attend l'analyse de la page
+    if '<script src="/assets/js/gsap.min.js"></script>' in doc:
+        for _lib in ("gsap.min.js", "ScrollTrigger.min.js", "SplitText.min.js"):
+            doc = doc.replace(f'<script src="/assets/js/{_lib}"></script>', f'<script src="/assets/js/{_lib}" defer></script>')
+        _i = doc.find("<script>(()=>{const $=(s,r=document)")
+        if _i > 0:
+            _j = doc.index("</script>", _i)
+            doc = doc[:_i + 8] + 'document.addEventListener("DOMContentLoaded",function(){' + doc[_i + 8:_j] + "});" + doc[_j:]
+    # pages Google Ads et Meta Ads : l'image de fond de la maquette est le plus grand élément du haut de page
+    if 'fetchpriority="high"' not in doc and 'class="mk-bg"' in doc:
+        doc = re.sub(r'<img\b([^>]*class="mk-bg")', r'<img fetchpriority="high"\1', doc, count=1)
     doc = hero_preload(doc)
     doc = CSSPURGE.purge_doc(doc, _CONSENT_JS)  # vitesse : chaque page ne garde que le CSS qui peut la toucher
     f.write_text(doc, encoding="utf-8")

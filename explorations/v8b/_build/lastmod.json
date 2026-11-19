@@ -1,23 +1,23 @@
 {
  "/": {
-  "date": "2026-11-18",
-  "sig": "5ddedc648527012f"
+  "date": "2026-11-19",
+  "sig": "cb102f6a375fbe5b"
  },
  "/blog/": {
-  "date": "2026-11-18",
-  "sig": "1748e611bf3e6f44"
+  "date": "2026-11-19",
+  "sig": "8bf3f8ed4b386c20"
  },
  "/blog/google-ads-ou-meta-ads-artisan/": {
   "date": "2026-11-19",
-  "sig": "246ab58e4a7d4545"
+  "sig": "f908f18b8ff8e2c2"
  },
  "/blog/lead-partage-lead-exclusif-rendez-vous-qualifie/": {
   "date": "2026-11-19",
-  "sig": "d0ffd3963202313c"
+  "sig": "c3b91f78092eedbe"
  },
  "/blog/relance-devis-artisan/": {
-  "date": "2026-11-18",
-  "sig": "af053e86a1d525ac"
+  "date": "2026-11-19",
+  "sig": "d80dc64bffd505f7"
  },
  "/conditions-du-service/": {
   "date": "2026-11-19",
@@ -33,11 +33,11 @@
  },
  "/devis-travaux/": {
   "date": "2026-11-19",
-  "sig": "02c61afd476c34d2"
+  "sig": "78faead02e06b5ac"
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-19",
-  "sig": "0930fe143ee64b9f"
+  "sig": "a78d1489cffc2759"
  },
  "/devis-travaux/fenetres/": {
   "date": "2026-11-19",
@@ -65,11 +65,11 @@
  },
  "/mentions-legales/": {
   "date": "2026-11-19",
-  "sig": "c4f2cb83a64401b7"
+  "sig": "9310b2f4727d4395"
  },
  "/meta-ads/": {
   "date": "2026-11-19",
-  "sig": "0529295befb5a26d"
+  "sig": "c96ad18930839eaf"
  },
  "/metiers/": {
   "date": "2026-11-19",
@@ -101,14 +101,14 @@
  },
  "/qui-sommes-nous/": {
   "date": "2026-11-19",
-  "sig": "f39766992d5b7b44"
+  "sig": "bfb75467360ff1f3"
  },
  "/trouver-des-chantiers/": {
   "date": "2026-11-19",
-  "sig": "067a83a8245bc9dc"
+  "sig": "347ecb4e4d87bc46"
  },
  "/trouver-des-chantiers/habitatpresto-pro/": {
   "date": "2026-11-19",
-  "sig": "0ae89427aef27209"
+  "sig": "5e198c3f51003abd"
  }
 }

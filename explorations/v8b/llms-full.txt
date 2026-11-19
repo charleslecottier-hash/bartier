@@ -8,7 +8,7 @@ Ce fichier reprend le texte des pages du site. La version courte est https://bar
 
 Adresse : https://bartierandco.com/
 
-Bartier & Co trouve des clients aux artisans du bâtiment : propriétaires avec un vrai projet, rappelés en moins de 5 minutes, visite fixée dans votre agenda.
+Bartier & Co trouve des clients aux artisans du bâtiment : propriétaires avec un vrai projet, rappelés en moins de 5 minutes, visite fixée dans votre agenda.
 
 Couvreurs, façadiers, menuisiers, charpentiers, entreprises d’isolation
 Nous gérons vos annonces, nous appelons chaque prospect et nous vérifions son projet. Vous ne vous déplacez que pour les visites sérieuses.
@@ -17,11 +17,11 @@ Nous gérons vos annonces, nous appelons chaque prospect et nous vérifions son 
 1 C’est nous
 
 #### Vos annonces
-Nous lançons vos annonces sur Facebook, Instagram et Google. À votre nom, autour de votre dépôt.
+Nous lançons vos annonces à votre nom sur Facebook, Instagram et Google, ciblées sur les propriétaires autour de votre dépôt.
 2 C’est nous
 
-#### Notre appel
-Nous rappelons chaque prospect en moins de 5 minutes. Nous vérifions qu’il est propriétaire, que son projet est sérieux et qu’il habite dans votre zone.
+#### Nous qualifions
+Nous gérons chaque demande à votre place et la qualifions. Le prospect est rappelé en moins de 5 minutes : nous vérifions qu’il est propriétaire, que son projet est sérieux et qu’il habite dans votre zone.
 3 C’est vous
 
 #### La visite de devis
@@ -582,11 +582,11 @@ Après les intempéries, avant l’hiver, au printemps pour la rénovation.
 
 ### Chaque demande vérifiée au téléphone
 Nous appelons chaque personne qui répond à l’annonce. Seuls les projets sérieux arrivent dans votre agenda.
-- Formulaire avec questions de tri et accord explicite d’être recontacté
+- Formulaire avec questions de tri et accord explicite pour être recontacté
 - Preuve du consentement conservée pour chaque demande
 - Rappel en moins de 5 minutes, en semaine de 8 h à 19 h
 - Propriétaire, projet, commune et délai vérifiés
-- Rendez-vous dans votre agenda, rappels la veille et deux heures avant
+- Rendez-vous dans votre agenda, rappel par SMS au propriétaire avant la visite
 - Flyers dans les rues voisines de chaque chantier signé
 
 ### Tout est à votre nom
@@ -697,9 +697,9 @@ Source : La Maison Saint-Gobain, mis à jour le 13/02/2026
 Prix et devis fenêtres
 
 #### Prix de travaux de charpente
-40 à 250 €/m² Rénovation en bois, 150 €/m² en moyenne
+150 à 200 €/m² Rénovation de la charpente seule, TTC
 Varie selon : état du bois, portée, traitement, accès au chantier.
-Source : Obat, mis à jour le 28/10/2024
+Source : Hellowatt, mis à jour le 22/12/2025
 Prix et devis charpente
 
 #### Prix de l’isolation des combles
@@ -1209,11 +1209,11 @@ Traditionnelle ou en fermettes, souvent avec la couverture.
 
 ### Prix de travaux de charpente
 État du bois, portée, traitement, accès au chantier.
-Rénovation de charpente en bois : 150 €/m² en moyenne, de 40 à 250 €/m² selon l’état et la surface.
-Source : Obat, mis à jour le 28/10/2024
+Rénovation de la charpente seule : de 150 à 200 €/m² TTC. Avec la couverture : de 180 à 250 €/m² TTC.
+Source : Hellowatt, mis à jour le 22/12/2025
 - Travaux | Prix | Source
-- Rénovation, charpente traditionnelle | 60 à 210 €/m² | Obat, 10/2024
-- Rénovation, charpente fermette | 50 à 250 €/m² | Obat, 10/2024
+- Rénovation de la charpente seule | 150 à 200 € TTC/m² | Hellowatt, 12/2025
+- Charpente et couverture | 180 à 250 € TTC/m² | Hellowatt, 12/2025
 - Traitement préventif ou curatif du bois | 40 à 180 €/m² | Obat, 10/2024
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
@@ -1249,7 +1249,7 @@ Une autre question ? 07 81 01 89 36
 Voir toutes les questions
 
 **Combien coûtent des travaux de charpente ?**
-Comptez 150 €/m² en moyenne pour rénover une charpente en bois, de 40 à 250 €/m², selon Obat (chiffres 2024). Tout dépend de l’état du bois : remplacer quelques pièces coûte bien moins que refaire la charpente. Le charpentier le voit lors d’une visite gratuite.
+Comptez de 150 à 200 €/m² TTC pour rénover la charpente seule, et de 180 à 250 €/m² TTC avec la couverture, selon Hellowatt (2025). Tout dépend de l’état du bois : remplacer quelques pièces coûte bien moins que refaire la charpente. Le charpentier le voit lors d’une visite gratuite.
 
 **Faut-il un permis pour une surélévation ?**
 Une surélévation crée de la surface : selon la surface ajoutée et le plan local d’urbanisme, il faut une déclaration préalable ou un permis de construire. Renseignez-vous en mairie avant de signer le devis.
@@ -1429,10 +1429,10 @@ Un SMS après chaque visite : devis envoyé ou chantier signé. Nous ajustons le
 Du premier appel au lancement de vos annonces, sans standard.
 
 #### Charles Le Cottier
-Co-fondateur
+Cofondateur
 
 #### Martin Barthélémy
-Co-fondateur
+Cofondateur
 Une question avant de vous lancer ? Appelez Martin en semaine, de 8 h à 19 h, ou écrivez-lui.
 Appeler le 07 81 01 89 36
 
@@ -1550,17 +1550,17 @@ Adresse : https://bartierandco.com/blog/lead-partage-lead-exclusif-rendez-vous-q
 Trois offres qui se ressemblent sur le papier, mais pas sur le terrain. Ce que chacune vous livre vraiment, et les questions à poser avant de signer un contrat.
 
 Comprendre
-Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 19 novembre 2026 4 min de lecture
+Par Charles Le Cottier, cofondateur Publié le 17 novembre 2026 Mis à jour le 19 novembre 2026 4 min de lecture
 Une demande partagée est une demande de devis vendue à plusieurs entreprises. Une demande exclusive n’est vendue qu’à vous, mais c’est à vous de rappeler. Un rendez-vous qualifié est une visite déjà fixée, chez un propriétaire dont le projet a été vérifié.
 
 ### Quelle différence entre une demande de devis et un rendez-vous qualifié ?
-Le vocabulaire marketing mélange tout, et les plateformes parlent de « leads ». Pour un artisan, il n’y a que trois questions : combien d’entreprises reçoivent la même demande, qui rappelle le propriétaire, et qu’est-ce qui a été vérifié avant que vous vous déplaciez.
+Le vocabulaire marketing mélange tout, et les plateformes parlent de « leads ». Pour un artisan, il n’y a que trois questions : combien d’entreprises reçoivent la même demande, qui rappelle le propriétaire, et ce qui a été vérifié avant que vous vous déplaciez.
 
 ### La demande partagée : la même demande vendue plusieurs fois
 Vous recevez un nom, un numéro et une description du projet. D’autres entreprises reçoivent la même demande, au même moment. Le propriétaire est appelé plusieurs fois, compare les prix, et retient souvent le premier qui rappelle ou le moins cher.
 
 ### La demande exclusive : exclusive jusqu’où ?
-La demande n’est vendue qu’à vous. C’est mieux, mais vérifiez ce que recouvre le mot. Exclusif pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c’est vous, le soir, la demande a souvent refroidi.
+La demande n’est vendue qu’à vous. C’est mieux, mais vérifiez ce que recouvre le mot. Exclusive pendant combien de temps ? Sur quelle zone ? Et surtout : qui rappelle ? Si c’est vous, le soir, la demande a souvent refroidi.
 
 ### Le rendez-vous qualifié : ce qui a été vérifié
 Quelqu’un a rappelé le propriétaire, vérifié qu’il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez directement une visite dans votre agenda, sans personne à rappeler.
@@ -1630,7 +1630,7 @@ Adresse : https://bartierandco.com/blog/google-ads-ou-meta-ads-artisan/
 Google capte ceux qui cherchent déjà, Meta touche ceux qui n’ont pas encore cherché. Comment choisir selon votre métier, votre secteur et votre budget.
 
 Publicité
-Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 19 novembre 2026 4 min de lecture
+Par Charles Le Cottier, cofondateur Publié le 17 novembre 2026 Mis à jour le 19 novembre 2026 4 min de lecture
 Google Ads capte une demande qui existe déjà : le propriétaire cherche un artisan. Meta Ads (Facebook et Instagram) suscite une demande chez des propriétaires qui n’ont pas encore cherché. Le premier convient aux urgences et aux projets mûrs, le second aux rénovations et à l’entretien.
 
 ### Demande exprimée ou demande suscitée
@@ -1700,7 +1700,7 @@ Adresse : https://bartierandco.com/blog/relance-devis-artisan/
 Un devis de rénovation se relance. Voici un calendrier simple, trois SMS prêts à copier, un script d’appel de deux minutes et le bon moment pour s’arrêter.
 
 Méthode
-Par Charles Le Cottier, co-fondateur Publié le 17 novembre 2026 Mis à jour le 18 novembre 2026 4 min de lecture
+Par Charles Le Cottier, cofondateur Publié le 17 novembre 2026 Mis à jour le 19 novembre 2026 4 min de lecture
 Relancez un devis de rénovation par un appel, quelques jours après l’envoi, puis par SMS si vous n’avez pas de réponse. Arrêtez après trois tentatives sans retour, en laissant la porte ouverte. Chaque relance sert à savoir où en est le projet.
 
 ### Quand relancer un devis ?
@@ -1778,7 +1778,7 @@ Les 8 canaux pour trouver des chantiers quand on est artisan, comparés par coû
 
 Guide
 Huit façons de trouver des chantiers, comparées. La bonne est celle qui vous coûte le moins par chantier signé.
-Par Charles Le Cottier, co-fondateur Mis à jour le 19 novembre 2026
+Par Charles Le Cottier, cofondateur Mis à jour le 19 novembre 2026
 
 ### Les 8 canaux pour trouver des chantiers
 Ce que chacun vous coûte, et si la demande est pour vous seul.
@@ -1892,7 +1892,7 @@ Habitatpresto Pro côté artisan, d’après ses conditions publiées : abonnem
 
 Plateforme de devis
 Habitatpresto Pro fonctionne par abonnement mensuel, avec des frais de mise en service. Le prix n’est pas publié : il dépend des départements et des catégories choisis. L’engagement initial est de 6 ou 12 mois, et chaque demande de devis est d’abord envoyée à 5 professionnels, puis à 5 autres.
-Par Charles Le Cottier, co-fondateur Mis à jour le 19 novembre 2026
+Par Charles Le Cottier, cofondateur Mis à jour le 19 novembre 2026
 Cette page résume les documents publiés par Habitatpresto, consultés le 18 novembre 2026. Elle ne donne pas d’avis. Si une information a changé, écrivez-nous : nous corrigeons.
 
 ### Comment fonctionne Habitatpresto Pro ?

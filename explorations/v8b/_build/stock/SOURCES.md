@@ -18,3 +18,9 @@ Recadrage 3:2 autour du visage, métadonnées retirées. Utilisée sur l'accueil
 | deux-personnes-etudient-plans-travaux | https://www.pexels.com/photo/8961295/ | Licence Pexels |
 | femme-froid-dans-son-salon | https://www.pexels.com/photo/6753163/ | Licence Pexels |
 | artisan-souriant-chantier-renovation (4:5) | https://www.pexels.com/photo/5493672/ | Licence Pexels |
+
+## Pages devis isolation (recadrage 4:3 sur l'artisan, métadonnées retirées, étalonnage du site)
+
+| Fichier (assets/photos) | Source | Auteur | Licence |
+|---|---|---|---|
+| artisan-pose-laine-isolante-mur | https://www.pexels.com/photo/unrecognizable-worker-insulating-with-stone-wool-6124239/ | Erik Mclean (Pexels) | Licence Pexels : usage commercial gratuit, sans attribution obligatoire |
