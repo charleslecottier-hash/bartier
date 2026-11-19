@@ -1395,13 +1395,13 @@ def hero_preload(doc):
     sizes = re.search(r'\ssizes="([^"]+)"', tag)
     src = re.search(r'\ssrc="([^"]+)"', tag)
     if srcset:
-        link = f'<link rel="preload" as="image" imagesrcset="{srcset.group(1)}"' + (f' imagesizes="{sizes.group(1)}"' if sizes else "") + ' fetchpriority="high">'
+        link = f'<link rel="preload" as="image" imagesrcset="{srcset.group(1)}"' + (f' imagesizes="{sizes.group(1)}"' if sizes else "") + '>'
     elif src:
         link = f'<link rel="preload" as="image" href="{src.group(1)}" fetchpriority="high">'
     else:
         return doc
-    i = doc.find('<link rel="preload"')
-    i = i if i >= 0 else doc.index("</title>") + len("</title>")
+    fonts = list(re.finditer(r'<link rel="preload"[^>]*as="font"[^>]*>\n?', doc))
+    i = fonts[-1].end() if fonts else doc.index("</title>") + len("</title>")
     return doc[:i] + link + "\n" + doc[i:]
 
 

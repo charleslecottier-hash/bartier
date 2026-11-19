@@ -1353,3 +1353,6 @@ section.tr-ads .ad-img{height:auto}
   .is-inner .pg-top:has(.gd-toc){padding-bottom:32px}
   .is-inner .journal.sheet{padding-top:8px}
 }
+
+/* Articles sur téléphone : une ligne par information (auteur, dates, durée), pour que la hauteur ne change pas quand la police du site arrive */
+@media (max-width:760px){.post-meta-line{flex-direction:column;flex-wrap:nowrap;row-gap:2px}}
