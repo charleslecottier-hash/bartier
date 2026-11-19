@@ -7,7 +7,7 @@ Aucune photo de banque d'images (Google les retire des fiches) et aucun portrait
 |---|---|
 | 01-logo.png | Logo |
 | 01-logo-fond-bleu-nuit.png | Autre version du logo, si le fond blanc ne ressort pas |
-| 02-couverture.jpg | Photo de couverture (1080 x 608) |
+| 02-couverture.jpg | Photo de couverture (2160 x 1216, format 16:9 de Google en double définition) |
 | 03-la-visite-dans-votre-agenda.jpg | Photos |
 | 04-rappel-en-5-minutes.jpg | Photos |
 | 05-nos-engagements.jpg | Photos |
