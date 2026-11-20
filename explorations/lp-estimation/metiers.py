@@ -88,7 +88,7 @@ M["facade"] = dict(
             ])]),
         dict(title="Quelle surface de façade ?", sub="Une estimation suffit : l’artisan mesure à la visite.", qs=[
             dict(t="range", name="surface", label="Surface des murs", min=20, max=400, step=5, val=100, unit="m²")]),
-        dict(title="De quoi est fait le mur ?", sub="Le support décide de la préparation.", auto=True, qs=[
+        dict(title="De quoi est fait le mur ?", sub="La préparation du mur en dépend.", auto=True, qs=[
             dict(t="tiles", name="support", opts=[("Enduit", "enduit"), ("Pierre", "pierre"), ("Brique", "brique"), ("Béton", "beton"),
                                                    ("Bardage bois", "bois"), ("Je ne sais pas", "inconnu")])]),
         dict(title="Quelques détails", sub="Pour prévoir l’échafaudage et la préparation.", qs=[
@@ -96,7 +96,7 @@ M["facade"] = dict(
             dict(t="seg", name="fissures", label="Des fissures visibles ?", opts=ONSP)]),
     ],
     visite=[dict(q="fissures", eq="Oui", txt="Traitement des fissures"), dict(q="hauteur", eq="2 étages ou plus", txt="Échafaudage sur deux étages ou plus")],
-    visite_txt={"Fissures à reprendre": "Des fissures se chiffrent sur place : leur cause compte autant que leur longueur."},
+    visite_txt={"Fissures à reprendre": "Des fissures se chiffrent sur place : il faut d’abord en trouver la cause."},
 )
 
 M["fenetres"] = dict(
