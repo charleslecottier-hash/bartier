@@ -1638,6 +1638,10 @@ SECURITY_HEADERS = [
 # ——— Fichiers SEO et GEO ———
 for f in ["robots.txt", "llms.txt"]:
     (ROOT / f).write_text((V1.parent / f).read_text(encoding="utf-8"), encoding="utf-8")
+# Pas de lien vers une page ville qui n'existe pas encore
+_llms = (ROOT / "llms.txt").read_text(encoding="utf-8").split("\n")
+_llms = [l for l in _llms if not (m := re.search(r"/devis-travaux/([a-z-]+)/\)", l)) or f"/devis-travaux/{m.group(1)}/" in paths]
+(ROOT / "llms.txt").write_text("\n".join(_llms), encoding="utf-8")
 # Date de dernière modification : elle ne change que si le texte de la page change (empreinte gardée dans _build/lastmod.json).
 import hashlib as _h
 _lm_file = ROOT / "_build" / "lastmod.json"
