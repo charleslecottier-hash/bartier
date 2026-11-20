@@ -43,6 +43,13 @@ CSS = """<style id="vl-css">
 .vl-leakbar h2{margin-bottom:4px;font:400 clamp(1.3rem,2vw,1.6rem)/1.2 var(--f-display);letter-spacing:-.01em}
 .vl-leakbar p{color:var(--muted)}
 .vl-leakbar .btn{flex:none}
+/* photo de la ville, fondue dans le bandeau sombre */
+.vl-fig.has-scene{padding-top:0}
+.vl-scene{position:relative;margin:0 0 clamp(40px,5vw,72px);height:clamp(280px,34vw,520px);overflow:hidden;background:var(--ink)}
+.vl-scene img{width:100%;height:100%;object-fit:cover;display:block}
+.vl-scene::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,20,36,0) 45%,rgba(10,20,36,.55) 75%,var(--ink) 100%);pointer-events:none}
+.vl-scene figcaption{position:absolute;left:var(--cell);right:var(--cell);bottom:16px;z-index:1;font-size:.75rem;color:rgba(255,255,255,.62)}
+.vl-scene figcaption a{color:inherit}
 /* sommaire */
 .vl-toc{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:32px;padding:0 var(--cell)}
 .vl-toc span{flex:0 0 auto;margin-right:8px;font-size:.8rem;color:var(--muted);white-space:nowrap}
@@ -162,7 +169,17 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
 </section>"""
 
     figs = "".join(f'<li><b>{a}</b> <span>{b}</span> <span class="vl-fsrc">{src}</span></li>' for a, b, src in c["figures"])
-    figures = f"""<section class="sheet" id="en-chiffres" data-tone="dark">
+    scene, scls = "", ""
+    if c.get("photo"):
+        ph = c["photo"]
+        srcset = ", ".join(f'/assets/villes/{c["slug"]}-{w}.webp {w}w' for w in (800, 1200, 1600, 2400))
+        scene = (f'<figure class="vl-scene"><img srcset="{srcset}" sizes="100vw" src="/assets/villes/{c["slug"]}-1600.webp" alt="{ph["alt"]}" '
+                 f'width="2400" height="{ph["h"]}" loading="lazy" decoding="async" style="object-position:{ph.get("pos", "50% 50%")}">'
+                 f'<figcaption>{ph["caption"]} · Photo : <a href="{ph["page"]}" target="_blank" rel="noopener">{ph["creator"]}</a>, '
+                 f'<a href="{ph["license_url"]}" target="_blank" rel="noopener">{ph["license"]}</a>, recadrée</figcaption></figure>')
+        scls = " has-scene"
+    figures = f"""<section class="sheet vl-fig{scls}" id="en-chiffres" data-tone="dark">
+  {scene}
   <div class="grid sp-head"><h2 data-split>{v} en quelques chiffres</h2><p>{c["figures_intro"]}</p></div>
   <div class="vl-figgrid"><ul class="pf-proms vl-figs">{figs}</ul><figure class="vl-map vl-map-d">{carte(c["slug"])}</figure></div>
 </section>"""
