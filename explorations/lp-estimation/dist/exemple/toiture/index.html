@@ -79,13 +79,13 @@ svg{display:block}
 .es-ex b{display:block;font-size:1.15rem;font-weight:600;line-height:1.25;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .es-ex .es-tag-t>span:last-child{display:block;font-size:.82rem;color:var(--ink2)}
 .es-gal{grid-column:1/-1;width:100%;max-width:1116px;margin:16px auto 0}
+.es-gal-head{text-align:center}
 .es-gal-head h2{font-size:1.6rem;font-weight:500;letter-spacing:-.02em}
 .es-gal-sub{margin-top:4px;font-size:.9rem;color:var(--muted)}
 .es-gal-row{display:flex;gap:12px;margin:16px -16px 0;padding:0 16px 8px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 16px;scrollbar-width:none}
 .es-gal-row::-webkit-scrollbar{display:none}
 .es-gal-item{flex:0 0 78%;margin:0;scroll-snap-align:start}
 .es-gal-item img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;background:#DCE1E8}
-.es-gal-item figcaption{margin-top:8px;font-size:.88rem;color:var(--ink2)}
 @media (min-width:640px){.es-gal-row{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));margin:16px 0 0;padding:0;overflow:visible}.es-gal-row[data-n="2"]{--n:2}.es-gal-row[data-n="1"]{--n:1}.es-gal-item img{aspect-ratio:4/3}}
 .es-tag-ico{flex:none;display:grid;place-items:center;width:56px;height:48px;border-radius:8px;background:linear-gradient(180deg,#F8F9FB,#EDF0F4)}
 .es-tag-ico svg{width:50px;height:auto}
@@ -94,8 +94,8 @@ svg{display:block}
 .es-tag-k{font-size:.78rem;color:var(--muted)}
 .es-tag b{font-size:1.25rem;font-weight:600;line-height:1.2;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .es-tag span:last-child{font-size:.82rem;color:var(--ink2)}
-.es-faq{grid-column:1/-1;width:100%;max-width:760px;margin:16px 0 0}
-.es-faq h2{font-size:1.6rem;font-weight:500;letter-spacing:-.02em}
+.es-faq{grid-column:1/-1;width:100%;max-width:760px;margin:16px auto 0}
+.es-faq h2{font-size:1.6rem;font-weight:500;letter-spacing:-.02em;text-align:center}
 .es-faq-list{margin-top:16px;padding:0 20px;border:1px solid var(--line);border-radius:20px;background:#fff}
 .es-faq details+details{border-top:1px solid var(--line)}
 .es-faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:12px 0;font-weight:500;cursor:pointer;list-style:none}
@@ -279,7 +279,7 @@ svg{display:block}
       <div class="es-nav"><button type="button" class="es-back" aria-label="Question précédente" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6"/></svg></button><button type="button" class="es-next"><span>Suivant</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14 M13 6l6 6-6 6"/></svg></button></div>
     </form>
   </section>
-  <section class="es-gal" aria-labelledby="es-gal-h"><div class="es-gal-head"><h2 id="es-gal-h">La toiture, en images</h2><p class="es-gal-sub">Photos d’illustration du métier</p></div><div class="es-gal-row" data-n="3"><figure class="es-gal-item"><img src="/assets/photos/toiture-800.webp" alt="Réparation d’une toiture en tuiles" width="800" height="534" loading="lazy" decoding="async"><figcaption>Réparation d’une toiture en tuiles</figcaption></figure><figure class="es-gal-item"><img src="/assets/photos/toiture-ardoise-800.webp" alt="Couvreur au travail sur une toiture" width="800" height="1000" loading="lazy" decoding="async"><figcaption>Couvreur au travail sur une toiture</figcaption></figure><figure class="es-gal-item"><img src="/assets/photos/toiture-tuiles-800.webp" alt="Des tuiles neuves, en gros plan" width="800" height="601" loading="lazy" decoding="async"><figcaption>Des tuiles neuves, en gros plan</figcaption></figure></div></section>
+  <section class="es-gal" aria-labelledby="es-gal-h"><div class="es-gal-head"><h2 id="es-gal-h">La toiture, en images</h2><p class="es-gal-sub">Photos d’illustration du métier</p></div><div class="es-gal-row" data-n="3"><figure class="es-gal-item"><img src="/assets/photos/toiture-800.webp" alt="Réparation d’une toiture en tuiles" width="800" height="534" loading="lazy" decoding="async"></figure><figure class="es-gal-item"><img src="/assets/photos/toiture-ardoise-800.webp" alt="Couvreur au travail sur une toiture" width="800" height="1000" loading="lazy" decoding="async"></figure><figure class="es-gal-item"><img src="/assets/photos/toiture-tuiles-800.webp" alt="Des tuiles neuves, en gros plan" width="800" height="601" loading="lazy" decoding="async"></figure></div></section>
   <section class="es-faq" aria-labelledby="es-faq-h"><h2 id="es-faq-h">Vos questions</h2><div class="es-faq-list"><details><summary>L’estimation est-elle gratuite ?</summary><p>Oui. Elle est gratuite et ne vous engage à rien.</p></details><details><summary>D’où viennent les prix ?</summary><p>Des prix moyens publiés par QuelleEnergie et La Maison Saint-Gobain, pose comprise. Chaque ligne de l’estimation cite sa source et sa date.</p></details><details><summary>Le prix final sera-t-il le même ?</summary><p>C’est une fourchette indicative. Le prix ferme se donne sur devis, après une visite : l’état du support, l’accès et les finitions changent le montant.</p></details><details><summary>J’ai une fuite, que faire ?</summary><p>Choisissez « Réparation ou fuite » : une réparation se chiffre sur place, car il faut d’abord trouver d’où vient l’eau. Si c’est urgent, appelez directement le 06 39 98 00 00.</p></details><details><summary>Qui va me rappeler ?</summary><p>Prénom, gérant de Votre entreprise. Rappel sous 24 h ouvrées. Votre numéro ne sert qu’à ce projet : il n’est ni vendu ni cédé.</p></details><details><summary>Je suis locataire, puis-je faire l’estimation ?</summary><p>Oui. Les travaux sur le bâti se décident avec le propriétaire : faites l’estimation, puis transmettez-la-lui.</p></details></div></section>
 </main>
 <footer class="es-ftr">

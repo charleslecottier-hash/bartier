@@ -169,7 +169,7 @@ def gallery_html(m, cfg, key, urls, own):
     sub = "" if own else '<p class="es-gal-sub">Photos d’illustration du métier</p>'
     figs = "".join(
         f'<figure class="es-gal-item"><img src="{u}" alt="{a(cap)}" width="{w}" height="{h_}" loading="lazy" decoding="async">'
-        f'{f"<figcaption>{e(cap)}</figcaption>" if cap else ""}</figure>' for u, w, h_, cap in urls)
+        '</figure>' for u, w, h_, cap in urls)
     return (f'<section class="es-gal" aria-labelledby="es-gal-h"><div class="es-gal-head"><h2 id="es-gal-h">{e(title)}</h2>{sub}</div>'
             f'<div class="es-gal-row" data-n="{len(urls)}">{figs}</div></section>')
 
@@ -440,13 +440,13 @@ svg{display:block}
 .es-ex b{display:block;font-size:1.15rem;font-weight:600;line-height:1.25;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .es-ex .es-tag-t>span:last-child{display:block;font-size:.82rem;color:var(--ink2)}
 .es-gal{grid-column:1/-1;width:100%;max-width:1116px;margin:16px auto 0}
+.es-gal-head{text-align:center}
 .es-gal-head h2{font-size:1.6rem;font-weight:500;letter-spacing:-.02em}
 .es-gal-sub{margin-top:4px;font-size:.9rem;color:var(--muted)}
 .es-gal-row{display:flex;gap:12px;margin:16px -16px 0;padding:0 16px 8px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 16px;scrollbar-width:none}
 .es-gal-row::-webkit-scrollbar{display:none}
 .es-gal-item{flex:0 0 78%;margin:0;scroll-snap-align:start}
 .es-gal-item img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;background:#DCE1E8}
-.es-gal-item figcaption{margin-top:8px;font-size:.88rem;color:var(--ink2)}
 @media (min-width:640px){.es-gal-row{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));margin:16px 0 0;padding:0;overflow:visible}.es-gal-row[data-n="2"]{--n:2}.es-gal-row[data-n="1"]{--n:1}.es-gal-item img{aspect-ratio:4/3}}
 .es-tag-ico{flex:none;display:grid;place-items:center;width:56px;height:48px;border-radius:8px;background:linear-gradient(180deg,#F8F9FB,#EDF0F4)}
 .es-tag-ico svg{width:50px;height:auto}
@@ -455,8 +455,8 @@ svg{display:block}
 .es-tag-k{font-size:.78rem;color:var(--muted)}
 .es-tag b{font-size:1.25rem;font-weight:600;line-height:1.2;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .es-tag span:last-child{font-size:.82rem;color:var(--ink2)}
-.es-faq{grid-column:1/-1;width:100%;max-width:760px;margin:16px 0 0}
-.es-faq h2{font-size:1.6rem;font-weight:500;letter-spacing:-.02em}
+.es-faq{grid-column:1/-1;width:100%;max-width:760px;margin:16px auto 0}
+.es-faq h2{font-size:1.6rem;font-weight:500;letter-spacing:-.02em;text-align:center}
 .es-faq-list{margin-top:16px;padding:0 20px;border:1px solid var(--line);border-radius:20px;background:#fff}
 .es-faq details+details{border-top:1px solid var(--line)}
 .es-faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:12px 0;font-weight:500;cursor:pointer;list-style:none}

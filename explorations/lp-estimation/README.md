@@ -73,7 +73,7 @@ Chaque option a sa propre illustration du chantier (mousse sur le toit, tuile ma
 
 Sous le formulaire, une section montre le métier en photos : deux ou trois par page, à faire défiler du doigt sur téléphone. Par défaut, ce sont des photos libres de droits (voir `photos/SOURCES.md` : licences Unsplash et Pexels, usage commercial gratuit), titrées « [Le métier], en images » avec la mention « Photos d'illustration du métier ». Elles ne montrent pas les chantiers de l'artisan et ne doivent jamais être présentées comme tels.
 
-Dès que l'artisan fournit ses propres photos de chantier, mettez-les dans sa fiche (`realisations`). La section devient « Les chantiers de [entreprise] », avec ses légendes. De vraies photos inspirent bien plus confiance. Retirez-en d'abord les métadonnées (lieu, date, appareil).
+Dès que l'artisan fournit ses propres photos de chantier, mettez-les dans sa fiche (`realisations`). La section devient « Les chantiers de [entreprise] ». Les légendes ne s'affichent pas : elles servent de texte de remplacement aux lecteurs d'écran. De vraies photos inspirent bien plus confiance. Retirez-en d'abord les métadonnées (lieu, date, appareil).
 
 En haut de page, sur téléphone, un encadré compact donne l'exemple d'estimation, pour que le formulaire arrive vite. Sur ordinateur, la grande maison dessinée du métier porte cet exemple.
 
