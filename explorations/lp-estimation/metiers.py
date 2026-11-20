@@ -25,7 +25,7 @@ ONSP = ["Oui", "Non", "Je ne sais pas"]
 M = {}
 
 M["toiture"] = dict(
-    photo=dict(base="toiture", sizes=[(800, 534), (1200, 801)], alt="Couvreur réparant une toiture en tuiles, sur un échafaudage", pos="center 40%"),
+    gallery=[('toiture-800.webp', 800, 534, 'Réparation d’une toiture en tuiles'), ('toiture-ardoise-800.webp', 800, 1000, 'Couvreur au travail sur une toiture'), ('toiture-tuiles-800.webp', 800, 601, 'Des tuiles neuves, en gros plan')],
     slug="toiture", nom="toiture", artisan="couvreur",
     title="Prix toiture 2026 : estimez vos travaux en 1 minute",
     desc="Nettoyage, démoussage, couverture, réfection : estimez le prix de vos travaux de toiture en 6 questions, à partir des prix publiés en 2026.",
@@ -66,7 +66,7 @@ M["toiture"] = dict(
 )
 
 M["facade"] = dict(
-    photo=dict(base="facade", sizes=[(800, 542), (1000, 678)], alt="Maison ancienne en pierre à la façade refaite", pos="center 45%"),
+    gallery=[('facade-echafaudage-800.webp', 800, 450, 'Maison sous échafaudage pendant un ravalement'), ('facade-enduit-800.webp', 800, 1000, 'Enduit appliqué à la taloche sur un mur en pierre'), ('facade-800.webp', 800, 542, 'Une façade en pierre rénovée')],
     slug="ravalement-facade", nom="façade", artisan="façadier",
     title="Prix ravalement de façade 2026 : estimation en 1 minute",
     desc="Peinture, enduit, ravalement avec isolation : estimez le prix de votre ravalement de façade en 6 questions, à partir des prix publiés en 2026.",
@@ -103,7 +103,7 @@ M["facade"] = dict(
 )
 
 M["fenetres"] = dict(
-    photo=dict(base="fenetres", sizes=[(800, 533)], alt="Menuisier découpant un cadre de fenêtre", pos="center 40%"),
+    gallery=[('fenetres-800.webp', 800, 533, 'Découpe d’un cadre de fenêtre'), ('fenetres-atelier-800.webp', 800, 1000, 'Menuisier dans son atelier')],
     slug="fenetres", nom="fenêtres", artisan="menuisier",
     title="Prix fenêtres 2026 : estimez votre projet en 1 minute",
     desc="Remplacement ou création de fenêtres : estimez le prix de vos fenêtres posées en 6 questions, à partir des prix publiés en 2026.",
@@ -142,7 +142,7 @@ M["fenetres"] = dict(
 )
 
 M["charpente"] = dict(
-    photo=dict(base="charpente", sizes=[(800, 533), (1200, 800)], alt="Charpente en bois en cours de pose, vue d’en dessous", pos="center"),
+    gallery=[('charpente-800.webp', 800, 533, 'Charpente en bois en cours de pose'), ('charpente-charpentier-800.webp', 800, 1000, 'Charpentier sur une structure en bois'), ('charpente-poutre-800.webp', 800, 1000, 'Travail d’une pièce de bois')],
     slug="charpente", nom="charpente", artisan="charpentier",
     title="Prix charpente 2026 : estimez vos travaux en 1 minute",
     desc="Traitement du bois, rénovation, charpente et couverture : estimez le prix de vos travaux de charpente en 6 questions, à partir des prix publiés.",
@@ -179,7 +179,7 @@ M["charpente"] = dict(
 )
 
 M["isolation"] = dict(
-    photo=dict(base="isolation", sizes=[(800, 600), (1200, 900)], alt="Artisan posant de la laine isolante entre les montants d’un mur", pos="center"),
+    gallery=[('isolation-800.webp', 800, 600, 'Pose de laine isolante entre les montants d’un mur'), ('isolation-froid-800.webp', 800, 1000, 'Une pièce mal isolée, difficile à chauffer')],
     slug="isolation", nom="isolation", artisan="artisan",
     title="Prix isolation 2026 : estimez vos travaux en 1 minute",
     desc="Combles perdus, combles aménagés, murs par l’extérieur : estimez le prix de votre isolation en 6 questions, à partir des prix publiés en 2026.",

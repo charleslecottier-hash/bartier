@@ -36,7 +36,7 @@ Pour qu'une annonce mène directement au bon projet, ajoutez `projet=` à l'adre
 | `entreprise` | Nom affiché dans l'en-tête, les textes et les mentions |
 | `domaine` | Adresse du site du client (ex. `https://devis.entreprise-dupont.fr`). Sert à l'image d'aperçu des liens partagés |
 | `logo` | Chemin du logo (SVG ou PNG), relatif à la fiche. Vide : le nom s'affiche en texte |
-| `photos` | Photos des vrais chantiers de l'artisan, une par métier (ex. `{"toiture": "photos/toit-dupont.jpg"}`, chemin relatif à la fiche). Elles remplacent les photos libres de droits et portent la mention « Un chantier de [entreprise] » |
+| `realisations` | Photos des vrais chantiers de l'artisan, par métier (ex. `{"toiture": [{"photo": "photos/toit-dupont.jpg", "legende": "Réfection d'une toiture à Roubaix"}]}`, chemins relatifs à la fiche). Elles remplacent les photos libres de droits sous le formulaire, sous le titre « Les chantiers de [entreprise] » |
 | `telephone` | Numéro affiché dans le bouton vert et à la fin |
 | `whatsapp` | Numéro WhatsApp au format international sans `+` (ex. `33612345678`). Vide : pas de bouton WhatsApp |
 | `envoi` | Adresse qui reçoit chaque demande en JSON (voir plus bas). Fortement conseillé |
@@ -63,7 +63,7 @@ Sans `envoi`, seul le bouton WhatsApp (ou l'appel) transmet la demande. Le visit
 
 ## Le parcours
 
-Sur téléphone, le titre et le bouton vert viennent en premier, puis un exemple d'estimation (la première option, à la quantité proposée, avec son illustration) et le questionnaire juste en dessous. Une fois lancé, il occupe tout l'écran : la progression reste en haut et le bouton « Suivant » en bas, à portée du pouce. Sur ordinateur, le titre est à gauche et le questionnaire à droite, sans clic de plus.
+Sur téléphone, le titre et le bouton vert viennent en premier, puis un exemple d'estimation (la première option, à la quantité proposée) et le questionnaire juste en dessous. Une fois lancé, il occupe tout l'écran : la progression reste en haut et le bouton « Suivant » en bas, à portée du pouce. Sur ordinateur, le titre est à gauche et le questionnaire à droite, sans clic de plus.
 
 Chaque option a sa propre illustration du chantier (mousse sur le toit, tuile manquante, façade à moitié repeinte, panneaux d'isolant…), et la tuile passe à la question suivante dès qu'on la touche. Les surfaces et les quantités se règlent avec un curseur et des boutons − et +. Le code postal affiche le nom de la commune grâce à l'API publique de l'État (geo.api.gouv.fr) ; hors des départements du client, la page prévient le visiteur sans le bloquer. Vers la fin, le compteur laisse place à « Plus que 3 étapes », « Avant-dernière étape », puis « Dernière étape ».
 
@@ -71,13 +71,15 @@ Chaque option a sa propre illustration du chantier (mousse sur le toit, tuile ma
 
 ## Les photos
 
-Chaque métier a une photo libre de droits en haut de page (voir `photos/SOURCES.md` : licences Unsplash et Pexels, usage commercial gratuit). L'exemple d'estimation est posé dessus. Ces photos illustrent le métier : elles ne montrent pas les chantiers de l'artisan et ne doivent jamais être présentées comme tels.
+Sous le formulaire, une section montre le métier en photos : deux ou trois par page, à faire défiler du doigt sur téléphone. Par défaut, ce sont des photos libres de droits (voir `photos/SOURCES.md` : licences Unsplash et Pexels, usage commercial gratuit), titrées « [Le métier], en images » avec la mention « Photos d'illustration du métier ». Elles ne montrent pas les chantiers de l'artisan et ne doivent jamais être présentées comme tels.
 
-Dès que l'artisan fournit ses propres photos de chantier, mettez-les dans sa fiche (`photos`). Elles remplacent les photos libres de droits et portent la mention « Un chantier de [entreprise] ». De vraies photos inspirent plus confiance. Retirez-en d'abord les métadonnées (lieu, date, appareil).
+Dès que l'artisan fournit ses propres photos de chantier, mettez-les dans sa fiche (`realisations`). La section devient « Les chantiers de [entreprise] », avec ses légendes. De vraies photos inspirent bien plus confiance. Retirez-en d'abord les métadonnées (lieu, date, appareil).
+
+En haut de page, sur téléphone, un encadré compact donne l'exemple d'estimation, pour que le formulaire arrive vite. Sur ordinateur, la grande maison dessinée du métier porte cet exemple.
 
 ## L'image d'aperçu
 
-Quand Node et Playwright sont installés, la génération crée pour chaque métier une image `og.png` (1200 × 630) : le titre, la photo du métier, l'exemple d'estimation et le nom de l'artisan. Elle s'affiche quand le lien est partagé sur WhatsApp, Facebook ou par SMS, à condition que `domaine` soit rempli.
+Quand Node et Playwright sont installés, la génération crée pour chaque métier une image `og.png` (1200 × 630) : le titre, la première photo de la section (celle de l'artisan s'il en a fourni), l'exemple d'estimation et le nom de l'artisan. Elle s'affiche quand le lien est partagé sur WhatsApp, Facebook ou par SMS, à condition que `domaine` soit rempli.
 
 ## Les prix
 

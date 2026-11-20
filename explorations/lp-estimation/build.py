@@ -154,12 +154,24 @@ em{{font-style:italic;text-decoration:underline;text-decoration-color:#16A34A;te
 <div class="art">{photo}<div class="tag"><span>Exemple d’estimation</span><b>{e(amount)}</b><i>{e(label)}</i></div></div></body></html>"""
 
 
-def photo_of(m, cfg, key):
-    """Photo du haut de page : celle du client si sa fiche en donne une (ses vrais chantiers), sinon la photo libre de droits du métier."""
-    own = cfg.get("photos", {}).get(key)
+def gallery_of(m, cfg, key):
+    """Photos de la section sous le formulaire : (fichier source, largeur, hauteur, légende), et si ce sont les vrais chantiers du client."""
+    own = cfg.get("realisations", {}).get(key) or []
     if own:
-        return dict(own=own, alt=f"Un chantier de {cfg['entreprise']}", pos="center")
-    return dict(m["photo"], own=None)
+        return [(x["photo"], 1200, 900, x.get("legende", "")) for x in own], True
+    return [(HERE / "photos" / f, w, h_, cap) for f, w, h_, cap in m["gallery"]], False
+
+
+def gallery_html(m, cfg, key, urls, own):
+    nom = {"toiture": "La toiture", "facade": "Le ravalement de façade", "fenetres": "La pose de fenêtres",
+           "charpente": "La charpente", "isolation": "L’isolation"}[key]
+    title = f"Les chantiers de {cfg['entreprise']}" if own else f"{nom}, en images"
+    sub = "" if own else '<p class="es-gal-sub">Photos d’illustration du métier</p>'
+    figs = "".join(
+        f'<figure class="es-gal-item"><img src="{u}" alt="{a(cap)}" width="{w}" height="{h_}" loading="lazy" decoding="async">'
+        f'{f"<figcaption>{e(cap)}</figcaption>" if cap else ""}</figure>' for u, w, h_, cap in urls)
+    return (f'<section class="es-gal" aria-labelledby="es-gal-h"><div class="es-gal-head"><h2 id="es-gal-h">{e(title)}</h2>{sub}</div>'
+            f'<div class="es-gal-row" data-n="{len(urls)}">{figs}</div></section>')
 
 
 def favicon(accent):
@@ -415,17 +427,27 @@ svg{display:block}
 .es-rev b{color:var(--ink)}
 .es-stars{color:#E8A317;letter-spacing:1px}
 .es-who-card{margin-top:16px;padding:12px 16px;border-radius:16px;background:var(--go-bg)}
-.es-photo{margin-top:12px}
+.es-box-photo{margin-top:12px}
 .es-facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;padding:0;list-style:none;font-size:.9rem;color:var(--ink2)}
 .es-facts li{display:inline-flex;align-items:center;gap:8px}
 .es-facts svg{flex:none;width:18px;height:18px;color:var(--muted)}
 .es-scene{position:relative;margin:24px 0 0;padding:16px 16px 64px;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#FFFFFF,#EDF0F4)}
 .es-scene-art{display:block;max-width:250px;margin:0 auto}
 .es-scene-art svg{width:100%;height:auto}
-.es-photo{aspect-ratio:4/3;padding:0;background:#DCE1E8}
-.es-photo img{display:block;width:100%;height:100%;object-fit:cover}
-.es-photo-own{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:999px;background:rgba(10,20,36,.72);color:#fff;font-size:.8rem}
-.es-photo .es-tag{display:flex;align-items:center;gap:12px;right:auto;max-width:calc(100% - 24px)}
+.es-scene{display:none}
+.es-ex{display:flex;align-items:center;gap:12px;margin-top:16px;padding:12px 16px 12px 12px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.es-ex .es-tag-k{display:block;font-size:.78rem;color:var(--muted)}
+.es-ex b{display:block;font-size:1.15rem;font-weight:600;line-height:1.25;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.es-ex .es-tag-t>span:last-child{display:block;font-size:.82rem;color:var(--ink2)}
+.es-gal{grid-column:1/-1;width:100%;max-width:1116px;margin:16px auto 0}
+.es-gal-head h2{font-size:1.6rem;font-weight:500;letter-spacing:-.02em}
+.es-gal-sub{margin-top:4px;font-size:.9rem;color:var(--muted)}
+.es-gal-row{display:flex;gap:12px;margin:16px -16px 0;padding:0 16px 8px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 16px;scrollbar-width:none}
+.es-gal-row::-webkit-scrollbar{display:none}
+.es-gal-item{flex:0 0 78%;margin:0;scroll-snap-align:start}
+.es-gal-item img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;background:#DCE1E8}
+.es-gal-item figcaption{margin-top:8px;font-size:.88rem;color:var(--ink2)}
+@media (min-width:640px){.es-gal-row{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));margin:16px 0 0;padding:0;overflow:visible}.es-gal-row[data-n="2"]{--n:2}.es-gal-row[data-n="1"]{--n:1}.es-gal-item img{aspect-ratio:4/3}}
 .es-tag-ico{flex:none;display:grid;place-items:center;width:56px;height:48px;border-radius:8px;background:linear-gradient(180deg,#F8F9FB,#EDF0F4)}
 .es-tag-ico svg{width:50px;height:auto}
 .es-tag-t{display:grid;gap:2px}
@@ -433,7 +455,7 @@ svg{display:block}
 .es-tag-k{font-size:.78rem;color:var(--muted)}
 .es-tag b{font-size:1.25rem;font-weight:600;line-height:1.2;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .es-tag span:last-child{font-size:.82rem;color:var(--ink2)}
-.es-faq{grid-column:1/-1;width:100%;max-width:760px;margin:16px auto 0}
+.es-faq{grid-column:1/-1;width:100%;max-width:760px;margin:16px 0 0}
 .es-faq h2{font-size:1.6rem;font-weight:500;letter-spacing:-.02em}
 .es-faq-list{margin-top:16px;padding:0 20px;border:1px solid var(--line);border-radius:20px;background:#fff}
 .es-faq details+details{border-top:1px solid var(--line)}
@@ -573,7 +595,7 @@ svg{display:block}
 @media (hover:hover){.es-opt:hover .es-ico svg{transform:translateY(-3px)}}
 .es-again{min-height:44px;margin-top:0;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 @media (min-width:640px){.es-head{padding:20px 28px 16px}.es-body{padding:8px 28px 28px}.es-nav{padding:16px 28px}.es-opts{gap:12px}}
-@media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{padding-top:36px}.es-scene-art{max-width:270px}.es-photo{aspect-ratio:3/2}.es-cta{display:none}.es-lead{font-size:1.12rem}}
+@media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{padding-top:36px}.es-scene{display:block}.es-ex{display:none}.es-scene-art{max-width:270px}.es-cta{display:none}.es-lead{font-size:1.12rem}}
 .es-ftr{padding:28px 16px 40px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted);text-align:center}
 .es-by{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px}
 .es-by img{height:28px;width:auto;max-width:150px;object-fit:contain}
@@ -712,7 +734,7 @@ function render(E,pr,telf,state){var sel=f.querySelector('.es-opt[aria-pressed="
   h+='<div class="es-box" data-state="'+state+'"><p class="es-box-k">Prochaine étape</p>'
    +'<div class="es-s-sending"><p class="es-box-h">Envoi de votre demande…</p></div>'
    +'<div class="es-s-sent"><p class="es-box-h">C’est noté, '+esc(pr)+'.</p><p class="es-box-p">'+esc(C.who)+" vous rappelle au "+esc(telf)+(C.horaires?", "+esc(C.horaires):"")+' pour fixer une visite et vous remettre un devis.</p>'
-     +(C.wa?'<p class="es-box-p es-photo">En attendant, envoyez quelques photos du chantier\u00a0: la visite sera mieux préparée.</p>':"")
+     +(C.wa?'<p class="es-box-p es-box-photo">En attendant, envoyez quelques photos du chantier\u00a0: la visite sera mieux préparée.</p>':"")
      +'<div class="es-acts">'+(C.wa?'<a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa-photo>'+ICO.wa+"Envoyer des photos</a>":"")+call+"</div></div>"
    +'<div class="es-s-manual">'+(C.wa?'<p class="es-box-h">Envoyez votre demande à '+esc(C.ent)+'</p><p class="es-box-p">Votre message est déjà rédigé. Ajoutez-y quelques photos du chantier si vous pouvez\u00a0: la visite sera mieux préparée.</p><div class="es-acts"><a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa>'+ICO.wa+"Envoyer sur WhatsApp</a>"+call+"</div>"
      :'<p class="es-box-h">Appelez '+esc(C.ent)+' pour fixer la visite</p><div class="es-acts">'+call+"</div>")+"</div></div>"
@@ -779,18 +801,11 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
     kick = f'<p class="es-kick">{ico("pin")}{e(m["artisan"].capitalize())} · {e(cfg["zone"])}</p>' if cfg.get("zone") else ""
     lead = "Répondez à 6 questions : le prix de vos travaux s’affiche tout de suite."
     ex_focus, ex_amount, ex_label = example(m, cfg, key)
-    ph = photo_of(m, cfg, key)
-    if ph["own"]:
-        img = f'<img src="{photo_urls[key][0][0]}" alt="{a(ph["alt"])}" width="1200" height="900" decoding="async">'
-    else:
-        srcset = ", ".join(f"{u} {w}w" for u, w, _ in photo_urls[key])
-        u0, w0, h0 = photo_urls[key][-1]
-        img = (f'<img src="{photo_urls[key][0][0]}" srcset="{srcset}" sizes="(min-width: 960px) 520px, calc(100vw - 32px)" '
-               f'alt="{a(ph["alt"])}" width="{w0}" height="{h0}" decoding="async" style="object-position:{ph["pos"]}">')
-    cap = f'<span class="es-photo-own">Un chantier de {e(cfg["entreprise"])}</span>' if ph["own"] else ""
-    scene = (f'<figure class="es-scene es-photo">{img}{cap}'
-             f'<figcaption class="es-tag"><span class="es-tag-ico" aria-hidden="true">{icons.house(ex_focus, None, accent, s=8)}</span>'
-             f'<span class="es-tag-t"><span class="es-tag-k">Exemple d’estimation</span><b>{e(ex_amount)}</b><span>{e(ex_label)}</span></span></figcaption></figure>')
+    tag = (f'<span class="es-tag-k">Exemple d’estimation</span><b>{e(ex_amount)}</b><span>{e(ex_label)}</span>')
+    scene = (f'<figure class="es-scene"><span class="es-scene-art" aria-hidden="true">{icons.house(ex_focus, None, accent, s=14)}</span>'
+             f'<figcaption class="es-tag">{tag}</figcaption></figure>'
+             f'<div class="es-ex"><span class="es-tag-ico" aria-hidden="true">{icons.house(ex_focus, None, accent, s=8)}</span><span class="es-tag-t">{tag}</span></div>')
+    gal_urls, gal_own = photo_urls[key]
     av, title, person = who(cfg, photo_url)
     trust = (f'<div class="es-trust"><div class="es-who"><span class="es-av">{av}</span><p><b>{e(title)}</b>'
              f'<span>{e(cfg.get("rappel") or ("Vous rappelle personnellement" if person else "Rappel gratuit, sans engagement"))}</span></p></div>{stars(cfg)}</div>')
@@ -857,6 +872,7 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
       <div class="es-nav"><button type="button" class="es-back" aria-label="Question précédente" hidden>{ico('back')}</button><button type="button" class="es-next"><span>Suivant</span>{ico('arrow')}</button></div>
     </form>
   </section>
+  {gallery_html(m, cfg, key, gal_urls, gal_own)}
   {faq_html(m, cfg, key)}
 </main>
 <footer class="es-ftr">
@@ -897,27 +913,24 @@ def build(path):
         photo_url = "/assets/" + dst.name
     keys = [k for k in ORDER if k in cfg.get("metiers", ORDER)]
     (out / "assets" / "photos").mkdir(parents=True)
-    photo_urls = {}
+    photo_urls, og_src = {}, {}
     for k in keys:
-        ph = photo_of(M[k], cfg, k)
-        if ph["own"]:
-            src = (pathlib.Path(path).parent / ph["own"]).resolve()
-            name = f"{M[k]['slug']}{src.suffix.lower()}"
+        items, own = gallery_of(M[k], cfg, k)
+        urls = []
+        for i, (src, w, h_, cap) in enumerate(items):
+            src = pathlib.Path(src) if not own else (pathlib.Path(path).parent / src).resolve()
+            name = (f"{M[k]['slug']}-chantier-{i + 1}{src.suffix.lower()}" if own else src.name)
             shutil.copy(src, out / "assets" / "photos" / name)
-            photo_urls[k] = [(f"/assets/photos/{name}", 1200, 900)]
-        else:
-            photo_urls[k] = []
-            for w, h_ in ph["sizes"]:
-                name = f"{ph['base']}-{w}.webp"
-                shutil.copy(HERE / "photos" / name, out / "assets" / "photos" / name)
-                photo_urls[k].append((f"/assets/photos/{name}", w, h_))
+            urls.append((f"/assets/photos/{name}", w, h_, cap))
+        photo_urls[k] = (urls, own)
+        og_src[k] = out / urls[0][0].lstrip("/")
     for k in keys:
         d = out / M[k]["slug"]
         d.mkdir(parents=True)
         (d / "index.html").write_text(page(k, cfg, logo_url, photo_url, photo_urls), encoding="utf-8")
     if shutil.which("node"):
         jobs = [{"out": str(out / M[k]["slug"] / "og.png"),
-                 "html": og_html(M[k], cfg, k, cfg.get("accent", "#2D5BE3"), out / photo_urls[k][-1][0].lstrip("/"))} for k in keys]
+                 "html": og_html(M[k], cfg, k, cfg.get("accent", "#2D5BE3"), og_src[k])} for k in keys]
         jf = out / "og_jobs.json"
         jf.write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
         r = subprocess.run(["node", str(HERE / "og_render.js"), str(jf)], capture_output=True, text=True)
