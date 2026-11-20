@@ -37,16 +37,16 @@ M["toiture"] = dict(
     steps=[
         dict(title="Quels travaux sur votre toiture ?", sub="Choisissez ce qui ressemble le plus à votre projet.", auto=True, qs=[
             dict(t="cards", name="travaux", opts=[
-                ("Nettoyage et démoussage", "Mousses, lichens, toit noirci", "roof", "leaf",
+                ("Nettoyage et démoussage", "Mousses, lichens, toit noirci", "moss", None,
                  [ln("Nettoyage et démoussage", 25, 35, "€/m²", SG_TOIT)]),
-                ("Démoussage et traitement", "Nettoyer, puis protéger les tuiles", "roof", "shield",
+                ("Démoussage et traitement", "Nettoyer, puis protéger les tuiles", "beads", None,
                  [ln("Démoussage et traitement hydrofuge", 35, 45, "€/m²", SG_TOIT)]),
-                ("Réparation ou fuite", "Tuiles cassées, infiltration", "roof", "drop", []),
-                ("Remplacement de la couverture", "Nouvelles tuiles ou ardoises", "roof", "refresh",
+                ("Réparation ou fuite", "Tuiles cassées, infiltration", "leak", None, []),
+                ("Remplacement de la couverture", "Nouvelles tuiles ou ardoises", "strip", None,
                  [ln("Remplacement de la couverture", 60, 300, "€/m²", QE)]),
-                ("Réfection complète", "Couverture et charpente refaites", "roofframe", "refresh",
+                ("Réfection complète", "Couverture et charpente refaites", "roofframe", None,
                  [ln("Remplacement de toute la toiture", 180, 500, "€/m²", QE)]),
-                ("Isolation par l’extérieur", "Sarking, en refaisant la couverture", "rampant", "layers",
+                ("Isolation par l’extérieur", "Sarking, en refaisant la couverture", "sarking", None,
                  [ln("Isolation par l’extérieur (sarking)", 120, 250, "€/m²", QE)]),
             ])]),
         dict(title="Quelle est la surface du toit ?", sub="Une estimation suffit : l’artisan mesure à la visite.", qs=[
@@ -61,6 +61,7 @@ M["toiture"] = dict(
     visite=[dict(q="velux", gt=0, txt="{v} fenêtre(s) de toit"), dict(q="gouttieres", eq="Oui", txt="Gouttières et zinguerie"),
             dict(q="gouttieres", eq="Je ne sais pas", txt="Gouttières et zinguerie, à vérifier")],
     visite_txt={"Réparation ou fuite": "Une réparation se chiffre sur place : l’artisan doit d’abord trouver d’où vient l’eau."},
+    faq=[("J’ai une fuite, que faire ?", "Choisissez « Réparation ou fuite » : une réparation se chiffre sur place, car il faut d’abord trouver d’où vient l’eau. Si c’est urgent, appelez directement le {tel}.")],
 )
 
 M["facade"] = dict(
@@ -76,13 +77,13 @@ M["facade"] = dict(
     steps=[
         dict(title="Quels travaux sur votre façade ?", sub="Choisissez ce qui ressemble le plus à votre projet.", auto=True, qs=[
             dict(t="cards", name="travaux", opts=[
-                ("Mise en peinture", "Façade terne, peinture qui s’écaille", "wall", "roller",
+                ("Mise en peinture", "Façade terne, peinture qui s’écaille", "paint", None,
                  [ln("Mise en peinture", 50, 75, "€/m²", SG_FAC)]),
-                ("Nouvel enduit", "Enduit fissuré, taché ou qui se décolle", "wall", "layers",
+                ("Nouvel enduit", "Enduit fissuré, taché ou qui se décolle", "render", None,
                  [ln("Projection d’enduit", 50, 70, "€/m²", SG_FAC)]),
-                ("Ravalement avec isolation", "Isoler les murs par l’extérieur", "wall", "therm",
+                ("Ravalement avec isolation", "Isoler les murs par l’extérieur", "panels", None,
                  [ln("Ravalement avec isolant", 110, 215, "€/m²", SG_FAC)]),
-                ("Fissures à reprendre", "Lézardes, éclats, joints abîmés", "wall", "crack", []),
+                ("Fissures à reprendre", "Lézardes, éclats, joints abîmés", "cracks", None, []),
                 ("Je ne sais pas encore", "L’artisan vous conseille à la visite", "wall", "question",
                  [ln("Ravalement sans isolant (peinture ou enduit)", 50, 75, "€/m²", SG_FAC)]),
             ])]),
@@ -112,9 +113,9 @@ M["fenetres"] = dict(
     steps=[
         dict(title="Quel est votre projet ?", sub="Choisissez ce qui ressemble le plus à votre projet.", auto=True, qs=[
             dict(t="cards", name="travaux", opts=[
-                ("Remplacer des fenêtres", "Simple vitrage, bois abîmé, courants d’air", "windows", "refresh",
+                ("Remplacer des fenêtres", "Simple vitrage, bois abîmé, courants d’air", "windows", None,
                  [ln("Fenêtre PVC en remplacement", 870, 1170, "€ TTC", SG_FEN)]),
-                ("Créer une ouverture", "Une nouvelle fenêtre dans un mur", "newwin", "plus",
+                ("Créer une ouverture", "Une nouvelle fenêtre dans un mur", "newwin", None,
                  [ln("Fenêtre PVC en création d’ouverture", 2400, 2400, "€ TTC", SG_FEN, approx=True)]),
                 ("Baie vitrée ou porte-fenêtre", "Grande ouverture, coulissant", "bay", None, []),
                 ("Porte d’entrée", "Sécurité, isolation, style", "door", None, []),
@@ -134,6 +135,7 @@ M["fenetres"] = dict(
     visite_txt={"Baie vitrée ou porte-fenêtre": "Une baie ou une porte-fenêtre se chiffre sur mesure, à la visite.",
                 "Porte d’entrée": "Une porte d’entrée se chiffre sur mesure, à la visite.",
                 "Volets": "Des volets se chiffrent sur mesure, à la visite."},
+    faq=[("L’aluminium et le bois sont-ils chiffrés ?", "Les prix publiés sont ceux du PVC. En aluminium ou en bois, le prix se donne à la visite, sur mesure.")],
 )
 
 M["charpente"] = dict(
@@ -149,14 +151,14 @@ M["charpente"] = dict(
     steps=[
         dict(title="Quels travaux sur votre charpente ?", sub="Choisissez ce qui ressemble le plus à votre projet.", auto=True, qs=[
             dict(t="cards", name="travaux", opts=[
-                ("Traitement du bois", "Insectes, champignons, humidité", "frame", "bug",
+                ("Traitement du bois", "Insectes, champignons, humidité", "bugs", None,
                  [ln("Traitement préventif ou curatif du bois", 40, 180, "€/m²", OB_CH)]),
-                ("Réparation ou renfort", "Poutre abîmée, toit qui s’affaisse", "frame", "wrench", []),
-                ("Rénovation de la charpente", "Le prix de la charpente seule", "frame", "refresh",
+                ("Réparation ou renfort", "Poutre abîmée, toit qui s’affaisse", "brace", None, []),
+                ("Rénovation de la charpente", "Le prix de la charpente seule", "frame", None,
                  [ln("Rénovation de la charpente seule", 150, 200, "€ TTC/m²", HW_CH)]),
-                ("Charpente et couverture", "Toute la toiture refaite", "roofframe", "refresh",
+                ("Charpente et couverture", "Toute la toiture refaite", "roofframe", None,
                  [ln("Charpente et couverture", 180, 250, "€ TTC/m²", HW_CH)]),
-                ("Extension ou surélévation", "Agrandir sous un nouveau toit", "extension", "plus", []),
+                ("Extension ou surélévation", "Agrandir sous un nouveau toit", "extension", None, []),
             ])]),
         dict(title="Quelle surface de toiture ?", sub="Une estimation suffit : l’artisan mesure à la visite.", qs=[
             dict(t="range", name="surface", label="Surface de la toiture", min=20, max=250, step=5, val=90, unit="m²")]),
@@ -186,17 +188,17 @@ M["isolation"] = dict(
     steps=[
         dict(title="Que voulez-vous isoler ?", sub="Choisissez ce qui ressemble le plus à votre projet.", auto=True, qs=[
             dict(t="cards", name="travaux", opts=[
-                ("Combles perdus", "Un grenier qu’on n’habite pas", "attic", "therm",
+                ("Combles perdus", "Un grenier qu’on n’habite pas", "attic", None,
                  [ln("Combles perdus, accès par l’intérieur", 40, 40, "€ TTC/m²", SG_ISO, **{"if": ["acces", "Par l’intérieur"], "g": "c"}),
                   ln("Combles perdus, accès par le toit", 45, 45, "€ TTC/m²", SG_ISO, **{"if": ["acces", "Par le toit"], "g": "c"})],
                  "Combles perdus, accès à préciser"),
-                ("Combles aménagés", "Des pièces sous le toit", "rampant", "therm",
+                ("Combles aménagés", "Des pièces sous le toit", "rampant", None,
                  [ln("Combles aménagés, par l’intérieur", 130, 180, "€ TTC/m²", SG_ISO, **{"if": ["acces", "Par l’intérieur"], "g": "c"}),
                   ln("Combles aménagés, par le toit", 240, 240, "€ TTC/m²", SG_ISO, **{"if": ["acces", "Par le toit"], "g": "c"})],
                  "Combles aménagés, accès à préciser"),
-                ("Murs par l’extérieur", "Un isolant posé sur la façade", "wall", "therm",
+                ("Murs par l’extérieur", "Un isolant posé sur la façade", "panels", None,
                  [ln("Ravalement avec isolant", 110, 215, "€/m²", SG_FAC)]),
-                ("Plancher bas", "Au-dessus d’un garage ou d’une cave", "floor", "therm", []),
+                ("Plancher bas", "Au-dessus d’un garage ou d’une cave", "floor", None, []),
                 ("Je ne sais pas encore", "L’artisan vous conseille à la visite", "none", "question", []),
             ])]),
         dict(title="Quelle surface à isoler ?", sub="Une estimation suffit : l’artisan mesure à la visite.", qs=[
@@ -212,6 +214,7 @@ M["isolation"] = dict(
     visite=[],
     visite_txt={"Plancher bas": "Un plancher bas se chiffre sur place : tout dépend de l’accès par en dessous.",
                 "Je ne sais pas encore": "L’artisan regarde votre maison et vous dit par où commencer."},
+    faq=[("Puis-je avoir des aides ?", "Des aides peuvent baisser le montant (MaPrimeRénov’, primes CEE) si l’entreprise est certifiée RGE. Elles se demandent avant de signer le devis.")],
 )
 
 COMMON = [

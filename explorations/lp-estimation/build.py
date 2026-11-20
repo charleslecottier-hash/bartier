@@ -14,7 +14,8 @@ import pathlib
 import re
 import shutil
 import sys
-from urllib.parse import urlparse
+import unicodedata
+from urllib.parse import quote, urlparse
 
 import icons
 from metiers import COMMON, M
@@ -76,6 +77,59 @@ def stars(cfg):
             else f'<p class="es-rev">{inner}</p>')
 
 
+def slug(t):
+    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+
+
+def euro(n):
+    return f"{int(round(n)):,}".replace(",", "\u202f") + "\u00a0€"
+
+
+def example(m, cfg, key):
+    """Estimation d'exemple affichée en haut de page : première option chiffrée, quantité proposée par défaut."""
+    opts = cfg_js(key, m, cfg)["opts"]
+    label = next(o[0] for o in m["steps"][0]["qs"][0]["opts"] if opts[o[0]]["lines"])
+    focus = next(o[2] for o in m["steps"][0]["qs"][0]["opts"] if o[0] == label)
+    qty = m["steps"][1]["qs"][0]["val"]
+    lines, groups = opts[label]["lines"], {}
+    for x in lines:
+        g = groups.setdefault(x.get("g") or id(x), [x["lo"], x["hi"]])
+        g[0], g[1] = min(g[0], x["lo"]), max(g[1], x["hi"])
+    lo = sum(g[0] for g in groups.values()) * qty
+    hi = sum(g[1] for g in groups.values()) * qty
+    step = 10 if lo < 1000 else 100
+    if lo == hi:
+        amount = "environ " + euro(round(lo / 100) * 100)
+    else:
+        amount = euro(lo // step * step) + " à " + euro(-(-hi // step) * step)
+    unit = m["qty"]["many"] if qty > 1 else m["qty"]["one"]
+    return focus, amount, f"{label} · {qty} {unit}"
+
+
+def faq_html(m, cfg, key):
+    ent = cfg["entreprise"]
+    own = bool(cfg.get("tarifs", {}).get(key))
+    c = cfg.get("contact", {})
+    pre, role, rappel = c.get("prenom", "").strip(), c.get("role", "").strip(), cfg.get("rappel", "").strip()
+    who_txt = (f"{pre}, {role} de {ent}." if pre and role else f"{pre}, de {ent}." if pre else f"{ent}.") + (f" {rappel}." if rappel else "")
+    qa = [("L’estimation est-elle gratuite ?", "Oui. Elle est gratuite et ne vous engage à rien."),
+          ("D’où viennent les prix ?", f"Des tarifs indicatifs de {ent}, pose comprise." if own else
+           f"Des prix moyens publiés par {m['sources']}, pose comprise. Chaque ligne de l’estimation cite sa source et sa date."),
+          ("Le prix final sera-t-il le même ?", "C’est une fourchette indicative. Le prix ferme se donne sur devis, après une visite : l’état du support, l’accès et les finitions changent le montant.")]
+    qa += [(q, r.replace("{tel}", cfg.get("telephone", ""))) for q, r in m.get("faq", [])]
+    qa += [("Qui va me rappeler ?", who_txt + " Votre numéro ne sert qu’à ce projet : il n’est ni vendu ni cédé."),
+           ("Je suis locataire, puis-je faire l’estimation ?", "Oui. Les travaux sur le bâti se décident avec le propriétaire : faites l’estimation, puis transmettez-la-lui.")]
+    items = "".join(f"<details><summary>{e(q)}</summary><p>{e(r)}</p></details>" for q, r in qa)
+    return f'<section class="es-faq" aria-labelledby="es-faq-h"><h2 id="es-faq-h">Vos questions</h2><div class="es-faq-list">{items}</div></section>'
+
+
+def favicon(accent):
+    svg = (f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='{accent}'/>"
+           "<path d='M16 7l9 7.5V25h-6v-6h-6v6H7V14.5z' fill='white'/></svg>")
+    return "data:image/svg+xml," + quote(svg, safe="/:=' ")
+
+
 def ico(k, cls=""):
     c = f' class="{cls}"' if cls else ""
     return f'<svg{c} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{SVG[k]}</svg>'
@@ -116,7 +170,7 @@ def q_html(q, sid, accent, cfg):
     miss = a(MISS.get(n, "une réponse"))
     if q["t"] == "cards":
         opts = "".join(
-            f'<button type="button" class="es-opt" data-q="{n}" data-v="{a(o[0])}" aria-pressed="false">{CK}'
+            f'<button type="button" class="es-opt" data-q="{n}" data-v="{a(o[0])}" data-slug="{slug(o[0])}" aria-pressed="false">{CK}'
             f'<span class="es-ico">{icons.house(o[2], o[3], accent)}</span>'
             f'<span class="es-ot"><b>{e(o[0])}</b><span>{e(o[1])}</span></span></button>'
             for o in q["opts"])
@@ -325,6 +379,22 @@ svg{display:block}
 .es-facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;padding:0;list-style:none;font-size:.9rem;color:var(--ink2)}
 .es-facts li{display:inline-flex;align-items:center;gap:8px}
 .es-facts svg{flex:none;width:18px;height:18px;color:var(--muted)}
+.es-scene{position:relative;margin:24px 0 0;padding:16px 16px 64px;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#FFFFFF,#EDF0F4)}
+.es-scene-art{display:block;max-width:250px;margin:0 auto}
+.es-scene-art svg{width:100%;height:auto}
+.es-tag{position:absolute;left:12px;bottom:12px;display:grid;gap:2px;padding:12px 16px;border-radius:12px;background:#fff;box-shadow:0 0 0 1px var(--line),0 14px 30px -16px rgba(10,20,36,.5)}
+.es-tag-k{font-size:.78rem;color:var(--muted)}
+.es-tag b{font-size:1.25rem;font-weight:600;line-height:1.2;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.es-tag span:last-child{font-size:.82rem;color:var(--ink2)}
+.es-faq{grid-column:1/-1;width:100%;max-width:760px;margin:16px auto 0}
+.es-faq h2{font-size:1.6rem;font-weight:500;letter-spacing:-.02em}
+.es-faq-list{margin-top:16px;padding:0 20px;border:1px solid var(--line);border-radius:20px;background:#fff}
+.es-faq details+details{border-top:1px solid var(--line)}
+.es-faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:12px 0;font-weight:500;cursor:pointer;list-style:none}
+.es-faq summary::-webkit-details-marker{display:none}
+.es-faq summary::after{content:"+";flex:none;font-size:1.3rem;font-weight:400;color:var(--muted)}
+.es-faq details[open] summary::after{content:"−"}
+.es-faq details p{padding-bottom:16px;color:var(--ink2)}
 .es-card{position:relative;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 1px 2px rgba(10,20,36,.04),0 30px 70px -44px rgba(10,20,36,.45);scroll-margin-top:0}
 .es-head{position:sticky;top:0;z-index:4;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;row-gap:8px;padding:16px 20px 12px;border-radius:20px 20px 0 0;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:.86rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .es-pct{font-weight:500;color:var(--ink2)}
@@ -349,7 +419,8 @@ svg{display:block}
 .es-ot b{display:block;font-size:.98rem;font-weight:500;line-height:1.25}
 .es-ot span{display:block;margin-top:4px;font-size:.84rem;line-height:1.35;color:var(--muted)}
 .es-opt:last-child:nth-child(odd){grid-column:1/-1;flex-direction:row;align-items:center}
-.es-opt:last-child:nth-child(odd) .es-ico{flex:0 0 46%;align-self:stretch}
+.es-opt:last-child:nth-child(odd) .es-ico{flex:0 0 46%;align-self:stretch;aspect-ratio:auto;padding:8px 0}
+.es-opt:last-child:nth-child(odd) .es-ico svg{width:auto;max-width:92%;height:auto;max-height:132px}
 .es-ck{position:absolute;top:8px;left:8px;z-index:1;display:grid;place-items:center;width:24px;height:24px;border:1.5px solid var(--line2);border-radius:50%;background:rgba(255,255,255,.9);color:#fff}
 .es-ck svg{width:14px;height:14px;opacity:0}
 .es-opt:hover,.es-tile:hover,.es-chip:hover,.es-sb:hover{border-color:var(--line2)}
@@ -449,7 +520,7 @@ svg{display:block}
 .es-box[data-state="sending"] .es-s-sent,.es-box[data-state="sending"] .es-s-manual,.es-box[data-state="sent"] .es-s-sending,.es-box[data-state="sent"] .es-s-manual,.es-box[data-state="manual"] .es-s-sending,.es-box[data-state="manual"] .es-s-sent{display:none}
 .es-again{min-height:44px;margin-top:12px;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 @media (min-width:640px){.es-head{padding:20px 28px 16px}.es-body{padding:8px 28px 28px}.es-nav{padding:16px 28px}.es-opts{gap:12px}}
-@media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{position:sticky;top:36px;padding-top:36px}.es-cta{display:none}.es-lead{font-size:1.12rem}}
+@media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{padding-top:36px}.es-scene-art{max-width:270px}.es-cta{display:none}.es-lead{font-size:1.12rem}}
 .es-ftr{padding:28px 16px 40px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted);text-align:center}
 .es-by{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px}
 .es-by img{height:28px;width:auto;max-width:150px;object-fit:contain}
@@ -610,7 +681,9 @@ function submit(){if(val("site_web"))return;var E=estimate(),pr=val("prenom"),te
     consent:{text:f.querySelector(".es-consent").textContent,at:new Date().toISOString()},page:location.pathname,tracking:track,site_web:""};
   var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
   try{fetch(C.envoi,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(body)}).then(function(r){clearTimeout(t);end(r.ok)}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}}
-show(0,0,false);
+var pj=(qs.get("projet")||"").replace(/[^a-z0-9-]/g,""),ob=pj&&f.querySelector('.es-opt[data-slug="'+pj+'"]');
+if(ob){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-pressed",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");started=true;dl("estimation_debut",{projet:pj});show(1,0,false);try{history.pushState({es:1},"")}catch(x){}}
+else show(0,0,false);
 })();"""
 
 PIXEL_JS = r"""(function(){var C=__PX__,K="es-consent",d=document,bar=d.getElementById("es-cc");if(!bar)return;
@@ -635,6 +708,9 @@ def page(key, cfg, logo_url, photo_url=""):
     facts_html = "".join(f"<li>{ico('check')}{e(x)}</li>" for x in facts)
     kick = f'<p class="es-kick">{ico("pin")}{e(m["artisan"].capitalize())} · {e(cfg["zone"])}</p>' if cfg.get("zone") else ""
     lead = "Répondez à 6 questions : le prix de vos travaux s’affiche tout de suite."
+    ex_focus, ex_amount, ex_label = example(m, cfg, key)
+    scene = (f'<figure class="es-scene"><span class="es-scene-art" aria-hidden="true">{icons.house(ex_focus, None, accent, s=14)}</span>'
+             f'<figcaption class="es-tag"><span class="es-tag-k">Exemple d’estimation</span><b>{e(ex_amount)}</b><span>{e(ex_label)}</span></figcaption></figure>')
     av, title, person = who(cfg, photo_url)
     trust = (f'<div class="es-trust"><div class="es-who"><span class="es-av">{av}</span><p><b>{e(title)}</b>'
              f'<span>{e(cfg.get("rappel") or ("Vous rappelle personnellement" if person else "Rappel gratuit, sans engagement"))}</span></p></div>{stars(cfg)}</div>')
@@ -669,6 +745,7 @@ def page(key, cfg, logo_url, photo_url=""):
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="{a(fr(title))}">
 <meta property="og:description" content="{a(fr(m['desc']))}">
+<link rel="icon" href="{favicon(accent)}" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>{CSS.strip().replace("__CLOVER__", clover_bg())}</style>
 </head>
@@ -680,6 +757,7 @@ def page(key, cfg, logo_url, photo_url=""):
     <h1 class="es-h">{h1}</h1>
     <p class="es-lead">{e(lead)}</p>
     <a class="es-cta" href="#estimation" data-start><b>Calculer mon prix{ico('down')}</b><small>Gratuit · 1 minute · sans engagement</small></a>
+    {scene}
     {trust}
     <ul class="es-facts">{facts_html}</ul>
   </div>
@@ -695,6 +773,7 @@ def page(key, cfg, logo_url, photo_url=""):
       <div class="es-nav"><button type="button" class="es-back" aria-label="Question précédente" hidden>{ico('back')}</button><button type="button" class="es-next"><span>Suivant</span>{ico('arrow')}</button></div>
     </form>
   </section>
+  {faq_html(m, cfg, key)}
 </main>
 <footer class="es-ftr">
   <p class="es-by">Proposé par {by}</p>
@@ -749,6 +828,8 @@ def build(path):
                     {"source": "/assets/fonts/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}, indent=2), encoding="utf-8")
     (out / "robots.txt").write_text("User-agent: *\nDisallow:\n", encoding="utf-8")
     print(f"{cfg['slug']} : {len(keys)} pages ({', '.join('/' + M[k]['slug'] + '/' for k in keys)}) dans {out.relative_to(HERE)}")
+    for k in keys:
+        print(f"  liens {M[k]['slug']} :", ", ".join(f"?projet={slug(o[0])}" for o in M[k]["steps"][0]["qs"][0]["opts"]))
     for w in warn:
         print("  à compléter :", w)
 
