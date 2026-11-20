@@ -20,6 +20,11 @@ CSS = """<style id="vl-css">
 .vl-trades p+p{margin-top:10px}
 .vl-more{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.92rem}
 .vl-src{margin-top:24px;padding:0 var(--cell);font-size:.8rem;color:var(--muted)}
+.vl-figs b small{font-size:.4em;letter-spacing:0}
+.vl-figs .vl-fsrc{font-size:.78rem;color:rgba(255,255,255,.55)}
+.vl-figs .vl-fsrc a{color:inherit}
+.pf-howto.vl-steps li::before{color:var(--accent)}
+.pf-howto.vl-steps p{color:inherit}
 @media (max-width:760px){.vl-trades{grid-template-columns:1fr}}
 </style>"""
 
@@ -50,6 +55,17 @@ def build_city(PF, phone, phone_txt, crumbs, c):
     {form}
     <div class="pf-mtrust m-only">{PF.trust()}</div>
   </div>
+</section>"""
+
+    figs = "".join(f'<li><b>{a}</b> <span>{b}</span> <span class="vl-fsrc">{src}</span></li>' for a, b, src in c["figures"])
+    figures = f"""<section class="sheet" id="en-chiffres" data-tone="dark">
+  <div class="grid sp-head"><h2 data-split>{v} en quelques chiffres</h2><p>{c["figures_intro"]}</p></div>
+  <ul class="pf-proms vl-figs">{figs}</ul>
+</section>"""
+    steps = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in c["steps"])
+    steps = f"""<section class="sheet" id="demarches" data-tone="light">
+  <div class="grid sp-head"><h2 data-split>Avant vos travaux à {v} : les démarches</h2><p>{c["steps_intro"]}</p></div>
+  <ol class="pf-howto vl-steps">{steps}</ol>
 </section>"""
 
     facts = "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in c["facts"])
@@ -108,7 +124,7 @@ def build_city(PF, phone, phone_txt, crumbs, c):
   <ul class="pf-olist">{metiers}</ul>
 </section>"""
 
-    return CSS + "\n" + "\n\n".join([hero, local, trades, aides, parts["promise"], leak, brief, faqs, others, parts["end"]])
+    return CSS + "\n" + "\n\n".join([hero, figures, local, trades, parts["promise"], steps, aides, leak, brief, faqs, others, parts["end"]])
 
 
 def faq(c):
