@@ -122,6 +122,6 @@ relient le profil à la marque.
 | 20/11/2026 | Calaméo | Deck 1 : prix des travaux (le champ « site web » du profil est payant : lien dans la description et dans le PDF) | /devis-travaux/#prix | fait |
 | 20/11/2026 | Site | Article de blog DPE 2027 (propriétaires) | /blog/dpe-2027/ | en ligne |
 | 20/11/2026 | Calaméo | Deck 2 : fuite de toiture | /devis-travaux/toiture/#fuite-toiture | à confirmer |
-| | Zenodo | Synthèse DPE 2027 (PDF, CC BY 4.0) | lien vers /blog/dpe-2027/ dans « Related works » | à déposer |
+| 20/11/2026 | Zenodo | Synthèse DPE 2027 (PDF, CC BY 4.0), DOI 10.5281/zenodo.24396449 (toutes versions : 10.5281/zenodo.24396448), https://zenodo.org/records/24396449 | /blog/dpe-2027/ dans « Related works » ; le blog renvoie vers le DOI | fait |
 | | LinkedIn | Article DPE 2027 | /blog/dpe-2027/ | à publier |
 | | | | | |

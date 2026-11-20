@@ -1090,7 +1090,7 @@ for a in ARTICLES:
               {"@type": "BlogPosting", "@id": SITE + path + "#article", "isPartOf": {"@id": SITE + "/blog/#blog"}, "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": a.get("date", TODAY) + "T09:00:00+01:00", "dateModified": "@@MAJ@@", "inLanguage": "fr-FR",
                "mainEntityOfPage": SITE + path, "image": [img(COVER[a["slug"]])[0]],
                "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
-               "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
+               "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"}), **({"citation": a["citation"]} if a.get("citation") else {})},
               bc_ld(("Blog", "/blog/"), (a["short"], path))] + ([faq_ld(a["faq"])] if a.get("faq") else [])})
     paths.append(path)
 

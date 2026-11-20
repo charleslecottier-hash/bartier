@@ -1832,6 +1832,7 @@ Dans une maison non isolée, la chaleur s’échappe d’abord par le toit (25 �
 - Fenêtre PVC posée en remplacement | 870 à 1 170 € TTC | La Maison Saint-Gobain, 02/2026
 Le gain réel dépend de votre logement. L’audit énergétique, obligatoire pour vendre une maison classée E, F ou G, chiffre justement l’étiquette visée par chaque scénario de travaux.
 MaPrimeRénov’ et les primes CEE demandent une entreprise certifiée RGE, et les travaux d’amélioration énergétique peuvent bénéficier d’une TVA à 5,5 %. Les conditions changent chaque année : vérifiez-les sur france-renov.gouv.fr et sur economie.gouv.fr.
+Une synthèse documentaire de 4 pages, avec toutes les sources de cet article, est archivée sur Zenodo, l’archive ouverte du CERN : DOI 10.5281/zenodo.24396448.
 
 ### Questions fréquentes
 

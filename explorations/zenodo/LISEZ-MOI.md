@@ -24,6 +24,17 @@ Synthèse documentaire sur le diagnostic de performance énergétique (DPE) des 
 
 Pas d'autre lien commercial, pas de bouton, pas de coordonnées : Zenodo retire les dépôts promotionnels.
 
+## Publié le 20/11/2026
+
+- Fiche : https://zenodo.org/records/24396449
+- DOI de cette version : 10.5281/zenodo.24396449
+- DOI toutes versions (pointe toujours vers la dernière) : 10.5281/zenodo.24396448, utilisé sur le blog et dans llms.txt
+- À corriger dans la fiche (bouton « Edit », puis « Publish » ; le DOI ne change pas) :
+  - Creators : « Bartier & Co » en organisation, alors que le PDF est signé Charles Le Cottier. Mettre Le Cottier, Charles (personne), affiliation Bartier & Co.
+  - Publication date : 2026-11-19 ; mettre 2026-11-20, la date du PDF.
+  - Resource type : « Publication » seul ; préciser Report.
+  - Version : vide ; mettre 1.
+
 ## Après la publication
 
 1. Noter le DOI attribué (10.5281/zenodo.…) et me l'envoyer : je l'ajoute à l'article du blog comme version de référence.

@@ -434,6 +434,7 @@ ARTICLES = [
         "short": "DPE 2027 : ce qui change pour les propriétaires",
         "desc": "Nouvelle étiquette gratuite, location des logements G, F et E, vote en cours au Parlement : ce qui change pour le DPE en 2027, sources officielles à l'appui.",
         "cta": ("Obtenir mon devis gratuit", "/devis-travaux/#projet"),
+        "citation": {"@type": "Report", "name": "Le diagnostic de performance énergétique (DPE) des logements au 1er janvier 2027 : synthèse documentaire", "identifier": "https://doi.org/10.5281/zenodo.24396448", "url": "https://doi.org/10.5281/zenodo.24396448", "license": "https://creativecommons.org/licenses/by/4.0/", "inLanguage": "fr-FR"},
         "aside": '<h3>Des travaux pour gagner une classe ?</h3>\n      <p>Isolation, fenêtres, toiture, façade : un seul artisan près de chez vous. Visite et devis offerts.</p>\n      <a class="btn" href="/devis-travaux/#projet"><span>Obtenir mon devis gratuit</span></a>',
         "faq": [
             ("Le DPE 2027 peut-il faire baisser mon étiquette ?", "Non. Selon le ministère de la Transition écologique, le passage du coefficient de l'électricité à 1,7 ne dégrade aucune étiquette. Il peut seulement améliorer celle des logements chauffés à l'électricité."),
@@ -517,6 +518,7 @@ ARTICLES = [
 </table>
 <p>Le gain réel dépend de votre logement. L'audit énergétique, obligatoire pour vendre une maison classée E, F ou G, chiffre justement l'étiquette visée par chaque scénario de travaux.</p>
 <p>MaPrimeRénov' et les primes CEE demandent une entreprise certifiée RGE, et les travaux d'amélioration énergétique peuvent bénéficier d'une TVA à 5,5 %. Les conditions changent chaque année : vérifiez-les sur <a href="https://france-renov.gouv.fr/aides/maprimerenov" target="_blank" rel="noopener">france-renov.gouv.fr</a> et sur <a href="https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-taux-reduit-pour-quels-travaux" target="_blank" rel="noopener">economie.gouv.fr</a>.</p>
+<p>Une synthèse documentaire de 4 pages, avec toutes les sources de cet article, est archivée sur Zenodo, l'archive ouverte du CERN : <a href="https://doi.org/10.5281/zenodo.24396448" target="_blank" rel="noopener">DOI 10.5281/zenodo.24396448</a>.</p>
 """,
     },
 ]
@@ -718,6 +720,7 @@ Prix indicatifs cités sur le site, d'après des sources tierces (seule une visi
 
 ## Articles
 {art_lines}
+- [Le DPE des logements au 1er janvier 2027 : synthèse documentaire (PDF archivé sur Zenodo, licence CC BY 4.0)](https://doi.org/10.5281/zenodo.24396448)
 
 ## Faits utiles
 - Les prix ne sont pas publiés : chaque artisan reçoit un devis personnalisé, en fonction de ses objectifs, pendant un appel de 15 minutes.
