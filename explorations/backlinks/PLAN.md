@@ -123,5 +123,5 @@ relient le profil à la marque.
 | 20/11/2026 | Site | Article de blog DPE 2027 (propriétaires) | /blog/dpe-2027/ | en ligne |
 | 20/11/2026 | Calaméo | Deck 2 : fuite de toiture | /devis-travaux/toiture/#fuite-toiture | à confirmer |
 | 20/11/2026 | Zenodo | Synthèse DPE 2027 (PDF, CC BY 4.0), DOI 10.5281/zenodo.24396449 (toutes versions : 10.5281/zenodo.24396448), https://zenodo.org/records/24396449 | /blog/dpe-2027/ dans « Related works » ; le blog renvoie vers le DOI | fait |
-| | LinkedIn | Article DPE 2027 | /blog/dpe-2027/ | à publier |
+| 20/11/2026 | LinkedIn | Article « DPE 2027 : qu'est-ce qui change pour votre logement ? » (particuliers, questions-réponses) | /blog/dpe-2027/ et /devis-travaux/ | fait |
 | | | | | |
