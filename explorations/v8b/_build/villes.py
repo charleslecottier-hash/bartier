@@ -20,25 +20,33 @@ CSS = """<style id="vl-css">
 .vl-nw{white-space:nowrap}
 .vl-others{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 64px;padding:0 var(--cell)}
 .vl-others .pf-olist{padding:0}
-.vl-oh{margin-bottom:14px;font-size:.8rem;color:var(--muted)}
+.vl-oh{margin-bottom:12px;font-size:.8rem;color:var(--muted)}
 .vl-trades li{scroll-margin-top:96px}
 .vl-dl .link,.vl-trades .link,.vl-steps .link{display:inline;white-space:normal;min-height:0}
 .vl-more{align-items:center}
 .vl-more .link{align-self:center}
 .vl-dl{grid-column:1 / -1}
 .vl-trades{grid-template-columns:repeat(2,minmax(0,1fr))}
-.vl-trades p+p{margin-top:10px}
-.vl-more{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.92rem}
+.vl-trades p+p{margin-top:8px}
+.vl-more{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.92rem}
 .vl-src{margin-top:24px;padding:0 var(--cell);font-size:.8rem;color:var(--muted)}
 .vl-figs b small{font-size:.4em;letter-spacing:0}
 .vl-figs .vl-fsrc{font-size:.78rem;color:rgba(255,255,255,.55)}
 .vl-figs .vl-fsrc a{color:inherit}
 .pf-howto.vl-steps li::before{color:var(--accent)}
 .pf-howto.vl-steps p{color:inherit}
+/* en-tête : pas de bande vide sous le formulaire */
+.vl-hero{padding-bottom:clamp(48px,5vw,72px)}
+/* fuite : bandeau sobre, l'accent reste sur le bouton */
+.vl-leak{padding-block:clamp(40px,4vw,56px)}
+.vl-leakbar{display:flex;align-items:center;justify-content:space-between;gap:16px 40px;margin:0 var(--cell);padding:24px 28px;border:1px solid var(--rule);background:#fff}
+.vl-leakbar h2{margin-bottom:4px;font:400 clamp(1.3rem,2vw,1.6rem)/1.2 var(--f-display);letter-spacing:-.01em}
+.vl-leakbar p{color:var(--muted)}
+.vl-leakbar .btn{flex:none}
 /* sommaire */
 .vl-toc{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:32px;padding:0 var(--cell)}
 .vl-toc span{flex:0 0 auto;margin-right:8px;font-size:.8rem;color:var(--muted);white-space:nowrap}
-.vl-toc a{padding:9px 14px;border:1px solid var(--rule);font-size:.9rem;line-height:1.2;color:inherit;text-decoration:none;transition:border-color .2s,color .2s}
+.vl-toc a{padding:8px 16px;border:1px solid var(--rule);font-size:.9rem;line-height:1.2;color:inherit;text-decoration:none;transition:border-color .2s,color .2s}
 .vl-toc a:hover,.vl-toc a:focus-visible{border-color:var(--accent);color:var(--accent)}
 #en-chiffres,#a-savoir,#travaux,#demarches,#aides,#questions{scroll-margin-top:72px}
 /* chiffres et carte */
@@ -54,11 +62,11 @@ CSS = """<style id="vl-css">
 [data-tone="dark"] .vl-svg a:hover .vl-lab,[data-tone="dark"] .vl-svg a:focus .vl-lab,[data-tone="dark"] .vl-svg a:hover .vl-dot,[data-tone="dark"] .vl-svg a:focus .vl-dot{fill:#fff}
 /* règles locales en fiches */
 .vl-dl{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.vl-dl div{padding:22px 24px 24px;border:1px solid var(--rule);background:#fff}
-.vl-dl dt{margin-bottom:10px}
+.vl-dl div{padding:24px;border:1px solid var(--rule);background:#fff}
+.vl-dl dt{margin-bottom:8px}
 .vl-dl dd{font-size:1rem;line-height:1.5}
 /* métiers avec photo */
-.vl-tr{display:grid;grid-template-columns:128px minmax(0,1fr);gap:22px;align-items:start}
+.vl-tr{display:grid;grid-template-columns:128px minmax(0,1fr);gap:24px;align-items:start}
 .vl-tr-ph{margin:0;aspect-ratio:1 / 1;overflow:hidden}
 .vl-tr-ph img{width:100%;height:100%;object-fit:cover}
 .vl-tr-b h3{margin-top:2px}
@@ -70,6 +78,7 @@ CSS = """<style id="vl-css">
 .vl-adv .link{color:#fff}
 .vl-adv .btn{white-space:nowrap}
 @media (max-width:760px){.vl-trades{grid-template-columns:1fr}.vl-others{grid-template-columns:1fr}
+.vl-leakbar{flex-direction:column;align-items:flex-start;padding:20px}
 .vl-toc{flex-wrap:nowrap;overflow-x:auto;margin-top:20px;padding-bottom:4px;scrollbar-width:none}.vl-toc::-webkit-scrollbar{display:none}.vl-toc a{flex:0 0 auto}
 .vl-figgrid{grid-template-columns:1fr}.vl-map-d{justify-self:center;max-width:320px}
 .vl-dl{grid-template-columns:1fr}
@@ -132,10 +141,12 @@ def _ext(label, url):
 def build_city(PF, phone, phone_txt, crumbs, c, img=None):
     tick = PF.tick()
     v = c["name"]
+    one = lambda s: s[:-1] if s.endswith(".") and ". " not in s else s  # sous-titre d'une phrase : pas de point final
+    c = dict(c, figures_intro=one(c["figures_intro"]), steps_intro=one(c["steps_intro"]), trades_intro=one(c["trades_intro"]))
     parts = PF.build(lambda a: ("", ""), phone, phone_txt, crumbs, parts=True)
     form = parts["form"]
     form = form.replace('placeholder="Ex. 80000"', f'placeholder="Ex. {c["cp"]}"', 1)
-    hero = f"""<section class="sheet pf-hero" id="haut" data-tone="light">
+    hero = f"""<section class="sheet pf-hero vl-hero" id="haut" data-tone="light">
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
       {crumbs}
@@ -196,9 +207,8 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
   <ul class="pf-checks vl-trades vl-aides">{aid}</ul>
 </section>"""
 
-    leak = f"""<section class="sheet pf-leak is-short" id="fuite-toiture" data-tone="accent">
-  <div class="grid sp-head"><h2 data-split>Une fuite de toiture à {v} ?</h2><p>Signalez-la : nous vous rappelons en priorité. En attendant, suivez <a class="link" href="/devis-travaux/toiture/#fuite-toiture">les 5 bons réflexes</a>.</p></div>
-  <p class="pf-mid"><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick}</a><span class="pf-prio">Rappel prioritaire</span></p>
+    leak = f"""<section class="sheet vl-leak" id="fuite-toiture" data-tone="light">
+  <div class="vl-leakbar"><div><h2>Une fuite de toiture à {v} ?</h2><p>Signalez-la : rappel prioritaire. En attendant, suivez <a class="link" href="/devis-travaux/toiture/#fuite-toiture">les 5 bons réflexes</a>.</p></div><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick}</a></div>
 </section>"""
 
     brief = [("Le service", f"Bartier &amp; Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à {v} et alentours.")] + PF.BRIEF[1:]

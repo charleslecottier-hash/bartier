@@ -37,7 +37,7 @@
  },
  "/devis-travaux/": {
   "date": "2026-11-20",
-  "sig": "bedebba0f01d66f4"
+  "sig": "64e7778bec11ba4d"
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-20",
@@ -53,19 +53,19 @@
  },
  "/devis-travaux/lille/": {
   "date": "2026-11-20",
-  "sig": "0105265f7f5afa01"
+  "sig": "9d02b7dbd960b9b6"
  },
  "/devis-travaux/lyon/": {
   "date": "2026-11-20",
-  "sig": "e75267c8a3aa9888"
+  "sig": "ebf8aabdc7ddf067"
  },
  "/devis-travaux/marseille/": {
   "date": "2026-11-20",
-  "sig": "ae1634e4b3a46e13"
+  "sig": "a923cb556c553d70"
  },
  "/devis-travaux/paris/": {
   "date": "2026-11-20",
-  "sig": "7b817b45fb2b52fc"
+  "sig": "84bfafde6c07e914"
  },
  "/devis-travaux/ravalement-facade/": {
   "date": "2026-11-20",
@@ -73,7 +73,7 @@
  },
  "/devis-travaux/rouen/": {
   "date": "2026-11-20",
-  "sig": "0f4981b7a8898818"
+  "sig": "6172136efae6f597"
  },
  "/devis-travaux/toiture/": {
   "date": "2026-11-20",
@@ -81,7 +81,7 @@
  },
  "/devis-travaux/toulouse/": {
   "date": "2026-11-20",
-  "sig": "b2da72cec2b0bc22"
+  "sig": "a1f25a27dc12be61"
  },
  "/google-ads/": {
   "date": "2026-11-19",
