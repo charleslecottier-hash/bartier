@@ -951,7 +951,7 @@ for k in PF.SLUG:
     pf_write(sub, PF.PAGES[k]["title"], PF.PAGES[k]["desc"], body, PF.trade_schema(SITE, faq_ld, bc_ld, k))
 for c in VL.CITIES:
     sub = VL.path(c)
-    body = VL.build_city(PF, PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH), (c["name"], sub)), c)
+    body = VL.build_city(PF, PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH), (c["name"], sub)), c, img=lambda a: (img(a)[0], html.escape(img(a)[1])))
     pf_write(sub, c["title"], c["desc"], body, VL.schema(SITE, faq_ld, bc_ld, PF, c))
 
 # ——— Qui sommes-nous ———

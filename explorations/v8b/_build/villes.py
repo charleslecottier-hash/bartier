@@ -18,8 +18,7 @@ TRADE_PICK = {"toiture": "Devis toiture", "facade": "Devis façade", "fenetres":
 CSS = """<style id="vl-css">
 .vl-wrap{padding:0 var(--cell)}
 .vl-nw{white-space:nowrap}
-.vl-others{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:40px 64px;align-items:center;padding:0 var(--cell)}
-.vl-olists{display:grid;gap:36px}
+.vl-others{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 64px;padding:0 var(--cell)}
 .vl-others .pf-olist{padding:0}
 .vl-oh{margin-bottom:14px;font-size:.8rem;color:var(--muted)}
 .vl-trades li{scroll-margin-top:96px}
@@ -36,7 +35,47 @@ CSS = """<style id="vl-css">
 .vl-figs .vl-fsrc a{color:inherit}
 .pf-howto.vl-steps li::before{color:var(--accent)}
 .pf-howto.vl-steps p{color:inherit}
-@media (max-width:760px){.vl-trades{grid-template-columns:1fr}.vl-others{grid-template-columns:1fr}}
+/* sommaire */
+.vl-toc{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:32px;padding:0 var(--cell)}
+.vl-toc span{flex:0 0 auto;margin-right:8px;font-size:.8rem;color:var(--muted);white-space:nowrap}
+.vl-toc a{padding:9px 14px;border:1px solid var(--rule);font-size:.9rem;line-height:1.2;color:inherit;text-decoration:none;transition:border-color .2s,color .2s}
+.vl-toc a:hover,.vl-toc a:focus-visible{border-color:var(--accent);color:var(--accent)}
+#en-chiffres,#a-savoir,#travaux,#demarches,#aides,#questions{scroll-margin-top:72px}
+/* chiffres et carte */
+.vl-figgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px 72px;align-items:center;padding:0 var(--cell)}
+.vl-figgrid .pf-proms{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px;padding:0}
+.vl-map-d{width:100%;max-width:440px;justify-self:end}
+[data-tone="dark"] .vl-fr{fill:rgba(255,255,255,.04);stroke:#fff;stroke-opacity:.32}
+[data-tone="dark"] .vl-dot{fill:rgba(255,255,255,.7)}
+[data-tone="dark"] .vl-lab{fill:rgba(255,255,255,.72)}
+[data-tone="dark"] .vl-dot.is-on{fill:#8fb0ff}
+[data-tone="dark"] .vl-halo{fill:#8fb0ff;opacity:.22}
+[data-tone="dark"] .vl-lab.is-on{fill:#fff}
+[data-tone="dark"] .vl-svg a:hover .vl-lab,[data-tone="dark"] .vl-svg a:focus .vl-lab,[data-tone="dark"] .vl-svg a:hover .vl-dot,[data-tone="dark"] .vl-svg a:focus .vl-dot{fill:#fff}
+/* règles locales en fiches */
+.vl-dl{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.vl-dl div{padding:22px 24px 24px;border:1px solid var(--rule);background:#fff}
+.vl-dl dt{margin-bottom:10px}
+.vl-dl dd{font-size:1rem;line-height:1.5}
+/* métiers avec photo */
+.vl-tr{display:grid;grid-template-columns:128px minmax(0,1fr);gap:22px;align-items:start}
+.vl-tr-ph{margin:0;aspect-ratio:1 / 1;overflow:hidden}
+.vl-tr-ph img{width:100%;height:100%;object-fit:cover}
+.vl-tr-b h3{margin-top:2px}
+/* conseiller public mis en avant */
+.vl-aides .vl-adv{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 40px;align-items:center;padding:28px 32px;border-top:0;background:var(--ink);color:#fff}
+.vl-adv .vl-adv-k{margin-bottom:6px;font-size:.8rem;color:rgba(255,255,255,.6)}
+.vl-adv h3{font-size:1.5rem}
+.vl-adv p{color:rgba(255,255,255,.82)}
+.vl-adv .link{color:#fff}
+.vl-adv .btn{white-space:nowrap}
+@media (max-width:760px){.vl-trades{grid-template-columns:1fr}.vl-others{grid-template-columns:1fr}
+.vl-toc{flex-wrap:nowrap;overflow-x:auto;margin-top:20px;padding-bottom:4px;scrollbar-width:none}.vl-toc::-webkit-scrollbar{display:none}.vl-toc a{flex:0 0 auto}
+.vl-figgrid{grid-template-columns:1fr}.vl-map-d{justify-self:center;max-width:320px}
+.vl-dl{grid-template-columns:1fr}
+.vl-tr{grid-template-columns:84px minmax(0,1fr);gap:16px}
+.vl-aides .vl-adv{grid-template-columns:1fr;padding:24px 20px}}
+@media (min-width:761px) and (max-width:1100px){.vl-dl{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>"""
 
 
@@ -76,11 +115,21 @@ def path(c):
     return f"/devis-travaux/{c['slug']}/"
 
 
+_TEL = _re.compile(r"(?<![\d+])0[1-9](?: \d{2}){4}(?!\d)")
+_MAIL = _re.compile(r"(?<![\w.:/-])[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
+
+
+def _contact(s):
+    """Numéros et adresses e-mail cliquables (un geste pour appeler la mairie ou le conseiller)."""
+    s = _TEL.sub(lambda m: f'<a class="link" href="tel:+33{m.group(0)[1:].replace(" ", "")}">{m.group(0)}</a>', s)
+    return _MAIL.sub(lambda m: f'<a class="link" href="mailto:{m.group(0)}">{m.group(0)}</a>', s)
+
+
 def _ext(label, url):
     return f'<a class="link" href="{url}" target="_blank" rel="noopener">{label}</a>'
 
 
-def build_city(PF, phone, phone_txt, crumbs, c):
+def build_city(PF, phone, phone_txt, crumbs, c, img=None):
     tick = PF.tick()
     v = c["name"]
     parts = PF.build(lambda a: ("", ""), phone, phone_txt, crumbs, parts=True)
@@ -98,20 +147,21 @@ def build_city(PF, phone, phone_txt, crumbs, c):
     {form}
     <div class="pf-mtrust m-only">{PF.trust()}</div>
   </div>
+  <nav class="vl-toc" aria-label="Sur cette page"><span>Sur cette page</span><a href="#en-chiffres">Chiffres</a><a href="#a-savoir">À savoir</a><a href="#travaux">Par métier</a><a href="#demarches">Démarches</a><a href="#aides">Aides</a><a href="#questions">Questions</a></nav>
 </section>"""
 
     figs = "".join(f'<li><b>{a}</b> <span>{b}</span> <span class="vl-fsrc">{src}</span></li>' for a, b, src in c["figures"])
     figures = f"""<section class="sheet" id="en-chiffres" data-tone="dark">
   <div class="grid sp-head"><h2 data-split>{v} en quelques chiffres</h2><p>{c["figures_intro"]}</p></div>
-  <ul class="pf-proms vl-figs">{figs}</ul>
+  <div class="vl-figgrid"><ul class="pf-proms vl-figs">{figs}</ul><figure class="vl-map vl-map-d">{carte(c["slug"])}</figure></div>
 </section>"""
-    steps = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in c["steps"])
+    steps = "".join(f"<li><h3>{a}</h3><p>{_contact(b)}</p></li>" for a, b in c["steps"])
     steps = f"""<section class="sheet" id="demarches" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Avant vos travaux à {v} : les démarches</h2><p>{c["steps_intro"]}</p></div>
   <ol class="pf-howto vl-steps">{steps}</ol>
 </section>"""
 
-    facts = "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in c["facts"])
+    facts = "".join(f"<div><dt>{a}</dt><dd>{_contact(b)}</dd></div>" for a, b in c["facts"])
     local = f"""<section class="sheet" id="a-savoir" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>Travaux à {v} : ce qu’il faut savoir</h2><p>{c["answer"]}</p></div>
   <div class="grid"><dl class="pf-dl vl-dl">{facts}</dl></div>
@@ -119,19 +169,31 @@ def build_city(PF, phone, phone_txt, crumbs, c):
 </section>"""
 
     items = []
+    photos = {x[0]: (x[3], x[7]) for x in PF.TRADES}
     for k in ("toiture", "facade", "fenetres", "charpente", "isolation"):
-        paras = "".join(f"<p>{p}</p>" for p in c["trades"][k])
-        items.append(f'<li id="t-{k}"><h3>{TRADE_H3[k].format(v=v)}</h3>{paras}<p class="vl-more"><a class="link pf-pick" href="#projet" data-v="{k}">{TRADE_PICK[k]}</a>'
-                     f'<a class="link" href="/devis-travaux/{PF.SLUG[k]}/">{TRADE_MORE[k]}</a></p></li>')
+        paras = "".join(f"<p>{_contact(p)}</p>" for p in c["trades"][k])
+        ph = ""
+        if img:
+            if k == "isolation":
+                src = f'srcset="{PF.ISO_SRCSET}" sizes="(max-width: 760px) 84px, 128px" src="{PF.ISO_PHOTO}-480x360.webp"'
+            else:
+                src = f'src="{img(photos[k][0])[0]}" sizes="(max-width: 760px) 84px, 128px"'
+            ph = f'<figure class="frame vl-tr-ph"><img {src} alt="{photos[k][1]}" width="400" height="400" loading="lazy"></figure>'
+        items.append(f'<li id="t-{k}" class="vl-tr">{ph}<div class="vl-tr-b"><h3>{TRADE_H3[k].format(v=v)}</h3>{paras}<p class="vl-more"><a class="link pf-pick" href="#projet" data-v="{k}">{TRADE_PICK[k]}</a>'
+                     f'<a class="link" href="/devis-travaux/{PF.SLUG[k]}/">{TRADE_MORE[k]}</a></p></div></li>')
     trades = f"""<section class="sheet" id="travaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Vos travaux à {v}, métier par métier</h2><p>{c["trades_intro"]}</p></div>
   <ul class="pf-checks vl-trades">{"".join(items)}</ul>
 </section>"""
 
-    aid = "".join(f"<li><h3>{a}</h3><p>{b}</p></li>" for a, b in c["aides"])
+    a0, b0 = c["aides"][0]
+    m = _TEL.search(b0)
+    call = f'<a class="btn" href="tel:+33{m.group(0)[1:].replace(" ", "")}"><span>Appeler le {m.group(0)}</span>{tick}</a>' if m else ""
+    adv = f'<li class="vl-adv"><div><p class="vl-adv-k">Conseil public, gratuit et neutre</p><h3>{a0}</h3><p>{_contact(b0)}</p></div>{call}</li>'
+    aid = adv + "".join(f"<li><h3>{a}</h3><p>{_contact(b)}</p></li>" for a, b in c["aides"][1:])
     aides = f"""<section class="sheet" id="aides" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>Aides et conseils gratuits à {v}</h2><p>{c["aides_intro"]}</p></div>
-  <ul class="pf-checks vl-trades">{aid}</ul>
+  <ul class="pf-checks vl-trades vl-aides">{aid}</ul>
 </section>"""
 
     leak = f"""<section class="sheet pf-leak is-short" id="fuite-toiture" data-tone="accent">
@@ -149,7 +211,7 @@ def build_city(PF, phone, phone_txt, crumbs, c):
   </div>
 </section>"""
 
-    rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in faq(c))
+    rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{_contact(a)}</p></div></details>' for q, a in faq(c))
     faqs = f"""<section class="faq sheet" id="questions" data-kind="faq" data-tone="paper">
   <div class="grid fq-grid">
     <div class="fq-head"><h2 data-split>Travaux à {v} : vos questions</h2><p>Une autre question ? <a class="link" href="tel:{phone}">{phone_txt}</a></p><p><a class="link" href="/devis-travaux/#questions">Voir toutes les questions</a></p></div>
@@ -163,7 +225,7 @@ def build_city(PF, phone, phone_txt, crumbs, c):
     metiers = "".join(f'<li><a class="link" href="/devis-travaux/{PF.SLUG[x[0]]}/">{x[5]}</a></li>' for x in PF.TRADES)
     others = f"""<section class="sheet pf-others" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Ailleurs en France</h2><p><a class="link" href="/devis-travaux/">Tous les devis de travaux</a></p></div>
-  <div class="vl-others"><figure class="vl-map">{carte(c["slug"])}</figure><div class="vl-olists"><div><p class="vl-oh">Autres villes</p><ul class="pf-olist">{cities}</ul></div><div><p class="vl-oh">Par métier</p><ul class="pf-olist">{metiers}</ul></div></div></div>
+  <div class="vl-others"><div><p class="vl-oh">Autres villes</p><ul class="pf-olist">{cities}</ul></div><div><p class="vl-oh">Par métier</p><ul class="pf-olist">{metiers}</ul></div></div>
 </section>"""
 
     out = CSS + "\n" + "\n\n".join([hero, figures, local, trades, parts["promise"], steps, aides, leak, brief, faqs, others, parts["end"]])
