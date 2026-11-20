@@ -126,12 +126,17 @@ def faq_html(m, cfg, key):
     return f'<section class="es-faq" aria-labelledby="es-faq-h"><h2 id="es-faq-h">Vos questions</h2><div class="es-faq-list">{items}</div></section>'
 
 
-def og_html(m, cfg, key, accent):
+def og_html(m, cfg, key, accent, photo_file=None):
     """Page 1200 × 630 rendue en image : titre, maison du métier, exemple d'estimation, nom de l'artisan."""
     font = base64.b64encode((FONTS / "host-grotesk-latin.woff2").read_bytes()).decode()
     focus, amount, label = example(m, cfg, key)
     h1 = re.sub(r"<mark>(.*?)</mark>", lambda x: "<mark>" + x.group(1).replace(" ", "\u00a0") + "</mark>", fr(m["h1"]))
     zone = f" · {e(cfg['zone'])}" if cfg.get("zone") else ""
+    if photo_file:
+        mime = "image/webp" if photo_file.suffix == ".webp" else "image/png" if photo_file.suffix == ".png" else "image/jpeg"
+        photo = f'<img src="data:{mime};base64,{base64.b64encode(photo_file.read_bytes()).decode()}" alt="">'
+    else:
+        photo = icons.house(focus, None, accent, s=16)
     return f"""<!doctype html><html lang="fr"><head><meta charset="utf-8"><style>
 @font-face{{font-family:H;font-weight:300 600;src:url(data:font/woff2;base64,{font}) format("woff2")}}
 *{{margin:0;box-sizing:border-box}}
@@ -142,11 +147,19 @@ mark{{display:inline-block;margin:4px 0;padding:0 12px 4px;border-radius:8px;bac
 em{{font-style:italic;text-decoration:underline;text-decoration-color:#16A34A;text-decoration-thickness:6px;text-underline-offset:8px}}
 .by{{margin-top:28px;font-size:24px;color:#2B3444}}.by b{{font-weight:500;color:#0A1424}}
 .art{{position:relative;height:518px;border-radius:28px;background:linear-gradient(180deg,#fff,#EDF0F4);border:1px solid rgba(10,20,36,.1);display:grid;place-items:center}}
-.art svg{{width:400px;height:auto;margin-top:-40px}}
+.art svg{{width:400px;height:auto;margin-top:-40px}}.art img{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:27px}}
 .tag{{position:absolute;left:24px;bottom:24px;padding:16px 22px;border-radius:16px;background:#fff;box-shadow:0 0 0 1px rgba(10,20,36,.1),0 18px 40px -20px rgba(10,20,36,.5)}}
 .tag span{{display:block;font-size:18px;color:#5B6475}}.tag b{{display:block;margin:2px 0;font-size:34px;font-weight:600;letter-spacing:-.02em}}.tag i{{font-style:normal;font-size:18px;color:#2B3444}}
 </style></head><body><div><p class="pill">{e(m["pill"])}</p><h1>{h1}</h1><p class="by"><b>{e(cfg["entreprise"])}</b>{zone}</p></div>
-<div class="art">{icons.house(focus, None, accent, s=16)}<div class="tag"><span>Exemple d’estimation</span><b>{e(amount)}</b><i>{e(label)}</i></div></div></body></html>"""
+<div class="art">{photo}<div class="tag"><span>Exemple d’estimation</span><b>{e(amount)}</b><i>{e(label)}</i></div></div></body></html>"""
+
+
+def photo_of(m, cfg, key):
+    """Photo du haut de page : celle du client si sa fiche en donne une (ses vrais chantiers), sinon la photo libre de droits du métier."""
+    own = cfg.get("photos", {}).get(key)
+    if own:
+        return dict(own=own, alt=f"Un chantier de {cfg['entreprise']}", pos="center")
+    return dict(m["photo"], own=None)
 
 
 def favicon(accent):
@@ -409,6 +422,13 @@ svg{display:block}
 .es-scene{position:relative;margin:24px 0 0;padding:16px 16px 64px;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#FFFFFF,#EDF0F4)}
 .es-scene-art{display:block;max-width:250px;margin:0 auto}
 .es-scene-art svg{width:100%;height:auto}
+.es-photo{aspect-ratio:4/3;padding:0;background:#DCE1E8}
+.es-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.es-photo-own{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:999px;background:rgba(10,20,36,.72);color:#fff;font-size:.8rem}
+.es-photo .es-tag{display:flex;align-items:center;gap:12px;right:auto;max-width:calc(100% - 24px)}
+.es-tag-ico{flex:none;display:grid;place-items:center;width:56px;height:48px;border-radius:8px;background:linear-gradient(180deg,#F8F9FB,#EDF0F4)}
+.es-tag-ico svg{width:50px;height:auto}
+.es-tag-t{display:grid;gap:2px}
 .es-tag{position:absolute;left:12px;bottom:12px;display:grid;gap:2px;padding:12px 16px;border-radius:12px;background:#fff;box-shadow:0 0 0 1px var(--line),0 14px 30px -16px rgba(10,20,36,.5)}
 .es-tag-k{font-size:.78rem;color:var(--muted)}
 .es-tag b{font-size:1.25rem;font-weight:600;line-height:1.2;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
@@ -553,7 +573,7 @@ svg{display:block}
 @media (hover:hover){.es-opt:hover .es-ico svg{transform:translateY(-3px)}}
 .es-again{min-height:44px;margin-top:0;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 @media (min-width:640px){.es-head{padding:20px 28px 16px}.es-body{padding:8px 28px 28px}.es-nav{padding:16px 28px}.es-opts{gap:12px}}
-@media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{padding-top:36px}.es-scene-art{max-width:270px}.es-cta{display:none}.es-lead{font-size:1.12rem}}
+@media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{padding-top:36px}.es-scene-art{max-width:270px}.es-photo{aspect-ratio:3/2}.es-cta{display:none}.es-lead{font-size:1.12rem}}
 .es-ftr{padding:28px 16px 40px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted);text-align:center}
 .es-by{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px}
 .es-by img{height:28px;width:auto;max-width:150px;object-fit:contain}
@@ -744,7 +764,7 @@ if(v&&Date.now()-v.t<1.5e10){if(v.ok)load()}else bar.hidden=false;
 [].forEach.call(d.querySelectorAll(".es-cc-open"),function(b){b.addEventListener("click",function(){bar.hidden=false})})})();"""
 
 
-def page(key, cfg, logo_url, photo_url=""):
+def page(key, cfg, logo_url, photo_url="", photo_urls=None):
     m = M[key]
     accent = cfg.get("accent", "#2D5BE3")
     ent = cfg["entreprise"]
@@ -759,8 +779,18 @@ def page(key, cfg, logo_url, photo_url=""):
     kick = f'<p class="es-kick">{ico("pin")}{e(m["artisan"].capitalize())} · {e(cfg["zone"])}</p>' if cfg.get("zone") else ""
     lead = "Répondez à 6 questions : le prix de vos travaux s’affiche tout de suite."
     ex_focus, ex_amount, ex_label = example(m, cfg, key)
-    scene = (f'<figure class="es-scene"><span class="es-scene-art" aria-hidden="true">{icons.house(ex_focus, None, accent, s=14)}</span>'
-             f'<figcaption class="es-tag"><span class="es-tag-k">Exemple d’estimation</span><b>{e(ex_amount)}</b><span>{e(ex_label)}</span></figcaption></figure>')
+    ph = photo_of(m, cfg, key)
+    if ph["own"]:
+        img = f'<img src="{photo_urls[key][0][0]}" alt="{a(ph["alt"])}" width="1200" height="900" decoding="async">'
+    else:
+        srcset = ", ".join(f"{u} {w}w" for u, w, _ in photo_urls[key])
+        u0, w0, h0 = photo_urls[key][-1]
+        img = (f'<img src="{photo_urls[key][0][0]}" srcset="{srcset}" sizes="(min-width: 960px) 520px, calc(100vw - 32px)" '
+               f'alt="{a(ph["alt"])}" width="{w0}" height="{h0}" decoding="async" style="object-position:{ph["pos"]}">')
+    cap = f'<span class="es-photo-own">Un chantier de {e(cfg["entreprise"])}</span>' if ph["own"] else ""
+    scene = (f'<figure class="es-scene es-photo">{img}{cap}'
+             f'<figcaption class="es-tag"><span class="es-tag-ico" aria-hidden="true">{icons.house(ex_focus, None, accent, s=8)}</span>'
+             f'<span class="es-tag-t"><span class="es-tag-k">Exemple d’estimation</span><b>{e(ex_amount)}</b><span>{e(ex_label)}</span></span></figcaption></figure>')
     av, title, person = who(cfg, photo_url)
     trust = (f'<div class="es-trust"><div class="es-who"><span class="es-av">{av}</span><p><b>{e(title)}</b>'
              f'<span>{e(cfg.get("rappel") or ("Vous rappelle personnellement" if person else "Rappel gratuit, sans engagement"))}</span></p></div>{stars(cfg)}</div>')
@@ -866,12 +896,28 @@ def build(path):
         shutil.copy(src, dst)
         photo_url = "/assets/" + dst.name
     keys = [k for k in ORDER if k in cfg.get("metiers", ORDER)]
+    (out / "assets" / "photos").mkdir(parents=True)
+    photo_urls = {}
+    for k in keys:
+        ph = photo_of(M[k], cfg, k)
+        if ph["own"]:
+            src = (pathlib.Path(path).parent / ph["own"]).resolve()
+            name = f"{M[k]['slug']}{src.suffix.lower()}"
+            shutil.copy(src, out / "assets" / "photos" / name)
+            photo_urls[k] = [(f"/assets/photos/{name}", 1200, 900)]
+        else:
+            photo_urls[k] = []
+            for w, h_ in ph["sizes"]:
+                name = f"{ph['base']}-{w}.webp"
+                shutil.copy(HERE / "photos" / name, out / "assets" / "photos" / name)
+                photo_urls[k].append((f"/assets/photos/{name}", w, h_))
     for k in keys:
         d = out / M[k]["slug"]
         d.mkdir(parents=True)
-        (d / "index.html").write_text(page(k, cfg, logo_url, photo_url), encoding="utf-8")
+        (d / "index.html").write_text(page(k, cfg, logo_url, photo_url, photo_urls), encoding="utf-8")
     if shutil.which("node"):
-        jobs = [{"out": str(out / M[k]["slug"] / "og.png"), "html": og_html(M[k], cfg, k, cfg.get("accent", "#2D5BE3"))} for k in keys]
+        jobs = [{"out": str(out / M[k]["slug"] / "og.png"),
+                 "html": og_html(M[k], cfg, k, cfg.get("accent", "#2D5BE3"), out / photo_urls[k][-1][0].lstrip("/"))} for k in keys]
         jf = out / "og_jobs.json"
         jf.write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
         r = subprocess.run(["node", str(HERE / "og_render.js"), str(jf)], capture_output=True, text=True)

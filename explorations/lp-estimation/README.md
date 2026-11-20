@@ -36,6 +36,7 @@ Pour qu'une annonce mène directement au bon projet, ajoutez `projet=` à l'adre
 | `entreprise` | Nom affiché dans l'en-tête, les textes et les mentions |
 | `domaine` | Adresse du site du client (ex. `https://devis.entreprise-dupont.fr`). Sert à l'image d'aperçu des liens partagés |
 | `logo` | Chemin du logo (SVG ou PNG), relatif à la fiche. Vide : le nom s'affiche en texte |
+| `photos` | Photos des vrais chantiers de l'artisan, une par métier (ex. `{"toiture": "photos/toit-dupont.jpg"}`, chemin relatif à la fiche). Elles remplacent les photos libres de droits et portent la mention « Un chantier de [entreprise] » |
 | `telephone` | Numéro affiché dans le bouton vert et à la fin |
 | `whatsapp` | Numéro WhatsApp au format international sans `+` (ex. `33612345678`). Vide : pas de bouton WhatsApp |
 | `envoi` | Adresse qui reçoit chaque demande en JSON (voir plus bas). Fortement conseillé |
@@ -68,9 +69,15 @@ Chaque option a sa propre illustration du chantier (mousse sur le toit, tuile ma
 
 À la dernière étape, l'estimation reste floutée jusqu'au numéro, qui se met en forme pendant la saisie. Il n'y a pas de case à cocher : une phrase d'information la remplace (« En validant, vous acceptez d'être rappelé… »), ce qui fait un champ obligatoire de moins. La demande vient du visiteur lui-même, et cela suffit pour le rappeler. L'estimation s'affiche ensuite comme un devis au nom de l'artisan, puis le visiteur est invité à envoyer des photos du chantier par WhatsApp. Si la page se recharge (fréquent dans le navigateur d'Instagram après un passage par WhatsApp), le visiteur retrouve ses réponses et son estimation ; elles s'effacent quand il ferme l'onglet. Il peut aussi partager l'estimation (au conjoint, au propriétaire) depuis son téléphone. Sous le questionnaire, une foire aux questions répond aux hésitations : gratuité, origine des prix, prix final, qui rappelle, locataires, et une question propre au métier.
 
+## Les photos
+
+Chaque métier a une photo libre de droits en haut de page (voir `photos/SOURCES.md` : licences Unsplash et Pexels, usage commercial gratuit). L'exemple d'estimation est posé dessus. Ces photos illustrent le métier : elles ne montrent pas les chantiers de l'artisan et ne doivent jamais être présentées comme tels.
+
+Dès que l'artisan fournit ses propres photos de chantier, mettez-les dans sa fiche (`photos`). Elles remplacent les photos libres de droits et portent la mention « Un chantier de [entreprise] ». De vraies photos inspirent plus confiance. Retirez-en d'abord les métadonnées (lieu, date, appareil).
+
 ## L'image d'aperçu
 
-Quand Node et Playwright sont installés, la génération crée pour chaque métier une image `og.png` (1200 × 630) : le titre, la maison du métier, l'exemple d'estimation et le nom de l'artisan. Elle s'affiche quand le lien est partagé sur WhatsApp, Facebook ou par SMS, à condition que `domaine` soit rempli.
+Quand Node et Playwright sont installés, la génération crée pour chaque métier une image `og.png` (1200 × 630) : le titre, la photo du métier, l'exemple d'estimation et le nom de l'artisan. Elle s'affiche quand le lien est partagé sur WhatsApp, Facebook ou par SMS, à condition que `domaine` soit rempli.
 
 ## Les prix
 

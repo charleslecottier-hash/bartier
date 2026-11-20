@@ -25,6 +25,7 @@ ONSP = ["Oui", "Non", "Je ne sais pas"]
 M = {}
 
 M["toiture"] = dict(
+    photo=dict(base="toiture", sizes=[(800, 534), (1200, 801)], alt="Couvreur réparant une toiture en tuiles, sur un échafaudage", pos="center 40%"),
     slug="toiture", nom="toiture", artisan="couvreur",
     title="Prix toiture 2026 : estimez vos travaux en 1 minute",
     desc="Nettoyage, démoussage, couverture, réfection : estimez le prix de vos travaux de toiture en 6 questions, à partir des prix publiés en 2026.",
@@ -65,6 +66,7 @@ M["toiture"] = dict(
 )
 
 M["facade"] = dict(
+    photo=dict(base="facade", sizes=[(800, 542), (1000, 678)], alt="Maison ancienne en pierre à la façade refaite", pos="center 45%"),
     slug="ravalement-facade", nom="façade", artisan="façadier",
     title="Prix ravalement de façade 2026 : estimation en 1 minute",
     desc="Peinture, enduit, ravalement avec isolation : estimez le prix de votre ravalement de façade en 6 questions, à partir des prix publiés en 2026.",
@@ -101,6 +103,7 @@ M["facade"] = dict(
 )
 
 M["fenetres"] = dict(
+    photo=dict(base="fenetres", sizes=[(800, 533)], alt="Menuisier découpant un cadre de fenêtre", pos="center 40%"),
     slug="fenetres", nom="fenêtres", artisan="menuisier",
     title="Prix fenêtres 2026 : estimez votre projet en 1 minute",
     desc="Remplacement ou création de fenêtres : estimez le prix de vos fenêtres posées en 6 questions, à partir des prix publiés en 2026.",
@@ -139,6 +142,7 @@ M["fenetres"] = dict(
 )
 
 M["charpente"] = dict(
+    photo=dict(base="charpente", sizes=[(800, 533), (1200, 800)], alt="Charpente en bois en cours de pose, vue d’en dessous", pos="center"),
     slug="charpente", nom="charpente", artisan="charpentier",
     title="Prix charpente 2026 : estimez vos travaux en 1 minute",
     desc="Traitement du bois, rénovation, charpente et couverture : estimez le prix de vos travaux de charpente en 6 questions, à partir des prix publiés.",
@@ -175,6 +179,7 @@ M["charpente"] = dict(
 )
 
 M["isolation"] = dict(
+    photo=dict(base="isolation", sizes=[(800, 600), (1200, 900)], alt="Artisan posant de la laine isolante entre les montants d’un mur", pos="center"),
     slug="isolation", nom="isolation", artisan="artisan",
     title="Prix isolation 2026 : estimez vos travaux en 1 minute",
     desc="Combles perdus, combles aménagés, murs par l’extérieur : estimez le prix de votre isolation en 6 questions, à partir des prix publiés en 2026.",
