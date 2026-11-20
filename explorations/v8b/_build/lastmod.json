@@ -37,39 +37,47 @@
  },
  "/devis-travaux/": {
   "date": "2026-11-20",
-  "sig": "db91df84870142a3"
+  "sig": "5009abb1b7032ae4"
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-20",
-  "sig": "e4e92bf595611a85"
+  "sig": "22eeb8b38d3ed692"
  },
  "/devis-travaux/fenetres/": {
   "date": "2026-11-20",
-  "sig": "49818c41aa7e7a52"
+  "sig": "de2a65f633e6205c"
  },
  "/devis-travaux/isolation/": {
   "date": "2026-11-20",
-  "sig": "0eea607b5fade3f2"
+  "sig": "133d14ac5e42d241"
+ },
+ "/devis-travaux/lille/": {
+  "date": "2026-11-20",
+  "sig": "35f2dd4588e87313"
+ },
+ "/devis-travaux/marseille/": {
+  "date": "2026-11-20",
+  "sig": "ecf49f73eeb51774"
  },
  "/devis-travaux/paris/": {
   "date": "2026-11-20",
-  "sig": "58549748ae7bfcf9"
+  "sig": "d63e45bfb52f5809"
  },
  "/devis-travaux/ravalement-facade/": {
   "date": "2026-11-20",
-  "sig": "62ff541afed120c2"
+  "sig": "654d55e832b32f21"
  },
  "/devis-travaux/rouen/": {
   "date": "2026-11-20",
-  "sig": "954703caeb856258"
+  "sig": "0c354d001972ce95"
  },
  "/devis-travaux/toiture/": {
   "date": "2026-11-20",
-  "sig": "a4badf943dc005a8"
+  "sig": "2838cc4d19b7bd66"
  },
  "/devis-travaux/toulouse/": {
   "date": "2026-11-20",
-  "sig": "a2e1b2b180ef7cff"
+  "sig": "895a15e213fedffe"
  },
  "/google-ads/": {
   "date": "2026-11-19",

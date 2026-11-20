@@ -278,4 +278,185 @@ ROUEN = dict(
           "En ligne sur le guichet numérique GNAU de la Métropole, ou à la direction de l’urbanisme, 14 bis avenue Pasteur (02 76 30 31 00).")],
 )
 
-CITIES = [ROUEN, PARIS, TOULOUSE]
+# ——— Marseille ———
+_MELODI_13 = "https://api.insee.fr/melodi/data/DS_RP_LOGEMENT_PRINC?GEO=COM-13055"
+_AMP_COPRO = "https://ampmetropole.fr/missions/habitat-logement/politique-de-lhabitat/accompagner-les-coproprietes/"
+_AVAP_13 = "https://plui.ampmetropole.fr/assets/documents/PLUi_CT1_R1_AVAP_SPR_2_Rglt_T1_Prescriptions_generales.pdf"
+_AVAP_13_RP = "https://plui.ampmetropole.fr/assets/documents/PLUi_CT1_R1_AVAP_SPR_1_RP_L1_0_Sommaire_1_Preambule.pdf"
+_EIE_13 = "https://plui.ampmetropole.fr/assets/documents/PLUi_CT1_C2_EtatInitialEnviro.pdf"
+_SOLEAM = "https://www.soleam.net/projets/ravalements-de-facades/"
+_UDAP_13 = ("https://www.culture.gouv.fr/regions/drac-provence-alpes-cote-d-azur/la-direction-regionale-des-affaires-culturelles-drac-provence-alpes-cote-d-azur/"
+            "unites-departementales-de-l-architecture-et-du-patrimoine-udap-de-provence-alpes-cote-d-azur/udap-des-bouches-du-rhone")
+_TUILE_13 = ("https://www.culture.gouv.fr/Media/Regions/Drac-Paca/Files/Aides-demarches/Demarches-et-conseils-architecture-patrimoine/Fiches-conseil/"
+             "Stap-des-Bouches-du-Rhone/16-Les-toitures-en-tuiles-plates-dites-marseillaises")
+_CAUE_13 = "https://www.caue13.fr/sites/default/files/2021-09/04_FICHE-PRATIQUE_AUTORISATION-URBA_Modifier%20laspect%20exterieur%20construction.pdf"
+_CEREMA = "https://www.cerema.fr/fr/actualites/cartographie-nationale-termites-merules"
+_CD13 = "https://departement13.fr/en-actions/logement-habitat/les-dispositifs-aides/habitat-des-aides-concretes-pour-realiser-vos"
+_ALEC_13 = "https://www.alecmetropolemarseillaise.fr/ouverture-de-maprimerenov-au-23-fevrier-2026/"
+_MP_SON = "https://www.marseille.aeroport.fr/societe/transitions/aide-insonorisation"
+MARSEILLE = dict(
+    slug="marseille", name="Marseille", cp="13008", wiki="https://fr.wikipedia.org/wiki/Marseille", wikidata="Q23482",
+    title="Devis travaux à Marseille : toiture, façade, fenêtres",
+    desc="Travaux à Marseille : ravalement imposé, centre-ville protégé, mistral, termites, aides du Département. Un seul artisan vient chiffrer, gratuitement.",
+    figures_intro="Ce qui compte avant de lancer des travaux à Marseille.",
+    figures=[("72 <small>%</small>", "des logements sont en copropriété", S("Métropole Aix-Marseille-Provence", _AMP_COPRO)),
+             ("56,7 <small>%</small>", "des résidences principales datent d’avant 1971", S("Insee, 2023", _MELODI_13)),
+             ("472 <small>ha</small>", "de site patrimonial remarquable en centre-ville", S("AVAP, 2018", _AVAP_13_RP)),
+             ("65 <small>jours</small>", "de mistral par an, avec des rafales au-delà de 100 km/h", S("PLUi, état initial de l’environnement", _EIE_13))],
+    answer=("À Marseille, 72 % des logements sont en copropriété et plus de la moitié des résidences principales datent d’avant 1971. Le maire peut imposer "
+            "un ravalement tous les dix ans, le centre-ville forme un site patrimonial remarquable de 472 hectares avec ses propres règles, et tout le "
+            "département est en zone termites."),
+    facts=[("Ravalement", "Marseille est sur la liste préfectorale depuis l’arrêté du 4 mars 1982 : le maire peut imposer un ravalement au moins tous les dix ans. "
+                          "De 2017 à 2022, quatre campagnes ont visé le centre, avec environ 2 100 immeubles mis en demeure (" + L("SOLEAM", _SOLEAM) + ")."),
+           ("Centre-ville protégé", "Site patrimonial remarquable de 472 hectares depuis 2018, plus les abords de 60 monuments historiques : tuile canal en terre cuite, "
+                                    "fenêtres en bois peint, isolation par l’extérieur interdite sur les immeubles patrimoniaux (" + L("règlement de l’AVAP", _AVAP_13) + ")."),
+           ("Urbanisme", "Le PLUi Marseille Provence s’applique depuis le 28 janvier 2020, modifié pour la quatrième fois le 6 octobre 2025 ("
+                         + L("Métropole", "https://ampmetropole.fr/missions/amenagement-du-territoire-et-urbanisme/planification-et-urbanisme/marseille-provence/") + ")."),
+           ("Termites", "Tout le département est en zone de surveillance et de lutte contre les termites depuis l’arrêté du 1er septembre 2001. Pas d’arrêté mérule ("
+                        + L("Cerema", _CEREMA) + ")."),
+           ("Climat", "Zone climatique H3. Le mistral souffle environ 65 jours par an, avec des rafales qui dépassent régulièrement 100 km/h (" + L("PLUi", _EIE_13) + ")."),
+           ("Bruit des avions", "Dans le 16e arrondissement, certains logements peuvent obtenir l’aide à l’insonorisation de l’aéroport Marseille Provence ("
+                                + L("aéroport", _MP_SON) + ").")],
+    trades_intro="Immeubles « trois fenêtres », maisons de quartier, grands ensembles : à Marseille, la plupart des toitures et des façades se décident en assemblée générale de copropriété.",
+    trades={
+        "toiture": ["Tuile canal et tuile plate mécanique dite « marseillaise » se partagent les toits du centre. Ne remplacez pas des tuiles marseillaises par des "
+                    "tuiles canal si la pente et le style ne s’y prêtent pas, conseille l’architecte des Bâtiments de France (" + L("fiche UDAP 13", _TUILE_13) + ").",
+                    "Avec environ 65 jours de mistral par an, faites vérifier tuiles et faîtage après un coup de vent."],
+        "facade": ["L’immeuble « trois fenêtres » du XIXe siècle a une façade en moellon enduit ou en « enduit marseillais », un ciment naturel aux filets gravés, "
+                   "parfois en pierre de La Couronne ou de Cassis (" + L("Agam", "https://www.agam.org/wp-content/uploads/2024/06/Panorama-architectural_Valide-Web.pdf") + ").",
+                   "Dans le site patrimonial remarquable, les couleurs doivent correspondre à l’époque de l’immeuble, et la même couleur s’applique à tout un volume."],
+        "fenetres": ["Dans le site patrimonial remarquable, les fenêtres sont en bois peint et les climatiseurs en saillie sur la façade sont interdits ("
+                     + L("AVAP", _AVAP_13) + ").",
+                     "Partout, changer le matériau ou la couleur de ses fenêtres demande une déclaration préalable, avec les matériaux et coloris ("
+                     + L("CAUE 13", _CAUE_13) + ")."],
+        "charpente": ["Tout le département des Bouches-du-Rhône est en zone de surveillance et de lutte contre les termites depuis 2001 : profitez d’une réfection "
+                      "de toiture pour faire contrôler la charpente.",
+                      "À la vente, un état relatif à la présence de termites de moins de 6 mois est obligatoire."],
+        "isolation": ["Ici, isoler la toiture sert d’abord contre la chaleur. L’architecte des Bâtiments de France conseille d’éviter les fenêtres de toit, qui "
+                      "dégradent le confort d’été (" + L("fiche UDAP 13", _TUILE_13) + ").",
+                      "Le Département aide les propriétaires occupants : Provence Éco-Rénov finance 25 % des travaux, plafonnés à 4 000 €, sous conditions de revenus, "
+                      "avec une entreprise RGE (" + L("Département 13", _CD13) + ")."]},
+    steps_intro="Dans l’ordre, pour une maison comme pour un appartement en copropriété.",
+    steps=[("Vérifiez si votre immeuble est protégé", "Dans le site patrimonial remarquable ou aux abords d’un monument historique, l’architecte des Bâtiments de France "
+                                                     "donne son avis et l’instruction passe à 2 mois. " + L("UDAP 13", _UDAP_13) + " : 04 91 90 42 43, sur rendez-vous."),
+           ("En copropriété, passez par le syndic", "Toiture et façade sont des parties communes : les travaux se votent en assemblée générale."),
+           ("Déposez la déclaration préalable", "Pour changer les tuiles, ravaler ou changer les fenêtres, en précisant matériaux et coloris (" + L("CAUE 13", _CAUE_13) + ")."),
+           ("Faites autoriser l’échafaudage", "Un échafaudage sur le trottoir demande une autorisation d’occupation du domaine public, à demander à la Ville avant le chantier."),
+           ("Prenez rendez-vous avec l’ALEC", "Depuis le 23 février 2026, un rendez-vous avec un conseiller France Rénov’ est obligatoire avant de demander une aide ("
+                                              + L("ALEC", _ALEC_13) + ").")],
+    aides_intro="Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.",
+    aides=[("ALEC Métropole Marseillaise", "L’Espace Conseil France Rénov’ de Marseille : conseil gratuit et neutre. 1 place du Général-de-Gaulle, 13001 Marseille. "
+                                           "04 91 37 21 53. Numéro unique Allo Métropole Rénov’ : 04 88 60 21 06."),
+           ("Provence Éco-Rénov", "L’aide du Département : 25 % des travaux plafonnés à 4 000 €, et 50 % plafonnés à 8 000 € dans les périmètres d’éradication de "
+                                  "l’habitat indigne de Marseille. Pour les propriétaires occupants d’un logement de plus de 15 ans, sous conditions de revenus. "
+                                  "Les parties communes de copropriété sont exclues (" + L("Département 13", _CD13) + ")."),
+           ("Prime du Département", "1 300 € ou 2 000 € pour les propriétaires occupants modestes ou très modestes, dans un périmètre d’OPAH ou de PIG ("
+                                    + L("Département 13", "https://departement13.fr/en-actions/logement-habitat/les-dispositifs-aides/aide-aux-travaux-des-proprietaires-bailleurs-et") + ")."),
+           ("Insonorisation", "Certains logements du 16e arrondissement peuvent obtenir l’aide à l’insonorisation de l’aéroport Marseille Provence ("
+                              + L("aéroport", _MP_SON) + ")."),
+           NATIONAL],
+    faq=[("Le ravalement est-il obligatoire à Marseille ?",
+          "Le maire peut l’imposer au moins une fois tous les dix ans : Marseille est sur la liste préfectorale depuis 1982. De 2017 à 2022, quatre campagnes ont visé "
+          "le centre-ville, avec environ 2 100 immeubles mis en demeure. Renseignez-vous auprès de la Ville pour votre rue."),
+         ("Peut-on isoler par l’extérieur dans le centre de Marseille ?",
+          "Pas sur les immeubles patrimoniaux du site patrimonial remarquable : son règlement l’interdit. Ailleurs, l’isolation par l’extérieur demande une déclaration préalable."),
+         ("Tuile canal ou tuile marseillaise : laquelle choisir ?",
+          "Celle qui correspond à l’immeuble. Dans le site patrimonial remarquable, la couverture est en tuile ronde ou canal en terre cuite. L’architecte des Bâtiments "
+          "de France conseille de ne pas remplacer des tuiles marseillaises par des tuiles canal si la pente et le style ne s’y prêtent pas."),
+         ("Marseille est-elle en zone termites ?",
+          "Oui, comme tout le département depuis l’arrêté préfectoral du 1er septembre 2001. À la vente, un état relatif aux termites de moins de 6 mois est obligatoire."),
+         ("Quelles aides pour rénover son logement à Marseille ?",
+          "Provence Éco-Rénov, l’aide du Département (25 % des travaux, jusqu’à 4 000 €), la prime de 1 300 € ou 2 000 € en périmètre d’OPAH ou de PIG, et les aides "
+          "nationales. Depuis le 23 février 2026, un rendez-vous France Rénov’ est obligatoire avant la demande : ALEC, 04 91 37 21 53."),
+         ("Puis-je poser un climatiseur sur ma façade ?",
+          "Pas en saillie apparente dans le site patrimonial remarquable : le règlement l’interdit. Ailleurs, vérifiez le PLUi et le règlement de copropriété.")],
+)
+
+# ——— Lille ———
+_INSEE_59 = "https://www.insee.fr/en/statistiques/9006729?geo=COM-59350"
+_GUIDE_FAC = "https://www.lille.fr/content/download/279470/3216951/file/guide-recommandations-facades.pdf"
+_GUIDE_AIDES = "https://www.lille.fr/content/download/321685/3533543/file/Guide-aides-renovations.pdf"
+_CHARTE = "https://www.lille.fr/Vivre-a-Lille/Mon-logement/Louer-acheter-faire-des-travaux/Faire-des-travaux/Charte-couleurs-des-facades"
+_SPR_59 = "https://www.lille.fr/Vivre-a-Lille/Les-travaux-a-Lille/Les-projets-urbains/Le-Site-Patrimonial-Remarquable"
+_MF_59 = "https://pas-de-calais.gouv.fr/content/download/34943/225359/file/Fiche%20m%C3%A9t%C3%A9o%20LILLE%20(59).pdf"
+_MHD = "https://www.maisonhabitatdurable-lillemetropole.fr"
+_ODP_59 = "https://www.lille.fr/Annuaire-des-demarches/Occupation-du-domaine-public"
+LILLE = dict(
+    slug="lille", name="Lille", cp="59000", wiki="https://fr.wikipedia.org/wiki/Lille", wikidata="Q648",
+    title="Devis travaux à Lille : toiture, façade, fenêtres, isolation",
+    desc="Travaux à Lille : ravalement tous les 10 ans, charte couleurs, Vieux-Lille protégé, aides de la Ville et de la Métropole. Un seul artisan vient chiffrer.",
+    figures_intro="Ce qui compte avant de lancer des travaux à Lille.",
+    figures=[("79,3 <small>%</small>", "des logements sont des appartements", S("Insee, 2023", _INSEE_59)),
+             ("27,6 <small>%</small>", "des résidences principales datent d’avant 1946", S("Insee, 2023", _INSEE_59)),
+             ("177 <small>ha</small>", "de site patrimonial remarquable, Vieux-Lille et centre", S("Ville de Lille", _SPR_59)),
+             ("61 <small>teintes</small>", "pour les maçonneries dans la charte couleurs de la Ville", S("Ville de Lille", _CHARTE))],
+    answer=("À Lille, 79 % des logements sont des appartements et plus d’un quart des résidences principales datent d’avant 1946. Brique, badigeon et pierres "
+            "locales font la façade lilloise : le ravalement est obligatoire au moins tous les dix ans sur injonction, toute modification d’aspect demande une "
+            "autorisation, et la Ville aide à ravaler."),
+    facts=[("Ravalement", "Obligatoire au moins tous les 10 ans, sous injonction administrative. Toute intervention qui modifie l’aspect d’une façade demande une "
+                          "autorisation d’urbanisme (" + L("guide des façades", _GUIDE_FAC) + ")."),
+           ("Vieux-Lille", "Le site patrimonial remarquable couvre 177 hectares depuis l’arrêté du 22 mars 2023 ; son nouveau plan de sauvegarde est encore en "
+                           "concertation. L’architecte des Bâtiments de France y donne son avis, comme aux abords des monuments historiques (" + L("Ville de Lille", _SPR_59) + ")."),
+           ("Urbanisme", "Le PLU3 de la Métropole européenne de Lille s’applique depuis le 18 octobre 2024 (" + L("MEL", "https://plu.lillemetropole.fr") + ")."),
+           ("Couleurs", "La charte de la Ville propose 61 teintes pour les maçonneries, 12 pour les joints et 130 pour les menuiseries. Palettes à l’Hôtel de Ville ("
+                        + L("charte couleurs", _CHARTE) + ")."),
+           ("Termites et mérule", "Aucun arrêté préfectoral dans le Nord, ni pour les termites ni pour la mérule (" + L("Cerema", "https://www.cerema.fr/fr/actualites/cartographie-nationale-termites-merules") + ", 2025)."),
+           ("Climat", "Zone H1a. À Lille-Lesquin, 126 jours de pluie par an et 64 jours de rafales d’au moins 58 km/h, surtout d’octobre à mars ("
+                      + L("Météo-France", _MF_59) + ", normales 1971-2000).")],
+    trades_intro="Maisons de ville en brique, maisons bourgeoises, hôtels particuliers, immeubles de rapport : la Ville distingue six familles de bâti, chacune avec ses façades.",
+    trades={
+        "toiture": ["Avec 126 jours de pluie par an et des coups de vent d’octobre à mars, gouttières, chéneaux et solins travaillent : faites-les vérifier avant l’hiver.",
+                    "Dans le Vieux-Lille et aux abords des monuments historiques, changer de matériau de couverture ou créer une fenêtre de toit passe par l’avis de "
+                    "l’architecte des Bâtiments de France."],
+        "facade": ["Brique, badigeon, enduit, grès, pierre blanche et pierre bleue : la Ville recommande des badigeons à la chaux et le soin des joints de brique ("
+                   + L("guide des façades", _GUIDE_FAC) + ").",
+                   "Son aide au ravalement : 15 €/m² traité, plafonnée à 15 000 €, sans condition de revenus, pour les propriétaires et les copropriétés ("
+                   + L("guide des aides", _GUIDE_AIDES) + ", 2024). L’isolation par l’extérieur n’y est pas comptée comme du ravalement."],
+        "fenetres": ["Pour remplacer des menuiseries, la Ville recommande le bois peint plutôt que le PVC ou l’aluminium, et sa charte propose 130 teintes pour "
+                     "menuiseries et ferronneries.",
+                     "Logement exposé au bruit routier, à partir de 65 dB(A) : la Prime Bruit de la Métropole aide à l’isolation acoustique, sous conditions de ressources ("
+                     + L("Maison de l’Habitat Durable", "https://www.maisonhabitatdurable-lillemetropole.fr/news/renovation-et-confort-acoustique-une-nouvelle-aide-financiere-metropolitaine-0") + ")."],
+        "charpente": ["Ni termites ni mérule : aucun arrêté préfectoral ne vise le Nord. Faites quand même contrôler les bois lors d’une réfection de toiture, "
+                      "surtout après une infiltration.",
+                      "Une surélévation ou une extension change l’aspect du bâtiment : déclaration préalable ou permis, selon la surface créée."],
+        "isolation": ["La Ville aide les propriétaires occupants sous plafonds de l’Anah : de 15 à 25 % des travaux hors taxes, jusqu’à 40 000 €, si le logement "
+                      "atteint au moins l’étiquette C après travaux (" + L("guide des aides", _GUIDE_AIDES) + ", 2024).",
+                      "Pour de petits travaux d’isolation (joints, portes, fenêtres), la Métropole prend en charge 50 %, jusqu’à 2 500 €, pour les propriétaires "
+                      "occupants très modestes (" + L("AMELIO", "https://ameliohabitat.fr/dispositif-petits-travaux-mel") + ")."]},
+    steps_intro="Dans l’ordre, du Vieux-Lille aux quartiers.",
+    steps=[("Vérifiez si vous êtes en secteur protégé", "Vieux-Lille, centre ou abords d’un monument historique : l’architecte des Bâtiments de France donne son avis. 03 28 36 78 70."),
+           ("Choisissez vos teintes", "Palettes de la charte couleurs à l’Hôtel de Ville et en mairie de quartier (" + L("Ville de Lille", _CHARTE) + ")."),
+           ("Déposez l’autorisation d’urbanisme", "En ligne sur le " + L("guichet GNAU", "https://gnau.lillemetropole.fr") + " de la Métropole, ou au guichet n° 7 de "
+                                                  "l’Hôtel de Ville, du lundi au vendredi de 8 h 30 à 12 h. 03 20 49 51 65."),
+           ("Faites autoriser l’échafaudage", "Au moins 10 jours ouvrés avant, par courriel à autorisations.temporaires@mairie-lille.fr. 03 20 49 52 50 ("
+                                              + L("démarche", _ODP_59) + ")."),
+           ("Demandez les aides avant les travaux", "Les aides de la Ville se demandent avant de commencer. Conseil gratuit à la Maison de l’Habitat Durable.")],
+    aides_intro="Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.",
+    aides=[("Maison de l’Habitat Durable", "L’Espace Conseil France Rénov’ de la Métropole, avec AMELIO : 7 bis rue Racine, 59000 Lille. 03 59 00 03 59. "
+                                           "Conseillers AMELIO : 03 20 21 27 77. " + L("maisonhabitatdurable-lillemetropole.fr", _MHD) + "."),
+           ("Aide au ravalement", "La Ville verse 15 €/m² traité, plafonnés à 15 000 €, sans condition de revenus, aux propriétaires et aux syndicats de copropriétaires ("
+                                  + L("guide des aides", _GUIDE_AIDES) + ", 2024)."),
+           ("Passoire thermique et Haute performance", "15 à 25 % des travaux hors taxes, plafonnés à 25 000 ou 40 000 €, pour les propriétaires occupants sous plafonds "
+                                                        "de l’Anah, avec au moins l’étiquette C après travaux et un artisan RGE."),
+           ("Petits travaux et Prime Bruit", "La Métropole finance 50 % de petits travaux d’isolation, jusqu’à 2 500 €, pour les ménages très modestes, et aide à isoler "
+                                             "du bruit routier les logements exposés."),
+           NATIONAL],
+    faq=[("Le ravalement est-il obligatoire à Lille ?",
+          "Oui, au moins tous les dix ans, sous injonction administrative, rappelle la Ville. Toute modification de l’aspect d’une façade demande une autorisation "
+          "d’urbanisme. La Ville aide à hauteur de 15 €/m² traité, jusqu’à 15 000 €, sans condition de revenus (guide des aides, 2024)."),
+         ("Quelles couleurs pour ma façade à Lille ?",
+          "La charte couleurs de la Ville propose 61 teintes pour les maçonneries, 12 pour les joints et 130 pour les menuiseries et ferronneries. "
+          "Les palettes sont à l’Hôtel de Ville et en mairie de quartier."),
+         ("Peut-on poser des fenêtres en PVC à Lille ?",
+          "La Ville recommande le bois peint plutôt que le PVC ou l’aluminium pour remplacer des menuiseries. Dans le Vieux-Lille et aux abords des monuments "
+          "historiques, l’architecte des Bâtiments de France donne son avis."),
+         ("Lille est-elle concernée par les termites ou la mérule ?",
+          "Non : aucun arrêté préfectoral ne vise le Nord, ni pour les termites ni pour la mérule (Cerema, 2025)."),
+         ("Quelles aides pour rénover son logement à Lille ?",
+          "Aide au ravalement de la Ville, aides Passoire thermique et Haute performance pour les propriétaires occupants, petits travaux et Prime Bruit de la Métropole, "
+          "et aides nationales. Conseil gratuit à la Maison de l’Habitat Durable : 03 59 00 03 59."),
+         ("Comment faire autoriser un échafaudage à Lille ?",
+          "Demandez une autorisation d’occupation du domaine public au moins 10 jours ouvrés avant, par courriel à autorisations.temporaires@mairie-lille.fr (03 20 49 52 50).")],
+)
+
+CITIES = [LILLE, ROUEN, PARIS, MARSEILLE, TOULOUSE]
