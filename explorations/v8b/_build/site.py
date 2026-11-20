@@ -465,14 +465,27 @@ EXTRA_CSS = """<style>
 """
 
 
+OG = {}  # images d'aperçu par page (assets/og/<clé>.png), rendues en fin de construction
+OG_SKIP = {"/", "/mentions-legales/", "/confidentialite/", "/cookies/", "/conditions-du-service/"}
+
+
+def og_key(path):
+    return path.strip("/").replace("/", "-")
+
+
 def head(title, desc, path, schema=None):
     h = re.sub(r"<title>[^<]*</title>", f"<title>{html.escape(fr(title), quote=False)}</title>", HEAD, count=1)
     h = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{html.escape(fr(desc))}">', h, count=1)
     ld = f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False, separators=(",", ":"))}</script>\n' if schema else ""
+    if path in OG_SKIP:
+        og_img, og_alt = f"{SITE}/assets/og.png", "Logo Bartier &amp; Co et slogan : Faire équipe. Faire la différence."
+    else:
+        OG[path] = re.sub(r"\s*[|–-]\s*Bartier & Co$", "", title).strip()
+        og_img, og_alt = f"{SITE}/assets/og/{og_key(path)}.png", html.escape(fr(OG[path]))
     og = (f'<meta property="og:type" content="website">\n<meta property="og:locale" content="fr_FR">\n<meta property="og:site_name" content="Bartier &amp; Co">\n'
           f'<meta property="og:title" content="{html.escape(fr(title))}">\n<meta property="og:description" content="{html.escape(fr(desc))}">\n'
-          f'<meta property="og:url" content="{SITE}{path}">\n<meta property="og:image" content="{SITE}/assets/og.png">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
-          f'<meta property="og:image:alt" content="Logo Bartier &amp; Co et slogan : Faire équipe. Faire la différence.">\n<meta name="twitter:card" content="summary_large_image">\n')
+          f'<meta property="og:url" content="{SITE}{path}">\n<meta property="og:image" content="{og_img}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
+          f'<meta property="og:image:alt" content="{og_alt}">\n<meta name="twitter:card" content="summary_large_image">\n')
     if schema and "@graph" in schema:  # l'organisation et le site sont décrits sur chaque page : les références #org et #website se résolvent partout
         schema = dict(schema, **{"@graph": [dict(n) for n in schema["@graph"]]})  # copie : des nœuds sont partagés entre pages
         for n in schema["@graph"]:
@@ -1052,16 +1065,27 @@ posts = []
 for a in ARTICLES:
     url, alt = img(COVER[a["slug"]])
     posts.append(f'    <li class="post"><a class="post-link" href="/blog/{a["slug"]}/"><p class="post-meta soft"><time datetime="{a.get('date', TODAY)}">{a.get('date_short', '17 nov. 2026')}</time><br>{a["tag"]}</p><h2 class="post-title">{a["short"]}</h2><figure class="post-photo frame" data-wipe><img src="{url}" alt="{html.escape(alt)}" width="900" height="676"></figure></a></li>')
-write("/blog/", "Blog artisans : chantiers, publicité, devis | Bartier & Co",
-      "Articles courts et concrets pour les artisans du bâtiment : trouver des chantiers, choisir sa publicité locale, relancer ses devis, comprendre les rendez-vous.",
+write("/blog/", "Blog : chantiers, publicité, devis et DPE 2027 | Bartier & Co",
+      "Articles courts et sourcés, pour les artisans du bâtiment et les propriétaires : trouver des chantiers, publicité locale, relance des devis, DPE 2027.",
       "\n\n".join([
-          top("Blog", "Plus de chantiers, moins de soirées au téléphone.", "Des articles courts et concrets, écrits pour les artisans du bâtiment.", crumbs(("Blog", "/blog/")),
+          top("Blog", "Plus de chantiers, moins de soirées au téléphone.", "Des articles courts et sourcés, pour les artisans du bâtiment et pour les propriétaires.", crumbs(("Blog", "/blog/")),
               visual='<nav class="gd-toc" aria-label="Les articles"><p class="gd-toc-k">Les articles</p><ol>' + "".join(f'<li><a href="/blog/{a["slug"]}/">{a["short"]}<small>{a["tag"]} · {a["minutes"]} min</small></a></li>' for a in ARTICLES) + '</ol></nav>'),
           f"""<section class="journal sheet" data-kind="journal" data-tone="light">
   <ul class="jr-list">
 {chr(10).join(posts)}
   </ul>
 </section>""",
+          cols([("Pour les artisans du bâtiment",
+                 'Trouver des chantiers sans attendre le bouche-à-oreille : choisir entre <a class="link" href="/blog/lead-partage-lead-exclusif-rendez-vous-qualifie/">demande partagée, exclusive ou rendez-vous qualifié</a>, '
+                 'entre <a class="link" href="/blog/google-ads-ou-meta-ads-artisan/">Google Ads et Meta Ads</a>, et <a class="link" href="/blog/relance-devis-artisan/">relancer ses devis</a>. '
+                 'Les plateformes de chantiers sont comparées dans <a class="link" href="/trouver-des-chantiers/">Trouver des chantiers</a>.'),
+                ("Pour les propriétaires",
+                 'Les règles qui changent et les démarches avant des travaux : <a class="link" href="/blog/dpe-2027/">le DPE en 2027</a>, <a class="link" href="/devis-travaux/#prix">les prix par métier</a>, '
+                 'et les règles locales à ' + ", ".join(f'<a class="link" href="{VL.path(c)}">{c["name"]}</a>' for c in VL.CITIES[:-1]) + f' et <a class="link" href="{VL.path(VL.CITIES[-1])}">{VL.CITIES[-1]["name"]}</a>.'),
+                ("Comment nous écrivons",
+                 'Chaque article est signé par <a class="link" href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur, et cite ses sources officielles : Service-Public, Légifrance, ADEME, Insee. '
+                 'Quand une règle change, l’article est mis à jour et daté.')],
+               "Deux publics, une même exigence", "Des réponses courtes, datées et sourcées.", tone="paper"),
       ]), nav="/blog/", schema={"@context": "https://schema.org", "@graph": [{"@type": "Blog", "@id": SITE + "/blog/#blog", "name": "Blog Bartier & Co", "url": SITE + "/blog/", "inLanguage": "fr-FR",
                                                                      "publisher": {"@id": SITE + "/#org"}, "blogPost": [{"@id": f"{SITE}/blog/{x['slug']}/#article"} for x in ARTICLES]}, bc_ld(("Blog", "/blog/"))]})
 paths.append("/blog/")
@@ -1617,6 +1641,36 @@ SECURITY_HEADERS = [
     {"key": "Origin-Agent-Cluster", "value": "?1"},
 ]
 
+# ——— Images d'aperçu (réseaux sociaux) : titre de la page sur fond encre, carte pour les pages ville ———
+def _og_kicker(p):
+    if p.startswith("/blog/") and p != "/blog/":
+        a = next((x for x in ARTICLES if f"/blog/{x['slug']}/" == p), None)
+        return "Blog · " + (a["tag"] if a else "Article")
+    c = next((x for x in VL.CITIES if VL.path(x) == p), None)
+    if c: return "Devis travaux · " + c["name"]
+    if p.startswith("/devis-travaux/"): return "Pour les propriétaires"
+    if p.startswith(("/metiers/", "/google-ads/", "/meta-ads/", "/trouver-des-chantiers/")): return "Pour les artisans du bâtiment"
+    return {"/blog/": "Blog", "/qui-sommes-nous/": "Qui sommes-nous", "/questions/": "Questions", "/lexique/": "Lexique"}.get(p, "Bartier &amp; Co")
+_jobs = []
+for p, t in OG.items():
+    if p not in paths: continue
+    c = next((x for x in VL.CITIES if VL.path(x) == p), None)
+    _jobs.append({"file": og_key(p), "kicker": _og_kicker(p), "title": html.escape(fr(t), quote=False), "map": VL.carte(c["slug"]) if c else ""})
+_og_dir = ROOT / "assets" / "og"
+_og_dir.mkdir(parents=True, exist_ok=True)
+_og_json = json.dumps(_jobs, ensure_ascii=False, sort_keys=True)
+_og_sig = hashlib.sha1((_og_json + (ROOT / "_build" / "og_render.js").read_text(encoding="utf-8")).encode()).hexdigest()
+_og_manifest = ROOT / "_build" / "og_manifest.txt"
+if (not _og_manifest.exists() or _og_manifest.read_text().strip() != _og_sig
+        or any(not (_og_dir / f"{j['file']}.png").exists() for j in _jobs)):
+    (ROOT / "_build" / "og_jobs.json").write_text(_og_json, encoding="utf-8")
+    import subprocess as _sp
+    _sp.run(["node", str(ROOT / "_build" / "og_render.js")], check=True, cwd="/tmp")
+    _og_manifest.write_text(_og_sig + "\n")
+for _f in _og_dir.glob("*.png"):
+    if _f.stem not in {j["file"] for j in _jobs}:
+        _f.unlink()
+
 # ——— vercel.json : redirections utiles et en-têtes ———
 (ROOT / "vercel.json").write_text(json.dumps({
     # une seule adresse par page : /blog et /blog/index.html renvoient vers /blog/
@@ -1635,6 +1689,9 @@ SECURITY_HEADERS = [
                 {"source": "/assets/js/(gsap|ScrollTrigger|SplitText|lenis|consent)(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
                 {"source": "/404(.*)", "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]},
                 {"source": f"/(llms.txt|llms-full.txt|{INDEXNOW_KEY}.txt)", "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]},
+                {"source": "/favicon(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=604800"}]},
+                {"source": "/apple-touch-icon.png", "headers": [{"key": "Cache-Control", "value": "public, max-age=604800"}]},
+                {"source": "/assets/og/(.*)", "headers": [{"key": "Cross-Origin-Resource-Policy", "value": "cross-origin"}]},
                 {"source": "/assets/(og.png|logo-bartier.png)", "headers": [{"key": "Cross-Origin-Resource-Policy", "value": "cross-origin"}]}]}, indent=2), encoding="utf-8")
 
 # ——— Fichiers SEO et GEO ———

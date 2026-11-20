@@ -2705,14 +2705,14 @@ Décrivez vos travaux sur la page Devis travaux. C’est gratuit : nous vous rap
 
 ---
 
-## Blog artisans : chantiers, publicité, devis
+## Blog : chantiers, publicité, devis et DPE 2027
 
 Adresse : https://bartierandco.com/blog/
 
-Articles courts et concrets pour les artisans du bâtiment : trouver des chantiers, choisir sa publicité locale, relancer ses devis, comprendre les rendez-vous.
+Articles courts et sourcés, pour les artisans du bâtiment et les propriétaires : trouver des chantiers, publicité locale, relance des devis, DPE 2027.
 
 Blog
-Des articles courts et concrets, écrits pour les artisans du bâtiment.
+Des articles courts et sourcés, pour les artisans du bâtiment et pour les propriétaires.
 17 nov. 2026 Comprendre
 
 ### Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
@@ -2725,6 +2725,21 @@ Des articles courts et concrets, écrits pour les artisans du bâtiment.
 20 nov. 2026 Propriétaires
 
 ### DPE 2027 : ce qui change pour les propriétaires
+
+### Deux publics, une même exigence
+Des réponses courtes, datées et sourcées.
+- 01
+
+#### Pour les artisans du bâtiment
+Trouver des chantiers sans attendre le bouche-à-oreille : choisir entre demande partagée, exclusive ou rendez-vous qualifié, entre Google Ads et Meta Ads, et relancer ses devis. Les plateformes de chantiers sont comparées dans Trouver des chantiers.
+- 02
+
+#### Pour les propriétaires
+Les règles qui changent et les démarches avant des travaux : le DPE en 2027, les prix par métier, et les règles locales à Lille, Rouen, Paris, Lyon, Marseille et Toulouse.
+- 03
+
+#### Comment nous écrivons
+Chaque article est signé par Charles Le Cottier, cofondateur, et cite ses sources officielles : Service-Public, Légifrance, ADEME, Insee. Quand une règle change, l’article est mis à jour et daté.
 
 ---
 
