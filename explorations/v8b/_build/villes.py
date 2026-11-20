@@ -180,7 +180,7 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
         scls = " has-scene"
     figures = f"""<section class="sheet vl-fig{scls}" id="en-chiffres" data-tone="dark">
   {scene}
-  <div class="grid sp-head"><h2 data-split>{v} en quelques chiffres</h2><p>{c["figures_intro"]}</p></div>
+  <div class="grid sp-head"><h2 data-split>{v} en quelques chiffres</h2><p>{c["tldr"]}</p></div>
   <div class="vl-figgrid"><ul class="pf-proms vl-figs">{figs}</ul><figure class="vl-map vl-map-d">{carte(c["slug"])}</figure></div>
 </section>"""
     steps = "".join(f"<li><h3>{a}</h3><p>{_contact(b)}</p></li>" for a, b in c["steps"])
@@ -193,7 +193,7 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
     local = f"""<section class="sheet" id="a-savoir" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>Que faut-il savoir avant des travaux à {v} ?</h2><p>{c["answer"]}</p></div>
   <div class="grid"><dl class="pf-dl vl-dl">{facts}</dl></div>
-  <p class="vl-src">Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? <a class="link" href="mailto:contact@bartierandco.com">Écrivez-nous</a>.</p>
+  <p class="vl-src">Par <a class="link" href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur de Bartier &amp; Co. Sources officielles vérifiées le <time datetime="2026-11-20">20 novembre 2026</time>. Une règle a changé ? <a class="link" href="mailto:contact@bartierandco.com">Écrivez-nous</a>.</p>
 </section>"""
 
     items = []
@@ -228,7 +228,8 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
   <div class="vl-leakbar"><div><h2>Une fuite de toiture à {v} ?</h2><p>Signalez-la : rappel prioritaire. En attendant, suivez <a class="link" href="/devis-travaux/toiture/#fuite-toiture">les 5 bons réflexes</a>.</p></div><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick}</a></div>
 </section>"""
 
-    brief = [("Le service", f"Bartier &amp; Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à {v} et alentours.")] + PF.BRIEF[1:]
+    brief = [("Le service", f"Bartier &amp; Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à {v} et alentours."),
+             ("Pour qui", f"Les propriétaires à {v}, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.")] + PF.BRIEF[1:]
     brief = "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in brief)
     brief = f"""<section class="sheet pf-brief" data-tone="light" aria-labelledby="pf-brief-h">
   <div class="grid pf-brief-grid">
@@ -280,7 +281,8 @@ def schema(SITE, faq_ld, bc_ld, PF, c):
             "containedInPlace": {"@type": "AdministrativeArea", "name": dept}}
     graph = [
         {"@type": "WebPage", "@id": SITE + p, "url": SITE + p, "name": c["title"], "description": c["desc"], "inLanguage": "fr-FR",
-         "dateModified": "@@MAJ@@", "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}, "about": city},
+         "dateModified": "@@MAJ@@", "lastReviewed": "2026-11-20", "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}, "about": city,
+         "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur", "url": SITE + "/qui-sommes-nous/#charles"}},
         {"@type": "Service", "name": f"Devis travaux à {c['name']}", "serviceType": "Mise en relation avec un artisan : toiture, façade, fenêtres, charpente, isolation",
          "description": clean(c["answer"]), "url": SITE + p, "areaServed": city,
          "audience": {"@type": "Audience", "audienceType": "Propriétaires"},

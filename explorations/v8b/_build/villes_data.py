@@ -20,6 +20,7 @@ NATIONAL = ("Aides nationales",
 _INSEE_75 = "https://www.insee.fr/fr/statistiques/8581193?geo=COM-75056"
 _SDES = "https://www.statistiques.developpement-durable.gouv.fr/media/7205/download?inline"
 PARIS = dict(
+    tldr="À Paris, presque tout se vote en copropriété, le ravalement est obligatoire tous les dix ans et même des fenêtres à l’identique demandent une autorisation",
     hook="Autorisation même pour des fenêtres à l’identique, toits en zinc, copropriété.",
     slug="paris", name="Paris", cp="75011", wiki="https://fr.wikipedia.org/wiki/Paris", wikidata="Q90",
     title="Devis travaux à Paris : toiture, façade, fenêtres, isolation",
@@ -114,6 +115,7 @@ _TM_RENOV = "https://renov.toulouse-metropole.fr/"
 _SILENCIO = "https://france3-regions.franceinfo.fr/occitanie/haute-garonne/toulouse/bruit-des-avions-jusqu-a-100-des-couts-rembourses-pour-insonoriser-logements-et-batiments-plus-de-12-000-familles-en-ont-deja-beneficie-3340469.html"
 _VENT_31 = "https://www.data.gouv.fr/datasets/vent-et-rafales"
 TOULOUSE = dict(
+    tldr="À Toulouse, le centre ancien de 256 hectares impose bois peint et tuile canal, la Ville mène des campagnes de ravalement et l’aide Silencio insonorise près de l’aéroport",
     hook="Brique et tuile canal, centre ancien de 256 hectares, aide Silencio.",
     slug="toulouse", name="Toulouse", cp="31000", wiki="https://fr.wikipedia.org/wiki/Toulouse", wikidata="Q7880",
     title="Devis travaux à Toulouse : toiture, façade, fenêtres",
@@ -207,6 +209,7 @@ _TERM_76 = "https://www.seine-maritime.gouv.fr/contenu/telechargement/57813/4064
 _CEE_76 = "https://cheque-eco-energie.normandie.fr/sites/default/files/2026-07/Fiche%20compatibilit%C3%A9%20BBC%20Normandie%20juin%202026.pdf"
 _EM_76 = "https://energies.metropole-rouen-normandie.fr/"
 ROUEN = dict(
+    tldr="À Rouen, le centre ancien est un secteur sauvegardé depuis 1964, le ravalement demande une déclaration préalable et la Région aide jusqu’à 10 000 € pour une rénovation globale",
     hook="Secteur sauvegardé, ardoise et pans de bois, ravalement rue par rue.",
     slug="rouen", name="Rouen", cp="76000", wiki="https://fr.wikipedia.org/wiki/Rouen", wikidata="Q30974",
     title="Devis travaux à Rouen : toiture, façade, fenêtres, isolation",
@@ -298,6 +301,7 @@ _CD13 = "https://departement13.fr/en-actions/logement-habitat/les-dispositifs-ai
 _ALEC_13 = "https://www.alecmetropolemarseillaise.fr/ouverture-de-maprimerenov-au-23-fevrier-2026/"
 _MP_SON = "https://www.marseille.aeroport.fr/societe/transitions/aide-insonorisation"
 MARSEILLE = dict(
+    tldr="À Marseille, 72 % des logements sont en copropriété, le maire peut imposer un ravalement tous les dix ans et tout le département est en zone termites",
     hook="Centre-ville protégé, mistral, termites, ravalement imposé.",
     slug="marseille", name="Marseille", cp="13008", wiki="https://fr.wikipedia.org/wiki/Marseille", wikidata="Q23482",
     title="Devis travaux à Marseille : toiture, façade, fenêtres",
@@ -386,6 +390,7 @@ _MF_59 = "https://pas-de-calais.gouv.fr/content/download/34943/225359/file/Fiche
 _MHD = "https://www.maisonhabitatdurable-lillemetropole.fr"
 _ODP_59 = "https://www.lille.fr/Annuaire-des-demarches/Occupation-du-domaine-public"
 LILLE = dict(
+    tldr="À Lille, le ravalement est obligatoire tous les dix ans, la Ville publie une charte de 61 teintes et aide à ravaler, et le Vieux-Lille passe par l’architecte des Bâtiments de France",
     hook="Ravalement tous les 10 ans, charte de 61 teintes, Vieux-Lille protégé.",
     slug="lille", name="Lille", cp="59000", wiki="https://fr.wikipedia.org/wiki/Lille", wikidata="Q648",
     title="Devis travaux à Lille : toiture, façade, fenêtres, isolation",
@@ -476,6 +481,7 @@ _ALEC_69 = "https://www.alec-lyon.org/services/aides-et-accompagnements/ecorenov
 _MF_69 = "https://donneespubliques.meteofrance.fr/FichesClim/FICHECLIM_69029001.pdf"
 _ODP_69 = "https://www.lyon.fr/demarche/stationnement/demander-une-autorisation-pour-loccupation-du-domaine-public-pour-travaux"
 LYON = dict(
+    tldr="À Lyon, le ravalement est imposé rue par rue, le centre historique est inscrit à l’Unesco et Écoréno’v aide tous les propriétaires, sans condition de ressources",
     hook="Site Unesco, ravalement imposé rue par rue, nichoirs à martinets.",
     slug="lyon", name="Lyon", cp="69003", wiki="https://fr.wikipedia.org/wiki/Lyon", wikidata="Q456",
     title="Devis travaux à Lyon : toiture, façade, fenêtres, isolation",
