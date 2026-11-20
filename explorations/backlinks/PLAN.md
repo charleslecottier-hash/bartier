@@ -115,4 +115,8 @@ relient le profil à la marque.
 
 | Date | Où | Adresse du profil ou de l'article | Lien vers le site | Statut |
 |---|---|---|---|---|
+| 20/11/2026 | LinkedIn | https://www.linkedin.com/company/bartier-co (page créée, ajoutée au site) | https://bartierandco.com/ | fait |
+| 20/11/2026 | Gamma | 8 decks en accès public | pages /devis-travaux/ | fait |
+| 20/11/2026 | LinkedIn | Post 1 : prix des travaux (PDF) | /devis-travaux/#prix | fait |
+| 20/11/2026 | Facebook | Post 1 : prix des travaux (lien du deck) | /devis-travaux/ | fait |
 | | | | | |
