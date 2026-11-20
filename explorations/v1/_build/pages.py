@@ -628,6 +628,7 @@ Prix indicatifs cités sur le site, d'après des sources tierces (seule une visi
 - Le budget publicitaire est payé directement par l'artisan à Meta ou à Google.
 - Contact : contact@bartierandco.com
 - Facebook : https://www.facebook.com/profile.php?id=61596597124434
+- LinkedIn : https://www.linkedin.com/company/bartier-co
 - Téléphone et WhatsApp : 07 81 01 89 36 (Martin Barthélémy, cofondateur)
 - Horaires : du lundi au vendredi, de 8 h à 19 h.
 

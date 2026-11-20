@@ -240,7 +240,7 @@ ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "
                         "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "19:00"}},
        "areaServed": {"@type": "Country", "name": "France"},
        "knowsAbout": ["Google Ads", "Meta Ads", "Publicité locale", "Couverture", "Ravalement de façade", "Menuiserie extérieure", "Charpente", "Isolation"],
-       "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434"],
+       "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434", "https://www.linkedin.com/company/bartier-co"],
        "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de 5 minutes, visites de devis fixées directement dans leur agenda. Pour les propriétaires, mise en relation gratuite avec un artisan de leur secteur.",
        "makesOffer": [{"@type": "Offer", "itemOffered": {"@id": SITE + u + "#service"}} for u in ("/devis-travaux/", "/google-ads/", "/meta-ads/")],
        "founder": [{"@type": "Person", "@id": f"{SITE}/qui-sommes-nous/#{k}", "name": n, "jobTitle": j, "image": portrait(k)} for k, n, j in FOUNDERS]}
