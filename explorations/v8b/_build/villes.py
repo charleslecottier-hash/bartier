@@ -15,6 +15,9 @@ TRADE_PICK = {"toiture": "Devis toiture", "facade": "Devis façade", "fenetres":
 
 CSS = """<style id="vl-css">
 .vl-wrap{padding:0 var(--cell)}
+.vl-dl .link,.vl-trades .link,.vl-steps .link{display:inline;white-space:normal;min-height:0}
+.vl-more{align-items:center}
+.vl-more .link{align-self:center}
 .vl-dl{grid-column:1 / -1}
 .vl-trades{grid-template-columns:repeat(2,minmax(0,1fr))}
 .vl-trades p+p{margin-top:10px}
