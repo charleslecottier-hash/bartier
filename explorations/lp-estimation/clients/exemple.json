@@ -1,0 +1,30 @@
+{
+  "slug": "exemple",
+  "entreprise": "Votre entreprise",
+  "logo": "",
+  "telephone": "06 39 98 00 00",
+  "whatsapp": "33639980000",
+  "envoi": "",
+  "zone": "Lille et 30 km autour",
+  "departements": ["59", "62"],
+  "horaires": "du lundi au vendredi",
+  "metiers": ["toiture", "facade", "fenetres", "charpente", "isolation"],
+  "accent": "#2D5BE3",
+  "atouts": [],
+  "tarifs": {},
+  "meta_pixel": "",
+  "legal": {
+    "raison_sociale": "",
+    "forme": "",
+    "capital": "",
+    "siege": "",
+    "siret": "",
+    "rcs": "",
+    "tva": "",
+    "directeur_publication": "",
+    "email": "",
+    "assurance_decennale": "",
+    "mediateur": "",
+    "hebergeur": "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis"
+  }
+}

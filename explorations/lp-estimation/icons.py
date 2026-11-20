@@ -1,0 +1,236 @@
+"""Icônes isométriques des pages d'estimation : une maison dessinée en code, la partie concernée par les travaux
+prend la couleur d'accent du client, et un pictogramme précise le type de travaux. Aucune image externe."""
+import math
+
+C30 = math.cos(math.radians(30))
+L, W, h, RP = 4.0, 3.0, 2.1, 1.1          # longueur, largeur, hauteur des murs, pente du toit (hauteur par unité)
+H = h + 1.5 * RP                           # faîtage
+OX, OY, TH = 0.25, 0.3, 0.14               # débords du toit, épaisseur de la couverture
+HE = H - (1.5 + OY) * RP                   # bas de la pente avant (égout)
+
+GLYPH = {  # pictogrammes au trait, grille de 24
+    "leaf": "M5 19c0-8 5-13 14-14 0 9-5 14-13 14z M5 19l7-7",
+    "shield": "M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z",
+    "drop": "M12 3c3.5 4.2 6 7.4 6 10.5a6 6 0 0 1-12 0C6 10.4 8.5 7.2 12 3z",
+    "refresh": "M20 12a8 8 0 1 1-2.4-5.7 M20 4v4h-4",
+    "layers": "M12 4l9 5-9 5-9-5z M3 14l9 5 9-5",
+    "plus": "M12 5v14 M5 12h14",
+    "crack": "M8 3l4 6-3 4 5 8",
+    "roller": "M4 4h13v5H4z M17 6.5h3v5h-8v3 M11 14.5h2V21h-2z",
+    "therm": "M10 13.5V5a2 2 0 1 1 4 0v8.5a4 4 0 1 1-4 0z",
+    "bug": "M9 8a3 3 0 0 1 6 0 M8 9h8v6a4 4 0 0 1-8 0z M4 12h4 M16 12h4 M5 7l3 2 M19 7l-3 2 M5 18l3-2 M19 18l-3-2",
+    "wrench": "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z",
+    "question": "M9 9a3 3 0 1 1 4.5 2.6c-1 .6-1.5 1.2-1.5 2.4 M12 18h.01",
+}
+
+
+def _mix(a, b, t):
+    a, b = [int(a[i:i + 2], 16) for i in (1, 3, 5)], [int(b[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#" + "".join(f"{round(x + (y - x) * t):02x}" for x, y in zip(a, b))
+
+
+def _pal(accent):
+    n = dict(slabT="#E7EAF0", slabF="#D4D9E1", slabR="#C5CBD5", wallF="#FBF8F3", wallS="#ECE6DB", roofF="#5A6373", roofL="#4B5363",
+             roofE="#3F4653", glass="#C9D7F6", frame="#FFFFFF", door="#3C4453", chimF="#ECE6DB", chimS="#DCD4C6", chimT="#4B5363")
+    a = dict(A=accent, A2=_mix(accent, "#000000", .2), A3=_mix(accent, "#000000", .34), Al=_mix(accent, "#ffffff", .2),
+             Ap=_mix(accent, "#ffffff", .84), Aw=_mix(accent, "#ffffff", .55))
+    return n, a
+
+
+def house(focus="none", badge=None, accent="#2D5BE3", s=10.0, title=""):
+    """focus : roof, frame, roofframe, wall, windows, newwin, bay, door, shutters, attic, rampant, floor, extension, none."""
+    N, F = _pal(accent)
+    shapes = []  # (liste de points 3D, attributs)
+
+    def poly(pts, fill, extra=""):
+        shapes.append(("p", pts, f'fill="{fill}"{extra}'))
+
+    def line(a, b, col, w=1.0, extra=""):
+        shapes.append(("l", [a, b], f'stroke="{col}" stroke-width="{w}" stroke-linecap="round"{extra}'))
+
+    ext = focus == "extension"
+    xs = L + (2.1 if ext else 0.7)
+    # socle
+    poly([(-0.6, -0.6, 0), (xs, -0.6, 0), (xs, 3.7, 0), (-0.6, 3.7, 0)], N["slabT"])
+    poly([(-0.6, 3.7, 0), (xs, 3.7, 0), (xs, 3.7, -0.28), (-0.6, 3.7, -0.28)], N["slabF"])
+    poly([(xs, 3.7, 0), (xs, -0.6, 0), (xs, -0.6, -0.28), (xs, 3.7, -0.28)], N["slabR"])
+    # cheminée (derrière le faîtage)
+    cz0, cz1 = H - (1.5 - 1.05) * RP - 0.3, H + 0.45
+    poly([(0.7, 1.05, cz0), (1.25, 1.05, cz0), (1.25, 1.05, cz1), (0.7, 1.05, cz1)], N["chimF"])
+    poly([(1.25, 1.05, cz0), (1.25, 0.55, cz0), (1.25, 0.55, cz1), (1.25, 1.05, cz1)], N["chimS"])
+    poly([(0.7, 0.55, cz1), (1.25, 0.55, cz1), (1.25, 1.05, cz1), (0.7, 1.05, cz1)], N["chimT"])
+
+    wall_f = F["Al"] if focus == "wall" else N["wallF"]
+    wall_s = F["A"] if focus == "wall" else N["wallS"]
+    if focus == "attic":  # couche d'isolant sur le plancher des combles, qui suit la pente du toit ; vue à travers le toit
+        t = 0.42
+        y0 = 1.5 - (H - h - t) / RP
+        y1 = 1.5 + (H - h - t) / RP
+        poly([(0, y0, h + t), (L, y0, h + t), (L, y1, h + t), (0, y1, h + t)], F["A"])
+        poly([(0, y1, h + t), (L, y1, h + t), (L, W, h), (0, W, h)], F["A2"])
+        zz, x, k = [], 0.15, 0
+        while x <= L - 0.1:
+            f_ = 0.72 if k % 2 else 0.22
+            zz.append((x, y1 + f_ * (W - y1), h + t - f_ * t))
+            x, k = x + 0.3, k + 1
+        for p1, p2 in zip(zz, zz[1:]):
+            line(p1, p2, "#FFFFFF", 1.3)
+    # pignon (côté droit)
+    poly([(L, W, 0), (L, 0, 0), (L, 0, h), (L, 1.5, H), (L, W, h)], wall_s)
+    if focus in ("attic", "frame", "roofframe"):
+        tri = [(L + .01, 0, h), (L + .01, 1.5, H), (L + .01, W, h)]
+        if focus == "attic":
+            pass
+        else:
+            poly(tri, F["Ap"])
+            line((L + .02, 1.5, H - .05), (L + .02, 1.5, h + .02), F["A"], 1.6)
+            line((L + .02, 1.5, h + 0.5), (L + .02, 0.55, h + 0.95), F["A"], 1.4)
+            line((L + .02, 1.5, h + 0.5), (L + .02, 2.45, h + 0.95), F["A"], 1.4)
+            line((L + .02, 0.05, h + .02), (L + .02, 2.95, h + .02), F["A"], 1.8)
+    if not ext:  # fenêtre du pignon
+        gcol = F["A"] if focus in ("windows", "newwin") else N["glass"]
+        a, b, c, d = 1.05, 1.95, 0.85, 1.55
+        poly([(L + .01, b, c), (L + .01, a, c), (L + .01, a, d), (L + .01, b, d)], N["frame"])
+        poly([(L + .02, b - .08, c + .08), (L + .02, a + .08, c + .08), (L + .02, a + .08, d - .08), (L + .02, b - .08, d - .08)], gcol)
+        line((L + .03, 1.5, c + .08), (L + .03, 1.5, d - .08), N["frame"], 1.0)
+    if focus == "floor":
+        poly([(L + .01, W, 0), (L + .01, 0, 0), (L + .01, 0, .34), (L + .01, W, .34)], F["A"])
+    if ext:  # extension accolée au pignon
+        x0, x1, y0, y1, ze = L, L + 1.6, 1.4, W, 1.35
+        poly([(x1, y1, 0), (x1, y0, 0), (x1, y0, ze), (x1, y1, ze)], F["A"])
+        poly([(x0, y0, ze), (x1, y0, ze), (x1, y1, ze), (x0, y1, ze)], F["A2"])
+        poly([(x0, y1, 0), (x1, y1, 0), (x1, y1, ze), (x0, y1, ze)], F["Al"])
+        poly([(x0 + .4, y1 + .01, .5), (x0 + 1.2, y1 + .01, .5), (x0 + 1.2, y1 + .01, 1.0), (x0 + .4, y1 + .01, 1.0)], N["glass"])
+    # façade avant
+    poly([(0, W, 0), (L, W, 0), (L, W, h), (0, W, h)], wall_f)
+    if focus == "floor":
+        poly([(0, W + .01, 0), (L, W + .01, 0), (L, W + .01, .34), (0, W + .01, .34)], F["Al"])
+
+    def win(a, b, c, d, col, mull=True):
+        poly([(a, W + .01, c), (b, W + .01, c), (b, W + .01, d), (a, W + .01, d)], N["frame"])
+        poly([(a + .08, W + .02, c + .08), (b - .08, W + .02, c + .08), (b - .08, W + .02, d - .08), (a + .08, W + .02, d - .08)], col)
+        if mull:
+            m = (a + b) / 2
+            line((m, W + .03, c + .08), (m, W + .03, d - .08), N["frame"], 1.0)
+
+    wcol = F["A"] if focus == "windows" else N["glass"]
+    if focus == "bay":
+        win(0.35, 2.55, 0.03, 1.62, F["A"], mull=False)
+        for m in (1.08, 1.82):
+            line((m, W + .03, 0.11), (m, W + .03, 1.54), N["frame"], 1.0)
+    else:
+        for a, b in ((0.45, 1.25), (1.7, 2.5)):
+            win(a, b, 0.85, 1.6, wcol)
+            if focus == "shutters":
+                for p, q in ((a - .34, a - .05), (b + .05, b + .34)):
+                    poly([(p, W + .01, .85), (q, W + .01, .85), (q, W + .01, 1.6), (p, W + .01, 1.6)], F["A"])
+                    for z in (1.1, 1.35):
+                        line((p + .05, W + .02, z), (q - .05, W + .02, z), F["A3"], .8)
+    poly([(3.0, W + .01, 0), (3.6, W + .01, 0), (3.6, W + .01, 1.4), (3.0, W + .01, 1.4)], F["A"] if focus == "door" else N["door"])
+
+    # toiture
+    roof = [(-OX, 1.5, H), (L + OX, 1.5, H), (L + OX, W + OY, HE), (-OX, W + OY, HE)]
+    on = focus in ("roof", "rampant", "roofframe")
+    rf, rl, re_ = (F["A"], F["A2"], F["A3"]) if on else (N["roofF"], N["roofL"], N["roofE"])
+    if focus == "frame":
+        poly(roof, F["Ap"])
+        for i in range(6):
+            x = -0.1 + i * (L + 0.2) / 5
+            line((x, 1.5, H), (x, W + OY, HE), F["A"], 1.6)
+        for t in (0.36, 0.7):
+            y, z = 1.5 + t * (1.5 + OY), H - t * (1.5 + OY) * RP
+            line((-OX, y, z), (L + OX, y, z), F["A2"], 1.1)
+        line((-OX, 1.5, H), (L + OX, 1.5, H), F["A3"], 2.0)
+        rl, re_ = F["A2"], F["A3"]
+    elif focus == "attic":  # toit transparent : on voit l'isolant dessous
+        poly(roof, N["roofF"], ' fill-opacity=".22"')
+        for i in range(6):
+            x = -0.1 + i * (L + 0.2) / 5
+            line((x, 1.5, H), (x, W + OY, HE), N["roofL"], .9, ' opacity=".55"')
+        line((-OX, 1.5, H), (L + OX, 1.5, H), N["roofE"], 1.2)
+        line((-OX, W + OY, HE), (L + OX, W + OY, HE), N["roofE"], 1.0)
+    else:
+        poly(roof, rf)
+        for t in (0.25, 0.5, 0.75):
+            y, z = 1.5 + t * (1.5 + OY), H - t * (1.5 + OY) * RP
+            line((-OX, y, z), (L + OX, y, z), rl, .8, ' opacity=".7"')
+        if focus == "roofframe":
+            for i in range(6):
+                x = -0.1 + i * (L + 0.2) / 5
+                line((x, 1.5, H), (x, W + OY, HE), F["Aw"], 1.0, ' opacity=".8"')
+        if focus == "rampant":  # fenêtre de toit : des pièces sous le toit
+            def rp(x, t):
+                return (x, 1.5 + t * (1.5 + OY), H - t * (1.5 + OY) * RP + .01)
+            poly([rp(1.5, .3), rp(2.3, .3), rp(2.3, .66), rp(1.5, .66)], N["frame"])
+            poly([rp(1.58, .36), rp(2.22, .36), rp(2.22, .6), rp(1.58, .6)], N["glass"])
+    poly([(-OX, W + OY, HE), (L + OX, W + OY, HE), (L + OX, W + OY, HE - TH), (-OX, W + OY, HE - TH)], re_)
+    poly([(L + OX, 1.5, H), (L + OX, W + OY, HE), (L + OX, W + OY, HE - TH), (L + OX, 1.5, H - TH)], rl)
+    poly([(L + OX, 1.5, H), (L + OX, -OY, HE), (L + OX, -OY, HE - TH), (L + OX, 1.5, H - TH)], re_)
+    line((-OX, 1.5, H + .02), (L + OX, 1.5, H + .02), re_, 1.4)
+
+    # projection et cadrage
+    def pr(p):
+        x, y, z = p
+        return ((x - y) * C30 * s, (x + y) * 0.5 * s - z * s)
+    pts = [pr(p) for _, ps, _ in shapes for p in ps]
+    minx, maxx = min(p[0] for p in pts), max(p[0] for p in pts)
+    miny, maxy = min(p[1] for p in pts), max(p[1] for p in pts)
+    pad, br = 3, 11
+    if badge:
+        miny = min(miny, -(br * 2 + 2) + miny + 10)
+    vx, vy, vw, vh = minx - pad, miny - pad, maxx - minx + 2 * pad, maxy - miny + 2 * pad
+    out = []
+    for kind, ps, attr in shapes:
+        q = [pr(p) for p in ps]
+        if kind == "p":
+            out.append(f'<path d="M{"L".join(f"{x:.1f} {y:.1f}" for x, y in q)}Z" {attr}/>')
+        else:
+            out.append(f'<path d="M{q[0][0]:.1f} {q[0][1]:.1f}L{q[1][0]:.1f} {q[1][1]:.1f}" fill="none" {attr}/>')
+    if badge:
+        cx, cy = vx + vw - br - 2, vy + br + 2
+        k = 15 / 24
+        out.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{br}" fill="#fff" stroke="#0A1424" stroke-opacity=".12"/>'
+                   f'<path d="{GLYPH[badge]}" transform="translate({cx - 7.5:.1f} {cy - 7.5:.1f}) scale({k:.4f})" fill="none" stroke="#0A1424" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>')
+    t = f"<title>{title}</title>" if title else ""
+    hide = "" if title else ' aria-hidden="true"'
+    return f'<svg viewBox="{vx:.1f} {vy:.1f} {vw:.1f} {vh:.1f}" xmlns="http://www.w3.org/2000/svg" focusable="false"{hide}>{t}{"".join(out)}</svg>'
+
+
+# ——— Échantillons de matériaux (tuiles de choix) ———
+def _rows(y0, step, n, w, col, sw=1.2, stagger=None, joint=None):
+    out = []
+    for i in range(n):
+        y = y0 + i * step
+        out.append(f'<path d="M0 {y}H{w}" stroke="{col}" stroke-width="{sw}"/>')
+        if stagger:
+            off = (i % 2) * stagger / 2
+            x = off
+            while x < w:
+                out.append(f'<path d="M{x:.1f} {y}V{y + step}" stroke="{joint or col}" stroke-width="{sw}"/>')
+                x += stagger
+    return "".join(out)
+
+
+def swatch(kind):
+    w, hh = 64, 48
+    body = {
+        "tuile-meca": lambda: '<rect width="64" height="48" fill="#B85A35"/>' + "".join(
+            f'<path d="M0 {y}' + "".join(f'q4 5 8 0' for _ in range(8)) + f'" fill="none" stroke="#8F422A" stroke-width="1.3"/>' for y in range(4, 48, 9)),
+        "tuile-plate": lambda: '<rect width="64" height="48" fill="#94503A"/>' + _rows(2, 8, 6, w, "#6F3826", 1.1, 10),
+        "ardoise": lambda: '<rect width="64" height="48" fill="#3F4754"/>' + _rows(3, 8, 6, w, "#5C6573", 1.1, 13),
+        "bac-acier": lambda: '<rect width="64" height="48" fill="#8B95A5"/>' + "".join(
+            f'<rect x="{x}" y="0" width="3" height="48" fill="#A9B2C0"/><path d="M{x + 3.5} 0V48" stroke="#6F7989" stroke-width="1"/>' for x in range(2, 64, 9)),
+        "enduit": lambda: '<rect width="64" height="48" fill="#E7DECD"/>' + "".join(
+            f'<circle cx="{(i * 37) % 61 + 2}" cy="{(i * 23) % 45 + 2}" r="{.8 + (i % 3) * .4}" fill="#CFC3AC"/>' for i in range(46)),
+        "pierre": lambda: '<rect width="64" height="48" fill="#CDBD9F"/><path d="M0 14h18l4-14 M18 14l-2 15H0 M22 0l2 13h22l3-13 M24 13l-3 17 M46 13l18 0 M46 13l2 16h16 M16 29l5 1h27 M48 29l-3 19 M21 30l-4 18 M0 29v19" fill="none" stroke="#A5937A" stroke-width="1.3"/>',
+        "brique": lambda: '<rect width="64" height="48" fill="#B4553A"/>' + _rows(0, 8, 6, w, "#E3CBBA", 1.4, 16),
+        "beton": lambda: '<rect width="64" height="48" fill="#AAB0BA"/><path d="M0 24H64 M32 0V48" stroke="#959CA8" stroke-width="1"/>' + "".join(
+            f'<circle cx="{(i * 41) % 60 + 3}" cy="{(i * 29) % 44 + 3}" r="1.1" fill="#8D94A0"/>' for i in range(12)),
+        "bois": lambda: '<rect width="64" height="48" fill="#B6844F"/>' + "".join(
+            f'<path d="M{x} 0V48" stroke="#8C6237" stroke-width="1.3"/><path d="M{x + 4} 6q2 8 0 16t0 18" fill="none" stroke="#A47442" stroke-width=".8"/>' for x in range(9, 64, 11)),
+        "pvc": lambda: '<rect width="64" height="48" fill="#EEF0F3"/><rect x="17" y="6" width="30" height="36" rx="1.5" fill="#fff" stroke="#D3D8E0"/><rect x="21" y="10" width="22" height="28" fill="#C9D7F6"/><path d="M32 10v28" stroke="#fff" stroke-width="2.4"/>',
+        "alu": lambda: '<rect width="64" height="48" fill="#EEF0F3"/><rect x="17" y="6" width="30" height="36" rx="1" fill="#5D6573"/><rect x="19.5" y="8.5" width="25" height="31" fill="#C9D7F6"/><path d="M32 8.5v31" stroke="#5D6573" stroke-width="1.6"/>',
+        "bois-fen": lambda: '<rect width="64" height="48" fill="#EEF0F3"/><rect x="17" y="6" width="30" height="36" rx="1.5" fill="#A8743F"/><rect x="21" y="10" width="22" height="28" fill="#C9D7F6"/><path d="M32 10v28" stroke="#A8743F" stroke-width="3"/>',
+        "inconnu": lambda: '<rect width="64" height="48" fill="#EEF0F3"/><path d="M27 18a5 5 0 1 1 7.5 4.3c-1.6 1-2.5 2-2.5 4 M32 33h.01" transform="translate(-6 -2.5) scale(1.2)" fill="none" stroke="#5B6475" stroke-width="2.2" stroke-linecap="round"/>',
+    }[kind]()
+    return f'<svg viewBox="0 0 {w} {hh}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid slice">{body}</svg>'
