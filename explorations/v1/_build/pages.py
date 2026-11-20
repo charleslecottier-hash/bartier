@@ -710,6 +710,12 @@ Bartier & Co est gratuit pour le propriétaire : mise en relation, visite et dev
 - [Fuite de toiture : les 5 bons réflexes]({SITE}/devis-travaux/toiture/#fuite-toiture)
 - [Combien vont coûter vos travaux : prix sourcés par métier]({SITE}/devis-travaux/#prix)
 - [Comment reconnaître un artisan sérieux : 5 points à vérifier]({SITE}/devis-travaux/#artisan-serieux)
+- [Devis travaux à Lille]({SITE}/devis-travaux/lille/) : règles locales (ravalement, secteurs protégés), aides et conseil France Rénov', par métier.
+- [Devis travaux à Rouen]({SITE}/devis-travaux/rouen/) : règles locales (ravalement, secteurs protégés), aides et conseil France Rénov', par métier.
+- [Devis travaux à Paris]({SITE}/devis-travaux/paris/) : règles locales (ravalement, secteurs protégés), aides et conseil France Rénov', par métier.
+- [Devis travaux à Lyon]({SITE}/devis-travaux/lyon/) : règles locales (ravalement, secteurs protégés), aides et conseil France Rénov', par métier.
+- [Devis travaux à Marseille]({SITE}/devis-travaux/marseille/) : règles locales (ravalement, secteurs protégés), aides et conseil France Rénov', par métier.
+- [Devis travaux à Toulouse]({SITE}/devis-travaux/toulouse/) : règles locales (ravalement, secteurs protégés), aides et conseil France Rénov', par métier.
 
 Prix indicatifs cités sur le site, d'après des sources tierces (seule une visite permet un devis fiable) :
 - Rénovation de toiture : 60 à 500 €/m², pose comprise (QuelleEnergie).

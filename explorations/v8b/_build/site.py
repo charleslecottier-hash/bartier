@@ -879,6 +879,14 @@ if NOTICES.get("particulier_consent_label"):
 if "confidentialite" in LEGAL_READY and NOTICES.get("particulier_form_notice"):
     PF.PRIVACY = NOTICES["particulier_form_notice"]
 pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH)))
+import villes as VL  # pages « Devis travaux à <ville> »
+VL_LINKS = "".join(f'<li><a class="link" href="{VL.path(c)}">Devis travaux à {c["name"]}</a></li>' for c in VL.CITIES)
+pf_body = pf_body if not VL.CITIES else pf_body.replace('<section class="sheet pf-leak is-short"', f"""<section class="sheet pf-others" id="villes" data-tone="paper">
+  <div class="grid sp-head"><h2 data-split>Devis travaux par ville</h2><p>Règles locales, aides et conseils gratuits, ville par ville.</p></div>
+  <ul class="pf-olist">{VL_LINKS}</ul>
+</section>
+
+<section class="sheet pf-leak is-short\"""", 1)
 pf_top = absolutize(BODY_OPEN)
 pf_top = pf_top.replace('class="link" href="/devis-travaux/"', 'class="link" href="/devis-travaux/" aria-current="page"', 1)
 pf_top = re.sub(r'<p class="hdr-tag">[^<]*', '<p class="hdr-tag">Vos travaux, un seul artisan près de chez vous', pf_top, count=1)
@@ -936,7 +944,13 @@ for k in PF.SLUG:
     t = next(x for x in PF.TRADES if x[0] == k)
     sub = f"{PF.PATH}{PF.SLUG[k]}/"
     body = PF.build_trade(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH), (t[1], sub)), k)
+    if VL.CITIES:
+        body = re.sub(r'(<section class="sheet pf-others".*?</ul>)', lambda m: m.group(1) + '\n  <div class="grid sp-head" style="margin-top:40px"><h2 data-split>Par ville</h2></div>\n  <ul class="pf-olist">' + VL_LINKS + '</ul>', body, count=1, flags=re.S)
     pf_write(sub, PF.PAGES[k]["title"], PF.PAGES[k]["desc"], body, PF.trade_schema(SITE, faq_ld, bc_ld, k))
+for c in VL.CITIES:
+    sub = VL.path(c)
+    body = VL.build_city(PF, PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH), (c["name"], sub)), c)
+    pf_write(sub, c["title"], c["desc"], body, VL.schema(SITE, faq_ld, bc_ld, PF, c))
 
 # ——— Qui sommes-nous ———
 # En tête de page : les deux fondateurs côte à côte (image composée depuis _build/portraits/, sans métadonnées)
