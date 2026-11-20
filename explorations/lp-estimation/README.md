@@ -53,6 +53,14 @@ La génération liste les champs obligatoires manquants (« à compléter »). U
   - Si l'envoi échoue, le visiteur voit le bouton WhatsApp, avec son message déjà rédigé.
 - **Sans `envoi`** : seul le bouton WhatsApp (ou l'appel) transmet la demande. Le visiteur doit appuyer sur « Envoyer » dans WhatsApp, et une partie des demandes se perd à ce moment-là.
 
+## Le parcours
+
+- **Sur téléphone :** le titre et le bouton vert, puis le questionnaire juste en dessous. Il occupe tout l'écran : la progression reste en haut, le bouton « Suivant » en bas, à portée du pouce.
+- **Sur ordinateur :** le titre à gauche, le questionnaire à droite, sans clic de plus.
+- **Les choix :** les grandes tuiles illustrées passent à la question suivante dès qu'on touche. Les surfaces et les quantités se règlent avec un curseur et des boutons − et +.
+- **Le code postal :** il affiche le nom de la commune grâce à l'API publique de l'État (geo.api.gouv.fr). Hors des départements du client, la page prévient le visiteur sans le bloquer.
+- **La fin :** le numéro de téléphone se met en forme pendant la saisie. L'estimation, floutée jusqu'au numéro, s'affiche ensuite comme un devis au nom de l'artisan.
+
 ## Les prix
 
 Les prix viennent de `metiers.py`. Ce sont des prix moyens publiés, pose comprise, avec leur source et leur date : QuelleEnergie, La Maison Saint-Gobain, Hellowatt et Obat, relevés le 18/11/2026.

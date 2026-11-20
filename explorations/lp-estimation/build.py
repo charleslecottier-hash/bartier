@@ -22,6 +22,7 @@ from metiers import COMMON, M
 HERE = pathlib.Path(__file__).resolve().parent
 FONTS = HERE.parent / "v8b" / "assets" / "fonts"
 ORDER = ["toiture", "facade", "fenetres", "charpente", "isolation"]
+GEO = "https://geo.api.gouv.fr"  # API publique de l'État : nom de la commune à partir du code postal
 MISS = {"travaux": "le type de travaux", "couverture": "votre couverture actuelle", "gouttieres": "la réponse sur les gouttières",
         "support": "le type de mur", "hauteur": "la hauteur de la maison", "fissures": "la réponse sur les fissures", "materiau": "le matériau",
         "vitrage": "le vitrage actuel", "volets": "la réponse sur les volets", "signes": "ce que vous avez remarqué",
@@ -31,9 +32,13 @@ SVG = {  # pictogrammes au trait (grille de 24)
     "phone": '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
     "alert": '<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z M12 9v4 M12 17h.01"/>',
     "arrow": '<path d="M5 12h14 M13 6l6 6-6 6"/>',
+    "down": '<path d="M12 5v14 M6 13l6 6 6-6"/>',
     "back": '<path d="M15 18l-6-6 6-6"/>',
     "check": '<path d="M20 6 9 17l-5-5"/>',
     "lock": '<path d="M5 11h14v10H5z M8 11V7a4 4 0 0 1 8 0v4"/>',
+    "pin": '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
+    "minus": '<path d="M5 12h14"/>',
+    "plus": '<path d="M12 5v14 M5 12h14"/>',
     "wa": '<path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2.4-1.8-2.8-2.8l.8-1-1-2z"/>',
 }
 
@@ -70,26 +75,32 @@ def need(cfg, warn):
 
 
 # ——— Questions ———
-def q_html(q, sid, accent):
+CK = f'<span class="es-ck" aria-hidden="true">{ico("check")}</span>'
+
+
+def q_html(q, sid, accent, cfg):
     n = q["name"]
     miss = a(MISS.get(n, "une réponse"))
     if q["t"] == "cards":
         opts = "".join(
-            f'<button type="button" class="es-opt" data-q="{n}" data-v="{a(o[0])}" aria-pressed="false">'
+            f'<button type="button" class="es-opt" data-q="{n}" data-v="{a(o[0])}" aria-pressed="false">{CK}'
             f'<span class="es-ico">{icons.house(o[2], o[3], accent)}</span>'
-            f'<span class="es-ot"><b>{e(o[0])}</b><span>{e(o[1])}</span></span><span class="es-ck">{ico("check")}</span></button>'
+            f'<span class="es-ot"><b>{e(o[0])}</b><span>{e(o[1])}</span></span></button>'
             for o in q["opts"])
         return f'<div class="es-opts" role="group" aria-labelledby="{sid}" data-req="{n}" data-miss="{miss}">{opts}</div>'
     if q["t"] == "tiles":
         opts = "".join(
-            f'<button type="button" class="es-tile" data-q="{n}" data-v="{a(lab)}" aria-pressed="false"><span class="es-sw">{icons.swatch(sw)}</span><span>{e(lab)}</span></button>'
+            f'<button type="button" class="es-tile" data-q="{n}" data-v="{a(lab)}" aria-pressed="false">{CK}<span class="es-sw">{icons.swatch(sw)}</span><span>{e(lab)}</span></button>'
             for lab, sw in q["opts"])
         return f'<div class="es-tiles" role="group" aria-labelledby="{sid}" data-req="{n}" data-miss="{miss}">{opts}</div>'
     if q["t"] == "range":
         units = list(q["units"]) if q.get("units") else q["unit"]
         lo = units[0] if isinstance(units, list) and q["min"] == 0 and units[0] else f'{q["min"]} {units if isinstance(units, str) else units[1 if q["min"] < 2 else 2]}'
         hi = f'{q["max"]} {units if isinstance(units, str) else units[2]}'
-        return (f'<div class="es-field"><div class="es-rh"><label for="es-{n}">{e(q["label"])}</label><output for="es-{n}" aria-live="polite"></output></div>'
+        return (f'<div class="es-field es-rangef"><label class="es-lab" for="es-{n}">{e(q["label"])}</label>'
+                f'<div class="es-stepper"><button type="button" class="es-sb" data-step="-1" aria-label="Moins">{ico("minus")}</button>'
+                f'<output for="es-{n}" aria-live="polite"></output>'
+                f'<button type="button" class="es-sb" data-step="1" aria-label="Plus">{ico("plus")}</button></div>'
                 f'<input class="es-range" type="range" id="es-{n}" data-q="{n}" min="{q["min"]}" max="{q["max"]}" step="{q["step"]}" value="{q["val"]}" data-units="{a(json.dumps(units, ensure_ascii=False))}">'
                 f'<div class="es-mm" aria-hidden="true"><span>{e(lo)}</span><span>{e(hi)}</span></div></div>')
     if q["t"] in ("seg", "chips"):
@@ -102,8 +113,12 @@ def q_html(q, sid, accent):
         return (f'<div class="es-field" data-req="{n}" data-miss="{miss}"{show}><p class="es-lab" id="{lid}">{e(q["label"])}</p>'
                 f'<div class="es-seg" role="group" aria-labelledby="{lid}">{btns}</div></div>')
     if q["t"] == "cp":
+        zone = (f'<p class="es-note es-zone" hidden>Ce code postal semble hors de la zone habituelle de {e(cfg["entreprise"])}'
+                f'{" (" + e(cfg["zone"]) + ")" if cfg.get("zone") else ""}. Vous pouvez continuer : nous vous dirons si nous pouvons intervenir.</p>'
+                if cfg.get("departements") else "")
         return (f'<div class="es-field"><label class="es-lab" for="es-cp">{e(q["label"])}</label>'
-                f'<input class="es-in es-in-cp" id="es-cp" name="code_postal" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="Ex. 69003"></div>'
+                f'<div class="es-cp-row"><input class="es-in es-in-cp" id="es-cp" name="code_postal" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="Ex. 69003">'
+                f'<span class="es-cp-hint" aria-live="polite"></span></div></div>{zone}'
                 '<p class="es-note es-tenant" hidden>Les travaux sur le bâti se décident avec le propriétaire. Faites l’estimation, puis transmettez-la-lui.</p>')
     raise ValueError(q["t"])
 
@@ -114,15 +129,17 @@ def steps_html(m, cfg, accent):
     for i, st in enumerate(allsteps):
         sid = f"es-q{i + 1}"
         auto = " data-auto" if st.get("auto") else ""
-        body = "".join(q_html(q, sid, accent) for q in st["qs"])
-        out.append(f'<div class="es-step" role="group" aria-labelledby="{sid}"{auto}><h2 class="es-q" id="{sid}">{e(st["title"])}</h2>'
+        body = "".join(q_html(q, sid, accent, cfg) for q in st["qs"])
+        if i == 1:  # rappel du projet choisi, avec son illustration
+            body = '<div class="es-ctx" hidden><span class="es-ctx-ico"></span><span><small>Votre projet</small><b class="es-ctx-t"></b></span></div>' + body
+        out.append(f'<div class="es-step" role="group" aria-labelledby="{sid}"{auto}><h2 class="es-q" id="{sid}" tabindex="-1">{e(st["title"])}</h2>'
                    f'<p class="es-sub">{e(st["sub"])}</p>{body}</div>')
-    ent = e(cfg["entreprise"])
     sid = f"es-q{len(allsteps) + 1}"
     out.append(
-        f'<div class="es-step es-contact" role="group" aria-labelledby="{sid}"><h2 class="es-q" id="{sid}" data-h>Votre estimation est prête</h2>'
-        f'<p class="es-sub" data-s></p>'
-        f'<div class="es-teaser" aria-hidden="true"><span class="es-blur">0 000 € à 0 000 €</span><span class="es-lock">{ico("lock")}Affichée juste après</span></div>'
+        f'<div class="es-step es-contact" role="group" aria-labelledby="{sid}"><h2 class="es-q" id="{sid}" tabindex="-1" data-h>Votre estimation est prête</h2>'
+        '<p class="es-sub" data-s></p><ul class="es-recap" aria-label="Vos réponses"></ul>'
+        f'<div class="es-teaser" aria-hidden="true"><p class="es-t-k">Estimation indicative</p><p class="es-blur">0 000 € à 0 000 €</p>'
+        f'<p class="es-lock">{ico("lock")}Affichée dès que vous validez</p></div>'
         '<div class="es-two">'
         '<div><label class="es-lab" for="es-prenom">Prénom</label><input class="es-in" id="es-prenom" name="prenom" autocomplete="given-name" maxlength="60"></div>'
         '<div><label class="es-lab" for="es-tel">Téléphone</label><input class="es-in" id="es-tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="06 12 34 56 78"></div>'
@@ -159,9 +176,10 @@ def cfg_js(key, m, cfg):
                     x["l"], x["u"] = fr(x["l"]), fr(x["u"])
                 opts[o[0]] = dict(lines=lines, gl=fr(o[5]) if len(o) > 5 else "", vt=fr(m.get("visite_txt", {}).get(o[0], "")))
     tel = cfg.get("telephone", "")
+    recap = [q["name"] for st in m["steps"] for q in st["qs"] if q["t"] == "tiles"]
     return dict(key=key, nom=m["nom"], ent=cfg["entreprise"], tel=tel, telh="+33" + re.sub(r"\D", "", tel)[1:] if tel else "",
                 wa=re.sub(r"\D", "", cfg.get("whatsapp", "")), envoi=cfg.get("envoi", ""), deps=cfg.get("departements", []), zone=cfg.get("zone", ""),
-                horaires=fr(cfg.get("horaires", "")), px=cfg.get("meta_pixel", ""), qty=m["qty"], opts=opts,
+                horaires=fr(cfg.get("horaires", "")), px=cfg.get("meta_pixel", ""), qty=m["qty"], opts=opts, recap=recap, geo=GEO,
                 visite=[dict(r, txt=fr(r["txt"])) for r in m.get("visite", [])], notes=[dict(r, txt=fr(r["txt"])) for r in m.get("notes", [])],
                 varie=fr(m["varie"]), aides=fr(m.get("aides", "")), details=details_keys(m), own=bool(own))
 
@@ -204,6 +222,7 @@ def legal_html(m, cfg, key):
         priv += "<p>Votre demande transite par un prestataire technique qui agit pour notre compte et ne l’utilise pas pour lui-même.</p>"
     if cfg.get("whatsapp"):
         priv += "<p>Si vous envoyez votre demande par WhatsApp, elle passe par ce service, édité par Meta.</p>"
+    priv += "<p>Le nom de votre commune s’affiche grâce à l’API publique de l’État (geo.api.gouv.fr), qui ne reçoit que le code postal.</p>"
     priv += (f"<p>Vous pouvez accéder à vos données, les rectifier, les effacer ou vous opposer à leur traitement en écrivant à {f('email')}. "
              "En cas de difficulté, vous pouvez saisir la CNIL (cnil.fr).</p>")
     priv += ("<p>Avec votre accord seulement, un cookie de Meta mesure l’efficacité de nos annonces. Sans accord, rien n’est déposé. "
@@ -216,139 +235,171 @@ def legal_html(m, cfg, key):
 CSS = """
 @font-face{font-family:"Host Grotesk";font-style:normal;font-weight:300 600;font-display:swap;src:url(/assets/fonts/host-grotesk-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:"Host Grotesk";font-style:normal;font-weight:300 600;font-display:swap;src:url(/assets/fonts/host-grotesk-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-:root{--ink:#0A1424;--ink2:#2B3444;--muted:#5B6475;--line:rgba(10,20,36,.12);--soft:#F3F5F8;--go:#15803D;--go-h:#116B33;--go-bar:#16A34A;--go-bg:#EEF8F1;--sun:#FFE15A;--r:14px;--f:"Host Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:light}
+:root{--bg:#F4F5F7;--ink:#0A1424;--ink2:#2B3444;--muted:#5B6475;--line:rgba(10,20,36,.1);--line2:rgba(10,20,36,.18);--soft:#F1F3F6;--go:#15803D;--go-h:#116B33;--go-bar:#16A34A;--go-bg:#EDF8F1;--go-ring:rgba(22,163,74,.2);--sun:#FFE15A;--ease:cubic-bezier(.2,.8,.2,1);--f:"Host Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:light}
 *{box-sizing:border-box;margin:0}
 html{-webkit-text-size-adjust:100%}
-body{min-height:100vh;display:flex;flex-direction:column;font:400 16px/1.5 var(--f);color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
-main{flex:1}
+body{min-height:100vh;display:flex;flex-direction:column;font:400 16px/1.5 var(--f);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
 a{color:inherit}
-button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 [hidden]{display:none!important}
 svg{display:block}
-.es-hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:1120px;margin:0 auto;padding:12px 16px}
+.es-hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:1180px;margin:0 auto;padding:12px 16px}
 .es-logo{display:flex;align-items:center;min-height:44px}
 .es-logo img{display:block;height:36px;width:auto;max-width:180px;object-fit:contain}
 .es-name{font-weight:600;font-size:1.06rem;letter-spacing:-.01em;line-height:1.2}
-.es-call{display:inline-flex;align-items:center;gap:8px;flex:none;min-height:44px;padding:0 16px;border-radius:999px;background:var(--go);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;font-variant-numeric:tabular-nums;transition:background .2s}
+.es-call{display:inline-flex;align-items:center;gap:8px;flex:none;min-height:44px;padding:0 16px;border-radius:999px;background:var(--go);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;font-variant-numeric:tabular-nums;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 6px 16px -10px rgba(10,20,36,.6);transition:background .2s}
 .es-call:hover{background:var(--go-h)}
 .es-call svg{width:18px;height:18px}
 .es-call .es-short{display:none}
 @media (max-width:380px){.es-call .es-num{display:none}.es-call .es-short{display:inline}}
-.es-hero{display:grid;gap:32px;width:100%;max-width:1120px;margin:0 auto;padding:20px 16px 48px}
-.es-kick{margin-bottom:12px;font-size:.9rem;color:var(--muted)}
+.es-main{flex:1;display:grid;gap:28px;width:100%;max-width:1180px;margin:0 auto;padding:4px 16px 48px}
+.es-kick{display:flex;align-items:center;gap:6px;margin-bottom:14px;font-size:.9rem;color:var(--ink2)}
+.es-kick svg{width:16px;height:16px;color:var(--muted)}
 .es-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--sun);font-size:.86rem;font-weight:500;line-height:1.3}
-.es-pill svg{width:16px;height:16px;flex:none}
-.es-h{margin-top:16px;font-weight:600;font-size:clamp(2.3rem,10.4vw,4.4rem);line-height:1.08;letter-spacing:-.035em;text-wrap:balance}
-.es-h mark{padding:0 .14em;border-radius:.1em;background:var(--ink);color:#fff;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.es-h em{font-style:italic;text-decoration:underline;text-decoration-color:var(--go-bar);text-decoration-thickness:.09em;text-underline-offset:.12em}
-.es-lead{margin-top:16px;max-width:38ch;font-size:1.08rem;line-height:1.5;color:var(--ink2)}
-.es-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;max-width:440px;min-height:72px;margin-top:24px;padding:12px 20px;border:0;border-radius:16px;background:var(--go);color:#fff;box-shadow:0 14px 30px -16px rgba(10,20,36,.5);transition:background .2s,transform .2s}
+.es-pill svg{flex:none;width:16px;height:16px}
+.es-h{margin-top:18px;font-weight:600;font-size:clamp(2.45rem,10.6vw,4.7rem);line-height:1.04;letter-spacing:-.04em}
+.es-h mark{display:inline-block;margin:.05em 0;padding:.01em .15em .05em;border-radius:.11em;background:var(--ink);color:#fff}
+.es-h em{font-style:italic;text-decoration:underline;text-decoration-color:var(--go-bar);text-decoration-thickness:.085em;text-underline-offset:.1em}
+.es-lead{margin-top:18px;max-width:40ch;font-size:1.06rem;line-height:1.55;color:var(--ink2)}
+.es-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;min-height:72px;margin-top:24px;padding:12px 20px;border-radius:18px;background:var(--go);color:#fff;text-decoration:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 16px 32px -18px rgba(10,20,36,.6);transition:background .2s,transform .2s}
 .es-cta:hover{background:var(--go-h)}
 .es-cta:active{transform:scale(.985)}
 .es-cta b{display:inline-flex;align-items:center;gap:8px;font-size:1.22rem;font-weight:600}
 .es-cta b svg{width:22px;height:22px}
 .es-cta small{font-size:.86rem;opacity:.9}
-.es-facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;padding:0;list-style:none;font-size:.9rem;color:var(--ink2)}
+.es-facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;padding:0;list-style:none;font-size:.9rem;color:var(--ink2)}
 .es-facts li{display:inline-flex;align-items:center;gap:6px}
 .es-facts svg{width:16px;height:16px;color:var(--go)}
-.es-art{max-width:340px;padding:16px 20px;border-radius:24px;background:var(--soft)}
-.es-art svg{width:100%;height:auto}
-@media (min-width:900px){.es-hero{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center;gap:56px;padding:56px 32px 88px}.es-art{max-width:none;padding:24px;border-radius:28px}}
-.es-wrap{width:100%;max-width:760px;margin:0 auto;padding:8px 16px 48px;display:none}
-.is-quiz .es-wrap{display:block}
-.is-quiz .es-hero{display:none}
-.es-card{padding:20px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 24px 60px -36px rgba(10,20,36,.35)}
-@media (min-width:760px){.es-card{padding:32px}.es-wrap{padding-top:24px}}
-.es-top{display:flex;justify-content:space-between;align-items:baseline;font-size:.86rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.es-card{position:relative;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:0 1px 2px rgba(10,20,36,.04),0 30px 70px -44px rgba(10,20,36,.45);scroll-margin-top:0}
+.es-head{position:sticky;top:0;z-index:4;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;row-gap:10px;padding:16px 20px 14px;border-radius:24px 24px 0 0;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:.86rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .es-pct{font-weight:600;color:var(--go)}
-.es-bar{height:8px;margin-top:8px;overflow:hidden;border-radius:8px;background:var(--soft)}
-.es-bar i{display:block;width:0;height:100%;border-radius:inherit;background:var(--go-bar);transition:width .45s cubic-bezier(.2,.7,.2,1)}
-.es-step{display:none;margin-top:24px}
-.es-step.is-on{display:block;animation:es-in .35s cubic-bezier(.2,.7,.2,1)}
-@keyframes es-in{from{opacity:0;transform:translateY(8px)}}
-.es-q{font-size:clamp(1.45rem,5.6vw,1.95rem);font-weight:600;line-height:1.15;letter-spacing:-.025em;text-wrap:balance}
+.es-bar{flex-basis:100%;height:6px;overflow:hidden;border-radius:6px;background:#E6E9EE}
+.es-bar i{display:block;width:0;height:100%;border-radius:inherit;background:var(--go-bar);transition:width .5s var(--ease)}
+.es-body{padding:4px 20px 24px}
+@media (max-width:959px){.es-card{display:flex;flex-direction:column;min-height:100vh;min-height:100svh}.es-body{flex:1}}
+.es-step{display:none}
+.es-step.is-on{display:block}
+.es-fwd{animation:es-fwd .4s var(--ease)}
+.es-bwd{animation:es-bwd .4s var(--ease)}
+@keyframes es-fwd{from{opacity:0;transform:translateX(28px)}}
+@keyframes es-bwd{from{opacity:0;transform:translateX(-28px)}}
+.es-q{font-size:clamp(1.5rem,6.2vw,1.9rem);font-weight:600;line-height:1.14;letter-spacing:-.03em;text-wrap:balance;outline:none}
 .es-sub{margin-top:6px;font-size:.98rem;color:var(--muted)}
-.es-opts{display:grid;gap:10px;margin-top:20px}
-@media (min-width:640px){.es-opts{grid-template-columns:1fr 1fr}}
-.es-opt{position:relative;display:grid;grid-template-columns:72px minmax(0,1fr);align-items:center;gap:14px;min-height:88px;padding:8px 44px 8px 8px;border:1.5px solid var(--line);border-radius:var(--r);background:#fff;text-align:left;transition:border-color .15s,background .15s}
-.es-opt:hover,.es-tile:hover,.es-chip:hover{border-color:rgba(10,20,36,.32)}
-.es-ico{display:grid;place-items:center;width:72px;height:68px;border-radius:10px;background:var(--soft)}
-.es-ico svg{width:64px;height:auto}
-.es-ot b{display:block;font-size:1rem;font-weight:600;line-height:1.25}
-.es-ot span{display:block;margin-top:2px;font-size:.88rem;line-height:1.35;color:var(--muted)}
-.es-ck{position:absolute;top:50%;right:12px;display:grid;place-items:center;width:22px;height:22px;margin-top:-11px;border:1.5px solid var(--line);border-radius:50%;color:#fff}
+.es-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.es-opt{position:relative;display:flex;flex-direction:column;overflow:hidden;padding:0;border:1.5px solid var(--line);border-radius:18px;background:#fff;text-align:left;transition:border-color .15s,box-shadow .15s,transform .15s}
+.es-opt:active,.es-tile:active,.es-chip:active,.es-sb:active{transform:scale(.97)}
+.es-ico{display:grid;place-items:center;aspect-ratio:4/3;background:linear-gradient(180deg,#F8F9FB,#EDF0F4);transition:background .2s}
+.es-ico svg{width:88%;height:auto}
+.es-ot{display:block;padding:10px 12px 13px}
+.es-ot b{display:block;font-size:.98rem;font-weight:600;line-height:1.2;letter-spacing:-.005em}
+.es-ot span{display:block;margin-top:3px;font-size:.84rem;line-height:1.35;color:var(--muted)}
+.es-opt:last-child:nth-child(odd){grid-column:1/-1;flex-direction:row;align-items:center}
+.es-opt:last-child:nth-child(odd) .es-ico{flex:0 0 46%;align-self:stretch}
+.es-ck{position:absolute;top:8px;left:8px;z-index:1;display:grid;place-items:center;width:24px;height:24px;border:1.5px solid var(--line2);border-radius:50%;background:rgba(255,255,255,.9);color:#fff}
 .es-ck svg{width:14px;height:14px;opacity:0}
-.es-opt[aria-pressed="true"],.es-tile[aria-pressed="true"],.es-chip[aria-pressed="true"]{border-color:var(--go);background:var(--go-bg)}
-.es-opt[aria-pressed="true"] .es-ck{border-color:var(--go);background:var(--go)}
-.es-opt[aria-pressed="true"] .es-ck svg{opacity:1}
-.es-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:20px}
-.es-tile{display:flex;flex-direction:column;gap:8px;padding:8px 8px 10px;border:1.5px solid var(--line);border-radius:var(--r);background:#fff;font-size:.9rem;font-weight:500;line-height:1.25;text-align:center}
-.es-sw{display:block;aspect-ratio:4/3;overflow:hidden;border-radius:8px}
+.es-opt:hover,.es-tile:hover,.es-chip:hover,.es-sb:hover{border-color:var(--line2)}
+.es-opt[aria-pressed="true"],.es-tile[aria-pressed="true"]{border-color:var(--go);box-shadow:0 0 0 3px var(--go-ring)}
+.es-opt[aria-pressed="true"] .es-ico{background:linear-gradient(180deg,#F2FAF5,#E3F3E9)}
+[aria-pressed="true"]>.es-ck{border-color:var(--go);background:var(--go);animation:es-pop .35s var(--ease)}
+[aria-pressed="true"]>.es-ck svg{opacity:1}
+@keyframes es-pop{50%{transform:scale(1.22)}}
+.es-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+.es-tile{position:relative;display:flex;flex-direction:column;gap:8px;padding:6px 6px 10px;border:1.5px solid var(--line);border-radius:16px;background:#fff;font-size:.88rem;font-weight:500;line-height:1.25;text-align:center;transition:border-color .15s,box-shadow .15s,transform .15s}
+.es-tile .es-ck{top:10px;left:10px}
+.es-sw{display:block;aspect-ratio:4/3;overflow:hidden;border-radius:11px;box-shadow:inset 0 0 0 1px rgba(10,20,36,.06)}
 .es-sw svg{width:100%;height:100%}
-.es-field{margin-top:24px}
+.es-field{margin-top:22px}
 .es-lab{display:block;margin-bottom:10px;font-size:1rem;font-weight:600}
 .es-seg{display:flex;flex-wrap:wrap;gap:8px}
-.es-chip{min-height:48px;padding:0 16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:.95rem;font-weight:500}
-.es-chip[aria-pressed="true"]{color:#0B4D24}
-.es-rh{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.es-rh label{font-weight:600}
-.es-rh output{font-size:1.9rem;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
-.es-range{-webkit-appearance:none;appearance:none;width:100%;height:40px;margin:4px 0 0;background:transparent;cursor:pointer;--p:50%}
-.es-range::-webkit-slider-runnable-track{height:8px;border-radius:8px;background:linear-gradient(to right,var(--go-bar) var(--p),#E3E7ED var(--p))}
-.es-range::-moz-range-track{height:8px;border-radius:8px;background:#E3E7ED}
+.es-chip{flex:1 1 auto;min-height:52px;padding:0 14px;border:1.5px solid var(--line);border-radius:14px;background:#fff;font-size:.95rem;font-weight:500;text-align:center;transition:border-color .15s,box-shadow .15s,background .15s,transform .15s}
+.es-chip[aria-pressed="true"]{border-color:var(--go);background:var(--go-bg);color:#0B4D24;box-shadow:0 0 0 3px var(--go-ring)}
+.es-ctx{display:flex;align-items:center;gap:14px;margin-top:18px;padding:8px 14px 8px 8px;border:1px solid var(--line);border-radius:18px}
+.es-ctx-ico{flex:none;display:grid;place-items:center;width:112px;height:84px;border-radius:12px;background:linear-gradient(180deg,#F8F9FB,#EDF0F4)}
+.es-ctx-ico svg{width:100px;height:auto}
+.es-ctx small{display:block;font-size:.82rem;color:var(--muted)}
+.es-ctx b{display:block;font-weight:600;line-height:1.25}
+.es-rangef{margin-top:20px;padding:18px 16px 12px;border-radius:18px;background:var(--soft)}
+.es-rangef .es-lab{margin:0;text-align:center;font-weight:500;color:var(--ink2)}
+.es-stepper{display:grid;grid-template-columns:52px minmax(0,1fr) 52px;align-items:center;gap:8px;margin-top:6px}
+.es-stepper output{font-size:clamp(2.1rem,9vw,2.6rem);font-weight:600;line-height:1.1;letter-spacing:-.04em;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.es-sb{display:grid;place-items:center;width:52px;height:52px;border:1.5px solid var(--line);border-radius:50%;background:#fff;transition:border-color .15s,transform .15s}
+.es-sb svg{width:22px;height:22px}
+.es-range{-webkit-appearance:none;appearance:none;width:100%;height:44px;margin:8px 0 0;background:transparent;cursor:pointer;--p:50%}
+.es-range::-webkit-slider-runnable-track{height:8px;border-radius:8px;background:linear-gradient(to right,var(--go-bar) var(--p),#DCE0E6 var(--p))}
+.es-range::-moz-range-track{height:8px;border-radius:8px;background:#DCE0E6}
 .es-range::-moz-range-progress{height:8px;border-radius:8px;background:var(--go-bar)}
-.es-range::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;margin-top:-11px;border:4px solid var(--go);border-radius:50%;background:#fff;box-shadow:0 4px 10px -2px rgba(10,20,36,.3)}
-.es-range::-moz-range-thumb{width:22px;height:22px;border:4px solid var(--go);border-radius:50%;background:#fff}
-.es-mm{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted)}
-.es-in{width:100%;height:54px;padding:0 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font:inherit;font-size:1.06rem}
-.es-in:focus{border-color:var(--go);outline:none;box-shadow:0 0 0 3px rgba(22,163,74,.2)}
+.es-range::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;margin-top:-12px;border:4px solid var(--go);border-radius:50%;background:#fff;box-shadow:0 4px 12px -2px rgba(10,20,36,.35)}
+.es-range::-moz-range-thumb{width:24px;height:24px;border:4px solid var(--go);border-radius:50%;background:#fff}
+.es-mm{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted)}
+.es-in{width:100%;height:56px;padding:0 16px;border:1.5px solid var(--line2);border-radius:14px;background:#fff;font:inherit;font-size:1.08rem;transition:border-color .15s,box-shadow .15s}
+.es-in:focus{border-color:var(--go);outline:none;box-shadow:0 0 0 3px var(--go-ring)}
 .es-in[aria-invalid="true"]{border-color:#B42318}
-.es-in-cp{max-width:200px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.es-cp-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.es-in-cp{width:170px;font-size:1.25rem;font-weight:500;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.es-cp-hint{font-size:.95rem;font-weight:500;color:var(--muted)}
+.es-cp-hint.is-ok{color:var(--go)}
+.es-cp-hint.is-ok::before{content:"✓ "}
+.es-cp-hint.is-warn{color:#B45309}
 .es-two{display:grid;gap:14px;margin-top:20px}
 @media (min-width:640px){.es-two{grid-template-columns:1fr 1fr}}
 .es-consent{display:flex;align-items:flex-start;gap:10px;margin-top:16px;font-size:.9rem;line-height:1.45;color:var(--ink2);cursor:pointer}
-.es-consent input{flex:none;width:20px;height:20px;margin-top:1px;accent-color:var(--go)}
+.es-consent input{flex:none;width:22px;height:22px;margin-top:0;accent-color:var(--go)}
 .es-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .es-priv{display:flex;gap:8px;margin-top:12px;font-size:.84rem;line-height:1.45;color:var(--muted)}
 .es-priv svg{flex:none;width:16px;height:16px;margin-top:2px}
-.es-note{margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--soft);font-size:.92rem;line-height:1.45;color:var(--ink2)}
-.es-teaser{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin-top:18px;padding:16px 18px;border-radius:16px;background:var(--soft)}
-.es-blur{font-size:1.6rem;font-weight:600;letter-spacing:-.02em;filter:blur(8px);-webkit-user-select:none;user-select:none}
-.es-lock{display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:500;color:var(--ink2)}
+.es-note{margin-top:16px;padding:12px 14px;border-radius:14px;background:var(--soft);font-size:.92rem;line-height:1.45;color:var(--ink2)}
+.es-zone{background:#FFF7E0}
+.es-recap{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding:0;list-style:none}
+.es-recap li{padding:5px 11px;border-radius:999px;background:var(--soft);font-size:.82rem;color:var(--ink2)}
+.es-teaser{margin-top:16px;padding:16px 18px;border:1.5px dashed var(--line2);border-radius:18px;background:linear-gradient(180deg,#FBFCFD,#F3F5F8)}
+.es-t-k{font-size:.8rem;color:var(--muted)}
+.es-blur{margin-top:2px;font-size:1.7rem;font-weight:600;letter-spacing:-.03em;filter:blur(9px);-webkit-user-select:none;user-select:none}
+.es-lock{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:.86rem;font-weight:500;color:var(--ink2)}
 .es-lock svg{width:16px;height:16px}
 .es-err{margin-top:16px;font-size:.94rem;color:#B42318}
-.es-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:28px;padding-top:16px;border-top:1px solid var(--line)}
-.es-prev{display:inline-flex;align-items:center;gap:4px;min-height:48px;padding:0 8px 0 0;border:0;background:none;font-weight:500;color:var(--muted)}
-.es-prev svg{width:20px;height:20px}
-.es-next{display:inline-flex;align-items:center;gap:8px;min-height:54px;padding:0 22px;border:0;border-radius:14px;background:var(--go);color:#fff;font-size:1.05rem;font-weight:600;transition:background .2s}
+.es-nav{position:sticky;bottom:0;z-index:4;display:flex;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--line);border-radius:0 0 24px 24px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.es-back{display:grid;place-items:center;flex:none;width:56px;height:56px;border:1.5px solid var(--line2);border-radius:16px;background:#fff;color:var(--ink2)}
+.es-back svg{width:22px;height:22px}
+.es-next{display:inline-flex;flex:1;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 20px;border:0;border-radius:16px;background:var(--go);color:#fff;font-size:1.06rem;font-weight:600;box-shadow:inset 0 1px 0 rgba(255,255,255,.18);transition:background .2s,opacity .2s}
 .es-next:hover{background:var(--go-h)}
-.es-next svg{width:20px;height:20px}
+.es-next.is-off{opacity:.42}
 .es-next span{white-space:nowrap}
-@media (max-width:420px){.es-prev{width:48px;justify-content:center;padding:0;border:1.5px solid var(--line);border-radius:12px}.es-prev span{display:none}.es-next{flex:1;justify-content:center}}
-.es-res-k{font-size:.92rem;color:var(--muted)}
-.es-amount{margin-top:4px;font-size:clamp(2.1rem,9vw,3.1rem);font-weight:600;line-height:1.05;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.es-next svg{width:20px;height:20px}
+.es-res{padding-top:6px}
+.es-rcpt-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:1.5px dashed var(--line2);font-size:.85rem;color:var(--muted)}
+.es-rcpt-ent{font-weight:600;color:var(--ink)}
+.es-rid{display:flex;align-items:center;gap:14px;margin-top:16px}
+.es-rid-ico{flex:none;display:grid;place-items:center;width:76px;height:64px;border-radius:14px;background:linear-gradient(180deg,#F8F9FB,#EDF0F4)}
+.es-rid-ico svg{width:68px;height:auto}
+.es-res-k{font-size:.88rem;color:var(--muted)}
+.es-rid-t{font-weight:600;line-height:1.25}
+.es-amount{margin-top:14px!important}
+.es-amount{margin-top:2px;font-size:clamp(2.2rem,9.4vw,3.2rem);font-weight:600;line-height:1.05;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
 .es-amount-f{margin-top:8px;font-size:.94rem;color:var(--ink2)}
-.es-lines{margin-top:20px;padding:0;list-style:none;border-top:1px solid var(--line)}
-.es-lines li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.es-lines{margin-top:18px;padding:0;list-style:none;border-top:1.5px dashed var(--line2)}
+.es-lines li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:12px 0;border-bottom:1.5px dashed var(--line2);font-size:.95rem}
 .es-val{font-weight:600;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .es-calc{grid-column:1/-1;font-size:.85rem;color:var(--muted)}
-.es-h3{margin-top:24px;font-size:1rem;font-weight:600}
+.es-calc a{color:var(--muted)}
+.es-h3{margin-top:22px;font-size:1rem;font-weight:600}
 .es-list{margin-top:6px;padding-left:20px;font-size:.95rem;color:var(--ink2)}
 .es-p{margin-top:6px;font-size:.95rem;color:var(--ink2)}
-.es-box{margin-top:28px;padding:20px;border-radius:16px;background:var(--ink);color:#fff}
+.es-box{margin-top:26px;padding:20px;border-radius:20px;background:var(--ink);color:#fff}
 .es-box-k{font-size:.86rem;color:#A9B4C6}
-.es-box-h{margin-top:4px;font-size:1.3rem;font-weight:600;line-height:1.2;letter-spacing:-.015em}
+.es-box-h{margin-top:4px;font-size:1.3rem;font-weight:600;line-height:1.2;letter-spacing:-.02em}
 .es-box-p{margin-top:6px;font-size:.95rem;color:#D5DBE5}
 .es-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.es-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 18px;border-radius:12px;font-weight:600;text-decoration:none}
+.es-btn{display:inline-flex;flex:1 1 auto;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 18px;border-radius:14px;font-weight:600;text-decoration:none}
 .es-btn svg{width:20px;height:20px}
 .es-btn-wa{background:#25D366;color:#0A1424}
 .es-btn-call{background:#fff;color:var(--ink)}
 .es-box[data-state="sending"] .es-s-sent,.es-box[data-state="sending"] .es-s-manual,.es-box[data-state="sent"] .es-s-sending,.es-box[data-state="sent"] .es-s-manual,.es-box[data-state="manual"] .es-s-sending,.es-box[data-state="manual"] .es-s-sent{display:none}
-.es-again{min-height:44px;margin-top:12px;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.es-again{min-height:44px;margin-top:12px;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+@media (min-width:640px){.es-head{padding:20px 28px 16px}.es-body{padding:8px 28px 28px}.es-nav{padding:14px 28px 16px}.es-opts{gap:12px}}
+@media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{position:sticky;top:36px;padding-top:36px}.es-cta{display:none}.es-lead{font-size:1.12rem}}
 .es-ftr{padding:28px 16px 40px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted);text-align:center}
-.es-by{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.es-by{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px}
 .es-by img{height:28px;width:auto;max-width:150px;object-fit:contain}
 .es-by b{color:var(--ink);font-weight:600}
 .es-ftr>p+p{margin-top:8px}
@@ -369,31 +420,40 @@ svg{display:block}
 """
 
 JS = r"""(function(){
-var C=__CFG__,d=document;
+var C=__CFG__,ICO=__ICO__,d=document,RM=!!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches);
 var f=d.getElementById("es-form");if(!f)return;
-var steps=[].slice.call(f.querySelectorAll(".es-step")),N=steps.length,cur=-1,A={},done=false;
-var bar=f.querySelector(".es-bar i"),pct=f.querySelector(".es-pct"),num=f.querySelector(".es-num-step"),prev=f.querySelector(".es-prev"),next=f.querySelector(".es-next"),nextL=next.querySelector("span"),err=f.querySelector(".es-err"),res=f.querySelector(".es-res");
+var steps=[].slice.call(f.querySelectorAll(".es-step")),N=steps.length,cur=0,A={},done=false,started=false;
+var bar=f.querySelector(".es-bar i"),pct=f.querySelector(".es-pct"),num=f.querySelector(".es-num-step"),back=f.querySelector(".es-back"),next=f.querySelector(".es-next"),nextL=next.querySelector("span"),nav=f.querySelector(".es-nav"),head=f.querySelector(".es-head"),err=f.querySelector(".es-err"),res=f.querySelector(".es-res");
 var qs=new URLSearchParams(location.search),track={};["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid"].forEach(function(k){if(qs.get(k))track[k]=qs.get(k).slice(0,200)});
 function each(l,fn){[].forEach.call(l,fn)}
 function dl(ev,p){var o={event:ev,metier:C.key};for(var k in p)o[k]=p[k];(window.dataLayer=window.dataLayer||[]).push(o)}
+function begin(){if(!started){started=true;dl("estimation_debut",{})}}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function nb(n){return Math.round(n).toLocaleString("fr-FR").replace(/\s/g,"\u202f")}
 function eur(n){return nb(n)+"\u00a0€"}
 function lab(v,u){if(Array.isArray(u)){if(v===0&&u[0])return u[0];return v+"\u00a0"+(v>1?u[2]:u[1])}return v+"\u00a0"+u}
 function val(k){var x=f.querySelector("[name="+k+"]");return x?(x.value||"").trim():""}
-each(f.querySelectorAll(".es-range"),function(r){var o=f.querySelector('output[for="'+r.id+'"]'),u=JSON.parse(r.getAttribute("data-units"));
+function toCard(){var y=Math.round(f.getBoundingClientRect().top+scrollY);if(Math.abs(scrollY-y)>4&&(innerWidth<960||scrollY>y))scrollTo({top:y,behavior:RM?"auto":"smooth"})}
+/* curseurs et boutons − / + */
+each(f.querySelectorAll(".es-range"),function(r){var box=r.closest(".es-field"),o=box.querySelector("output"),u=JSON.parse(r.getAttribute("data-units"));
   function up(){var v=+r.value;A[r.getAttribute("data-q")]=v;o.textContent=lab(v,u);r.style.setProperty("--p",(100*(v-r.min)/(r.max-r.min))+"%")}
-  r.addEventListener("input",up);up()});
+  r.addEventListener("input",function(){up();begin()});
+  each(box.querySelectorAll("[data-step]"),function(b){b.addEventListener("click",function(){r.value=Math.min(+r.max,Math.max(+r.min,+r.value+(+r.step)*(+b.getAttribute("data-step"))));up();begin()})});
+  up()});
+function missing(i){var bad=[];each(steps[i].querySelectorAll("[data-req]"),function(x){if(x.hidden)return;var v=A[x.getAttribute("data-req")];if(v===undefined||v===""||(Array.isArray(v)&&!v.length))bad.push(x.getAttribute("data-miss"))});return bad}
 function refresh(){each(f.querySelectorAll("[data-show]"),function(x){var s=JSON.parse(x.getAttribute("data-show"));x.hidden=s[1].indexOf(A[s[0]])<0});
-  var t=f.querySelector(".es-tenant");if(t)t.hidden=A.statut!=="Locataire"}
+  var t=f.querySelector(".es-tenant");if(t)t.hidden=A.statut!=="Locataire";
+  next.classList.toggle("is-off",missing(cur).length>0)}
+/* choix */
 f.addEventListener("click",function(ev){var b=ev.target.closest("button[data-q]");if(!b||!f.contains(b))return;
   var k=b.getAttribute("data-q"),g=f.querySelectorAll('button[data-q="'+k+'"]'),multi=b.hasAttribute("data-multi");
   if(multi){var on=b.getAttribute("aria-pressed")!=="true",ex=b.hasAttribute("data-excl");
     each(g,function(x){if(x===b)x.setAttribute("aria-pressed",on?"true":"false");else if(on&&(ex||x.hasAttribute("data-excl")))x.setAttribute("aria-pressed","false")});
     var sel=[].filter.call(g,function(x){return x.getAttribute("aria-pressed")==="true"}).map(function(x){return x.getAttribute("data-v")});if(sel.length)A[k]=sel;else delete A[k]}
   else{each(g,function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});A[k]=b.getAttribute("data-v")}
-  err.hidden=true;refresh();
-  var st=steps[cur];if(st&&st.hasAttribute("data-auto")&&!multi)setTimeout(function(){if(steps[cur]===st)go(1)},260)});
+  begin();err.hidden=true;refresh();
+  var st=steps[cur];if(st&&st.hasAttribute("data-auto")&&!multi)setTimeout(function(){if(steps[cur]===st)go(1)},320)});
+/* calcul */
 function rows(){var o=C.opts[A.travaux];if(!o)return[];var ac=A.acces,out=[],g={};
   o.lines.forEach(function(l){if(l["if"]&&ac&&ac!=="Je ne sais pas"&&ac!==l["if"][1])return;
     var c={l:l.l,lo:l.lo,hi:l.hi,u:l.u,src:l.src,approx:l.approx};
@@ -404,26 +464,42 @@ function ql(){var n=qn();return n+"\u00a0"+(n>1?C.qty.many:C.qty.one)}
 function rnd(x,up){var s=x<1000?10:100;return(up?Math.ceil(x/s):Math.floor(x/s))*s}
 function estimate(){var R=rows(),n=qn(),lo=0,hi=0;R.forEach(function(r){r.tlo=r.lo*n;r.thi=r.hi*n;lo+=r.tlo;hi+=r.thi});
   var fx=lo===hi;return{rows:R,fixed:fx,lo:fx?Math.round(lo/100)*100:rnd(lo,false),hi:fx?Math.round(hi/100)*100:rnd(hi,true)}}
-function amount(E){return E.fixed?"environ "+eur(E.lo):eur(E.lo)+" à "+eur(E.hi)}
+function amount(E,a,b){a=a===undefined?E.lo:a;b=b===undefined?E.hi:b;return E.fixed?"environ "+eur(a):eur(a)+" à "+eur(b)}
 function rowAmount(r){return r.lo===r.hi?"environ "+eur(Math.round(r.tlo/100)*100):eur(rnd(r.tlo,false))+" à "+eur(rnd(r.thi,true))}
 function rowUnit(r){return(r.lo===r.hi?(r.approx?"environ ":"")+nb(r.lo):nb(r.lo)+" à "+nb(r.hi))+"\u00a0"+r.u}
-function outZone(){if(!C.deps.length||!A.code_postal)return false;var cp=A.code_postal,dep=cp.slice(0,2)==="97"?cp.slice(0,3):cp.slice(0,2);if(dep==="20")dep=+cp<20200?"2A":"2B";return C.deps.indexOf(dep)<0&&C.deps.indexOf(cp.slice(0,2))<0}
-function prep(){var st=steps[N-1],h=st.querySelector("[data-h]"),s=st.querySelector("[data-s]"),t=st.querySelector(".es-teaser");
+function dep(cp){var x=cp.slice(0,2)==="97"?cp.slice(0,3):cp.slice(0,2);if(x==="20")x=+cp<20200?"2A":"2B";return x}
+function outZone(){return!!(C.deps.length&&A.code_postal&&C.deps.indexOf(dep(A.code_postal))<0&&C.deps.indexOf(A.code_postal.slice(0,2))<0)}
+function place(){return A.code_postal?A.code_postal+(A.commune?" "+A.commune.split(",")[0]:""):""}
+/* code postal : nom de la commune, zone d'intervention */
+var cpIn=f.querySelector("#es-cp"),cpHint=f.querySelector(".es-cp-hint"),zoneN=f.querySelector(".es-zone");
+if(cpIn)cpIn.addEventListener("input",function(){var v=cpIn.value.replace(/\D/g,"").slice(0,5);if(cpIn.value!==v)cpIn.value=v;A.commune="";cpHint.textContent="";cpHint.className="es-cp-hint";
+  if(v.length<5){if(zoneN)zoneN.hidden=true;return}
+  A.code_postal=v;if(zoneN)zoneN.hidden=!outZone();
+  if(window.fetch)fetch(C.geo+"/communes?codePostal="+v+"&fields=nom&format=json").then(function(r){return r.ok?r.json():null}).then(function(l){if(!l||cpIn.value!==v)return;
+    if(l.length){var n=l.map(function(x){return x.nom});A.commune=n.slice(0,3).join(", ");cpHint.textContent=n.slice(0,2).join(", ")+(n.length>2?"…":"");cpHint.className="es-cp-hint is-ok"}
+    else{cpHint.textContent="Code postal introuvable, vérifiez-le";cpHint.className="es-cp-hint is-warn"}}).catch(function(){})});
+/* téléphone : 06 12 34 56 78 */
+var telIn=f.querySelector("#es-tel");if(telIn)telIn.addEventListener("input",function(){var g=telIn.value.replace(/\D/g,"");if(/^0/.test(g)&&g.length<=10){var fm=g.replace(/(\d{2})(?=\d)/g,"$1 ");if(fm!==telIn.value)telIn.value=fm}});
+function prep(){var st=steps[N-1],h=st.querySelector("[data-h]"),s=st.querySelector("[data-s]"),t=st.querySelector(".es-teaser"),rc=st.querySelector(".es-recap");
+  var items=[A.travaux,ql()];C.recap.forEach(function(k){var v=A[k];if(v&&v!=="Je ne sais pas")items.push(v)});if(place())items.push(place());
+  rc.innerHTML=items.filter(Boolean).map(function(x){return"<li>"+esc(x)+"</li>"}).join("");
   if(rows().length){h.textContent="Votre estimation est prête";s.textContent="Indiquez votre prénom et votre numéro\u00a0: elle s’affiche aussitôt, et "+C.ent+" vous rappelle pour la confirmer.";t.hidden=false;t.querySelector(".es-blur").textContent=amount(estimate())}
   else{h.textContent="Votre demande est prête";s.textContent="Ce type de travaux se chiffre sur place. Indiquez votre prénom et votre numéro\u00a0: "+C.ent+" vous rappelle pour fixer une visite.";t.hidden=true}}
-function show(i,push){cur=i;each(steps,function(s,j){s.classList.toggle("is-on",j===i)});
+/* étapes */
+function show(i,dir,push){cur=i;each(steps,function(s,j){s.classList.toggle("is-on",j===i);s.classList.remove("es-fwd","es-bwd")});
+  var st=steps[i];if(dir&&!RM){void st.offsetWidth;st.classList.add(dir>0?"es-fwd":"es-bwd")}
   var p=Math.round(100*(i+1)/(N+1));bar.style.width=p+"%";pct.textContent=p+"\u00a0%";num.textContent="Étape "+(i+1)+" sur "+N;
-  err.hidden=true;refresh();if(i===N-1)prep();
+  back.hidden=i===0;nav.hidden=i===0&&st.hasAttribute("data-auto");err.hidden=true;
+  if(i===N-1)prep();refresh();
+  var cx=st.querySelector(".es-ctx"),sel=f.querySelector('.es-opt[aria-pressed="true"]');if(cx&&sel){cx.querySelector(".es-ctx-ico").innerHTML=sel.querySelector(".es-ico").innerHTML;cx.querySelector(".es-ctx-t").textContent=A.travaux;cx.hidden=false}
   nextL.textContent=i===N-1?(rows().length?"Voir mon estimation":"Envoyer ma demande"):"Suivant";
-  if(push)history.pushState({es:i},"");
-  var c=d.getElementById("estimation"),y=c.getBoundingClientRect().top+scrollY-8;if(scrollY>y)scrollTo(0,y)}
-function intro(){d.body.classList.remove("is-quiz");cur=-1;scrollTo(0,0)}
-function start(){d.body.classList.add("is-quiz");show(0,true);scrollTo(0,0);dl("estimation_debut",{})}
-each(d.querySelectorAll("[data-start]"),function(b){b.addEventListener("click",start)});
-addEventListener("popstate",function(ev){if(done)return;var s=ev.state&&typeof ev.state.es==="number"?ev.state.es:-1;if(s<0)intro();else{d.body.classList.add("is-quiz");show(s,false)}});
-prev.addEventListener("click",function(){if(history.state&&typeof history.state.es==="number")history.back();else if(cur>0)show(cur-1,false);else intro()});
-function check(i){var st=steps[i],bad=[];
-  each(st.querySelectorAll("[data-req]"),function(x){if(x.hidden)return;var v=A[x.getAttribute("data-req")];if(v===undefined||v===""||(Array.isArray(v)&&!v.length))bad.push(x.getAttribute("data-miss"))});
+  if(push)try{history.pushState({es:i},"")}catch(x){}
+  if(dir){toCard();var h=st.querySelector(".es-q");if(h)try{h.focus({preventScroll:true})}catch(x){}}}
+try{history.replaceState({es:0},"")}catch(x){}
+addEventListener("popstate",function(ev){if(done)return;var s=ev.state&&typeof ev.state.es==="number"?ev.state.es:0;if(s!==cur)show(s,s<cur?-1:1,false)});
+back.addEventListener("click",function(){if(history.state&&typeof history.state.es==="number"&&history.state.es>0)history.back();else if(cur>0)show(cur-1,-1,false)});
+each(d.querySelectorAll("[data-start]"),function(b){b.addEventListener("click",function(ev){ev.preventDefault();begin();toCard()})});
+function check(i){var st=steps[i],bad=missing(i);
   var cp=st.querySelector("[name=code_postal]");if(cp){var ok=/^\d{5}$/.test(cp.value.trim());if(ok){A.code_postal=cp.value.trim();cp.removeAttribute("aria-invalid")}else{cp.setAttribute("aria-invalid","true");bad.push("un code postal à 5 chiffres")}}
   var pr=st.querySelector("[name=prenom]");if(pr){var tel=st.querySelector("[name=telephone]"),ok2=st.querySelector("[name=consentement]");
     if(pr.value.trim().length<2){pr.setAttribute("aria-invalid","true");bad.push("votre prénom")}else pr.removeAttribute("aria-invalid");
@@ -433,21 +509,24 @@ function check(i){var st=steps[i],bad=[];
 function go(dir){if(dir<=0)return;var bad=check(cur);
   if(bad.length){err.textContent="Il manque "+bad.join(", ")+".";err.hidden=false;var x=steps[cur].querySelector('[aria-invalid="true"]');if(x)x.focus();return}
   if(cur===N-1){submit();return}
-  dl("estimation_etape",{etape:cur+1});show(cur+1,true)}
+  dl("estimation_etape",{etape:cur+1});show(cur+1,1,true)}
 next.addEventListener("click",function(){go(1)});
 f.addEventListener("submit",function(ev){ev.preventDefault();go(1)});
-f.addEventListener("input",function(){if(err.hidden||cur<0)return;var bad=check(cur);if(bad.length)err.textContent="Il manque "+bad.join(", ")+".";else err.hidden=true});
-function render(E,pr,telf){var o=C.opts[A.travaux]||{},h='<p class="es-res-k">Votre estimation, '+esc(pr)+'</p>';
-  if(E.rows.length){h+='<p class="es-amount">'+amount(E)+'</p><p class="es-amount-f">Fourchette indicative, pose comprise, pour '+ql()+'.</p><ul class="es-lines">';
+f.addEventListener("input",function(){if(err.hidden)return;var bad=check(cur);if(bad.length)err.textContent="Il manque "+bad.join(", ")+".";else err.hidden=true});
+/* résultat */
+function render(E,pr,telf){var sel=f.querySelector('.es-opt[aria-pressed="true"] .es-ico'),pic=sel?sel.innerHTML:"",o=C.opts[A.travaux]||{},date=new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
+  var h='<div class="es-rcpt-top"><span class="es-rcpt-ent">'+esc(C.ent)+'</span><span>'+esc(date)+'</span></div>'
+   +'<div class="es-rid">'+(pic?'<span class="es-rid-ico">'+pic+'</span>':'')+'<div><p class="es-res-k">Estimation pour '+esc(pr)+(place()?" · "+esc(place()):"")+'</p><p class="es-rid-t">'+esc(A.travaux)+'</p></div></div>';
+  if(E.rows.length){h+='<p class="es-amount" data-count>'+amount(E)+'</p><p class="es-amount-f">Pose comprise, pour '+ql()+'. Fourchette indicative, sans valeur contractuelle.</p><ul class="es-lines">';
     E.rows.forEach(function(r){h+='<li><span>'+esc(r.l)+'</span><span class="es-val">'+rowAmount(r)+'</span><span class="es-calc">'+ql()+" × "+rowUnit(r)+" · "+(r.src?'Source\u00a0: <a href="'+esc(r.src[1])+'" target="_blank" rel="noopener">'+esc(r.src[0])+"</a>":"Tarif de "+esc(C.ent))+'</span></li>'});h+="</ul>"}
   else h+='<p class="es-amount">À chiffrer sur place</p><p class="es-amount-f">'+esc(o.vt||"Ce type de travaux se chiffre après une visite.")+'</p>';
   C.notes.forEach(function(n){if(A[n.q]===n.eq)h+='<p class="es-note">'+esc(n.txt)+"</p>"});
   var vis=[];C.visite.forEach(function(r){var v=A[r.q];if((r.gt!==undefined&&v>r.gt)||(r.eq!==undefined&&v===r.eq))vis.push(r.txt.replace("{v}",v).replace("(s)",v>1?"s":""))});
-  if(vis.length){h+='<p class="es-h3">Chiffré à la visite</p><ul class="es-list">';vis.forEach(function(v){h+="<li>"+esc(v)+"</li>"});h+="</ul>"}
+  if(vis.length){h+='<p class="es-h3">À chiffrer à la visite</p><ul class="es-list">';vis.forEach(function(v){h+="<li>"+esc(v)+"</li>"});h+="</ul>"}
   h+='<p class="es-h3">Ce qui fait varier le prix</p><p class="es-p">'+esc(C.varie)+'</p>';
   if(C.aides)h+='<p class="es-note">'+esc(C.aides)+'</p>';
   if(A.statut==="Locataire")h+='<p class="es-note">Les travaux sur le bâti se décident avec le propriétaire\u00a0: transmettez-lui cette estimation.</p>';
-  if(outZone())h+='<p class="es-note">Votre chantier semble hors de la zone habituelle de '+esc(C.ent)+(C.zone?" ("+esc(C.zone)+")":"")+'. Nous vous dirons rapidement si nous pouvons intervenir.</p>';
+  if(outZone())h+='<p class="es-note es-zone">Votre chantier semble hors de la zone habituelle de '+esc(C.ent)+(C.zone?" ("+esc(C.zone)+")":"")+'. Nous vous dirons rapidement si nous pouvons intervenir.</p>';
   var call=C.tel?'<a class="es-btn es-btn-call" href="tel:'+C.telh+'">'+ICO.phone+"Appeler le "+esc(C.tel)+"</a>":"";
   h+='<div class="es-box" data-state="'+(C.envoi?"sending":"manual")+'"><p class="es-box-k">Prochaine étape</p>'
    +'<div class="es-s-sending"><p class="es-box-h">Envoi de votre demande…</p></div>'
@@ -456,24 +535,27 @@ function render(E,pr,telf){var o=C.opts[A.travaux]||{},h='<p class="es-res-k">Vo
      :'<p class="es-box-h">Appelez '+esc(C.ent)+' pour fixer la visite</p><div class="es-acts">'+call+"</div>")+"</div></div>"
    +'<button type="button" class="es-again">Refaire une estimation</button>';
   return h}
-var ICO=__ICO__;
+function countUp(el,E){if(RM||!el||!window.requestAnimationFrame)return;var t0=0,D=1100;
+  function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/D),q=1-Math.pow(1-k,3);el.textContent=k<1?amount(E,Math.round(E.lo*q/10)*10,Math.round(E.hi*q/10)*10):amount(E);if(k<1)requestAnimationFrame(step)}
+  requestAnimationFrame(step)}
 function submit(){if(val("site_web"))return;var E=estimate(),pr=val("prenom"),tel=val("telephone"),dg=tel.replace(/\D/g,""),telf=dg.length===10?dg.replace(/(\d{2})(?=\d)/g,"$1\u00a0"):tel;
   var est=E.rows.length?amount(E):"à chiffrer sur place";
   var det=C.details.map(function(k){var v=A[k[0]];if(v===undefined||v===0)return null;return k[1]+"\u00a0: "+(Array.isArray(v)?v.join(", "):v)}).filter(Boolean);
-  var msg="Bonjour, j’ai fait l’estimation "+C.nom+" sur votre site. Travaux\u00a0: "+A.travaux+", "+ql()+". Estimation\u00a0: "+est+". "+det.join(". ")+". "+A.delai+", "+(A.statut||"").toLowerCase()+", code postal "+A.code_postal+". "+pr+", "+telf+".";
+  var msg="Bonjour, j’ai fait l’estimation "+C.nom+" sur votre site. Travaux\u00a0: "+A.travaux+", "+ql()+". Estimation\u00a0: "+est+". "+det.join(". ")+". "+A.delai+", "+(A.statut||"").toLowerCase()+", code postal "+place()+". "+pr+", "+telf+".";
   res.innerHTML=render(E,pr,telf);res.hidden=false;each(steps,function(s){s.classList.remove("is-on")});
-  f.querySelector(".es-top").hidden=true;f.querySelector(".es-bar").hidden=true;f.querySelector(".es-nav").hidden=true;err.hidden=true;done=true;
+  head.hidden=true;nav.hidden=true;err.hidden=true;done=true;
   try{history.replaceState({es:"fin"},"")}catch(x){}
-  var c=d.getElementById("estimation");scrollTo(0,c.getBoundingClientRect().top+scrollY-8);
+  toCard();countUp(res.querySelector("[data-count]"),E);
   var wa=res.querySelector("[data-wa]");if(wa)wa.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent(msg);
   res.querySelector(".es-again").addEventListener("click",function(){location.href=location.pathname+location.search});
   dl("estimation_demande",{travaux:A.travaux,delai:A.delai,statut:A.statut,estimation:est});
   if(window.fbq)window.fbq("track","Lead");
   var box=res.querySelector(".es-box");if(!C.envoi)return;
-  var body={type:"estimation",metier:C.key,entreprise:C.ent,fields:{travaux:A.travaux,quantite:ql(),estimation:est,details:det,delai:A.delai,statut:A.statut,code_postal:A.code_postal,prenom:pr,telephone:tel},
+  var body={type:"estimation",metier:C.key,entreprise:C.ent,fields:{travaux:A.travaux,quantite:ql(),estimation:est,details:det,delai:A.delai,statut:A.statut,code_postal:A.code_postal,commune:A.commune||"",prenom:pr,telephone:tel},
     consent:{text:f.querySelector(".es-consent span").textContent,at:new Date().toISOString()},page:location.pathname,tracking:track,site_web:""};
   var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
   try{fetch(C.envoi,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(body)}).then(function(r){clearTimeout(t);end(r.ok)}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}}
+show(0,0,false);
 })();"""
 
 PIXEL_JS = r"""(function(){var C=__PX__,K="es-consent",d=document,bar=d.getElementById("es-cc");if(!bar)return;
@@ -496,7 +578,7 @@ def page(key, cfg, logo_url):
     own = bool(cfg.get("tarifs", {}).get(key))
     facts = ["6 questions, 1 minute", f"Tarifs de {ent}" if own else "Prix publiés et sourcés", "Sans engagement"] + list(cfg.get("atouts", []))
     facts_html = "".join(f"<li>{ico('check')}{e(x)}</li>" for x in facts)
-    kick = f'<p class="es-kick">{e(m["artisan"].capitalize())} · {e(cfg["zone"])}</p>' if cfg.get("zone") else ""
+    kick = f'<p class="es-kick">{ico("pin")}{e(m["artisan"].capitalize())} · {e(cfg["zone"])}</p>' if cfg.get("zone") else ""
     lead = (f"Six questions, une minute. Le calculateur applique à votre projet les tarifs indicatifs de {ent}." if own
             else f"Six questions, une minute. Le calculateur applique à votre projet les prix publiés par {m['sources']}.")
     by = f'<img src="{logo_url}" alt="{a(ent)}" width="150" height="28">' if logo_url else f"<b>{e(ent)}</b>"
@@ -513,9 +595,9 @@ def page(key, cfg, logo_url):
         env_origin = f" {u.scheme}://{u.netloc}" if u.netloc else ""
     fb = " https://connect.facebook.net" if cfg.get("meta_pixel") else ""
     csp = (f"default-src 'self'; script-src 'self' {hashes}{fb}; style-src 'self' 'unsafe-inline'; img-src 'self' data:{' https://www.facebook.com' if fb else ''}; "
-           f"font-src 'self'; connect-src 'self'{env_origin}{' https://www.facebook.com' + fb if fb else ''}; form-action 'none'; base-uri 'self'; object-src 'none'")
+           f"font-src 'self'; connect-src 'self' {GEO}{env_origin}{' https://www.facebook.com' + fb if fb else ''}; form-action 'none'; base-uri 'self'; object-src 'none'")
     title = f"{m['title']} | {ent}"
-    hero_art = icons.house(m["hero"], None, accent, s=16, title=f"Maison : {m['nom']} mise en évidence")
+    h1 = re.sub(r"<mark>(.*?)</mark>", lambda x: "<mark>" + x.group(1).replace(" ", "\u00a0") + "</mark>", fr(m["h1"]))
     return f"""<!doctype html>
 <html lang="fr">
 <head>
@@ -525,7 +607,7 @@ def page(key, cfg, logo_url):
 <title>{e(title)}</title>
 <meta name="description" content="{a(fr(m['desc']))}">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#F4F5F7">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="{a(fr(title))}">
@@ -535,28 +617,26 @@ def page(key, cfg, logo_url):
 </head>
 <body>
 <header class="es-hdr"><span class="es-logo">{logo}</span>{call}</header>
-<main>
-<section class="es-hero" aria-labelledby="es-h">
-  <div>
+<main class="es-main">
+  <div class="es-intro">
     {kick}<p class="es-pill">{ico('alert')}{e(m['pill'])}</p>
-    <h1 class="es-h" id="es-h">{re.sub(r"<mark>(.*?)</mark>", lambda x: "<mark>" + x.group(1).replace(" ", "\u00a0") + "</mark>", fr(m['h1']))}</h1>
+    <h1 class="es-h">{h1}</h1>
     <p class="es-lead">{e(lead)}</p>
-    <button type="button" class="es-cta" data-start><b>Calculer le montant{ico('arrow')}</b><small>Gratuit et immédiat</small></button>
-    <noscript><p class="es-note">Le calculateur a besoin de JavaScript. Vous pouvez aussi appeler le {e(tel)}.</p></noscript>
+    <a class="es-cta" href="#estimation" data-start><b>Calculer le montant{ico('down')}</b><small>Gratuit et immédiat</small></a>
     <ul class="es-facts">{facts_html}</ul>
   </div>
-  <div class="es-art">{hero_art}</div>
-</section>
-<section class="es-wrap" id="estimation" aria-label="Estimation">
-<form class="es-card" id="es-form" novalidate>
-  <div class="es-top"><span class="es-num-step">Étape 1 sur {n}</span><span class="es-pct">0 %</span></div>
-  <div class="es-bar" aria-hidden="true"><i></i></div>
-  {steps}
-  <div class="es-res" hidden aria-live="polite"></div>
-  <p class="es-err" role="alert" hidden></p>
-  <div class="es-nav"><button type="button" class="es-prev" aria-label="Précédent">{ico('back')}<span>Précédent</span></button><button type="button" class="es-next"><span>Suivant</span>{ico('arrow')}</button></div>
-</form>
-</section>
+  <section class="es-quiz" id="estimation" aria-label="Estimation">
+    <form class="es-card" id="es-form" novalidate>
+      <div class="es-head"><span class="es-num-step">Étape 1 sur {n}</span><span class="es-pct">0 %</span><div class="es-bar" aria-hidden="true"><i></i></div></div>
+      <div class="es-body">
+        {steps}
+        <div class="es-res" hidden aria-live="polite"></div>
+        <p class="es-err" role="alert" hidden></p>
+        <noscript><p class="es-note">Le calculateur a besoin de JavaScript. Vous pouvez aussi appeler le {e(tel)}.</p></noscript>
+      </div>
+      <div class="es-nav"><button type="button" class="es-back" aria-label="Question précédente" hidden>{ico('back')}</button><button type="button" class="es-next"><span>Suivant</span>{ico('arrow')}</button></div>
+    </form>
+  </section>
 </main>
 <footer class="es-ftr">
   <p class="es-by">Proposé par {by}</p>

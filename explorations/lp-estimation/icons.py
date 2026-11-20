@@ -30,11 +30,18 @@ def _mix(a, b, t):
 
 
 def _pal(accent):
-    n = dict(slabT="#E7EAF0", slabF="#D4D9E1", slabR="#C5CBD5", wallF="#FBF8F3", wallS="#ECE6DB", roofF="#5A6373", roofL="#4B5363",
+    n = dict(slabT="#DDEBD6", slabF="#B9D0B0", slabR="#A9C39F", wallF="#FBF8F3", wallS="#ECE6DB", roofF="#5A6373", roofL="#4B5363",
              roofE="#3F4653", glass="#C9D7F6", frame="#FFFFFF", door="#3C4453", chimF="#ECE6DB", chimS="#DCD4C6", chimT="#4B5363")
     a = dict(A=accent, A2=_mix(accent, "#000000", .2), A3=_mix(accent, "#000000", .34), Al=_mix(accent, "#ffffff", .2),
              Ap=_mix(accent, "#ffffff", .84), Aw=_mix(accent, "#ffffff", .55))
     return n, a
+
+
+_UID = [0]
+
+
+def _shade(c, t):
+    return _mix(c, "#ffffff", t) if t > 0 else _mix(c, "#000000", -t)
 
 
 def house(focus="none", badge=None, accent="#2D5BE3", s=10.0, title=""):
@@ -42,11 +49,14 @@ def house(focus="none", badge=None, accent="#2D5BE3", s=10.0, title=""):
     N, F = _pal(accent)
     shapes = []  # (liste de points 3D, attributs)
 
-    def poly(pts, fill, extra=""):
-        shapes.append(("p", pts, f'fill="{fill}"{extra}'))
+    def poly(pts, fill, extra="", flat=False):
+        shapes.append(("p", pts, fill, extra, flat))
 
     def line(a, b, col, w=1.0, extra=""):
-        shapes.append(("l", [a, b], f'stroke="{col}" stroke-width="{w}" stroke-linecap="round"{extra}'))
+        shapes.append(("l", [a, b], f'stroke="{col}" stroke-width="{w}" stroke-linecap="round"{extra}', "", True))
+
+    def ball(c, r, col):  # buisson : une sphère éclairée en haut à gauche
+        shapes.append(("c", [c], col, r, True))
 
     ext = focus == "extension"
     xs = L + (2.1 if ext else 0.7)
@@ -54,6 +64,7 @@ def house(focus="none", badge=None, accent="#2D5BE3", s=10.0, title=""):
     poly([(-0.6, -0.6, 0), (xs, -0.6, 0), (xs, 3.7, 0), (-0.6, 3.7, 0)], N["slabT"])
     poly([(-0.6, 3.7, 0), (xs, 3.7, 0), (xs, 3.7, -0.28), (-0.6, 3.7, -0.28)], N["slabF"])
     poly([(xs, 3.7, 0), (xs, -0.6, 0), (xs, -0.6, -0.28), (xs, 3.7, -0.28)], N["slabR"])
+    shapes.append(("shadow", [(xs / 2 - 0.3, 1.55, -0.28)], "", (xs + 1.4) * 0.5, True))
     # cheminée (derrière le faîtage)
     cz0, cz1 = H - (1.5 - 1.05) * RP - 0.3, H + 0.45
     poly([(0.7, 1.05, cz0), (1.25, 1.05, cz0), (1.25, 1.05, cz1), (0.7, 1.05, cz1)], N["chimF"])
@@ -128,6 +139,9 @@ def house(focus="none", badge=None, accent="#2D5BE3", s=10.0, title=""):
                         line((p + .05, W + .02, z), (q - .05, W + .02, z), F["A3"], .8)
     poly([(3.0, W + .01, 0), (3.6, W + .01, 0), (3.6, W + .01, 1.4), (3.0, W + .01, 1.4)], F["A"] if focus == "door" else N["door"])
 
+    if not ext:
+        ball((-0.45, 3.25, 0.42), 0.62, "#4E9A5B")
+        ball((-0.05, 3.45, 0.3), 0.44, "#5FAE6B")
     # toiture
     roof = [(-OX, 1.5, H), (L + OX, 1.5, H), (L + OX, W + OY, HE), (-OX, W + OY, HE)]
     on = focus in ("roof", "rampant", "roofframe")
@@ -167,25 +181,47 @@ def house(focus="none", badge=None, accent="#2D5BE3", s=10.0, title=""):
     poly([(L + OX, 1.5, H), (L + OX, W + OY, HE), (L + OX, W + OY, HE - TH), (L + OX, 1.5, H - TH)], rl)
     poly([(L + OX, 1.5, H), (L + OX, -OY, HE), (L + OX, -OY, HE - TH), (L + OX, 1.5, H - TH)], re_)
     line((-OX, 1.5, H + .02), (L + OX, 1.5, H + .02), re_, 1.4)
+    if focus not in ("frame", "attic"):  # reflet le long du faîtage
+        line((-OX + .1, 1.62, H - .12), (L + OX - .1, 1.62, H - .12), "#FFFFFF", .9, ' opacity=".28"')
 
     # projection et cadrage
     def pr(p):
         x, y, z = p
         return ((x - y) * C30 * s, (x + y) * 0.5 * s - z * s)
-    pts = [pr(p) for _, ps, _ in shapes for p in ps]
+    pts = [pr(p) for sh in shapes for p in sh[1]]
     minx, maxx = min(p[0] for p in pts), max(p[0] for p in pts)
     miny, maxy = min(p[1] for p in pts), max(p[1] for p in pts)
     pad, br = 3, 11
     if badge:
         miny = min(miny, -(br * 2 + 2) + miny + 10)
     vx, vy, vw, vh = minx - pad, miny - pad, maxx - minx + 2 * pad, maxy - miny + 2 * pad
-    out = []
-    for kind, ps, attr in shapes:
+    _UID[0] += 1
+    u = f"i{_UID[0]}"
+    grads, defs, out = {}, [], []
+
+    def grad(c):
+        if c not in grads:
+            gid = f"{u}g{len(grads)}"
+            grads[c] = gid
+            defs.append(f'<linearGradient id="{gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{_shade(c, .12)}"/><stop offset="1" stop-color="{_shade(c, -.07)}"/></linearGradient>')
+        return grads[c]
+    for kind, ps, a1, a2, flat in shapes:
         q = [pr(p) for p in ps]
         if kind == "p":
-            out.append(f'<path d="M{"L".join(f"{x:.1f} {y:.1f}" for x, y in q)}Z" {attr}/>')
-        else:
-            out.append(f'<path d="M{q[0][0]:.1f} {q[0][1]:.1f}L{q[1][0]:.1f} {q[1][1]:.1f}" fill="none" {attr}/>')
+            fill = a1 if flat or not a1.startswith("#") else f"url(#{grad(a1)})"
+            out.append(f'<path d="M{"L".join(f"{x:.1f} {y:.1f}" for x, y in q)}Z" fill="{fill}" stroke="{a1}" stroke-width=".6" stroke-linejoin="round"{a2}/>')
+        elif kind == "l":
+            out.append(f'<path d="M{q[0][0]:.1f} {q[0][1]:.1f}L{q[1][0]:.1f} {q[1][1]:.1f}" fill="none" {a1}/>')
+        elif kind == "c":
+            (x, y), r = q[0], a2 * s
+            gid = f"{u}b{len(out)}"
+            defs.append(f'<radialGradient id="{gid}" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="{_shade(a1, .28)}"/><stop offset=".6" stop-color="{a1}"/><stop offset="1" stop-color="{_shade(a1, -.25)}"/></radialGradient>')
+            out.append(f'<ellipse cx="{x + r * .15:.1f}" cy="{y + r * .82:.1f}" rx="{r * .95:.1f}" ry="{r * .38:.1f}" fill="#0A1424" opacity=".12"/>'
+                       f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" fill="url(#{gid})"/>')
+        elif kind == "shadow":
+            (x, y), rx = q[0], a2 * s * C30 * 1.25
+            defs.append(f'<filter id="{u}f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="{s * .35:.1f}"/></filter>')
+            out.append(f'<ellipse cx="{x:.1f}" cy="{y + s * .5:.1f}" rx="{rx:.1f}" ry="{rx * .42:.1f}" fill="#0A1424" opacity=".16" filter="url(#{u}f)"/>')
     if badge:
         cx, cy = vx + vw - br - 2, vy + br + 2
         k = 15 / 24
@@ -193,7 +229,7 @@ def house(focus="none", badge=None, accent="#2D5BE3", s=10.0, title=""):
                    f'<path d="{GLYPH[badge]}" transform="translate({cx - 7.5:.1f} {cy - 7.5:.1f}) scale({k:.4f})" fill="none" stroke="#0A1424" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>')
     t = f"<title>{title}</title>" if title else ""
     hide = "" if title else ' aria-hidden="true"'
-    return f'<svg viewBox="{vx:.1f} {vy:.1f} {vw:.1f} {vh:.1f}" xmlns="http://www.w3.org/2000/svg" focusable="false"{hide}>{t}{"".join(out)}</svg>'
+    return f'<svg viewBox="{vx:.1f} {vy:.1f} {vw:.1f} {vh + s * .6:.1f}" xmlns="http://www.w3.org/2000/svg" focusable="false"{hide}>{t}<defs>{"".join(defs)}</defs>{"".join(out)}</svg>'
 
 
 # ——— Échantillons de matériaux (tuiles de choix) ———
