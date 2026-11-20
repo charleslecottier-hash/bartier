@@ -16,6 +16,10 @@ TRADE_PICK = {"toiture": "Devis toiture", "facade": "Devis façade", "fenetres":
 CSS = """<style id="vl-css">
 .vl-wrap{padding:0 var(--cell)}
 .vl-nw{white-space:nowrap}
+.vl-others{display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;padding:0 var(--cell)}
+.vl-others .pf-olist{padding:0}
+.vl-oh{margin-bottom:14px;font-size:.8rem;color:var(--muted)}
+.vl-trades li{scroll-margin-top:96px}
 .vl-dl .link,.vl-trades .link,.vl-steps .link{display:inline;white-space:normal;min-height:0}
 .vl-more{align-items:center}
 .vl-more .link{align-self:center}
@@ -29,7 +33,7 @@ CSS = """<style id="vl-css">
 .vl-figs .vl-fsrc a{color:inherit}
 .pf-howto.vl-steps li::before{color:var(--accent)}
 .pf-howto.vl-steps p{color:inherit}
-@media (max-width:760px){.vl-trades{grid-template-columns:1fr}}
+@media (max-width:760px){.vl-trades{grid-template-columns:1fr}.vl-others{grid-template-columns:1fr}}
 </style>"""
 
 
@@ -52,7 +56,7 @@ def build_city(PF, phone, phone_txt, crumbs, c):
     <div class="pf-intro">
       {crumbs}
       <div class="pf-h1"><h1 class="pf-kw">Devis travaux à {v} : toiture, façade, fenêtres, isolation</h1> <p class="pf-big">Pas cinq <span class="pf-who">artisans</span>. <br>Un seul, près de chez vous.</p></div>
-      <p class="lead">Décrivez vos travaux en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
+      <p class="lead">Décrivez vos travaux à {v} en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
       {PF.trust("d-only")}
       <p class="pf-call d-only">Pressé ? <a class="link" href="tel:{phone}">{phone_txt}</a></p>
     </div>
@@ -76,12 +80,13 @@ def build_city(PF, phone, phone_txt, crumbs, c):
     local = f"""<section class="sheet" id="a-savoir" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>Travaux à {v} : ce qu’il faut savoir</h2><p>{c["answer"]}</p></div>
   <div class="grid"><dl class="pf-dl vl-dl">{facts}</dl></div>
+  <p class="vl-src">Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? <a class="link" href="mailto:contact@bartierandco.com">Écrivez-nous</a>.</p>
 </section>"""
 
     items = []
     for k in ("toiture", "facade", "fenetres", "charpente", "isolation"):
         paras = "".join(f"<p>{p}</p>" for p in c["trades"][k])
-        items.append(f'<li><h3>{TRADE_H3[k].format(v=v)}</h3>{paras}<p class="vl-more"><a class="link pf-pick" href="#projet" data-v="{k}">{TRADE_PICK[k]}</a>'
+        items.append(f'<li id="t-{k}"><h3>{TRADE_H3[k].format(v=v)}</h3>{paras}<p class="vl-more"><a class="link pf-pick" href="#projet" data-v="{k}">{TRADE_PICK[k]}</a>'
                      f'<a class="link" href="/devis-travaux/{PF.SLUG[k]}/">{TRADE_MORE[k]}</a></p></li>')
     trades = f"""<section class="sheet" id="travaux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Vos travaux à {v}, métier par métier</h2><p>{c["trades_intro"]}</p></div>
@@ -122,10 +127,8 @@ def build_city(PF, phone, phone_txt, crumbs, c):
     cities = "".join(f'<li><a class="link" href="{path(x)}">Devis travaux à {x["name"]}</a></li>' for x in CITIES if x["slug"] != c["slug"])
     metiers = "".join(f'<li><a class="link" href="/devis-travaux/{PF.SLUG[x[0]]}/">{x[5]}</a></li>' for x in PF.TRADES)
     others = f"""<section class="sheet pf-others" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Autres villes</h2><p><a class="link" href="/devis-travaux/">Tous les devis de travaux</a></p></div>
-  <ul class="pf-olist">{cities}</ul>
-  <div class="grid sp-head" style="margin-top:40px"><h2 data-split>Par métier</h2></div>
-  <ul class="pf-olist">{metiers}</ul>
+  <div class="grid sp-head"><h2 data-split>Ailleurs en France</h2><p><a class="link" href="/devis-travaux/">Tous les devis de travaux</a></p></div>
+  <div class="vl-others"><div><p class="vl-oh">Autres villes</p><ul class="pf-olist">{cities}</ul></div><div><p class="vl-oh">Par métier</p><ul class="pf-olist">{metiers}</ul></div></div>
 </section>"""
 
     out = CSS + "\n" + "\n\n".join([hero, figures, local, trades, parts["promise"], steps, aides, leak, brief, faqs, others, parts["end"]])

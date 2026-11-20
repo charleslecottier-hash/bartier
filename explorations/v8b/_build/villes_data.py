@@ -20,6 +20,7 @@ NATIONAL = ("Aides nationales",
 _INSEE_75 = "https://www.insee.fr/fr/statistiques/8581193?geo=COM-75056"
 _SDES = "https://www.statistiques.developpement-durable.gouv.fr/media/7205/download?inline"
 PARIS = dict(
+    hook="Autorisation même pour des fenêtres à l’identique, toits en zinc, copropriété.",
     slug="paris", name="Paris", cp="75011", wiki="https://fr.wikipedia.org/wiki/Paris", wikidata="Q90",
     title="Devis travaux à Paris : toiture, façade, fenêtres, isolation",
     desc="Travaux à Paris : ravalement tous les 10 ans, déclaration préalable, architecte des Bâtiments de France, aides. Un seul artisan vient chiffrer, gratuitement.",
@@ -113,6 +114,7 @@ _TM_RENOV = "https://renov.toulouse-metropole.fr/"
 _SILENCIO = "https://france3-regions.franceinfo.fr/occitanie/haute-garonne/toulouse/bruit-des-avions-jusqu-a-100-des-couts-rembourses-pour-insonoriser-logements-et-batiments-plus-de-12-000-familles-en-ont-deja-beneficie-3340469.html"
 _VENT_31 = "https://www.data.gouv.fr/datasets/vent-et-rafales"
 TOULOUSE = dict(
+    hook="Brique et tuile canal, centre ancien de 256 hectares, aide Silencio.",
     slug="toulouse", name="Toulouse", cp="31000", wiki="https://fr.wikipedia.org/wiki/Toulouse", wikidata="Q7880",
     title="Devis travaux à Toulouse : toiture, façade, fenêtres",
     desc="Travaux à Toulouse : centre ancien protégé, campagnes de ravalement, termites, aides de la Métropole. Un seul artisan vient chiffrer, gratuitement.",
@@ -205,6 +207,7 @@ _TERM_76 = "https://www.seine-maritime.gouv.fr/contenu/telechargement/57813/4064
 _CEE_76 = "https://cheque-eco-energie.normandie.fr/sites/default/files/2026-07/Fiche%20compatibilit%C3%A9%20BBC%20Normandie%20juin%202026.pdf"
 _EM_76 = "https://energies.metropole-rouen-normandie.fr/"
 ROUEN = dict(
+    hook="Secteur sauvegardé, ardoise et pans de bois, ravalement rue par rue.",
     slug="rouen", name="Rouen", cp="76000", wiki="https://fr.wikipedia.org/wiki/Rouen", wikidata="Q30974",
     title="Devis travaux à Rouen : toiture, façade, fenêtres, isolation",
     desc="Travaux à Rouen : secteur sauvegardé, ravalement, ardoise et pans de bois, aides de la Région et de la Métropole. Un seul artisan vient chiffrer, gratuitement.",
@@ -295,6 +298,7 @@ _CD13 = "https://departement13.fr/en-actions/logement-habitat/les-dispositifs-ai
 _ALEC_13 = "https://www.alecmetropolemarseillaise.fr/ouverture-de-maprimerenov-au-23-fevrier-2026/"
 _MP_SON = "https://www.marseille.aeroport.fr/societe/transitions/aide-insonorisation"
 MARSEILLE = dict(
+    hook="Centre-ville protégé, mistral, termites, ravalement imposé.",
     slug="marseille", name="Marseille", cp="13008", wiki="https://fr.wikipedia.org/wiki/Marseille", wikidata="Q23482",
     title="Devis travaux à Marseille : toiture, façade, fenêtres",
     desc="Travaux à Marseille : ravalement imposé, centre-ville protégé, mistral, termites, aides du Département. Un seul artisan vient chiffrer, gratuitement.",
@@ -382,6 +386,7 @@ _MF_59 = "https://pas-de-calais.gouv.fr/content/download/34943/225359/file/Fiche
 _MHD = "https://www.maisonhabitatdurable-lillemetropole.fr"
 _ODP_59 = "https://www.lille.fr/Annuaire-des-demarches/Occupation-du-domaine-public"
 LILLE = dict(
+    hook="Ravalement tous les 10 ans, charte de 61 teintes, Vieux-Lille protégé.",
     slug="lille", name="Lille", cp="59000", wiki="https://fr.wikipedia.org/wiki/Lille", wikidata="Q648",
     title="Devis travaux à Lille : toiture, façade, fenêtres, isolation",
     desc="Travaux à Lille : ravalement tous les 10 ans, charte couleurs, Vieux-Lille protégé, aides de la Ville et de la Métropole. Un seul artisan vient chiffrer.",
@@ -471,6 +476,7 @@ _ALEC_69 = "https://www.alec-lyon.org/services/aides-et-accompagnements/ecorenov
 _MF_69 = "https://donneespubliques.meteofrance.fr/FichesClim/FICHECLIM_69029001.pdf"
 _ODP_69 = "https://www.lyon.fr/demarche/stationnement/demander-une-autorisation-pour-loccupation-du-domaine-public-pour-travaux"
 LYON = dict(
+    hook="Site Unesco, ravalement imposé rue par rue, nichoirs à martinets.",
     slug="lyon", name="Lyon", cp="69003", wiki="https://fr.wikipedia.org/wiki/Lyon", wikidata="Q456",
     title="Devis travaux à Lyon : toiture, façade, fenêtres, isolation",
     desc="Travaux à Lyon : ravalement imposé, site Unesco, nichoirs à martinets, aides Écoréno’v. Un seul artisan vient chiffrer, gratuitement.",
