@@ -1059,6 +1059,29 @@ Source : La Maison Saint-Gobain, mis à jour le 25/08/2026
 - Ravalement avec isolant | 110 à 215 €/m² | Saint-Gobain, 08/2026
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
+### Exemple de devis de ravalement : les lignes à vérifier
+Un devis de ravalement se lit de l’échafaudage à la finition, poste par poste.
+- Poste | Unité | À vérifier
+- Installation de chantier, échafaudage, protections | forfait ou m² | La protection des fenêtres et des abords, et l’autorisation de voirie si l’échafaudage est sur le trottoir
+- Nettoyage du support | m² | La technique, adaptée au matériau de la façade
+- Traitement des fissures | mètre linéaire | L’origine des fissures et la façon de les reprendre
+- Reprise de l’enduit ou des joints | m² | Un enduit adapté au support, à la chaux sur un mur ancien par exemple
+- Finition : peinture, enduit ou crépi | m² | Le produit, le nombre de couches et la référence de la teinte
+- Isolation par l’extérieur, si prévue | m² | L’isolant, son épaisseur et sa résistance thermique
+- Main-d’œuvre | heure ou forfait | Le nombre de personnes et la durée du chantier
+- TVA | taux | 10 % pour un ravalement dans un logement de plus de deux ans, 5,5 % s’il s’accompagne d’une isolation qui améliore la performance énergétique
+
+#### Les mentions que le devis doit porter
+- La date du devis et sa durée de validité
+- Le nom, l’adresse et la forme juridique de l’entreprise
+- Son numéro d’immatriculation (Siren et répertoire des métiers pour un artisan) et son numéro de TVA
+- Votre nom et l’adresse du chantier
+- La date de début et la durée estimée des travaux
+- Le détail de chaque prestation, en quantité et en prix unitaire, et le prix de la main-d’œuvre
+- Les frais de déplacement, s’il y en a, et les modalités de paiement
+- L’assurance souscrite, les coordonnées de l’assureur et la zone couverte
+Source : Service-Public, fiche F31144. Ces mentions sont obligatoires pour une réparation ou un entretien ; exigez-les aussi pour des travaux de rénovation.
+
 ### Avant de signer un devis de ravalement
 Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (france-renov.gouv.fr), et l’absence de pression pour signer. Le détail des 5 points
 
@@ -1092,6 +1115,9 @@ Voir toutes les questions
 
 **Combien coûte un ravalement de façade ?**
 Comptez de 50 à 100 €/m², selon La Maison Saint-Gobain (2026). Le prix dépend de la surface, de l’état du support, de la finition et de l’échafaudage. Des fissures ou un enduit abîmé le font monter : l’artisan les évalue lors de la visite.
+
+**Que doit contenir un devis de ravalement ?**
+Le détail de chaque poste en quantité et en prix unitaire (échafaudage, nettoyage, fissures, enduit, finition), la main-d’œuvre, la date et la durée de validité, les coordonnées et le numéro d’immatriculation de l’entreprise, et l’assurance souscrite avec les coordonnées de l’assureur (Service-Public, fiche F31144).
 
 **Le ravalement est-il obligatoire ?**
 À Paris et dans les communes inscrites sur une liste fixée par le préfet, la mairie peut imposer un ravalement au moins tous les dix ans. Ailleurs, la loi ne fixe pas de fréquence (Code de la construction et de l’habitation). Votre mairie vous dit si votre commune est concernée.
@@ -1168,6 +1194,28 @@ Source : La Maison Saint-Gobain, mis à jour le 13/02/2026
 - Fenêtre PVC en création d’ouverture | environ 2 400 € TTC | Saint-Gobain, 02/2026
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
+### Exemple de devis de fenêtres : les lignes à vérifier
+Chaque fenêtre a sa ligne : le devis doit dire ce qui est posé, et comment.
+- Poste | Unité | À vérifier
+- Type de pose | par fenêtre | Rénovation sur l’ancien cadre ou dépose totale : la surface vitrée n’est pas la même
+- Fenêtre fournie | par fenêtre | Le matériau, les dimensions, le vitrage et le coefficient Uw : plus il est bas, mieux la fenêtre isole
+- Pose et étanchéité | par fenêtre | Les joints, le calfeutrement et les finitions intérieures
+- Volets et coffres | par fenêtre | Le type de volet et la motorisation, si elle est prévue
+- Habillages et appuis | mètre linéaire | Les matériaux et la teinte
+- Évacuation des anciennes menuiseries | forfait | Comprise ou non
+- TVA | taux | 5,5 % pour des fenêtres qui améliorent la performance énergétique d’un logement de plus de deux ans, sinon 10 %
+
+#### Les mentions que le devis doit porter
+- La date du devis et sa durée de validité
+- Le nom, l’adresse et la forme juridique de l’entreprise
+- Son numéro d’immatriculation (Siren et répertoire des métiers pour un artisan) et son numéro de TVA
+- Votre nom et l’adresse du chantier
+- La date de début et la durée estimée des travaux
+- Le détail de chaque prestation, en quantité et en prix unitaire, et le prix de la main-d’œuvre
+- Les frais de déplacement, s’il y en a, et les modalités de paiement
+- L’assurance souscrite, les coordonnées de l’assureur et la zone couverte
+Source : Service-Public, fiche F31144. Ces mentions sont obligatoires pour une réparation ou un entretien ; exigez-les aussi pour des travaux de rénovation.
+
 ### Avant de signer avec un menuisier
 Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (france-renov.gouv.fr), et l’absence de pression pour signer. Le détail des 5 points
 
@@ -1201,6 +1249,9 @@ Voir toutes les questions
 
 **Combien coûte le remplacement d’une fenêtre ?**
 Comptez de 870 à 1 170 € TTC pour une fenêtre PVC double vitrage posée en remplacement, selon La Maison Saint-Gobain (2026). Le prix change avec la taille, le matériau (PVC, alu, bois), le vitrage et le type de pose. Le devis détaille chaque fenêtre.
+
+**Que doit contenir un devis de fenêtres ?**
+Pour chaque fenêtre : le type de pose, le matériau, les dimensions, le vitrage et la performance, avec la quantité et le prix unitaire. S’y ajoutent la main-d’œuvre, la date et la durée de validité, les coordonnées et le numéro d’immatriculation de l’entreprise, et l’assurance souscrite (Service-Public, fiche F31144).
 
 **Pose en rénovation ou dépose totale ?**
 En rénovation, la fenêtre neuve se pose sur l’ancien cadre : c’est plus rapide, mais la surface vitrée diminue un peu. En dépose totale, tout est retiré : c’est plus cher, avec un meilleur résultat. Le menuisier vous conseille lors de la visite.
@@ -1281,6 +1332,28 @@ Source : Hellowatt, mis à jour le 22/12/2025
 - Traitement préventif ou curatif du bois | 40 à 180 €/m² | Obat, 10/2024
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
+### Exemple de devis de charpente : les lignes à vérifier
+Le prix dépend de l’état du bois : le devis doit dire quelles pièces sont remplacées ou renforcées.
+- Poste | Unité | À vérifier
+- Accès et sécurité : échafaudage, étaiement | forfait | La durée et ce qui est protégé
+- Dépose des pièces abîmées | mètre linéaire | Quelles pièces, et pourquoi elles sont déposées
+- Remplacement ou renfort des pièces | mètre linéaire | L’essence du bois, la section des pièces et leur traitement
+- Traitement du bois | m² | Préventif ou curatif, contre les insectes ou les champignons, et le produit utilisé
+- Dépose et repose de la couverture, si nécessaire | m² | Ce qui est réutilisé et ce qui est remplacé
+- Main-d’œuvre | heure ou forfait | Le nombre de charpentiers et la durée du chantier
+- TVA | taux | 10 % dans un logement de plus de deux ans
+
+#### Les mentions que le devis doit porter
+- La date du devis et sa durée de validité
+- Le nom, l’adresse et la forme juridique de l’entreprise
+- Son numéro d’immatriculation (Siren et répertoire des métiers pour un artisan) et son numéro de TVA
+- Votre nom et l’adresse du chantier
+- La date de début et la durée estimée des travaux
+- Le détail de chaque prestation, en quantité et en prix unitaire, et le prix de la main-d’œuvre
+- Les frais de déplacement, s’il y en a, et les modalités de paiement
+- L’assurance souscrite, les coordonnées de l’assureur et la zone couverte
+Source : Service-Public, fiche F31144. Ces mentions sont obligatoires pour une réparation ou un entretien ; exigez-les aussi pour des travaux de rénovation.
+
 ### Avant de signer avec un charpentier
 Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (france-renov.gouv.fr), et l’absence de pression pour signer. Le détail des 5 points
 
@@ -1314,6 +1387,9 @@ Voir toutes les questions
 
 **Combien coûtent des travaux de charpente ?**
 Comptez de 150 à 200 €/m² TTC pour rénover la charpente seule, et de 180 à 250 €/m² TTC avec la couverture, selon Hellowatt (2025). Tout dépend de l’état du bois : remplacer quelques pièces coûte bien moins que refaire la charpente. Le charpentier le voit lors d’une visite gratuite.
+
+**Que doit contenir un devis de charpente ?**
+Les pièces remplacées ou renforcées, l’essence et la section du bois, le traitement prévu, chaque poste en quantité et en prix unitaire, la main-d’œuvre, la date et la durée de validité, les coordonnées de l’entreprise et l’assurance souscrite (Service-Public, fiche F31144).
 
 **Faut-il un permis pour une surélévation ?**
 Une surélévation crée de la surface : selon la surface ajoutée et le plan local d’urbanisme, il faut une déclaration préalable ou un permis de construire. Renseignez-vous en mairie avant de signer le devis.
@@ -1392,6 +1468,28 @@ Source : La Maison Saint-Gobain, mis à jour le 06/07/2026
 - Combles aménagés, par le toit | 240 €/m² TTC | Saint-Gobain, 07/2026
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
+### Exemple de devis d’isolation des combles : les lignes à vérifier
+Un devis d’isolation se juge sur l’isolant posé : son épaisseur et sa résistance thermique doivent y figurer.
+- Poste | Unité | À vérifier
+- Préparation des combles | forfait | La protection des gaines et des spots, et l’accès aux combles
+- Isolant fourni et posé | m² | Le type d’isolant, soufflé ou déroulé, son épaisseur et sa résistance thermique R
+- Pare-vapeur | m² | Sa présence et sa continuité
+- Écarts au feu autour des conduits | par conduit | La distance laissée autour des conduits de cheminée
+- Trappe d’accès | par trappe | Son isolation et son étanchéité
+- Main-d’œuvre | heure ou forfait | La durée du chantier
+- TVA | taux | 5,5 % pour des travaux qui améliorent la performance énergétique d’un logement de plus de deux ans
+
+#### Les mentions que le devis doit porter
+- La date du devis et sa durée de validité
+- Le nom, l’adresse et la forme juridique de l’entreprise
+- Son numéro d’immatriculation (Siren et répertoire des métiers pour un artisan) et son numéro de TVA
+- Votre nom et l’adresse du chantier
+- La date de début et la durée estimée des travaux
+- Le détail de chaque prestation, en quantité et en prix unitaire, et le prix de la main-d’œuvre
+- Les frais de déplacement, s’il y en a, et les modalités de paiement
+- L’assurance souscrite, les coordonnées de l’assureur et la zone couverte
+Source : Service-Public, fiche F31144. Ces mentions sont obligatoires pour une réparation ou un entretien ; exigez-les aussi pour des travaux de rénovation.
+
 ### Avant de signer un devis d’isolation
 Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (france-renov.gouv.fr), et l’absence de pression pour signer. Le détail des 5 points
 
@@ -1425,6 +1523,9 @@ Voir toutes les questions
 
 **Combien coûtent des travaux d’isolation ?**
 Pour des combles perdus, comptez environ 40 €/m² TTC pose comprise si l’accès se fait par l’intérieur, 45 €/m² par le toit, selon La Maison Saint-Gobain (2026). Sous les rampants ou par l’extérieur, c’est plus cher. Seule une visite permet un devis fiable, et elle est gratuite.
+
+**Que doit contenir un devis d’isolation ?**
+Le type d’isolant, son épaisseur et sa résistance thermique, la surface traitée et le prix au m², la main-d’œuvre, la date et la durée de validité, les coordonnées de l’entreprise et l’assurance souscrite (Service-Public, fiche F31144). Pour les aides, l’entreprise doit être certifiée RGE.
 
 **Faut-il une autorisation pour isoler par l’extérieur ?**
 En général oui : l’isolation par l’extérieur change l’aspect de la façade et demande une déclaration préalable en mairie.

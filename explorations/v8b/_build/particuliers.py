@@ -625,7 +625,9 @@ PAGES = {
                ("Fissures", "Diagnostic de l’origine et reprise des fissures avant finition."),
                ("Nettoyage et peinture", "Façade rafraîchie quand le support est sain."),
                ("Isolation par l’extérieur", "Isolant posé sur les murs puis recouvert d’un enduit ou d’un bardage.")],
-        faq=[("Le ravalement est-il obligatoire ?", "À Paris et dans les communes inscrites sur une liste fixée par le préfet, la mairie peut imposer un ravalement au moins tous les dix ans. Ailleurs, la loi ne fixe pas de fréquence (Code de la construction et de l’habitation). Votre mairie vous dit si votre commune est concernée."),
+        faq=[("Que doit contenir un devis de ravalement ?",
+              "Le détail de chaque poste en quantité et en prix unitaire (échafaudage, nettoyage, fissures, enduit, finition), la main-d’œuvre, la date et la durée de validité, les coordonnées et le numéro d’immatriculation de l’entreprise, et l’assurance souscrite avec les coordonnées de l’assureur (Service-Public, fiche F31144)."),
+             ("Le ravalement est-il obligatoire ?", "À Paris et dans les communes inscrites sur une liste fixée par le préfet, la mairie peut imposer un ravalement au moins tous les dix ans. Ailleurs, la loi ne fixe pas de fréquence (Code de la construction et de l’habitation). Votre mairie vous dit si votre commune est concernée."),
              ("Faut-il une autorisation pour un ravalement ?", "Un ravalement qui modifie l’aspect extérieur demande en général une déclaration préalable en mairie. Vérifiez aussi le plan local d’urbanisme de votre commune."),
              ("Peut-on isoler en même temps que le ravalement ?", "Oui, c’est le bon moment pour une isolation par l’extérieur. Réalisée par une entreprise RGE, elle peut ouvrir droit à des aides : vérifiez-les sur france-renov.gouv.fr."),
              ("Quelle TVA pour un ravalement ?", "Dans un logement de plus de deux ans, la TVA est de 10 % sur un ravalement, et de 5,5 % s’il s’accompagne d’une isolation qui améliore la performance énergétique (Code général des impôts, art. 279-0 bis et 278-0 bis A).")],
@@ -638,7 +640,9 @@ PAGES = {
                ("Porte d’entrée", "Isolation, sécurité et style de la façade."),
                ("Baie vitrée", "Coulissante ou à galandage, création ou remplacement."),
                ("Volets", "Roulants, battants ou persiennes, motorisés ou non.")],
-        faq=[("Pose en rénovation ou dépose totale ?", "En rénovation, la fenêtre neuve se pose sur l’ancien cadre : c’est plus rapide, mais la surface vitrée diminue un peu. En dépose totale, tout est retiré : c’est plus cher, avec un meilleur résultat. Le menuisier vous conseille lors de la visite."),
+        faq=[("Que doit contenir un devis de fenêtres ?",
+              "Pour chaque fenêtre : le type de pose, le matériau, les dimensions, le vitrage et la performance, avec la quantité et le prix unitaire. S’y ajoutent la main-d’œuvre, la date et la durée de validité, les coordonnées et le numéro d’immatriculation de l’entreprise, et l’assurance souscrite (Service-Public, fiche F31144)."),
+             ("Pose en rénovation ou dépose totale ?", "En rénovation, la fenêtre neuve se pose sur l’ancien cadre : c’est plus rapide, mais la surface vitrée diminue un peu. En dépose totale, tout est retiré : c’est plus cher, avec un meilleur résultat. Le menuisier vous conseille lors de la visite."),
              ("PVC, aluminium ou bois ?", "Le PVC est le plus économique, l’aluminium permet des profils fins et de grandes baies, le bois apporte du cachet et demande plus d’entretien."),
              ("Faut-il une autorisation pour changer ses fenêtres ?", "Remplacer à l’identique ne demande en général rien. Changer l’aspect, le matériau, la couleur ou le découpage demande une déclaration préalable en mairie."),
              ("Des aides pour changer ses fenêtres ?", "Remplacer du simple vitrage par des fenêtres performantes peut ouvrir droit à des aides à la rénovation énergétique, avec une entreprise RGE : vérifiez votre cas sur france-renov.gouv.fr. Dans un logement de plus de deux ans, la TVA est de 5,5 % pour des fenêtres qui améliorent la performance énergétique, et de 10 % sinon.")],
@@ -651,7 +655,9 @@ PAGES = {
                ("Traitement du bois", "Contre les insectes et les champignons, en curatif ou en préventif."),
                ("Extension et surélévation", "Nouvelle charpente pour agrandir ou créer un étage."),
                ("Charpente neuve", "Traditionnelle ou en fermettes, souvent avec la couverture.")],
-        faq=[("Faut-il un permis pour une surélévation ?", "Une surélévation crée de la surface : selon la surface ajoutée et le plan local d’urbanisme, il faut une déclaration préalable ou un permis de construire. Renseignez-vous en mairie avant de signer le devis."),
+        faq=[("Que doit contenir un devis de charpente ?",
+              "Les pièces remplacées ou renforcées, l’essence et la section du bois, le traitement prévu, chaque poste en quantité et en prix unitaire, la main-d’œuvre, la date et la durée de validité, les coordonnées de l’entreprise et l’assurance souscrite (Service-Public, fiche F31144)."),
+             ("Faut-il un permis pour une surélévation ?", "Une surélévation crée de la surface : selon la surface ajoutée et le plan local d’urbanisme, il faut une déclaration préalable ou un permis de construire. Renseignez-vous en mairie avant de signer le devis."),
              ("Quels signes montrent qu’une charpente est abîmée ?", "Du bois qui s’effrite, de la sciure ou de petits trous, des traces d’humidité, une toiture qui se déforme. Au moindre doute, faites-la inspecter."),
              ("Quand faut-il traiter une charpente ?", "En présence d’insectes ou de champignons, et en prévention lors d’une réfection de toiture, quand le bois est accessible."),
              ("Faut-il refaire la couverture en même temps ?", "Souvent, oui : la charpente est alors à nu et les deux chantiers se coordonnent. Le charpentier et le couvreur peuvent travailler ensemble.")],
@@ -664,7 +670,9 @@ PAGES = {
                ("Combles aménagés", "Isolation sous les rampants, par l’intérieur."),
                ("Murs par l’extérieur", "Isolant posé sur la façade puis recouvert."),
                ("Toiture par l’extérieur", "Isolant posé sur la charpente lors d’une réfection, technique dite du sarking.")],
-        faq=[("Faut-il une autorisation pour isoler par l’extérieur ?", "En général oui : l’isolation par l’extérieur change l’aspect de la façade et demande une déclaration préalable en mairie."),
+        faq=[("Que doit contenir un devis d’isolation ?",
+              "Le type d’isolant, son épaisseur et sa résistance thermique, la surface traitée et le prix au m², la main-d’œuvre, la date et la durée de validité, les coordonnées de l’entreprise et l’assurance souscrite (Service-Public, fiche F31144). Pour les aides, l’entreprise doit être certifiée RGE."),
+             ("Faut-il une autorisation pour isoler par l’extérieur ?", "En général oui : l’isolation par l’extérieur change l’aspect de la façade et demande une déclaration préalable en mairie."),
              ("Quelles aides pour isoler ses combles ?", "Les plus courantes sont MaPrimeRénov’ et les primes CEE des fournisseurs d’énergie. Leur montant dépend des travaux et de vos revenus, et toutes demandent une entreprise certifiée RGE. Les règles changent souvent : vérifiez votre cas sur france-renov.gouv.fr avant de signer."),
              ("Combles perdus ou aménagés : quelle différence ?", "Des combles perdus ne sont pas habitables : l’isolant se pose sur le plancher, c’est le chantier le plus simple. Des combles aménagés sont habitables : l’isolant se pose sous la toiture."),
              ("Faut-il une entreprise RGE ?", "Pour obtenir des aides publiques, oui. Dites-le lors de notre appel : nous vous disons si l’artisan de votre secteur est certifié RGE.")],
@@ -756,22 +764,63 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     serious = f"""<section class="sheet pf-ser-short" id="artisan-serieux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>{ser_h}</h2><p>Vérifiez cinq points&nbsp;: son immatriculation (<a class="link" href="https://annuaire-entreprises.data.gouv.fr/" target="_blank" rel="noopener">annuaire-entreprises.data.gouv.fr</a>), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (<a class="link" href="https://france-renov.gouv.fr/" target="_blank" rel="noopener">france-renov.gouv.fr</a>), et l’absence de pression pour signer. <a class="link" href="/devis-travaux/#artisan-serieux">Le détail des 5 points</a></p></div>
 </section>"""
-    seq = [hero, blocks["promise"], needs, price] + ([example_toiture()] if key == "toiture" else []) + ([blocks["leak"]] if key == "toiture" else []) + [serious, brief, faq, others, blocks["end"]]
+    seq = [hero, blocks["promise"], needs, price] + [example(key)] + ([blocks["leak"]] if key == "toiture" else []) + [serious, brief, faq, others, blocks["end"]]
     return "\n\n".join(seq)
 
 
 SP_DEVIS = "https://www.service-public.gouv.fr/particuliers/vosdroits/F31144"
-DEVIS_TOIT = [  # postes courants d'un devis de réfection, sans prix : les prix sourcés sont dans le tableau du dessus
-    ("Installation de chantier, échafaudage, protections", "forfait", "La durée de location et la protection des abords"),
-    ("Dépose de l’ancienne couverture", "m²", "L’évacuation et le tri des déchets : compris ou non"),
-    ("Écran sous-toiture", "m²", "Le type de membrane, respirante ou non"),
-    ("Liteaux et contre-liteaux", "m²", "Un remplacement complet ou partiel"),
-    ("Tuiles ou ardoises neuves", "m²", "La marque, le modèle, le coloris et le nombre au m²"),
-    ("Faîtage, rives, arêtiers", "mètre linéaire", "La pose : scellée au mortier ou à sec"),
-    ("Zinguerie : gouttières, descentes, solins", "mètre linéaire", "Le matériau : zinc, cuivre ou aluminium"),
-    ("Main-d’œuvre", "heure ou forfait", "Le nombre de couvreurs et la durée du chantier"),
-    ("TVA", "taux", "10 % pour l’entretien d’un logement de plus de deux ans, 5,5 % avec une isolation qui améliore la performance énergétique"),
-]
+DEVIS = {  # postes courants d'un devis, sans prix : les prix sourcés sont dans le tableau « prix » de chaque page
+    "toiture": [
+        ("Installation de chantier, échafaudage, protections", "forfait", "La durée de location et la protection des abords"),
+        ("Dépose de l’ancienne couverture", "m²", "L’évacuation et le tri des déchets : compris ou non"),
+        ("Écran sous-toiture", "m²", "Le type de membrane, respirante ou non"),
+        ("Liteaux et contre-liteaux", "m²", "Un remplacement complet ou partiel"),
+        ("Tuiles ou ardoises neuves", "m²", "La marque, le modèle, le coloris et le nombre au m²"),
+        ("Faîtage, rives, arêtiers", "mètre linéaire", "La pose : scellée au mortier ou à sec"),
+        ("Zinguerie : gouttières, descentes, solins", "mètre linéaire", "Le matériau : zinc, cuivre ou aluminium"),
+        ("Main-d’œuvre", "heure ou forfait", "Le nombre de couvreurs et la durée du chantier"),
+        ("TVA", "taux", "10 % pour l’entretien d’un logement de plus de deux ans, 5,5 % avec une isolation qui améliore la performance énergétique")],
+    "facade": [
+        ("Installation de chantier, échafaudage, protections", "forfait ou m²", "La protection des fenêtres et des abords, et l’autorisation de voirie si l’échafaudage est sur le trottoir"),
+        ("Nettoyage du support", "m²", "La technique, adaptée au matériau de la façade"),
+        ("Traitement des fissures", "mètre linéaire", "L’origine des fissures et la façon de les reprendre"),
+        ("Reprise de l’enduit ou des joints", "m²", "Un enduit adapté au support, à la chaux sur un mur ancien par exemple"),
+        ("Finition : peinture, enduit ou crépi", "m²", "Le produit, le nombre de couches et la référence de la teinte"),
+        ("Isolation par l’extérieur, si prévue", "m²", "L’isolant, son épaisseur et sa résistance thermique"),
+        ("Main-d’œuvre", "heure ou forfait", "Le nombre de personnes et la durée du chantier"),
+        ("TVA", "taux", "10 % pour un ravalement dans un logement de plus de deux ans, 5,5 % s’il s’accompagne d’une isolation qui améliore la performance énergétique")],
+    "fenetres": [
+        ("Type de pose", "par fenêtre", "Rénovation sur l’ancien cadre ou dépose totale : la surface vitrée n’est pas la même"),
+        ("Fenêtre fournie", "par fenêtre", "Le matériau, les dimensions, le vitrage et le coefficient Uw : plus il est bas, mieux la fenêtre isole"),
+        ("Pose et étanchéité", "par fenêtre", "Les joints, le calfeutrement et les finitions intérieures"),
+        ("Volets et coffres", "par fenêtre", "Le type de volet et la motorisation, si elle est prévue"),
+        ("Habillages et appuis", "mètre linéaire", "Les matériaux et la teinte"),
+        ("Évacuation des anciennes menuiseries", "forfait", "Comprise ou non"),
+        ("TVA", "taux", "5,5 % pour des fenêtres qui améliorent la performance énergétique d’un logement de plus de deux ans, sinon 10 %")],
+    "charpente": [
+        ("Accès et sécurité : échafaudage, étaiement", "forfait", "La durée et ce qui est protégé"),
+        ("Dépose des pièces abîmées", "mètre linéaire", "Quelles pièces, et pourquoi elles sont déposées"),
+        ("Remplacement ou renfort des pièces", "mètre linéaire", "L’essence du bois, la section des pièces et leur traitement"),
+        ("Traitement du bois", "m²", "Préventif ou curatif, contre les insectes ou les champignons, et le produit utilisé"),
+        ("Dépose et repose de la couverture, si nécessaire", "m²", "Ce qui est réutilisé et ce qui est remplacé"),
+        ("Main-d’œuvre", "heure ou forfait", "Le nombre de charpentiers et la durée du chantier"),
+        ("TVA", "taux", "10 % dans un logement de plus de deux ans")],
+    "isolation": [
+        ("Préparation des combles", "forfait", "La protection des gaines et des spots, et l’accès aux combles"),
+        ("Isolant fourni et posé", "m²", "Le type d’isolant, soufflé ou déroulé, son épaisseur et sa résistance thermique R"),
+        ("Pare-vapeur", "m²", "Sa présence et sa continuité"),
+        ("Écarts au feu autour des conduits", "par conduit", "La distance laissée autour des conduits de cheminée"),
+        ("Trappe d’accès", "par trappe", "Son isolation et son étanchéité"),
+        ("Main-d’œuvre", "heure ou forfait", "La durée du chantier"),
+        ("TVA", "taux", "5,5 % pour des travaux qui améliorent la performance énergétique d’un logement de plus de deux ans")],
+}
+DEVIS_HEAD = {
+    "toiture": ("Exemple de devis de toiture : les lignes à vérifier", "Un devis de réfection se lit poste par poste, et chaque ligne a son point à vérifier avant de signer.", "Postes d’un devis de réfection de toiture"),
+    "facade": ("Exemple de devis de ravalement : les lignes à vérifier", "Un devis de ravalement se lit de l’échafaudage à la finition, poste par poste.", "Postes d’un devis de ravalement de façade"),
+    "fenetres": ("Exemple de devis de fenêtres : les lignes à vérifier", "Chaque fenêtre a sa ligne : le devis doit dire ce qui est posé, et comment.", "Postes d’un devis de remplacement de fenêtres"),
+    "charpente": ("Exemple de devis de charpente : les lignes à vérifier", "Le prix dépend de l’état du bois : le devis doit dire quelles pièces sont remplacées ou renforcées.", "Postes d’un devis de travaux de charpente"),
+    "isolation": ("Exemple de devis d’isolation des combles : les lignes à vérifier", "Un devis d’isolation se juge sur l’isolant posé : son épaisseur et sa résistance thermique doivent y figurer.", "Postes d’un devis d’isolation des combles"),
+}
 DEVIS_MENTIONS = ["La date du devis et sa durée de validité", "Le nom, l’adresse et la forme juridique de l’entreprise",
                   "Son numéro d’immatriculation (Siren et répertoire des métiers pour un artisan) et son numéro de TVA",
                   "Votre nom et l’adresse du chantier", "La date de début et la durée estimée des travaux",
@@ -780,16 +829,19 @@ DEVIS_MENTIONS = ["La date du devis et sa durée de validité", "Le nom, l’adr
                   "L’assurance souscrite, les coordonnées de l’assureur et la zone couverte"]
 
 
-def example_toiture():
-    rows = "".join(f'<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>' for a, b, c in DEVIS_TOIT)
+def example(key):
+    h2, intro, cap = DEVIS_HEAD[key]
+    rows = "".join(f'<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>' for a, b, c in DEVIS[key])
     lis = "".join(f"<li>{m}</li>" for m in DEVIS_MENTIONS)
+    note = ("Ces mentions sont obligatoires pour une réparation ou un entretien de toiture ; exigez-les aussi pour une réfection." if key == "toiture"
+            else "Ces mentions sont obligatoires pour une réparation ou un entretien ; exigez-les aussi pour des travaux de rénovation.")
     return f"""<section class="sheet" id="exemple-devis" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Exemple de devis de toiture : les lignes à vérifier</h2><p>Un devis de réfection se lit poste par poste, et chaque ligne a son point à vérifier avant de signer.</p></div>
+  <div class="grid sp-head"><h2 data-split>{h2}</h2><p>{intro}</p></div>
   <div class="pf-refbox" style="max-width:none">
-    <table class="pf-tab"><caption>Postes d’un devis de réfection de toiture</caption><thead><tr><th scope="col">Poste</th><th scope="col">Unité</th><th scope="col">À vérifier</th></tr></thead><tbody>{rows}</tbody></table>
+    <table class="pf-tab"><caption>{cap}</caption><thead><tr><th scope="col">Poste</th><th scope="col">Unité</th><th scope="col">À vérifier</th></tr></thead><tbody>{rows}</tbody></table>
     <h3 style="margin-top:24px">Les mentions que le devis doit porter</h3>
     <ul style="margin:12px 0 0;padding-left:20px;list-style:disc;line-height:1.6">{lis}</ul>
-    <p class="pf-src">Source : <a class="link" href="{SP_DEVIS}" target="_blank" rel="noopener">Service-Public, fiche F31144</a>. Ces mentions sont obligatoires pour une réparation ou un entretien de toiture ; exigez-les aussi pour une réfection.</p>
+    <p class="pf-src">Source : <a class="link" href="{SP_DEVIS}" target="_blank" rel="noopener">Service-Public, fiche F31144</a>. {note}</p>
     <a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a>
   </div>
 </section>"""
