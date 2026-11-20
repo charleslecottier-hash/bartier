@@ -513,6 +513,16 @@ def write(path, title, desc, body, nav=None, schema=None, metier=None, form_afte
     return path
 
 
+def write_plain(path, title, desc, body, schema=None):
+    """Page sans formulaire artisan : les liens #contact renvoient à l'accueil."""
+    fix = lambda s: s.replace('href="#contact"', 'href="/#contact"')
+    doc = head(title, desc, path, schema) + fix(absolutize(BODY_OPEN)) + "\n" + fr(body) + "\n" + fix(absolutize(TAIL))
+    out = ROOT / path.strip("/") / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(doc, encoding="utf-8")
+    return path
+
+
 def crumbs(*items):
     parts = ['<a href="/">Accueil</a>'] + [f'<a href="{h}">{t}</a>' for t, h in items[:-1]] + [f'<span aria-current="page">{items[-1][0]}</span>']
     return '<nav class="crumbs" aria-label="Fil d\'Ariane">' + '<span aria-hidden="true">/</span>'.join(parts) + "</nav>"
@@ -1011,7 +1021,7 @@ write("/questions/", "Questions fréquentes des artisans | Bartier & Co",
 paths.append("/questions/")
 
 # ——— Blog ———
-COVER = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Tuiles de toiture", "google-ads-ou-meta-ads-artisan": "Une personne consulte", "relance-devis-artisan": "Une chargée de rappel"}
+COVER = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Tuiles de toiture", "google-ads-ou-meta-ads-artisan": "Une personne consulte", "relance-devis-artisan": "Une chargée de rappel", "dpe-2027": "Isolation d'un mur"}
 import contenu as CT
 for a in ARTICLES:
     _p = CT.PLUS.get(a["slug"])
@@ -1019,11 +1029,13 @@ for a in ARTICLES:
         assert _p["before"] in a["body"], a["slug"]
         a["body"] = a["body"].replace(_p["before"], _p["insert"] + _p["before"], 1) + _p["append"] + "\n" + CT.qa_html(_p["faq"]) + "\n"
         a["faq"] = _p["faq"]
+    elif a.get("faq") and "<h2>Questions fréquentes</h2>" not in a["body"]:
+        a["body"] = a["body"] + "\n" + CT.qa_html(a["faq"]) + "\n"
     a["minutes"] = max(3, round(len(re.sub(r"<[^>]+>", " ", a["body"]).split()) / 200))
 posts = []
 for a in ARTICLES:
     url, alt = img(COVER[a["slug"]])
-    posts.append(f'    <li class="post"><a class="post-link" href="/blog/{a["slug"]}/"><p class="post-meta soft"><time datetime="{TODAY}">17 nov. 2026</time><br>{a["tag"]}</p><h2 class="post-title">{a["short"]}</h2><figure class="post-photo frame" data-wipe><img src="{url}" alt="{html.escape(alt)}" width="900" height="676"></figure></a></li>')
+    posts.append(f'    <li class="post"><a class="post-link" href="/blog/{a["slug"]}/"><p class="post-meta soft"><time datetime="{a.get('date', TODAY)}">{a.get('date_short', '17 nov. 2026')}</time><br>{a["tag"]}</p><h2 class="post-title">{a["short"]}</h2><figure class="post-photo frame" data-wipe><img src="{url}" alt="{html.escape(alt)}" width="900" height="676"></figure></a></li>')
 write("/blog/", "Blog artisans : chantiers, publicité, devis | Bartier & Co",
       "Articles courts et concrets pour les artisans du bâtiment : trouver des chantiers, choisir sa publicité locale, relancer ses devis, comprendre les rendez-vous.",
       "\n\n".join([
@@ -1038,31 +1050,44 @@ write("/blog/", "Blog artisans : chantiers, publicité, devis | Bartier & Co",
                                                                      "publisher": {"@id": SITE + "/#org"}, "blogPost": [{"@id": f"{SITE}/blog/{x['slug']}/#article"} for x in ARTICLES]}, bc_ld(("Blog", "/blog/"))]})
 paths.append("/blog/")
 
-SEO_TITLE = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Demande partagée, exclusive ou rendez-vous qualifié ?",
+def _hero_cta(block, cta):
+    """Article pour les propriétaires : le bouton du haut mène au formulaire de devis, pas à l'appel artisan."""
+    if not cta:
+        return block
+    btn = f'<div class="actions"><a class="btn" href="{cta[1]}"><span>{cta[0]}</span><svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a></div>'
+    out, n = re.subn(r'<div class="actions">.*?</div>', lambda m: btn, block, count=1, flags=re.S)
+    assert n == 1
+    return out
+
+
+ART_ASIDE = """<h3>Votre secteur est-il libre ?</h3>
+      <p>Un seul artisan par métier et par secteur.</p>
+      <a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span></a>"""
+SEO_TITLE = {"dpe-2027": "DPE 2027 : nouvelle étiquette, location et travaux",
+             "lead-partage-lead-exclusif-rendez-vous-qualifie": "Demande partagée, exclusive ou rendez-vous qualifié ?",
              "relance-devis-artisan": "Relance de devis : calendrier, SMS et script d'appel",
              "google-ads-ou-meta-ads-artisan": "Google Ads ou Meta Ads pour un artisan : que choisir ?"}
 for a in ARTICLES:
     path = f"/blog/{a['slug']}/"
-    meta = f'<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur</span><span>Publié le <time datetime="{TODAY}">17 novembre 2026</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
+    meta = f'<p class="post-meta-line"><span>Par <a href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur</span><span>Publié le <time datetime="{a.get('date', TODAY)}">{a.get('date_fr', '17 novembre 2026')}</time></span><span>Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></span><span>{a["minutes"]} min de lecture</span></p>'
     body = "\n\n".join([
-        top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta, photo=COVER[a["slug"]], dated=False).replace('class="pg-photo frame"', 'class="pg-photo frame is-color"', 1),
+        _hero_cta(top(a["tag"], a["title"], "", crumbs(("Blog", "/blog/"), (a["short"], path)), meta=meta, photo=COVER[a["slug"]], dated=False).replace('class="pg-photo frame"', 'class="pg-photo frame is-color"', 1), a.get("cta")),
         f"""<section class="sheet" data-tone="light">
   <div class="grid art-grid">
     <article class="prose">
 {label_tables(a['body'])}
     </article>
     <aside class="art-aside">
-      <h3>Votre secteur est-il libre ?</h3>
-      <p>Un seul artisan par métier et par secteur.</p>
-      <a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span></a>
+      {a.get("aside") or ART_ASIDE}
     </aside>
   </div>
 </section>""",
         more("À lire aussi", "Tous les articles", "/blog/", [(x["short"], f"/blog/{x['slug']}/") for x in ARTICLES if x["slug"] != a["slug"]]),
     ])
-    write(path, SEO_TITLE.get(a["slug"]) or f"{a['short']} | Bartier & Co", a["desc"], body, nav="/blog/",
+    _w = (lambda *x, nav=None, schema=None: write_plain(*x, schema=schema)) if a.get("cta") else write  # article propriétaires : pas de formulaire artisan
+    _w(path, SEO_TITLE.get(a["slug"]) or f"{a['short']} | Bartier & Co", a["desc"], body, nav="/blog/",
           schema={"@context": "https://schema.org", "@graph": [
-              {"@type": "BlogPosting", "@id": SITE + path + "#article", "isPartOf": {"@id": SITE + "/blog/#blog"}, "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": TODAY + "T09:00:00+01:00", "dateModified": "@@MAJ@@", "inLanguage": "fr-FR",
+              {"@type": "BlogPosting", "@id": SITE + path + "#article", "isPartOf": {"@id": SITE + "/blog/#blog"}, "headline": fr(a["title"]), "description": fr(a["desc"]), "datePublished": a.get("date", TODAY) + "T09:00:00+01:00", "dateModified": "@@MAJ@@", "inLanguage": "fr-FR",
                "mainEntityOfPage": SITE + path, "image": [img(COVER[a["slug"]])[0]],
                "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur", "url": SITE + "/qui-sommes-nous/#charles", "image": portrait("charles")},
                "publisher": dict(ORG_REF, logo={"@type": "ImageObject", "url": SITE + "/assets/logo-bartier.png"})},
@@ -1278,16 +1303,6 @@ def legal_fill(frag):
             return re.sub(r"<td>", lambda c: f'<td data-label="{html.escape(next(cells, ""))}">', r.group(0))
         return re.sub(r"<tr>(?:(?!</tr>).)*</tr>", row, m.group(0), flags=re.S)
     return re.sub(r"<table>.*?</table>", table, frag, flags=re.S)
-
-
-def write_plain(path, title, desc, body, schema=None):
-    """Page sans formulaire artisan : les liens #contact renvoient à l'accueil."""
-    fix = lambda s: s.replace('href="#contact"', 'href="/#contact"')
-    doc = head(title, desc, path, schema) + fix(absolutize(BODY_OPEN)) + "\n" + fr(body) + "\n" + fix(absolutize(TAIL))
-    out = ROOT / path.strip("/") / "index.html"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(doc, encoding="utf-8")
-    return path
 
 
 LEGAL_NAV = [(s, json.loads(re.match(r"<!--\s*(\{.*?\})\s*-->", (ROOT / "_build" / "legal" / f"{s}.html").read_text(encoding="utf-8")).group(1))) for s in LEGAL_READY]

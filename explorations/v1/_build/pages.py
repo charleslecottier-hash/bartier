@@ -423,6 +423,102 @@ ARTICLES = [
 <p>Notez pour chaque devis : envoyé, relancé, signé ou perdu, et pourquoi. Au bout de quelques mois, vous saurez quels projets vous signez, et où partent les autres. Votre <a href="/lexique/#taux-de-signature">taux de signature</a> (devis signés ÷ devis envoyés × 100) dit si les relances paient.</p>
 """,
     },
+    {
+        "slug": "dpe-2027",
+        "tag": "Propriétaires",
+        "date": "2026-11-20",
+        "date_fr": "20 novembre 2026",
+        "date_short": "20 nov. 2026",
+        "minutes": 6,
+        "title": "DPE 2027 : ce qui change pour les propriétaires",
+        "short": "DPE 2027 : ce qui change pour les propriétaires",
+        "desc": "Nouvelle étiquette gratuite, location des logements G, F et E, vote en cours au Parlement : ce qui change pour le DPE en 2027, sources officielles à l'appui.",
+        "cta": ("Obtenir mon devis gratuit", "/devis-travaux/#projet"),
+        "aside": '<h3>Des travaux pour gagner une classe ?</h3>\n      <p>Isolation, fenêtres, toiture, façade : un seul artisan près de chez vous. Visite et devis offerts.</p>\n      <a class="btn" href="/devis-travaux/#projet"><span>Obtenir mon devis gratuit</span></a>',
+        "faq": [
+            ("Le DPE 2027 peut-il faire baisser mon étiquette ?", "Non. Selon le ministère de la Transition écologique, le passage du coefficient de l'électricité à 1,7 ne dégrade aucune étiquette. Il peut seulement améliorer celle des logements chauffés à l'électricité."),
+            ("Faut-il refaire son DPE en 2027 ?", "Non, s'il est encore valable. À partir du 1er janvier 2027, une attestation avec la nouvelle étiquette s'obtient gratuitement sur l'Observatoire DPE-Audit de l'ADEME, avec le numéro du DPE. Un nouveau diagnostic n'est utile que si vous avez fait des travaux depuis."),
+            ("Peut-on encore louer un logement classé G ?", "Pas selon la loi en vigueur : depuis le 1er janvier 2025, un logement classé G n'est plus décent pour un nouveau bail, un renouvellement ou une reconduction. Un projet de loi en cours d'examen pourrait changer cette règle, qui s'applique tant qu'il n'est pas promulgué."),
+            ("Quand un logement classé F ne pourra-t-il plus être loué ?", "Le 1er janvier 2028, selon la loi en vigueur, sous réserve du projet de loi sur le logement en cours d'examen au Parlement."),
+            ("Le DPE est-il obligatoire pour louer ?", "Oui. Il fait partie du dossier remis au locataire avec le bail, et l'étiquette doit figurer dans l'annonce."),
+            ("Quels travaux améliorent le plus le DPE ?", "Dans une maison non isolée, la toiture et les combles d'abord : 25 à 30 % des pertes de chaleur selon l'ADEME. Viennent ensuite les fuites d'air, les murs, puis les fenêtres."),
+        ],
+        "body": """
+<p class="answer">Au <b>1er janvier 2027</b>, le DPE des logements chauffés à l'électricité est recalculé : le coefficient de l'électricité passe de 1,9 à 1,7. L'étiquette peut s'améliorer, jamais se dégrader, et la mise à jour est gratuite sur l'Observatoire DPE-Audit de l'ADEME. Pour la location, les règles en vigueur n'ont pas changé : logements G interdits depuis 2025, F à partir de 2028, E à partir de 2034. Un projet de loi en cours d'examen pourrait toutefois les modifier.</p>
+
+<h2>Qu'est-ce qui change pour le DPE au 1er janvier 2027 ?</h2>
+<p>Un <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054747079" target="_blank" rel="noopener">arrêté du 19 août 2026</a> abaisse de 1,9 à 1,7 le coefficient qui convertit la consommation d'électricité en énergie primaire, la valeur qui sert à calculer l'étiquette. Ce coefficient avait déjà baissé de 2,3 à 1,9 au 1er janvier 2026.</p>
+<ul>
+<li>Le changement porte sur la part d'électricité dans la consommation : il profite surtout aux logements chauffés à l'électricité.</li>
+<li>Selon le <a href="https://www.ecologie.gouv.fr/presse/dpe-audits-energetiques-publication-larrete-abaissant-facteur-conversion-lelectricite-17-1er" target="_blank" rel="noopener">ministère de la Transition écologique</a>, aucun logement ne verra son étiquette se dégrader.</li>
+<li>Les DPE réalisés à partir du 1er janvier 2027 intègrent directement la nouvelle valeur. Les DPE déjà faits restent valables (<a href="https://www.service-public.gouv.fr/particuliers/actualites/A18446" target="_blank" rel="noopener">Service-Public</a>).</li>
+</ul>
+
+<h2>Comment obtenir la nouvelle étiquette de votre DPE ?</h2>
+<p>Inutile de refaire le diagnostic. À partir du 1er janvier 2027, la mise à jour est gratuite et immédiate :</p>
+<ol>
+<li>Retrouvez le numéro de votre DPE : 13 caractères, en haut de la première page du rapport.</li>
+<li>Saisissez-le sur l'<a href="https://observatoire-dpe-audit.ademe.fr/" target="_blank" rel="noopener">Observatoire DPE-Audit de l'ADEME</a>.</li>
+<li>Téléchargez l'attestation qui indique la nouvelle étiquette, et gardez-la avec votre DPE.</li>
+</ol>
+<p>L'attestation recalcule l'étiquette à partir des mêmes données. Si vous avez fait des travaux depuis le diagnostic, seul un nouveau DPE les prendra en compte.</p>
+
+<h2>Votre DPE est-il encore valable ?</h2>
+<table>
+<thead><tr><th>DPE réalisé</th><th>Validité</th></tr></thead>
+<tbody>
+<tr><td>Depuis le 1er juillet 2021</td><td>10 ans</td></tr>
+<tr><td>Du 1er janvier 2018 au 30 juin 2021</td><td>Plus valable depuis le 1er janvier 2025</td></tr>
+<tr><td>Avant le 1er janvier 2018</td><td>Plus valable depuis le 1er janvier 2023</td></tr>
+</tbody>
+</table>
+<p>Le DPE est obligatoire pour vendre ou louer un logement, et son étiquette doit figurer dans l'annonce (<a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F16096" target="_blank" rel="noopener">Service-Public, fiche F16096</a>).</p>
+
+<h2>Louer un logement classé G, F ou E : les règles en vigueur</h2>
+<p>La loi Climat et Résilience fixe un niveau minimal de performance pour qu'un logement soit décent, donc louable (<a href="https://www.service-public.gouv.fr/particuliers/actualites/A17975" target="_blank" rel="noopener">Service-Public</a>) :</p>
+<table>
+<thead><tr><th>Classe</th><th>Plus louable à partir du</th></tr></thead>
+<tbody>
+<tr><td>G</td><td>1er janvier 2025</td></tr>
+<tr><td>F</td><td>1er janvier 2028</td></tr>
+<tr><td>E</td><td>1er janvier 2034</td></tr>
+</tbody>
+</table>
+<p>La règle s'applique à la signature d'un nouveau bail, à son renouvellement ou à sa reconduction tacite, pas en cours de bail. En Guadeloupe, en Martinique, en Guyane, à La Réunion et à Mayotte, le calendrier est décalé : 2028 pour les logements G, 2031 pour les F.</p>
+<p>Avec le coefficient à 1,7, certains logements chauffés à l'électricité changent de classe sans travaux : vérifiez la nouvelle étiquette avant de conclure que votre logement ne peut plus être loué.</p>
+
+<h2>Ce que le Parlement est en train de voter</h2>
+<p>Le <a href="https://www.vie-publique.fr/loi/303813-relance-logement-projet-de-loi-jeanbrun" target="_blank" rel="noopener">projet de loi sur la relance et la décentralisation du logement</a> pourrait changer ce calendrier :</p>
+<ul>
+<li><b>Juillet 2026</b> : le Sénat adopte une version qui garde l'interdiction, avec des assouplissements.</li>
+<li><b>17 novembre 2026</b> : l'Assemblée nationale adopte un amendement qui supprime les interdictions de louer liées au DPE, contre l'avis du gouvernement (<a href="https://www.batiweb.com/actualites/legislation/passoires-thermiques-deputes-amendement-interdiction-location-49635" target="_blank" rel="noopener">Batiweb</a>).</li>
+<li><b>24 novembre 2026</b> : vote solennel de l'Assemblée sur l'ensemble du texte. Une commission mixte paritaire, sept députés et sept sénateurs, cherchera ensuite un texte commun.</li>
+</ul>
+<p><b>Rien n'est définitif</b> : tant que la loi n'est pas promulguée, les interdictions restent en vigueur. Cette page sera mise à jour à chaque étape.</p>
+
+<h2>Classe E : ce qui vous attend, à la location comme à la vente</h2>
+<ul>
+<li><b>Location</b> : plus possible à partir du 1er janvier 2034, selon le calendrier en vigueur.</li>
+<li><b>Vente</b> : depuis le 1er janvier 2025, vendre une maison ou un immeuble appartenant à un seul propriétaire classé E demande un audit énergétique, comme pour les classes F et G depuis avril 2023. L'obligation s'étendra à la classe D en 2034. Elle ne concerne pas un appartement en copropriété (<a href="https://www.ecologie.gouv.fr/politiques-publiques/audit-energetique-reglementaire" target="_blank" rel="noopener">ministère de la Transition écologique</a>).</li>
+<li>L'audit propose des scénarios de travaux chiffrés, avec les aides possibles. Il est valable 5 ans.</li>
+</ul>
+
+<h2>Quels travaux font gagner une classe ?</h2>
+<p>Dans une maison non isolée, la chaleur s'échappe d'abord par le toit (25 à 30 %), puis par l'air renouvelé et les fuites (20 à 25 %), par les murs (20 à 25 %) et par les fenêtres (10 à 15 %), selon le guide de l'ADEME <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/guide-hiver-tout-confort.pdf" target="_blank" rel="noopener">« Un hiver tout confort »</a>. C'est pourquoi l'isolation des combles ou de la toiture est souvent le premier chantier.</p>
+<table>
+<thead><tr><th>Travaux</th><th>Prix moyen</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td><a href="/devis-travaux/isolation/">Isolation des combles perdus</a></td><td>environ 40 €/m² TTC</td><td>La Maison Saint-Gobain, 07/2026</td></tr>
+<tr><td><a href="/devis-travaux/isolation/">Combles aménagés, par l'intérieur</a></td><td>130 à 180 €/m² TTC</td><td>La Maison Saint-Gobain, 07/2026</td></tr>
+<tr><td><a href="/devis-travaux/toiture/">Isolation de la toiture par l'extérieur (sarking)</a></td><td>120 à 250 €/m²</td><td>QuelleEnergie, 11/2026</td></tr>
+<tr><td><a href="/devis-travaux/ravalement-facade/">Ravalement avec isolant</a></td><td>110 à 215 €/m²</td><td>La Maison Saint-Gobain, 08/2026</td></tr>
+<tr><td><a href="/devis-travaux/fenetres/">Fenêtre PVC posée en remplacement</a></td><td>870 à 1 170 € TTC</td><td>La Maison Saint-Gobain, 02/2026</td></tr>
+</tbody>
+</table>
+<p>Le gain réel dépend de votre logement. L'audit énergétique, obligatoire pour vendre une maison classée E, F ou G, chiffre justement l'étiquette visée par chaque scénario de travaux.</p>
+<p>MaPrimeRénov' et les primes CEE demandent une entreprise certifiée RGE, et les travaux d'amélioration énergétique peuvent bénéficier d'une TVA à 5,5 %. Les conditions changent chaque année : vérifiez-les sur <a href="https://france-renov.gouv.fr/aides/maprimerenov" target="_blank" rel="noopener">france-renov.gouv.fr</a> et sur <a href="https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mes-autres-impots-et-taxes/tva-taux-reduit-pour-quels-travaux" target="_blank" rel="noopener">economie.gouv.fr</a>.</p>
+""",
+    },
 ]
 
 
