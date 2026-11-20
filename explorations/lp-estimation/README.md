@@ -34,6 +34,7 @@ Pour qu'une annonce mène directement au bon projet, ajoutez `projet=` à l'adre
 |---|---|
 | `slug` | Nom du dossier de sortie (minuscules, chiffres, tirets) |
 | `entreprise` | Nom affiché dans l'en-tête, les textes et les mentions |
+| `domaine` | Adresse du site du client (ex. `https://devis.entreprise-dupont.fr`). Sert à l'image d'aperçu des liens partagés |
 | `logo` | Chemin du logo (SVG ou PNG), relatif à la fiche. Vide : le nom s'affiche en texte |
 | `telephone` | Numéro affiché dans le bouton vert et à la fin |
 | `whatsapp` | Numéro WhatsApp au format international sans `+` (ex. `33612345678`). Vide : pas de bouton WhatsApp |
@@ -55,7 +56,7 @@ La génération liste les champs obligatoires manquants (« à compléter »). U
 
 ## Recevoir les demandes
 
-Avec `envoi`, la page envoie la demande en JSON (`POST`) à cette adresse dès la dernière étape. L'adresse peut être un service de formulaires qui transfère par e-mail, ou un webhook (Make, Zapier, Google Sheets…). Le JSON contient `type`, `metier`, `entreprise`, `fields` (travaux, quantité, estimation, détails, délai, statut, code postal, commune, prénom, téléphone), `consent`, `page` et `tracking`. Si l'envoi échoue, le visiteur voit le bouton WhatsApp, avec son message déjà rédigé.
+Avec `envoi`, la page envoie la demande en JSON (`POST`) à cette adresse dès la dernière étape. Le plus simple est un service de formulaire comme Formspree ou FormSubmit, qui transfère chaque demande par e-mail à l'artisan : l'adresse du formulaire se met dans `envoi`. Un webhook (Make, Zapier, Google Sheets…) marche aussi. Le champ `message` contient la demande en clair, et `_subject` l'objet de l'e-mail. Le JSON contient aussi `type`, `metier`, `entreprise`, `fields` (travaux, quantité, estimation, détails, délai, statut, code postal, commune, prénom, téléphone), `consent`, `page` et `tracking`. Si l'envoi échoue, le visiteur voit le bouton WhatsApp, avec son message déjà rédigé.
 
 Sans `envoi`, seul le bouton WhatsApp (ou l'appel) transmet la demande. Le visiteur doit appuyer sur « Envoyer » dans WhatsApp, et une partie des demandes se perd à ce moment-là.
 
@@ -65,7 +66,11 @@ Sur téléphone, le titre et le bouton vert viennent en premier, puis un exemple
 
 Chaque option a sa propre illustration du chantier (mousse sur le toit, tuile manquante, façade à moitié repeinte, panneaux d'isolant…), et la tuile passe à la question suivante dès qu'on la touche. Les surfaces et les quantités se règlent avec un curseur et des boutons − et +. Le code postal affiche le nom de la commune grâce à l'API publique de l'État (geo.api.gouv.fr) ; hors des départements du client, la page prévient le visiteur sans le bloquer. Vers la fin, le compteur laisse place à « Plus que 3 étapes », « Avant-dernière étape », puis « Dernière étape ».
 
-À la dernière étape, l'estimation reste floutée jusqu'au numéro, qui se met en forme pendant la saisie. Il n'y a pas de case à cocher : une phrase d'information la remplace (« En validant, vous acceptez d'être rappelé… »), ce qui fait un champ obligatoire de moins. La demande vient du visiteur lui-même, et cela suffit pour le rappeler. L'estimation s'affiche ensuite comme un devis au nom de l'artisan, puis le visiteur est invité à envoyer des photos du chantier par WhatsApp. Sous le questionnaire, une foire aux questions répond aux hésitations : gratuité, origine des prix, prix final, qui rappelle, locataires, et une question propre au métier.
+À la dernière étape, l'estimation reste floutée jusqu'au numéro, qui se met en forme pendant la saisie. Il n'y a pas de case à cocher : une phrase d'information la remplace (« En validant, vous acceptez d'être rappelé… »), ce qui fait un champ obligatoire de moins. La demande vient du visiteur lui-même, et cela suffit pour le rappeler. L'estimation s'affiche ensuite comme un devis au nom de l'artisan, puis le visiteur est invité à envoyer des photos du chantier par WhatsApp. Si la page se recharge (fréquent dans le navigateur d'Instagram après un passage par WhatsApp), le visiteur retrouve ses réponses et son estimation ; elles s'effacent quand il ferme l'onglet. Il peut aussi partager l'estimation (au conjoint, au propriétaire) depuis son téléphone. Sous le questionnaire, une foire aux questions répond aux hésitations : gratuité, origine des prix, prix final, qui rappelle, locataires, et une question propre au métier.
+
+## L'image d'aperçu
+
+Quand Node et Playwright sont installés, la génération crée pour chaque métier une image `og.png` (1200 × 630) : le titre, la maison du métier, l'exemple d'estimation et le nom de l'artisan. Elle s'affiche quand le lien est partagé sur WhatsApp, Facebook ou par SMS, à condition que `domaine` soit rempli.
 
 ## Les prix
 

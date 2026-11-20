@@ -13,6 +13,7 @@ import json
 import pathlib
 import re
 import shutil
+import subprocess
 import sys
 import unicodedata
 from urllib.parse import quote, urlparse
@@ -40,6 +41,7 @@ SVG = {  # pictogrammes au trait (grille de 24)
     "pin": '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
     "minus": '<path d="M5 12h14"/>',
     "plus": '<path d="M12 5v14 M5 12h14"/>',
+    "share": '<path d="M12 3v12 M8 7l4-4 4 4 M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"/>',
     "wa": '<path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2.4-1.8-2.8-2.8l.8-1-1-2z"/>',
 }
 
@@ -122,6 +124,29 @@ def faq_html(m, cfg, key):
            ("Je suis locataire, puis-je faire l’estimation ?", "Oui. Les travaux sur le bâti se décident avec le propriétaire : faites l’estimation, puis transmettez-la-lui.")]
     items = "".join(f"<details><summary>{e(q)}</summary><p>{e(r)}</p></details>" for q, r in qa)
     return f'<section class="es-faq" aria-labelledby="es-faq-h"><h2 id="es-faq-h">Vos questions</h2><div class="es-faq-list">{items}</div></section>'
+
+
+def og_html(m, cfg, key, accent):
+    """Page 1200 × 630 rendue en image : titre, maison du métier, exemple d'estimation, nom de l'artisan."""
+    font = base64.b64encode((FONTS / "host-grotesk-latin.woff2").read_bytes()).decode()
+    focus, amount, label = example(m, cfg, key)
+    h1 = re.sub(r"<mark>(.*?)</mark>", lambda x: "<mark>" + x.group(1).replace(" ", "\u00a0") + "</mark>", fr(m["h1"]))
+    zone = f" · {e(cfg['zone'])}" if cfg.get("zone") else ""
+    return f"""<!doctype html><html lang="fr"><head><meta charset="utf-8"><style>
+@font-face{{font-family:H;font-weight:300 600;src:url(data:font/woff2;base64,{font}) format("woff2")}}
+*{{margin:0;box-sizing:border-box}}
+body{{width:1200px;height:630px;overflow:hidden;font-family:H,sans-serif;color:#0A1424;background:#F4F5F7 url("{clover_bg()}") 0 0/168px 168px repeat;display:grid;grid-template-columns:600px 1fr;align-items:center;padding:56px 64px}}
+.pill{{display:inline-block;padding:10px 20px;border-radius:999px;background:#FFE15A;font-size:22px;font-weight:500}}
+h1{{margin-top:24px;font-size:76px;font-weight:600;line-height:1.04;letter-spacing:-.04em}}
+mark{{display:inline-block;margin:4px 0;padding:0 12px 4px;border-radius:8px;background:#0A1424;color:#fff}}
+em{{font-style:italic;text-decoration:underline;text-decoration-color:#16A34A;text-decoration-thickness:6px;text-underline-offset:8px}}
+.by{{margin-top:28px;font-size:24px;color:#2B3444}}.by b{{font-weight:500;color:#0A1424}}
+.art{{position:relative;height:518px;border-radius:28px;background:linear-gradient(180deg,#fff,#EDF0F4);border:1px solid rgba(10,20,36,.1);display:grid;place-items:center}}
+.art svg{{width:400px;height:auto;margin-top:-40px}}
+.tag{{position:absolute;left:24px;bottom:24px;padding:16px 22px;border-radius:16px;background:#fff;box-shadow:0 0 0 1px rgba(10,20,36,.1),0 18px 40px -20px rgba(10,20,36,.5)}}
+.tag span{{display:block;font-size:18px;color:#5B6475}}.tag b{{display:block;margin:2px 0;font-size:34px;font-weight:600;letter-spacing:-.02em}}.tag i{{font-style:normal;font-size:18px;color:#2B3444}}
+</style></head><body><div><p class="pill">{e(m["pill"])}</p><h1>{h1}</h1><p class="by"><b>{e(cfg["entreprise"])}</b>{zone}</p></div>
+<div class="art">{icons.house(focus, None, accent, s=16)}<div class="tag"><span>Exemple d’estimation</span><b>{e(amount)}</b><i>{e(label)}</i></div></div></body></html>"""
 
 
 def favicon(accent):
@@ -317,6 +342,8 @@ def legal_html(m, cfg, key):
         priv += "<p>Votre demande transite par un prestataire technique qui agit pour notre compte et ne l’utilise pas pour lui-même.</p>"
     if cfg.get("whatsapp"):
         priv += "<p>Si vous envoyez votre demande par WhatsApp, elle passe par ce service, édité par Meta.</p>"
+    priv += ("<p>Pendant votre visite, vos réponses restent dans votre navigateur (stockage de session), pour ne pas les perdre si la page se recharge. "
+             "Elles s’effacent quand vous fermez l’onglet.</p>")
     priv += "<p>Le nom de votre commune s’affiche grâce à l’API publique de l’État (geo.api.gouv.fr), qui ne reçoit que le code postal.</p>"
     priv += (f"<p>Vous pouvez accéder à vos données, les rectifier, les effacer ou vous opposer à leur traitement en écrivant à {f('email')}. "
              "En cas de difficulté, vous pouvez saisir la CNIL (cnil.fr).</p>")
@@ -518,7 +545,13 @@ svg{display:block}
 .es-btn-wa{background:#25D366;color:#0A1424}
 .es-btn-call{background:#fff;color:var(--ink)}
 .es-box[data-state="sending"] .es-s-sent,.es-box[data-state="sending"] .es-s-manual,.es-box[data-state="sent"] .es-s-sending,.es-box[data-state="sent"] .es-s-manual,.es-box[data-state="manual"] .es-s-sending,.es-box[data-state="manual"] .es-s-sent{display:none}
-.es-again{min-height:44px;margin-top:12px;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.es-after{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin-top:16px}
+.es-share{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:1.5px solid var(--line2);border-radius:12px;background:#fff;font-weight:500;transition:border-color .15s,transform .15s}
+.es-share:hover{border-color:var(--ink2)}
+.es-share svg{width:18px;height:18px}
+.es-ico svg{transition:transform .3s var(--ease)}
+@media (hover:hover){.es-opt:hover .es-ico svg{transform:translateY(-3px)}}
+.es-again{min-height:44px;margin-top:0;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 @media (min-width:640px){.es-head{padding:20px 28px 16px}.es-body{padding:8px 28px 28px}.es-nav{padding:16px 28px}.es-opts{gap:12px}}
 @media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{padding-top:36px}.es-scene-art{max-width:270px}.es-cta{display:none}.es-lead{font-size:1.12rem}}
 .es-ftr{padding:28px 16px 40px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted);text-align:center}
@@ -551,6 +584,9 @@ var qs=new URLSearchParams(location.search),track={};["utm_source","utm_medium",
 function each(l,fn){[].forEach.call(l,fn)}
 function dl(ev,p){var o={event:ev,metier:C.key};for(var k in p)o[k]=p[k];(window.dataLayer=window.dataLayer||[]).push(o)}
 function begin(){if(!started){started=true;dl("estimation_debut",{})}}
+var SK="es-"+C.key;
+function save(x){try{var o={A:A,cur:cur,t:Date.now()};for(var k in x)o[k]=x[k];sessionStorage.setItem(SK,JSON.stringify(o))}catch(e){}}
+function load(){try{var o=JSON.parse(sessionStorage.getItem(SK));return o&&o.A&&Date.now()-o.t<72e5?o:null}catch(e){return null}}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function nb(n){return Math.round(n).toLocaleString("fr-FR").replace(/\s/g,"\u202f")}
 function eur(n){return nb(n)+"\u00a0€"}
@@ -574,7 +610,8 @@ f.addEventListener("click",function(ev){var b=ev.target.closest("button[data-q]"
     each(g,function(x){if(x===b)x.setAttribute("aria-pressed",on?"true":"false");else if(on&&(ex||x.hasAttribute("data-excl")))x.setAttribute("aria-pressed","false")});
     var sel=[].filter.call(g,function(x){return x.getAttribute("aria-pressed")==="true"}).map(function(x){return x.getAttribute("data-v")});if(sel.length)A[k]=sel;else delete A[k]}
   else{each(g,function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});A[k]=b.getAttribute("data-v")}
-  begin();err.hidden=true;refresh();
+  begin();err.hidden=true;refresh();save();
+  if(navigator.vibrate)try{navigator.vibrate(8)}catch(x){}
   var st=steps[cur];if(st&&st.hasAttribute("data-auto")&&!multi)setTimeout(function(){if(steps[cur]===st)go(1)},320)});
 /* calcul */
 function rows(){var o=C.opts[A.travaux];if(!o)return[];var ac=A.acces,out=[],g={};
@@ -617,6 +654,7 @@ function show(i,dir,push){cur=i;each(steps,function(s,j){s.classList.toggle("is-
   var cx=st.querySelector(".es-ctx"),sel=f.querySelector('.es-opt[aria-pressed="true"]');if(cx&&sel){cx.querySelector(".es-ctx-ico").innerHTML=sel.querySelector(".es-ico").innerHTML;cx.querySelector(".es-ctx-t").textContent=A.travaux;cx.hidden=false}
   nextL.textContent=i===N-1?(rows().length?"Voir mon estimation":"Envoyer ma demande"):"Suivant";
   if(push)try{history.pushState({es:i},"")}catch(x){}
+  if(!done)save();
   if(dir){toCard();var h=st.querySelector(".es-q");if(h)try{h.focus({preventScroll:true})}catch(x){}}}
 try{history.replaceState({es:0},"")}catch(x){}
 addEventListener("popstate",function(ev){if(done)return;var s=ev.state&&typeof ev.state.es==="number"?ev.state.es:0;if(s!==cur)show(s,s<cur?-1:1,false)});
@@ -626,7 +664,7 @@ function check(i){var st=steps[i],bad=missing(i);
   var cp=st.querySelector("[name=code_postal]");if(cp){var ok=/^\d{5}$/.test(cp.value.trim());if(ok){A.code_postal=cp.value.trim();cp.removeAttribute("aria-invalid")}else{cp.setAttribute("aria-invalid","true");bad.push("un code postal à 5 chiffres")}}
   var pr=st.querySelector("[name=prenom]");if(pr){var tel=st.querySelector("[name=telephone]");
     if(pr.value.trim().length<2){pr.setAttribute("aria-invalid","true");bad.push("votre prénom")}else pr.removeAttribute("aria-invalid");
-    if(tel.value.replace(/\D/g,"").length<10){tel.setAttribute("aria-invalid","true");bad.push("un numéro de téléphone")}else tel.removeAttribute("aria-invalid");
+    var tg=tel.value.replace(/\D/g,"");if(!/^0[1-9]\d{8}$/.test(tg)&&!/^(33|0033)[1-9]\d{8}$/.test(tg)){tel.setAttribute("aria-invalid","true");bad.push("un numéro de téléphone valide (10 chiffres)")}else tel.removeAttribute("aria-invalid");
 }
   return bad}
 function go(dir){if(dir<=0)return;var bad=check(cur);
@@ -637,7 +675,7 @@ next.addEventListener("click",function(){go(1)});
 f.addEventListener("submit",function(ev){ev.preventDefault();go(1)});
 f.addEventListener("input",function(){if(err.hidden)return;var bad=check(cur);if(bad.length)err.textContent="Il manque "+bad.join(", ")+".";else err.hidden=true});
 /* résultat */
-function render(E,pr,telf){var sel=f.querySelector('.es-opt[aria-pressed="true"] .es-ico'),pic=sel?sel.innerHTML:"",o=C.opts[A.travaux]||{},date=new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
+function render(E,pr,telf,state){var sel=f.querySelector('.es-opt[aria-pressed="true"] .es-ico'),pic=sel?sel.innerHTML:"",o=C.opts[A.travaux]||{},date=new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
   var h='<div class="es-rcpt-top"><span class="es-rcpt-ent">'+esc(C.ent)+'</span><span>'+esc(date)+'</span></div>'
    +'<div class="es-rid">'+(pic?'<span class="es-rid-ico">'+pic+'</span>':'')+'<div><p class="es-res-k">Estimation pour '+esc(pr)+(place()?" · "+esc(place()):"")+'</p><p class="es-rid-t">'+esc(A.travaux)+'</p></div></div>';
   if(E.rows.length){h+='<p class="es-amount" data-count>'+amount(E)+'</p><p class="es-amount-f">Pose comprise, pour '+ql()+'. Fourchette indicative, sans valeur contractuelle.</p><ul class="es-lines">';
@@ -651,38 +689,50 @@ function render(E,pr,telf){var sel=f.querySelector('.es-opt[aria-pressed="true"]
   if(A.statut==="Locataire")h+='<p class="es-note">Les travaux sur le bâti se décident avec le propriétaire\u00a0: transmettez-lui cette estimation.</p>';
   if(outZone())h+='<p class="es-note es-zone">Votre chantier semble hors de la zone habituelle de '+esc(C.ent)+(C.zone?" ("+esc(C.zone)+")":"")+'. Nous vous dirons rapidement si nous pouvons intervenir.</p>';
   var call=C.tel?'<a class="es-btn es-btn-call" href="tel:'+C.telh+'">'+ICO.phone+"Appeler le "+esc(C.tel)+"</a>":"";
-  h+='<div class="es-box" data-state="'+(C.envoi?"sending":"manual")+'"><p class="es-box-k">Prochaine étape</p>'
+  h+='<div class="es-box" data-state="'+state+'"><p class="es-box-k">Prochaine étape</p>'
    +'<div class="es-s-sending"><p class="es-box-h">Envoi de votre demande…</p></div>'
    +'<div class="es-s-sent"><p class="es-box-h">C’est noté, '+esc(pr)+'.</p><p class="es-box-p">'+esc(C.who)+" vous rappelle au "+esc(telf)+(C.horaires?", "+esc(C.horaires):"")+' pour fixer une visite et vous remettre un devis.</p>'
      +(C.wa?'<p class="es-box-p es-photo">En attendant, envoyez quelques photos du chantier\u00a0: la visite sera mieux préparée.</p>':"")
      +'<div class="es-acts">'+(C.wa?'<a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa-photo>'+ICO.wa+"Envoyer des photos</a>":"")+call+"</div></div>"
    +'<div class="es-s-manual">'+(C.wa?'<p class="es-box-h">Envoyez votre demande à '+esc(C.ent)+'</p><p class="es-box-p">Votre message est déjà rédigé. Ajoutez-y quelques photos du chantier si vous pouvez\u00a0: la visite sera mieux préparée.</p><div class="es-acts"><a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa>'+ICO.wa+"Envoyer sur WhatsApp</a>"+call+"</div>"
      :'<p class="es-box-h">Appelez '+esc(C.ent)+' pour fixer la visite</p><div class="es-acts">'+call+"</div>")+"</div></div>"
-   +'<button type="button" class="es-again">Refaire une estimation</button>';
+   +'<div class="es-after"><button type="button" class="es-share">'+ICO.share+'<span>Partager l’estimation</span></button><button type="button" class="es-again">Refaire une estimation</button></div>';
   return h}
 function countUp(el,E){if(RM||!el||!window.requestAnimationFrame)return;var t0=0,D=1100;
   function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/D),q=1-Math.pow(1-k,3);el.textContent=k<1?amount(E,Math.round(E.lo*q/10)*10,Math.round(E.hi*q/10)*10):amount(E);if(k<1)requestAnimationFrame(step)}
   requestAnimationFrame(step)}
-function submit(){if(val("site_web"))return;var E=estimate(),pr=val("prenom"),tel=val("telephone"),dg=tel.replace(/\D/g,""),telf=dg.length===10?dg.replace(/(\d{2})(?=\d)/g,"$1\u00a0"):tel;
+function finish(pr,tel,state,anim){var E=estimate(),dg=tel.replace(/\D/g,""),telf=dg.length===10?dg.replace(/(\d{2})(?=\d)/g,"$1\u00a0"):tel;
   var est=E.rows.length?amount(E):"à chiffrer sur place";
   var det=C.details.map(function(k){var v=A[k[0]];if(v===undefined||v===0)return null;return k[1]+"\u00a0: "+(Array.isArray(v)?v.join(", "):v)}).filter(Boolean);
   var msg="Bonjour, j’ai fait l’estimation "+C.nom+" sur votre site. Travaux\u00a0: "+A.travaux+", "+ql()+". Estimation\u00a0: "+est+". "+det.join(". ")+". "+A.delai+", "+(A.statut||"").toLowerCase()+", code postal "+place()+". "+pr+", "+telf+".";
-  res.innerHTML=render(E,pr,telf);res.hidden=false;each(steps,function(s){s.classList.remove("is-on")});
+  res.innerHTML=render(E,pr,telf,state);res.hidden=false;each(steps,function(s){s.classList.remove("is-on")});
   head.hidden=true;nav.hidden=true;err.hidden=true;done=true;
   try{history.replaceState({es:"fin"},"")}catch(x){}
-  toCard();countUp(res.querySelector("[data-count]"),E);
+  toCard();if(anim)countUp(res.querySelector("[data-count]"),E);
   var wa=res.querySelector("[data-wa]");if(wa)wa.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent(msg);
   var wp=res.querySelector("[data-wa-photo]");if(wp)wp.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent("Bonjour, voici des photos pour mon estimation "+C.nom+" ("+A.travaux+", code postal "+place()+"). "+pr+", "+telf+".");
-  res.querySelector(".es-again").addEventListener("click",function(){location.href=location.pathname+location.search});
+  res.querySelector(".es-again").addEventListener("click",function(){try{sessionStorage.removeItem(SK)}catch(x){}location.href=location.pathname+location.search});
+  var sh=res.querySelector(".es-share"),url=location.origin+location.pathname,txt="Estimation "+C.nom+" ("+C.ent+")\u00a0: "+A.travaux+", "+ql()+". "+(E.rows.length?est+", pose comprise, fourchette indicative.":"À chiffrer sur place.");
+  sh.addEventListener("click",function(){if(navigator.share){navigator.share({title:"Estimation "+C.nom,text:txt,url:url}).catch(function(){})}
+    else if(navigator.clipboard){navigator.clipboard.writeText(txt+" "+url).then(function(){sh.querySelector("span").textContent="Copié, vous pouvez le coller"})}});
+  return{E:E,est:est,det:det,msg:msg,box:res.querySelector(".es-box")}}
+function submit(){if(val("site_web"))return;var pr=val("prenom"),tel=val("telephone"),st0=C.envoi?"sending":"manual",R=finish(pr,tel,st0,true),est=R.est,det=R.det,msg=R.msg,box=R.box;
+  save({done:1,pr:pr,tel:tel,st:C.envoi?"manual":st0});
   dl("estimation_demande",{travaux:A.travaux,delai:A.delai,statut:A.statut,estimation:est});
   if(window.fbq)window.fbq("track","Lead");
-  var box=res.querySelector(".es-box");if(!C.envoi)return;
-  var body={type:"estimation",metier:C.key,entreprise:C.ent,fields:{travaux:A.travaux,quantite:ql(),estimation:est,details:det,delai:A.delai,statut:A.statut,code_postal:A.code_postal,commune:A.commune||"",prenom:pr,telephone:tel},
+  if(!C.envoi)return;
+  var body={type:"estimation",_subject:"Demande d’estimation "+C.nom+" · "+place(),message:msg,metier:C.key,entreprise:C.ent,fields:{travaux:A.travaux,quantite:ql(),estimation:est,details:det,delai:A.delai,statut:A.statut,code_postal:A.code_postal,commune:A.commune||"",prenom:pr,telephone:tel},
     consent:{text:f.querySelector(".es-consent").textContent,at:new Date().toISOString()},page:location.pathname,tracking:track,site_web:""};
-  var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
+  var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");save({done:1,pr:pr,tel:tel,st:ok?"sent":"manual"});dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
   try{fetch(C.envoi,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(body)}).then(function(r){clearTimeout(t);end(r.ok)}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}}
-var pj=(qs.get("projet")||"").replace(/[^a-z0-9-]/g,""),ob=pj&&f.querySelector('.es-opt[data-slug="'+pj+'"]');
-if(ob){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-pressed",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");started=true;dl("estimation_debut",{projet:pj});show(1,0,false);try{history.pushState({es:1},"")}catch(x){}}
+function restore(S){started=true;for(var k in S){var v=S[k];A[k]=v;
+    (Array.isArray(v)?v:[v]).forEach(function(x){var b=f.querySelector('button[data-q="'+k+'"][data-v="'+String(x).replace(/["\\]/g,"\\$&")+'"]');if(b)b.setAttribute("aria-pressed","true")});
+    var r=f.querySelector('.es-range[data-q="'+k+'"]');if(r){r.value=v;r.dispatchEvent(new Event("input"))}}
+  if(cpIn&&A.code_postal)cpIn.value=A.code_postal}
+var S0=load(),pj=(qs.get("projet")||"").replace(/[^a-z0-9-]/g,""),ob=pj&&f.querySelector('.es-opt[data-slug="'+pj+'"]');
+if(S0&&(S0.done||!ob)){restore(S0.A);if(S0.done){var pi=f.querySelector("#es-prenom"),ti=f.querySelector("#es-tel");if(pi)pi.value=S0.pr;if(ti)ti.value=S0.tel;finish(S0.pr,S0.tel,S0.st||"manual",false)}
+  else{show(S0.cur||0,0,false);try{history.replaceState({es:S0.cur||0},"")}catch(x){}}}
+else if(ob){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-pressed",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");started=true;dl("estimation_debut",{projet:pj});show(1,0,false);try{history.pushState({es:1},"")}catch(x){}}
 else show(0,0,false);
 })();"""
 
@@ -718,7 +768,7 @@ def page(key, cfg, logo_url, photo_url=""):
     cc = ('<div class="es-cc" id="es-cc" role="dialog" aria-label="Cookies" hidden><p>Acceptez-vous un cookie de Meta qui mesure l’efficacité de nos annonces ? '
           'Sans accord, rien n’est déposé.</p><div><button type="button" data-cc="0">Refuser</button><button type="button" data-cc="1">Accepter</button></div></div>') if cfg.get("meta_pixel") else ""
     cfg_json = json.dumps(cfg_js(key, m, cfg), ensure_ascii=False, separators=(",", ":"))
-    ico_json = json.dumps({"phone": ico("phone"), "wa": ico("wa")}, ensure_ascii=False)
+    ico_json = json.dumps({"phone": ico("phone"), "wa": ico("wa"), "share": ico("share")}, ensure_ascii=False)
     js = JS.replace("__CFG__", cfg_json).replace("__ICO__", ico_json)
     scripts = [js] + ([PIXEL_JS.replace("__PX__", json.dumps(cfg["meta_pixel"]))] if cfg.get("meta_pixel") else [])
     hashes = " ".join("'sha256-" + base64.b64encode(hashlib.sha256(s.encode()).digest()).decode() + "'" for s in scripts)
@@ -731,6 +781,10 @@ def page(key, cfg, logo_url, photo_url=""):
            f"font-src 'self'; connect-src 'self' {GEO}{env_origin}{' https://www.facebook.com' + fb if fb else ''}; form-action 'none'; base-uri 'self'; object-src 'none'")
     title = f"{m['title']} | {ent}"
     h1 = re.sub(r"<mark>(.*?)</mark>", lambda x: "<mark>" + x.group(1).replace(" ", "\u00a0") + "</mark>", fr(m["h1"]))
+    dom = cfg.get("domaine", "").rstrip("/")
+    og_tags = (f'\n<meta property="og:url" content="{a(dom)}/{m["slug"]}/">\n<meta property="og:image" content="{a(dom)}/{m["slug"]}/og.png">'
+               '\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">'
+               '\n<meta name="twitter:card" content="summary_large_image">') if dom else ""
     return f"""<!doctype html>
 <html lang="fr">
 <head>
@@ -744,7 +798,7 @@ def page(key, cfg, logo_url, photo_url=""):
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="{a(fr(title))}">
-<meta property="og:description" content="{a(fr(m['desc']))}">
+<meta property="og:description" content="{a(fr(m['desc']))}">{og_tags}
 <link rel="icon" href="{favicon(accent)}" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>{CSS.strip().replace("__CLOVER__", clover_bg())}</style>
@@ -816,6 +870,15 @@ def build(path):
         d = out / M[k]["slug"]
         d.mkdir(parents=True)
         (d / "index.html").write_text(page(k, cfg, logo_url, photo_url), encoding="utf-8")
+    if shutil.which("node"):
+        jobs = [{"out": str(out / M[k]["slug"] / "og.png"), "html": og_html(M[k], cfg, k, cfg.get("accent", "#2D5BE3"))} for k in keys]
+        jf = out / "og_jobs.json"
+        jf.write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
+        r = subprocess.run(["node", str(HERE / "og_render.js"), str(jf)], capture_output=True, text=True)
+        jf.unlink()
+        print("  images d’aperçu :", "faites" if r.returncode == 0 else "impossibles (" + (r.stderr.strip().splitlines() or ["?"])[-1][:120] + ")")
+    if not cfg.get("domaine"):
+        warn.append("domaine manquant : sans lui, les liens partagés n’affichent pas d’image d’aperçu")
     sec = [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}, {"key": "X-Content-Type-Options", "value": "nosniff"},
            {"key": "X-Frame-Options", "value": "DENY"}, {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
            {"key": "Strict-Transport-Security", "value": "max-age=63072000"},

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-2zjvLoAL4S8uz+T1Ml5hawMB701jxvTGABbvNgh45uE='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://geo.api.gouv.fr; form-action 'none'; base-uri 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-FYaLd5X6d1SZO3ijcbAbJcS0jXEWWDpZNC+vd+fvBX8='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://geo.api.gouv.fr; form-action 'none'; base-uri 'self'; object-src 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Prix ravalement de façade 2026 : estimation en 1 minute | Votre entreprise</title>
 <meta name="description" content="Peinture, enduit, ravalement avec isolation : estimez le prix de votre ravalement de façade en 6 questions, à partir des prix publiés en 2026.">
@@ -12,6 +12,11 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="Prix ravalement de façade 2026 : estimation en 1 minute | Votre entreprise">
 <meta property="og:description" content="Peinture, enduit, ravalement avec isolation : estimez le prix de votre ravalement de façade en 6 questions, à partir des prix publiés en 2026.">
+<meta property="og:url" content="https://estimation-artisans-exemple-in-reach1.vercel.app/ravalement-facade/">
+<meta property="og:image" content="https://estimation-artisans-exemple-in-reach1.vercel.app/ravalement-facade/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232D5BE3'/%3E%3Cpath d='M16 7l9 7.5V25h-6v-6h-6v6H7V14.5z' fill='white'/%3E%3C/svg%3E" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>@font-face{font-family:"Host Grotesk";font-style:normal;font-weight:300 600;font-display:swap;src:url(/assets/fonts/host-grotesk-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -204,7 +209,13 @@ svg{display:block}
 .es-btn-wa{background:#25D366;color:#0A1424}
 .es-btn-call{background:#fff;color:var(--ink)}
 .es-box[data-state="sending"] .es-s-sent,.es-box[data-state="sending"] .es-s-manual,.es-box[data-state="sent"] .es-s-sending,.es-box[data-state="sent"] .es-s-manual,.es-box[data-state="manual"] .es-s-sending,.es-box[data-state="manual"] .es-s-sent{display:none}
-.es-again{min-height:44px;margin-top:12px;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.es-after{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin-top:16px}
+.es-share{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border:1.5px solid var(--line2);border-radius:12px;background:#fff;font-weight:500;transition:border-color .15s,transform .15s}
+.es-share:hover{border-color:var(--ink2)}
+.es-share svg{width:18px;height:18px}
+.es-ico svg{transition:transform .3s var(--ease)}
+@media (hover:hover){.es-opt:hover .es-ico svg{transform:translateY(-3px)}}
+.es-again{min-height:44px;margin-top:0;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 @media (min-width:640px){.es-head{padding:20px 28px 16px}.es-body{padding:8px 28px 28px}.es-nav{padding:16px 28px}.es-opts{gap:12px}}
 @media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{padding-top:36px}.es-scene-art{max-width:270px}.es-cta{display:none}.es-lead{font-size:1.12rem}}
 .es-ftr{padding:28px 16px 40px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted);text-align:center}
@@ -256,11 +267,11 @@ svg{display:block}
 <footer class="es-ftr">
   <p class="es-by">Proposé par <b>Votre entreprise</b></p>
   <p>Estimations indicatives, sans valeur contractuelle</p>
-  <div class="es-legal"><details><summary>Conditions d’utilisation</summary><p>Le calculateur multiplie la quantité que vous indiquez par des prix moyens publiés, pose comprise (<a href="https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade" target="_blank" rel="noopener">La Maison Saint-Gobain, 08/2026</a>). Il ne voit pas votre chantier : l’état du support, l’accès, les finitions et les options changent le prix. Le résultat est une fourchette indicative, sans valeur contractuelle. Seul un devis signé, établi après une visite, engage sur un prix. L’estimation est gratuite et sans engagement.</p></details><details id="mentions-legales"><summary>Mentions légales</summary><p>Éditeur : <i>[à compléter]</i>, <i>[à compléter]</i>. Siège : <i>[à compléter]</i>. SIRET <i>[à compléter]</i>.</p><p>Directeur de la publication : <i>[à compléter]</i>. Contact : 06 39 98 00 00, <i>[à compléter]</i>.</p><p>Hébergeur : Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis.</p></details><details id="confidentialite"><summary>Confidentialité</summary><p>Responsable du traitement : <i>[à compléter]</i>. Le prénom, le téléphone, le code postal et vos réponses servent à vous recontacter au sujet de votre projet et à préparer un devis, à votre demande. Ils sont conservés trois ans après le dernier contact, puis supprimés. Ils ne sont ni vendus ni cédés.</p><p>Si vous envoyez votre demande par WhatsApp, elle passe par ce service, édité par Meta.</p><p>Le nom de votre commune s’affiche grâce à l’API publique de l’État (geo.api.gouv.fr), qui ne reçoit que le code postal.</p><p>Vous pouvez accéder à vos données, les rectifier, les effacer ou vous opposer à leur traitement en écrivant à <i>[à compléter]</i>. En cas de difficulté, vous pouvez saisir la CNIL (cnil.fr).</p><p>Ce site ne dépose aucun cookie et n’utilise aucun outil de mesure.</p></details></div>
+  <div class="es-legal"><details><summary>Conditions d’utilisation</summary><p>Le calculateur multiplie la quantité que vous indiquez par des prix moyens publiés, pose comprise (<a href="https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade" target="_blank" rel="noopener">La Maison Saint-Gobain, 08/2026</a>). Il ne voit pas votre chantier : l’état du support, l’accès, les finitions et les options changent le prix. Le résultat est une fourchette indicative, sans valeur contractuelle. Seul un devis signé, établi après une visite, engage sur un prix. L’estimation est gratuite et sans engagement.</p></details><details id="mentions-legales"><summary>Mentions légales</summary><p>Éditeur : <i>[à compléter]</i>, <i>[à compléter]</i>. Siège : <i>[à compléter]</i>. SIRET <i>[à compléter]</i>.</p><p>Directeur de la publication : <i>[à compléter]</i>. Contact : 06 39 98 00 00, <i>[à compléter]</i>.</p><p>Hébergeur : Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis.</p></details><details id="confidentialite"><summary>Confidentialité</summary><p>Responsable du traitement : <i>[à compléter]</i>. Le prénom, le téléphone, le code postal et vos réponses servent à vous recontacter au sujet de votre projet et à préparer un devis, à votre demande. Ils sont conservés trois ans après le dernier contact, puis supprimés. Ils ne sont ni vendus ni cédés.</p><p>Si vous envoyez votre demande par WhatsApp, elle passe par ce service, édité par Meta.</p><p>Pendant votre visite, vos réponses restent dans votre navigateur (stockage de session), pour ne pas les perdre si la page se recharge. Elles s’effacent quand vous fermez l’onglet.</p><p>Le nom de votre commune s’affiche grâce à l’API publique de l’État (geo.api.gouv.fr), qui ne reçoit que le code postal.</p><p>Vous pouvez accéder à vos données, les rectifier, les effacer ou vous opposer à leur traitement en écrivant à <i>[à compléter]</i>. En cas de difficulté, vous pouvez saisir la CNIL (cnil.fr).</p><p>Ce site ne dépose aucun cookie et n’utilise aucun outil de mesure.</p></details></div>
 </footer>
 
 <script>(function(){
-var C={"key":"facade","nom":"façade","ent":"Votre entreprise","who":"Prénom, gérant","tel":"06 39 98 00 00","telh":"+33639980000","wa":"33639980000","envoi":"","deps":["59","62"],"zone":"Lille et 30 km autour","horaires":"du lundi au vendredi","px":"","qty":{"name":"surface","one":"m²","many":"m²"},"opts":{"Mise en peinture":{"lines":[{"l":"Mise en peinture","lo":50,"hi":75,"u":"€/m²","src":["La Maison Saint-Gobain, 08/2026","https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade"]}],"gl":"","vt":""},"Nouvel enduit":{"lines":[{"l":"Projection d’enduit","lo":50,"hi":70,"u":"€/m²","src":["La Maison Saint-Gobain, 08/2026","https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade"]}],"gl":"","vt":""},"Ravalement avec isolation":{"lines":[{"l":"Ravalement avec isolant","lo":110,"hi":215,"u":"€/m²","src":["La Maison Saint-Gobain, 08/2026","https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade"]}],"gl":"","vt":""},"Fissures à reprendre":{"lines":[],"gl":"","vt":"Des fissures se chiffrent sur place : il faut d’abord en trouver la cause."},"Je ne sais pas encore":{"lines":[{"l":"Ravalement sans isolant (peinture ou enduit)","lo":50,"hi":75,"u":"€/m²","src":["La Maison Saint-Gobain, 08/2026","https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade"]}],"gl":"","vt":""}},"recap":["support"],"geo":"https://geo.api.gouv.fr","visite":[{"q":"fissures","eq":"Oui","txt":"Traitement des fissures"},{"q":"hauteur","eq":"2 étages ou plus","txt":"Échafaudage sur deux étages ou plus"}],"notes":[],"varie":"La surface, l’état du support, la finition et l’échafaudage.","aides":"","details":[["support","Mur"],["hauteur","Hauteur"],["fissures","Fissures"]],"own":false},ICO={"phone": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z\"/></svg>", "wa": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2.4-1.8-2.8-2.8l.8-1-1-2z\"/></svg>"},d=document,RM=!!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches);
+var C={"key":"facade","nom":"façade","ent":"Votre entreprise","who":"Prénom, gérant","tel":"06 39 98 00 00","telh":"+33639980000","wa":"33639980000","envoi":"","deps":["59","62"],"zone":"Lille et 30 km autour","horaires":"du lundi au vendredi","px":"","qty":{"name":"surface","one":"m²","many":"m²"},"opts":{"Mise en peinture":{"lines":[{"l":"Mise en peinture","lo":50,"hi":75,"u":"€/m²","src":["La Maison Saint-Gobain, 08/2026","https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade"]}],"gl":"","vt":""},"Nouvel enduit":{"lines":[{"l":"Projection d’enduit","lo":50,"hi":70,"u":"€/m²","src":["La Maison Saint-Gobain, 08/2026","https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade"]}],"gl":"","vt":""},"Ravalement avec isolation":{"lines":[{"l":"Ravalement avec isolant","lo":110,"hi":215,"u":"€/m²","src":["La Maison Saint-Gobain, 08/2026","https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade"]}],"gl":"","vt":""},"Fissures à reprendre":{"lines":[],"gl":"","vt":"Des fissures se chiffrent sur place : il faut d’abord en trouver la cause."},"Je ne sais pas encore":{"lines":[{"l":"Ravalement sans isolant (peinture ou enduit)","lo":50,"hi":75,"u":"€/m²","src":["La Maison Saint-Gobain, 08/2026","https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade"]}],"gl":"","vt":""}},"recap":["support"],"geo":"https://geo.api.gouv.fr","visite":[{"q":"fissures","eq":"Oui","txt":"Traitement des fissures"},{"q":"hauteur","eq":"2 étages ou plus","txt":"Échafaudage sur deux étages ou plus"}],"notes":[],"varie":"La surface, l’état du support, la finition et l’échafaudage.","aides":"","details":[["support","Mur"],["hauteur","Hauteur"],["fissures","Fissures"]],"own":false},ICO={"phone": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z\"/></svg>", "wa": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2.4-1.8-2.8-2.8l.8-1-1-2z\"/></svg>", "share": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 3v12 M8 7l4-4 4 4 M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7\"/></svg>"},d=document,RM=!!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches);
 var f=d.getElementById("es-form");if(!f)return;
 var steps=[].slice.call(f.querySelectorAll(".es-step")),N=steps.length,cur=0,A={},done=false,started=false;
 var bar=f.querySelector(".es-bar i"),pct=f.querySelector(".es-pct"),num=f.querySelector(".es-num-step"),back=f.querySelector(".es-back"),next=f.querySelector(".es-next"),nextL=next.querySelector("span"),nav=f.querySelector(".es-nav"),head=f.querySelector(".es-head"),err=f.querySelector(".es-err"),res=f.querySelector(".es-res");
@@ -268,6 +279,9 @@ var qs=new URLSearchParams(location.search),track={};["utm_source","utm_medium",
 function each(l,fn){[].forEach.call(l,fn)}
 function dl(ev,p){var o={event:ev,metier:C.key};for(var k in p)o[k]=p[k];(window.dataLayer=window.dataLayer||[]).push(o)}
 function begin(){if(!started){started=true;dl("estimation_debut",{})}}
+var SK="es-"+C.key;
+function save(x){try{var o={A:A,cur:cur,t:Date.now()};for(var k in x)o[k]=x[k];sessionStorage.setItem(SK,JSON.stringify(o))}catch(e){}}
+function load(){try{var o=JSON.parse(sessionStorage.getItem(SK));return o&&o.A&&Date.now()-o.t<72e5?o:null}catch(e){return null}}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function nb(n){return Math.round(n).toLocaleString("fr-FR").replace(/\s/g,"\u202f")}
 function eur(n){return nb(n)+"\u00a0€"}
@@ -291,7 +305,8 @@ f.addEventListener("click",function(ev){var b=ev.target.closest("button[data-q]"
     each(g,function(x){if(x===b)x.setAttribute("aria-pressed",on?"true":"false");else if(on&&(ex||x.hasAttribute("data-excl")))x.setAttribute("aria-pressed","false")});
     var sel=[].filter.call(g,function(x){return x.getAttribute("aria-pressed")==="true"}).map(function(x){return x.getAttribute("data-v")});if(sel.length)A[k]=sel;else delete A[k]}
   else{each(g,function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});A[k]=b.getAttribute("data-v")}
-  begin();err.hidden=true;refresh();
+  begin();err.hidden=true;refresh();save();
+  if(navigator.vibrate)try{navigator.vibrate(8)}catch(x){}
   var st=steps[cur];if(st&&st.hasAttribute("data-auto")&&!multi)setTimeout(function(){if(steps[cur]===st)go(1)},320)});
 /* calcul */
 function rows(){var o=C.opts[A.travaux];if(!o)return[];var ac=A.acces,out=[],g={};
@@ -334,6 +349,7 @@ function show(i,dir,push){cur=i;each(steps,function(s,j){s.classList.toggle("is-
   var cx=st.querySelector(".es-ctx"),sel=f.querySelector('.es-opt[aria-pressed="true"]');if(cx&&sel){cx.querySelector(".es-ctx-ico").innerHTML=sel.querySelector(".es-ico").innerHTML;cx.querySelector(".es-ctx-t").textContent=A.travaux;cx.hidden=false}
   nextL.textContent=i===N-1?(rows().length?"Voir mon estimation":"Envoyer ma demande"):"Suivant";
   if(push)try{history.pushState({es:i},"")}catch(x){}
+  if(!done)save();
   if(dir){toCard();var h=st.querySelector(".es-q");if(h)try{h.focus({preventScroll:true})}catch(x){}}}
 try{history.replaceState({es:0},"")}catch(x){}
 addEventListener("popstate",function(ev){if(done)return;var s=ev.state&&typeof ev.state.es==="number"?ev.state.es:0;if(s!==cur)show(s,s<cur?-1:1,false)});
@@ -343,7 +359,7 @@ function check(i){var st=steps[i],bad=missing(i);
   var cp=st.querySelector("[name=code_postal]");if(cp){var ok=/^\d{5}$/.test(cp.value.trim());if(ok){A.code_postal=cp.value.trim();cp.removeAttribute("aria-invalid")}else{cp.setAttribute("aria-invalid","true");bad.push("un code postal à 5 chiffres")}}
   var pr=st.querySelector("[name=prenom]");if(pr){var tel=st.querySelector("[name=telephone]");
     if(pr.value.trim().length<2){pr.setAttribute("aria-invalid","true");bad.push("votre prénom")}else pr.removeAttribute("aria-invalid");
-    if(tel.value.replace(/\D/g,"").length<10){tel.setAttribute("aria-invalid","true");bad.push("un numéro de téléphone")}else tel.removeAttribute("aria-invalid");
+    var tg=tel.value.replace(/\D/g,"");if(!/^0[1-9]\d{8}$/.test(tg)&&!/^(33|0033)[1-9]\d{8}$/.test(tg)){tel.setAttribute("aria-invalid","true");bad.push("un numéro de téléphone valide (10 chiffres)")}else tel.removeAttribute("aria-invalid");
 }
   return bad}
 function go(dir){if(dir<=0)return;var bad=check(cur);
@@ -354,7 +370,7 @@ next.addEventListener("click",function(){go(1)});
 f.addEventListener("submit",function(ev){ev.preventDefault();go(1)});
 f.addEventListener("input",function(){if(err.hidden)return;var bad=check(cur);if(bad.length)err.textContent="Il manque "+bad.join(", ")+".";else err.hidden=true});
 /* résultat */
-function render(E,pr,telf){var sel=f.querySelector('.es-opt[aria-pressed="true"] .es-ico'),pic=sel?sel.innerHTML:"",o=C.opts[A.travaux]||{},date=new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
+function render(E,pr,telf,state){var sel=f.querySelector('.es-opt[aria-pressed="true"] .es-ico'),pic=sel?sel.innerHTML:"",o=C.opts[A.travaux]||{},date=new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
   var h='<div class="es-rcpt-top"><span class="es-rcpt-ent">'+esc(C.ent)+'</span><span>'+esc(date)+'</span></div>'
    +'<div class="es-rid">'+(pic?'<span class="es-rid-ico">'+pic+'</span>':'')+'<div><p class="es-res-k">Estimation pour '+esc(pr)+(place()?" · "+esc(place()):"")+'</p><p class="es-rid-t">'+esc(A.travaux)+'</p></div></div>';
   if(E.rows.length){h+='<p class="es-amount" data-count>'+amount(E)+'</p><p class="es-amount-f">Pose comprise, pour '+ql()+'. Fourchette indicative, sans valeur contractuelle.</p><ul class="es-lines">';
@@ -368,38 +384,50 @@ function render(E,pr,telf){var sel=f.querySelector('.es-opt[aria-pressed="true"]
   if(A.statut==="Locataire")h+='<p class="es-note">Les travaux sur le bâti se décident avec le propriétaire\u00a0: transmettez-lui cette estimation.</p>';
   if(outZone())h+='<p class="es-note es-zone">Votre chantier semble hors de la zone habituelle de '+esc(C.ent)+(C.zone?" ("+esc(C.zone)+")":"")+'. Nous vous dirons rapidement si nous pouvons intervenir.</p>';
   var call=C.tel?'<a class="es-btn es-btn-call" href="tel:'+C.telh+'">'+ICO.phone+"Appeler le "+esc(C.tel)+"</a>":"";
-  h+='<div class="es-box" data-state="'+(C.envoi?"sending":"manual")+'"><p class="es-box-k">Prochaine étape</p>'
+  h+='<div class="es-box" data-state="'+state+'"><p class="es-box-k">Prochaine étape</p>'
    +'<div class="es-s-sending"><p class="es-box-h">Envoi de votre demande…</p></div>'
    +'<div class="es-s-sent"><p class="es-box-h">C’est noté, '+esc(pr)+'.</p><p class="es-box-p">'+esc(C.who)+" vous rappelle au "+esc(telf)+(C.horaires?", "+esc(C.horaires):"")+' pour fixer une visite et vous remettre un devis.</p>'
      +(C.wa?'<p class="es-box-p es-photo">En attendant, envoyez quelques photos du chantier\u00a0: la visite sera mieux préparée.</p>':"")
      +'<div class="es-acts">'+(C.wa?'<a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa-photo>'+ICO.wa+"Envoyer des photos</a>":"")+call+"</div></div>"
    +'<div class="es-s-manual">'+(C.wa?'<p class="es-box-h">Envoyez votre demande à '+esc(C.ent)+'</p><p class="es-box-p">Votre message est déjà rédigé. Ajoutez-y quelques photos du chantier si vous pouvez\u00a0: la visite sera mieux préparée.</p><div class="es-acts"><a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa>'+ICO.wa+"Envoyer sur WhatsApp</a>"+call+"</div>"
      :'<p class="es-box-h">Appelez '+esc(C.ent)+' pour fixer la visite</p><div class="es-acts">'+call+"</div>")+"</div></div>"
-   +'<button type="button" class="es-again">Refaire une estimation</button>';
+   +'<div class="es-after"><button type="button" class="es-share">'+ICO.share+'<span>Partager l’estimation</span></button><button type="button" class="es-again">Refaire une estimation</button></div>';
   return h}
 function countUp(el,E){if(RM||!el||!window.requestAnimationFrame)return;var t0=0,D=1100;
   function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/D),q=1-Math.pow(1-k,3);el.textContent=k<1?amount(E,Math.round(E.lo*q/10)*10,Math.round(E.hi*q/10)*10):amount(E);if(k<1)requestAnimationFrame(step)}
   requestAnimationFrame(step)}
-function submit(){if(val("site_web"))return;var E=estimate(),pr=val("prenom"),tel=val("telephone"),dg=tel.replace(/\D/g,""),telf=dg.length===10?dg.replace(/(\d{2})(?=\d)/g,"$1\u00a0"):tel;
+function finish(pr,tel,state,anim){var E=estimate(),dg=tel.replace(/\D/g,""),telf=dg.length===10?dg.replace(/(\d{2})(?=\d)/g,"$1\u00a0"):tel;
   var est=E.rows.length?amount(E):"à chiffrer sur place";
   var det=C.details.map(function(k){var v=A[k[0]];if(v===undefined||v===0)return null;return k[1]+"\u00a0: "+(Array.isArray(v)?v.join(", "):v)}).filter(Boolean);
   var msg="Bonjour, j’ai fait l’estimation "+C.nom+" sur votre site. Travaux\u00a0: "+A.travaux+", "+ql()+". Estimation\u00a0: "+est+". "+det.join(". ")+". "+A.delai+", "+(A.statut||"").toLowerCase()+", code postal "+place()+". "+pr+", "+telf+".";
-  res.innerHTML=render(E,pr,telf);res.hidden=false;each(steps,function(s){s.classList.remove("is-on")});
+  res.innerHTML=render(E,pr,telf,state);res.hidden=false;each(steps,function(s){s.classList.remove("is-on")});
   head.hidden=true;nav.hidden=true;err.hidden=true;done=true;
   try{history.replaceState({es:"fin"},"")}catch(x){}
-  toCard();countUp(res.querySelector("[data-count]"),E);
+  toCard();if(anim)countUp(res.querySelector("[data-count]"),E);
   var wa=res.querySelector("[data-wa]");if(wa)wa.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent(msg);
   var wp=res.querySelector("[data-wa-photo]");if(wp)wp.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent("Bonjour, voici des photos pour mon estimation "+C.nom+" ("+A.travaux+", code postal "+place()+"). "+pr+", "+telf+".");
-  res.querySelector(".es-again").addEventListener("click",function(){location.href=location.pathname+location.search});
+  res.querySelector(".es-again").addEventListener("click",function(){try{sessionStorage.removeItem(SK)}catch(x){}location.href=location.pathname+location.search});
+  var sh=res.querySelector(".es-share"),url=location.origin+location.pathname,txt="Estimation "+C.nom+" ("+C.ent+")\u00a0: "+A.travaux+", "+ql()+". "+(E.rows.length?est+", pose comprise, fourchette indicative.":"À chiffrer sur place.");
+  sh.addEventListener("click",function(){if(navigator.share){navigator.share({title:"Estimation "+C.nom,text:txt,url:url}).catch(function(){})}
+    else if(navigator.clipboard){navigator.clipboard.writeText(txt+" "+url).then(function(){sh.querySelector("span").textContent="Copié, vous pouvez le coller"})}});
+  return{E:E,est:est,det:det,msg:msg,box:res.querySelector(".es-box")}}
+function submit(){if(val("site_web"))return;var pr=val("prenom"),tel=val("telephone"),st0=C.envoi?"sending":"manual",R=finish(pr,tel,st0,true),est=R.est,det=R.det,msg=R.msg,box=R.box;
+  save({done:1,pr:pr,tel:tel,st:C.envoi?"manual":st0});
   dl("estimation_demande",{travaux:A.travaux,delai:A.delai,statut:A.statut,estimation:est});
   if(window.fbq)window.fbq("track","Lead");
-  var box=res.querySelector(".es-box");if(!C.envoi)return;
-  var body={type:"estimation",metier:C.key,entreprise:C.ent,fields:{travaux:A.travaux,quantite:ql(),estimation:est,details:det,delai:A.delai,statut:A.statut,code_postal:A.code_postal,commune:A.commune||"",prenom:pr,telephone:tel},
+  if(!C.envoi)return;
+  var body={type:"estimation",_subject:"Demande d’estimation "+C.nom+" · "+place(),message:msg,metier:C.key,entreprise:C.ent,fields:{travaux:A.travaux,quantite:ql(),estimation:est,details:det,delai:A.delai,statut:A.statut,code_postal:A.code_postal,commune:A.commune||"",prenom:pr,telephone:tel},
     consent:{text:f.querySelector(".es-consent").textContent,at:new Date().toISOString()},page:location.pathname,tracking:track,site_web:""};
-  var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
+  var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");save({done:1,pr:pr,tel:tel,st:ok?"sent":"manual"});dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
   try{fetch(C.envoi,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(body)}).then(function(r){clearTimeout(t);end(r.ok)}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}}
-var pj=(qs.get("projet")||"").replace(/[^a-z0-9-]/g,""),ob=pj&&f.querySelector('.es-opt[data-slug="'+pj+'"]');
-if(ob){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-pressed",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");started=true;dl("estimation_debut",{projet:pj});show(1,0,false);try{history.pushState({es:1},"")}catch(x){}}
+function restore(S){started=true;for(var k in S){var v=S[k];A[k]=v;
+    (Array.isArray(v)?v:[v]).forEach(function(x){var b=f.querySelector('button[data-q="'+k+'"][data-v="'+String(x).replace(/["\\]/g,"\\$&")+'"]');if(b)b.setAttribute("aria-pressed","true")});
+    var r=f.querySelector('.es-range[data-q="'+k+'"]');if(r){r.value=v;r.dispatchEvent(new Event("input"))}}
+  if(cpIn&&A.code_postal)cpIn.value=A.code_postal}
+var S0=load(),pj=(qs.get("projet")||"").replace(/[^a-z0-9-]/g,""),ob=pj&&f.querySelector('.es-opt[data-slug="'+pj+'"]');
+if(S0&&(S0.done||!ob)){restore(S0.A);if(S0.done){var pi=f.querySelector("#es-prenom"),ti=f.querySelector("#es-tel");if(pi)pi.value=S0.pr;if(ti)ti.value=S0.tel;finish(S0.pr,S0.tel,S0.st||"manual",false)}
+  else{show(S0.cur||0,0,false);try{history.replaceState({es:S0.cur||0},"")}catch(x){}}}
+else if(ob){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-pressed",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");started=true;dl("estimation_debut",{projet:pj});show(1,0,false);try{history.pushState({es:1},"")}catch(x){}}
 else show(0,0,false);
 })();</script>
 </body>
