@@ -600,14 +600,17 @@ SLUG = {"toiture": "toiture", "facade": "ravalement-facade", "fenetres": "fenetr
 
 PAGES = {
     "toiture": dict(
-        title="Devis toiture gratuit : un couvreur près de chez vous",
-        desc="Devis toiture gratuit. Réfection : de 60 à 500\u00a0€/m² pose comprise (QuelleEnergie). Décrivez vos travaux en 1 minute, un seul couvreur local vient chiffrer.",
+        title="Devis toiture 2026 : prix au m², exemple, un seul couvreur",
+        desc="Devis toiture gratuit : prix au m² sourcés (60 à 500\u00a0€/m², QuelleEnergie) et exemple de devis ligne par ligne. Un seul couvreur local vient chiffrer.",
         kw="Devis toiture gratuit", h2="Vos travaux de toiture", price_h2="Prix d’une réfection de toiture",
         needs=[("Réfection complète", "Dépose de l’ancienne couverture, écran sous-toiture, tuiles ou ardoises neuves."),
                ("Fuite et réparation", "Tuiles cassées ou déplacées, faîtage, solins, recherche de l’origine d’une fuite."),
                ("Zinguerie", "Gouttières, chéneaux, noues et descentes d’eau pluviale."),
                ("Démoussage et nettoyage", "Mousses et lichens retirés, état des tuiles vérifié au passage.")],
-        faq=[("Faut-il une autorisation pour refaire sa toiture ?", "À l’identique, en général non. Changer de matériau ou de couleur, ou créer une fenêtre de toit, demande une déclaration préalable en mairie, et davantage en secteur protégé."),
+        faq=[("Que doit contenir un devis de toiture ?",
+              "Le détail de chaque poste en quantité et en prix unitaire (dépose, écran sous-toiture, liteaux, tuiles ou ardoises, faîtage, zinguerie), la main-d’œuvre, la date et la durée de validité, "
+              "les coordonnées et le numéro d’immatriculation de l’entreprise, et l’assurance souscrite avec les coordonnées de l’assureur (Service-Public, fiche F31144)."),
+             ("Faut-il une autorisation pour refaire sa toiture ?", "À l’identique, en général non. Changer de matériau ou de couleur, ou créer une fenêtre de toit, demande une déclaration préalable en mairie, et davantage en secteur protégé."),
              ("Faut-il réparer ou refaire toute la toiture ?", "Quelques tuiles cassées ou une fuite localisée se réparent. Des fuites qui reviennent, une couverture poreuse ou une charpente abîmée imposent souvent une réfection. Le couvreur tranche lors de la visite."),
              ("Faut-il démousser sa toiture ?", "Les mousses retiennent l’humidité et abîment les tuiles avec le temps. Un démoussage est aussi l’occasion de faire vérifier l’état de la couverture."),
              ("Combien de temps dure une réfection de toiture ?", "Cela dépend de la surface, de la météo et de l’état de la charpente. Le couvreur vous donne un délai dans son devis."),
@@ -753,8 +756,43 @@ def build_trade(img, phone, phone_txt, crumbs, key):
     serious = f"""<section class="sheet pf-ser-short" id="artisan-serieux" data-tone="light">
   <div class="grid sp-head"><h2 data-split>{ser_h}</h2><p>Vérifiez cinq points&nbsp;: son immatriculation (<a class="link" href="https://annuaire-entreprises.data.gouv.fr/" target="_blank" rel="noopener">annuaire-entreprises.data.gouv.fr</a>), son assurance décennale, un devis écrit et détaillé, la certification RGE si vous visez des aides (<a class="link" href="https://france-renov.gouv.fr/" target="_blank" rel="noopener">france-renov.gouv.fr</a>), et l’absence de pression pour signer. <a class="link" href="/devis-travaux/#artisan-serieux">Le détail des 5 points</a></p></div>
 </section>"""
-    seq = [hero, blocks["promise"], needs, price] + ([blocks["leak"]] if key == "toiture" else []) + [serious, brief, faq, others, blocks["end"]]
+    seq = [hero, blocks["promise"], needs, price] + ([example_toiture()] if key == "toiture" else []) + ([blocks["leak"]] if key == "toiture" else []) + [serious, brief, faq, others, blocks["end"]]
     return "\n\n".join(seq)
+
+
+SP_DEVIS = "https://www.service-public.gouv.fr/particuliers/vosdroits/F31144"
+DEVIS_TOIT = [  # postes courants d'un devis de réfection, sans prix : les prix sourcés sont dans le tableau du dessus
+    ("Installation de chantier, échafaudage, protections", "forfait", "La durée de location et la protection des abords"),
+    ("Dépose de l’ancienne couverture", "m²", "L’évacuation et le tri des déchets : compris ou non"),
+    ("Écran sous-toiture", "m²", "Le type de membrane, respirante ou non"),
+    ("Liteaux et contre-liteaux", "m²", "Un remplacement complet ou partiel"),
+    ("Tuiles ou ardoises neuves", "m²", "La marque, le modèle, le coloris et le nombre au m²"),
+    ("Faîtage, rives, arêtiers", "mètre linéaire", "La pose : scellée au mortier ou à sec"),
+    ("Zinguerie : gouttières, descentes, solins", "mètre linéaire", "Le matériau : zinc, cuivre ou aluminium"),
+    ("Main-d’œuvre", "heure ou forfait", "Le nombre de couvreurs et la durée du chantier"),
+    ("TVA", "taux", "10 % pour l’entretien d’un logement de plus de deux ans, 5,5 % avec une isolation qui améliore la performance énergétique"),
+]
+DEVIS_MENTIONS = ["La date du devis et sa durée de validité", "Le nom, l’adresse et la forme juridique de l’entreprise",
+                  "Son numéro d’immatriculation (Siren et répertoire des métiers pour un artisan) et son numéro de TVA",
+                  "Votre nom et l’adresse du chantier", "La date de début et la durée estimée des travaux",
+                  "Le détail de chaque prestation, en quantité et en prix unitaire, et le prix de la main-d’œuvre",
+                  "Les frais de déplacement, s’il y en a, et les modalités de paiement",
+                  "L’assurance souscrite, les coordonnées de l’assureur et la zone couverte"]
+
+
+def example_toiture():
+    rows = "".join(f'<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>' for a, b, c in DEVIS_TOIT)
+    lis = "".join(f"<li>{m}</li>" for m in DEVIS_MENTIONS)
+    return f"""<section class="sheet" id="exemple-devis" data-tone="light">
+  <div class="grid sp-head"><h2 data-split>Exemple de devis de toiture : les lignes à vérifier</h2><p>Un devis de réfection se lit poste par poste. Voici les lignes qu’on y trouve, et ce qu’il faut vérifier sur chacune avant de signer.</p></div>
+  <div class="pf-refbox" style="max-width:none">
+    <table class="pf-tab"><caption>Postes d’un devis de réfection de toiture</caption><thead><tr><th scope="col">Poste</th><th scope="col">Unité</th><th scope="col">À vérifier</th></tr></thead><tbody>{rows}</tbody></table>
+    <h3 style="margin-top:24px">Les mentions que le devis doit porter</h3>
+    <ul style="margin:12px 0 0;padding-left:20px;list-style:disc;line-height:1.6">{lis}</ul>
+    <p class="pf-src">Source : <a class="link" href="{SP_DEVIS}" target="_blank" rel="noopener">Service-Public, fiche F31144</a>. Ces mentions sont obligatoires pour une réparation ou un entretien de toiture ; exigez-les aussi pour une réfection.</p>
+    <a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a>
+  </div>
+</section>"""
 
 
 def trade_faq(key):

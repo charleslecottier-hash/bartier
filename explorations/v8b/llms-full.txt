@@ -843,11 +843,11 @@ ou appelez le 07 81 01 89 36
 
 ---
 
-## Devis toiture gratuit : un couvreur près de chez vous
+## Devis toiture 2026 : prix au m², exemple, un seul couvreur
 
 Adresse : https://bartierandco.com/devis-travaux/toiture/
 
-Devis toiture gratuit. Réfection : de 60 à 500 €/m² pose comprise (QuelleEnergie). Décrivez vos travaux en 1 minute, un seul couvreur local vient chiffrer.
+Devis toiture gratuit : prix au m² sourcés (60 à 500 €/m², QuelleEnergie) et exemple de devis ligne par ligne. Un seul couvreur local vient chiffrer.
 
 Pas cinq couvreurs. Un seul, près de chez vous.
 Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
@@ -890,6 +890,30 @@ Source : QuelleEnergie, consulté le 18/11/2026
 - Remplacement de toute la toiture | 180 à 500 €/m² | QuelleEnergie
 - Isolation par l’extérieur (sarking) | 120 à 250 €/m² | QuelleEnergie
 Ce sont des moyennes : seule une visite permet un devis fiable.
+
+### Exemple de devis de toiture : les lignes à vérifier
+Un devis de réfection se lit poste par poste. Voici les lignes qu’on y trouve, et ce qu’il faut vérifier sur chacune avant de signer.
+- Poste | Unité | À vérifier
+- Installation de chantier, échafaudage, protections | forfait | La durée de location et la protection des abords
+- Dépose de l’ancienne couverture | m² | L’évacuation et le tri des déchets : compris ou non
+- Écran sous-toiture | m² | Le type de membrane, respirante ou non
+- Liteaux et contre-liteaux | m² | Un remplacement complet ou partiel
+- Tuiles ou ardoises neuves | m² | La marque, le modèle, le coloris et le nombre au m²
+- Faîtage, rives, arêtiers | mètre linéaire | La pose : scellée au mortier ou à sec
+- Zinguerie : gouttières, descentes, solins | mètre linéaire | Le matériau : zinc, cuivre ou aluminium
+- Main-d’œuvre | heure ou forfait | Le nombre de couvreurs et la durée du chantier
+- TVA | taux | 10 % pour l’entretien d’un logement de plus de deux ans, 5,5 % avec une isolation qui améliore la performance énergétique
+
+#### Les mentions que le devis doit porter
+- La date du devis et sa durée de validité
+- Le nom, l’adresse et la forme juridique de l’entreprise
+- Son numéro d’immatriculation (Siren et répertoire des métiers pour un artisan) et son numéro de TVA
+- Votre nom et l’adresse du chantier
+- La date de début et la durée estimée des travaux
+- Le détail de chaque prestation, en quantité et en prix unitaire, et le prix de la main-d’œuvre
+- Les frais de déplacement, s’il y en a, et les modalités de paiement
+- L’assurance souscrite, les coordonnées de l’assureur et la zone couverte
+Source : Service-Public, fiche F31144. Ces mentions sont obligatoires pour une réparation ou un entretien de toiture ; exigez-les aussi pour une réfection.
 
 ### Fuite de toiture : que faire ? Les 5 bons réflexes
 Suivez-les dans l’ordre, puis signalez-nous la fuite : nous vous rappelons en priorité.
@@ -943,6 +967,9 @@ Voir toutes les questions
 
 **Combien coûte une réfection de toiture ?**
 Comptez de 60 à 500 €/m², pose comprise, selon QuelleEnergie. L’écart vient de ce qui est refait : couverture seule, avec isolation ou avec la charpente. Le matériau (tuiles, ardoise, bac acier) et l’accès au toit comptent aussi. Seule une visite permet un devis fiable.
+
+**Que doit contenir un devis de toiture ?**
+Le détail de chaque poste en quantité et en prix unitaire (dépose, écran sous-toiture, liteaux, tuiles ou ardoises, faîtage, zinguerie), la main-d’œuvre, la date et la durée de validité, les coordonnées et le numéro d’immatriculation de l’entreprise, et l’assurance souscrite avec les coordonnées de l’assureur (Service-Public, fiche F31144).
 
 **Faut-il une autorisation pour refaire sa toiture ?**
 À l’identique, en général non. Changer de matériau ou de couleur, ou créer une fenêtre de toit, demande une déclaration préalable en mairie, et davantage en secteur protégé.
