@@ -15,6 +15,7 @@ TRADE_PICK = {"toiture": "Devis toiture", "facade": "Devis façade", "fenetres":
 
 CSS = """<style id="vl-css">
 .vl-wrap{padding:0 var(--cell)}
+.vl-nw{white-space:nowrap}
 .vl-dl .link,.vl-trades .link,.vl-steps .link{display:inline;white-space:normal;min-height:0}
 .vl-more{align-items:center}
 .vl-more .link{align-self:center}
@@ -127,7 +128,10 @@ def build_city(PF, phone, phone_txt, crumbs, c):
   <ul class="pf-olist">{metiers}</ul>
 </section>"""
 
-    return CSS + "\n" + "\n\n".join([hero, figures, local, trades, parts["promise"], steps, aides, leak, brief, faqs, others, parts["end"]])
+    out = CSS + "\n" + "\n\n".join([hero, figures, local, trades, parts["promise"], steps, aides, leak, brief, faqs, others, parts["end"]])
+    for w in ("PLUi-H", "PLU-H"):  # pas de coupure au trait d'union
+        out = _re.sub(r"(?<![\w-])" + _re.escape(w) + r"(?![\w-])", f'<span class="vl-nw">{w}</span>', out)
+    return out
 
 
 def faq(c):

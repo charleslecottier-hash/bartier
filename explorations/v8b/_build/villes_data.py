@@ -459,4 +459,92 @@ LILLE = dict(
           "Demandez une autorisation d’occupation du domaine public au moins 10 jours ouvrés avant, par courriel à autorisations.temporaires@mairie-lille.fr (03 20 49 52 50).")],
 )
 
-CITIES = [LILLE, ROUEN, PARIS, MARSEILLE, TOULOUSE]
+# ——— Lyon ———
+_INSEE_69 = "https://www.insee.fr/fr/statistiques/8997194"
+_RAV_69 = "https://www.lyon.fr/demarche/logement-habitat/ravalement-de-facades"
+_DP_RAV_69 = "https://www.lyon.fr/sites/lyonfr/files/content/documents/2025-02/imprim%C3%A9%20pi%C3%A8ces%20DP%20ravalement.pdf"
+_TYPO_69 = "https://www.lyon.fr/sites/lyonfr/files/content/documents/2024-04/Fiches_typogiques_Charte_2024_.pdf"
+_CHARTE_69 = "https://www.lyon.fr/sites/lyonfr/files/content/documents/2026-09/charte-2024-cahier-methodologique.pdf"
+_UNESCO_69 = "https://www.lyon.fr/node/851616"
+_SPR_69 = "https://www.grandlyon.com/services/sites-patrimoniaux-remarquables"
+_ALEC_69 = "https://www.alec-lyon.org/services/aides-et-accompagnements/ecorenov-service-aide-eco-renovation-des-logements/"
+_MF_69 = "https://donneespubliques.meteofrance.fr/FichesClim/FICHECLIM_69029001.pdf"
+_ODP_69 = "https://www.lyon.fr/demarche/stationnement/demander-une-autorisation-pour-loccupation-du-domaine-public-pour-travaux"
+LYON = dict(
+    slug="lyon", name="Lyon", cp="69003", wiki="https://fr.wikipedia.org/wiki/Lyon", wikidata="Q456",
+    title="Devis travaux à Lyon : toiture, façade, fenêtres, isolation",
+    desc="Travaux à Lyon : ravalement imposé, site Unesco, nichoirs à martinets, aides Écoréno’v. Un seul artisan vient chiffrer, gratuitement.",
+    figures_intro="Ce qui compte avant de lancer des travaux à Lyon.",
+    figures=[("96,1 <small>%</small>", "des logements sont des appartements", S("Insee, 2023", _INSEE_69)),
+             ("45,5 <small>%</small>", "des résidences principales datent d’avant 1971", S("Insee, 2023", _INSEE_69)),
+             ("427 <small>ha</small>", "de site historique inscrit à l’Unesco depuis 1998", S("Ville de Lyon", _UNESCO_69)),
+             ("30,6 <small>jours</small>", "par an à 30 °C ou plus à Lyon-Bron", S("Météo-France, normales 1991-2020", _MF_69))],
+    answer=("À Lyon, 96 % des logements sont des appartements : la plupart des travaux de toiture et de façade se votent en copropriété. Le ravalement est "
+            "obligatoire tous les dix ans, la Ville l’impose rue par rue et demande une déclaration préalable pour tout ravalement. Le site historique inscrit "
+            "à l’Unesco et deux sites patrimoniaux remarquables passent par l’architecte des Bâtiments de France."),
+    facts=[("Ravalement", "Obligatoire tous les dix ans depuis l’arrêté préfectoral du 18 octobre 1977. L’arrêté pluriannuel 2021-2026 fixe les rues, année par année ; "
+                          "après l’injonction, le propriétaire a un an pour faire les travaux (" + L("Ville de Lyon", _RAV_69) + ")."),
+           ("Déclaration préalable", "Exigée pour tout ravalement, d’immeuble comme de maison (" + L("Ville de Lyon", _DP_RAV_69) + ")."),
+           ("Patrimoine", "Site historique inscrit à l’Unesco : 427 hectares de Fourvière, du Vieux-Lyon, des pentes de la Croix-Rousse et de la Presqu’île. Le Vieux-Lyon "
+                          "et les pentes de la Croix-Rousse sont des sites patrimoniaux remarquables (" + L("Métropole de Lyon", _SPR_69) + ")."),
+           ("Urbanisme", "Le PLU-H de la Métropole s’applique depuis 2019 ; sa modification n° 4 est exécutoire depuis le 23 janvier 2025 ("
+                         + L("Métropole de Lyon", "https://www.grandlyon.com/services/procedures-approuvees-plu-h") + ")."),
+           ("Termites et mérule", "Lyon est en partie couverte par un arrêté termites de 2009 et par un arrêté mérule de 2023, le seul du Rhône ("
+                                  + L("Cerema", "https://www.cerema.fr/fr/actualites/cartographie-nationale-termites-merules") + ")."),
+           ("Martinets", "Avant un ravalement, la Ville demande un diagnostic des oiseaux nicheurs, et le PLU-H prévoit des nichoirs à martinets (article 3.1.7).")],
+    trades_intro="Enduit à la chaux, pierre de taille, ciment moulé, pisé de la Croix-Rousse : la charte du ravalement de la Ville recense 12 types de façades.",
+    trades={
+        "toiture": ["Le Rhône marque la limite nord des toits à faible pente couverts de tuile creuse, dite tuile canal, en terre cuite ("
+                    + L("fiche UDAP 69", "https://www.culture.gouv.fr/Media/medias-creation-rapide/Fiche-conseil-n-3-Les-couvertures-dans-le-Rhone2") + "). "
+                    "La Ville prévoit aussi des couvertures en zinc et des brisis en ardoise ou en zinc.",
+                    "Dans les secteurs protégés, les fenêtres de toit sont limitées en taille et en nombre (" + L("charte 2024", _CHARTE_69) + ")."],
+        "facade": ["La façade lyonnaise la plus courante est un enduit à la chaux sur moellons de pierre, avec un rez-de-chaussée en pierre de taille. On trouve aussi "
+                   "le ciment prompt moulé rive gauche et le pisé de terre sur le plateau de la Croix-Rousse (" + L("fiches de la Ville", _TYPO_69) + ", 2024).",
+                   "Un ravalement d’au moins 50 % d’une paroi oblige en principe à isoler (article R173-4 du code de la construction), sauf exceptions prévues par le texte."],
+        "fenetres": ["Dans les secteurs protégés, le PVC et le blanc pur sont proscrits dans de nombreux cas (" + L("charte 2024", _CHARTE_69) + "). "
+                     "L’avis de l’architecte des Bâtiments de France est requis en site patrimonial remarquable et aux abords des monuments historiques.",
+                     "Ailleurs, changer l’aspect de ses fenêtres demande une déclaration préalable."],
+        "charpente": ["Lyon est en partie concernée par l’arrêté préfectoral termites du 27 mai 2009, avec Sainte-Foy-lès-Lyon et Francheville, et par l’arrêté "
+                      "mérule du 30 mai 2023. Faites contrôler les bois lors d’une réfection de toiture.",
+                      "À la vente, l’état relatif aux termites est obligatoire dans les zones délimitées par arrêté."],
+        "isolation": ["Écoréno’v, l’aide de la Métropole, s’adresse à tous les propriétaires, sans condition de ressources : audit, maîtrise d’œuvre et travaux "
+                      "de rénovation globale, avec des bonus pour les matériaux biosourcés et le confort d’été (" + L("ALEC Lyon", _ALEC_69) + ").",
+                      "Avec 30,6 jours par an à 30 °C ou plus à Lyon-Bron, isoler la toiture protège aussi de la chaleur."]},
+    steps_intro="Dans l’ordre, pour un immeuble comme pour une maison.",
+    steps=[("Vérifiez si votre rue est en campagne", "L’arrêté pluriannuel 2021-2026 liste les rues, année par année. Après l’injonction, vous avez un an pour faire les travaux ("
+                                                    + L("Ville de Lyon", _RAV_69) + ")."),
+           ("Vérifiez la protection de l’adresse", "Site Unesco, Vieux-Lyon, pentes de la Croix-Rousse ou abords d’un monument historique : l’architecte des Bâtiments de France donne son avis."),
+           ("Faites le diagnostic des oiseaux", "Avant un ravalement, la Ville demande de repérer martinets et hirondelles, et le PLU-H prévoit des nichoirs ("
+                                                + L("pièces à fournir", _DP_RAV_69) + ")."),
+           ("Déposez la déclaration préalable", "En ligne sur " + L("Toodego", "https://urbanisme.toodego.com/guichet") + ", ou au service urbanisme appliqué, "
+                                                "198 avenue Jean-Jaurès, 69007 Lyon. 04 26 99 63 80."),
+           ("Demandez le permis de stationnement", "Pour un échafaudage, en ligne au moins 8 jours avant. Le tarif passe de 26,50 € à 1,80 € par m² et par mois pour un "
+                                                   "ravalement obligatoire ou des travaux thermiques (" + L("Ville de Lyon", _ODP_69) + ").")],
+    aides_intro="Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.",
+    aides=[("ALEC Lyon", "L’Espace Conseil France Rénov’ de la Métropole : 12-14 avenue Antoine-Dutrievoz, 69100 Villeurbanne. 04 37 48 25 90, du lundi au vendredi, "
+                         "de 9 h à 12 h et de 14 h à 17 h. " + L("alec-lyon.org", "https://www.alec-lyon.org/contact/") + "."),
+           ("Écoréno’v", "L’aide de la Métropole, pour tous les propriétaires. En copropriété : 3 500 € par lot pour le niveau BBC, 2 000 € pour au moins 35 % de gain, "
+                         "plus des bonus (" + L("ALEC Lyon", _ALEC_69) + ", règlement 2024)."),
+           ("Aides de la Ville", "Valorisation du patrimoine architectural (40 % de certains travaux), Écopatrimoine pour les enduits correcteurs thermiques, restauration des traboules ("
+                                 + L("synthèse des aides", "https://www.lyon.fr/sites/lyonfr/files/content/documents/2024-06/synthese-aides-financieres-renovation.pdf") + ", 2024)."),
+           NATIONAL],
+    faq=[("Le ravalement est-il obligatoire à Lyon ?",
+          "Oui, tous les dix ans, depuis l’arrêté préfectoral de 1977. La Ville l’impose rue par rue selon l’arrêté pluriannuel 2021-2026 : après l’injonction, "
+          "le propriétaire a un an pour faire les travaux. Tout ravalement demande une déclaration préalable."),
+         ("Pourquoi poser des nichoirs à martinets lors d’un ravalement ?",
+          "Le PLU-H de la Métropole le prévoit (article 3.1.7) : avant un ravalement, la Ville demande un diagnostic des oiseaux nicheurs, martinets et hirondelles, "
+          "pour ne pas détruire leurs nids et leur offrir des nichoirs."),
+         ("Peut-on poser des fenêtres en PVC à Lyon ?",
+          "Dans les secteurs protégés, le PVC et le blanc pur sont proscrits dans de nombreux cas, et l’architecte des Bâtiments de France donne son avis. "
+          "Ailleurs, une déclaration préalable suffit dès que l’aspect change."),
+         ("Lyon est-elle concernée par les termites et la mérule ?",
+          "En partie : un arrêté préfectoral de 2009 délimite des zones termites, et un arrêté de 2023 des zones mérule. Faites contrôler les bois lors de travaux de toiture."),
+         ("Quelles aides pour rénover son logement à Lyon ?",
+          "Écoréno’v, l’aide de la Métropole, sans condition de ressources, les aides patrimoniales de la Ville et les aides nationales. L’ALEC vous conseille "
+          "gratuitement : 04 37 48 25 90."),
+         ("Combien coûte un échafaudage sur le trottoir à Lyon ?",
+          "Le permis de stationnement coûte 20 € de droit fixe, puis 26,50 € par m² et par mois, ou 1,80 € pour un ravalement obligatoire fait dans les deux ans "
+          "suivant l’injonction ou des travaux thermiques. Demande en ligne au moins 8 jours avant.")],
+)
+
+CITIES = [LILLE, ROUEN, PARIS, LYON, MARSEILLE, TOULOUSE]
