@@ -185,13 +185,13 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
 </section>"""
     steps = "".join(f"<li><h3>{a}</h3><p>{_contact(b)}</p></li>" for a, b in c["steps"])
     steps = f"""<section class="sheet" id="demarches" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Avant vos travaux à {v} : les démarches</h2><p>{c["steps_intro"]}</p></div>
+  <div class="grid sp-head"><h2 data-split>Quelles démarches avant des travaux à {v} ?</h2><p>{c["steps_intro"]}</p></div>
   <ol class="pf-howto vl-steps">{steps}</ol>
 </section>"""
 
     facts = "".join(f"<div><dt>{a}</dt><dd>{_contact(b)}</dd></div>" for a, b in c["facts"])
     local = f"""<section class="sheet" id="a-savoir" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Travaux à {v} : ce qu’il faut savoir</h2><p>{c["answer"]}</p></div>
+  <div class="grid sp-head"><h2 data-split>Que faut-il savoir avant des travaux à {v} ?</h2><p>{c["answer"]}</p></div>
   <div class="grid"><dl class="pf-dl vl-dl">{facts}</dl></div>
   <p class="vl-src">Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? <a class="link" href="mailto:contact@bartierandco.com">Écrivez-nous</a>.</p>
 </section>"""
@@ -220,7 +220,7 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
     adv = f'<li class="vl-adv"><div><p class="vl-adv-k">Conseil public, gratuit et neutre</p><h3>{a0}</h3><p>{_contact(b0)}</p></div>{call}</li>'
     aid = adv + "".join(f"<li><h3>{a}</h3><p>{_contact(b)}</p></li>" for a, b in c["aides"][1:])
     aides = f"""<section class="sheet" id="aides" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Aides et conseils gratuits à {v}</h2><p>{c["aides_intro"]}</p></div>
+  <div class="grid sp-head"><h2 data-split>Quelles aides pour vos travaux à {v} ?</h2><p>{c["aides_intro"]}</p></div>
   <ul class="pf-checks vl-trades vl-aides">{aid}</ul>
 </section>"""
 
@@ -261,6 +261,10 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
     return out
 
 
+PLACE = {"lille": (50.6292, 3.0573, "Nord"), "rouen": (49.4431, 1.0993, "Seine-Maritime"), "paris": (48.8566, 2.3522, "Paris"),
+         "lyon": (45.7640, 4.8357, "Rhône"), "marseille": (43.2965, 5.3698, "Bouches-du-Rhône"), "toulouse": (43.6047, 1.4442, "Haute-Garonne")}
+
+
 def faq(c):
     return c["faq"] + [(f"Intervenez-vous partout à {c['name']} ?",
                         "Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. "
@@ -270,7 +274,10 @@ def faq(c):
 def schema(SITE, faq_ld, bc_ld, PF, c):
     clean = lambda s: _re.sub("<[^>]+>", "", s).replace("&amp;", "&").replace("&nbsp;", " ")
     p = path(c)
-    city = {"@type": "City", "name": c["name"], "sameAs": [c["wiki"], f"https://www.wikidata.org/wiki/{c['wikidata']}"]}
+    lat, lon, dept = PLACE[c["slug"]]
+    city = {"@type": "City", "name": c["name"], "sameAs": [c["wiki"], f"https://www.wikidata.org/wiki/{c['wikidata']}"],
+            "geo": {"@type": "GeoCoordinates", "latitude": lat, "longitude": lon},
+            "containedInPlace": {"@type": "AdministrativeArea", "name": dept}}
     graph = [
         {"@type": "WebPage", "@id": SITE + p, "url": SITE + p, "name": c["title"], "description": c["desc"], "inLanguage": "fr-FR",
          "dateModified": "@@MAJ@@", "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}, "about": city},
