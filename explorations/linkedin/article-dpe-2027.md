@@ -1,37 +1,35 @@
-# Article LinkedIn : DPE 2027
+# Article LinkedIn : DPE 2027 (version particuliers, 315 mots)
 
 À publier depuis la page Bartier & Co (vue administrateur, « Créer », puis « Écrire un article »).
 Image de couverture : couverture-dpe-2027.jpg (1920 × 1080, la photo de l'article du blog, Unsplash, sans métadonnées).
-Mettre les 5 titres numérotés en style « Sous-titre ».
+Format : chaque titre est une question, la ligne suivante donne la réponse. Mettre les 4 questions intermédiaires en style « Sous-titre ».
 
 **Titre**
-DPE 2027 : ce qui change au 1er janvier pour les propriétaires
+DPE 2027 : qu'est-ce qui change pour votre logement ?
 
 **Texte**
 
-Le 1er janvier 2027, le DPE change encore. Voici ce qu'il faut retenir, sources officielles à l'appui.
+Au 1er janvier 2027, le DPE des logements chauffés à l'électricité est recalculé : l'étiquette peut s'améliorer, jamais baisser, et la mise à jour est gratuite.
 
-1. Une nouvelle étiquette pour les logements chauffés à l'électricité
-L'arrêté du 19 août 2026 abaisse le coefficient de l'électricité de 1,9 à 1,7. Selon le ministère de la Transition écologique, aucune étiquette ne peut se dégrader. Les DPE réalisés à partir du 1er janvier 2027 intègrent directement la nouvelle valeur.
+Faut-il refaire votre DPE ?
+Non, s'il est encore valable. À partir du 1er janvier, saisissez son numéro (13 caractères, en haut de la première page) sur l'Observatoire DPE-Audit de l'ADEME et téléchargez l'attestation avec la nouvelle étiquette. Un DPE réalisé depuis le 1er juillet 2021 est valable 10 ans. Si vous avez fait des travaux depuis, seul un nouveau diagnostic les prendra en compte.
 
-2. Pas besoin de refaire votre DPE
-S'il est encore valable, la nouvelle étiquette s'obtient gratuitement sur l'Observatoire DPE-Audit de l'ADEME, avec le numéro du DPE : 13 caractères, en haut de la première page.
+Pouvez-vous encore louer votre logement ?
+Oui, sauf s'il est classé G, selon la loi en vigueur en métropole. Un logement F ne pourra plus être loué en 2028 et un E en 2034, à la signature, au renouvellement ou à la reconduction du bail. Le 17 novembre, l'Assemblée nationale a voté un amendement qui supprime ces interdictions. Le texte complet est soumis au vote des députés le 24 novembre, puis passera en commission mixte paritaire. Tant que la loi n'est pas promulguée, les règles actuelles s'appliquent.
 
-3. La location : ce qui est en vigueur, ce qui est en débat
-En vigueur : les logements classés G ne sont plus louables depuis 2025, les F ne le seront plus en 2028, les E en 2034, à la signature, au renouvellement ou à la reconduction du bail.
-En débat : le 17 novembre, l'Assemblée nationale a voté un amendement qui supprime ces interdictions. L'ensemble du texte est soumis au vote le 24 novembre, puis passera en commission mixte paritaire. Rien ne change tant que la loi n'est pas promulguée.
+Vous vendez : que faut-il prévoir ?
+Un audit énergétique, si vous vendez une maison classée E, F ou G. Il propose des scénarios de travaux chiffrés et reste valable 5 ans. Un appartement en copropriété n'est pas concerné.
 
-4. À la vente
-L'audit énergétique est exigé pour vendre une maison classée E, F ou G, mais pas un appartement en copropriété. Il le sera pour la classe D en 2034.
+Quels travaux font gagner une classe ?
+D'abord la toiture et les combles. Dans une maison non isolée, le toit laisse partir 25 à 30 % de la chaleur selon l'ADEME, devant les fuites d'air et les murs (20 à 25 % chacun), puis les fenêtres (10 à 15 %). Pour obtenir MaPrimeRénov' ou les primes CEE, l'entreprise doit être certifiée RGE.
 
-5. Les travaux qui pèsent le plus
-Dans une maison non isolée, le toit représente 25 à 30 % des pertes de chaleur selon l'ADEME, devant les fuites d'air, les murs et les fenêtres.
+Tous les détails et les sources officielles : https://bartierandco.com/blog/dpe-2027/
 
-Le détail, les tableaux et toutes les sources : https://bartierandco.com/blog/dpe-2027/
-La synthèse documentaire en PDF, archivée sur Zenodo : https://doi.org/10.5281/zenodo.24396448
+Un projet de travaux ? Bartier & Co vous met en relation avec un artisan près de chez vous. Visite et devis offerts : https://bartierandco.com/devis-travaux/
 
-#DPE #Rénovation #Immobilier
+#DPE #Propriétaires #Rénovation
 
 **Texte du post qui accompagne l'article** (demandé par LinkedIn au moment de publier)
 
-Au 1er janvier 2027, le DPE des logements chauffés à l'électricité est recalculé. Le 24 novembre, l'Assemblée nationale vote un texte qui pourrait changer les règles de location des passoires thermiques. L'essentiel en 5 points, avec les sources officielles.
+DPE 2027 : faut-il refaire votre diagnostic ?
+Non, s'il est encore valable : la nouvelle étiquette sera disponible gratuitement en ligne à partir du 1er janvier. Location, vente, travaux : ce qui change pour vous, en 4 questions.
