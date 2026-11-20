@@ -882,9 +882,9 @@ pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_T
 import villes as VL  # pages « Devis travaux à <ville> »
 VL_HUB = "".join(f'<li><h3><a class="pf-tl" href="{VL.path(c)}">Devis travaux à {c["name"]}</a></h3><p>{c["hook"]}</p></li>' for c in VL.CITIES)
 pf_body = pf_body if not VL.CITIES else pf_body.replace('<section class="sheet pf-leak is-short"', f"""<section class="sheet" id="villes" data-tone="paper">
-  <style>.vl-hub{{grid-template-columns:repeat(3,minmax(0,1fr))}}@media (max-width:760px){{.vl-hub{{grid-template-columns:1fr}}}}</style>
+  <style>.vl-hubw{{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:40px 64px;align-items:center;padding:0 var(--cell)}}.vl-hub{{grid-template-columns:repeat(2,minmax(0,1fr));padding:0}}@media (max-width:760px){{.vl-hubw,.vl-hub{{grid-template-columns:1fr}}}}{VL.MAP_CSS}</style>
   <div class="grid sp-head"><h2 data-split>Devis travaux par ville</h2><p>Règles locales, démarches, aides et conseils gratuits, ville par ville.</p></div>
-  <ul class="pf-checks vl-hub">{VL_HUB}</ul>
+  <div class="vl-hubw"><figure class="vl-map">{VL.carte()}</figure><ul class="pf-checks vl-hub">{VL_HUB}</ul></div>
 </section>
 
 <section class="sheet pf-leak is-short\"""", 1)

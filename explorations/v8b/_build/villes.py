@@ -2,6 +2,8 @@
 # Contenu local vérifié et sourcé (recherches du 20/11/2026), jamais une page copiée où seul le nom de la ville change :
 # Google sanctionne les pages satellites. Aucune promesse de présence locale : la mise en relation dépend de la commune
 # (« Hors zone, nous vous le disons à l'appel »), comme sur le reste du site.
+import json as _json
+import pathlib as _pl
 import re as _re
 
 from villes_data import CITIES  # données locales, une entrée par ville
@@ -16,7 +18,8 @@ TRADE_PICK = {"toiture": "Devis toiture", "facade": "Devis façade", "fenetres":
 CSS = """<style id="vl-css">
 .vl-wrap{padding:0 var(--cell)}
 .vl-nw{white-space:nowrap}
-.vl-others{display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;padding:0 var(--cell)}
+.vl-others{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:40px 64px;align-items:center;padding:0 var(--cell)}
+.vl-olists{display:grid;gap:36px}
 .vl-others .pf-olist{padding:0}
 .vl-oh{margin-bottom:14px;font-size:.8rem;color:var(--muted)}
 .vl-trades li{scroll-margin-top:96px}
@@ -35,6 +38,38 @@ CSS = """<style id="vl-css">
 .pf-howto.vl-steps p{color:inherit}
 @media (max-width:760px){.vl-trades{grid-template-columns:1fr}.vl-others{grid-template-columns:1fr}}
 </style>"""
+
+
+_MAP = _json.loads((_pl.Path(__file__).parent / "france_map.json").read_text(encoding="utf-8"))  # Natural Earth, domaine public
+
+
+def carte(current=None):
+    """Carte de France des villes, cliquable ; la ville de la page est mise en avant."""
+    pins = []
+    for c in CITIES:
+        x, y = _MAP["cities"][c["slug"]]
+        on = c["slug"] == current
+        dot = (f'<circle cx="{x}" cy="{y}" r="13" class="vl-halo"/><circle cx="{x}" cy="{y}" r="6.5" class="vl-dot is-on"/>' if on
+               else f'<circle cx="{x}" cy="{y}" r="5" class="vl-dot"/>')
+        label = f'<text x="{x + 12}" y="{y + 4.5}" class="vl-lab{" is-on" if on else ""}">{c["name"]}</text>'
+        pins.append(f'<g>{dot}{label}</g>' if on else f'<a href="{path(c)}" aria-label="Devis travaux à {c["name"]}">{dot}{label}</a>')
+    w, h = _MAP["w"], _MAP["h"]
+    return (f'<svg class="vl-svg" viewBox="-12 -16 {w + 84} {h + 32}" role="img" aria-labelledby="vl-map-t"><title id="vl-map-t">Carte des villes : '
+            + ", ".join(c["name"] for c in CITIES) + f'</title><path d="{_MAP["d"]}" class="vl-fr"/>' + "".join(pins) + '</svg>')
+
+
+MAP_CSS = """.vl-map{margin:0}
+.vl-svg{display:block;width:100%;height:auto;overflow:visible}
+.vl-fr{fill:var(--paper,#EEF0F3);stroke:var(--ink,#0A1424);stroke-opacity:.18;stroke-width:1;stroke-linejoin:round}
+.vl-dot{fill:var(--ink,#0A1424)}
+.vl-dot.is-on{fill:var(--accent,#2D5BE3)}
+.vl-halo{fill:var(--accent,#2D5BE3);opacity:.16}
+.vl-lab{font-size:17px;fill:var(--ink,#0A1424)}
+[data-tone="paper"] .vl-fr{fill:#fff}
+.vl-lab.is-on{font-weight:500;fill:var(--accent,#2D5BE3)}
+.vl-svg a:hover .vl-lab,.vl-svg a:focus .vl-lab{fill:var(--accent,#2D5BE3);text-decoration:underline}
+.vl-svg a:hover .vl-dot,.vl-svg a:focus .vl-dot{fill:var(--accent,#2D5BE3)}"""
+CSS = CSS.replace("</style>", MAP_CSS + "\n</style>", 1)
 
 
 def path(c):
@@ -128,7 +163,7 @@ def build_city(PF, phone, phone_txt, crumbs, c):
     metiers = "".join(f'<li><a class="link" href="/devis-travaux/{PF.SLUG[x[0]]}/">{x[5]}</a></li>' for x in PF.TRADES)
     others = f"""<section class="sheet pf-others" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Ailleurs en France</h2><p><a class="link" href="/devis-travaux/">Tous les devis de travaux</a></p></div>
-  <div class="vl-others"><div><p class="vl-oh">Autres villes</p><ul class="pf-olist">{cities}</ul></div><div><p class="vl-oh">Par métier</p><ul class="pf-olist">{metiers}</ul></div></div>
+  <div class="vl-others"><figure class="vl-map">{carte(c["slug"])}</figure><div class="vl-olists"><div><p class="vl-oh">Autres villes</p><ul class="pf-olist">{cities}</ul></div><div><p class="vl-oh">Par métier</p><ul class="pf-olist">{metiers}</ul></div></div></div>
 </section>"""
 
     out = CSS + "\n" + "\n\n".join([hero, figures, local, trades, parts["promise"], steps, aides, leak, brief, faqs, others, parts["end"]])
