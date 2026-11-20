@@ -119,4 +119,5 @@ relient le profil à la marque.
 | 20/11/2026 | Gamma | 8 decks en accès public | pages /devis-travaux/ | fait |
 | 20/11/2026 | LinkedIn | Post 1 : prix des travaux (PDF) | /devis-travaux/#prix | fait |
 | 20/11/2026 | Facebook | Post 1 : prix des travaux (lien du deck) | /devis-travaux/ | fait |
+| 20/11/2026 | Calaméo | Deck 1 : prix des travaux (le champ « site web » du profil est payant : lien dans la description et dans le PDF) | /devis-travaux/#prix | fait |
 | | | | | |
