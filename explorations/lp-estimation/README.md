@@ -36,6 +36,9 @@ Dans les annonces, utilisez l'adresse de la page avec ses paramètres de suivi, 
 | `zone` | Zone d'intervention affichée en haut de page (ex. « Lille et 30 km autour ») |
 | `departements` | Départements couverts (ex. `["59", "62"]`). Hors zone, le visiteur est prévenu, sans être bloqué |
 | `horaires` | Moment du rappel, repris après l'envoi (ex. « du lundi au vendredi ») |
+| `contact` | La personne qui rappelle : `prenom`, `role` (ex. « gérant »), `photo` (chemin relatif à la fiche). Affichée sous le bouton et à l'étape du numéro. Sans photo, ses initiales s'affichent |
+| `rappel` | Engagement de rappel affiché sous la personne (ex. « Rappel sous 24 h ouvrées »). **Uniquement si l'artisan le tient** |
+| `avis` | Note et nombre d'avis Google, avec le lien vers la fiche (`note`, `nombre`, `lien`). Vide : rien ne s'affiche. **Jamais d'avis inventés** |
 | `metiers` | Métiers à générer, parmi `toiture`, `facade`, `fenetres`, `charpente`, `isolation` |
 | `accent` | Couleur de la partie mise en évidence dans les illustrations (couleur du client) |
 | `atouts` | Arguments ajoutés sous le bouton. **Seulement des faits vérifiables** : « Assurance décennale », « Certifié RGE », etc. |
@@ -59,6 +62,9 @@ La génération liste les champs obligatoires manquants (« à compléter »). U
 - **Sur ordinateur :** le titre à gauche, le questionnaire à droite, sans clic de plus.
 - **Les choix :** les grandes tuiles illustrées passent à la question suivante dès qu'on touche. Les surfaces et les quantités se règlent avec un curseur et des boutons − et +.
 - **Le code postal :** il affiche le nom de la commune grâce à l'API publique de l'État (geo.api.gouv.fr). Hors des départements du client, la page prévient le visiteur sans le bloquer.
+- **Le numéro :** pas de case à cocher, une phrase claire la remplace (« En validant, vous acceptez d'être rappelé… »). C'est un champ obligatoire de moins. La demande vient du visiteur lui-même, ce qui suffit pour le rappeler.
+- **La progression :** les messages changent vers la fin (« Plus que 3 étapes », « Avant-dernière étape », « Dernière étape »).
+- **Après l'envoi :** le visiteur est invité à envoyer des photos du chantier par WhatsApp.
 - **La fin :** le numéro de téléphone se met en forme pendant la saisie. L'estimation, floutée jusqu'au numéro, s'affiche ensuite comme un devis au nom de l'artisan.
 
 ## Les prix

@@ -6,9 +6,29 @@
   "whatsapp": "33639980000",
   "envoi": "",
   "zone": "Lille et 30 km autour",
-  "departements": ["59", "62"],
+  "departements": [
+    "59",
+    "62"
+  ],
   "horaires": "du lundi au vendredi",
-  "metiers": ["toiture", "facade", "fenetres", "charpente", "isolation"],
+  "rappel": "Rappel sous 24 h ouvrées",
+  "contact": {
+    "prenom": "Prénom",
+    "role": "gérant",
+    "photo": ""
+  },
+  "avis": {
+    "note": "",
+    "nombre": "",
+    "lien": ""
+  },
+  "metiers": [
+    "toiture",
+    "facade",
+    "fenetres",
+    "charpente",
+    "isolation"
+  ],
   "accent": "#2D5BE3",
   "atouts": [],
   "tarifs": {},

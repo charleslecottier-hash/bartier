@@ -43,6 +43,39 @@ SVG = {  # pictogrammes au trait (grille de 24)
 }
 
 
+def clover_bg(col="#0A1424", op=".06"):
+    """Fond : trèfles à quatre feuilles en motif, dessinés en SVG (aucune image externe)."""
+    leaf = "M0 0C-3-3-5-8-2-9-.8-9.4 0-8.5 0-7.5 0-8.5.8-9.4 2-9 5-8 3-3 0 0Z"
+    def clover(x, y, r, k):
+        leaves = "".join(f'<path d="{leaf}" transform="rotate({a})"/>' for a in (0, 90, 180, 270))
+        return (f'<g transform="translate({x} {y}) rotate({r}) scale({k})" fill="{col}" fill-opacity="{op}">{leaves}'
+                f'<path d="M0 0q2 5 6 8" fill="none" stroke="{col}" stroke-opacity="{op}" stroke-width="1.6" stroke-linecap="round"/></g>')
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="168" height="168" viewBox="0 0 168 168">'
+           f'{clover(38, 40, 14, 1.25)}{clover(122, 120, -24, 1.05)}{clover(124, 34, 52, .7)}{clover(40, 128, -60, .8)}</svg>')
+    return "data:image/svg+xml," + svg.replace("%", "%25").replace("#", "%23").replace("<", "%3C").replace(">", "%3E").replace('"', "'")
+
+
+def who(cfg, photo_url=""):
+    """Avatar et nom de la personne qui rappelle, d'après la fiche (« contact »)."""
+    c = cfg.get("contact", {})
+    pre, role = c.get("prenom", "").strip(), c.get("role", "").strip()
+    name = pre or cfg["entreprise"]
+    ini = "".join(w[0] for w in re.split(r"[\s-]+", name) if w)[:2].upper()
+    av = f'<img src="{photo_url}" alt="" width="96" height="96">' if photo_url else f"<span>{html.escape(ini)}</span>"
+    title = f"{pre}, {role}" if pre and role else name
+    return av, title, bool(pre)
+
+
+def stars(cfg):
+    r = cfg.get("avis") or {}
+    if not r.get("note") or not r.get("nombre"):
+        return ""
+    note = f'{float(r["note"]):.1f}'.replace(".", ",")
+    inner = f'<span class="es-stars" aria-hidden="true">★★★★★</span><b>{note}</b>/5 · {int(r["nombre"])} avis Google'
+    return (f'<a class="es-rev" href="{a(r["lien"])}" target="_blank" rel="noopener">{inner}</a>' if r.get("lien")
+            else f'<p class="es-rev">{inner}</p>')
+
+
 def ico(k, cls=""):
     c = f' class="{cls}"' if cls else ""
     return f'<svg{c} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{SVG[k]}</svg>'
@@ -123,7 +156,7 @@ def q_html(q, sid, accent, cfg):
     raise ValueError(q["t"])
 
 
-def steps_html(m, cfg, accent):
+def steps_html(m, cfg, accent, photo_url=""):
     out = []
     allsteps = m["steps"] + COMMON
     for i, st in enumerate(allsteps):
@@ -140,14 +173,21 @@ def steps_html(m, cfg, accent):
         '<p class="es-sub" data-s></p><ul class="es-recap" aria-label="Vos réponses"></ul>'
         f'<div class="es-teaser" aria-hidden="true"><p class="es-t-k">Estimation indicative</p><p class="es-blur">0 000 € à 0 000 €</p>'
         f'<p class="es-lock">{ico("lock")}Affichée dès que vous validez</p></div>'
+        + who_card(cfg, photo_url) +
         '<div class="es-two">'
         '<div><label class="es-lab" for="es-prenom">Prénom</label><input class="es-in" id="es-prenom" name="prenom" autocomplete="given-name" maxlength="60"></div>'
         '<div><label class="es-lab" for="es-tel">Téléphone</label><input class="es-in" id="es-tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="06 12 34 56 78"></div>'
         '</div>'
-        f'<label class="es-consent"><input type="checkbox" name="consentement"><span>{e("J’accepte d’être rappelé par " + cfg["entreprise"] + " au sujet de ce projet.")}</span></label>'
         '<input class="es-hp" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">'
-        f'<p class="es-priv">{ico("lock")}<span>Vos coordonnées ne servent qu’à vous recontacter pour ce projet. Elles ne sont ni vendues ni cédées.</span></p></div>')
+        f'<p class="es-priv">{ico("lock")}<span class="es-consent">{e("En validant, vous acceptez d’être rappelé par " + cfg["entreprise"] + " au sujet de ce projet. Vos coordonnées ne servent qu’à cela : elles ne sont ni vendues ni cédées.")}</span></p></div>')
     return "".join(out), len(allsteps) + 1
+
+
+def who_card(cfg, photo_url=""):
+    av, title, person = who(cfg, photo_url)
+    line = cfg.get("rappel") or "Rappel gratuit, sans engagement"
+    head = f"{title}, vous rappelle" if person and "," in title else f"{title} vous rappelle"
+    return f'<div class="es-who es-who-card"><span class="es-av">{av}</span><p><b>{e(head)}</b><span>{e(line)}</span></p></div>'
 
 
 SHORT = {"couverture": "Couverture", "velux": "Fenêtres de toit", "gouttieres": "Gouttières à refaire", "support": "Mur", "hauteur": "Hauteur",
@@ -177,7 +217,8 @@ def cfg_js(key, m, cfg):
                 opts[o[0]] = dict(lines=lines, gl=fr(o[5]) if len(o) > 5 else "", vt=fr(m.get("visite_txt", {}).get(o[0], "")))
     tel = cfg.get("telephone", "")
     recap = [q["name"] for st in m["steps"] for q in st["qs"] if q["t"] == "tiles"]
-    return dict(key=key, nom=m["nom"], ent=cfg["entreprise"], tel=tel, telh="+33" + re.sub(r"\D", "", tel)[1:] if tel else "",
+    _, title, person = who(cfg)
+    return dict(key=key, nom=m["nom"], ent=cfg["entreprise"], who=title if person else cfg["entreprise"], tel=tel, telh="+33" + re.sub(r"\D", "", tel)[1:] if tel else "",
                 wa=re.sub(r"\D", "", cfg.get("whatsapp", "")), envoi=cfg.get("envoi", ""), deps=cfg.get("departements", []), zone=cfg.get("zone", ""),
                 horaires=fr(cfg.get("horaires", "")), px=cfg.get("meta_pixel", ""), qty=m["qty"], opts=opts, recap=recap, geo=GEO,
                 visite=[dict(r, txt=fr(r["txt"])) for r in m.get("visite", [])], notes=[dict(r, txt=fr(r["txt"])) for r in m.get("notes", [])],
@@ -238,7 +279,7 @@ CSS = """
 :root{--bg:#F4F5F7;--ink:#0A1424;--ink2:#2B3444;--muted:#5B6475;--line:rgba(10,20,36,.1);--line2:rgba(10,20,36,.18);--soft:#F1F3F6;--go:#15803D;--go-h:#116B33;--go-bar:#16A34A;--go-bg:#EDF8F1;--go-ring:rgba(22,163,74,.2);--sun:#FFE15A;--ease:cubic-bezier(.2,.8,.2,1);--f:"Host Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:light}
 *{box-sizing:border-box;margin:0}
 html{-webkit-text-size-adjust:100%}
-body{min-height:100vh;display:flex;flex-direction:column;font:400 16px/1.5 var(--f);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+body{min-height:100vh;display:flex;flex-direction:column;font:400 16px/1.5 var(--f);color:var(--ink);background:var(--bg) url("__CLOVER__") 0 0/168px 168px repeat;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
@@ -268,9 +309,22 @@ svg{display:block}
 .es-cta b{display:inline-flex;align-items:center;gap:8px;font-size:1.22rem;font-weight:600}
 .es-cta b svg{width:22px;height:22px}
 .es-cta small{font-size:.86rem;opacity:.9}
-.es-facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;padding:0;list-style:none;font-size:.9rem;color:var(--ink2)}
+.es-trust{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin-top:20px;padding:12px 14px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.88)}
+.es-who{display:flex;align-items:center;gap:12px}
+.es-who p{line-height:1.3}
+.es-who b{display:block;font-weight:600}
+.es-who p span{display:block;font-size:.88rem;color:var(--muted)}
+.es-av{flex:none;display:grid;place-items:center;width:48px;height:48px;overflow:hidden;border-radius:50%;background:var(--ink);color:#fff;font-weight:600;letter-spacing:.02em;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--line)}
+.es-av img{width:100%;height:100%;object-fit:cover}
+.es-av span{font-size:1.05rem;line-height:1}
+.es-rev{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;color:var(--ink2);text-decoration:none}
+.es-rev b{color:var(--ink)}
+.es-stars{color:#E8A317;letter-spacing:1px}
+.es-who-card{margin-top:18px;padding:12px 14px;border-radius:16px;background:var(--go-bg)}
+.es-photo{margin-top:10px}
+.es-facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;padding:0;list-style:none;font-size:.9rem;color:var(--ink2)}
 .es-facts li{display:inline-flex;align-items:center;gap:6px}
-.es-facts svg{width:16px;height:16px;color:var(--go)}
+.es-facts svg{flex:none;width:16px;height:16px;color:var(--go)}
 .es-card{position:relative;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:0 1px 2px rgba(10,20,36,.04),0 30px 70px -44px rgba(10,20,36,.45);scroll-margin-top:0}
 .es-head{position:sticky;top:0;z-index:4;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;row-gap:10px;padding:16px 20px 14px;border-radius:24px 24px 0 0;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:.86rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .es-pct{font-weight:600;color:var(--go)}
@@ -343,8 +397,6 @@ svg{display:block}
 .es-cp-hint.is-warn{color:#B45309}
 .es-two{display:grid;gap:14px;margin-top:20px}
 @media (min-width:640px){.es-two{grid-template-columns:1fr 1fr}}
-.es-consent{display:flex;align-items:flex-start;gap:10px;margin-top:16px;font-size:.9rem;line-height:1.45;color:var(--ink2);cursor:pointer}
-.es-consent input{flex:none;width:22px;height:22px;margin-top:0;accent-color:var(--go)}
 .es-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .es-priv{display:flex;gap:8px;margin-top:12px;font-size:.84rem;line-height:1.45;color:var(--muted)}
 .es-priv svg{flex:none;width:16px;height:16px;margin-top:2px}
@@ -483,12 +535,12 @@ var telIn=f.querySelector("#es-tel");if(telIn)telIn.addEventListener("input",fun
 function prep(){var st=steps[N-1],h=st.querySelector("[data-h]"),s=st.querySelector("[data-s]"),t=st.querySelector(".es-teaser"),rc=st.querySelector(".es-recap");
   var items=[A.travaux,ql()];C.recap.forEach(function(k){var v=A[k];if(v&&v!=="Je ne sais pas")items.push(v)});if(place())items.push(place());
   rc.innerHTML=items.filter(Boolean).map(function(x){return"<li>"+esc(x)+"</li>"}).join("");
-  if(rows().length){h.textContent="Votre estimation est prête";s.textContent="Indiquez votre prénom et votre numéro\u00a0: elle s’affiche aussitôt, et "+C.ent+" vous rappelle pour la confirmer.";t.hidden=false;t.querySelector(".es-blur").textContent=amount(estimate())}
-  else{h.textContent="Votre demande est prête";s.textContent="Ce type de travaux se chiffre sur place. Indiquez votre prénom et votre numéro\u00a0: "+C.ent+" vous rappelle pour fixer une visite.";t.hidden=true}}
+  if(rows().length){h.textContent="Votre estimation est prête";s.textContent="Indiquez votre prénom et votre numéro\u00a0: elle s’affiche aussitôt.";t.hidden=false;t.querySelector(".es-blur").textContent=amount(estimate())}
+  else{h.textContent="Votre demande est prête";s.textContent="Ce type de travaux se chiffre sur place. Indiquez votre prénom et votre numéro pour fixer une visite.";t.hidden=true}}
 /* étapes */
 function show(i,dir,push){cur=i;each(steps,function(s,j){s.classList.toggle("is-on",j===i);s.classList.remove("es-fwd","es-bwd")});
   var st=steps[i];if(dir&&!RM){void st.offsetWidth;st.classList.add(dir>0?"es-fwd":"es-bwd")}
-  var p=Math.round(100*(i+1)/(N+1));bar.style.width=p+"%";pct.textContent=p+"\u00a0%";num.textContent="Étape "+(i+1)+" sur "+N;
+  var p=Math.round(100*(i+1)/(N+1));bar.style.width=p+"%";pct.textContent=p+"\u00a0%";var rem=N-i;num.textContent=rem===1?"Dernière étape":rem===2?"Avant-dernière étape":rem===3?"Plus que 3 étapes":"Étape "+(i+1)+" sur "+N;
   back.hidden=i===0;nav.hidden=i===0&&st.hasAttribute("data-auto");err.hidden=true;
   if(i===N-1)prep();refresh();
   var cx=st.querySelector(".es-ctx"),sel=f.querySelector('.es-opt[aria-pressed="true"]');if(cx&&sel){cx.querySelector(".es-ctx-ico").innerHTML=sel.querySelector(".es-ico").innerHTML;cx.querySelector(".es-ctx-t").textContent=A.travaux;cx.hidden=false}
@@ -501,10 +553,10 @@ back.addEventListener("click",function(){if(history.state&&typeof history.state.
 each(d.querySelectorAll("[data-start]"),function(b){b.addEventListener("click",function(ev){ev.preventDefault();begin();toCard()})});
 function check(i){var st=steps[i],bad=missing(i);
   var cp=st.querySelector("[name=code_postal]");if(cp){var ok=/^\d{5}$/.test(cp.value.trim());if(ok){A.code_postal=cp.value.trim();cp.removeAttribute("aria-invalid")}else{cp.setAttribute("aria-invalid","true");bad.push("un code postal à 5 chiffres")}}
-  var pr=st.querySelector("[name=prenom]");if(pr){var tel=st.querySelector("[name=telephone]"),ok2=st.querySelector("[name=consentement]");
+  var pr=st.querySelector("[name=prenom]");if(pr){var tel=st.querySelector("[name=telephone]");
     if(pr.value.trim().length<2){pr.setAttribute("aria-invalid","true");bad.push("votre prénom")}else pr.removeAttribute("aria-invalid");
     if(tel.value.replace(/\D/g,"").length<10){tel.setAttribute("aria-invalid","true");bad.push("un numéro de téléphone")}else tel.removeAttribute("aria-invalid");
-    if(!ok2.checked)bad.push("votre accord pour être rappelé")}
+}
   return bad}
 function go(dir){if(dir<=0)return;var bad=check(cur);
   if(bad.length){err.textContent="Il manque "+bad.join(", ")+".";err.hidden=false;var x=steps[cur].querySelector('[aria-invalid="true"]');if(x)x.focus();return}
@@ -530,8 +582,10 @@ function render(E,pr,telf){var sel=f.querySelector('.es-opt[aria-pressed="true"]
   var call=C.tel?'<a class="es-btn es-btn-call" href="tel:'+C.telh+'">'+ICO.phone+"Appeler le "+esc(C.tel)+"</a>":"";
   h+='<div class="es-box" data-state="'+(C.envoi?"sending":"manual")+'"><p class="es-box-k">Prochaine étape</p>'
    +'<div class="es-s-sending"><p class="es-box-h">Envoi de votre demande…</p></div>'
-   +'<div class="es-s-sent"><p class="es-box-h">C’est noté, '+esc(pr)+'.</p><p class="es-box-p">'+esc(C.ent)+" vous rappelle au "+esc(telf)+(C.horaires?", "+esc(C.horaires):"")+' pour fixer une visite et vous remettre un devis.</p><div class="es-acts">'+call+"</div></div>"
-   +'<div class="es-s-manual">'+(C.wa?'<p class="es-box-h">Envoyez votre demande à '+esc(C.ent)+'</p><p class="es-box-p">Votre message est déjà rédigé, il ne reste qu’à l’envoyer.</p><div class="es-acts"><a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa>'+ICO.wa+"Envoyer sur WhatsApp</a>"+call+"</div>"
+   +'<div class="es-s-sent"><p class="es-box-h">C’est noté, '+esc(pr)+'.</p><p class="es-box-p">'+esc(C.who)+" vous rappelle au "+esc(telf)+(C.horaires?", "+esc(C.horaires):"")+' pour fixer une visite et vous remettre un devis.</p>'
+     +(C.wa?'<p class="es-box-p es-photo">En attendant, envoyez quelques photos du chantier\u00a0: la visite sera mieux préparée.</p>':"")
+     +'<div class="es-acts">'+(C.wa?'<a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa-photo>'+ICO.wa+"Envoyer des photos</a>":"")+call+"</div></div>"
+   +'<div class="es-s-manual">'+(C.wa?'<p class="es-box-h">Envoyez votre demande à '+esc(C.ent)+'</p><p class="es-box-p">Votre message est déjà rédigé. Ajoutez-y quelques photos du chantier si vous pouvez\u00a0: la visite sera mieux préparée.</p><div class="es-acts"><a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa>'+ICO.wa+"Envoyer sur WhatsApp</a>"+call+"</div>"
      :'<p class="es-box-h">Appelez '+esc(C.ent)+' pour fixer la visite</p><div class="es-acts">'+call+"</div>")+"</div></div>"
    +'<button type="button" class="es-again">Refaire une estimation</button>';
   return h}
@@ -547,12 +601,13 @@ function submit(){if(val("site_web"))return;var E=estimate(),pr=val("prenom"),te
   try{history.replaceState({es:"fin"},"")}catch(x){}
   toCard();countUp(res.querySelector("[data-count]"),E);
   var wa=res.querySelector("[data-wa]");if(wa)wa.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent(msg);
+  var wp=res.querySelector("[data-wa-photo]");if(wp)wp.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent("Bonjour, voici des photos pour mon estimation "+C.nom+" ("+A.travaux+", code postal "+place()+"). "+pr+", "+telf+".");
   res.querySelector(".es-again").addEventListener("click",function(){location.href=location.pathname+location.search});
   dl("estimation_demande",{travaux:A.travaux,delai:A.delai,statut:A.statut,estimation:est});
   if(window.fbq)window.fbq("track","Lead");
   var box=res.querySelector(".es-box");if(!C.envoi)return;
   var body={type:"estimation",metier:C.key,entreprise:C.ent,fields:{travaux:A.travaux,quantite:ql(),estimation:est,details:det,delai:A.delai,statut:A.statut,code_postal:A.code_postal,commune:A.commune||"",prenom:pr,telephone:tel},
-    consent:{text:f.querySelector(".es-consent span").textContent,at:new Date().toISOString()},page:location.pathname,tracking:track,site_web:""};
+    consent:{text:f.querySelector(".es-consent").textContent,at:new Date().toISOString()},page:location.pathname,tracking:track,site_web:""};
   var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
   try{fetch(C.envoi,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(body)}).then(function(r){clearTimeout(t);end(r.ok)}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}}
 show(0,0,false);
@@ -566,21 +621,23 @@ if(v&&Date.now()-v.t<1.5e10){if(v.ok)load()}else bar.hidden=false;
 [].forEach.call(d.querySelectorAll(".es-cc-open"),function(b){b.addEventListener("click",function(){bar.hidden=false})})})();"""
 
 
-def page(key, cfg, logo_url):
+def page(key, cfg, logo_url, photo_url=""):
     m = M[key]
     accent = cfg.get("accent", "#2D5BE3")
     ent = cfg["entreprise"]
     tel = cfg.get("telephone", "")
     telh = "+33" + re.sub(r"\D", "", tel)[1:] if tel else ""
-    steps, n = steps_html(m, cfg, accent)
+    steps, n = steps_html(m, cfg, accent, photo_url)
     logo = f'<img src="{logo_url}" alt="{a(ent)}" width="180" height="36">' if logo_url else f'<span class="es-name">{e(ent)}</span>'
     call = (f'<a class="es-call" href="tel:{telh}">{ico("phone")}<span class="es-num">{e(tel)}</span><span class="es-short">Appeler</span></a>' if tel else "")
     own = bool(cfg.get("tarifs", {}).get(key))
-    facts = ["6 questions, 1 minute", f"Tarifs de {ent}" if own else "Prix publiés et sourcés", "Sans engagement"] + list(cfg.get("atouts", []))
+    facts = [f"Calculé avec les tarifs de {ent}" if own else f"Calculé avec les prix publiés par {m['sources']}"] + list(cfg.get("atouts", []))
     facts_html = "".join(f"<li>{ico('check')}{e(x)}</li>" for x in facts)
     kick = f'<p class="es-kick">{ico("pin")}{e(m["artisan"].capitalize())} · {e(cfg["zone"])}</p>' if cfg.get("zone") else ""
-    lead = (f"Six questions, une minute. Le calculateur applique à votre projet les tarifs indicatifs de {ent}." if own
-            else f"Six questions, une minute. Le calculateur applique à votre projet les prix publiés par {m['sources']}.")
+    lead = "Répondez à 6 questions : le prix de vos travaux s’affiche tout de suite."
+    av, title, person = who(cfg, photo_url)
+    trust = (f'<div class="es-trust"><div class="es-who"><span class="es-av">{av}</span><p><b>{e(title)}</b>'
+             f'<span>{e(cfg.get("rappel") or ("Vous rappelle personnellement" if person else "Rappel gratuit, sans engagement"))}</span></p></div>{stars(cfg)}</div>')
     by = f'<img src="{logo_url}" alt="{a(ent)}" width="150" height="28">' if logo_url else f"<b>{e(ent)}</b>"
     cc = ('<div class="es-cc" id="es-cc" role="dialog" aria-label="Cookies" hidden><p>Acceptez-vous un cookie de Meta qui mesure l’efficacité de nos annonces ? '
           'Sans accord, rien n’est déposé.</p><div><button type="button" data-cc="0">Refuser</button><button type="button" data-cc="1">Accepter</button></div></div>') if cfg.get("meta_pixel") else ""
@@ -613,7 +670,7 @@ def page(key, cfg, logo_url):
 <meta property="og:title" content="{a(fr(title))}">
 <meta property="og:description" content="{a(fr(m['desc']))}">
 <link rel="preload" href="/assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<style>{CSS.strip()}</style>
+<style>{CSS.strip().replace("__CLOVER__", clover_bg())}</style>
 </head>
 <body>
 <header class="es-hdr"><span class="es-logo">{logo}</span>{call}</header>
@@ -622,7 +679,8 @@ def page(key, cfg, logo_url):
     {kick}<p class="es-pill">{ico('alert')}{e(m['pill'])}</p>
     <h1 class="es-h">{h1}</h1>
     <p class="es-lead">{e(lead)}</p>
-    <a class="es-cta" href="#estimation" data-start><b>Calculer le montant{ico('down')}</b><small>Gratuit et immédiat</small></a>
+    <a class="es-cta" href="#estimation" data-start><b>Calculer mon prix{ico('down')}</b><small>Gratuit · 1 minute · sans engagement</small></a>
+    {trust}
     <ul class="es-facts">{facts_html}</ul>
   </div>
   <section class="es-quiz" id="estimation" aria-label="Estimation">
@@ -668,11 +726,17 @@ def build(path):
         dst = out / "assets" / ("logo" + src.suffix.lower())
         shutil.copy(src, dst)
         logo_url = "/assets/" + dst.name
+    photo_url = ""
+    if cfg.get("contact", {}).get("photo"):
+        src = (pathlib.Path(path).parent / cfg["contact"]["photo"]).resolve()
+        dst = out / "assets" / ("contact" + src.suffix.lower())
+        shutil.copy(src, dst)
+        photo_url = "/assets/" + dst.name
     keys = [k for k in ORDER if k in cfg.get("metiers", ORDER)]
     for k in keys:
         d = out / M[k]["slug"]
         d.mkdir(parents=True)
-        (d / "index.html").write_text(page(k, cfg, logo_url), encoding="utf-8")
+        (d / "index.html").write_text(page(k, cfg, logo_url, photo_url), encoding="utf-8")
     sec = [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}, {"key": "X-Content-Type-Options", "value": "nosniff"},
            {"key": "X-Frame-Options", "value": "DENY"}, {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
            {"key": "Strict-Transport-Security", "value": "max-age=63072000"},
