@@ -896,7 +896,7 @@ import villes as VL  # pages « Devis travaux à <ville> »
 VL_HUB = "".join(f'<li><h3><a class="pf-tl" href="{VL.path(c)}">Devis travaux à {c["name"]}</a></h3><p>{c["hook"].rstrip(".")}</p></li>' for c in VL.CITIES)
 pf_body = pf_body if not VL.CITIES else pf_body.replace('<section class="sheet pf-leak is-short"', f"""<section class="sheet" id="villes" data-tone="paper">
   <style>.vl-hubw{{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:40px 64px;align-items:center;padding:0 var(--cell)}}.vl-hub{{grid-template-columns:repeat(2,minmax(0,1fr));padding:0}}@media (max-width:760px){{.vl-hubw,.vl-hub{{grid-template-columns:1fr}}}}{VL.MAP_CSS}</style>
-  <div class="grid sp-head"><h2 data-split>Devis travaux par ville</h2><p>Règles locales, démarches, aides et conseils gratuits, ville par ville</p></div>
+  <div class="grid sp-head"><h2 data-split>Devis travaux par ville</h2><p>Les règles et les aides changent d’une ville à l’autre</p></div>
   <div class="vl-hubw"><figure class="vl-map">{VL.carte()}</figure><ul class="pf-checks vl-hub">{VL_HUB}</ul></div>
 </section>
 
@@ -1085,7 +1085,7 @@ write("/blog/", "Blog : chantiers, publicité, devis et DPE 2027 | Bartier & Co"
                 ("Comment nous écrivons",
                  'Chaque article est signé par <a class="link" href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur, et cite ses sources officielles : Service-Public, Légifrance, ADEME, Insee. '
                  'Quand une règle change, l’article est mis à jour et daté.')],
-               "Deux publics, une même exigence", "Des réponses courtes, datées et sourcées.", tone="paper"),
+               "Pour qui nous écrivons", "Chaque article répond à une question précise, avec ses sources et sa date.", tone="paper"),
       ]), nav="/blog/", schema={"@context": "https://schema.org", "@graph": [{"@type": "Blog", "@id": SITE + "/blog/#blog", "name": "Blog Bartier & Co", "url": SITE + "/blog/", "inLanguage": "fr-FR",
                                                                      "publisher": {"@id": SITE + "/#org"}, "blogPost": [{"@id": f"{SITE}/blog/{x['slug']}/#article"} for x in ARTICLES]}, bc_ld(("Blog", "/blog/"))]})
 paths.append("/blog/")

@@ -20,8 +20,8 @@ NATIONAL = ("Aides nationales",
 _INSEE_75 = "https://www.insee.fr/fr/statistiques/8581193?geo=COM-75056"
 _SDES = "https://www.statistiques.developpement-durable.gouv.fr/media/7205/download?inline"
 PARIS = dict(
-    tldr="À Paris, presque tout se vote en copropriété, le ravalement est obligatoire tous les dix ans et même des fenêtres à l’identique demandent une autorisation",
-    hook="Autorisation même pour des fenêtres à l’identique, toits en zinc, copropriété.",
+    tldr="À Paris, presque tout se vote en copropriété, et même des fenêtres remplacées à l’identique demandent une autorisation",
+    hook="Une autorisation même pour des fenêtres à l’identique.",
     slug="paris", name="Paris", cp="75011", wiki="https://fr.wikipedia.org/wiki/Paris", wikidata="Q90",
     title="Devis travaux à Paris : toiture, façade, fenêtres, isolation",
     desc="Travaux à Paris : ravalement tous les 10 ans, déclaration préalable, architecte des Bâtiments de France, aides. Un seul artisan vient chiffrer, gratuitement.",
@@ -30,9 +30,8 @@ PARIS = dict(
              ("48,7 <small>%</small>", "des résidences principales datent d’avant 1946", S("Insee, 2022", _INSEE_75)),
              ("94 <small>%</small>", "des logements sont dans un périmètre de protection du patrimoine", S("SDES, 2024", _SDES)),
              ("10 <small>ans</small>", "au plus entre deux ravalements, sur injonction du maire", S("Service-Public", SP + "F640"))],
-    answer=("À Paris, presque tout se joue en copropriété : 97 % des logements sont des appartements. Le ravalement est obligatoire au moins "
-            "tous les dix ans, tout changement d’aspect extérieur demande une déclaration préalable, même pour des fenêtres à l’identique, "
-            "et 94 % des logements sont dans un périmètre où l’architecte des Bâtiments de France donne son avis."),
+    answer=("Sur 100 logements, 97 sont des appartements. Le ravalement est obligatoire au moins tous les dix ans, et 94 % des logements sont "
+            "dans un périmètre où l’architecte des Bâtiments de France donne son avis."),
     facts=[("Ravalement", "Obligatoire au moins tous les 10 ans. La Ville écrit, contrôle un an plus tard, puis peut prendre un arrêté d’injonction : "
                           "les travaux doivent alors commencer dans les 6 mois. Amende possible : 3 750 € ("
                           + L("Service-Public", SP + "F640") + ", " + L("Ville de Paris", "https://www.paris.fr/pages/renover-son-logement-ou-son-immeuble-121") + ")."),
@@ -78,7 +77,7 @@ PARIS = dict(
            ("Faites autoriser l’échafaudage", "Un échafaudage sur le trottoir demande une autorisation de voirie et des droits de voirie ("
                                               + L("Ville de Paris", "https://www.paris.fr/pages/effectuer-des-travaux-sur-la-voie-publique-3506") + "). L’entreprise fait la demande en ligne."),
            ("Faites le point sur les aides", "Avant de signer : un rendez-vous gratuit à l’Agence parisienne du climat, l’Espace Conseil France Rénov’ de Paris.")],
-    aides_intro="Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.",
+    aides_intro="Les aides se demandent avant de signer le devis, et le conseil public est gratuit.",
     aides=[("Agence parisienne du climat", "L’Espace Conseil France Rénov’ de Paris : conseil gratuit et neutre sur les travaux et les aides. Pavillon du Lac, "
                                            "parc de Bercy, 3 rue François-Truffaut, 75012 Paris. 01 58 51 90 20. " + L("apc-paris.com", "https://www.apc-paris.com/contact/") + "."),
            ("Éco-rénovons Paris+", "Pour les copropriétés : 5 000 € pour un audit ou un diagnostic technique global, puis jusqu’à 35 % des travaux hors taxes "
@@ -115,8 +114,8 @@ _TM_RENOV = "https://renov.toulouse-metropole.fr/"
 _SILENCIO = "https://france3-regions.franceinfo.fr/occitanie/haute-garonne/toulouse/bruit-des-avions-jusqu-a-100-des-couts-rembourses-pour-insonoriser-logements-et-batiments-plus-de-12-000-familles-en-ont-deja-beneficie-3340469.html"
 _VENT_31 = "https://www.data.gouv.fr/datasets/vent-et-rafales"
 TOULOUSE = dict(
-    tldr="À Toulouse, le centre ancien de 256 hectares impose bois peint et tuile canal, la Ville mène des campagnes de ravalement et l’aide Silencio insonorise près de l’aéroport",
-    hook="Brique et tuile canal, centre ancien de 256 hectares, aide Silencio.",
+    tldr="À Toulouse, le centre ancien de 256 hectares impose bois peint et tuile canal, et la Ville impose le ravalement par campagnes",
+    hook="Centre ancien protégé, aide Silencio près de l’aéroport.",
     slug="toulouse", name="Toulouse", cp="31000", wiki="https://fr.wikipedia.org/wiki/Toulouse", wikidata="Q7880",
     title="Devis travaux à Toulouse : toiture, façade, fenêtres",
     desc="Travaux à Toulouse : centre ancien protégé, campagnes de ravalement, termites, aides de la Métropole. Un seul artisan vient chiffrer, gratuitement.",
@@ -125,9 +124,8 @@ TOULOUSE = dict(
              ("34,3 <small>%</small>", "des résidences principales datent d’avant 1971", S("Insee, 2023", _MELODI_31)),
              ("256 <small>ha</small>", "de centre ancien protégé, où l’architecte des Bâtiments de France donne son accord", S("PSMV, 2025", _PSMV_31)),
              ("92 <small>jours</small>", "de rafales d’au moins 57 km/h à Blagnac en 2025 : le vent d’autan", S("Météo-France", _VENT_31))],
-    answer=("À Toulouse, 84 % des logements sont des appartements et le centre ancien forme un site patrimonial remarquable de 256 hectares, "
-            "où l’architecte des Bâtiments de France donne un avis conforme. Le maire peut imposer un ravalement tous les dix ans : la Ville "
-            "procède par campagnes, avec des aides."),
+    answer=("Sur 100 logements, 84 sont des appartements. Dans le centre ancien, l’architecte des Bâtiments de France donne un avis conforme. "
+            "Près de l’aéroport, l’aide Silencio finance au moins 80 % de l’insonorisation des logements situés dans le plan de gêne sonore."),
     facts=[("Ravalement", "Toulouse est depuis 1990 sur la liste préfectorale des communes où le maire peut imposer un ravalement au moins tous les dix ans. "
                           "La 12e campagne obligatoire couvre 2025 à 2029 (" + L("Toulouse Métropole", _TM_RAV) + ")."),
            ("Centre ancien", "256 hectares régis depuis le 17 février 2025 par un plan de sauvegarde : PVC interdit pour les menuiseries, tuiles canal de réemploi "
@@ -169,7 +167,7 @@ TOULOUSE = dict(
                                                 + L("démarche", "https://metropole.toulouse.fr/demarches/faire-une-demande-dautorisation-durbanisme-toulouse") + ")."),
            ("Faites autoriser l’échafaudage", "L’occupation du trottoir se demande à la commune quelques semaines avant le chantier."),
            ("Passez à Toulouse Métropole Rénov’", "Conseil gratuit sur les aides, avant de signer le devis.")],
-    aides_intro="Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.",
+    aides_intro="Les aides se demandent avant de signer le devis, et le conseil public est gratuit.",
     aides=[("Toulouse Métropole Rénov’", "L’Espace Conseil France Rénov’ de la métropole : conseil gratuit, accueil sans rendez-vous. Maison de l’Énergie, "
                                          "1 allée Jacques-Chaban-Delmas, 31500 Toulouse. 05 34 24 59 59. " + L("renov.toulouse-metropole.fr", _TM_RENOV) + "."),
            ("Prime éco-rénovation", "Pour les propriétaires occupants : de 1 000 € à 8 500 € selon le gain énergétique, le niveau atteint et les matériaux biosourcés, "
@@ -209,8 +207,8 @@ _TERM_76 = "https://www.seine-maritime.gouv.fr/contenu/telechargement/57813/4064
 _CEE_76 = "https://cheque-eco-energie.normandie.fr/sites/default/files/2026-07/Fiche%20compatibilit%C3%A9%20BBC%20Normandie%20juin%202026.pdf"
 _EM_76 = "https://energies.metropole-rouen-normandie.fr/"
 ROUEN = dict(
-    tldr="À Rouen, le centre ancien est un secteur sauvegardé depuis 1964, le ravalement demande une déclaration préalable et la Région aide jusqu’à 10 000 € pour une rénovation globale",
-    hook="Secteur sauvegardé, ardoise et pans de bois, ravalement rue par rue.",
+    tldr="À Rouen, le centre ancien est un secteur sauvegardé depuis 1964 : toute modification d’aspect y demande l’avis de l’architecte des Bâtiments de France",
+    hook="Secteur sauvegardé depuis 1964, ardoise et pans de bois.",
     slug="rouen", name="Rouen", cp="76000", wiki="https://fr.wikipedia.org/wiki/Rouen", wikidata="Q30974",
     title="Devis travaux à Rouen : toiture, façade, fenêtres, isolation",
     desc="Travaux à Rouen : secteur sauvegardé, ravalement, ardoise et pans de bois, aides de la Région et de la Métropole. Un seul artisan vient chiffrer, gratuitement.",
@@ -219,9 +217,9 @@ ROUEN = dict(
              ("49,3 <small>%</small>", "des résidences principales datent d’avant 1971", S("Insee, 2023", _INSEE_76)),
              ("134 <small>jours</small>", "de pluie par an à Rouen-Boos", S("Météo-France, normales 1991-2020", _MF_76)),
              ("1964", "création du secteur sauvegardé du centre ancien", S("ministère de la Culture", "https://pop.culture.gouv.fr/notice/merimee/SPR2800037"))],
-    answer=("À Rouen, 85,8 % des logements sont des appartements et près de la moitié des résidences principales datent d’avant 1971. Dans le centre ancien, "
-            "secteur sauvegardé depuis 1964, toute modification d’aspect passe par l’architecte des Bâtiments de France. Le ravalement demande une "
-            "déclaration préalable, et la Ville l’impose rue par rue."),
+    answer=("Près de la moitié des résidences principales datent d’avant 1971, et 85,8 % des logements sont des appartements. Partout, le ravalement "
+            "demande une déclaration préalable ; rue Beauvoisine et rue Saint-Sever, la Ville l’impose. Pour une maison de plus de 15 ans, la Région aide "
+            "jusqu’à 10 000 € pour une rénovation globale."),
     facts=[("Ravalement", "Soumis à déclaration préalable (" + L("Ville de Rouen", _DP_76) + "). Rue Beauvoisine et rue Saint-Sever, il est imposé par arrêté du maire, "
                           "avec une aide de 7 000 € au plus par immeuble (" + L("OPAH-RU", _OPAH_76) + ")."),
            ("Centre ancien", "Secteur sauvegardé régi par un plan de sauvegarde approuvé en 1986 : toute modification d’aspect y est soumise à autorisation, "
@@ -233,7 +231,7 @@ ROUEN = dict(
            ("Climat", "847,5 mm de pluie par an et près de 50 jours de rafales d’au moins 58 km/h à Rouen-Boos, surtout de novembre à mars ("
                       + L("Météo-France", _MF_76) + ")."),
            ("Clôtures", "Une déclaration préalable est exigée pour toute clôture dans les 71 communes de la Métropole (délibération du 13 février 2020).")],
-    trades_intro="Pans de bois, pierre, brique, ardoise : à Rouen, chaque matériau a ses règles, surtout dans le centre ancien.",
+    trades_intro="À Rouen, pans de bois, pierre, brique et ardoise ont chacun leurs règles, surtout dans le centre ancien.",
     trades={
         "toiture": ["Dans le centre ancien, la couverture habituelle est l’ardoise naturelle, et la tuile plate sur les maisons à pans de bois les plus anciennes. "
                     "Tuiles mécaniques, fibrociment, ardoises posées en losange, zinc apparent et gouttières en plastique y sont refusés (" + L("PSMV", _PSMV_76) + ").",
@@ -259,7 +257,7 @@ ROUEN = dict(
            ("Faites autoriser l’échafaudage", "L’occupation du trottoir se demande à la direction des Espaces publics et naturels de la Ville. 02 35 08 87 45 ("
                                               + L("démarche", "https://rouen.fr/fr/occupation-domaine-public-travaux") + ")."),
            ("Passez par Énergies Métropole", "Conseil gratuit sur les travaux et les aides, avant de signer le devis.")],
-    aides_intro="Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.",
+    aides_intro="Les aides se demandent avant de signer le devis, et le conseil public est gratuit.",
     aides=[("Énergies Métropole", "L’Espace Conseil France Rénov’ de la Métropole Rouen Normandie : conseil gratuit et neutre. 9 bis rue Jeanne-d’Arc, 76000 Rouen. "
                                   "02 76 30 32 32. " + L("energies.metropole-rouen-normandie.fr", _EM_76) + "."),
            ("OPAH-RU de Rouen 2024-2029", "Ville, Métropole et Anah aident à rénover près de 500 logements du centre-ville, avec un volet ravalement : jusqu’à 7 000 € "
@@ -301,8 +299,8 @@ _CD13 = "https://departement13.fr/en-actions/logement-habitat/les-dispositifs-ai
 _ALEC_13 = "https://www.alecmetropolemarseillaise.fr/ouverture-de-maprimerenov-au-23-fevrier-2026/"
 _MP_SON = "https://www.marseille.aeroport.fr/societe/transitions/aide-insonorisation"
 MARSEILLE = dict(
-    tldr="À Marseille, 72 % des logements sont en copropriété, le maire peut imposer un ravalement tous les dix ans et tout le département est en zone termites",
-    hook="Centre-ville protégé, mistral, termites, ravalement imposé.",
+    tldr="À Marseille, le maire peut imposer un ravalement tous les dix ans, et tout le département est en zone termites",
+    hook="Ravalement imposé, et tout le département en zone termites.",
     slug="marseille", name="Marseille", cp="13008", wiki="https://fr.wikipedia.org/wiki/Marseille", wikidata="Q23482",
     title="Devis travaux à Marseille : toiture, façade, fenêtres",
     desc="Travaux à Marseille : ravalement imposé, centre-ville protégé, mistral, termites, aides du Département. Un seul artisan vient chiffrer, gratuitement.",
@@ -311,9 +309,9 @@ MARSEILLE = dict(
              ("56,7 <small>%</small>", "des résidences principales datent d’avant 1971", S("Insee, 2023", _MELODI_13)),
              ("472 <small>ha</small>", "de site patrimonial remarquable en centre-ville", S("AVAP, 2018", _AVAP_13_RP)),
              ("65 <small>jours</small>", "de mistral par an, avec des rafales au-delà de 100 km/h", S("PLUi, état initial de l’environnement", _EIE_13))],
-    answer=("À Marseille, 72 % des logements sont en copropriété et plus de la moitié des résidences principales datent d’avant 1971. Le maire peut imposer "
-            "un ravalement tous les dix ans, le centre-ville forme un site patrimonial remarquable de 472 hectares avec ses propres règles, et tout le "
-            "département est en zone termites."),
+    answer=("Près de trois logements sur quatre sont en copropriété (72 %), et plus de la moitié des résidences principales datent d’avant 1971. "
+            "Le centre-ville forme un site patrimonial remarquable de 472 hectares avec ses propres règles : tuile canal, fenêtres en bois peint, "
+            "pas d’isolation par l’extérieur sur les immeubles patrimoniaux."),
     facts=[("Ravalement", "Marseille est sur la liste préfectorale depuis l’arrêté du 4 mars 1982 : le maire peut imposer un ravalement au moins tous les dix ans. "
                           "De 2017 à 2022, quatre campagnes ont visé le centre, avec environ 2 100 immeubles mis en demeure (" + L("SOLEAM", _SOLEAM) + ")."),
            ("Centre-ville protégé", "Site patrimonial remarquable de 472 hectares depuis 2018, plus les abords de 60 monuments historiques : tuile canal en terre cuite, "
@@ -325,7 +323,7 @@ MARSEILLE = dict(
            ("Climat", "Zone climatique H3. Le mistral souffle environ 65 jours par an, avec des rafales qui dépassent régulièrement 100 km/h (" + L("PLUi", _EIE_13) + ")."),
            ("Bruit des avions", "Dans le 16e arrondissement, certains logements peuvent obtenir l’aide à l’insonorisation de l’aéroport Marseille Provence ("
                                 + L("aéroport", _MP_SON) + ").")],
-    trades_intro="Immeubles « trois fenêtres », maisons de quartier, grands ensembles : à Marseille, la plupart des toitures et des façades se décident en assemblée générale de copropriété.",
+    trades_intro="À Marseille, la plupart des toitures et des façades se décident en assemblée générale de copropriété, des immeubles « trois fenêtres » aux grands ensembles.",
     trades={
         "toiture": ["Tuile canal et tuile plate mécanique dite « marseillaise » se partagent les toits du centre. Ne remplacez pas des tuiles marseillaises par des "
                     "tuiles canal si la pente et le style ne s’y prêtent pas, conseille l’architecte des Bâtiments de France (" + L("fiche UDAP 13", _TUILE_13) + ").",
@@ -352,7 +350,7 @@ MARSEILLE = dict(
            ("Faites autoriser l’échafaudage", "Un échafaudage sur le trottoir demande une autorisation d’occupation du domaine public, à demander à la Ville avant le chantier."),
            ("Prenez rendez-vous avec l’ALEC", "Depuis le 23 février 2026, un rendez-vous avec un conseiller France Rénov’ est obligatoire avant de demander une aide ("
                                               + L("ALEC", _ALEC_13) + ").")],
-    aides_intro="Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.",
+    aides_intro="Les aides se demandent avant de signer le devis, et le conseil public est gratuit.",
     aides=[("ALEC Métropole Marseillaise", "L’Espace Conseil France Rénov’ de Marseille : conseil gratuit et neutre. 1 place du Général-de-Gaulle, 13001 Marseille. "
                                            "04 91 37 21 53. Numéro unique Allo Métropole Rénov’ : 04 88 60 21 06."),
            ("Provence Éco-Rénov", "L’aide du Département : 25 % des travaux plafonnés à 4 000 €, et 50 % plafonnés à 8 000 € dans les périmètres d’éradication de "
@@ -390,8 +388,8 @@ _MF_59 = "https://pas-de-calais.gouv.fr/content/download/34943/225359/file/Fiche
 _MHD = "https://www.maisonhabitatdurable-lillemetropole.fr"
 _ODP_59 = "https://www.lille.fr/Annuaire-des-demarches/Occupation-du-domaine-public"
 LILLE = dict(
-    tldr="À Lille, le ravalement est obligatoire tous les dix ans, la Ville publie une charte de 61 teintes et aide à ravaler, et le Vieux-Lille passe par l’architecte des Bâtiments de France",
-    hook="Ravalement tous les 10 ans, charte de 61 teintes, Vieux-Lille protégé.",
+    tldr="À Lille, le ravalement est obligatoire au moins tous les dix ans, et la Ville aide à le financer, sans condition de revenus",
+    hook="Ravalement obligatoire tous les dix ans, et aidé par la Ville.",
     slug="lille", name="Lille", cp="59000", wiki="https://fr.wikipedia.org/wiki/Lille", wikidata="Q648",
     title="Devis travaux à Lille : toiture, façade, fenêtres, isolation",
     desc="Travaux à Lille : ravalement tous les 10 ans, charte couleurs, Vieux-Lille protégé, aides de la Ville et de la Métropole. Un seul artisan vient chiffrer.",
@@ -400,9 +398,9 @@ LILLE = dict(
              ("27,6 <small>%</small>", "des résidences principales datent d’avant 1946", S("Insee, 2023", _INSEE_59)),
              ("177 <small>ha</small>", "de site patrimonial remarquable, Vieux-Lille et centre", S("Ville de Lille", _SPR_59)),
              ("61 <small>teintes</small>", "pour les maçonneries dans la charte couleurs de la Ville", S("Ville de Lille", _CHARTE))],
-    answer=("À Lille, 79 % des logements sont des appartements et plus d’un quart des résidences principales datent d’avant 1946. Brique, badigeon et pierres "
-            "locales font la façade lilloise : le ravalement est obligatoire au moins tous les dix ans sur injonction, toute modification d’aspect demande une "
-            "autorisation, et la Ville aide à ravaler."),
+    answer=("Les logements sont surtout des appartements (79 %), et plus d’un quart des résidences principales datent d’avant 1946. La façade lilloise mêle "
+            "brique, badigeon et pierres locales : toute modification d’aspect demande une autorisation, et dans le Vieux-Lille, l’architecte des Bâtiments "
+            "de France donne son avis."),
     facts=[("Ravalement", "Obligatoire au moins tous les 10 ans, sous injonction administrative. Toute intervention qui modifie l’aspect d’une façade demande une "
                           "autorisation d’urbanisme (" + L("guide des façades", _GUIDE_FAC) + ")."),
            ("Vieux-Lille", "Le site patrimonial remarquable couvre 177 hectares depuis l’arrêté du 22 mars 2023 ; son nouveau plan de sauvegarde est encore en "
@@ -441,7 +439,7 @@ LILLE = dict(
            ("Faites autoriser l’échafaudage", "Au moins 10 jours ouvrés avant, par courriel à autorisations.temporaires@mairie-lille.fr. 03 20 49 52 50 ("
                                               + L("démarche", _ODP_59) + ")."),
            ("Demandez les aides avant les travaux", "Les aides de la Ville se demandent avant de commencer. Conseil gratuit à la Maison de l’Habitat Durable.")],
-    aides_intro="Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.",
+    aides_intro="Les aides se demandent avant de signer le devis, et le conseil public est gratuit.",
     aides=[("Maison de l’Habitat Durable", "L’Espace Conseil France Rénov’ de la Métropole, avec AMELIO : 7 bis rue Racine, 59000 Lille. 03 59 00 03 59. "
                                            "Conseillers AMELIO : 03 20 21 27 77. " + L("maisonhabitatdurable-lillemetropole.fr", _MHD) + "."),
            ("Aide au ravalement", "La Ville verse 15 €/m² traité, plafonnés à 15 000 €, sans condition de revenus, aux propriétaires et aux syndicats de copropriétaires ("
@@ -481,8 +479,8 @@ _ALEC_69 = "https://www.alec-lyon.org/services/aides-et-accompagnements/ecorenov
 _MF_69 = "https://donneespubliques.meteofrance.fr/FichesClim/FICHECLIM_69029001.pdf"
 _ODP_69 = "https://www.lyon.fr/demarche/stationnement/demander-une-autorisation-pour-loccupation-du-domaine-public-pour-travaux"
 LYON = dict(
-    tldr="À Lyon, le ravalement est imposé rue par rue, le centre historique est inscrit à l’Unesco et Écoréno’v aide tous les propriétaires, sans condition de ressources",
-    hook="Site Unesco, ravalement imposé rue par rue, nichoirs à martinets.",
+    tldr="À Lyon, la Ville impose le ravalement rue par rue, et Écoréno’v aide tous les propriétaires à rénover, sans condition de ressources",
+    hook="Site Unesco et nichoirs à martinets.",
     slug="lyon", name="Lyon", cp="69003", wiki="https://fr.wikipedia.org/wiki/Lyon", wikidata="Q456",
     title="Devis travaux à Lyon : toiture, façade, fenêtres, isolation",
     desc="Travaux à Lyon : ravalement imposé, site Unesco, nichoirs à martinets, aides Écoréno’v. Un seul artisan vient chiffrer, gratuitement.",
@@ -491,9 +489,9 @@ LYON = dict(
              ("45,5 <small>%</small>", "des résidences principales datent d’avant 1971", S("Insee, 2023", _INSEE_69)),
              ("427 <small>ha</small>", "de site historique inscrit à l’Unesco depuis 1998", S("Ville de Lyon", _UNESCO_69)),
              ("30,6 <small>jours</small>", "par an à 30 °C ou plus à Lyon-Bron", S("Météo-France, normales 1991-2020", _MF_69))],
-    answer=("À Lyon, 96 % des logements sont des appartements : la plupart des travaux de toiture et de façade se votent en copropriété. Le ravalement est "
-            "obligatoire tous les dix ans, la Ville l’impose rue par rue et demande une déclaration préalable pour tout ravalement. Le site historique inscrit "
-            "à l’Unesco et deux sites patrimoniaux remarquables passent par l’architecte des Bâtiments de France."),
+    answer=("Sur 100 logements, 96 sont des appartements : la plupart des travaux de toiture et de façade se votent en copropriété. Tout ravalement "
+            "demande une déclaration préalable. Dans le site historique inscrit à l’Unesco et les deux sites patrimoniaux remarquables, l’architecte des "
+            "Bâtiments de France donne son avis."),
     facts=[("Ravalement", "Obligatoire tous les dix ans depuis l’arrêté préfectoral du 18 octobre 1977. L’arrêté pluriannuel 2021-2026 fixe les rues, année par année ; "
                           "après l’injonction, le propriétaire a un an pour faire les travaux (" + L("Ville de Lyon", _RAV_69) + ")."),
            ("Déclaration préalable", "Exigée pour tout ravalement, d’immeuble comme de maison (" + L("Ville de Lyon", _DP_RAV_69) + ")."),
@@ -532,7 +530,7 @@ LYON = dict(
                                                 "198 avenue Jean-Jaurès, 69007 Lyon. 04 26 99 63 80."),
            ("Demandez le permis de stationnement", "Pour un échafaudage, en ligne au moins 8 jours avant. Le tarif passe de 26,50 € à 1,80 € par m² et par mois pour un "
                                                    "ravalement obligatoire ou des travaux thermiques (" + L("Ville de Lyon", _ODP_69) + ").")],
-    aides_intro="Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.",
+    aides_intro="Les aides se demandent avant de signer le devis, et le conseil public est gratuit.",
     aides=[("ALEC Lyon", "L’Espace Conseil France Rénov’ de la Métropole : 12-14 avenue Antoine-Dutrievoz, 69100 Villeurbanne. 04 37 48 25 90, du lundi au vendredi, "
                          "de 9 h à 12 h et de 14 h à 17 h. " + L("alec-lyon.org", "https://www.alec-lyon.org/contact/") + "."),
            ("Écoréno’v", "L’aide de la Métropole, pour tous les propriétaires. En copropriété : 3 500 € par lot pour le niveau BBC, 2 000 € pour au moins 35 % de gain, "

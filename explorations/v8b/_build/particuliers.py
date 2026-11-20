@@ -784,7 +784,7 @@ def example_toiture():
     rows = "".join(f'<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>' for a, b, c in DEVIS_TOIT)
     lis = "".join(f"<li>{m}</li>" for m in DEVIS_MENTIONS)
     return f"""<section class="sheet" id="exemple-devis" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Exemple de devis de toiture : les lignes à vérifier</h2><p>Un devis de réfection se lit poste par poste. Voici les lignes qu’on y trouve, et ce qu’il faut vérifier sur chacune avant de signer.</p></div>
+  <div class="grid sp-head"><h2 data-split>Exemple de devis de toiture : les lignes à vérifier</h2><p>Un devis de réfection se lit poste par poste, et chaque ligne a son point à vérifier avant de signer.</p></div>
   <div class="pf-refbox" style="max-width:none">
     <table class="pf-tab"><caption>Postes d’un devis de réfection de toiture</caption><thead><tr><th scope="col">Poste</th><th scope="col">Unité</th><th scope="col">À vérifier</th></tr></thead><tbody>{rows}</tbody></table>
     <h3 style="margin-top:24px">Les mentions que le devis doit porter</h3>

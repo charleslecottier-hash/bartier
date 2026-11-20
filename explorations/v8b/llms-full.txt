@@ -667,25 +667,25 @@ Combles perdus ou aménagés, murs par l’extérieur, toiture.
 Devis isolation
 
 ### Devis travaux par ville
-Règles locales, démarches, aides et conseils gratuits, ville par ville
+Les règles et les aides changent d’une ville à l’autre
 
 #### Devis travaux à Lille
-Ravalement tous les 10 ans, charte de 61 teintes, Vieux-Lille protégé
+Ravalement obligatoire tous les dix ans, et aidé par la Ville
 
 #### Devis travaux à Rouen
-Secteur sauvegardé, ardoise et pans de bois, ravalement rue par rue
+Secteur sauvegardé depuis 1964, ardoise et pans de bois
 
 #### Devis travaux à Paris
-Autorisation même pour des fenêtres à l’identique, toits en zinc, copropriété
+Une autorisation même pour des fenêtres à l’identique
 
 #### Devis travaux à Lyon
-Site Unesco, ravalement imposé rue par rue, nichoirs à martinets
+Site Unesco et nichoirs à martinets
 
 #### Devis travaux à Marseille
-Centre-ville protégé, mistral, termites, ravalement imposé
+Ravalement imposé, et tout le département en zone termites
 
 #### Devis travaux à Toulouse
-Brique et tuile canal, centre ancien de 256 hectares, aide Silencio
+Centre ancien protégé, aide Silencio près de l’aéroport
 
 ### Une fuite de toiture ?
 Signalez-la : nous vous rappelons en priorité. En attendant, suivez les 5 bons réflexes.
@@ -892,7 +892,7 @@ Source : QuelleEnergie, consulté le 18/11/2026
 Ce sont des moyennes : seule une visite permet un devis fiable.
 
 ### Exemple de devis de toiture : les lignes à vérifier
-Un devis de réfection se lit poste par poste. Voici les lignes qu’on y trouve, et ce qu’il faut vérifier sur chacune avant de signer.
+Un devis de réfection se lit poste par poste, et chaque ligne a son point à vérifier avant de signer.
 - Poste | Unité | À vérifier
 - Installation de chantier, échafaudage, protections | forfait | La durée de location et la protection des abords
 - Dépose de l’ancienne couverture | m² | L’évacuation et le tri des déchets : compris ou non
@@ -1471,14 +1471,14 @@ Décrivez vos travaux à Lille en 1 minute. Nous vous rappelons en moins de 5 mi
 Pressé ? 07 81 01 89 36
 
 ### Lille en quelques chiffres
-À Lille, le ravalement est obligatoire tous les dix ans, la Ville publie une charte de 61 teintes et aide à ravaler, et le Vieux-Lille passe par l’architecte des Bâtiments de France
+À Lille, le ravalement est obligatoire au moins tous les dix ans, et la Ville aide à le financer, sans condition de revenus
 - 79,3 % des logements sont des appartements Insee, 2023
 - 27,6 % des résidences principales datent d’avant 1946 Insee, 2023
 - 177 ha de site patrimonial remarquable, Vieux-Lille et centre Ville de Lille
 - 61 teintes pour les maçonneries dans la charte couleurs de la Ville Ville de Lille
 
 ### Que faut-il savoir avant des travaux à Lille ?
-À Lille, 79 % des logements sont des appartements et plus d’un quart des résidences principales datent d’avant 1946. Brique, badigeon et pierres locales font la façade lilloise : le ravalement est obligatoire au moins tous les dix ans sur injonction, toute modification d’aspect demande une autorisation, et la Ville aide à ravaler.
+Les logements sont surtout des appartements (79 %), et plus d’un quart des résidences principales datent d’avant 1946. La façade lilloise mêle brique, badigeon et pierres locales : toute modification d’aspect demande une autorisation, et dans le Vieux-Lille, l’architecte des Bâtiments de France donne son avis.
 
 **Ravalement**
 - Obligatoire au moins tous les 10 ans, sous injonction administrative. Toute intervention qui modifie l’aspect d’une façade demande une autorisation d’urbanisme (guide des façades).
@@ -1554,7 +1554,7 @@ Au moins 10 jours ouvrés avant, par courriel à autorisations.temporaires@mairi
 Les aides de la Ville se demandent avant de commencer. Conseil gratuit à la Maison de l’Habitat Durable.
 
 ### Quelles aides pour vos travaux à Lille ?
-Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.
+Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
 Conseil public, gratuit et neutre
 
 #### Maison de l’Habitat Durable
@@ -1661,14 +1661,14 @@ Décrivez vos travaux à Rouen en 1 minute. Nous vous rappelons en moins de 5 mi
 Pressé ? 07 81 01 89 36
 
 ### Rouen en quelques chiffres
-À Rouen, le centre ancien est un secteur sauvegardé depuis 1964, le ravalement demande une déclaration préalable et la Région aide jusqu’à 10 000 € pour une rénovation globale
+À Rouen, le centre ancien est un secteur sauvegardé depuis 1964 : toute modification d’aspect y demande l’avis de l’architecte des Bâtiments de France
 - 85,8 % des logements sont des appartements Insee, 2023
 - 49,3 % des résidences principales datent d’avant 1971 Insee, 2023
 - 134 jours de pluie par an à Rouen-Boos Météo-France, normales 1991-2020
 - 1964 création du secteur sauvegardé du centre ancien ministère de la Culture
 
 ### Que faut-il savoir avant des travaux à Rouen ?
-À Rouen, 85,8 % des logements sont des appartements et près de la moitié des résidences principales datent d’avant 1971. Dans le centre ancien, secteur sauvegardé depuis 1964, toute modification d’aspect passe par l’architecte des Bâtiments de France. Le ravalement demande une déclaration préalable, et la Ville l’impose rue par rue.
+Près de la moitié des résidences principales datent d’avant 1971, et 85,8 % des logements sont des appartements. Partout, le ravalement demande une déclaration préalable ; rue Beauvoisine et rue Saint-Sever, la Ville l’impose. Pour une maison de plus de 15 ans, la Région aide jusqu’à 10 000 € pour une rénovation globale.
 
 **Ravalement**
 - Soumis à déclaration préalable (Ville de Rouen). Rue Beauvoisine et rue Saint-Sever, il est imposé par arrêté du maire, avec une aide de 7 000 € au plus par immeuble (OPAH-RU).
@@ -1690,7 +1690,7 @@ Pressé ? 07 81 01 89 36
 Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? Écrivez-nous.
 
 ### Vos travaux à Rouen, métier par métier
-Pans de bois, pierre, brique, ardoise : à Rouen, chaque matériau a ses règles, surtout dans le centre ancien
+À Rouen, pans de bois, pierre, brique et ardoise ont chacun leurs règles, surtout dans le centre ancien
 
 #### Couvreur à Rouen
 Dans le centre ancien, la couverture habituelle est l’ardoise naturelle, et la tuile plate sur les maisons à pans de bois les plus anciennes. Tuiles mécaniques, fibrociment, ardoises posées en losange, zinc apparent et gouttières en plastique y sont refusés (PSMV).
@@ -1744,7 +1744,7 @@ L’occupation du trottoir se demande à la direction des Espaces publics et nat
 Conseil gratuit sur les travaux et les aides, avant de signer le devis.
 
 ### Quelles aides pour vos travaux à Rouen ?
-Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.
+Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
 Conseil public, gratuit et neutre
 
 #### Énergies Métropole
@@ -1848,14 +1848,14 @@ Décrivez vos travaux à Paris en 1 minute. Nous vous rappelons en moins de 5 mi
 Pressé ? 07 81 01 89 36
 
 ### Paris en quelques chiffres
-À Paris, presque tout se vote en copropriété, le ravalement est obligatoire tous les dix ans et même des fenêtres à l’identique demandent une autorisation
+À Paris, presque tout se vote en copropriété, et même des fenêtres remplacées à l’identique demandent une autorisation
 - 97 % des logements sont des appartements Insee, 2022
 - 48,7 % des résidences principales datent d’avant 1946 Insee, 2022
 - 94 % des logements sont dans un périmètre de protection du patrimoine SDES, 2024
 - 10 ans au plus entre deux ravalements, sur injonction du maire Service-Public
 
 ### Que faut-il savoir avant des travaux à Paris ?
-À Paris, presque tout se joue en copropriété : 97 % des logements sont des appartements. Le ravalement est obligatoire au moins tous les dix ans, tout changement d’aspect extérieur demande une déclaration préalable, même pour des fenêtres à l’identique, et 94 % des logements sont dans un périmètre où l’architecte des Bâtiments de France donne son avis.
+Sur 100 logements, 97 sont des appartements. Le ravalement est obligatoire au moins tous les dix ans, et 94 % des logements sont dans un périmètre où l’architecte des Bâtiments de France donne son avis.
 
 **Ravalement**
 - Obligatoire au moins tous les 10 ans. La Ville écrit, contrôle un an plus tard, puis peut prendre un arrêté d’injonction : les travaux doivent alors commencer dans les 6 mois. Amende possible : 3 750 € (Service-Public, Ville de Paris).
@@ -1931,7 +1931,7 @@ Un échafaudage sur le trottoir demande une autorisation de voirie et des droits
 Avant de signer : un rendez-vous gratuit à l’Agence parisienne du climat, l’Espace Conseil France Rénov’ de Paris.
 
 ### Quelles aides pour vos travaux à Paris ?
-Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.
+Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
 Conseil public, gratuit et neutre
 
 #### Agence parisienne du climat
@@ -2035,14 +2035,14 @@ Décrivez vos travaux à Lyon en 1 minute. Nous vous rappelons en moins de 5 min
 Pressé ? 07 81 01 89 36
 
 ### Lyon en quelques chiffres
-À Lyon, le ravalement est imposé rue par rue, le centre historique est inscrit à l’Unesco et Écoréno’v aide tous les propriétaires, sans condition de ressources
+À Lyon, la Ville impose le ravalement rue par rue, et Écoréno’v aide tous les propriétaires à rénover, sans condition de ressources
 - 96,1 % des logements sont des appartements Insee, 2023
 - 45,5 % des résidences principales datent d’avant 1971 Insee, 2023
 - 427 ha de site historique inscrit à l’Unesco depuis 1998 Ville de Lyon
 - 30,6 jours par an à 30 °C ou plus à Lyon-Bron Météo-France, normales 1991-2020
 
 ### Que faut-il savoir avant des travaux à Lyon ?
-À Lyon, 96 % des logements sont des appartements : la plupart des travaux de toiture et de façade se votent en copropriété. Le ravalement est obligatoire tous les dix ans, la Ville l’impose rue par rue et demande une déclaration préalable pour tout ravalement. Le site historique inscrit à l’Unesco et deux sites patrimoniaux remarquables passent par l’architecte des Bâtiments de France.
+Sur 100 logements, 96 sont des appartements : la plupart des travaux de toiture et de façade se votent en copropriété. Tout ravalement demande une déclaration préalable. Dans le site historique inscrit à l’Unesco et les deux sites patrimoniaux remarquables, l’architecte des Bâtiments de France donne son avis.
 
 **Ravalement**
 - Obligatoire tous les dix ans depuis l’arrêté préfectoral du 18 octobre 1977. L’arrêté pluriannuel 2021-2026 fixe les rues, année par année ; après l’injonction, le propriétaire a un an pour faire les travaux (Ville de Lyon).
@@ -2118,7 +2118,7 @@ En ligne sur Toodego, ou au service urbanisme appliqué, 198 avenue Jean-Jaurès
 Pour un échafaudage, en ligne au moins 8 jours avant. Le tarif passe de 26,50 € à 1,80 € par m² et par mois pour un ravalement obligatoire ou des travaux thermiques (Ville de Lyon).
 
 ### Quelles aides pour vos travaux à Lyon ?
-Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.
+Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
 Conseil public, gratuit et neutre
 
 #### ALEC Lyon
@@ -2222,14 +2222,14 @@ Décrivez vos travaux à Marseille en 1 minute. Nous vous rappelons en moins de 
 Pressé ? 07 81 01 89 36
 
 ### Marseille en quelques chiffres
-À Marseille, 72 % des logements sont en copropriété, le maire peut imposer un ravalement tous les dix ans et tout le département est en zone termites
+À Marseille, le maire peut imposer un ravalement tous les dix ans, et tout le département est en zone termites
 - 72 % des logements sont en copropriété Métropole Aix-Marseille-Provence
 - 56,7 % des résidences principales datent d’avant 1971 Insee, 2023
 - 472 ha de site patrimonial remarquable en centre-ville AVAP, 2018
 - 65 jours de mistral par an, avec des rafales au-delà de 100 km/h PLUi, état initial de l’environnement
 
 ### Que faut-il savoir avant des travaux à Marseille ?
-À Marseille, 72 % des logements sont en copropriété et plus de la moitié des résidences principales datent d’avant 1971. Le maire peut imposer un ravalement tous les dix ans, le centre-ville forme un site patrimonial remarquable de 472 hectares avec ses propres règles, et tout le département est en zone termites.
+Près de trois logements sur quatre sont en copropriété (72 %), et plus de la moitié des résidences principales datent d’avant 1971. Le centre-ville forme un site patrimonial remarquable de 472 hectares avec ses propres règles : tuile canal, fenêtres en bois peint, pas d’isolation par l’extérieur sur les immeubles patrimoniaux.
 
 **Ravalement**
 - Marseille est sur la liste préfectorale depuis l’arrêté du 4 mars 1982 : le maire peut imposer un ravalement au moins tous les dix ans. De 2017 à 2022, quatre campagnes ont visé le centre, avec environ 2 100 immeubles mis en demeure (SOLEAM).
@@ -2251,7 +2251,7 @@ Pressé ? 07 81 01 89 36
 Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? Écrivez-nous.
 
 ### Vos travaux à Marseille, métier par métier
-Immeubles « trois fenêtres », maisons de quartier, grands ensembles : à Marseille, la plupart des toitures et des façades se décident en assemblée générale de copropriété
+À Marseille, la plupart des toitures et des façades se décident en assemblée générale de copropriété, des immeubles « trois fenêtres » aux grands ensembles
 
 #### Couvreur à Marseille
 Tuile canal et tuile plate mécanique dite « marseillaise » se partagent les toits du centre. Ne remplacez pas des tuiles marseillaises par des tuiles canal si la pente et le style ne s’y prêtent pas, conseille l’architecte des Bâtiments de France (fiche UDAP 13).
@@ -2305,7 +2305,7 @@ Un échafaudage sur le trottoir demande une autorisation d’occupation du domai
 Depuis le 23 février 2026, un rendez-vous avec un conseiller France Rénov’ est obligatoire avant de demander une aide (ALEC).
 
 ### Quelles aides pour vos travaux à Marseille ?
-Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.
+Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
 Conseil public, gratuit et neutre
 
 #### ALEC Métropole Marseillaise
@@ -2412,14 +2412,14 @@ Décrivez vos travaux à Toulouse en 1 minute. Nous vous rappelons en moins de 5
 Pressé ? 07 81 01 89 36
 
 ### Toulouse en quelques chiffres
-À Toulouse, le centre ancien de 256 hectares impose bois peint et tuile canal, la Ville mène des campagnes de ravalement et l’aide Silencio insonorise près de l’aéroport
+À Toulouse, le centre ancien de 256 hectares impose bois peint et tuile canal, et la Ville impose le ravalement par campagnes
 - 84 % des logements sont des appartements Insee, 2023
 - 34,3 % des résidences principales datent d’avant 1971 Insee, 2023
 - 256 ha de centre ancien protégé, où l’architecte des Bâtiments de France donne son accord PSMV, 2025
 - 92 jours de rafales d’au moins 57 km/h à Blagnac en 2025 : le vent d’autan Météo-France
 
 ### Que faut-il savoir avant des travaux à Toulouse ?
-À Toulouse, 84 % des logements sont des appartements et le centre ancien forme un site patrimonial remarquable de 256 hectares, où l’architecte des Bâtiments de France donne un avis conforme. Le maire peut imposer un ravalement tous les dix ans : la Ville procède par campagnes, avec des aides.
+Sur 100 logements, 84 sont des appartements. Dans le centre ancien, l’architecte des Bâtiments de France donne un avis conforme. Près de l’aéroport, l’aide Silencio finance au moins 80 % de l’insonorisation des logements situés dans le plan de gêne sonore.
 
 **Ravalement**
 - Toulouse est depuis 1990 sur la liste préfectorale des communes où le maire peut imposer un ravalement au moins tous les dix ans. La 12e campagne obligatoire couvre 2025 à 2029 (Toulouse Métropole).
@@ -2495,7 +2495,7 @@ L’occupation du trottoir se demande à la commune quelques semaines avant le c
 Conseil gratuit sur les aides, avant de signer le devis.
 
 ### Quelles aides pour vos travaux à Toulouse ?
-Les aides se demandent avant de signer le devis. Le conseil public, lui, est gratuit.
+Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
 Conseil public, gratuit et neutre
 
 #### Toulouse Métropole Rénov’
@@ -2753,8 +2753,8 @@ Des articles courts et sourcés, pour les artisans du bâtiment et pour les prop
 
 ### DPE 2027 : ce qui change pour les propriétaires
 
-### Deux publics, une même exigence
-Des réponses courtes, datées et sourcées.
+### Pour qui nous écrivons
+Chaque article répond à une question précise, avec ses sources et sa date.
 - 01
 
 #### Pour les artisans du bâtiment
