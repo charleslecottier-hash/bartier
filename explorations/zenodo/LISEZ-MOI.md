@@ -29,11 +29,8 @@ Pas d'autre lien commercial, pas de bouton, pas de coordonnées : Zenodo retire
 - Fiche : https://zenodo.org/records/24396449
 - DOI de cette version : 10.5281/zenodo.24396449
 - DOI toutes versions (pointe toujours vers la dernière) : 10.5281/zenodo.24396448, utilisé sur le blog et dans llms.txt
-- À corriger dans la fiche (bouton « Edit », puis « Publish » ; le DOI ne change pas) :
-  - Creators : « Bartier & Co » en organisation, alors que le PDF est signé Charles Le Cottier. Mettre Le Cottier, Charles (personne), affiliation Bartier & Co.
-  - Publication date : 2026-11-19 ; mettre 2026-11-20, la date du PDF.
-  - Resource type : « Publication » seul ; préciser Report.
-  - Version : vide ; mettre 1.
+- Corrigé le 20/11/2026 : auteur (Le Cottier, Charles, affiliation Bartier & Co) et type (Publication / Report).
+- Reste, facultatif : Publication date 2026-11-19 au lieu de 2026-11-20, Version vide au lieu de 1 (bouton « Edit », puis « Publish » ; le DOI ne change pas).
 
 ## Après la publication
 
