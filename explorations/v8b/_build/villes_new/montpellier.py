@@ -2,6 +2,7 @@
 # Chiffres Insee : jeu « Logements, principaux indicateurs (dossier complet) », RP 2023, lu via l'API Melodi
 # (la page « dossier complet » d'insee.fr répondait en erreur 500 pendant la recherche).
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+REVIEWED = "2026-11-21"
 
 _INSEE = "https://api.insee.fr/melodi/data/DS_RP_LOGEMENT_PRINC?GEO=COM-34172"
 _PSMV = "https://montpellier.fr/sites/default/files/2025-01/Guide-du-PSMV-secteur-sauvegarde-%20%281%29.pdf"
