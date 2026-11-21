@@ -1,4 +1,5 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+PUBLISH = "2026-12-05"  # vague 2 : publication deux semaines après la vague 1 (voir VILLES.md)
 
 # Sources consultées le 21/11/2026. Les pages insee.fr répondent en erreur 500 ce jour : chiffres pris par l'API Melodi (RP 2023).
 # Le règlement de la ZPPAUP (orleans.fr) a un texte illisible (polices mal encodées) : ses prescriptions ne sont pas reprises.
