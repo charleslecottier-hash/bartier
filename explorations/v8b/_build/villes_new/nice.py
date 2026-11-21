@@ -41,7 +41,7 @@ CITY = dict(
             "Dans la majeure partie de la ville, abords de monuments ou site patrimonial remarquable, l’architecte des Bâtiments de France "
             "est consulté et l’instruction d’un ravalement prend un mois de plus. La commune est aussi en zone de sismicité 4 et en zone "
             "de lutte contre les termites."),
-    facts=[("Secteurs protégés", "Trois sites patrimoniaux remarquables : le Vieux-Nice, secteur sauvegardé depuis 1969, le port, et environ "
+    facts=[("Secteurs protégés", "Trois sites patrimoniaux remarquables : le Vieux-Nice, secteur sauvegardé depuis 1969 (" + L("guide du ravalement", _GUIDE) + "), le port, et environ "
                                  "600 hectares de la Promenade des Anglais aux quartiers nord (" + L("UDAP 06", _UDAP) + ", "
                                  + L("rapport de l’AVAP", _SPR_RP) + "). Ce dernier couvre les 522 hectares inscrits à l’Unesco ("
                                  + L("Ville de Nice", _UNESCO) + ")."),
@@ -78,12 +78,12 @@ CITY = dict(
                      "interdits sur les immeubles repérés du site patrimonial remarquable : prévoyez leur place dès le projet."],
         "charpente": ["Nice est en zone de surveillance et de lutte contre les termites sur tout son territoire (" + L("préfecture", _TERM) + "). "
                       "En démolition, même partielle, les bois contaminés sont brûlés sur place ou traités avant d’être transportés.",
-                      "En zone de sismicité 4, les règles parasismiques de l’Eurocode 8 s’imposent à tout projet soumis à permis de construire, "
-                      "une surélévation par exemple (" + L("DICRIM", _DICRIM) + "). Ne déposez pas génoises ni avant-toits pour simplifier "
-                      "un ravalement : la Ville rappelle que cela bouleverse la statique du mur (" + L("guide du ravalement", _GUIDE) + ")."],
-        "isolation": ["L’isolation par l’extérieur est interdite par le règlement du Vieux-Nice, et peut être refusée sur les immeubles "
-                      "repérés du site patrimonial remarquable (" + L("règlement", _SPR) + "). La Ville la déconseille sur les bâtiments "
-                      "d’avant les années 1950 et sur les façades très ornées (" + L("guide du ravalement", _GUIDE) + ").",
+                      "En zone de sismicité 4, les règles parasismiques de l’Eurocode 8 s’imposent aux projets soumis à permis de construire ("
+                      "" + L("DICRIM", _DICRIM) + "). Ne déposez pas génoises ni avant-toits pour simplifier "
+                      "un ravalement : la Ville rappelle que cela bouleverse la statique de la partie concernée (" + L("guide du ravalement", _GUIDE) + ")."],
+        "isolation": ["L’isolation par l’extérieur est interdite dans le Vieux-Nice, et la Ville la déconseille sur les bâtiments d’avant les "
+                      "années 1950 et sur les façades très ornées (" + L("guide du ravalement", _GUIDE) + "). Sur les immeubles repérés "
+                      "du site patrimonial remarquable, elle peut être refusée (" + L("règlement", _SPR) + ").",
                       "À la station de Nice, 88,3 jours par an dépassent 25 °C et il gèle 1,1 jour par an (" + L("Météo-France", _MF) + "). "
                       "Le guichet métropolitain aide à choisir les travaux et estime les subventions, en priorité pour une rénovation "
                       "globale (" + L("Métropole", _GUICHET) + ")."]},
@@ -110,7 +110,7 @@ CITY = dict(
                                                                   + L("nicecotedazur.org", _GUICHET) + "."),
            ("Subvention de la Ville pour les façades", "Pour un immeuble d’habitation situé dans un périmètre fixé par le conseil municipal, "
                                                        "la Ville peut financer une part du ravalement des façades visibles de la rue. Près de "
-                                                       "1 500 façades privées en ont bénéficié en dix ans, pour plus de 13 millions d’euros. "
+                                                       "1 500 restaurations de façades privées en ont bénéficié en dix ans, pour plus de 13 millions d’euros. "
                                                        "Renseignements au pôle Architecture et rénovation du service des autorisations "
                                                        "d’urbanisme (" + L("guide du ravalement", _GUIDE) + ", 2022)."),
            ("Aides de l’Anah avec la Métropole", "Pour les propriétaires occupants sous plafonds de ressources, le dossier se prépare avec la "
