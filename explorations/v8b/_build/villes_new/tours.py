@@ -44,19 +44,21 @@ CITY = dict(
     answer=("À Tours, 80,9 % des logements sont des appartements et 45,2 % des résidences principales datent d’avant 1971. Dans le secteur sauvegardé "
             "du centre, 150 hectares, le plan de sauvegarde fixe les matériaux : ardoise naturelle, tuffeau laissé apparent, fenêtres en bois. Une partie "
             "de la ville est en zone termites, et deux îlots sont classés à risque de mérule depuis le 2 décembre 2025."),
-    facts=[("Secteur sauvegardé", "Créé le 9 novembre 1973 (" + L("ministère de la Culture", _SPR) + "), il couvre 150 hectares depuis 2008, avec les boulevards "
-                                  "Heurteloup et Béranger, les Halles et le quartier Lamartine. Son plan de sauvegarde, approuvé le 6 février 2014 et modifié "
-                                  "le 28 avril 2016, règle chaque façade et chaque toiture (" + L("Ville de Tours", _URBA) + ")."),
+    facts=[("Secteur sauvegardé", "Créé le 9 novembre 1973 (" + L("ministère de la Culture", _SPR) + "), aujourd’hui site patrimonial remarquable, il couvre "
+                                  "150 hectares depuis son extension du 16 février 2008 aux boulevards Heurteloup et Béranger, aux Halles et au quartier Lamartine. "
+                                  "Son plan de sauvegarde révisé, approuvé le 6 février 2014 et modifié le 28 avril 2016, règle chaque façade et chaque toiture ("
+                                  + L("Ville de Tours", _URBA) + ")."),
            ("Ravalement", "Dans toute la commune, un ravalement de façade est soumis à autorisation, par délibération municipale du 7 juillet 2014. "
                           "Clôtures et démolitions le sont aussi (" + L("PLU de Tours", _PLU) + ")."),
-           ("Urbanisme", "Hors secteur sauvegardé, le PLU de Tours s’applique depuis le 20 janvier 2020. Il a été modifié six fois, la dernière le 29 septembre 2025, puis mis en compatibilité le 19 janvier 2026 ("
+           ("Urbanisme", "Hors secteur sauvegardé, c’est le PLU de Tours, approuvé le 20 janvier 2020, qui s’applique. Il a été modifié six fois, la dernière le "
+                         "29 septembre 2025, et mis en compatibilité deux fois, la dernière le 19 janvier 2026 ("
                          + L("Géoportail de l’urbanisme", _GPU) + "). Le futur PLU métropolitain vise une entrée en vigueur fin 2027 (" + L("Ville de Tours", _URBA) + ")."),
            ("Termites", "Tours fait partie des 51 communes d’Indre-et-Loire où des zones contaminées par les termites sont délimitées à la parcelle, par "
                         "l’arrêté du 17 décembre 2021 modifié le 3 mars 2025 (" + L("préfecture", _TERM) + ")."),
            ("Mérule", "Premier arrêté mérule du département, signé le 2 décembre 2025 : deux îlots des quartiers Rabelais-Tonnelé et Beaujardin sont classés "
                       "zones de présence d’un risque de mérule. Un immeuble infesté se déclare en mairie (" + L("préfecture", _MERULE) + ")."),
-           ("Inondation", "Le val de Tours, entre Loire et Cher, est entièrement endigué et comptait plus de 118 000 habitants en 2016 (" + L("note de présentation", _PPRI_NOTE)
-                          + "). Son plan de prévention du risque d’inondation, révisé le 18 juillet 2016, s’applique à Tours et à 17 autres communes ("
+           ("Inondation", "Le val de Tours, entre Loire et Cher, est entièrement endigué et rassemble plus de 118 000 habitants, selon la note de présentation "
+                          "de 2016 (" + L("note de présentation", _PPRI_NOTE) + "). Son plan de prévention du risque d’inondation, révisé le 18 juillet 2016, s’applique à Tours et à 17 autres communes ("
                           + L("préfecture", _PPRI) + ").")],
     trades_intro="Tuffeau, ardoise, pans de bois, immeubles de la Reconstruction : dans le secteur sauvegardé, chaque type d’immeuble a ses règles.",
     trades={
