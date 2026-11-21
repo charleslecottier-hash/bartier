@@ -149,7 +149,7 @@ PHOTOS = {
         "Réparation ou fuite": ("toiture-800.webp", "Réparation d’une toiture en tuiles", "center"),
         "Remplacement de la couverture": ("toiture-ardoise-800.webp", "Couvreur au travail sur une toiture en ardoise", "center 40%"),
         "Réfection complète": ("charpente-800.webp", "Charpente en bois en cours de pose", "center"),
-        "Isolation par l’extérieur": ("isolation-800.webp", "Pose de laine isolante entre des montants en bois", "center"),
+        "Isolation par l’extérieur": ("sarking-800.webp", "Toiture en rénovation : liteaux neufs et tuiles plates en cours de pose", "center"),
     },
     "facade": {
         "Mise en peinture": ("facade-peinture-800.webp", "Peintre appliquant une peinture blanche au rouleau sur une façade", "center"),
@@ -172,9 +172,9 @@ PHOTOS = {
         "Extension ou surélévation": ("extension-800.webp", "Charpente bois neuve en cours de montage sur un étage en construction", "center"),
     },
     "isolation": {
-        "Combles perdus": ("combles-perdus-800.webp", "", "center"),
-        "Combles aménagés": ("isolation-800.webp", "Pose de laine isolante entre les montants d’un mur", "center"),
+        "Combles perdus": ("isolation-800.webp", "Pose de laine isolante entre des montants en bois", "center"),
+        "Combles aménagés": ("sarking-800.webp", "Toiture en rénovation : liteaux neufs et tuiles plates en cours de pose", "center"),
         "Murs par l’extérieur": ("facade-echafaudage-800.webp", "Maison sous échafaudage pendant un ravalement", "center"),
-        "Plancher bas": ("plancher-bas-800.webp", "", "center"),
+        "Plancher bas": ("isolation-froid-800.webp", "Personne enveloppée dans un plaid, dans une pièce froide", "center 30%"),
     },
 }

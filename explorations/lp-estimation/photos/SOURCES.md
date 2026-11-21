@@ -28,3 +28,4 @@ Elles illustrent le métier. Elles ne montrent pas les chantiers de l'artisan et
 | volets-800.webp | Fenêtres (volets) | Pexels, https://www.pexels.com/photo/close-up-of-a-residential-building-facade-with-wooden-shutters-16846254/ | Licence Pexels |
 | bois-traitement-800.webp | Charpente (traitement du bois) | Pexels, https://www.pexels.com/photo/close-up-of-wood-texture-11826860/ | Licence Pexels |
 | extension-800.webp | Charpente (extension, surélévation) | Pexels, https://www.pexels.com/photo/wooden-frame-of-a-house-ceiling-under-construction-8491084/ | Licence Pexels |
+| sarking-800.webp | Toiture (sarking), isolation (combles aménagés) | Pexels, https://www.pexels.com/photo/roof-installation-with-terracotta-tiles-in-progress-31763541/ | Licence Pexels |
