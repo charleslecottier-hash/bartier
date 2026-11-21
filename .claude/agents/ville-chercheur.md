@@ -58,6 +58,14 @@ Chaque champ a le même rôle que dans les fiches existantes :
 5. **Aides locales** : Espace Conseil France Rénov' du secteur, aides de la ville, de la métropole, du département, de la région, OPAH en cours, avec montants, plafonds et conditions.
 6. **Démarches pratiques** : où déposer l'autorisation d'urbanisme (guichet numérique), occupation du domaine public pour un échafaudage, contacts.
 
+## Conseils pratiques (appris sur les premières villes)
+
+- **Insee** : si les pages insee.fr répondent en erreur 500, prends les mêmes chiffres du « dossier complet » (logements, recensement le plus récent) par l'API Melodi de l'Insee (`api.insee.fr/melodi/...`) et cite cette adresse, comme les fiches de Marseille et Toulouse.
+- **Sites protégés contre les robots** (page anti-robot, 403 permanent) : ne cherche jamais à contourner la protection. Passe par d'autres sources officielles (préfecture, Service-Public, UDAP, Géorisques, Anah) ou laisse le point de côté.
+- **Fichiers de travail** : garde-les dans ton propre dossier `/tmp/claude-0/-home-user/a8d0e8f0-7c4b-5881-8345-4247167e5eea/scratchpad/ville-<slug>/`. D'autres agents travaillent en même temps : ne déplace ni ne modifie rien en dehors de ce dossier et de ta fiche.
+- **Préposition** : si « à <ville> » est incorrect (Le Havre, Le Mans, Les Sables-d’Olonne), ajoute `a="au Mans"` et écris « au Mans », « du Mans » partout dans la fiche, titre compris.
+- **Ne mets pas la ligne `REVIEWED`** : c'est l'agent de contre-vérification qui l'ajoute.
+
 ## Règles de preuve (non négociables)
 
 - **Rien d'inventé.** Chaque chiffre, montant, date, téléphone, adresse et règle vient d'une page que tu as ouverte toi-même avec WebFetch pendant cette recherche. Chiffres repris tels quels, avec l'année.
