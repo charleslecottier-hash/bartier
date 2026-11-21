@@ -177,6 +177,12 @@ ENGAGE = [
 ]
 
 TEAM_IMG = "/assets/photos/fondateurs-bartier-co"
+GALLERY = [  # photos Pexels déjà au site (voir stock/SOURCES.md), présentées comme illustrations
+    ("couvreur-repare-toiture-ardoise", "Couverture", "Couvreur réparant une toiture en ardoise"),
+    ("artisan-enduit-mur-pierre", "Façade", "Artisan appliquant un enduit sur un mur en pierre"),
+    ("menuisier-dans-son-atelier", "Menuiserie", "Menuisier dans son atelier"),
+    ("charpentier-sur-charpente-bois", "Charpente", "Charpentier sur une charpente en bois"),
+]
 WHY = '<li class="pf-why-free"><a class="link" href="#qui">Pourquoi c’est gratuit&nbsp;?</a></li></ul>'
 
 
@@ -261,6 +267,15 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <li><b>0 <small>€</small></b> <span>pour vous&nbsp;: visite et devis offerts, sans engagement</span></li>
   </ul>
   <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
+</section>"""
+
+    gal = "".join(f'<li><figure class="frame"><img srcset="/assets/photos/{n}-480x600.webp 480w, /assets/photos/{n}-800x1000.webp 800w" '
+                  f'sizes="(max-width: 760px) 46vw, 23vw" src="/assets/photos/{n}-480x600.webp" alt="{alt}" width="800" height="1000" loading="lazy" decoding="async"></figure>'
+                  f'<p>{lab}</p></li>' for n, lab, alt in GALLERY)
+    gallery = f"""<section class="sheet pf-gal" id="sur-place" data-tone="light">
+  <div class="grid sp-head"><h2 data-split>Un artisan qui vient voir le chantier</h2><p>L’artisan partenaire de votre secteur se déplace chez vous avant de chiffrer. Son devis part de ce qu’il a vu.</p></div>
+  <ul class="pf-gal-row">{gal}</ul>
+  <p class="pf-gal-cap">Photos d’illustration</p>
 </section>"""
 
     steps = "".join(f'<li><span class="pf-t">{t}</span><h3>{h}</h3><p>{p}</p></li>' for t, h, p in STEPS)
@@ -381,7 +396,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 </section>"""
     if parts:
         return dict(form=form, promise=promise, compare=compare, leak=leak, serious=serious, end=end)
-    return "\n\n".join([hero, process, trades, engage, leak_short, price, team, serious, faq, brief, end])  # tableau « Pas cinq entreprises » retiré
+    return "\n\n".join([hero, gallery, process, trades, engage, leak_short, price, team, serious, faq, brief, end])  # tableau « Pas cinq entreprises » retiré
 
 
 # Questions aussi posées sur une page métier : balisées là-bas seulement (Google : une FAQ répétée se balise une fois)
@@ -506,6 +521,12 @@ CSS = """<style id="pf-css">
 .pf-howto li{counter-increment:pf}
 .pf-howto li::before{content:counter(pf,decimal-leading-zero);display:block;margin-bottom:10px;font:300 2rem/1 var(--f-display);color:var(--accent)}
 .pf-big-hub{text-wrap:balance}
+.pf-gal-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin:0;padding:0 var(--cell);list-style:none}
+.pf-gal-row figure{margin:0;overflow:hidden}
+.pf-gal-row img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.pf-gal-row p{margin-top:10px;font-size:.92rem;color:var(--muted)}
+.pf-gal-cap{margin-top:16px;padding:0 var(--cell);font-size:.8rem;color:var(--muted)}
+@media (max-width:760px){.pf-gal-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}}
 .pf-people a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
 .pf-people{display:flex;align-items:center;gap:14px;margin:0;font-size:.92rem;line-height:1.45;color:var(--muted)}
 .pf-people b{font-weight:500;color:var(--ink)}

@@ -24,3 +24,5 @@ Recadrage 3:2 autour du visage, métadonnées retirées. Utilisée sur l'accueil
 | Fichier (assets/photos) | Source | Auteur | Licence |
 |---|---|---|---|
 | artisan-pose-laine-isolante-mur | https://www.pexels.com/photo/unrecognizable-worker-insulating-with-stone-wool-6124239/ | Erik Mclean (Pexels) | Licence Pexels : usage commercial gratuit, sans attribution obligatoire |
+
+Aussi sur /devis-travaux/ (bande « Un artisan qui vient voir le chantier », mention « Photos d’illustration ») : couvreur-repare-toiture-ardoise, artisan-enduit-mur-pierre, menuisier-dans-son-atelier, charpentier-sur-charpente-bois.
