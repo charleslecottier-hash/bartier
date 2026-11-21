@@ -671,21 +671,27 @@ Les règles et les aides changent d’une ville à l’autre
 Auvergne-Rhône-Alpes
 - Grenoble Immeubles d’après-guerre, isolés avec l’aide Mur Mur
 - Lyon Site Unesco et nichoirs à martinets
+- Saint-Étienne Ravalement imposé dans l’hyper-centre, aidé par le plan façades
 Bourgogne-Franche-Comté
 - Dijon Secteur sauvegardé de 97 ha et petites tuiles vernissées
+Grand Est
+- Reims Centre de la Reconstruction protégé depuis 2020, caves et carrières sous la ville
 Hauts-de-France
 - Lille Ravalement obligatoire tous les dix ans, et aidé par la Ville
 Normandie
+- Le Havre Centre Perret inscrit à l’Unesco, béton restauré à l’identique
 - Rouen Secteur sauvegardé depuis 1964, ardoise et pans de bois
 Nouvelle-Aquitaine
 - Bordeaux La pierre de taille reste nue, sans peinture ni isolation extérieure
 Occitanie
+- Montpellier Écusson sauvegardé, ravalement imposé par quartier, Hérault termité
 - Toulouse Centre ancien protégé, aide Silencio près de l’aéroport
 Pays de la Loire
 - Nantes Ravalement tous les dix ans, fenêtres en bois dans le centre historique
 Provence-Alpes-Côte d’Azur
 - Marseille Ravalement imposé, et tout le département en zone termites
 - Nice Ville largement protégée, zone sismique 4 et zone termites
+- Toulon Centre protégé, ravalements imposés et aidés, fortes rafales plus de 100 jours par an
 Île-de-France
 - Paris Une autorisation même pour des fenêtres à l’identique
 
@@ -1010,8 +1016,13 @@ Par ville
 - Couvreur à Toulouse
 - Couvreur à Nice
 - Couvreur à Nantes
+- Couvreur à Montpellier
 - Couvreur à Bordeaux
 - Couvreur à Lille
+- Couvreur à Toulon
+- Couvreur à Reims
+- Couvreur à Saint-Étienne
+- Couvreur au Havre
 - Couvreur à Dijon
 - Couvreur à Grenoble
 - Couvreur à Rouen
@@ -1151,8 +1162,13 @@ Par ville
 - Ravalement de façade à Toulouse
 - Ravalement de façade à Nice
 - Ravalement de façade à Nantes
+- Ravalement de façade à Montpellier
 - Ravalement de façade à Bordeaux
 - Ravalement de façade à Lille
+- Ravalement de façade à Toulon
+- Ravalement de façade à Reims
+- Ravalement de façade à Saint-Étienne
+- Ravalement de façade au Havre
 - Ravalement de façade à Dijon
 - Ravalement de façade à Grenoble
 - Ravalement de façade à Rouen
@@ -1293,8 +1309,13 @@ Par ville
 - Fenêtres et portes à Toulouse
 - Fenêtres et portes à Nice
 - Fenêtres et portes à Nantes
+- Fenêtres et portes à Montpellier
 - Fenêtres et portes à Bordeaux
 - Fenêtres et portes à Lille
+- Fenêtres et portes à Toulon
+- Fenêtres et portes à Reims
+- Fenêtres et portes à Saint-Étienne
+- Fenêtres et portes au Havre
 - Fenêtres et portes à Dijon
 - Fenêtres et portes à Grenoble
 - Fenêtres et portes à Rouen
@@ -1433,8 +1454,13 @@ Par ville
 - Charpente à Toulouse
 - Charpente à Nice
 - Charpente à Nantes
+- Charpente à Montpellier
 - Charpente à Bordeaux
 - Charpente à Lille
+- Charpente à Toulon
+- Charpente à Reims
+- Charpente à Saint-Étienne
+- Charpente au Havre
 - Charpente à Dijon
 - Charpente à Grenoble
 - Charpente à Rouen
@@ -1574,8 +1600,13 @@ Par ville
 - Isolation à Toulouse
 - Isolation à Nice
 - Isolation à Nantes
+- Isolation à Montpellier
 - Isolation à Bordeaux
 - Isolation à Lille
+- Isolation à Toulon
+- Isolation à Reims
+- Isolation à Saint-Étienne
+- Isolation au Havre
 - Isolation à Dijon
 - Isolation à Grenoble
 - Isolation à Rouen
@@ -1756,11 +1787,11 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 Tous les devis de travaux
 Villes les plus proches
 - Devis travaux à Rouen 112 km
+- Devis travaux à Reims 131 km
+- Devis travaux au Havre 178 km
 - Devis travaux à Lille 204 km
 - Devis travaux à Dijon 263 km
 - Devis travaux à Nantes 343 km
-- Devis travaux à Lyon 391 km
-- Devis travaux à Grenoble 481 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -1947,12 +1978,12 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 ### Ailleurs en France
 Tous les devis de travaux
 Villes les plus proches
+- Devis travaux à Toulon 49 km
+- Devis travaux à Montpellier 125 km
 - Devis travaux à Nice 160 km
 - Devis travaux à Grenoble 212 km
+- Devis travaux à Saint-Étienne 250 km
 - Devis travaux à Lyon 278 km
-- Devis travaux à Toulouse 319 km
-- Devis travaux à Dijon 448 km
-- Devis travaux à Bordeaux 505 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -2136,12 +2167,12 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 ### Ailleurs en France
 Tous les devis de travaux
 Villes les plus proches
+- Devis travaux à Saint-Étienne 51 km
 - Devis travaux à Grenoble 95 km
 - Devis travaux à Dijon 174 km
+- Devis travaux à Montpellier 251 km
 - Devis travaux à Marseille 278 km
 - Devis travaux à Nice 299 km
-- Devis travaux à Toulouse 360 km
-- Devis travaux à Paris 391 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -2328,12 +2359,12 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 ### Ailleurs en France
 Tous les devis de travaux
 Villes les plus proches
+- Devis travaux à Montpellier 196 km
 - Devis travaux à Bordeaux 212 km
+- Devis travaux à Saint-Étienne 310 km
 - Devis travaux à Marseille 319 km
 - Devis travaux à Lyon 360 km
-- Devis travaux à Grenoble 383 km
-- Devis travaux à Nantes 465 km
-- Devis travaux à Nice 469 km
+- Devis travaux à Toulon 367 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -2517,12 +2548,12 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 ### Ailleurs en France
 Tous les devis de travaux
 Villes les plus proches
+- Devis travaux à Toulon 126 km
 - Devis travaux à Marseille 160 km
 - Devis travaux à Grenoble 206 km
+- Devis travaux à Montpellier 273 km
+- Devis travaux à Saint-Étienne 298 km
 - Devis travaux à Lyon 299 km
-- Devis travaux à Dijon 438 km
-- Devis travaux à Toulouse 469 km
-- Devis travaux à Bordeaux 637 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -2710,11 +2741,200 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 Tous les devis de travaux
 Villes les plus proches
 - Devis travaux à Bordeaux 275 km
+- Devis travaux au Havre 281 km
 - Devis travaux à Rouen 316 km
 - Devis travaux à Paris 343 km
 - Devis travaux à Toulouse 465 km
-- Devis travaux à Dijon 498 km
-- Devis travaux à Lille 507 km
+- Devis travaux à Reims 472 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Montpellier : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/montpellier/
+
+Travaux à Montpellier : Écusson sauvegardé, ravalement imposé par quartier, zone termites, pluies d’automne, aide plan climat. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Montpellier en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Montpellier en quelques chiffres
+À Montpellier, l’Écusson est un secteur sauvegardé où même les travaux intérieurs passent par l’architecte des Bâtiments de France, et tout l’Hérault est en zone termites
+- 87,0 % des logements sont des appartements Insee, 2023
+- 30,6 % des résidences principales sont occupées par leur propriétaire Insee, 2023
+- 96 ha de secteur sauvegardé, Écusson compris Ville de Montpellier
+- 299,5 mm de pluie en un jour, le 29 septembre 2014 Météo-France
+
+### Que faut-il savoir avant des travaux à Montpellier ?
+À Montpellier, 87,0 % des logements sont des appartements, et moins d’un tiers des résidences principales datent d’avant 1971. Dans le secteur sauvegardé de 96 hectares, Écusson compris, tout projet, même intérieur, passe par l’avis conforme de l’architecte des Bâtiments de France. Ailleurs, la Ville peut imposer le ravalement par quartier, et tout l’Hérault est en zone termites depuis 2001.
+
+**Ravalement**
+- Montpellier est sur la liste préfectorale des communes qui peuvent imposer le ravalement : le conseil municipal en fixe les périmètres, comme à Celleneuve (règlement de 2022). Les aides propres au ravalement sont actuellement suspendues (Ville de Montpellier).
+
+**Écusson**
+- Secteur sauvegardé créé en 1967, étendu en 1981 et en 2001 : 96 hectares et 2 182 parcelles. Toute construction, démolition ou modification, même intérieure, y est soumise à autorisation avec l’avis conforme de l’architecte des Bâtiments de France (guide du PSMV).
+
+**Urbanisme**
+- Le PLUi Climat des 31 communes de la Métropole a été adopté le 16 juillet 2025 (En Commun). Autour du centre historique, trois AVAP protègent les faubourgs (guide du PSMV).
+
+**Termites**
+- Tout le département de l’Hérault est déclaré termité depuis l’arrêté préfectoral du 20 juin 2001. Aucun arrêté ne vise la mérule (préfecture de l’Hérault).
+
+**Pluie et vent**
+- 639,2 mm de pluie par an à Montpellier-aéroport, dont plus de 40 % de septembre à novembre, et des rafales à 58 km/h ou plus 69,2 jours par an (Météo-France, normales 1991-2020). La Ville compte en moyenne 5 à 10 épisodes d’inondation par an (DICRIM).
+
+**Séisme et sols**
+- Sismicité faible : les règles parasismiques ne visent que les bâtiments stratégiques, comme les hôpitaux. Le retrait-gonflement des argiles revient avec les variations climatiques et peut fissurer les façades (DICRIM).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 21 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Montpellier, métier par métier
+De l’Écusson médiéval aux faubourgs du XIXe siècle, chaque secteur a ses règles de façade et de toiture
+
+#### Couvreur à Montpellier
+Dans les faubourgs, les toits anciens se terminent par une génoise en terre cuite, une corniche en pierre ou un avant-toit en bois. Dans ses prescriptions de ravalement, la Ville demande des gouttières en zinc ou en cuivre, non peintes, et proscrit le PVC pour les gouttières comme pour les descentes (cahier de prescriptions).
+Le 29 septembre 2014, 299,5 mm de pluie sont tombés en un jour à l’aéroport (Météo-France). En mars 2017, des rafales jusqu’à 120 km/h ont fait de nombreux dégâts (DICRIM). Faites revoir tuiles, faîtage et chéneaux avant l’automne.
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Montpellier
+Dans l’Écusson, les murs alternent pierres taillées et pierres posées sur chant : c’est l’« appareil de Montpellier ». Chacun des 2 200 immeubles a sa fiche de prescriptions, et l’avis de l’architecte des Bâtiments de France s’impose (guide du PSMV).
+Dans ses prescriptions de ravalement, la Ville demande des joints et des enduits au mortier de chaux, un enduit neuf en trois couches et des badigeons de chaux aux pigments naturels (cahier de prescriptions). Les teintes se valident sur rendez-vous avec la Mission Grand Cœur, dans son nuancier (Ville de Montpellier).
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Montpellier
+L’architecte des Bâtiments de France de l’Hérault préconise le bois pour les menuiseries des centres anciens. Il déconseille le blanc et le gris anthracite RAL 7016, teintes industrielles (fiche UDAP 34).
+Dans l’Écusson, les coffres de volets roulants en saillie sont à supprimer et les climatiseurs à intégrer, par exemple derrière une imposte à ventelles en bois (guide du PSMV). Dans les campagnes de ravalement, une fenêtre neuve reprend le modèle ancien et se pose en retrait du nu de la façade (cahier de prescriptions).
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Montpellier
+Tout l’Hérault est en zone termites depuis l’arrêté préfectoral du 20 juin 2001 (préfecture). Une infestation se déclare en mairie dans le mois qui suit sa découverte, et les bois contaminés retirés d’un chantier sont brûlés sur place ou traités avant transport (DREAL Occitanie).
+Dans l’Écusson, l’étude du plan de sauvegarde a recensé 298 rez-de-chaussée voûtés et des maisons médiévales. Reprendre un plancher ou une charpente y demande une autorisation, avec l’avis conforme de l’architecte des Bâtiments de France, comme tous les travaux intérieurs (guide du PSMV).
+Devis charpente Prix d’une charpente
+
+#### Isolation à Montpellier
+La Métropole complète MaPrimeRénov’ Parcours accompagné par son aide « plan climat » : 1 300 € par logement pour les ménages très modestes, si les travaux font gagner au moins 40 % d’énergie dans un logement livré avant 2007 (règlement 2025).
+À l’aéroport, 34,3 jours par an dépassent 30 °C et il gèle 21,4 jours par an (Météo-France). Pour les propriétaires occupants modestes ou très modestes, l’étude énergétique est gratuite dans le programme d’intérêt général de la Métropole, avec Urbanis : 04 67 64 70 72 (ALEC, 2026).
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Montpellier ?
+Cinq étapes, à franchir avant de signer le devis
+
+#### Vérifiez si votre immeuble est protégé
+Écusson, faubourgs en AVAP, abords d’un monument : l’architecte des Bâtiments de France donne son avis. L’UDAP 34 propose une consultation en ligne avant le dépôt du dossier. 04 67 02 32 00 (UDAP 34).
+
+#### Passez par la Mission Grand Cœur
+Pour une façade du centre ou d’un secteur de ravalement : conseil technique, nuancier et validation des teintes. 17 boulevard du Jeu-de-Paume. 04 34 88 79 40 (Ville de Montpellier).
+
+#### Déposez la déclaration préalable
+En ligne sur le guichet numérique, ou à la direction de l’urbanisme appliqué, Hôtel de Métropole, 50 place Zeus, de 8 h 30 à 12 h et de 13 h 30 à 17 h. 04 67 34 74 55 (démarche).
+
+#### Faites autoriser l’échafaudage
+La demande d’occupation du domaine public se fait en ligne, auprès de la cellule chantier de la direction des usages et de la valorisation de l’espace public. L’entreprise peut la déposer pour vous (Ville de Montpellier).
+
+#### Appelez l’ALEC avant de signer
+Conseil gratuit sur les travaux et les aides : les demandes d’aide se font avant de signer les devis et de commencer le chantier (ALEC).
+
+### Quelles aides pour vos travaux à Montpellier ?
+Demandez conseil, puis les aides, avant de signer le moindre devis.
+Conseil public, gratuit et neutre
+
+#### ALEC Montpellier Métropole
+L’Espace Conseil France Rénov’ de la Métropole : conseil gratuit et neutre. 33 bis rue du Faubourg-Saint-Jaumes, 34000 Montpellier. 04 67 91 96 91, du mardi au vendredi de 13 h à 18 h. alec-montpellier.org.
+
+#### Aide « plan climat » de la Métropole
+1 300 € par logement pour les ménages très modestes, avec un gain d’énergie d’au moins 40 %. En copropriété, 1 300 € ou 2 600 € par lot d’habitation, selon l’étiquette énergétique de départ et le dispositif (règlement 2025).
+
+#### Programmes de la Métropole
+Hors des secteurs d’OPAH, le programme « Rénover pour un habitat durable et solidaire » accompagne les propriétaires avec Urbanis : 04 67 64 70 72 (Métropole). L’OPAH Grand Cœur couvre Courreau, Figuerolles, Nord-Écusson et Carnot jusqu’en 2027 (Ville de Montpellier).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Montpellier ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Montpellier : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Montpellier et alentours.
+
+**Pour qui**
+- Les propriétaires à Montpellier, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Montpellier : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Le ravalement est-il obligatoire à Montpellier ?**
+La Ville peut l’imposer : elle figure sur la liste préfectorale, et le conseil municipal fixe des périmètres de ravalement obligatoire, comme à Celleneuve. Elle préconise aussi un ravalement tous les dix ans. Ses aides au ravalement sont aujourd’hui suspendues.
+
+**Quelles règles pour des travaux dans l’Écusson ?**
+L’Écusson est au cœur d’un secteur sauvegardé de 96 hectares. Toute construction, démolition ou modification, même intérieure, y demande une autorisation avec l’avis conforme de l’architecte des Bâtiments de France, et chaque immeuble a sa fiche de prescriptions.
+
+**Faut-il une autorisation pour changer ses fenêtres à Montpellier ?**
+Oui, une déclaration préalable dès que l’aspect change, à déposer à la direction de l’urbanisme appliqué ou sur le guichet numérique. En secteur protégé, l’architecte des Bâtiments de France donne son avis : il préconise le bois et déconseille le blanc et le gris anthracite.
+
+**Montpellier est-elle en zone termites ?**
+Oui, comme tout l’Hérault depuis l’arrêté préfectoral du 20 juin 2001. Une infestation se déclare en mairie dans le mois. Aucun arrêté ne vise la mérule dans le département.
+
+**Peut-on installer un climatiseur en façade dans l’Écusson ?**
+Il doit être intégré à l’architecture, par exemple derrière une imposte à ventelles en bois, et le projet passe par l’architecte des Bâtiments de France. Les coffres de volets roulants en saillie sont, eux, à supprimer.
+
+**Quelles aides pour rénover son logement à Montpellier ?**
+L’aide « plan climat » de la Métropole (1 300 € par logement pour les ménages très modestes, avec au moins 40 % d’énergie économisée), les programmes de la Métropole avec Urbanis et les aides nationales. Conseil gratuit à l’ALEC : 04 67 91 96 91.
+
+**Intervenez-vous partout à Montpellier ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Marseille 125 km
+- Devis travaux à Toulon 175 km
+- Devis travaux à Toulouse 196 km
+- Devis travaux à Saint-Étienne 207 km
+- Devis travaux à Grenoble 229 km
+- Devis travaux à Lyon 251 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -2900,10 +3120,10 @@ Tous les devis de travaux
 Villes les plus proches
 - Devis travaux à Toulouse 212 km
 - Devis travaux à Nantes 275 km
+- Devis travaux à Montpellier 380 km
+- Devis travaux à Saint-Étienne 395 km
 - Devis travaux à Lyon 436 km
 - Devis travaux à Grenoble 497 km
-- Devis travaux à Paris 499 km
-- Devis travaux à Marseille 505 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -3090,12 +3310,777 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 ### Ailleurs en France
 Tous les devis de travaux
 Villes les plus proches
+- Devis travaux à Reims 167 km
 - Devis travaux à Rouen 192 km
 - Devis travaux à Paris 204 km
+- Devis travaux au Havre 245 km
 - Devis travaux à Dijon 395 km
 - Devis travaux à Nantes 507 km
-- Devis travaux à Lyon 557 km
-- Devis travaux à Grenoble 637 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Toulon : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/toulon/
+
+Travaux à Toulon : centre protégé, ravalement imposé et aidé à 32 %, zone termites, fortes rafales, conseil gratuit. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Toulon en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Toulon en quelques chiffres
+À Toulon, le grand centre-ville est un site patrimonial remarquable où chaque chantier passe par l’architecte des Bâtiments de France, et la Ville paie 32 % du hors-taxe, avec plafond, des ravalements qu’elle impose
+- 79,2 % des logements sont des appartements Insee, 2023
+- 60,1 % des résidences principales datent d’avant 1971 Insee, 2023
+- 108,9 jours par an avec des rafales d’au moins 58 km/h Météo-France, normales 1991-2020
+- 32 % du hors-taxe d’un ravalement imposé, payés par la Ville avec un plafond Ville de Toulon
+
+### Que faut-il savoir avant des travaux à Toulon ?
+À Toulon, 79,2 % des logements sont des appartements et 60,1 % des résidences principales datent d’avant 1971. Dans le site patrimonial remarquable du centre, tous les travaux demandent une autorisation et l’avis de l’architecte des Bâtiments de France. Toute la commune est en zone termites depuis l’arrêté préfectoral du 10 décembre 2018.
+
+**Centre protégé**
+- Le site patrimonial remarquable couvre la ville comprise dans les anciens remparts Napoléon III, en cinq secteurs. Le règlement de l’AVAP créée le 28 mai 2014 s’y applique toujours : tout projet demande une autorisation et l’avis motivé de l’architecte des Bâtiments de France (Ville de Toulon, plaquette).
+
+**Ravalement**
+- La Ville impose le ravalement par arrêté d’injonction dans trois secteurs jusqu’en 2026 : quartier des Halles (53 immeubles), place Saint-Jean (22) et avenue du XVe-Corps (18). Seuls les propriétaires qui ont reçu l’injonction touchent son aide (Ville de Toulon).
+
+**Urbanisme**
+- Le PLU de Toulon, approuvé le 27 juillet 2012, est géré par la Métropole Toulon Provence Méditerranée depuis le 1er janvier 2018. Sa modification simplifiée n° 9 a été prescrite le 5 mars 2026 (Ville de Toulon).
+
+**Termites**
+- Toulon fait partie des 81 communes du Var classées en zone contaminée sur tout leur territoire par l’arrêté préfectoral du 10 décembre 2018. Toute présence de termites se déclare en mairie (arrêté préfectoral, préfecture du Var).
+
+**Vent et chaleur**
+- À la station de Toulon, 108,9 jours par an de rafales d’au moins 58 km/h, dont 6,3 d’au moins 100 km/h, et 36,6 jours à 30 °C ou plus (Météo-France, normales 1991-2020).
+
+**Inondation**
+- Le préfet a porté à la connaissance de la commune, le 28 août 2026, l’aléa inondation par débordement du Las. En zone inondable, les traitements de façade et les réfections de toiture restent admis s’ils n’aggravent pas le risque (porter à connaissance).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 21 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Toulon, métier par métier
+Vieille ville médiévale, Haute ville haussmannienne, immeubles bâtis de 1946 à 1970, plus d’un tiers des résidences principales : à Toulon, les règles changent d’un secteur à l’autre
+
+#### Couvreur à Toulon
+Dans la vieille ville, les tuiles rondes en terre cuite se posent en couvert et courant, en réemployant les anciennes, sur une pente de 30 % au plus. Les altanas, ces terrasses de toit, sont à conserver ; une fenêtre de toit, 60 x 80 cm au plus, n’est admise que dans certains cas (règlement de l’AVAP).
+Avec 108,9 jours de rafales d’au moins 58 km/h par an, faites contrôler faîtage et tuiles de rive après chaque coup de vent. Dans le Var, les toits ont une pente faible, de 27 à 33 % (UDAP du Var).
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Toulon
+Dans la vieille ville, les enduits se refont à la chaux en trois couches, finis frottassés, talochés ou regravés en faux appareil « à la marseillaise », puis peints au lait de chaux ou à la peinture minérale dans une teinte du nuancier de la Ville. Peindre la pierre de taille est interdit (règlement de l’AVAP).
+Dans les rues en campagne, la Ville paie 32 % du hors-taxe ; aux Halles, l’aide est plafonnée de 14 000 à 27 000 € selon l’immeuble et demande un maître d’œuvre. Détruire volontairement un nid de martinets supprime l’aide : faites-les repérer avant le chantier (règlement de campagne).
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Toulon
+Dans la vieille ville, les menuiseries neuves sont en principe en bois, sur le modèle de l’immeuble, peintes dans une teinte du nuancier, jamais en blanc pur. Les persiennes provençales sont gardées ou refaites à l’identique (règlement de l’AVAP).
+Dans le site patrimonial remarquable, changer ses menuiseries ou ses volets demande une déclaration préalable et l’avis motivé de l’architecte des Bâtiments de France (plaquette de la Ville). Dans la vieille ville, les climatiseurs en saillie sur la façade sont interdits ; ils peuvent aller dans une cour arrière ou derrière une ventelle (règlement de l’AVAP).
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Toulon
+Toute la commune est en zone termites depuis 2018. Si vous en trouvez en ouvrant une toiture, déclarez-les en mairie. Dans un périmètre d’infestation délimité par arrêté municipal, les bois contaminés d’une démolition sont brûlés sur place ou traités avant tout transport (arrêté préfectoral).
+Le long du Las, en zone inondable, une surélévation reste possible si le nouveau plancher est au moins 0,40 m au-dessus de la cote de crue de référence, sans créer de logement en plus (porter à connaissance, 2026).
+Devis charpente Prix d’une charpente
+
+#### Isolation à Toulon
+Ici, isoler sert aussi contre la chaleur : 36,6 jours par an atteignent 30 °C. Dans un mur ancien, gardez l’inertie et des matériaux perméables à la vapeur d’eau, conseille l’UDAP du Var, le service de l’architecte des Bâtiments de France (fiche conseil).
+Dans la vieille ville, l’isolation par l’extérieur est interdite sur les façades sur rue et possible en cœur d’îlot. Une pompe à chaleur n’y va que dans une cour intérieure ou intégrée à la façade (règlement de l’AVAP).
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Toulon ?
+Dans l’ordre, avant de signer le moindre devis
+
+#### Vérifiez si vous êtes dans le site patrimonial remarquable
+Dans les anciens remparts Napoléon III, l’architecte des Bâtiments de France donne son avis sur tous les travaux. UDAP du Var, 449 avenue de la Mitre : 04 94 31 59 95, de 9 h à 12 h (ministère de la Culture).
+
+#### Demandez la fiche de l’architecte conseil
+Dans les rues en campagne de ravalement, l’architecte conseil de la Ville fixe les prescriptions, sur rendez-vous : 04 94 36 33 39. Service Environnement urbain : 04 94 36 33 87 (règlement de campagne).
+
+#### Déposez la déclaration préalable
+En ligne sur le guichet unique de la Ville, par courrier, ou au service Droit des sols, 10e étage de l’Hôtel de Ville, les lundis, mercredis et vendredis de 9 h à 12 h sur rendez-vous. 04 94 36 30 70 (démarche et accès au guichet).
+
+#### Faites autoriser l’échafaudage
+Au moins 45 jours avant le chantier, auprès du service des Emplacements : odp@mairie-toulon.fr, 04 94 36 83 57 (démarche).
+
+#### Appelez Bien chez Soi
+Conseil gratuit sur la rénovation énergétique et les aides. Ne commencez rien avant le dépôt de la demande de subvention (Métropole).
+
+### Quelles aides pour vos travaux à Toulon ?
+À Toulon, la demande d’aide se dépose avant le début des travaux, et le conseil public ne coûte rien.
+Conseil public, gratuit et neutre
+
+#### Bien chez Soi
+L’Espace Conseil France Rénov’ de Toulon, service gratuit de la Métropole Toulon Provence Méditerranée : 217 avenue de la Victoire-du-8-Mai-45, 83000 Toulon. 08 05 69 23 20, du lundi au vendredi de 9 h à 17 h (annuaire de l’administration). Il couvre les 12 communes de la Métropole, hors secteurs d’OPAH-RU (bienchezsoi-tpm.fr).
+
+#### Aide au ravalement de la Ville
+32 % du montant hors taxes des travaux subventionnables, avec plafond, pour les propriétaires qui ont reçu un arrêté d’injonction (Ville de Toulon). Aux Halles, le plafond va de 14 000 à 27 000 € par immeuble (règlement).
+
+#### Aide du Département du Var
+Pour les propriétaires occupants modestes, éligibles aux aides de l’Anah : jusqu’à 14 000 € pour améliorer l’habitat et sa performance énergétique. Plafond de revenus : 19 000 € pour une personne seule. SOLIHA Var : 04 94 22 65 85 (guide des aides, 2025).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Toulon ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Toulon : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Toulon et alentours.
+
+**Pour qui**
+- Les propriétaires à Toulon, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Toulon : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Le ravalement est-il obligatoire à Toulon ?**
+Dans les rues en campagne, oui : la Ville l’impose par arrêté d’injonction aux Halles, place Saint-Jean et avenue du XVe-Corps jusqu’en 2026, et paie 32 % du hors-taxe. Dans le site patrimonial remarquable, un ravalement demande une déclaration préalable et l’avis de l’architecte des Bâtiments de France.
+
+**Quelles règles pour les toits de la vieille ville de Toulon ?**
+Tuiles rondes en terre cuite posées en couvert et courant, pente de 30 % au plus, débord en génoise ou en chevrons. Les altanas sont conservées, et une fenêtre de toit de 60 x 80 cm au plus n’est admise que dans certains cas.
+
+**L’isolation par l’extérieur est-elle permise dans la vieille ville de Toulon ?**
+Sur les façades sur rue, non : le règlement de l’AVAP l’interdit, à cause de l’empiètement sur le domaine public et de l’intérêt des façades. En cœur d’îlot et dans les cours intérieures, elle est possible.
+
+**Toulon est-elle en zone termites ?**
+Oui, sur tout son territoire, avec 80 autres communes du Var, depuis l’arrêté préfectoral du 10 décembre 2018. Pour vendre, il faut annexer à l’acte un diagnostic termites daté de moins de six mois.
+
+**Quelles aides pour rénover son logement à Toulon ?**
+L’aide de la Ville au ravalement dans les rues en campagne (32 % du hors-taxe), l’aide du Département du Var pour les propriétaires modestes (jusqu’à 14 000 €) et les aides nationales. Bien chez Soi, l’Espace Conseil France Rénov’, vous guide gratuitement : 08 05 69 23 20.
+
+**Comment faire autoriser un échafaudage à Toulon ?**
+Écrivez au service des Emplacements au moins 45 jours avant le début des travaux, à odp@mairie-toulon.fr, ou appelez le 04 94 36 83 57. Une demande tardive n’est pas traitée. Si l’immeuble a un commerce au rez-de-chaussée, la pose est interdite du 15 décembre au 15 janvier et du 1er juillet au 31 août (démarche).
+
+**Intervenez-vous partout à Toulon ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Marseille 49 km
+- Devis travaux à Nice 126 km
+- Devis travaux à Montpellier 175 km
+- Devis travaux à Grenoble 230 km
+- Devis travaux à Saint-Étienne 285 km
+- Devis travaux à Lyon 306 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Reims : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/reims/
+
+Travaux à Reims : centre de la Reconstruction protégé, 11 cités-jardins encadrées, caves et carrières, primes du Grand Reims. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Reims en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Reims en quelques chiffres
+À Reims, le centre reconstruit après 1918 est un site patrimonial remarquable depuis 2020, et le sous-sol de la commune compte 219 cavités recensées, caves et anciennes carrières
+- 79,1 % des logements sont des appartements Insee, 2023
+- 10,6 % des résidences principales datent de 1919 à 1945, contre 3,2 % d’avant 1919 Insee, 2023
+- 201,6 ha de site patrimonial remarquable en centre-ville, classé en 2020 MRAe Grand Est, 2024
+- 219 cavités souterraines recensées sur la commune, dont 85 caves et 59 carrières Géorisques
+
+### Que faut-il savoir avant des travaux à Reims ?
+À Reims, 79,1 % des logements sont des appartements, et 10,6 % des résidences principales datent de 1919 à 1945, contre 3,2 % d’avant 1919. Dans le site patrimonial remarquable du centre, classé le 28 mai 2020, tout changement d’aspect extérieur demande l’accord de l’architecte des Bâtiments de France. Géorisques recense 219 cavités souterraines sous la commune.
+
+**Centre-ville protégé**
+- Site patrimonial remarquable classé par arrêté du ministère de la Culture du 28 mai 2020, sur 201,6 hectares, des Promenades aux boulevards Lundy, de la Paix et Pasteur. Tout changement d’aspect extérieur y demande une autorisation et l’accord de l’architecte des Bâtiments de France (arrêté, MRAe).
+
+**Saint-Nicaise**
+- Au sud du centre, le quartier Saint-Nicaise forme un second site patrimonial remarquable, issu de l’AVAP approuvée le 14 novembre 2016 (MRAe, 2024).
+
+**Urbanisme**
+- Le PLU de Reims, approuvé le 28 septembre 2017 et modifié depuis, relève de la Communauté urbaine du Grand Reims. Dans le site patrimonial remarquable du centre, le plan de valorisation de l’architecture et du patrimoine (PVAP), approuvé le 26 juin 2025, s’impose au PLU et fixe les règles des travaux (règlement du PLU, délibération).
+
+**Sous-sol**
+- Géorisques recense 219 cavités souterraines à Reims, dont 85 caves et 59 carrières. La commune est exposée aux affaissements et effondrements liés aux anciennes carrières souterraines (cavités, risques).
+
+**Climat**
+- À Reims-Courcy, 62,1 jours de gel par an, dont 15,2 à −5 °C ou moins, et 114,4 jours avec au moins 1 mm de pluie (Météo-France, normales 1981-2010). Record de froid depuis 1929 : −22,3 °C le 6 janvier 1985.
+
+**Cités-jardins**
+- Le PLU classe 11 cités-jardins en zone UP, dont le Chemin Vert, Maison Blanche, la Cité du Châlet et la Cité Mulhouse. Lors d’un ravalement, supprimer moulures, corniches, bandeaux ou pilastres y est interdit, sauf dégradation (règlement du PLU, 2025).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 21 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Reims, métier par métier
+Immeubles de la Reconstruction, cités-jardins des années 1920, logements de 1946 à 1990, plus de la moitié des résidences principales : à Reims, chaque époque a ses points d’attention
+
+#### Couvreur à Reims
+À Reims-Courcy, il gèle 62,1 jours par an, et 43,6 jours connaissent des rafales d’au moins 58 km/h. Faites vérifier couverture, solins et gouttières à la sortie de l’hiver (Météo-France, normales 1981-2010).
+Dans le site patrimonial remarquable, changer de matériau de couverture, créer une fenêtre de toit ou poser des panneaux solaires modifie l’aspect extérieur : déclaration préalable, instruite en deux mois en secteur protégé, accord de l’architecte des Bâtiments de France (Service-Public) et, dans le centre, respect du PVAP approuvé en 2025 (règlement du PLU).
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Reims
+Le centre classé se distingue par un patrimoine des années 1920 issu de la Reconstruction, comme les demeures du cours Langlet (ministère de la Culture). Seules 3,2 % des résidences principales de la ville datent d’avant 1919 (Insee, 2023).
+Pour les façades marnaises, le nuancier conseil de l’architecte des Bâtiments de France propose des teintes neutres, dorées, ocrées et rosées, ou claires, avec une palette à part pour les fenêtres et les volets (UDAP de la Marne).
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Reims
+Dans les cités-jardins de la zone UP, les dimensions et proportions des ouvertures sont propres à chaque cité : évitez de les modifier, sauf pour retrouver celles d’origine. Remplacer des menuiseries traditionnelles par des modèles à cote normalisée demande une étude d’intégration (règlement du PLU).
+Au Chemin Vert et à Maison Blanche, les volets et les autres éléments en bois gardent leurs couleurs d’origine (règlement du PLU). Dans un site patrimonial remarquable, la déclaration préalable est instruite en deux mois au lieu d’un (Service-Public).
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Reims
+Géorisques recense 219 cavités souterraines à Reims, caves et anciennes carrières comprises. Avant une surélévation ou une extension, vérifiez ce qu’il y a sous la parcelle (Géorisques).
+Dans le centre, l’autorité environnementale signale un risque de remontée de nappes près de la Vesle et un aléa de mouvement de terrain faible à élevé selon les secteurs (MRAe, 2024). Signalez-le à l’artisan avant d’alourdir une charpente.
+Devis charpente Prix d’une charpente
+
+#### Isolation à Reims
+GrandReimsRénov’ complète MaPrimeRénov’ Parcours accompagné : 10 % du hors-taxe pour les ménages très modestes, 20 % pour les autres, si les travaux font gagner au moins deux classes énergétiques, avec un artisan RGE et Mon Accompagnateur Rénov’ (ANIL, 2026).
+Le besoin de chauffage est élevé : 2 829,6 degrés-jours unifiés par an à Reims-Courcy (Météo-France, normales 1981-2010). Dans le site patrimonial remarquable, une isolation par l’extérieur modifie la façade et passe par l’accord de l’architecte des Bâtiments de France.
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Reims ?
+Dans l’ordre, du repérage au chantier
+
+#### Vérifiez si votre adresse est dans un site patrimonial remarquable
+Centre-ville et Saint-Nicaise : l’architecte des Bâtiments de France donne son accord. UDAP de la Marne, 38 rue Cérès, sur rendez-vous : 03 26 47 74 39 (ministère de la Culture).
+
+#### Regardez le zonage du PLU
+Le règlement graphique montre si votre maison est dans une cité-jardin (zone UP) ou dans le centre, où le PVAP s’ajoute au PLU. Il est consultable sur le Géoportail de l’urbanisme.
+
+#### Déposez la déclaration préalable
+À la mairie, 9 place de l’Hôtel-de-Ville. Reims-Contact répond au 03 26 77 78 79 (annuaire de l’administration). Comptez un mois d’instruction, deux en secteur protégé.
+
+#### Faites autoriser l’échafaudage
+Sur le trottoir, il faut un permis de stationnement délivré par la mairie. L’instruction peut prendre deux mois, et l’absence de réponse vaut refus : déposez la demande tôt (Service-Public).
+
+#### Appelez la Maison de l’habitat
+Conseil gratuit sur la rénovation énergétique et les aides, appel gratuit. Aucun devis ne doit être signé avant le dépôt de la demande d’aide (Maison de l’habitat).
+
+### Quelles aides pour vos travaux à Reims ?
+À Reims, les primes du Grand Reims se demandent avant toute commande.
+Conseil public, gratuit et neutre
+
+#### Maison de l’habitat du Grand Reims
+L’Espace Conseil France Rénov’ de Reims (annuaire de l’administration) : conseil gratuit sur la rénovation énergétique, l’adaptation du logement et les aides. 03 52 74 17 18, appel gratuit. Entrée du public au 39 rue Bacquenois, 1er étage ; courrier au 19 rue de la Magdeleine (lamaisondelhabitat-reims.fr).
+
+#### GrandReimsRénov’
+En complément de MaPrimeRénov’ Parcours accompagné : 10 % du montant hors taxes pour les ménages très modestes, 20 % pour les autres, avec un gain d’au moins deux classes énergétiques (ANIL, 2026).
+
+#### Prime Bas Carbone
+Pour remplacer une chaudière au fioul : jusqu’à 2 000 € pour une pompe à chaleur hors air-air ou une chaudière bois, 4 000 € pour une pompe à chaleur hybride gaz, 5 000 € pour la géothermie. Ouverte jusqu’au 31 décembre 2027 (ANIL).
+
+#### Prime Air Bois
+1 200 € pour remplacer un foyer ouvert ou fermé, ou un appareil de chauffage au bois d’avant 2002, dans une résidence principale, avec un professionnel RGE (ANIL).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Reims ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Reims : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Reims et alentours.
+
+**Pour qui**
+- Les propriétaires à Reims, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Reims : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Faut-il une autorisation pour changer ses fenêtres à Reims ?**
+Oui, une déclaration préalable, instruite en un mois. Dans le site patrimonial remarquable du centre ou de Saint-Nicaise, comptez deux mois et l’accord de l’architecte des Bâtiments de France. Dans une cité-jardin, gardez les proportions des ouvertures d’origine.
+
+**Quelles règles dans le centre-ville de Reims ?**
+Le centre est un site patrimonial remarquable de 201,6 hectares depuis l’arrêté du 28 mai 2020. Son PVAP, approuvé le 26 juin 2025, fixe les règles des travaux. Tout changement d’aspect extérieur demande une autorisation et l’accord de l’architecte des Bâtiments de France (UDAP de la Marne : 03 26 47 74 39).
+
+**Y a-t-il des caves ou des carrières sous Reims ?**
+Oui : Géorisques recense 219 cavités souterraines sur la commune, dont 85 caves et 59 carrières. Avant une extension ou une surélévation, consultez la carte et faites étudier le sol.
+
+**Ma maison de cité-jardin est-elle protégée à Reims ?**
+Si elle est dans l’une des 11 cités-jardins de la zone UP du PLU, oui : ouvertures à garder dans leurs proportions, décors de façade à conserver lors d’un ravalement et, au Chemin Vert et à Maison Blanche, couleurs d’origine des volets. Vérifiez le zonage avant de commander.
+
+**Quelles aides pour rénover son logement à Reims ?**
+GrandReimsRénov’ (10 à 20 % du hors-taxe pour une rénovation d’ampleur), la Prime Bas Carbone (jusqu’à 5 000 € pour quitter le fioul), la Prime Air Bois (1 200 €) et les aides nationales. Conseil gratuit à la Maison de l’habitat : 03 52 74 17 18.
+
+**Intervenez-vous partout à Reims ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Paris 131 km
+- Devis travaux à Lille 167 km
+- Devis travaux à Rouen 214 km
+- Devis travaux à Dijon 228 km
+- Devis travaux au Havre 285 km
+- Devis travaux à Lyon 394 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Saint-Étienne : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/saint-etienne/
+
+Travaux à Saint-Étienne : cinq sites patrimoniaux remarquables, ravalement imposé dans l’hyper-centre, plan façades, radon. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Saint-Étienne en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Saint-Étienne en quelques chiffres
+À Saint-Étienne, le ravalement est imposé dans certaines rues de l’hyper-centre, et la Ville le subventionne pour les immeubles du centre construits avant 1960 et situés en site patrimonial remarquable
+- 87,1 % des logements sont des appartements Insee, 2023
+- 34,6 % des résidences principales datent de 1946 à 1970 Insee, 2023
+- 5 sites patrimoniaux remarquables dans la ville UDAP de la Loire, 2025
+- 59,7 jours de gel par an à la station de Saint-Étienne-Bouthéon Météo-France, normales 1991-2020
+
+### Que faut-il savoir avant des travaux à Saint-Étienne ?
+87,1 % des logements sont des appartements, et 34,6 % des résidences principales datent de 1946 à 1970. Cinq secteurs sont des sites patrimoniaux remarquables, où les travaux passent par l’accord de l’architecte des Bâtiments de France. Dans certaines rues de l’hyper-centre, la Ville impose le ravalement ; son plan façades aide les immeubles du centre construits avant 1960.
+
+**Sites patrimoniaux remarquables**
+- Crêt-de-Roc et Tarentaize-Beaubrun-Séverine depuis 2004, Centre-Nord et Couriot-Manufacture depuis 2016, Centre-Sud depuis le 28 mars 2024 (Ville de Saint-Étienne). Les autorisations de travaux y sont soumises à l’accord de l’architecte des Bâtiments de France (ministère de la Culture).
+
+**Ravalement**
+- Dans certaines rues de l’hyper-centre, la Ville impose le ravalement des immeubles dont l’état le justifie, par injonction (article L126-3 du code de la construction et de l’habitation). Les propriétaires concernés ont été prévenus directement (plan façades).
+
+**Urbanisme**
+- Le PLU de Saint-Étienne, approuvé le 8 janvier 2008, a été modifié plusieurs fois (Saint-Étienne Métropole). Le PLUi de la Métropole est en cours d’élaboration (PLUi).
+
+**Anciennes mines**
+- Des restrictions liées aux risques miniers touchent moins de 8 % de la zone urbanisée de la ville. Elles sont adaptées au niveau d’aléa (réponse ministérielle au Sénat, 2026).
+
+**Radon**
+- La commune est classée en zone 3, à potentiel radon significatif (Géorisques). Géorisques recommande d’y mesurer le radon dans les pièces occupées les plus basses, pendant au moins 2 mois en période de chauffe (fiche radon).
+
+**Climat**
+- À la station de Saint-Étienne-Bouthéon, à 395 m d’altitude : 59,7 jours de gel, 20,5 jours de neige et 33,9 jours avec des rafales de 58 km/h ou plus, chaque année (Météo-France, normales 1991-2020).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 21 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Saint-Étienne, métier par métier
+Immeubles anciens du centre, hivers froids, sous-sol minier : à Saint-Étienne, chaque métier a ses points de vigilance
+
+#### Couvreur à Saint-Étienne
+Avec 59,7 jours de gel et 33,9 jours de coups de vent à 58 km/h ou plus par an à Bouthéon (Météo-France, 1991-2020), tuiles, solins et gouttières travaillent tout l’hiver. Faites-les contrôler à l’automne, avant les premières gelées.
+Dans les sites patrimoniaux remarquables, les règles d’urbanisme peuvent porter sur les toitures (Ville de Saint-Étienne). Dans le centre, le plan façades subventionne aussi la restauration des parties sommitales de toiture, avec une visite préalable des services de la Ville et de l’État (plan façades).
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Saint-Étienne
+Le plan façades 2021-2026 couvre le centre-ville à l’intérieur du boulevard urbain, de Centre Deux à Carnot. Il aide les immeubles d’avant 1960 avec façade sur rue, situés en site patrimonial remarquable. Les rez-de-chaussée, occupés ou vacants, doivent entrer dans le programme de travaux (Ville de Saint-Étienne).
+Dans l’hyper-centre et les secteurs de renouvellement urbain, l’aide est majorée de 5 points si les délais sont tenus, et certaines rues sont sous injonction de ravalement. Pour un immeuble labellisé par la Fondation du patrimoine, jusqu’à 100 % des travaux se déduisent du revenu imposable (plan façades).
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Saint-Étienne
+En site patrimonial remarquable, la déclaration préalable pour changer des fenêtres est soumise à l’accord de l’architecte des Bâtiments de France et s’instruit en général en 2 mois, contre 1 mois ailleurs (Service-Public, ministère de la Culture).
+La Ville rappelle que les règles de ses sites patrimoniaux portent sur les matériaux employés (Ville de Saint-Étienne). Avant de choisir bois, aluminium ou PVC, demandez les préconisations de l’UDAP de la Loire, qui reçoit sur rendez-vous (UDAP de la Loire).
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Saint-Étienne
+Des restrictions liées aux risques miniers touchent moins de 8 % de la zone urbanisée de Saint-Étienne, avec des règles adaptées au niveau d’aléa (Sénat, 2026). Avant une surélévation ou une extension, vérifiez si votre parcelle est concernée auprès du service urbanisme.
+Il neige en moyenne 20,5 jours par an à Bouthéon (Météo-France). Avant d’alourdir une couverture ou de poser un isolant sur les chevrons, faites vérifier que la charpente porte la charge. La commune est en zone de sismicité 2, faible (Géorisques).
+Devis charpente Prix d’une charpente
+
+#### Isolation à Saint-Étienne
+Bouthéon compte 2 507,6 degrés-jours unifiés par an (Météo-France, 1991-2020) : le chauffage pèse. Jusqu’à fin 2027, Saint-Étienne Métropole verse au plus 1 500 € pour remplacer un chauffage au bois installé avant 2005, et une aide complémentaire pouvant atteindre 10 000 € si vous améliorez aussi isolation et ventilation (Saint-Étienne Métropole).
+En zone 3 de potentiel radon, Géorisques conseille, après une isolation ou un changement de fenêtres, de garder un renouvellement d’air suffisant et de refaire une mesure (fiche radon). Pour un ravalement aidé, le plan façades exige un document de Rénov’actions42 sur les travaux de performance énergétique possibles (plan façades).
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Saint-Étienne ?
+Dans l’ordre, du centre intra-boulevard aux autres quartiers
+
+#### Vérifiez si votre immeuble est en site protégé
+Crêt-de-Roc, Tarentaize-Beaubrun-Séverine, Centre-Nord, Couriot-Manufacture et Centre-Sud sont des sites patrimoniaux remarquables. L’UDAP de la Loire reçoit sur rendez-vous à La Loire Républicaine, 16 place Jean-Jaurès. 04 77 49 35 50 (UDAP de la Loire).
+
+#### Centre-ville : appelez la chargée de mission plan façades
+Avant la déclaration préalable, elle fait le point sur le projet. Une visite suit avec l’architecte conseil de la Ville et l’architecte des Bâtiments de France. 04 77 48 65 53 (plan façades).
+
+#### Faites le point sur l’énergie
+Le plan façades exige un document de Rénov’actions42 sur les travaux de performance énergétique possibles. Déposez aussi les demandes d’aide avant de commencer les travaux (Saint-Étienne Métropole).
+
+#### Déposez la demande en ligne
+Déclaration préalable ou permis se déposent sur le guichet numérique de Saint-Étienne Métropole. En site patrimonial remarquable, comptez en général 2 mois d’instruction.
+
+#### Faites autoriser l’échafaudage
+Une autorisation d’occupation du domaine public, payante, se demande au moins 12 jours avant le chantier, par courriel à droitdevoirie@saint-etienne.fr. 04 77 48 73 18 (démarche).
+
+### Quelles aides pour vos travaux à Saint-Étienne ?
+À Saint-Étienne, la Ville aide les façades du centre ; la Métropole, deux quartiers en OPAH-RU et le remplacement du chauffage au bois.
+Conseil public, gratuit et neutre
+
+#### Rénov’actions42
+L’Espace Conseil France Rénov’ de Saint-Étienne, service public de la rénovation porté par les collectivités de la Loire : Maison de l’Habitat et du Logement, 20 A rue Balaÿ, 42000 Saint-Étienne. 04 77 41 41 25, du lundi au vendredi de 9 h à 18 h (annuaire Service-Public, Saint-Étienne Métropole, renovactions42.org).
+
+#### Plan façades 2021-2026
+La Ville subventionne le ravalement et la restauration d’éléments remarquables (sculptures, devantures menuisées, modénatures, parties sommitales de toiture) des immeubles d’avant 1960 du centre intra-boulevard, en site patrimonial remarquable. Aide majorée de 5 points dans l’hyper-centre si les délais sont tenus (Ville de Saint-Étienne).
+
+#### OPAH-RU Tarentaize-Beaubrun-Couriot et Saint-Roch
+Dans ces deux quartiers, Saint-Étienne Métropole accompagne gratuitement les propriétaires et les copropriétés, avec des aides renforcées sous conditions. Tarentaize-Beaubrun-Couriot : CAP Métropole, 04 77 49 25 18. Saint-Roch : EPASE, 07 64 18 79 46 (Saint-Étienne Métropole).
+
+#### Fonds Air Bois
+Aide prolongée jusqu’à fin 2027 : au plus 1 500 € pour remplacer un chauffage au bois installé avant 2005 par un appareil labellisé Flamme verte, et une aide complémentaire pouvant atteindre 10 000 € si vous améliorez aussi isolation et ventilation. Les cheminées à foyer ouvert sont interdites d’usage depuis le 1er avril 2025, par arrêté préfectoral (Saint-Étienne Métropole).
+
+#### Label de la Fondation du patrimoine
+Par convention avec la Ville, un immeuble labellisé permet de déduire du revenu imposable jusqu’à 100 % du montant des travaux (plan façades).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Saint-Étienne ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Saint-Étienne : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Saint-Étienne et alentours.
+
+**Pour qui**
+- Les propriétaires à Saint-Étienne, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Saint-Étienne : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Le ravalement est-il obligatoire à Saint-Étienne ?**
+Dans certaines rues de l’hyper-centre, oui : la Ville a pris des injonctions de ravalement (article L126-3 du code de la construction et de l’habitation) pour les immeubles dont l’état le justifie, et a prévenu les propriétaires. Dans le centre intra-boulevard, le plan façades aide les immeubles d’avant 1960 situés en site patrimonial remarquable.
+
+**Mon immeuble est-il dans un site patrimonial remarquable ?**
+Cinq secteurs le sont : Crêt-de-Roc, Tarentaize-Beaubrun-Séverine, Centre-Nord, Couriot-Manufacture et Centre-Sud, approuvé le 28 mars 2024. Pour une adresse précise, interrogez l’UDAP de la Loire : 04 77 49 35 50.
+
+**Faut-il une autorisation pour changer ses fenêtres à Saint-Étienne ?**
+Oui, une déclaration préalable dès que l’aspect extérieur change, sur le guichet numérique de Saint-Étienne Métropole. En site patrimonial remarquable, l’architecte des Bâtiments de France doit donner son accord, et l’instruction prend en général 2 mois.
+
+**Les anciennes mines limitent-elles les travaux à Saint-Étienne ?**
+Sur une petite partie de la ville : moins de 8 % de la zone urbanisée est touchée par des restrictions liées aux risques miniers, adaptées au niveau d’aléa. Pour une extension ou une surélévation, vérifiez votre parcelle auprès du service urbanisme.
+
+**Saint-Étienne est-elle concernée par le radon ?**
+Oui, la commune est en zone 3, à potentiel radon significatif. Mesurez le radon au moins 2 mois en période de chauffe, et gardez un renouvellement d’air suffisant après une isolation ou un changement de fenêtres.
+
+**Quelles aides pour rénover son logement à Saint-Étienne ?**
+Le plan façades de la Ville pour le centre, les aides renforcées de Saint-Étienne Métropole à Tarentaize-Beaubrun-Couriot et à Saint-Roch, le Fonds Air Bois (jusqu’à 1 500 €) et les aides nationales. Conseil gratuit à Rénov’actions42 : 04 77 41 41 25.
+
+**Intervenez-vous partout à Saint-Étienne ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Lyon 51 km
+- Devis travaux à Grenoble 108 km
+- Devis travaux à Montpellier 207 km
+- Devis travaux à Dijon 216 km
+- Devis travaux à Marseille 250 km
+- Devis travaux à Toulon 285 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux au Havre : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/le-havre/
+
+Travaux au Havre : centre Perret protégé, toits-terrasses, vent de mer, aide au ravalement des façades en brique. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux au Havre en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Le Havre en quelques chiffres
+Au Havre, le centre reconstruit par Auguste Perret a ses règles immeuble par immeuble : béton restauré à l’identique, ni PVC ni isolation par l’extérieur sur les bâtiments les plus protégés
+- 73,2 % des logements sont des appartements Insee, 2023
+- 42,4 % des résidences principales datent de 1946 à 1970 Insee, 2023
+- 2005 inscription du centre reconstruit au patrimoine mondial de l’Unesco Ville du Havre
+- 180 km/h record de rafale au cap de la Hève, le 16 octobre 1987 Météo-France
+
+### Que faut-il savoir avant des travaux au Havre ?
+Près de trois logements sur quatre sont des appartements (73,2 %), et 42,4 % des résidences principales datent de 1946 à 1970. Dans le centre reconstruit par Auguste Perret, inscrit à l’Unesco en 2005, tout changement d’aspect demande une autorisation et l’avis de l’architecte des Bâtiments de France. L’isolation par l’extérieur y est proscrite sur les immeubles de catégories 1 et 2.
+
+**Centre reconstruit**
+- Inscrit au patrimoine mondial depuis 2005, il forme un site patrimonial remarquable régi par une AVAP approuvée le 11 juillet 2016 et modifiée le 18 décembre 2025. Tous les travaux qui changent l’aspect d’un immeuble y sont soumis à autorisation, avec l’avis de l’architecte des Bâtiments de France (règlement du SPR).
+
+**Urbanisme**
+- Le PLUi Le Havre Seine Métropole, commun aux 54 communes, a été approuvé le 12 février 2026. Il s’applique depuis le 1er avril 2026 (Communauté urbaine).
+
+**Déclaration préalable**
+- La Ville la demande pour un ravalement et pour tout travail qui change l’aspect extérieur, comme un remplacement de menuiserie ou une réfection de toiture. Instruction : un mois, davantage si l’architecte des Bâtiments de France est consulté (Ville du Havre).
+
+**Mer et inondation**
+- Un plan de prévention des risques littoraux, approuvé le 1er juillet 2022, encadre les zones exposées à la submersion marine. Celui des inondations de la Lézarde date du 6 mai 2013 (DICRIM, 2025).
+
+**Falaises et cavités**
+- Sur la costière, la falaise entre ville basse et ville haute, les propriétaires doivent réaliser des ouvrages de protection, par exemple un mur de soutènement. Le sous-sol garde d’anciennes marnières et des abris de la Seconde Guerre mondiale, parfois avec un périmètre de précaution (DICRIM, 2025). Un certificat sur les cavités souterraines se demande en ligne (Ville du Havre).
+
+**Vent**
+- Au cap de la Hève, la rafale record atteint 180 km/h, le 16 octobre 1987, et 172,8 km/h le 25 janvier 1990 (Météo-France). Les tempêtes arrivent surtout en automne et en hiver (DICRIM, 2025).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 21 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux au Havre, métier par métier
+Béton de la Reconstruction, brique d’avant-guerre, toits-terrasses et ardoise : au Havre, les règles changent d’un immeuble à l’autre, surtout dans le centre reconstruit
+
+#### Couvreur au Havre
+Le règlement du centre reconstruit voit dans ses toits la « cinquième façade » de la ville, visible des étages et des coteaux. Sur un toit-terrasse non accessible, l’étanchéité ne reste pas brute : toit végétalisé de préférence, sinon gravillons clairs. Sur un toit en pente, le bac acier et les matériaux précaires sont interdits, et l’ardoise employée est naturelle, au format 22 × 32 cm. Sur l’île Saint-François, seule l’ardoise naturelle couvre les logements (règlement du SPR).
+Au cap de la Hève, les normales comptent 789,8 mm de pluie et 127,7 jours avec au moins 1 mm par an (Météo-France, 1991-2020). La Ville cite l’arrachage de toitures parmi les dangers des tempêtes (DICRIM, 2025). Faites vérifier relevés d’étanchéité, couvertines et fixations avant l’hiver.
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade au Havre
+Dans le centre reconstruit, un ravalement porte toujours sur un bâtiment entier, et sur tout l’îlot quand ses immeubles viennent d’un même projet. Le béton retrouve son aspect d’origine : sablage interdit, aciers oxydés mis à nu, passivés puis enrobés de mortier. En catégories 1 et 2, les motifs décoratifs supprimés ou abîmés sont restitués (règlement du SPR).
+À Thiers-Coty-Flaubert, Sainte-Marie et Saint-Léon, la Ville aide le ravalement des façades en brique jusqu’au 31 décembre 2026 : 30 % des travaux hors taxes, plafonnés à 6 000 € par 100 m² de façade, y compris pour retrouver la brique sous un enduit. Les travaux attendent son accord (Ville du Havre).
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes au Havre
+Dans le centre reconstruit, une fenêtre neuve garde les dimensions, la position dans la baie et la couleur de l’ancienne. En catégorie 1, tout se remplace à l’identique, et le PVC est proscrit en catégories 1 et 2. Dans les autres cas, la section des profils et la surface vitrée peuvent varier de 15 % au plus. La pose en rénovation, qui garde l’ancien dormant, est proscrite pour tous les immeubles de la Reconstruction (règlement du SPR).
+Le règlement recommande le bois, matériau des menuiseries de la Reconstruction. En catégories 1 et 2, persiennes et volets en PVC sont interdits ; à défaut des couleurs d’origine, ils se peignent en gris RAL 7037 (règlement du SPR). Jusqu’au 31 décembre 2026, la Ville aide à restaurer menuiseries et persiennes d’origine, ou à les remplacer à l’identique : 30 % ou 20 % des travaux hors taxes, selon le cas (Ville du Havre).
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente au Havre
+Le Havre n’est pas classé en zone termites : l’arrêté préfectoral du 12 juin 2023 ne vise que trois communes de l’agglomération de Rouen (préfecture). Dans le centre reconstruit, les immeubles des XVIIIe et XIXe siècles sont couverts de toits à deux pentes, de 30° à 60°, ou à combles brisés (règlement du SPR).
+Pour ces immeubles d’avant la Reconstruction, le règlement fait conserver les volumes de toiture et les couvertures en ardoise naturelle, zinc ou tuile petit format ; les matériaux synthétiques sont interdits. L’isolation par-dessus les chevrons (sarking) est interdite en catégorie 5, autorisée au cas par cas en catégorie 6 (règlement du SPR).
+Devis charpente Prix d’une charpente
+
+#### Isolation au Havre
+Dans le centre reconstruit, l’isolation par l’extérieur est proscrite en catégories 1 et 2, car elle cacherait structure, remplissages et décors. En catégories 3 et 4, elle reste possible sous conditions, dans un projet d’ensemble, au-dessus du soubassement et sans bardage PVC. Sinon, le règlement cite l’isolation par l’intérieur et le remplissage de la lame d’air (règlement du SPR).
+Isoler un toit-terrasse est encouragé, mais oblige souvent à rehausser l’acrotère (règlement du SPR). Pour obtenir les aides, le modèle de devis de la Communauté urbaine demande une résistance thermique d’au moins R = 4,5 m².K/W, ou 6,5 pour une rénovation d’ampleur, et conseille de viser 8 (modèle de devis, 2025).
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux au Havre ?
+Dans l’ordre, du centre reconstruit aux quartiers de brique
+
+#### Trouvez la catégorie de votre immeuble
+Dans le centre reconstruit, le plan du site patrimonial remarquable donne la catégorie de chaque bâtiment, et donc ses règles (règlement du SPR). Service urbanisme de la Ville : 02 79 92 76 90, urbanisme@lehavre.fr (Ville du Havre).
+
+#### Façade en brique : contactez la Ville
+À Thiers-Coty-Flaubert, Sainte-Marie et Saint-Léon, le service Urbanisme et prospective fixe les prescriptions avant les devis. 02 35 22 27 96 (campagne de ravalement, 2023).
+
+#### Déposez la déclaration préalable
+En ligne sur le portail Mes démarches (netsve.lehavre.fr), ou au service Droit des sols et permis de construire, rez-de-chaussée « Forum » de l’Hôtel de Ville, 1517 place de l’Hôtel de Ville. 02 35 19 45 47 (Ville du Havre).
+
+#### Faites autoriser l’échafaudage
+Toute occupation du trottoir demande une autorisation et une redevance d’occupation du domaine public. Pour un chantier, le permis de stationnement se demande en principe au maire (règlement de voirie, 2024). Pour un ravalement aidé, la Ville indique que l’entreprise fait en général la déclaration de voirie (campagne de ravalement, 2023).
+
+#### Demandez conseil avant de signer
+L’Espace Conseil France Rénov’ de la Communauté urbaine vous conseille gratuitement sur le projet et les aides possibles.
+
+### Quelles aides pour vos travaux au Havre ?
+Au Havre, les aides de la Ville se demandent avant tout début de chantier.
+Conseil public, gratuit et neutre
+
+#### Espace Conseil France Rénov’ du Havre
+Le service public de conseil de la Communauté urbaine Le Havre Seine Métropole, labellisé Mon Accompagnateur Rénov’ : 19 rue Georges-Braque, 76600 Le Havre. 02 35 22 25 20, du lundi au vendredi de 9 h à 17 h (annuaire Service-Public, Communauté urbaine).
+
+#### Campagnes de ravalement des façades en brique
+Jusqu’au 31 décembre 2026, à Thiers-Coty-Flaubert, Sainte-Marie et Saint-Léon : 30 % des travaux hors taxes, plafonnés à 6 000 € par 100 m² de façade, et 20 %, plafonnés à 3 500 €, pour corniches, bandeaux, linteaux, garde-corps ou volets. La façade doit donner sur la rue (Ville du Havre).
+
+#### Travaux d’intérêt architectural du centre reconstruit
+Jusqu’au 31 décembre 2026, pour les immeubles d’intérêt de la Reconstruction : restauration de portes, menuiseries, garde-corps, persiennes ou claustras d’origine, ou remplacement à l’identique. Parties privatives : 30 % hors taxes plafonnés à 5 000 € par propriétaire et par an pour une restauration, 20 % plafonnés à 2 500 € pour un remplacement. Parties communes : plafonds de 10 000 € et 7 500 € par copropriété et par an. Travaux visibles depuis la rue, autorisés, et commencés après l’accord de la Ville (Ville du Havre, 2026).
+
+#### Chèque éco-énergie Normandie
+Pour une maison de plus de 15 ans, résidence principale, secondaire ou locative : 600 € pour l’audit énergétique, puis de 6 500 à 12 000 € pour les travaux (Région Normandie).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture au Havre ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux au Havre : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation au Havre et alentours.
+
+**Pour qui**
+- Les propriétaires au Havre, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux au Havre : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Y a-t-il une aide au ravalement au Havre ?**
+Oui, pour les façades en brique de Thiers-Coty-Flaubert, Sainte-Marie et Saint-Léon, jusqu’au 31 décembre 2026 : 30 % des travaux hors taxes, plafonnés à 6 000 € par 100 m² de façade. Les travaux ne commencent qu’après l’accord de la Ville. Partout, un ravalement demande une déclaration préalable.
+
+**Faut-il une autorisation pour changer ses fenêtres au Havre ?**
+Oui, la Ville soumet le remplacement de menuiseries à déclaration préalable. Dans le centre reconstruit, la fenêtre neuve garde dimensions, position et couleur ; la pose en rénovation est proscrite pour les immeubles de la Reconstruction, et le PVC l’est en catégories 1 et 2.
+
+**Peut-on isoler sa façade par l’extérieur dans le centre reconstruit ?**
+Pas en catégories 1 et 2. En catégories 3 et 4, c’est possible sous conditions, dans un projet d’ensemble, au-dessus du soubassement et sans bardage PVC. Sinon, le règlement oriente vers l’isolation par l’intérieur ou le remplissage de la lame d’air.
+
+**Le Havre est-il en zone termites ?**
+Non. L’arrêté préfectoral du 12 juin 2023 ne classe que trois communes de l’agglomération de Rouen en Seine-Maritime.
+
+**Mon terrain est-il concerné par une cavité souterraine ?**
+Peut-être : le sous-sol havrais compte d’anciennes marnières, cailloutières et abris de guerre. Un certificat sur les cavités souterraines se demande en ligne, depuis le site de la Ville. Protection civile urbaine : 02 35 19 60 11.
+
+**Quelles aides pour rénover son logement au Havre ?**
+L’aide de la Ville au ravalement des façades en brique, celle aux travaux d’intérêt architectural du centre reconstruit, le chèque éco-énergie Normandie pour les maisons de plus de 15 ans (600 € pour l’audit, de 6 500 à 12 000 € pour les travaux) et les aides nationales. Conseil gratuit à l’Espace Conseil France Rénov’ : 02 35 22 25 20.
+
+**Intervenez-vous partout au Havre ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Rouen 72 km
+- Devis travaux à Paris 178 km
+- Devis travaux à Lille 245 km
+- Devis travaux à Nantes 281 km
+- Devis travaux à Reims 285 km
+- Devis travaux à Dijon 437 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -3280,11 +4265,11 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 Tous les devis de travaux
 Villes les plus proches
 - Devis travaux à Lyon 174 km
+- Devis travaux à Saint-Étienne 216 km
+- Devis travaux à Reims 228 km
 - Devis travaux à Grenoble 243 km
 - Devis travaux à Paris 263 km
 - Devis travaux à Rouen 375 km
-- Devis travaux à Lille 395 km
-- Devis travaux à Nice 438 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -3472,11 +4457,11 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 Tous les devis de travaux
 Villes les plus proches
 - Devis travaux à Lyon 95 km
+- Devis travaux à Saint-Étienne 108 km
 - Devis travaux à Nice 206 km
 - Devis travaux à Marseille 212 km
-- Devis travaux à Dijon 243 km
-- Devis travaux à Toulouse 383 km
-- Devis travaux à Paris 481 km
+- Devis travaux à Montpellier 229 km
+- Devis travaux à Toulon 230 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -3597,7 +4582,7 @@ L’Espace Conseil France Rénov’ de la Métropole Rouen Normandie : conseil g
 Ville, Métropole et Anah aident à rénover près de 500 logements du centre-ville, avec un volet ravalement : jusqu’à 7 000 € par immeuble dans les rues concernées (Métropole).
 
 #### Chèque éco-énergie Normandie
-Pour les maisons de plus de 15 ans : 600 € pour l’audit, 6 500 € pour une première étape BBC, 10 000 € pour une rénovation globale BBC (Région Normandie).
+Pour les maisons de plus de 15 ans : 600 € pour l’audit, sans condition de ressources. Sous conditions de ressources, 6 500 € pour une première étape BBC (étiquette C au moins après travaux) ou 10 000 € pour une rénovation globale BBC (étiquette A ou B), plus jusqu’à 2 000 € pour une énergie renouvelable ou une VMC double flux (Région Normandie).
 
 #### Aides nationales
 MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
@@ -3660,12 +4645,12 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 ### Ailleurs en France
 Tous les devis de travaux
 Villes les plus proches
+- Devis travaux au Havre 72 km
 - Devis travaux à Paris 112 km
 - Devis travaux à Lille 192 km
+- Devis travaux à Reims 214 km
 - Devis travaux à Nantes 316 km
 - Devis travaux à Dijon 375 km
-- Devis travaux à Lyon 496 km
-- Devis travaux à Bordeaux 528 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -3853,7 +4838,7 @@ Trouver des chantiers sans attendre le bouche-à-oreille : choisir entre demande
 - 02
 
 #### Pour les propriétaires
-Les règles qui changent et les démarches avant des travaux : le DPE en 2027, les prix par métier, et les règles locales à Paris, Marseille, Lyon, Toulouse, Nice et dans 6 autres villes.
+Les règles qui changent et les démarches avant des travaux : le DPE en 2027, les prix par métier, et les règles locales à Paris, Marseille, Lyon, Toulouse, Nice et dans 11 autres villes.
 - 03
 
 #### Comment nous écrivons
