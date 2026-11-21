@@ -60,17 +60,18 @@ CITY = dict(
                        "le 5 septembre 2025 (" + L("annexes du PLU", _PPRI) + ")."),
            ("Climat", "À Strasbourg-Entzheim, 635,7 mm de pluie et 59,5 jours de gel par an. Mai, juin et juillet sont les mois les plus arrosés ("
                       + L("Météo-France", _MF) + ", normales 1991-2020).")],
-    trades_intro="Maisons à pans de bois de la Grande-Île, immeubles de la Neustadt, maisons de faubourg : à Strasbourg, chaque époque a ses matériaux.",
+    trades_intro="Maisons à pans de bois de la Grande-Île, immeubles d’architecture allemande de la Neustadt : à Strasbourg, chaque époque a ses matériaux.",
     trades={
         "toiture": ["Le toit alsacien traditionnel est en tuiles plates écailles de terre cuite rouge, dont la « Biberschwanz » ou queue-de-castor, sur des "
                     "pentes de plus de 40°. Le format courant est de 16 sur 38 cm ; l’UDAP du Bas-Rhin déconseille les tuiles béton et les tuiles noires "
                     "engobées sur le bâti ancien (" + L("fiche couvertures", _UDAP_COUV) + ", 2026).",
                     "À Entzheim, on compte 30,8 jours de rafales d’au moins 58 km/h par an, surtout de décembre à mars (" + L("Météo-France", _MF) + "). "
-                    "L’UDAP conseille de sceller faîtières et arêtiers au mortier de chaux plutôt que de les poser à sec."],
+                    "L’UDAP conseille de sceller faîtières et arêtiers au mortier de chaux plutôt que de les poser à sec (" + L("UDAP", _UDAP_COUV) + ")."],
         "facade": ["Pour la pierre, le grès et le torchis des pans de bois, l’UDAP du Bas-Rhin recommande l’enduit à la chaux, qui laisse respirer le mur. "
                    "Les enduits ciment sont à éviter et les enduits plastiques ribbés ou granités sont proscrits (" + L("fiche façade", _UDAP_FAC) + ").",
                    "Sur les immeubles d’architecture allemande, seule la peinture minérale au silicate convient ; les peintures plastiques, acryliques ou "
-                   "vinyliques sont interdites. Dans le secteur sauvegardé, un immeuble protégé demande un permis de construire pour son ravalement."],
+                   "vinyliques sont interdites. Dans le secteur sauvegardé, un immeuble protégé demande un permis de construire pour son ravalement ("
+                   + L("Eurométropole", _FAQ) + ")."],
         "fenetres": ["Tout changement de menuiseries extérieures demande une autorisation, même pour un remplacement dit à l’identique. La pose en "
                      "« rénovation », un nouveau dormant sur l’ancien, est proscrite ; en espace protégé, le bois peint est conservé ou restauré ("
                      + L("fiche menuiseries", _UDAP_MEN) + ", 2026).",
@@ -85,7 +86,7 @@ CITY = dict(
                       "Avec un isolant biosourcé, le bonus atteint 1 500 € pour une isolation extérieure sous enduit et 2 000 € sous bardage. En copropriété, "
                       "les critères Climaxion de la Région imposent d’isoler tous les murs à R ≥ 5, la toiture à R ≥ 7,5 et le plancher bas à R ≥ 3,5 ("
                       + L("règlement copropriétés 2026", _REGL_CO) + ")."]},
-    steps_intro="Dans l’ordre, du secteur sauvegardé aux autres quartiers.",
+    steps_intro="Dans l’ordre, de la protection de l’immeuble à l’échafaudage.",
     steps=[("Vérifiez la protection de votre immeuble", "Secteur sauvegardé, abords d’un monument historique ou rue sans protection : la police du bâtiment "
                                                      "vous renseigne au 03 68 98 51 11 (" + L("Ville de Strasbourg", _PSMV) + ")."),
            ("Consultez l’architecte des Bâtiments de France", "UDAP du Bas-Rhin, Palais du Rhin, 2 place de la République, 67082 Strasbourg cedex. "
