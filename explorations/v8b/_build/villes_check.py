@@ -188,7 +188,9 @@ def ok(path, pool=None):
     except Exception:
         draft, reviewed, when = True, None, ""
     import datetime
-    later = bool(when) and datetime.date.today().isoformat() < when  # publication programmée (vagues espacées)
+    import os
+    today = os.environ.get("VILLES_DATE") or datetime.date.today().isoformat()  # VILLES_DATE=2026-12-05 : aperçu d'une vague programmée
+    later = bool(when) and today < when  # publication programmée (vagues espacées)
     if later:
         print(f"  {path.stem} : publication programmée le {when}")
     return not err and not draft and bool(reviewed) and not later

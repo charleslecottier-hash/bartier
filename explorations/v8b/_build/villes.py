@@ -169,21 +169,35 @@ def carte(current=None):
     """Carte de France des villes, cliquable ; la ville de la page est mise en avant. Toutes les villes ont leur point ;
     les noms s'affichent tant qu'ils ne se chevauchent pas (la ville de la page d'abord, puis les plus grandes)."""
     W, H = _MAP["w"] + 72, _MAP["h"] + 16
-    boxes = [(x - 6, y - 6, x + 6, y + 6) for x, y in (_xy(c) for c in CITIES)]
-    hit = lambda b: b[0] < -12 or b[2] > W or b[1] < -16 or b[3] > H or any(b[0] < o[2] and o[0] < b[2] and b[1] < o[3] and o[1] < b[3] for o in placed)
+    fs = 14 if len(CITIES) > 20 else 17  # au-delà d'une vingtaine de villes, des noms plus petits pour qu'ils tiennent
+    cw = .54 * fs
+    rank = {c["slug"]: i for i, c in enumerate(sorted(CITIES, key=_rank))}
+    dots = {c["slug"]: (lambda x, y: (x - 6, y - 6, x + 6, y + 6))(*_xy(c)) for c in CITIES}
+    inter = lambda a, b: a[0] < b[2] and b[0] < a[2] and a[1] < b[3] and b[1] < a[3]
+    out = lambda b: b[0] < -12 or b[2] > W or b[1] < -16 or b[3] > H
     placed, labels = [], {}
     for c in sorted(CITIES, key=lambda c: (c["slug"] != current, _rank(c))):
         x, y = _xy(c)
-        w = 9.2 * len(c["name"]) + 4
-        for lx, anchor, dy in ((x + 12, "start", 0), (x - 12, "end", 0), (x, "middle", -16), (x, "middle", 22),
-                               (x + 10, "start", 16), (x - 10, "end", 16), (x + 10, "start", -14), (x - 10, "end", -14)):
-            b = ((lx, y + dy - 12, lx + w, y + dy + 6) if anchor == "start" else (lx - w, y + dy - 12, lx, y + dy + 6) if anchor == "end"
-                 else (x - w / 2, y + dy - 16, x + w / 2, y + dy + 2))
-            own = [o for o in boxes if not (abs((o[0] + o[2]) / 2 - x) < .1 and abs((o[1] + o[3]) / 2 - y) < .1)]
-            if not hit(b) and not any(b[0] < o[2] and o[0] < b[2] and b[1] < o[3] and o[1] < b[3] for o in own):
-                placed.append(b)
-                labels[c["slug"]] = (lx, anchor, dy)
-                break
+        w = cw * len(c["name"]) + 4
+        # la ville de la page et les plus grandes villes passent avant les points des villes plus petites
+        strong = c["slug"] == current or rank[c["slug"]] < 6
+        every = [b for s2, b in dots.items() if s2 != c["slug"]]
+        block = [b for s2, b in dots.items() if s2 != c["slug"] and (s2 == current or rank[s2] < rank[c["slug"]])]
+        cands = []
+        for lx, anchor, dy in ((x + 12, "start", 0), (x - 12, "end", 0), (x, "middle", -(fs - 1)), (x, "middle", fs + 5),
+                               (x + 10, "start", fs - 2), (x - 10, "end", fs - 2), (x + 10, "start", -(fs - 4)), (x - 10, "end", -(fs - 4))):
+            k = fs / 17
+            b = ((lx, y + dy - 12 * k, lx + w, y + dy + 6 * k) if anchor == "start" else (lx - w, y + dy - 12 * k, lx, y + dy + 6 * k) if anchor == "end"
+                 else (x - w / 2, y + dy - 16 * k, x + w / 2, y + dy + 2 * k))
+            cands.append((b, (lx, anchor, dy)))
+        pick = next((lab for b, lab in cands if not out(b) and not any(inter(b, o) for o in placed + every)), None)
+        if pick is None and strong:  # sinon, une grande ville peut passer sur le point d'une ville plus petite
+            pick = next((lab for b, lab in cands if not out(b) and not any(inter(b, o) for o in placed + block)), None)
+        if pick is None and c["slug"] == current:  # la ville de la page a toujours son nom
+            pick = next((lab for b, lab in cands if not out(b)), cands[0][1])
+        if pick:
+            placed.append(next(b for b, lab in cands if lab == pick))
+            labels[c["slug"]] = pick
     pins = []
     for c in CITIES:
         x, y = _xy(c)
@@ -192,7 +206,8 @@ def carte(current=None):
                else f'<circle cx="{x}" cy="{y}" r="5" class="vl-dot"/>')
         lab = labels.get(c["slug"])
         ta = f' text-anchor="{lab[1]}"' if lab and lab[1] != "start" else ""
-        label = (f'<text x="{lab[0]}" y="{y + 4.5 + lab[2]}" class="vl-lab{" is-on" if on else ""}"{ta}>{c["name"]}</text>'
+        fz = f' style="font-size:{fs}px"' if fs != 17 else ""
+        label = (f'<text x="{lab[0]}" y="{y + 4.5 + lab[2]}" class="vl-lab{" is-on" if on else ""}"{ta}{fz}>{c["name"]}</text>'
                  if lab else f'<title>{c["name"]}</title>')
         pins.append(f'<g>{dot}{label}</g>' if on else f'<a href="{path(c)}" aria-label="Devis travaux {a_(c)}">{dot}{label}</a>')
     w, h = _MAP["w"], _MAP["h"]
