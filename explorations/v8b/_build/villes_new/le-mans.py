@@ -8,7 +8,6 @@ _INSEE = "https://api.insee.fr/melodi/data/DS_RP_LOGEMENT_PRINC?GEO=COM-72181"
 _REG = "https://www.lemansmetropole.fr/fileadmin/mediatheque_metropole-du-mans/utilisateurs/urbanisme/documents/plu/pieces/reglement_litteral.pdf"
 _CAHIER = "https://www.lemansmetropole.fr/fileadmin/mediatheque_metropole-du-mans/utilisateurs/Logement_urbanisme/documents/cahier_communal_le_mans.pdf"
 _CARTE = "https://geo.lemans.fr/igeonet_plu/"
-_PLANTA = "https://www.lemans.fr/vie-municipale/tourisme-et-patrimoine/cite-plantagenet"
 _UDAP = ("https://www.culture.gouv.fr/regions/drac-pays-de-la-loire/la-direction-regionale-des-affaires-culturelles-drac-des-pays-de-la-loire/"
          "Pole-patrimoines-architecture-et-espaces-proteges-Drac-Pays-de-la-Loire/UDAP-Unites-Departementales-de-l-Architecture-et-du-Patrimoine-des-Pays-de-la-Loire/"
          "UDAP-de-la-Sarthe")
@@ -65,9 +64,8 @@ CITY = dict(
                     "Gel et fortes chaleurs se succèdent : 39,8 jours de gel par an, 15,3 jours à 30 °C ou plus et une rafale record "
                     "de 36 m/s en novembre 1983 (" + L("Météo-France", _MF) + "). Faites contrôler tuiles ou ardoises, faîtage et gouttières après "
                     "l’hiver et avant les fortes chaleurs."],
-        "facade": ["Dans la Cité Plantagenêt, plus d’une centaine de maisons à pans de bois datent en majorité des XVe et XVIe siècles. Elles "
-                   "retrouvent peu à peu leurs couleurs médiévales, bleues, vertes ou rouges (" + L("Ville du Mans", _PLANTA) + "). En espace protégé, "
-                   "tout ravalement demande une autorisation (" + L("UDAP de la Sarthe", _FAQ72) + ").",
+        "facade": ["Le Vieux Mans, secteur sauvegardé depuis 1966, suit son plan de sauvegarde et non le PLU. Là, comme dans les autres "
+                   "espaces protégés, tout ravalement demande une autorisation (" + L("UDAP de la Sarthe", _FAQ72) + ").",
                    "Sur les immeubles remarquables repérés par le PLU, bandeaux, corniches, linteaux et appuis sont conservés et restaurés avec des "
                    "matériaux identiques. Sur tout le territoire du PLU, un matériau fait pour être enduit ne peut pas rester à nu (" + L("règlement du PLU", _REG) + ")."],
         "fenetres": ["Sur un immeuble repéré comme remarquable, on restaure d’abord les fenêtres. Trop abîmées, elles ne se remplacent qu’en bois peint, "

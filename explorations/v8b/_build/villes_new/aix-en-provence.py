@@ -1,4 +1,5 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+REVIEWED = "2026-11-21"
 PUBLISH = "2026-12-05"  # vague 2 : publication deux semaines après la vague 1 (voir VILLES.md)
 
 # Sources consultées le 21/11/2026.
@@ -115,8 +116,9 @@ CITY = dict(
                       "au feu C-s3,d0 (" + L("règlement du PPRIF", _PPRIF) + ")."]},
     steps_intro="Dans l’ordre, du centre ancien aux quartiers proches des massifs.",
     steps=[("Situez votre adresse", "Entre les boulevards de ceinture, du cours Sextius au boulevard du Roi-René, vous êtes dans le "
-                                    "secteur sauvegardé : l’architecte des Bâtiments de France se prononce sur le projet. Son service, "
-                                    "l’UDAP des Bouches-du-Rhône, reçoit sur rendez-vous. 04 91 90 42 43 (" + L("UDAP 13", _UDAP) + ")."),
+                                    "secteur sauvegardé (" + L("règlement du PSMV", _PSMV_REGL) + ") : l’architecte des Bâtiments "
+                                    "de France se prononce sur le projet. Son service, l’UDAP des Bouches-du-Rhône, est à Marseille et "
+                                    "reçoit sur rendez-vous. 04 91 90 42 43 (" + L("UDAP 13", _UDAP) + ")."),
            ("Regardez les plans de risques", "Près des massifs, vérifiez le zonage du plan incendie de forêt. Partout, regardez celui "
                                              "du plan argiles. Le règlement du plan incendie se consulte en mairie et sur le site de "
                                              "la préfecture (" + L("PPRIF", _PPRIF) + ")."),
@@ -127,18 +129,23 @@ CITY = dict(
            ("Faites autoriser l’échafaudage", "Un permis de stationnement, à demander à la Direction Gestion Voirie 10 jours avant le "
                                               "début du chantier, par vous ou par l’entreprise. 04 42 91 99 92 ("
                                               + L("démarche", _VOIRIE) + ")."),
-           ("Demandez les aides avant de signer", "Conseil gratuit à la Maison Énergie Habitat Climat, sur rendez-vous. Pour le fonds "
-                                                  "Barnier, attendez l’accusé de réception du dossier avant de commencer.")],
+           ("Demandez les aides avant de signer", "Conseil gratuit à la Maison Énergie Habitat Climat, sur rendez-vous. Pour Provence "
+                                                  "Éco-Rénov comme pour le fonds Barnier, attendez l’accusé de réception du dossier "
+                                                  "avant de commencer les travaux (" + L("Département", _CD13) + ").")],
     aides_intro="Les aides se demandent avant de commencer les travaux, et le conseil public est gratuit.",
     aides=[("Maison Énergie Habitat Climat", "L’Espace Conseil France Rénov’ du CPIE du Pays d’Aix : conseil gratuit, accueil sur "
                                             "rendez-vous. Parc d’Ariane, bâtiment B, 11 avenue de la Grande Thumine, 13090 "
                                             "Aix-en-Provence. 04 42 93 03 69. " + L("cpie-paysdaix.com", _CPIE) + ". Le numéro de la "
                                             "Métropole, Allo Métropole Rénov’, répond aussi : 04 88 60 21 06 (" + L("ADIL 13", _ALLO)
                                             + ")."),
-           ("Provence Éco-Rénov", "Le Département aide les propriétaires occupants de leur résidence principale à isoler le bâti : "
-                                  "jusqu’à 25 % du coût TTC, dans la limite de 4 000 €. L’aide se cumule avec la prime Air-Bois, 50 % "
-                                  "du coût et 1 000 € au plus, ou avec la prime chaudière fioul (" + L("Département", _CD13)
-                                  + ", 2025, " + L("dispositifs", _CD13_HAB) + "). Demande en ligne sur le site du Département."),
+           ("Provence Éco-Rénov", "Le Département aide les propriétaires occupants d’une résidence principale de plus de 15 ans, "
+                                  "avec un revenu fiscal de référence sous 35 000 € pour une part ou 60 000 € à partir de deux parts : "
+                                  "25 % du coût TTC des travaux, dans la limite de 4 000 €, avec une entreprise RGE. Isolation, "
+                                  "chauffage et ventilation sont éligibles, les fenêtres seulement dans un bouquet de travaux ("
+                                  + L("Département", _CD13) + "). Remplacer une chaudière au fioul et neutraliser sa cuve ajoute jusqu’à 1 000 € ("
+                                  + L("prime fioul", _CD13_FIOUL) + "). La prime Air-Bois, sans plafond de revenus, paie 50 % d’un "
+                                  "appareil de chauffage au bois, 1 000 € au plus (" + L("prime Air-Bois", _CD13_BOIS) + "). Dépôt "
+                                  "uniquement en ligne."),
            ("Fonds Barnier et feu de forêt", "Les travaux rendus obligatoires par le plan incendie de forêt sur une habitation peuvent "
                                              "être subventionnés à 80 %, jusqu’à 36 000 € par bien. Le dossier va à la DDTM des "
                                              "Bouches-du-Rhône, 16 rue Antoine-Zattara, 13332 Marseille. Les travaux ne commencent "
@@ -155,12 +162,14 @@ CITY = dict(
           "de terre naturels. Le ciment, les enduits à résine et les crépis tyroliens sont interdits. Comptez 2 mois d’instruction pour "
           "la déclaration préalable."),
          ("Ma maison est-elle concernée par le plan incendie de forêt d’Aix-en-Provence ?",
-          "Oui, si elle est en zone rouge ou en zone bleue B1 du plan approuvé le 10 juillet 2026 : auto-diagnostic, puis travaux de protection "
-          "d’ici le 10 juillet 2031, dans la limite de 10 % de la valeur du bien. Le fonds Barnier peut en financer 80 %, jusqu’à 36 000 €."),
+          "En zone rouge ou en zone bleue B1 du plan approuvé le 10 juillet 2026, oui : auto-diagnostic, puis travaux de protection "
+          "d’ici le 10 juillet 2031, dans la limite de 10 % de la valeur du bien. Le fonds Barnier peut en financer 80 %, jusqu’à "
+          "36 000 €. Dans toutes les zones du plan, tas de bois et citernes doivent être mis à distance ou enfouis d’ici juillet 2028."),
          ("Aix-en-Provence est-elle exposée au retrait-gonflement des argiles ?",
-          "Oui. Un plan de prévention couvre la commune depuis le 27 juin 2012, et 14 épisodes de sécheresse y ont été reconnus en "
-          "catastrophe naturelle de 1989 à 2023. En zone B2, rejetez les eaux de pluie à 5 m au moins de la maison."),
+          "Oui. Un plan de prévention classe toute la commune en zone B2 depuis le 27 juin 2012, et 14 épisodes de sécheresse y ont "
+          "été reconnus en catastrophe naturelle de 1989 à 2023. Le plan recommande de rejeter les eaux de pluie à 5 m au moins de la "
+          "maison."),
          ("Quelles aides pour isoler sa maison à Aix-en-Provence ?",
-          "Provence Éco-Rénov du Département, jusqu’à 25 % du coût TTC et 4 000 € au plus, puis les aides nationales. Conseil gratuit "
-          "à la Maison Énergie Habitat Climat : 04 42 93 03 69.")],
+          "Provence Éco-Rénov du Département, 25 % du coût TTC et 4 000 € au plus, sous plafond de revenus et pour un logement de "
+          "plus de 15 ans, puis les aides nationales. Conseil gratuit à la Maison Énergie Habitat Climat : 04 42 93 03 69.")],
 )

@@ -4,6 +4,7 @@
 # limoges.fr renvoie un 403 permanent (protection anti-robot) : règlements de la Ville lus via demarche.numerique.gouv.fr,
 # PLU via le Géoportail de l'urbanisme. Le ravalement obligatoire (campagnes « RO ») n'a pas pu être vérifié : laissé de côté.
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+REVIEWED = "2026-11-21"
 PUBLISH = "2026-12-05"  # vague 2 : publication deux semaines après la vague 1 (voir VILLES.md)
 
 _INSEE = "https://api.insee.fr/melodi/data/DS_RP_LOGEMENT_PRINC?GEO=COM-87085"
@@ -26,6 +27,9 @@ _GH = "https://guichet-habitat.limoges-metropole.fr/qui-sommes-nous-1"
 _GH_AIDES = "https://guichet-habitat.limoges-metropole.fr/particuliers/aides-financieres"
 _GH_RENOV = "https://guichet-habitat.limoges-metropole.fr/particuliers/economies-denergie/renover-son-logement"
 _OPAH = "https://guichet-habitat.limoges-metropole.fr/particuliers/dispositifs-pour-lhabitat/opah-ru"
+_ANIL_ENER = "https://www.anil.org/aides-locales-travaux/details/haute-vienne-aide-a-la-renovation-energetique-en-opah-opah-ru-4735/"
+_ANIL_ACC = ("https://www.anil.org/aides-locales-accession-propriete/details/"
+             "haute-vienne-prime-accession-dans-lancien-et-sortie-de-vacance-dans-les-perimetres-opah-ru-4891/")
 
 CITY = dict(
     slug="limoges", name="Limoges", cp="87000", insee="87085",
@@ -73,36 +77,40 @@ CITY = dict(
         "toiture": ["Dans les quartiers traditionnels, les toits sont en tuile « rouge soutenu » ou en ardoise (" + L("règlement du PLU", _PLU)
                     + "). Sur la carte des toitures de l’architecte des Bâtiments de France, Limoges se trouve en zone de frange entre "
                     "ardoise et tuile canal (" + L("UDAP 87", _UDAP) + ").",
-                    "La Ville aide à refaire une couverture en ardoise ou en tuiles courbes : 30 € par m², sur 150 m² au plus, soit "
-                    "4 500 € (" + L("Ville de Limoges", _FAC) + ", barème 2025). Avec 34,9 jours de gel et 17 jours de neige par an, "
-                    "faites vérifier tuiles, ardoises et solins avant l’hiver."],
-        "facade": ["Le centre mêle maisons à colombages sur base de pierre de taille, immeubles Belle Époque et rues Art déco. Le "
+                    "Pour les immeubles d’avant 1945 du centre élargi, la Ville aide à refaire une couverture en ardoise ou en tuiles "
+                    "courbes : 30 € par m², sur 150 m² au plus, soit 4 500 € (" + L("Ville de Limoges", _FAC) + ", barème d’avril 2024). "
+                    "Avec 34,9 jours de gel et 17 jours de neige par an, faites vérifier tuiles, ardoises et solins avant l’hiver."],
+        "facade": ["Le centre mêle immeubles à colombages sur base de pierre de taille, immeubles Belle Époque et rues Art déco. Le "
                    "quartier Locarno aligne des pavillons des années 1930 en blocage de granit. Chacun des six types d’architecture "
                    "du site patrimonial a ses règles de réhabilitation et son nuancier (" + L("PLU", _PLU) + ").",
                    "L’aide de la Ville vise les maisons et immeubles d’avant 1945 du centre élargi : 20 % des travaux de façade, sur "
                    "130 000 € HT au plus, soit 26 000 €. Avenues Georges-Dumas et De-Lattre-de-Tassigny, le taux passe à 30 %, soit "
-                   "39 000 € (" + L("Ville de Limoges", _FAC) + ", barème 2025)."],
-        "fenetres": ["Changer des fenêtres modifie l’aspect extérieur : une déclaration préalable est à faire en mairie ("
+                   "39 000 € (" + L("Ville de Limoges", _FAC) + ", barème d’avril 2024)."],
+        "fenetres": ["Si de nouvelles fenêtres modifient l’aspect extérieur, une déclaration préalable est à faire en mairie ("
                      + L("Guichet Habitat", _GH_RENOV) + "). Dans le site patrimonial, l’architecte des Bâtiments de France a un mois "
                      "pour donner son accord, qui peut être assorti de prescriptions (" + L("ministère de la Culture", _SPR_CULT) + ").",
                      "L’aide façade de la Ville finance aussi les menuiseries, sauf en PVC (" + L("Ville de Limoges", _FAC) + "). En "
                      "zone de potentiel radon, l’État rappelle qu’après un changement de fenêtres, l’air doit rester assez renouvelé, "
                      "avec une aération chaque jour (" + L("fiche radon", _FRADON) + ")."],
-        "charpente": ["Aucun arrêté termites ni mérule ne vise la Haute-Vienne, mais la préfecture suit le sujet de près. Si le "
-                      "chantier révèle des termites ou de la mérule, l’occupant le déclare en mairie (" + L("préfecture", _TERM) + ").",
+        "charpente": ["Aucun arrêté termites ni mérule ne vise la Haute-Vienne. La préfecture y maintient une vigilance renforcée et "
+                      "compte sur les déclarations en mairie pour suivre le risque. Si le chantier révèle des termites ou de la mérule, "
+                      "l’occupant le déclare en mairie (" + L("préfecture", _TERM) + ").",
                       "Les plus vieux immeubles du centre ont des pans de bois apparents, jusqu’à la fin du XVIIIe siècle, ou une "
                       "structure en bois, du milieu du XVIIIe à la fin du XIXe siècle (" + L("PLU", _PLU) + "). Avant de refaire "
                       "l’enduit d’une façade à colombages, faites contrôler l’état des bois."],
-        "isolation": ["Limoges Métropole annonce une prime de 1 500 € pour les rénovations en matériaux biosourcés, comme le bois, "
-                      "le chanvre, la paille ou la ouate de cellulose, dans ses 20 communes (" + L("Guichet Habitat", _GH_AIDES) + "). "
-                      "Dans le centre ancien, l’OPAH-RU aide les propriétaires sous conditions de ressources (" + L("OPAH-RU", _OPAH) + ").",
+        "isolation": ["Dans le cadre de ses OPAH, Limoges Métropole verse une prime de 1 500 € quand une rénovation énergétique "
+                      "emploie des matériaux biosourcés, comme le bois, le chanvre, la paille ou la ouate de cellulose ("
+                      + L("Guichet Habitat", _GH_AIDES) + "). Elle vise les propriétaires occupants sous plafonds de ressources de "
+                      "l’Anah (" + L("ANIL", _ANIL_ENER) + ", 2026). La Métropole y voit un moyen de préserver le bâti ancien et de "
+                      "limiter la surchauffe d’été.",
                       "Dans le site patrimonial, une isolation par l’extérieur change l’aspect de la façade et passe par l’accord de "
-                      "l’architecte des Bâtiments de France. Partout, le PLU écarte climatiseurs et paraboles des façades vues de la rue, "
+                      "l’architecte des Bâtiments de France. Partout, le PLU écarte climatiseurs et paraboles des façades vues de l’espace public, "
                       "sauf impossibilité technique (" + L("règlement du PLU", _PLU) + ")."]},
     steps_intro="Cinq étapes, de l’architecte des Bâtiments de France au trottoir.",
-    steps=[("Vérifiez si vous êtes dans le site patrimonial", "L’UDAP de la Haute-Vienne donne un avis avant le dépôt, en ligne ou sur "
-                                                            "rendez-vous. Hôtel Niaud, 35 rue des Vénitiens. 05 55 33 32 72, le lundi "
-                                                            "de 14 h à 16 h 30, du mardi au jeudi de 9 h 30 à 12 h (" + L("UDAP 87", _UDAP) + ")."),
+    steps=[("Vérifiez si vous êtes dans le site patrimonial", "L’UDAP de la Haute-Vienne renseigne sur un projet avant son dépôt, "
+                                                            "en ligne, et peut proposer un rendez-vous. Hôtel Niaud, 35 rue des Vénitiens. "
+                                                            "05 55 33 32 72, le lundi de 14 h à 16 h 30, du mardi au jeudi de 9 h 30 à "
+                                                            "12 h (" + L("UDAP 87", _UDAP) + ")."),
            ("Choisissez vos teintes", "Dans le nuancier municipal, selon le type d’architecture de l’immeuble ("
                                       + L("règlement du PLU", _PLU) + ")."),
            ("Déposez la déclaration préalable", "À la mairie de Limoges, en ligne ou sur papier. En site patrimonial, un dossier papier "
@@ -121,11 +129,13 @@ CITY = dict(
            ("Aide de la Ville aux façades et toitures", "Pour les immeubles d’avant 1945 du centre élargi : 20 % des travaux de façade, "
                                                        "30 % avenues Georges-Dumas et De-Lattre-de-Tassigny, sur 130 000 € HT au plus. "
                                                        "Pour une couverture en ardoise ou en tuiles courbes, 30 €/m², jusqu’à 4 500 € ("
-                                                       + L("Ville de Limoges", _FAC) + ", barème 2025)."),
-           ("OPAH-RU du centre ancien", "Limoges Métropole et l’Anah aident, sous conditions de ressources, les propriétaires du centre "
-                                        "ancien. Primes : jusqu’à 5 000 € pour acheter et rénover un logement de plus de 15 ans, plus "
-                                        "3 000 € s’il est vide depuis plus de deux ans, et jusqu’à 5 000 € pour réunir deux logements "
-                                        "en un seul d’au moins 50 m² (" + L("Guichet Habitat", _GH_AIDES) + ")."),
+                                                       + L("Ville de Limoges", _FAC) + ", barème d’avril 2024)."),
+           ("OPAH et OPAH-RU de Limoges Métropole", "La Métropole les mène jusqu’en 2028 (" + L("Guichet Habitat", _OPAH) + "). "
+                                                    "Pour les propriétaires occupants sous plafonds de ressources de l’Anah : 25 % des "
+                                                    "travaux de rénovation énergétique, sur 35 000 € HT au plus, en plus de l’Anah, et "
+                                                    "1 500 € avec des matériaux biosourcés (" + L("ANIL", _ANIL_ENER) + ", 2026). Dans le centre-ville, "
+                                                    "une prime de 5 000 € aide à acheter un logement de plus de 15 ans à rénover, plus "
+                                                    "3 000 € s’il est vide depuis plus de deux ans (" + L("ANIL", _ANIL_ACC) + ")."),
            NATIONAL],
     faq=[("Quelles aides pour ravaler sa façade à Limoges ?",
           "La Ville finance 20 % des travaux de façade des immeubles d’avant 1945 du centre élargi, et 30 % avenues Georges-Dumas "

@@ -12,6 +12,7 @@ Les fiches sont dans `/home/user/bartier/explorations/v8b/_build/villes_new/<slu
 
 1. Liste toutes les affirmations vérifiables : chiffres, pourcentages, montants, plafonds, dates, numéros de téléphone, adresses, noms de dispositifs, obligations (« obligatoire », « interdit », « soumis à »).
 2. Pour chacune, ouvre la source liée (WebFetch) et cherche l'information. Une source qui ne s'ouvre pas : cherche la même information sur une autre page officielle et remplace le lien, ou retire l'affirmation.
+Un extrait de résultat de recherche ne vaut pas preuve : seule compte une page officielle que tu as ouverte et lue. Une page qui ne s'affiche qu'en JavaScript et reste vide compte comme non lue.
 3. Classe chaque affirmation : confirmée, à corriger (la source dit autre chose : corrige le texte et garde la source), non prouvée (retire-la, et réécris la phrase autour pour qu'elle reste correcte), périmée (dispositif terminé, chiffre remplacé par un plus récent : mets à jour ou retire).
 4. Vérifie aussi :
    - que chaque fait est propre à la ville (pas une règle nationale déguisée, pas une phrase recopiée d'une autre fiche ville : compare avec `villes_data.py` et les autres fichiers de `villes_new/`) ;
