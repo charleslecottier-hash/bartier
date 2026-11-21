@@ -1,4 +1,5 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+PUBLISH = "2026-12-05"  # vague 2 : publication deux semaines après la vague 1 (voir VILLES.md)
 
 # Sources consultées le 21/11/2026. tours-metropole.fr renvoie une page anti-robot (JavaScript) : rien n'en est repris directement.
 _INSEE = "https://api.insee.fr/melodi/data/DS_RP_LOGEMENT_PRINC?GEO=COM-37261"  # dossier complet, RP 2023 (page insee.fr en erreur 500 ce jour)

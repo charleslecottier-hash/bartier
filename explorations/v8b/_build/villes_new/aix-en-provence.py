@@ -6,7 +6,8 @@ _INSEE = "https://api.insee.fr/melodi/data/DS_RP_LOGEMENT_PRINC?GEO=COM-13001"  
 _MERIMEE = "https://pop.culture.gouv.fr/notice/merimee/SPR9300019"
 _PSMV = "https://www.aixenprovence.fr/Consulter-le-PSMV"
 _PSMV_REGL = "https://www.aixenprovence.fr/IMG/pdf/reglement_m3-m4_psmv_aix_approbation.pdf"  # règlement, modification n° 4, juillet 2026
-_PSMV_EP = "https://www.aixenprovence.fr/IMG/pdf/2_conclusions_motivees_et_avis_du_commissaire_enqueteur_psmv_aix-2.pdf"
+_RAA = ("https://www.prefectures-regions.gouv.fr/provence-alpes-cote-dazur/irecontenu/telechargement/140844/1024973/file/"
+        "Recueil-r93-2026-140_10%20septembre%202026.pdf")  # arrêté du 28 juillet 2026 approuvant la modification n° 4 du PSMV
 _PLUI = "https://www.aixenprovence.fr/Le-Plan-local-d-urbanisme-intercommunal-PLUi"
 _PPRIF = ("https://www.georisques.gouv.fr/donnee-risques/PPR/Fiche-ppr/pprn/13DDTM20210011/document/"
           "5f09ae73-7f24-4b33-b6dc-3da0f6c8326f")  # règlement du PPR incendie de forêt, approuvé le 10 juillet 2026
@@ -22,16 +23,17 @@ _UDAP = ("https://www.culture.gouv.fr/regions/drac-provence-alpes-cote-d-azur/la
          "d-azur/udap-des-bouches-du-rhone")
 _CPIE = "https://cpie-paysdaix.com/contact/"
 _ALLO = "https://www.anil.org/adil-13/notre-expertise/lutte-contre-lhabitat-degrade-/allo-metropole-renov/"
-_CD13 = "https://www.departement13.fr/sites/default/files/media/downloads/cp_12-09-2025_mesures-rechauffement-climatique.pdf"
-_CD13_HAB = "https://www.departement13.fr/en-actions/logement-habitat/les-dispositifs-aides/habitat-des-aides-concretes-pour-realiser-vos-0"
+_CD13 = "https://www.departement13.fr/en-actions/logement-habitat/les-dispositifs-aides/habitat-des-aides-concretes-pour-realiser-vos"  # Provence Éco-Rénov
+_CD13_BOIS = "https://www.departement13.fr/en-actions/logement-habitat/les-dispositifs-aides/habitat-des-aides-concretes-pour-realiser-vos-1"
+_CD13_FIOUL = "https://www.departement13.fr/en-actions/logement-habitat/les-dispositifs-aides/habitat-des-aides-concretes-pour-realiser-vos-2"
 
 CITY = dict(
     slug="aix-en-provence", name="Aix-en-Provence", cp="13100", insee="13001",
     lat=43.5311, lon=5.4540, dept="Bouches-du-Rhône", depcode="13", region="Provence-Alpes-Côte d’Azur",
     wiki="https://fr.wikipedia.org/wiki/Aix-en-Provence", wikidata="Q47465",
     verified="2026-11-21",
-    tldr=("À Aix-en-Provence, le centre ancien est un secteur sauvegardé depuis 1964, et les maisons proches des massifs boisés "
-          "ont jusqu’en 2031 pour se protéger du feu de forêt"),
+    tldr=("À Aix-en-Provence, le centre ancien est protégé comme secteur sauvegardé depuis 1964, et les maisons les plus exposées "
+          "au feu de forêt ont jusqu’en 2031 pour faire leurs travaux de protection"),
     hook="Secteur sauvegardé depuis 1964, et plan incendie de forêt de 2026.",
     title="Devis travaux à Aix-en-Provence : toiture, façade, fenêtres, isolation",
     desc=("Travaux à Aix-en-Provence : secteur sauvegardé, tuiles creuses et chaux, plan incendie de forêt 2026, argiles, "
@@ -42,29 +44,32 @@ CITY = dict(
              ("55,2 <small>jours</small>", "à 30 °C ou plus par an, à la station d’Aix-en-Provence", S("Météo-France, 1991-2020", _MF)),
              ("14", "épisodes de sécheresse reconnus en catastrophe naturelle depuis 1989", S("Géorisques", _CATNAT))],
     answer=("À Aix-en-Provence, 79,6 % des logements sont des appartements et 37,7 % des résidences principales datent d’avant 1971. "
-            "Le centre ancien est un secteur sauvegardé depuis 1964 : tuiles creuses, enduits à la chaux et menuiseries sans PVC y sont "
-            "la règle. Près des massifs boisés, le plan de prévention des risques d’incendie de forêt approuvé le 10 juillet 2026 "
-            "impose aux maisons exposées des travaux de protection d’ici juillet 2031."),
-    facts=[("Secteur sauvegardé", "Le centre ancien, à l’intérieur des boulevards de ceinture, est un secteur sauvegardé créé le "
-                                  "17 décembre 1964 (" + L("ministère de la Culture", _MERIMEE) + "). Son plan de sauvegarde, approuvé "
-                                  "le 27 juin 2012 et modifié le 28 juin 2024, règle chaque façade et chaque toit ("
-                                  + L("Ville d’Aix-en-Provence", _PSMV) + "). Les modifications n° 3 et 4 ont reçu un avis favorable "
-                                  "après l’enquête publique d’avril 2026 (" + L("commissaire enquêteur", _PSMV_EP) + ")."),
+            "Le centre ancien est protégé depuis 1964, d’abord comme secteur sauvegardé, aujourd’hui comme site patrimonial remarquable : "
+            "tuiles creuses, enduits à la chaux et menuiseries sans PVC y sont la règle. Le plan de prévention des risques d’incendie "
+            "de forêt approuvé le 10 juillet 2026 impose aux maisons de ses zones rouge et bleue B1 des travaux de protection d’ici "
+            "juillet 2031."),
+    facts=[("Secteur sauvegardé", "Le centre ancien, à l’intérieur des boulevards de ceinture, a été créé secteur sauvegardé le "
+                                  "17 décembre 1964 (" + L("ministère de la Culture", _MERIMEE) + "). C’est aujourd’hui un site "
+                                  "patrimonial remarquable. Son plan de sauvegarde, approuvé le 27 juin 2012 et modifié le 28 juin 2024 ("
+                                  + L("Ville d’Aix-en-Provence", _PSMV) + "), règle chaque façade et chaque toit. Sa modification "
+                                  "n° 4 a été approuvée par arrêté du préfet de région du 28 juillet 2026 ("
+                                  + L("recueil des actes administratifs", _RAA) + ")."),
            ("Urbanisme", "Hors secteur sauvegardé, c’est le PLUi du Pays d’Aix qui s’applique. Le conseil de la Métropole "
                          "Aix-Marseille-Provence l’a approuvé le 5 décembre 2024, puis modifié le 15 décembre 2025 ("
                          + L("Ville d’Aix-en-Provence", _PLUI) + ")."),
            ("Feu de forêt", "Le plan de prévention des risques d’incendie de forêt de la commune a été approuvé le 10 juillet 2026. "
                             "En zone rouge et en zone bleue B1, le propriétaire d’une maison fait un auto-diagnostic, puis les travaux de "
-                            "protection utiles d’ici le 10 juillet 2031, pour un coût plafonné à 10 % de la valeur du bien ("
-                            + L("règlement du PPRIF", _PPRIF) + ")."),
-           ("Argiles", "Toute la commune relève du plan de prévention du retrait-gonflement des argiles approuvé le 27 juin 2012 ("
-                       + L("règlement", _RGA) + "). De 1989 à 2023, 14 épisodes de sécheresse y ont été reconnus en catastrophe "
-                       "naturelle (" + L("Géorisques", _CATNAT) + ")."),
+                            "protection utiles d’ici le 10 juillet 2031, pour un coût plafonné à 10 % de la valeur du bien. "
+                            "Dans toutes les zones du plan, les tas de bois se placent à plus de 10 m des habitations et les citernes "
+                            "d’hydrocarbures s’enfouissent, d’ici juillet 2028 (" + L("règlement du PPRIF", _PPRIF) + ")."),
+           ("Argiles", "Toute la commune relève du plan de prévention du retrait-gonflement des argiles approuvé le 27 juin 2012, "
+                       "qui la classe en zone bleue B2, moyennement exposée (" + L("règlement", _RGA) + "). De 1989 à 2023, 14 "
+                       "épisodes de sécheresse y ont été reconnus en catastrophe naturelle (" + L("Géorisques", _CATNAT) + ")."),
            ("Séisme et inondation", "Aix-en-Provence est en zone de sismicité 4, moyenne (" + L("Géorisques", _SISM) + "). Le long "
                                     "de l’Arc et de ses affluents, la Torse, le Grand Vallat, la Petite Jouïne et la Luynes, le plan "
                                     "de prévention du risque d’inondation approuvé le 2 mars 2020 fixe ses propres prescriptions ("
                                     + L("règlement du PPRI", _PPRI) + ")."),
-           ("Climat", "À la station d’Aix-en-Provence : 608,8 mm de pluie par an, tombés en 58,9 jours seulement, 55,2 jours à 30 °C "
+           ("Climat", "À la station d’Aix-en-Provence : 608,8 mm de pluie par an, sur 58,9 jours d’au moins 1 mm, 55,2 jours à 30 °C "
                       "ou plus et 43,2 jours de gel. Records : 42 °C le 28 juin 2019, et 222 mm en un jour le 22 septembre 1993 ("
                       + L("Météo-France", _MF) + ", normales 1991-2020).")],
     trades_intro=("Hôtels particuliers et immeubles du centre, maisons au bord des massifs : à Aix, les règles changent entre le "
