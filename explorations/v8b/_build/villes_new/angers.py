@@ -1,4 +1,5 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+REVIEWED = "2026-11-21"
 PUBLISH = "2026-12-05"  # vague 2 : publication deux semaines après la vague 1 (voir VILLES.md)
 
 # Sources consultées le 21/11/2026.
@@ -24,6 +25,8 @@ _RAV = "https://presse.angers.fr/private/uploads/piecesjointes/cahier-de-deliber
 _RAV2 = "https://presse.angers.fr/private/uploads/piecesjointes/cahier-des-deliberations-conseil-municipal-1512.pdf"
 _TERM = ("https://www.maine-et-loire.gouv.fr/Actions-de-l-Etat/Urbanisme-amenagement-du-territoire-construction-et-logement/"
          "Batiment-Construction/Termites-et-merule/Les-termites-dans-le-Maine-et-Loire")
+_TERM_ARR = ("https://www.maine-et-loire.gouv.fr/contenu/telechargement/20251/134534/file/"
+             "20250130_Arrete_Prefectoral_Termites_SCHV_BA_2025-002_signe.pdf")  # arrêté en vigueur, 30 janvier 2025
 _TERM_PL = "https://www.maine-et-loire.gouv.fr/contenu/telechargement/20449/135854/file/A4-Plaquette-Termites_Dec_2023.pdf"
 _MERULE = ("https://www.maine-et-loire.gouv.fr/Actions-de-l-Etat/Urbanisme-amenagement-du-territoire-construction-et-logement/"
            "Batiment-Construction/Termites-et-merule/La-merule")
@@ -40,8 +43,8 @@ CITY = dict(
     lat=47.4736, lon=-0.5542, dept="Maine-et-Loire", depcode="49", region="Pays de la Loire",
     wiki="https://fr.wikipedia.org/wiki/Angers", wikidata="Q38380",
     verified="2026-11-21",
-    tldr=("À Angers, le centre historique a son plan de sauvegarde depuis octobre 2024 : ardoise naturelle, chaux et menuiseries "
-          "en bois y sont la règle, et dans toute la ville, repeindre ses volets demande une déclaration préalable"),
+    tldr=("À Angers, le centre historique a son plan de sauvegarde depuis octobre 2024 : ardoise naturelle et enduits à la chaux "
+          "y sont imposés, le bois peint est la référence aux fenêtres, et dans toute la ville, repeindre ses volets demande une déclaration préalable"),
     hook="Plan de sauvegarde de 200 ha, ardoise et tuffeau.",
     title="Devis travaux à Angers : toiture, façade, fenêtres, isolation",
     desc=("Travaux à Angers : plan de sauvegarde de 200 ha, ardoise naturelle, volets sous déclaration, aides de la "
@@ -56,56 +59,59 @@ CITY = dict(
             "les enduits à la chaux et interdit le PVC aux fenêtres. Dans toute la ville, ravaler ou repeindre une façade, "
             "et même des volets, demande une déclaration préalable."),
     facts=[("Centre historique", "Le site patrimonial remarquable, classé par arrêté ministériel du 31 janvier 2019, couvre le centre historique, "
-                                 "les faubourgs et leurs espaces paysagers (" + L("arrêté", _ARR_SPR) + "). Sur environ 200 ha, le plan de sauvegarde "
-                                 "approuvé le 16 octobre 2024 remplace le PLUi depuis le 24 octobre 2024 (" + L("Angers Loire Métropole", _SPR) + ")."),
+                                 "les faubourgs et les grands espaces paysagers qui entourent le centre ancien (" + L("arrêté", _ARR_SPR) + "). Sur environ "
+                                 "200 ha, le plan de sauvegarde approuvé le 16 octobre 2024 remplace le PLUi depuis le 24 octobre 2024 ("
+                                 + L("Angers Loire Métropole", _SPR) + ")."),
            ("Façades et volets", "Ravaler une façade, la repeindre ou repeindre ses volets demande une déclaration préalable en mairie, comme "
                                  "percer un mur pour une fenêtre (" + L("Ville d’Angers", _FAQ) + "). Une clôture aussi, depuis la délibération "
                                  "du 17 septembre 2009."),
-           ("Ravalement", "La Ville impose le ravalement par campagnes, dans des périmètres définis, et verse une aide municipale après les "
-                          "travaux. Hors campagne, elle peut aider un immeuble d’intérêt historique ou architectural ("
-                          + L("délibération du 29 septembre 2025", _RAV) + ")."),
-           ("Urbanisme", "Le PLUi d’Angers Loire Métropole, approuvé le 13 février 2017 et révisé le 13 septembre 2021, a été modifié "
-                         "pour la dernière fois le 17 décembre 2025. Sa révision générale n° 2 est engagée (" + L("Métropole", _EVOL) + ")."),
-           ("Termites et mérule", "Angers ne figure dans aucun arrêté préfectoral termites ; dans l’arrondissement, Seiches-sur-le-Loir, "
-                                  "La Ménitré et deux secteurs de Corzé sont classés (" + L("préfecture", _TERM) + "). Aucun arrêté mérule "
-                                  "dans le Maine-et-Loire (" + L("préfecture", _MERULE) + ", 2026)."),
+           ("Ravalement", "La Ville impose le ravalement par campagnes, dans des périmètres définis, et verse une aide "
+                          "municipale après les travaux. Hors campagne, elle peut aider un immeuble d’intérêt historique "
+                          "ou architectural (" + L("délibération du 29 septembre 2025", _RAV) + ")."),
+           ("Urbanisme", "Le PLUi d’Angers Loire Métropole a été approuvé le 13 février 2017 (" + L("Métropole", _PLUI) + ") et révisé "
+                         "le 13 septembre 2021. Sa modification n° 3 est en vigueur depuis le 17 décembre 2025, et sa révision générale "
+                         "n° 2 est engagée (" + L("évolutions du PLUi", _EVOL) + ")."),
+           ("Termites et mérule", "Angers ne figure pas dans l’arrêté préfectoral termites en vigueur, du 30 janvier 2025 : dans "
+                                  "l’arrondissement, il ne vise que Seiches-sur-le-Loir et la zone « Nouvelle France » à Corzé ("
+                                  + L("arrêté", _TERM_ARR) + "). Aucun arrêté mérule dans le Maine-et-Loire (" + L("préfecture", _MERULE) + ", 2026)."),
            ("Risques et climat", "Les bords de Maine relèvent du plan de prévention du risque inondation de la Confluence de la Maine, "
                                  "approuvé le 19 octobre 2009 (" + L("règlement", _PPRI) + ", " + L("Autorité environnementale", _MRAE)
-                                 + "). Zone sismique 2, faible, et potentiel radon "
-                                 "de catégorie 3, la plus élevée ("
-                                 + L("Géorisques", _RADON) + "). À Beaucouzé, 709,3 mm de pluie et 31,6 jours de gel par an ("
+                                 + "). Zone sismique 2, faible (" + L("Géorisques", _SISM) + "), et potentiel radon "
+                                 "de catégorie 3, la plus élevée (" + L("Géorisques", _RADON) + "). À Beaucouzé, 709,3 mm de pluie et 31,6 jours de gel par an ("
                                  + L("Météo-France", _MF) + ", normales 1991-2020).")],
-    trades_intro="Ardoise, tuffeau, schiste et pans de bois : dans le centre historique, chaque matériau a son article du plan de sauvegarde.",
+    trades_intro="Ardoise, tuffeau, schiste et pans de bois : dans le centre historique, le plan de sauvegarde fixe les règles de chaque matériau.",
     trades={
-        "toiture": ["Dans le centre historique, l’ardoise doit être naturelle, de teinte foncée et mate, posée aux clous ou aux crochets. "
+        "toiture": ["Dans le centre historique, l’ardoise doit être naturelle, posée aux clous ou aux crochets. "
                     "Le faîtage se fait en terre cuite scellée à la chaux, dit « à l’angevine », ou en lignolet d’ardoise ; le faîtage en zinc "
                     "pré-patiné et la zinguerie en PVC ou en aluminium sont proscrits (" + L("règlement du PSMV", _PSMV) + ").",
-                    "Une fenêtre de toit y est limitée à 80 cm de large sur 100 cm de haut, sur un seul niveau par versant. Beaucouzé compte "
+                    "Sur un toit d’ardoise du centre historique, une fenêtre de toit est limitée à 80 cm de large sur 100 cm de haut, sur un seul niveau par versant. Beaucouzé compte "
                     "32,6 jours de rafales d’au moins 58 km/h par an, surtout de décembre à février (" + L("Météo-France", _MF) + ") : le faîtage "
                     "à l’angevine est le plus résistant, et le faîtage en zinc, le plus fragile, est à éviter aux vents forts ("
                     + L("fiche conseil n° 1", _FC01) + ")."],
         "facade": ["Les joints du tuffeau se refont au mortier de chaux naturelle avec sablon et poudre de tuffeau ; les joints au ciment sont "
                    "interdits, comme le sablage, le disque ou l’acide sur la pierre. Un enduit ciment qui dégrade le tuffeau doit être retiré, et "
-                   "les enduits se font à la chaux naturelle et au sable de Loire (" + L("règlement du PSMV", _PSMV) + ").",
+                   "les enduits se font à la chaux naturelle et au sable de Loire, ou équivalent (" + L("règlement du PSMV", _PSMV) + ").",
                    "Ravaler demande une déclaration préalable, et l’échafaudage sur le trottoir une autorisation demandée au moins 30 jours avant ("
                    + L("formulaire", _ODP_F) + "). Hors campagne, la Ville a par exemple versé 6 855,65 € pour un immeuble de la place Molière "
                    "en septembre 2025 (" + L("Ville d’Angers", _RAV) + ")."],
-        "fenetres": ["Dans le plan de sauvegarde, le bois peint est le matériau de référence et peut être imposé. Le PVC, le noir et le blanc pur "
+        "fenetres": ["Dans le plan de sauvegarde, le bois peint est le matériau de référence sur le bâti traditionnel et peut être imposé. Le PVC, le noir et le blanc pur "
                      "sont interdits, et les volets roulants ne sont pas admis sur les bâtiments d’avant 1930, sauf s’ils étaient d’origine ("
                      + L("règlement du PSMV", _PSMV) + ").",
                      "Ailleurs, percer un mur pour une fenêtre demande une déclaration préalable. En zone inondable de la Confluence de la Maine, "
-                     "le plan de prévention recommande portes, fenêtres et dormants en matériaux insensibles à l’eau (" + L("règlement du PPRi", _PPRI) + ")."],
-        "charpente": ["Angers n’est pas classée en zone termites. Deux secteurs de Corzé le sont, par arrêtés de 2018 et 2023, et La Ménitré "
-                      "depuis 2009 (" + L("préfecture", _TERM) + "). Dans ces zones, les bois doivent être protégés lors de travaux, et un état "
-                      "termites est exigé à la vente (" + L("plaquette de la préfecture", _TERM_PL) + ", 2023).",
-                      "Dans le centre historique, une charpente d’intérêt patrimonial doit rester apparente quand on isole les combles, et le "
-                      "rehaussement de toiture pour isoler par l’extérieur n’est admis que s’il ne change pas le volume du toit ni des lucarnes ("
+                     "le plan de prévention recommande, sans l’imposer, de remplacer portes, fenêtres et dormants par des matériaux non "
+                     "vulnérables à l’eau (" + L("règlement du PPRi", _PPRI) + ")."],
+        "charpente": ["Angers n’est pas classée en zone termites. Dans l’arrondissement, l’arrêté préfectoral du 30 janvier 2025 ne vise que "
+                      "Seiches-sur-le-Loir et la zone « Nouvelle France » à Corzé (" + L("arrêté", _TERM_ARR) + "). Dans ces zones, les bois "
+                      "doivent être protégés lors de travaux, et un état termites est exigé à la vente (" + L("plaquette de la préfecture", _TERM_PL) + ", 2023).",
+                      "Dans un immeuble protégé du centre historique, une charpente d’intérêt patrimonial doit rester apparente quand on isole "
+                      "les combles. Le rehaussement de la couverture pour isoler par l’extérieur, dit sarking, n’est admis que sous conditions : "
+                      "il ne doit changer ni le volume du toit ni celui des lucarnes, et doit garantir la tenue de la charpente sous la surcharge ("
                       + L("règlement du PSMV", _PSMV) + ")."],
         "isolation": ["Angers Loire Métropole aide la rénovation globale jusqu’à 4 000 €, plus une prime basse consommation de 1 500 € si le "
                       "logement atteint l’étiquette A ou B après travaux, certaines aides sous conditions de revenus (" + L("Métropole", _WEBI) + ", juin 2026).",
-                      "Dans le plan de sauvegarde, l’isolation par l’extérieur est interdite sur les pans de bois, et le polystyrène est refusé "
-                      "sur les maçonneries traditionnelles, au profit d’isolants perméables à la vapeur d’eau. Elle reste plutôt réservée aux "
-                      "façades ordinaires et aux pignons aveugles (" + L("règlement du PSMV", _PSMV) + ")."]},
+                      "Dans le plan de sauvegarde, l’isolation par l’extérieur est interdite sur les pans de bois. Sur les matériaux traditionnels, "
+                      "seuls les isolants perméables à la vapeur d’eau sont admis, et le polystyrène est interdit. Sur un immeuble protégé, "
+                      "l’isolation par l’extérieur reste plutôt réservée aux façades ordinaires et aux pignons aveugles (" + L("règlement du PSMV", _PSMV) + ")."]},
     steps_intro="Dans l’ordre, du plan de sauvegarde aux quartiers récents.",
     steps=[("Vérifiez si vous êtes en secteur protégé", "La " + L("cartographie du PLUi et du PSMV", _SPR) + " donne les règles de chaque parcelle. "
                                                       "Pour l’avis de l’architecte des Bâtiments de France, les rendez-vous se prennent auprès de "
@@ -118,8 +124,8 @@ CITY = dict(
                                               "espace.public@ville.angers.fr. 02 41 21 54 00 (" + L("formulaire", _ODP_F) + ")."),
            ("Passez par Mieux chez moi avant de signer", "Conseil gratuit sur les travaux et les aides, sans rendez-vous en semaine "
                                                          "(" + L("Métropole", _MCM) + ").")],
-    aides_intro="Les aides se demandent avant de signer le devis, et le conseil public est gratuit.",
-    aides=[("Mieux chez moi", "L’Espace conseil France Rénov’ de l’agglomération angevine : 83 rue du Mail, 49100 Angers. 02 41 43 00 00. "
+    aides_intro="À Angers, le conseil Mieux chez moi est gratuit, et la Ville aide le ravalement des façades.",
+    aides=[("Mieux chez moi", "L’Espace conseil France Rénov’ de l’agglomération angevine : 83 rue du Mail, Angers. 02 41 43 00 00. "
                               "Sans rendez-vous du lundi au vendredi, de 9 h à 12 h 30 et de 13 h 30 à 17 h 30. Conseiller copropriété : "
                               "06 43 01 41 15. " + L("angersloiremetropole.fr", _MCM) + "."),
            ("Aide de la Métropole à la rénovation globale", "Jusqu’à 4 000 € pour une rénovation globale, plus 1 500 € si le logement atteint "
@@ -141,11 +147,11 @@ CITY = dict(
           "Non. Le plan de sauvegarde interdit le PVC, le noir et le blanc pur ; le bois peint est la référence. Les volets roulants "
           "n’y sont pas admis sur les bâtiments d’avant 1930, sauf s’ils étaient d’origine."),
          ("Quelle couverture pour un toit dans le centre d’Angers ?",
-          "De l’ardoise naturelle, foncée et mate, posée aux clous ou aux crochets, avec un faîtage à l’angevine ou en lignolet "
-          "d’ardoise. Une fenêtre de toit est limitée à 80 cm sur 100 cm."),
+          "De l’ardoise naturelle, posée aux clous ou aux crochets, avec un faîtage à l’angevine ou en lignolet d’ardoise. "
+          "Une fenêtre de toit est limitée à 80 cm sur 100 cm."),
          ("Angers est-elle en zone termites ?",
-          "Non. Aucun arrêté préfectoral ne vise Angers. Dans l’arrondissement, Seiches-sur-le-Loir, La Ménitré et deux secteurs de "
-          "Corzé sont classés. Le Maine-et-Loire n’a pas d’arrêté mérule."),
+          "Non. L’arrêté préfectoral du 30 janvier 2025 ne vise pas Angers. Dans l’arrondissement, il classe Seiches-sur-le-Loir et "
+          "la zone « Nouvelle France » à Corzé. Le Maine-et-Loire n’a pas d’arrêté mérule."),
          ("Quelles aides pour rénover son logement à Angers ?",
           "Jusqu’à 4 000 € de la Métropole pour une rénovation globale, plus 1 500 € en étiquette A ou B, l’aide municipale au ravalement "
           "et les aides nationales. Mieux chez moi vous conseille gratuitement : 02 41 43 00 00.")],

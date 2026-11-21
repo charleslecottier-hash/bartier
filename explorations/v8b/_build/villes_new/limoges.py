@@ -4,6 +4,7 @@
 # limoges.fr renvoie un 403 permanent (protection anti-robot) : règlements de la Ville lus via demarche.numerique.gouv.fr,
 # PLU via le Géoportail de l'urbanisme. Le ravalement obligatoire (campagnes « RO ») n'a pas pu être vérifié : laissé de côté.
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+PUBLISH = "2026-12-05"  # vague 2 : publication deux semaines après la vague 1 (voir VILLES.md)
 
 _INSEE = "https://api.insee.fr/melodi/data/DS_RP_LOGEMENT_PRINC?GEO=COM-87085"
 _SPR = "https://www.limoges-metropole.fr/services/amenagement-et-voirie/sites-patrimoniaux-remarquables"

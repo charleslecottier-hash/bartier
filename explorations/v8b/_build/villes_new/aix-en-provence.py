@@ -53,7 +53,7 @@ CITY = dict(
                          "Aix-Marseille-Provence l’a approuvé le 5 décembre 2024, puis modifié le 15 décembre 2025 ("
                          + L("Ville d’Aix-en-Provence", _PLUI) + ")."),
            ("Feu de forêt", "Le plan de prévention des risques d’incendie de forêt de la commune a été approuvé le 10 juillet 2026. "
-                            "En zone rouge ou bleue, le propriétaire d’une maison fait un auto-diagnostic, puis les travaux de "
+                            "En zone rouge et en zone bleue B1, le propriétaire d’une maison fait un auto-diagnostic, puis les travaux de "
                             "protection utiles d’ici le 10 juillet 2031, pour un coût plafonné à 10 % de la valeur du bien ("
                             + L("règlement du PPRIF", _PPRIF) + ")."),
            ("Argiles", "Toute la commune relève du plan de prévention du retrait-gonflement des argiles approuvé le 27 juin 2012 ("
@@ -73,12 +73,12 @@ CITY = dict(
                     "même pente et même disposition, avec des tuiles de réemploi en chapeau ou des tuiles neuves panachées. Les tuiles "
                     "neuves vieillies artificiellement sont exclues, les terrasses tropéziennes interdites, et seules 2 ou 3 tabatières "
                     "de 0,25 m² par versant éclairent les combles (" + L("règlement du PSMV", _PSMV_REGL) + ").",
-                    "Près des massifs boisés, les règles de construction du plan incendie de forêt visent des toitures classées "
+                    "Près des massifs boisés, les règles de construction annexées au plan incendie de forêt visent des toitures classées "
                     "Broof (t3), des fenêtres de toit en verre feuilleté 44.2 au moins, et des gouttières en matériau M1 au moins, "
                     "équipées pour évacuer feuilles et aiguilles (" + L("règlement du PPRIF", _PPRIF) + ")."],
         "facade": ["Dans le secteur sauvegardé, la façade est en pierre de taille de tons ocres, ou enduite à la chaux naturelle et "
                    "finie par un badigeon de chaux teinté de pigments de terre naturels. Joints au ciment, enduits prêts à l’emploi à "
-                   "base de résine et crépis tyroliens y sont interdits, comme le décroûtage au marteau pneumatique ("
+                   "base de résine et crépis tyroliens y sont interdits, comme le décrépissage au marteau pneumatique ("
                    + L("règlement du PSMV", _PSMV_REGL) + ").",
                    "Avec 14 épisodes de sécheresse reconnus en catastrophe naturelle depuis 1989, une fissure en façade peut venir du "
                    "sol argileux : faites-en chercher la cause avant de la reboucher. En zone B2 du plan argiles, le règlement "
@@ -90,8 +90,8 @@ CITY = dict(
                      "Les fenêtres du XIXe siècle s’y peignent en gris moyen ou dans une teinte neutre, moyenne ou sombre, et les volets "
                      "à barre et écharpe sont interdits. Ailleurs, changer l’aspect de ses fenêtres demande une déclaration préalable ("
                      + L("Service-Public", SP + "F17578") + ")."],
-        "charpente": ["Sur un immeuble « à conserver » du secteur sauvegardé, une réfection complète de couverture se fait à la manière "
-                      "ancienne : tuiles creuses posées sur volige et quartons ou sur malons, sans sous-toiture. Corniches à gorge, "
+        "charpente": ["Dans le secteur sauvegardé, sur les immeubles « à conserver » et pour toute réfection complète de couverture, les "
+                      "tuiles creuses se posent à la manière ancienne, sur volige et quartons ou sur malons, sans sous-toiture. Corniches à gorge, "
                       "génoises en tuiles et débords à chevrons sont restaurés selon leur disposition d’origine ("
                       + L("règlement du PSMV", _PSMV_REGL) + ").",
                       "Aix-en-Provence est en zone de sismicité 4, moyenne : signalez-le à l’artisan avant une surélévation ou une "
@@ -146,7 +146,7 @@ CITY = dict(
           "de terre naturels. Le ciment, les enduits à résine et les crépis tyroliens sont interdits. Comptez 2 mois d’instruction pour "
           "la déclaration préalable."),
          ("Ma maison est-elle concernée par le plan incendie de forêt d’Aix-en-Provence ?",
-          "Oui, si elle est en zone rouge ou bleue du plan approuvé le 10 juillet 2026 : auto-diagnostic, puis travaux de protection "
+          "Oui, si elle est en zone rouge ou en zone bleue B1 du plan approuvé le 10 juillet 2026 : auto-diagnostic, puis travaux de protection "
           "d’ici le 10 juillet 2031, dans la limite de 10 % de la valeur du bien. Le fonds Barnier peut en financer 80 %, jusqu’à 36 000 €."),
          ("Aix-en-Provence est-elle exposée au retrait-gonflement des argiles ?",
           "Oui. Un plan de prévention couvre la commune depuis le 27 juin 2012, et 14 épisodes de sécheresse y ont été reconnus en "
