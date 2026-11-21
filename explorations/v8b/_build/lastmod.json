@@ -5,23 +5,27 @@
  },
  "/blog/": {
   "date": "2026-11-21",
-  "sig": "79561ea686330c81"
+  "sig": "63c3cfb35dcf9ab2"
+ },
+ "/blog/demarchage-arnaques-travaux/": {
+  "date": "2026-11-21",
+  "sig": "c4f16926d5d420e2"
  },
  "/blog/dpe-2027/": {
-  "date": "2026-11-20",
-  "sig": "6736f5e7ab0ccf24"
+  "date": "2026-11-21",
+  "sig": "97865773564772d0"
  },
  "/blog/google-ads-ou-meta-ads-artisan/": {
   "date": "2026-11-21",
-  "sig": "0b180d13a983e960"
+  "sig": "51e85f418167a715"
  },
  "/blog/lead-partage-lead-exclusif-rendez-vous-qualifie/": {
   "date": "2026-11-21",
-  "sig": "ba73cfd14d0304f6"
+  "sig": "7c0705df4d66b1f1"
  },
  "/blog/relance-devis-artisan/": {
   "date": "2026-11-21",
-  "sig": "79e747e407c88b38"
+  "sig": "16636b63687da461"
  },
  "/conditions-du-service/": {
   "date": "2026-11-19",
@@ -37,7 +41,7 @@
  },
  "/devis-travaux/": {
   "date": "2026-11-21",
-  "sig": "ece947f78e1d1d46"
+  "sig": "a60d1f87450ea8fe"
  },
  "/devis-travaux/bordeaux/": {
   "date": "2026-11-21",

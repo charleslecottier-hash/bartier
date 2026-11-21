@@ -72,6 +72,7 @@ Prix indicatifs cités sur le site, d'après des sources tierces (seule une visi
 - [Google Ads ou Meta Ads : qui capte quelle demande](https://bartierandco.com/blog/google-ads-ou-meta-ads-artisan/) : Google capte ceux qui cherchent déjà, Meta touche ceux qui n’ont pas encore cherché. Comment choisir selon votre métier, votre secteur et votre budget.
 - [Relance de devis : le calendrier, les SMS et le script](https://bartierandco.com/blog/relance-devis-artisan/) : Un devis de rénovation se relance. Voici un calendrier simple, trois SMS prêts à copier, un script d’appel de deux minutes et le bon moment pour s’arrêter.
 - [DPE 2027 : ce qui change pour les propriétaires](https://bartierandco.com/blog/dpe-2027/) : Nouvelle étiquette gratuite, location des logements G, F et E, vote en cours au Parlement : ce qui change pour le DPE en 2027, sources officielles à l’appui.
+- [Démarchage et arnaques aux travaux : vos droits](https://bartierandco.com/blog/demarchage-arnaques-travaux/) : Démarchage à domicile ou par téléphone pour une toiture ou une isolation : ce que dit la loi en 2026, les signaux d’alerte et que faire si vous avez signé.
 - [Le DPE des logements au 1er janvier 2027 : synthèse documentaire (PDF archivé sur Zenodo, licence CC BY 4.0)](https://doi.org/10.5281/zenodo.24396448)
 
 ## Faits utiles

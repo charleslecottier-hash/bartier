@@ -1081,7 +1081,7 @@ write("/questions/", "Questions fréquentes des artisans | Bartier & Co",
 paths.append("/questions/")
 
 # ——— Blog ———
-COVER = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Tuiles de toiture", "google-ads-ou-meta-ads-artisan": "Une personne consulte", "relance-devis-artisan": "Une chargée de rappel", "dpe-2027": "Isolation d'un mur"}
+COVER = {"lead-partage-lead-exclusif-rendez-vous-qualifie": "Tuiles de toiture", "google-ads-ou-meta-ads-artisan": "Une personne consulte", "relance-devis-artisan": "Une chargée de rappel", "dpe-2027": "Isolation d'un mur", "demarchage-arnaques-travaux": "Couvreur au travail"}
 import contenu as CT
 for a in ARTICLES:
     _p = CT.PLUS.get(a["slug"])
@@ -1111,7 +1111,7 @@ write("/blog/", "Blog : chantiers, publicité, devis et DPE 2027 | Bartier & Co"
                  'entre <a class="link" href="/blog/google-ads-ou-meta-ads-artisan/">Google Ads et Meta Ads</a>, et <a class="link" href="/blog/relance-devis-artisan/">relancer ses devis</a>. '
                  'Les plateformes de chantiers sont comparées dans <a class="link" href="/trouver-des-chantiers/">Trouver des chantiers</a>.'),
                 ("Pour les propriétaires",
-                 'Les règles qui changent et les démarches avant des travaux : <a class="link" href="/blog/dpe-2027/">le DPE en 2027</a>, <a class="link" href="/devis-travaux/#prix">les prix par métier</a>, '
+                 'Les règles qui changent et les démarches avant des travaux : <a class="link" href="/blog/dpe-2027/">le DPE en 2027</a>, <a class="link" href="/blog/demarchage-arnaques-travaux/">vos droits face au démarchage</a>, <a class="link" href="/devis-travaux/#prix">les prix par métier</a>, '
                  'et les règles locales à ' + ", ".join(f'<a class="link" href="{VL.path(c)}">{c["name"]}</a>' for c in VL.CITIES[:5])
                  + (f' et dans <a class="link" href="/devis-travaux/#villes">{len(VL.CITIES) - 5} autres villes</a>.' if len(VL.CITIES) > 6
                     else f' et <a class="link" href="{VL.path(VL.CITIES[-1])}">{VL.CITIES[-1]["name"]}</a>.')),
@@ -1137,6 +1137,7 @@ ART_ASIDE = """<h3>Votre secteur est-il libre ?</h3>
       <p>Un seul artisan par métier et par secteur.</p>
       <a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span></a>"""
 SEO_TITLE = {"dpe-2027": "DPE 2027 : nouvelle étiquette, location et travaux",
+             "demarchage-arnaques-travaux": "Démarchage pour des travaux : vos droits en 2026",
              "lead-partage-lead-exclusif-rendez-vous-qualifie": "Demande partagée, exclusive ou rendez-vous qualifié ?",
              "relance-devis-artisan": "Relance de devis : calendrier, SMS et script d'appel",
              "google-ads-ou-meta-ads-artisan": "Google Ads ou Meta Ads pour un artisan : que choisir ?"}

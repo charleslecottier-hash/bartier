@@ -773,7 +773,7 @@ Matériaux, main-d’œuvre, délais, paiement. Avant tout début de travaux.
 Obligatoire pour les aides à la rénovation énergétique. Annuaire officiel : france-renov.gouv.fr.
 
 #### Aucune pression
-Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ».
+Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ». Vos droits face au démarchage.
 
 ### Vos questions sur les devis de travaux
 Une autre question ? 07 81 01 89 36
@@ -5313,6 +5313,9 @@ Des articles courts et sourcés, pour les artisans du bâtiment et pour les prop
 20 nov. 2026 Propriétaires
 
 ### DPE 2027 : ce qui change pour les propriétaires
+21 nov. 2026 Propriétaires
+
+### Démarchage et arnaques aux travaux : vos droits
 
 ### Pour qui nous écrivons
 Chaque article répond à une question précise, avec ses sources et sa date.
@@ -5323,7 +5326,7 @@ Trouver des chantiers sans attendre le bouche-à-oreille : choisir entre demande
 - 02
 
 #### Pour les propriétaires
-Les règles qui changent et les démarches avant des travaux : le DPE en 2027, les prix par métier, et les règles locales à Paris, Marseille, Lyon, Toulouse, Nice et dans 13 autres villes.
+Les règles qui changent et les démarches avant des travaux : le DPE en 2027, vos droits face au démarchage, les prix par métier, et les règles locales à Paris, Marseille, Lyon, Toulouse, Nice et dans 13 autres villes.
 - 03
 
 #### Comment nous écrivons
@@ -5408,6 +5411,7 @@ Un seul artisan par métier et par secteur.
 - Google Ads ou Meta Ads : qui capte quelle demande
 - Relance de devis : le calendrier, les SMS et le script
 - DPE 2027 : ce qui change pour les propriétaires
+- Démarchage et arnaques aux travaux : vos droits
 - Tous les articles
 
 ---
@@ -5479,6 +5483,7 @@ Un seul artisan par métier et par secteur.
 - Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
 - Relance de devis : le calendrier, les SMS et le script
 - DPE 2027 : ce qui change pour les propriétaires
+- Démarchage et arnaques aux travaux : vos droits
 - Tous les articles
 
 ---
@@ -5557,6 +5562,7 @@ Un seul artisan par métier et par secteur.
 - Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
 - Google Ads ou Meta Ads : qui capte quelle demande
 - DPE 2027 : ce qui change pour les propriétaires
+- Démarchage et arnaques aux travaux : vos droits
 - Tous les articles
 
 ---
@@ -5568,7 +5574,7 @@ Adresse : https://bartierandco.com/blog/dpe-2027/
 Nouvelle étiquette gratuite, location des logements G, F et E, vote en cours au Parlement : ce qui change pour le DPE en 2027, sources officielles à l’appui.
 
 Propriétaires
-Par Charles Le Cottier, cofondateur Publié le 20 novembre 2026 Mis à jour le 20 novembre 2026 6 min de lecture
+Par Charles Le Cottier, cofondateur Publié le 20 novembre 2026 Mis à jour le 21 novembre 2026 6 min de lecture
 Au 1er janvier 2027, le DPE des logements chauffés à l’électricité est recalculé : le coefficient de l’électricité passe de 1,9 à 1,7. L’étiquette peut s’améliorer, jamais se dégrader, et la mise à jour est gratuite sur l’Observatoire DPE-Audit de l’ADEME. Pour la location, les règles en vigueur n’ont pas changé : logements G interdits depuis 2025, F à partir de 2028, E à partir de 2034. Un projet de loi en cours d’examen pourrait toutefois les modifier.
 
 ### Qu’est-ce qui change pour le DPE au 1er janvier 2027 ?
@@ -5651,6 +5657,76 @@ Isolation, fenêtres, toiture, façade : un seul artisan près de chez vous. Vis
 - Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
 - Google Ads ou Meta Ads : qui capte quelle demande
 - Relance de devis : le calendrier, les SMS et le script
+- Démarchage et arnaques aux travaux : vos droits
+- Tous les articles
+
+---
+
+## Démarchage pour des travaux : vos droits en 2026
+
+Adresse : https://bartierandco.com/blog/demarchage-arnaques-travaux/
+
+Démarchage à domicile ou par téléphone pour une toiture ou une isolation : ce que dit la loi en 2026, les signaux d’alerte et que faire si vous avez signé.
+
+Propriétaires
+Par Charles Le Cottier, cofondateur Publié le 21 novembre 2026 Mis à jour le 21 novembre 2026 5 min de lecture
+Chez vous, un démarcheur ne peut rien encaisser pendant 7 jours après la signature, et vous avez 14 jours pour annuler le contrat sans vous justifier. Par téléphone, depuis le 11 août 2026, une entreprise ne peut plus vous démarcher sans votre accord préalable. Pour la rénovation énergétique, c’est interdit même avec votre accord, et un contrat obtenu par un démarchage téléphonique illégal est nul.
+
+### Un démarcheur sonne à votre porte : que dit la loi ?
+Un contrat signé chez vous après un démarchage ne peut donner lieu à aucun paiement pendant 7 jours à compter de la signature : ni acompte, ni chèque, ni autorisation de prélèvement. L’entreprise n’a pas non plus le droit de commencer les travaux avant la fin de ce délai. Si elle encaisse quand même, le contrat n’est pas valable (Service Public, vérifié le 11 août 2026).
+Ce délai de 7 jours ne s’applique pas aux travaux de réparation à faire en urgence chez vous, à votre demande, comme une fuite que vous signalez vous-même.
+Vous disposez ensuite de 14 jours pour annuler le contrat, sans avoir à vous justifier. Avant la signature, l’entreprise doit vous remettre un document qui indique son identité, son adresse postale et son téléphone, le prix, les délais, et les conditions de rétractation avec un formulaire type.
+
+### Démarchage par téléphone : qu’est-ce qui a changé le 11 août 2026 ?
+Depuis le 11 août 2026, une entreprise ne peut plus vous démarcher par téléphone sans votre accord préalable. Le démarchage est interdit par défaut, et la liste Bloctel a cessé d’exister ce jour-là (Service Public, 11 août 2026). Ces règles viennent de la loi du 30 juin 2025 contre toutes les fraudes aux aides publiques.
+Pour les économies d’énergie, la rénovation énergétique et l’adaptation du logement au vieillissement ou au handicap, la règle est plus stricte : le démarchage téléphonique est interdit même si vous avez donné votre accord. Seule exception : vous avez vous-même demandé à être rappelé. L’appel doit alors avoir lieu dans les 5 jours ouvrables et porter uniquement sur ce que vous avez demandé (Service Public, vérifié le 12 août 2026).
+Un contrat conclu après un démarchage téléphonique illégal est nul. L’entreprise risque jusqu’à 75 000 € d’amende pour une personne physique et 375 000 € pour une société, par appel.
+
+### Quels signaux doivent vous alerter ?
+- Une visite que vous n’avez pas demandée, juste après un orage ou une tempête, pour « vérifier » ou démousser votre toit.
+- Un prix valable « aujourd’hui seulement », ou une remise si vous signez tout de suite.
+- Une demande d’argent le jour même : acompte, chèque ou autorisation de prélèvement.
+- Un appel que vous n’avez pas sollicité pour de l’isolation ou des travaux d’économies d’énergie : il est interdit.
+- Pas de devis écrit et détaillé, ou un devis sans le nom de l’assureur décennal de l’entreprise.
+Service Public conseille de ne jamais signer lors d’une première visite et de prendre le temps de comparer plusieurs devis (Service Public, 2024).
+
+### Vous avez signé : que faire ?
+- Vous êtes dans les 14 jours : envoyez le formulaire de rétractation remis avec le contrat, de préférence par lettre recommandée avec accusé de réception, pour garder une preuve.
+- Vous avez payé dans les 7 jours : le contrat n’est pas valable. Faites-le savoir par écrit à l’entreprise.
+- Signalez-le : un démarchage téléphonique abusif se signale gratuitement en envoyant par SMS « spam vocal » suivi du numéro de l’appelant au 33700. Un litige avec une entreprise se signale sur SignalConso.
+
+### Le bon réflexe : choisir vous-même l’artisan
+Le plus sûr est de faire vous-même la démarche : vous choisissez l’entreprise, vous lui demandez de venir voir le chantier, et vous prenez le temps de lire son devis. Avant de signer, vérifiez son immatriculation, son assurance décennale et, si vous visez des aides, sa certification RGE : les 5 points à vérifier.
+Sur Bartier & Co, c’est vous qui décrivez vos travaux. Nous vous rappelons parce que vous l’avez demandé, puis un seul artisan de votre secteur vient chiffrer chez vous. Vous restez libre de refuser son devis.
+
+### Questions fréquentes
+
+#### Un démarcheur peut-il demander un acompte le jour de la signature ?
+Non. Après un contrat signé chez vous, il ne peut recevoir aucun paiement pendant 7 jours : ni acompte, ni chèque, ni autorisation de prélèvement. Seuls les travaux de réparation urgents que vous avez demandés échappent à cette règle.
+
+#### Combien de temps ai-je pour annuler un contrat signé à domicile ?
+14 jours, sans avoir à vous justifier. Utilisez le formulaire de rétractation remis avec le contrat, de préférence par lettre recommandée avec accusé de réception.
+
+#### Une entreprise d’isolation peut-elle m’appeler sans que je l’aie demandé ?
+Non. Depuis le 11 août 2026, le démarchage téléphonique pour la rénovation énergétique est interdit, même si vous avez donné votre accord pour être démarché. Seule exception : un rappel que vous avez vous-même demandé, dans les 5 jours ouvrables.
+
+#### Bloctel existe-t-il encore ?
+Non. Bloctel a cessé d’exister le 11 août 2026. Depuis, une entreprise ne peut plus vous démarcher par téléphone sans votre accord préalable.
+
+#### Comment signaler un démarchage abusif ?
+Envoyez par SMS « spam vocal » suivi du numéro qui vous a appelé au 33700, ou faites le signalement sur 33700.fr. C’est gratuit. Un litige avec une entreprise peut aussi être signalé sur SignalConso.
+
+#### Bartier & Co fait-il du démarchage auprès des particuliers ?
+Non. Nous rappelons uniquement les personnes qui ont décrit leurs travaux sur notre site et accepté d’être rappelées. Ensuite, un seul artisan de leur secteur vient chiffrer chez elles.
+
+#### Un artisan que vous avez choisi
+Décrivez vos travaux : un seul artisan de votre secteur vient chiffrer chez vous. Visite et devis offerts.
+
+### À lire aussi
+- Demande partagée, exclusive ou rendez-vous qualifié : ce qui change pour vous
+- Google Ads ou Meta Ads : qui capte quelle demande
+- Relance de devis : le calendrier, les SMS et le script
+- DPE 2027 : ce qui change pour les propriétaires
 - Tous les articles
 
 ---

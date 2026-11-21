@@ -77,7 +77,7 @@ SERIOUS = [
     ("Une assurance décennale", "Obligatoire. Demandez l’attestation&nbsp;: l’assureur figure aussi sur le devis."),
     ("Un devis écrit et détaillé", "Matériaux, main-d’œuvre, délais, paiement. Avant tout début de travaux."),
     ("RGE si vous visez des aides", 'Obligatoire pour les aides à la rénovation énergétique. Annuaire officiel&nbsp;: <a class="link" href="https://france-renov.gouv.fr/" target="_blank" rel="noopener">france-renov.gouv.fr</a>.'),
-    ("Aucune pression", "Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement »."),
+    ("Aucune pression", 'Méfiez-vous du démarchage « après la tempête » et des prix valables « aujourd’hui seulement ». <a class="link" href="/blog/demarchage-arnaques-travaux/">Vos droits face au démarchage</a>.'),
 ]
 
 import html as _html, re as _re
