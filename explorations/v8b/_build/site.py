@@ -893,16 +893,39 @@ if "confidentialite" in LEGAL_READY and NOTICES.get("particulier_form_notice"):
     PF.PRIVACY = NOTICES["particulier_form_notice"]
 pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH)))
 import villes as VL  # pages « Devis travaux à <ville> »
-VL_HUB = "".join(f'<li><h3><a class="pf-tl" href="{VL.path(c)}">Devis travaux {VL.a_(c)}</a></h3><p>{c["hook"].rstrip(".")}</p></li>' for c in VL.CITIES)
-if len(VL.CITIES) > 8:  # au-delà de quelques villes : une liste par région, dans l'ordre alphabétique
-    _regs = sorted({c["region"] for c in VL.CITIES})
-    VL_HUB = "".join(f'<li class="vl-reg"><p class="vl-oh">{r}</p><ul class="vl-regl">' + "".join(
-        f'<li><a class="pf-tl" href="{VL.path(c)}">{c["name"]}</a><span>{c["hook"].rstrip(".")}</span></li>'
-        for c in sorted((c for c in VL.CITIES if c["region"] == r), key=lambda c: c["name"])) + "</ul></li>" for r in _regs)
+_ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+_regs = sorted({c["region"] for c in VL.CITIES})
+VL_HUB = "".join(
+    f'<section class="vlh-r" aria-label="{r}"><h3>{r}<small>{sum(c["region"] == r for c in VL.CITIES)}</small></h3><ul>' + "".join(
+        f'<li class="vlh-c" data-c="{c["slug"]}"><a href="{VL.path(c)}"><b>{c["name"]}</b><span>{c["hook"].rstrip(".")}</span>{_ARROW}</a></li>'
+        for c in sorted((c for c in VL.CITIES if c["region"] == r), key=lambda c: c["name"])) + "</ul></section>" for r in _regs)
+# survol d'une ville dans la liste : son point s'allume sur la carte ; survol d'un point : la ville s'allume dans la liste
+VL_HL = "".join(f'.vlh:has([data-c="{c["slug"]}"]:hover) [data-c="{c["slug"]}"] .vl-dot,.vlh:has([data-c="{c["slug"]}"]:focus-visible) [data-c="{c["slug"]}"] .vl-dot{{fill:var(--accent,#2D5BE3)}}'
+                f'.vlh:has([data-c="{c["slug"]}"]:hover) [data-c="{c["slug"]}"] .vl-lab{{fill:var(--accent,#2D5BE3)}}'
+                f'.vlh:has([data-c="{c["slug"]}"]:hover) .vlh-c[data-c="{c["slug"]}"] b{{color:var(--accent,#2D5BE3)}}' for c in VL.CITIES)
+VL_HUB_CSS = (""".vlh{display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:48px clamp(48px,6vw,104px);align-items:start;padding:0 var(--cell)}
+.vlh-map{position:sticky;top:112px;margin:0}
+.vlh-map .vl-svg{display:block;width:100%;height:auto}
+.vlh-map figcaption{max-width:38ch;margin-top:20px;font-size:.88rem;line-height:1.5;color:var(--muted)}
+.vlh-list{columns:2;column-gap:56px}
+.vlh-r{break-inside:avoid;margin:0 0 44px}
+.vlh-r h3{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0;padding-bottom:10px;border-bottom:1px solid currentColor;font-size:.8rem;font-weight:400;line-height:1.3;color:var(--muted)}
+.vlh-r h3 small{font-size:.78rem;font-variant-numeric:tabular-nums}
+.vlh-r ul{margin:0;padding:0;list-style:none}
+.vlh-c a{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);color:inherit;text-decoration:none}
+.vlh-c b{font:400 1.3rem/1.2 var(--f-display);letter-spacing:-.01em;transition:color .2s}
+.vlh-c span{grid-column:1;margin-top:6px;font-size:.9rem;line-height:1.45;color:var(--muted)}
+.vlh-c svg{grid-column:2;grid-row:1/span 2;align-self:center;width:20px;height:20px;opacity:.3;transition:transform .2s,opacity .2s,color .2s}
+.vlh-c a:hover svg,.vlh-c a:focus-visible svg{opacity:1;color:var(--accent,#2D5BE3);transform:translateX(4px)}
+.vlh-c a:focus-visible{outline:2px solid var(--accent,#2D5BE3);outline-offset:2px}
+.vl-svg circle.vl-dot{transition:fill .2s}
+@media (max-width:1100px){.vlh-list{columns:1}}
+@media (max-width:760px){.vlh{grid-template-columns:1fr;gap:32px}.vlh-map{position:static;max-width:400px}.vlh-c b{font-size:1.2rem}}
+@media (prefers-reduced-motion:reduce){.vlh-c svg,.vlh-c b,.vl-svg circle.vl-dot{transition:none}}""" + VL_HL)
 pf_body = pf_body if not VL.CITIES else pf_body.replace('<section class="sheet pf-leak is-short"', f"""<section class="sheet" id="villes" data-tone="paper">
-  <style>.vl-reg{{list-style:none}}.vl-reg::before{{display:none}}.vl-regl{{display:grid;gap:14px;margin:0;padding:0;list-style:none}}.vl-regl li{{display:grid;gap:2px}}.vl-regl span{{font-size:.92rem;color:var(--muted)}}.vl-hub .vl-oh{{margin-bottom:10px;font-size:.8rem;color:var(--muted)}}.vl-hubw{{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:40px 64px;align-items:center;padding:0 var(--cell)}}.vl-hub{{grid-template-columns:repeat(2,minmax(0,1fr));padding:0}}@media (max-width:760px){{.vl-hubw,.vl-hub{{grid-template-columns:1fr}}}}{VL.MAP_CSS}</style>
+  <style>{VL.MAP_CSS}{VL_HUB_CSS}</style>
   <div class="grid sp-head"><h2 data-split>Devis travaux par ville</h2><p>Les règles et les aides changent d’une ville à l’autre</p></div>
-  <div class="vl-hubw"><figure class="vl-map">{VL.carte()}</figure><ul class="pf-checks vl-hub">{VL_HUB}</ul></div>
+  <div class="vlh"><figure class="vl-map vlh-map">{VL.carte()}<figcaption>{len(VL.CITIES)} villes, chacune avec ses règles d’urbanisme, ses aides et ses démarches, vérifiées sur les sources officielles.</figcaption></figure><div class="vlh-list">{VL_HUB}</div></div>
 </section>
 
 <section class="sheet pf-leak is-short\"""", 1)

@@ -668,34 +668,45 @@ Devis isolation
 
 ### Devis travaux par ville
 Les règles et les aides changent d’une ville à l’autre
-Auvergne-Rhône-Alpes
+
+#### Auvergne-Rhône-Alpes 3
 - Grenoble Immeubles d’après-guerre, isolés avec l’aide Mur Mur
 - Lyon Site Unesco et nichoirs à martinets
 - Saint-Étienne Ravalement imposé dans l’hyper-centre, aidé par le plan façades
-Bourgogne-Franche-Comté
+
+#### Bourgogne-Franche-Comté 1
 - Dijon Secteur sauvegardé de 97 ha et petites tuiles vernissées
-Bretagne
+
+#### Bretagne 1
 - Rennes Centre ancien sauvegardé : PVC interdit, ardoise naturelle sur le bâti protégé
-Grand Est
+
+#### Grand Est 2
 - Reims Centre de la Reconstruction protégé depuis 2020, caves et carrières sous la ville
 - Strasbourg Secteur sauvegardé étendu à la Neustadt, tuiles écailles rouges
-Hauts-de-France
+
+#### Hauts-de-France 1
 - Lille Ravalement obligatoire tous les dix ans, et aidé par la Ville
-Normandie
+
+#### Normandie 2
 - Le Havre Centre Perret inscrit à l’Unesco, béton restauré à l’identique
 - Rouen Secteur sauvegardé depuis 1964, ardoise et pans de bois
-Nouvelle-Aquitaine
+
+#### Nouvelle-Aquitaine 1
 - Bordeaux La pierre de taille reste nue, sans peinture ni isolation extérieure
-Occitanie
+
+#### Occitanie 2
 - Montpellier Écusson sauvegardé, ravalement imposé par quartier, Hérault termité
 - Toulouse Centre ancien protégé, aide Silencio près de l’aéroport
-Pays de la Loire
+
+#### Pays de la Loire 1
 - Nantes Ravalement tous les dix ans, fenêtres en bois dans le centre historique
-Provence-Alpes-Côte d’Azur
+
+#### Provence-Alpes-Côte d’Azur 3
 - Marseille Ravalement imposé, et tout le département en zone termites
 - Nice Ville largement protégée, zone sismique 4 et zone termites
 - Toulon Centre protégé, ravalements imposés et aidés, fortes rafales plus de 100 jours par an
-Île-de-France
+
+#### Île-de-France 1
 - Paris Une autorisation même pour des fenêtres à l’identique
 
 ### Une fuite de toiture ?

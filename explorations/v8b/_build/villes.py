@@ -209,7 +209,7 @@ def carte(current=None):
         fz = f' style="font-size:{fs}px"' if fs != 17 else ""
         label = (f'<text x="{lab[0]}" y="{y + 4.5 + lab[2]}" class="vl-lab{" is-on" if on else ""}"{ta}{fz}>{c["name"]}</text>'
                  if lab else f'<title>{c["name"]}</title>')
-        pins.append(f'<g>{dot}{label}</g>' if on else f'<a href="{path(c)}" aria-label="Devis travaux {a_(c)}">{dot}{label}</a>')
+        pins.append(f'<g data-c="{c["slug"]}">{dot}{label}</g>' if on else f'<a href="{path(c)}" data-c="{c["slug"]}" aria-label="Devis travaux {a_(c)}">{dot}{label}</a>')
     w, h = _MAP["w"], _MAP["h"]
     return (f'<svg class="vl-svg" viewBox="-12 -16 {w + 84} {h + 32}" role="img" aria-labelledby="vl-map-t"><title id="vl-map-t">Carte des villes : '
             + ", ".join(c["name"] for c in CITIES) + f'</title><path d="{_MAP["d"]}" class="vl-fr"/>' + "".join(pins) + '</svg>')
