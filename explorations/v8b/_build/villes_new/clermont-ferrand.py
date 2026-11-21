@@ -1,4 +1,5 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+REVIEWED = "2026-11-21"
 PUBLISH = "2026-12-05"  # vague 2 : publication deux semaines après la vague 1 (voir VILLES.md)
 
 # Sources consultées le 21/11/2026.
@@ -12,7 +13,6 @@ _PLUI_HIST = "https://plu.clermontmetropole.eu/historique-de-la-demarche/"
 _PLUI_REGL = "https://plu.clermontmetropole.eu/wp-content/uploads/2026/01/4.1_REGLEMENT_approbation.pdf"
 _GUIDE = "https://plu.clermontmetropole.eu/wp-content/uploads/2026/02/guide-utilisation-PLUi-ClermontAuvergneMetropole-fev2026.pdf"
 _CAHIER = "https://plu.clermontmetropole.eu/wp-content/uploads/2026/01/4.2_CAHIERS-COMMUNAUX_CLERMONT-FERRAND_approbation.pdf"
-_RIOM = "https://www.ville-riom.fr/wp-content/uploads/2025/05/Ravalement_de_fac__ade_-_6.pdf"
 _PPRI = "https://plu.clermontmetropole.eu/wp-content/uploads/2026/01/6.1.2_PPRNPI-DE-L-AGGLOMERATION-CLERMONTOISE_reglement.pdf"
 _RADON = "https://georisques.gouv.fr/api/v1/radon?code_insee=63113"
 _SISM = "https://georisques.gouv.fr/api/v1/zonage_sismique?code_insee=63113"
@@ -23,7 +23,8 @@ _UDAP = ("https://www.culture.gouv.fr/fr/regions/drac-auvergne-rhone-alpes/archi
          "de-l-architecture-et-du-patrimoine-udap-d-auvergne-rhone-alpes/unite-departementale-de-l-architecture-et-du-patrimoine-"
          "udap-du-puy-de-dome-63")
 _ODP = "https://clermont-ferrand.fr/travaux-et-stationnement"
-_RA = "https://www.renovactions63.fr/"
+_RA = "https://www.renovactions63.fr/service-public-renovation-energetique-habitat/"
+_RA_CAM = "https://www.renovactions63.fr/votre-conseiller-renovactions63-pour-clermont-communaute/"  # permanences dans la Métropole
 _RA_RADON = "https://www.renovactions63.fr/actualites/qualite-de-lair-interieur-renovactions63-vous-offre-un-kit-de-mesure-du-radon/"
 _RA_MPR = "https://www.renovactions63.fr/actualites/reouverture-du-guichet-des-aides-et-actualites/"
 _ADIL = "https://www.anil.org/adil-63/"
@@ -48,43 +49,45 @@ CITY = dict(
              ("2025", "classement du centre historique en site patrimonial remarquable", S("Ville de Clermont-Ferrand", _SPR_CENTRE))],
     answer=("À Clermont-Ferrand, 82,2 % des logements sont des appartements et 41,9 % des résidences principales datent d’avant "
             "1971. Le centre historique est site patrimonial remarquable depuis le 21 juillet 2025, et Montferrand suit son plan de "
-            "sauvegarde. Ailleurs, le PLU de la Métropole, en vigueur depuis le 20 janvier 2026, impose de conserver les encadrements "
-            "en pierre de Volvic des quartiers anciens."),
+            "sauvegarde. Hors Montferrand, le PLU de la Métropole, en vigueur depuis le 20 janvier 2026, impose de conserver les "
+            "encadrements en pierre de Volvic des quartiers anciens."),
     facts=[("Centre historique", "Classé site patrimonial remarquable par arrêté du 21 juillet 2025, publié au Journal officiel du "
                                  "26 juillet (" + L("arrêté", _SPR_ARRETE) + "). Son plan de valorisation de l’architecture et du "
                                  "patrimoine est en préparation. Renseignements : spr@clermontmetropole.eu ("
                                  + L("Ville de Clermont-Ferrand", _SPR_CENTRE) + ")."),
-           ("Montferrand", "Secteur sauvegardé depuis 1964 (" + L("ministère de la Culture", _MERIMEE) + "), dont le périmètre suit "
-                           "les anciens remparts (" + L("Ville de Clermont-Ferrand", _MONTF) + "). Son plan de sauvegarde, approuvé "
-                           "le 28 novembre 1997, remplace le PLU, et l’architecte des Bâtiments de France est compétent sur toutes "
-                           "les demandes d’autorisation (" + L("règlement du PSMV", _PSMV) + ")."),
+           ("Montferrand", "Secteur sauvegardé depuis 1964 (" + L("ministère de la Culture", _MERIMEE) + "). Son plan de "
+                           "sauvegarde, approuvé le 28 novembre 1997, remplace le PLU. Sa modification de 2012 a créé un sous-secteur "
+                           "pour le rempart du XIVe siècle et ses abords. L’architecte des Bâtiments de France est compétent sur toutes "
+                           "les demandes d’autorisation (" + L("règlement du PSMV", _PSMV) + ", plans sur le site de la "
+                           + L("Ville", _MONTF) + ")."),
            ("Urbanisme", "Le PLU de la Métropole, approuvé le 19 décembre 2025, s’applique depuis le 20 janvier 2026 ("
                          + L("Métropole", _PLUI_HIST) + "). En zone urbaine, refaire un toit, changer des fenêtres, ravaler une "
                          "façade ou l’isoler par l’extérieur demande une déclaration préalable (" + L("guide du PLU", _GUIDE)
                          + ", 2026)."),
-           ("Ravalement", "Clermont-Ferrand figure sur la liste préfectorale des villes où le ravalement est obligatoire tous les "
-                          "10 ans, rappelle la Ville de Riom, ajoutée à cette liste par arrêté du 22 octobre 2003 ("
-                          + L("Ville de Riom", _RIOM) + ")."),
+           ("Cités-jardins", "Le cahier communal du PLU décrit 17 cités-jardins classées en secteur UGcj, comme La Plaine, "
+                             "Chanturgue ou L’Oradou. Toute transformation y passe par un projet respectueux du caractère d’origine "
+                             "du bâti ("
+                             + L("cahier communal", _CAHIER) + ")."),
            ("Risques", "Classe 3 de potentiel radon (" + L("Géorisques", _RADON) + ") et zone de sismicité 3, modérée ("
                        + L("Géorisques", _SISM) + "). De 1989 à 2023, 9 épisodes de sécheresse y ont été reconnus en catastrophe "
                        "naturelle (" + L("Géorisques", _CATNAT) + "). Le long du Bec, de l’Artière, de la Tiretaine et du Bédat, "
                        "un plan de prévention du risque d’inondation s’applique (" + L("règlement", _PPRI) + ")."),
            ("Climat", "À la station de Clermont-Ferrand : 55,7 jours de gel, 17,7 jours de neige et 49 jours de rafales d’au moins "
-                      "58 km/h par an. Record de vent : 44 m/s, soit 158 km/h, le 27 décembre 1999 (" + L("Météo-France", _MF)
+                      "58 km/h par an. Record de rafale : 44 m/s, soit 158 km/h, le 27 décembre 1999 (" + L("Météo-France", _MF)
                       + ", normales 1991-2020).")],
     trades_intro=("Immeubles anciens du centre, maisons de Montferrand, cités-jardins : à Clermont-Ferrand, chaque secteur a ses "
                   "règles d’aspect, et la pierre de Volvic y tient une place à part."),
     trades={
-        "toiture": ["Dans les quartiers anciens, en zone UC du PLU de la Métropole, les toits en pente gardent l’aspect des toitures "
-                    "traditionnelles, en tuile canal ou romane de couleur rouge. Sur un bâtiment existant, les panneaux solaires "
-                    "couvrent au plus 75 % du pan de toiture, pour laisser voir le toit d’origine (" + L("règlement du PLU", _PLUI_REGL)
-                    + ").",
+        "toiture": ["Dans les quartiers anciens, en zone UC du PLU de la Métropole, les toits en pente se rapprochent de l’aspect des "
+                    "toitures traditionnelles, en tuile canal ou romane de couleur rouge, sauf projet architectural argumenté. Sur un "
+                    "bâtiment existant, les panneaux solaires couvrent au plus 75 % du pan de toiture, pour laisser voir le toit "
+                    "d’origine (" + L("règlement du PLU", _PLUI_REGL) + ").",
                     "À Montferrand, les toits à faible pente se restaurent en tuiles creuses de teinte rouge, sans matériau vieilli "
                     "ou coloré artificiellement. Zinc, plomb, tuile plate ou ardoise sont réservés aux pentes plus fortes ("
                     + L("règlement du PSMV", _PSMV) + "). Avec 17,7 jours de neige et 49 jours de rafales d’au moins 58 km/h par an, "
                     "faites vérifier tuiles et faîtages après l’hiver."],
         "facade": ["À Montferrand, la pierre de taille reste apparente, sans badigeon ni peinture, avec des joints à plat au mortier "
-                   "de chaux. Les enduits se font au mortier de chaux, grattés à la truelle, sans blanc, sans teinte vive ni ciment "
+                   "de chaux ou bâtard. Les enduits se font au même mortier, grattés à la truelle, sans blanc, sans teinte vive ni ciment "
                    "gris, après approbation d’un échantillon par l’architecte des Bâtiments de France (" + L("règlement du PSMV", _PSMV) + ").",
                    "Dans les quartiers anciens, le PLU peut imposer de conserver chaînages d’angle et encadrements en pierre de taille, "
                    "corniches, bandeaux et génoises. Les enduits y sont finement talochés ou grattés, et la réfection peut devoir "
@@ -98,9 +101,9 @@ CITY = dict(
         "charpente": ["Clermont-Ferrand est en zone de sismicité 3, modérée : signalez-le à l’artisan avant une surélévation ou une "
                       "reprise de charpente. À Montferrand, escaliers et galeries en bois se traitent avec des produits qui gardent "
                       "leur aspect naturel, et les remplissages de pans de bois sont enduits (" + L("règlement du PSMV", _PSMV) + ").",
-                      "La ville compte 17 cités-jardins classées en secteur UGcj, comme La Plaine, Chanturgue ou L’Oradou : toute "
-                      "transformation y respecte le caractère d’origine du bâti. À la cité de la rue Georges-Méliès, une réfection "
-                      "de toiture reprend la même forme et les mêmes matériaux (" + L("cahier communal du PLU", _CAHIER) + ")."],
+                      "Dans les cités-jardins, chaque cité a ses propres règles. À celle de la rue Georges-Méliès, extensions et "
+                      "constructions nouvelles sont interdites, le volume initial se conserve, et une réfection de toiture reprend "
+                      "la même forme et les mêmes matériaux (" + L("cahier communal du PLU", _CAHIER) + ")."],
         "isolation": ["La station de Clermont-Ferrand compte 2 403,9 degrés-jours unifiés de chauffage par an, et 55,7 jours de gel ("
                       + L("Météo-France", _MF) + ", 1991-2020). Dans les quartiers anciens, le PLU autorise l’isolation par "
                       "l’extérieur quand les murs isolent mal, notamment en pierre traditionnelle, si le parement garde l’aspect "
@@ -128,21 +131,22 @@ CITY = dict(
     aides=[("Rénov’actions63", "Le service public de la rénovation de l’habitat du Puy-de-Dôme, porté par le Département, les 14 "
                               "intercommunalités et l’Anah dans le cadre de France Rénov’ : conseil gratuit, du mardi au vendredi, "
                               "de 8 h 30 à 12 h et de 13 h à 17 h 30. 04 73 42 30 72. Permanences sur rendez-vous dans plusieurs "
-                              "communes de la Métropole. " + L("renovactions63.fr", _RA) + ". L’ADIL 63 conseille aussi sur le "
+                              "communes de la Métropole (" + L("conseillers de la Métropole", _RA_CAM) + "). "
+                              + L("renovactions63.fr", _RA) + ". L’ADIL 63 conseille aussi sur le "
                               "logement, à la Maison de l’Habitat, 129 avenue de la République, 63100 Clermont-Ferrand : "
                               "04 73 42 30 75 (" + L("ADIL 63", _ADIL) + ")."),
            ("Aide de la Métropole aux économies d’énergie", "Pour les propriétaires occupants très modestes, sous plafonds de l’Anah : "
                                                            "10 % de la dépense éligible, jusqu’à 1 500 €, pour un logement de plus de "
                                                            "15 ans, avec un artisan RGE et en complément obligatoire des aides de "
-                                                           "l’Anah (" + L("ANIL", _CAM_AIDE) + ", 2025)."),
+                                                           "l’Anah (" + L("ANIL", _CAM_AIDE) + ", fiche à jour au 13 février 2025)."),
            ("Dosimètre radon offert", "Rénov’actions63 offre un dosimètre pour mesurer le radon chez vous, à retirer sur rendez-vous "
                                       "à partir du 9 novembre 2026, dans la limite des stocks (" + L("Rénov’actions63", _RA_RADON)
                                       + ", 2026)."),
            NATIONAL],
-    faq=[("Le ravalement est-il obligatoire à Clermont-Ferrand ?",
-          "Clermont-Ferrand figure sur la liste préfectorale des villes où le ravalement est obligatoire tous les 10 ans. En zone "
-          "urbaine, un ravalement demande une déclaration préalable, et à Montferrand l’architecte des Bâtiments de France approuve "
-          "d’abord un échantillon d’enduit."),
+    faq=[("Faut-il une autorisation pour un ravalement à Clermont-Ferrand ?",
+          "Oui, en zone urbaine du PLU, un ravalement demande une déclaration préalable. Dans les quartiers anciens, le PLU peut "
+          "imposer de garder chaînages et encadrements en pierre de taille, et à Montferrand l’architecte des Bâtiments de France "
+          "approuve d’abord un échantillon d’enduit."),
          ("Faut-il une autorisation pour changer ses fenêtres à Clermont-Ferrand ?",
           "Oui, une déclaration préalable. Dans les quartiers anciens, les encadrements en pierre de Volvic se conservent, et sur une "
           "construction d’avant 1950 le coffre de volet roulant reste invisible depuis la rue. À Montferrand, les volets métalliques "

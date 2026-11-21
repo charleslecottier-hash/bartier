@@ -44,8 +44,8 @@ CITY = dict(
             "Dans le secteur sauvegardé de 163 hectares, toute construction ou démolition, travaux intérieurs compris, demande l’avis conforme "
             "de l’architecte des Bâtiments de France. Partout dans la commune, la Ville peut exiger un ravalement au moins tous les dix ans."),
     facts=[("Secteur sauvegardé", "Créé en 1975 sur 22,5 hectares, il couvre 163 hectares depuis 2010, de l’Outre-Seille à la Ville impériale. Son plan "
-                                  "de sauvegarde révisé, approuvé le 22 décembre 2017, y remplace le PLU. Travaux intérieurs compris, tout y passe par une "
-                                  "autorisation et l’avis conforme de l’architecte des Bâtiments de France (" + L("Eurométropole", _PSMV) + ")."),
+                                  "de sauvegarde révisé, approuvé le 22 décembre 2017, y remplace le PLU. Constructions et démolitions, travaux intérieurs "
+                                  "compris, y passent par une autorisation et l’avis conforme de l’architecte des Bâtiments de France (" + L("Eurométropole", _PSMV) + ")."),
            ("Abords des monuments", "Cinq périmètres délimités des abords ont été créés à Metz par arrêtés du 25 octobre 2024, dont celui des monuments "
                                     "historiques du centre. Ils remplacent le rayon de 500 mètres, et l’accord de l’architecte des Bâtiments de France "
                                     "y est requis (" + L("Eurométropole", _PDA) + ")."),
@@ -78,27 +78,29 @@ CITY = dict(
                      "la pose dite « rénovation » sur l’ancien dormant est interdite. Elles sont peintes, le blanc pur est interdit et le blanc "
                      "cassé est préconisé dans la Nouvelle-Ville (" + L("règlement du plan de sauvegarde", _PSMV_REG) + ").",
                      "Pour mieux isoler une fenêtre ancienne, le règlement privilégie un double vitrage mince dans les feuillures existantes ou une "
-                     "seconde fenêtre intérieure, surtout dans les immeubles de l’Annexion. Leurs volets roulants d’origine se remplacent à "
-                     "l’identique, coffre à l’intérieur et rails encastrés."],
+                     "seconde fenêtre intérieure, surtout dans les immeubles de l’Annexion. Leurs volets roulants d’origine en bois se remplacent "
+                     "par des volets du même type, en bois ou en aluminium laqué, coffre à l’intérieur et rails encastrés ("
+                     + L("règlement", _PSMV_REG) + ")."],
         "charpente": ["Dans les immeubles protégés du secteur sauvegardé, les charpentes anciennes sont conservées ou restaurées. Retirer un entrait, "
                       "une panne ou un arbalétrier est interdit, ce qui peut empêcher d’aménager certains combles, et créer un second niveau de "
                       "comble l’est aussi (" + L("règlement du plan de sauvegarde", _PSMV_REG) + ").",
                       "Metz est en zone de sismicité 1, très faible (" + L("Géorisques", _SISM) + "). La commune a en revanche été reconnue neuf fois "
                       "en catastrophe naturelle pour sécheresse, de 2003 à 2022 (" + L("Géorisques", _CATNAT) + ") : sur une maison fissurée, faites "
                       "vérifier la structure avant de refaire la toiture."],
-        "isolation": ["Dans le secteur sauvegardé, l’isolation par l’extérieur est interdite sur les monuments historiques et les immeubles de type A. "
-                      "Elle peut être admise sur les façades invisibles depuis la rue ou sans décor, notamment celles de l’Annexion et de "
-                      "l’entre-deux-guerres, avec corniches, bandeaux et encadrements reconstitués (" + L("règlement du plan de sauvegarde", _PSMV_REG) + ").",
+        "isolation": ["Dans le secteur sauvegardé, l’isolation par l’extérieur est interdite sur les monuments historiques et les immeubles de type A, "
+                      "sauf constructions de l’Annexion et de l’entre-deux-guerres. Elle peut être admise sur les façades invisibles depuis la rue "
+                      "ou sans décor d’intérêt patrimonial, avec corniches, bandeaux et encadrements reconstitués (" + L("règlement du plan de sauvegarde", _PSMV_REG) + ").",
                       "En Outre-Seille, l’Eurométropole ajoute aux aides de l’Anah 10 % des travaux d’énergie hors taxes, jusqu’à 3 500 €, pour les "
                       "propriétaires occupants modestes ou très modestes (" + L("Eurométropole", _RENOV) + ", 2026)."]},
     steps_intro="Dans l’ordre, du repérage du secteur à l’occupation de la rue.",
-    steps=[("Repérez votre secteur", "Secteur sauvegardé, abords d’un monument ou zone du PLU : le " + L("portail urbanisme", _PORTAIL)
-                                     + " de l’Eurométropole permet de consulter les règles locales avant de préparer le dossier."),
+    steps=[("Repérez votre secteur", "Secteur sauvegardé ou zone du PLU : la " + L("page du PLU de Metz", _PLU) + " de l’Eurométropole "
+                                     "donne le règlement écrit et une carte interactive du zonage. Le secteur sauvegardé suit son propre "
+                                     + L("plan de sauvegarde", _PSMV) + "."),
            ("Montrez le projet à l’architecte des Bâtiments de France", "Il examine les projets avant le dépôt, chaque semaine à Metz, sur "
                                                                         "rendez-vous pris auprès de l’UDAP de la Moselle, 10/12 place Saint-Étienne. 03 87 36 08 27 (" + L("UDAP", _UDAP) + ")."),
-           ("Déposez la déclaration préalable", "En ligne sur ce même " + L("portail", _PORTAIL) + ". L’Eurométropole instruit les "
-                                                "dossiers de Metz. Par courrier : service Urbanisme réglementaire et qualité urbaine, 144 route de "
-                                                "Thionville, 57050 Metz (" + L("Ville de Metz", _URBA) + ")."),
+           ("Déposez la déclaration préalable", "En ligne sur le " + L("portail urbanisme", _PORTAIL) + " des communes de l’Eurométropole, "
+                                                "qui instruit les dossiers de Metz. Renseignements : service Urbanisme réglementaire et qualité "
+                                                "urbaine, 144 route de Thionville, 57050 Metz (" + L("Ville de Metz", _URBA) + ")."),
            ("Faites autoriser l’occupation de la rue", "Le permis ou la déclaration ne vaut pas autorisation d’occuper le domaine public : le service Travaux et "
                                                        "coordination des espaces publics la délivre, après avis de l’urbanisme. Sur le plateau "
                                                        "piétonnier, un véhicule de chantier paie 19,80 € par jour en 2026, à demander 15 jours "
@@ -111,8 +113,9 @@ CITY = dict(
            ("OPAH-RU Outre-Seille 2025-2029", "Pour les propriétaires occupants modestes ou très modestes, l’Eurométropole ajoute aux aides de l’Anah 10 % des travaux "
                                               "d’énergie hors taxes, jusqu’à 3 500 €, et 20 %, jusqu’à 10 000 €, pour un logement très dégradé ("
                                               + L("Eurométropole", _RENOV) + "). Les copropriétés reçoivent 15 %, jusqu’à 6 000 € par logement ("
-                                              + L("programme d’actions 2026", _PA) + "). Conseil gratuit de CALM-Soliha Moselle, en permanence le "
-                                              "3e vendredi du mois au 71 rue Mazelle (" + L("calendrier 2026", _FLYER) + ")."),
+                                              + L("programme d’actions 2026", _PA) + "). CALM-Soliha Moselle accompagne gratuitement les "
+                                              "propriétaires, avec des permanences au 71 rue Mazelle, le plus souvent le 3e vendredi du mois en 2026 ("
+                                              + L("calendrier 2026", _FLYER) + ")."),
            ("Prime Air Bois", "1 500 € pour remplacer une cheminée ouverte ou un appareil au bois d’avant 2005 par un appareil Flamme verte ou "
                               "équivalent, posé par un artisan RGE, 2 000 € pour les ménages modestes. Les travaux se commandent après la notification ("
                               + L("Eurométropole", _PAB) + ", 2026)."),
