@@ -60,8 +60,8 @@ CITY = dict(
            ("Feu de forêt", "Le plan de prévention des risques d’incendie de forêt de la commune a été approuvé le 10 juillet 2026. "
                             "En zone rouge et en zone bleue B1, le propriétaire d’une maison fait un auto-diagnostic, puis les travaux de "
                             "protection utiles d’ici le 10 juillet 2031, pour un coût plafonné à 10 % de la valeur du bien. "
-                            "Dans toutes les zones du plan, les tas de bois se placent à plus de 10 m des habitations et les citernes "
-                            "d’hydrocarbures s’enfouissent, d’ici juillet 2028 (" + L("règlement du PPRIF", _PPRIF) + ")."),
+                            "Dans toutes les zones du plan, les tas de bois se placent à plus de 10 m des habitations, ou le plus loin "
+                            "possible, et les citernes de gaz ou de fioul aériennes s’enfouissent, d’ici le 10 juillet 2028 (" + L("règlement du PPRIF", _PPRIF) + ")."),
            ("Argiles", "Toute la commune relève du plan de prévention du retrait-gonflement des argiles approuvé le 27 juin 2012, "
                        "qui la classe en zone bleue B2, moyennement exposée (" + L("règlement", _RGA) + "). De 1989 à 2023, 14 "
                        "épisodes de sécheresse y ont été reconnus en catastrophe naturelle (" + L("Géorisques", _CATNAT) + ")."),
@@ -87,27 +87,30 @@ CITY = dict(
                    "base de résine et crépis tyroliens y sont interdits, comme le décrépissage au marteau pneumatique ("
                    + L("règlement du PSMV", _PSMV_REGL) + ").",
                    "Avec 14 épisodes de sécheresse reconnus en catastrophe naturelle depuis 1989, une fissure en façade peut venir du "
-                   "sol argileux : faites-en chercher la cause avant de la reboucher. En zone B2 du plan argiles, le règlement "
-                   "recommande de rejeter les eaux de pluie à 5 m au moins de la maison (" + L("plan argiles", _RGA) + ")."],
+                   "sol argileux : faites-en chercher la cause avant de la reboucher. Pour les maisons existantes, le plan argiles "
+                   "recommande de rejeter les eaux de pluie à 5 m au moins du bâtiment (" + L("plan argiles", _RGA) + ")."],
         "fenetres": ["Dans le secteur sauvegardé, les menuiseries en PVC et les coffres de volets roulants apparents sont proscrits. "
                      "Les fenêtres du XVIIIe siècle à petits carreaux se restaurent sans double vitrage, en teinte claire comme le gris "
                      "perle ou le blanc cassé. Celles du XIXe siècle à grands carreaux peuvent recevoir un double vitrage qui garde la "
                      "découpe et la finesse des bois (" + L("règlement du PSMV", _PSMV_REGL) + ").",
                      "Les fenêtres du XIXe siècle s’y peignent en gris moyen ou dans une teinte neutre, moyenne ou sombre, et les volets "
-                     "à barre et écharpe sont interdits. Ailleurs, changer l’aspect de ses fenêtres demande une déclaration préalable ("
-                     + L("Service-Public", SP + "F17578") + ")."],
+                     "à barre et écharpe sont interdits (" + L("règlement du PSMV", _PSMV_REGL) + "). Près des massifs, les "
+                     "règles de construction du plan incendie demandent aux fenêtres exposées au feu une tenue pare-flammes d’une "
+                     "demi-heure (E30), que les volets peuvent assurer à leur place (" + L("règlement du PPRIF", _PPRIF) + ")."],
         "charpente": ["Dans le secteur sauvegardé, sur les immeubles « à conserver » et pour toute réfection complète de couverture, les "
                       "tuiles creuses se posent à la manière ancienne, sur volige et quartons ou sur malons, sans sous-toiture. Corniches à gorge, "
                       "génoises en tuiles et débords à chevrons sont restaurés selon leur disposition d’origine ("
                       + L("règlement du PSMV", _PSMV_REGL) + ").",
-                      "Aix-en-Provence est en zone de sismicité 4, moyenne : signalez-le à l’artisan avant une surélévation ou une "
-                      "reprise de charpente. En zone B2 du plan argiles, planter un arbre plus près d’un bâtiment que sa hauteur adulte "
-                      "est interdit, sauf écran anti-racines de 2 m de profondeur (" + L("plan argiles", _RGA) + ")."],
+                      "La commune est classée en sismicité 4, moyenne (" + L("Géorisques", _SISM) + ") : pour une surélévation ou "
+                      "un renforcement de charpente, mentionnez-le dès la demande de devis. Le plan argiles interdit partout de planter "
+                      "un arbre plus près d’un bâtiment que sa hauteur adulte, sauf écran anti-racines de 2 m de profondeur ("
+                      + L("plan argiles", _RGA) + ")."],
         "isolation": ["On compte 55,2 jours à 30 °C ou plus par an à Aix-en-Provence, et 43,2 jours de gel (" + L("Météo-France", _MF)
                       + ", 1991-2020). Isoler la toiture limite la surchauffe des derniers étages l’été comme les pertes de chaleur "
                       "l’hiver.",
-                      "Provence Éco-Rénov, l’aide du Département, finance l’isolation du bâti des propriétaires occupants : jusqu’à 25 % "
-                      "du coût TTC, dans la limite de 4 000 € (" + L("Département", _CD13) + ", 2025). Près des massifs boisés, les "
+                      "Provence Éco-Rénov, l’aide du Département, finance l’isolation des toitures, combles, planchers et murs : "
+                      "jusqu’à 25 % du coût TTC, dans la limite de 4 000 €, pour un logement de plus de 15 ans et sous plafond de "
+                      "revenus (" + L("Département", _CD13) + "). Près des massifs boisés, les "
                       "règles du plan incendie de forêt s’appliquent aussi à l’isolation par l’extérieur, qui doit atteindre la réaction "
                       "au feu C-s3,d0 (" + L("règlement du PPRIF", _PPRIF) + ")."]},
     steps_intro="Dans l’ordre, du centre ancien aux quartiers proches des massifs.",
