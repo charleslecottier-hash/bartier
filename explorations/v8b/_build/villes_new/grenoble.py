@@ -48,14 +48,16 @@ CITY = dict(
                              "ville ancienne et ses extensions du XIXe siècle, de l’Île Verte au parc Paul-Mistral. Tout changement "
                              "d’aspect y demande l’accord de l’architecte des Bâtiments de France (" + L("règlement du SPR", _SPR) + ")."),
            ("Urbanisme", "Le PLUi de Grenoble-Alpes Métropole a été approuvé le 20 décembre 2019 (" + L("délibération", _PLUI_APPRO)
-                         + "), puis modifié, en dernier lieu le 7 novembre 2025 (" + L("Métropole", _PLUI_EVOL) + "). Il protège "
-                         "certains bâtiments sur trois niveaux, et l’avis de l’architecte des Bâtiments de France ajoute un mois "
-                         "à l’instruction (" + L("Ville de Grenoble", _SECT) + ")."),
+                         + "). Sa révision allégée n° 1, approuvée le 7 novembre 2025, y intègre le plan de prévention du risque "
+                         "d’inondation du Drac aval (" + L("Métropole", _PLUI_EVOL) + "). Il protège certains bâtiments sur trois "
+                         "niveaux, avec des prescriptions propres, et la Ville aide à y restaurer menuiseries en bois et décors ("
+                         + L("Ville de Grenoble", _SECT) + ")."),
            ("Termites", "Grenoble fait partie des 21 communes de la zone de lutte et de surveillance créée par l’arrêté préfectoral "
                         "du 1er octobre 2002, avec Saint-Martin-d’Hères, Meylan ou La Tronche (" + L("ADIL de l’Isère", _TERM) + ")."),
            ("Séisme et inondation", "Grenoble est en zone de sismicité 4, moyenne (" + L("Géorisques", _SISM) + "). Elle entre aussi "
-                                    "dans le plan de prévention du risque d’inondation du Drac aval, approuvé le 17 juillet 2023 : "
-                                    "en zone inondable, les mesures prescrites aux bâtiments existants sont à réaliser dans les 5 ans ("
+                                    "dans le plan de prévention du risque d’inondation du Drac aval, approuvé le 17 juillet 2023. "
+                                    "En zone inondable, les mesures prescrites aux bâtiments existants, comme une zone refuge, sont à "
+                                    "réaliser dans les 5 ans suivant l’approbation, dans la limite de 10 % de la valeur vénale du bien ("
                                     + L("préfecture de l’Isère", _PPRI) + ")."),
            ("Climat", "À la station de Grenoble-Le Versoud : 67,2 jours de gel, 35,3 jours à 30 °C ou plus et 981,1 mm de pluie par an, "
                       "mais seulement 13,6 jours de rafales d’au moins 58 km/h (" + L("Météo-France", _MF) + ", 1999-2020).")],
