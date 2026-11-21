@@ -89,8 +89,11 @@ def check(path, net=False, pool=None):
         err.append(f"slug « {c['slug']} » différent du nom de fichier")
     if not re.fullmatch(r"[a-z0-9-]+", c["slug"]):
         err.append("slug invalide")
-    if c["title"] != f"Devis travaux {c.get('a') or 'à ' + c['name']} : toiture, façade, fenêtres, isolation":
-        warn.append("titre différent du modèle « Devis travaux à <ville> : toiture, façade, fenêtres, isolation »")
+    _av = c.get('a') or 'à ' + c['name']
+    _full, _short = f"Devis travaux {_av} : toiture, façade, fenêtres, isolation", f"Devis travaux {_av} : toiture, façade, isolation"
+    if c["title"] != (_full if len(_full) <= 65 else _short):
+        warn.append("titre différent du modèle « Devis travaux à <ville> : toiture, façade, fenêtres, isolation » "
+                    "(au-delà de 65 caractères : « Devis travaux à <ville> : toiture, façade, isolation »)")
     if re.search(r"(?:^|\s)(?:à|de) (?:Le|Les) [A-ZÉ]", plain(" ".join([c["title"], c["desc"], c["answer"], c["tldr"]]))) or " à Le " in str(c) or " à Les " in str(c):
         err.append("« à Le … » : ajoutez la préposition de la ville (champ a=\"au Havre\") et écrivez « au Havre », « du Havre »")
     n = len(plain(c["desc"]))

@@ -582,7 +582,10 @@ f.addEventListener('submit',function(e){e.preventDefault();if(!ok(cur))return;if
 </script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){var w=document.getElementById('wa'),c=document.getElementById('contact'),f=document.querySelector('.ftr');if(!w||!('IntersectionObserver' in window))return;
-var on=new Set();var io=new IntersectionObserver(function(es){es.forEach(function(x){x.isIntersecting?on.add(x.target):on.delete(x.target)});var v=on.size>0;if(v&&w.classList.contains('is-open'))return;w.classList.toggle('is-away',v)},{threshold:.05});[c,f,document.querySelector('.pf-card')].forEach(function(n){n&&io.observe(n)});});
+var on=new Set(),hit=false,upd=function(){var v=on.size>0||hit;if(v&&w.classList.contains('is-open'))return;w.classList.toggle('is-away',v)};
+var io=new IntersectionObserver(function(es){es.forEach(function(x){x.isIntersecting?on.add(x.target):on.delete(x.target)});upd()},{threshold:.05});[c,f,document.querySelector('.pf-card')].forEach(function(n){n&&io.observe(n)});
+var fab=w.querySelector('.wa-fab'),bs=[].slice.call(document.querySelectorAll('main .btn,main button')),tk=0,chk=function(){tk=0;if(!fab)return;var a=fab.getBoundingClientRect(),m=8;hit=bs.some(function(e){var r=e.getBoundingClientRect();return r.width>0&&r.left<a.right+m&&r.right>a.left-m&&r.top<a.bottom+m&&r.bottom>a.top-m});upd()};
+addEventListener('scroll',function(){if(!tk)tk=requestAnimationFrame(chk)},{passive:true});addEventListener('resize',chk);chk();});
 </script>
 <div class="wa" id="wa">
   <div class="wa-panel" id="wa-panel" role="dialog" aria-modal="false" aria-labelledby="wa-title">

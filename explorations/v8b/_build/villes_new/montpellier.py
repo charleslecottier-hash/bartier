@@ -37,7 +37,7 @@ CITY = dict(
     tldr=("À Montpellier, l’Écusson est un secteur sauvegardé où même les travaux intérieurs passent par l’architecte des Bâtiments de France, "
           "et tout l’Hérault est en zone termites"),
     hook="Écusson sauvegardé, ravalement imposé par quartier, Hérault termité.",
-    title="Devis travaux à Montpellier : toiture, façade, fenêtres, isolation",
+    title="Devis travaux à Montpellier : toiture, façade, isolation",
     desc=("Travaux à Montpellier : Écusson sauvegardé, ravalement imposé par quartier, zone termites, pluies d’automne, aide plan climat. "
           "Un seul artisan vient chiffrer."),
     figures_intro="L’essentiel en chiffres, de l’Écusson aux quartiers récents.",

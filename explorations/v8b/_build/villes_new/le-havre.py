@@ -11,7 +11,7 @@ _RAV = "https://lehavre.fr/services-au-quotidien/habitat-urbanisme/campagnes-de-
 _RAVB = "https://lehavre.fr/sites/default/files/fichier/campagne_de_ravalement_des_facades_en_briques-thiers_coty_flaubert_2023.pdf"
 _TIA = "https://lehavre.fr/actualites/toutes-les-actualites/beneficiez-daides-pour-vos-travaux-dinteret-architectural"
 _HAB = "https://lehavre.fr/services-au-quotidien/habitat-urbanisme"
-_PLUI = ("https://documents.lehavreseinemetropole.fr/elaboration-plui/Lettres%20d'information/"
+_PLUI = ("https://documents.lehavreseinemetropole.fr/elaboration-plui/Lettres%20d%27information/"
          "Lettre%20d%E2%80%99information%20n%C2%B05%20sur%20le%20PLUi%20(avril%202026).pdf")
 _DICRIM = "https://www.georisques.gouv.fr/DICRIM/76351"
 _MF = "https://donneespubliques.meteofrance.fr/FichesClim/FICHECLIM_76552001.pdf"

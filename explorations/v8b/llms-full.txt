@@ -521,7 +521,7 @@ Vous gardez ce qui a été construit, même si vous arrêtez.
 
 ### Deux canaux, deux demandes
 Google capte ceux qui cherchent déjà. Meta touche ceux qui n’ont pas encore cherché. Nous choisissons selon votre métier et votre secteur.
-Google Ads Meta Ads La demande Le propriétaire cherche déjà Le propriétaire n’a pas encore cherché Typiquement Projets déjà avancés Rénovations pas encore lancées Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Trier au téléphone
+Critère Google Ads Meta Ads La demande Le propriétaire cherche déjà Le propriétaire n’a pas encore cherché Typiquement Projets déjà avancés Rénovations pas encore lancées Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Trier au téléphone
 
 ### Vos questions, nos réponses
 Une autre question ? Écrire à Martin sur WhatsApp
@@ -592,7 +592,7 @@ Tout vous reste si vous arrêtez.
 
 ### Deux canaux, deux demandes
 Google capte ceux qui cherchent déjà. Meta touche ceux qui n’ont pas encore cherché. Nous choisissons selon votre métier et votre secteur.
-Google Ads Meta Ads La demande Le propriétaire cherche déjà Le propriétaire n’a pas encore cherché Typiquement Projets déjà avancés Rénovations pas encore lancées Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Trier au téléphone
+Critère Google Ads Meta Ads La demande Le propriétaire cherche déjà Le propriétaire n’a pas encore cherché Typiquement Projets déjà avancés Rénovations pas encore lancées Le volume Limité aux recherches locales Tous les propriétaires du rayon Le point clé Écarter les recherches inutiles Trier au téléphone
 
 ### Vos questions, nos réponses
 Une autre question ? Écrire à Martin sur WhatsApp
@@ -2848,7 +2848,7 @@ Charles et Martin, fondateurs de Bartier & Co. Martin répond au 07 81 01 89 36,
 
 ---
 
-## Devis travaux à Montpellier : toiture, façade, fenêtres, isolation
+## Devis travaux à Montpellier : toiture, façade, isolation
 
 Adresse : https://bartierandco.com/devis-travaux/montpellier/
 
@@ -4187,7 +4187,7 @@ Charles et Martin, fondateurs de Bartier & Co. Martin répond au 07 81 01 89 36,
 
 ---
 
-## Devis travaux à Saint-Étienne : toiture, façade, fenêtres, isolation
+## Devis travaux à Saint-Étienne : toiture, façade, isolation
 
 Adresse : https://bartierandco.com/devis-travaux/saint-etienne/
 
@@ -5357,7 +5357,7 @@ La demande n’est vendue qu’à vous. C’est mieux, mais vérifiez ce que rec
 Quelqu’un a rappelé le propriétaire, vérifié qu’il est propriétaire occupant, compris son projet, confirmé la commune, puis fixé une date avec lui. Vous recevez directement une visite dans votre agenda, sans personne à rappeler.
 
 ### Demande partagée, demande exclusive, rendez-vous qualifié : le comparatif
-- Demande partagée | Demande exclusive | Rendez-vous qualifié
+- Critère | Demande partagée | Demande exclusive | Rendez-vous qualifié
 - Entreprises sur la même demande | Plusieurs | Une | Une
 - Qui rappelle | Vous | Vous | Le prestataire
 - Projet vérifié | Rarement | Parfois | Oui
@@ -5366,7 +5366,7 @@ Quelqu’un a rappelé le propriétaire, vérifié qu’il est propriétaire occ
 ### Combien coûte vraiment une demande ?
 Comparez plutôt le coût par chantier signé : le prix des demandes divisé par le nombre de chantiers qu’elles vous ont fait signer.
 Exemple, avec des chiffres choisis pour le calcul (ce ne sont pas des moyennes) :
-- Demandes partagées | Demandes exclusives
+- Critère | Demandes partagées | Demandes exclusives
 - Prix d’une demande | 25 € | 60 €
 - Demandes achetées | 20, soit 500 € | 10, soit 600 €
 - Chantiers signés | 1 | 2
@@ -5441,7 +5441,7 @@ Sur Google, le prix du clic dépend du métier et de la concurrence locale. Sur 
 Dans les deux cas, la demande doit être rappelée en quelques minutes. C’est souvent là que se perdent les meilleurs projets.
 
 ### Google Ads ou Meta Ads : le tableau
-- Google Ads | Meta Ads (Facebook, Instagram)
+- Critère | Google Ads | Meta Ads (Facebook, Instagram)
 - La demande | Le propriétaire cherche déjà | Le propriétaire n’a pas encore cherché
 - Typiquement | Urgences, projets mûrs | Rénovation, entretien, projets à venir
 - Le ciblage | Les recherches, dans vos communes | Un rayon autour de votre dépôt

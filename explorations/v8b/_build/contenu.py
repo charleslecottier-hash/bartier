@@ -61,7 +61,7 @@ PILLAR = dict(
 <p class="answer">Coût par chantier signé = dépenses du canal ÷ chantiers signés grâce à ce canal</p>
 <p>Exemple, avec des chiffres choisis pour le calcul (ce ne sont pas des moyennes) :</p>
 <table>
-<thead><tr><th></th><th>Demandes partagées</th><th>Demandes pour vous seul</th></tr></thead>
+<thead><tr><th><span class="vh">Critère</span></th><th>Demandes partagées</th><th>Demandes pour vous seul</th></tr></thead>
 <tbody>
 <tr><td>Dépenses du mois</td><td>400 €</td><td>900 €</td></tr>
 <tr><td>Demandes reçues</td><td>40, soit 10 € la demande</td><td>12, soit 75 € la demande</td></tr>
@@ -189,7 +189,7 @@ PLUS = {
 <p>Comparez plutôt le <a href="/lexique/#cout-par-chantier-signe">coût par chantier signé</a> : le prix des demandes divisé par le nombre de chantiers qu'elles vous ont fait signer.</p>
 <p>Exemple, avec des chiffres choisis pour le calcul (ce ne sont pas des moyennes) :</p>
 <table>
-<thead><tr><th></th><th>Demandes partagées</th><th>Demandes exclusives</th></tr></thead>
+<thead><tr><th><span class="vh">Critère</span></th><th>Demandes partagées</th><th>Demandes exclusives</th></tr></thead>
 <tbody>
 <tr><td>Prix d'une demande</td><td>25 €</td><td>60 €</td></tr>
 <tr><td>Demandes achetées</td><td>20, soit 500 €</td><td>10, soit 600 €</td></tr>
@@ -225,7 +225,7 @@ PLUS = {
         before="<h2>Google Ads ou Meta Ads : notre choix, et ses limites</h2>",
         insert=f"""<h2>Google Ads ou Meta Ads : le tableau</h2>
 <table>
-<thead><tr><th></th><th>Google Ads</th><th>Meta Ads (Facebook, Instagram)</th></tr></thead>
+<thead><tr><th><span class="vh">Critère</span></th><th>Google Ads</th><th>Meta Ads (Facebook, Instagram)</th></tr></thead>
 <tbody>
 <tr><td>La demande</td><td>Le propriétaire cherche déjà</td><td>Le propriétaire n'a pas encore cherché</td></tr>
 <tr><td>Typiquement</td><td>Urgences, projets mûrs</td><td>Rénovation, entretien, projets à venir</td></tr>

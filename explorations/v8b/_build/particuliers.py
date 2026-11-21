@@ -269,7 +269,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
 </section>"""
 
-    gal = "".join(f'<li><figure class="frame"><img srcset="/assets/photos/{n}-480x600.webp 480w, /assets/photos/{n}-800x1000.webp 800w" '
+    gal = "".join(f'<li><figure class="frame"><img srcset="/assets/photos/{n}-480x600.webp 480w, /assets/photos/{n}-640x800.webp 640w, /assets/photos/{n}-800x1000.webp 800w" '
                   f'sizes="(max-width: 760px) 46vw, 23vw" src="/assets/photos/{n}-480x600.webp" alt="{alt}" width="800" height="1000" loading="lazy" decoding="async"></figure>'
                   f'<p>{lab}</p></li>' for n, lab, alt in GALLERY)
     gallery = f"""<section class="sheet pf-gal" id="sur-place" data-tone="light">
@@ -329,7 +329,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     compare = f"""<section class="sheet" data-tone="tint">
   <div class="grid sp-head"><h2 data-split>Pas cinq entreprises. Un seul artisan.</h2><p>Ailleurs, votre demande part chez plusieurs entreprises et le téléphone ne s’arrête plus. Ici, nous vous rappelons, puis un seul artisan s’occupe de votre projet.</p></div>
   <div class="sp-table" role="table" aria-label="Site de devis classique et Bartier &amp; Co">
-    <div class="sp-row is-head" role="row"><span role="columnheader"></span><span role="columnheader">Site de devis classique</span><span role="columnheader">Bartier &amp; Co</span></div>
+    <div class="sp-row is-head" role="row"><span role="columnheader"><span class="vh">Critère</span></span><span role="columnheader">Site de devis classique</span><span role="columnheader">Bartier &amp; Co</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Qui vous appelle</span><span role="cell">Souvent plusieurs entreprises</span><span role="cell">Nous, puis un seul artisan</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Avant la visite</span><span role="cell">Vous répétez votre projet</span><span role="cell">Votre besoin est déjà vérifié</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le rendez-vous</span><span role="cell">Vous relancez les artisans</span><span role="cell">Fixé pendant notre appel</span></div>
@@ -672,7 +672,7 @@ f.addEventListener("change",function(e){if(!f.querySelector(".pf-err").hidden&&e
 f.addEventListener("submit",function(e){e.preventDefault();var err=f.querySelector(".pf-err"),bad=check();
   if(bad.length){if(window.innerWidth<=760){err.scrollIntoView({block:"center"});bad[0][0].focus({preventScroll:true})}else bad[0][0].focus();return}
   err.hidden=true;if(val("site_web"))return;
-  var tr=LABEL[val("travaux")]||"Autre projet",msg="Bonjour, je souhaite être rappelé pour des travaux : "+tr+" ("+val("besoin")+"), "+val("delai").toLowerCase()+". "+val("statut")+", code postal "+val("code_postal")+". "+val("prenom")+", "+val("telephone")+".";
+  var tr=LABEL[val("travaux")]||"Autre projet",msg="Bonjour, je souhaite être rappelé pour des travaux : "+tr+" ("+val("besoin")+"), "+val("delai").toLowerCase()+". "+val("statut")+", code postal "+val("code_postal")+". "+val("prenom")+", "+(function(t){var d=t.replace(/\D/g,"");return /^0\d{9}$/.test(d)?d.replace(/(\d{2})(?=\d)/g,"$1 "):t})(val("telephone"))+".";
   var done=f.querySelector(".pf-done"),btn=f.querySelector(".pf-submit"),lab=btn.querySelector("span"),old=lab.textContent;
   f.querySelector(".pf-name").textContent=", "+val("prenom");f.querySelector(".pf-name2").textContent=val("prenom")+", envoyez";
   var w=nextOpen();var telf=val("telephone").replace(/\D/g,"").length===10?val("telephone").replace(/\D/g,"").replace(/(\d{2})(?=\d)/g,"$1\u00a0"):val("telephone");

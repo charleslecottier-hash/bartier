@@ -29,7 +29,7 @@ CITY = dict(
     tldr="À Saint-Étienne, le ravalement est imposé dans certaines rues de l’hyper-centre, et la Ville le subventionne pour les immeubles "
          "du centre construits avant 1960 et situés en site patrimonial remarquable",
     hook="Ravalement imposé dans l’hyper-centre, aidé par le plan façades.",
-    title="Devis travaux à Saint-Étienne : toiture, façade, fenêtres, isolation",
+    title="Devis travaux à Saint-Étienne : toiture, façade, isolation",
     desc="Travaux à Saint-Étienne : cinq sites patrimoniaux remarquables, ravalement imposé dans l’hyper-centre, plan façades, radon. Un seul artisan vient chiffrer.",
     figures_intro="Ce qui compte avant de lancer des travaux à Saint-Étienne.",
     figures=[("87,1 <small>%</small>", "des logements sont des appartements", S("Insee, 2023", _INSEE)),

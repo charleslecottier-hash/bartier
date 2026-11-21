@@ -133,7 +133,7 @@ TOULOUSE = dict(
            ("Urbanisme", "Hors centre ancien, le PLUi-H 2025-2035 de Toulouse Métropole s’applique depuis le 26 janvier 2026 ("
                          + L("Toulouse Métropole", "https://metropole.toulouse.fr/actualites/le-nouveau-plui-h-est-applicable") + ")."),
            ("Termites", "Toute la Haute-Garonne est déclarée zone infestée par arrêté préfectoral du 10 décembre 2001. Aucun arrêté ne vise la mérule ("
-                        + L("préfecture", "https://www.haute-garonne.gouv.fr/Politiques-publiques/Habitat-logement-et-hebergement/Merules-et-termites/Reglementation-merule") + ")."),
+                        + L("préfecture", "https://www.haute-garonne.gouv.fr/services-de-letat/direction-departementale-des-territoires-ddt/actions-de-letat/habitat-logement-et-batiment-durables/batiments-durables/qualite-de-la-construction/merules-et-termites/reglementation-lutte-contre-la-merule") + ")."),
            ("Bruit des avions", "Autour de l’aéroport de Blagnac, le plan de gêne sonore ouvre droit à l’aide Silencio pour insonoriser son logement ("
                                 + L("France 3", _SILENCIO) + ")."),
            ("Climat", "Zone climatique H2c. Le vent d’autan, de sud-est, souffle par rafales : 92 jours d’au moins 57 km/h à Blagnac en 2025 ("

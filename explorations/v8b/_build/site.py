@@ -652,7 +652,7 @@ READ_ADS = [(a["short"], f"/blog/{a['slug']}/") for a in ARTICLES if a["slug"] i
 COMPARE = """<section class="sheet" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Deux canaux, deux demandes</h2><p>Google capte ceux qui cherchent déjà. Meta touche ceux qui n'ont pas encore cherché. Nous choisissons selon votre métier et votre secteur.</p></div>
   <div class="sp-table" role="table" aria-label="Google Ads et Meta Ads">
-    <div class="sp-row is-head" role="row"><span role="columnheader"></span><span role="columnheader">Google Ads</span><span role="columnheader">Meta Ads</span></div>
+    <div class="sp-row is-head" role="row"><span role="columnheader"><span class="vh">Critère</span></span><span role="columnheader">Google Ads</span><span role="columnheader">Meta Ads</span></div>
     <div class="sp-row" role="row"><span role="rowheader">La demande</span><span role="cell">Le propriétaire cherche déjà</span><span role="cell">Le propriétaire n'a pas encore cherché</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Typiquement</span><span role="cell">Projets déjà avancés</span><span role="cell">Rénovations pas encore lancées</span></div>
     <div class="sp-row" role="row"><span role="rowheader">Le volume</span><span role="cell">Limité aux recherches locales</span><span role="cell">Tous les propriétaires du rayon</span></div>
@@ -769,7 +769,7 @@ for t in TRADES:
 </section>""",
         f"""<section class="sheet tr-ads" data-tone="tint">
   <div class="grid sp-head"><h2 data-split>Des annonces à votre nom, autour de votre dépôt</h2><p>Facebook et Instagram, dans un rayon de 25 à 40 km, avec vos photos de chantier. Exemples d'annonces, rédigées ensuite avec vous.</p></div>
-  <ul class="sp-cols is-cards">
+  <ul class="sp-cols is-cards" tabindex="0" aria-label="Exemples d’annonces">
 {angles}
   </ul>
 </section>""",
@@ -1151,9 +1151,9 @@ for a in ARTICLES:
     <article class="prose">
 {label_tables(a['body'])}
     </article>
-    <aside class="art-aside">
+    <div class="art-aside">
       {a.get("aside") or ART_ASIDE}
-    </aside>
+    </div>
   </div>
 </section>""",
         more("À lire aussi", "Tous les articles", "/blog/", [(x["short"], f"/blog/{x['slug']}/") for x in ARTICLES if x["slug"] != a["slug"]]),
@@ -1195,11 +1195,11 @@ def guide(G, kick, crumb_items, faq_title, links):
     <article class="prose">
 {art}
     </article>
-    <aside class="art-aside">
+    <div class="art-aside">
       <h3>Votre secteur est-il libre ?</h3>
       <p>Un seul artisan par métier et par secteur. Visites déjà fixées, sans durée d'engagement.</p>
       <a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span></a>
-    </aside>
+    </div>
   </div>
 </section>""",
         faq(G["faq"], title=faq_title),
@@ -1306,8 +1306,8 @@ def pillar_page(G):
   <ol class="tc-loss">
 {loss_html}
   </ol>
-  <aside class="tc-law"><p class="tc-law-k">Depuis le 11 août 2026</p><p>Appeler un particulier pour lui proposer des travaux demande son accord préalable. Pour la rénovation énergétique, c'est interdit. Rappeler quelqu'un qui l'a demandé reste possible, avec la preuve de sa demande.</p>
-    <p class="tc-src">Sources : <a href="https://www.cnil.fr/fr/prospection-commerciale-par-telephone-hors-automate-dappel-quelles-sont-les-regles" target="_blank" rel="noopener">CNIL</a>, <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069565/LEGISCTA000032221441/2026-08-11" target="_blank" rel="noopener">Code de la consommation, L223-1</a>. <a href="/lexique/#demarchage-telephonique">Définition</a></p></aside>
+  <div class="tc-law"><p class="tc-law-k">Depuis le 11 août 2026</p><p>Appeler un particulier pour lui proposer des travaux demande son accord préalable. Pour la rénovation énergétique, c'est interdit. Rappeler quelqu'un qui l'a demandé reste possible, avec la preuve de sa demande.</p>
+    <p class="tc-src">Sources : <a href="https://www.cnil.fr/fr/prospection-commerciale-par-telephone-hors-automate-dappel-quelles-sont-les-regles" target="_blank" rel="noopener">CNIL</a>, <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069565/LEGISCTA000032221441/2026-08-11" target="_blank" rel="noopener">Code de la consommation, L223-1</a>. <a href="/lexique/#demarchage-telephonique">Définition</a></p></div>
 </section>""",
         f"""<section class="sheet tc-us" id="approche" data-tone="dark">
   <div class="grid tc-us-grid">

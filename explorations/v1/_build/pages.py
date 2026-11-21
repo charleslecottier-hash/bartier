@@ -329,7 +329,7 @@ ARTICLES = [
 
 <h2>Demande partagée, demande exclusive, rendez-vous qualifié : le comparatif</h2>
 <table>
-<thead><tr><th></th><th>Demande partagée</th><th>Demande exclusive</th><th>Rendez-vous qualifié</th></tr></thead>
+<thead><tr><th><span class="vh">Critère</span></th><th>Demande partagée</th><th>Demande exclusive</th><th>Rendez-vous qualifié</th></tr></thead>
 <tbody>
 <tr><td>Entreprises sur la même demande</td><td>Plusieurs</td><td>Une</td><td>Une</td></tr>
 <tr><td>Qui rappelle</td><td>Vous</td><td>Vous</td><td>Le prestataire</td></tr>
