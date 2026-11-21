@@ -133,6 +133,11 @@ FAQ = [
 ]
 
 
+FAQ_TOP = ["Est-ce vraiment gratuit ?", "La visite et le devis de l’artisan sont-ils payants ?", "Combien d’entreprises vont m’appeler ?",
+           "Comment l’artisan est-il choisi ?", "Et si le devis ne me convient pas ?", "Quand l’artisan vient-il chez moi ?",
+           "Où intervenez-vous ?", "Que faites-vous de mes données ?"]
+
+
 def tick():
     return '<svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>'
 
@@ -172,6 +177,7 @@ ENGAGE = [
 ]
 
 TEAM_IMG = "/assets/photos/fondateurs-bartier-co"
+WHY = '<li class="pf-why-free"><a class="link" href="#qui">Pourquoi c’est gratuit&nbsp;?</a></li></ul>'
 
 
 def build(img, phone, phone_txt, crumbs, parts=False):
@@ -229,11 +235,11 @@ def build(img, phone, phone_txt, crumbs, parts=False):
       {crumbs}
       <div class="pf-h1"><h1 class="pf-kw">Devis travaux : toiture, façade, fenêtres, charpente, isolation</h1> <p class="pf-big pf-big-hub">Fini les <span class="pf-who">artisans</span> qui ne rappellent&nbsp;pas.</p></div>
       <p class="lead">Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et la visite d’un artisan de votre secteur est fixée pendant l’appel.</p>
-      {trust("d-only")}
+      {trust("d-only").replace("</ul>", WHY)}
       {people("d-only").replace("@@PHONE@@", phone).replace("@@PHONE_TXT@@", phone_txt)}
     </div>
     {form}
-    <div class="pf-mtrust m-only">{trust()}{people().replace("@@PHONE@@", phone).replace("@@PHONE_TXT@@", phone_txt)}</div>
+    <div class="pf-mtrust m-only">{trust().replace("</ul>", WHY)}{people().replace("@@PHONE@@", phone).replace("@@PHONE_TXT@@", phone_txt)}</div>
   </div>
 </section>"""
 
@@ -264,10 +270,11 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
 </section>"""
 
-    eng = "".join(f'<li><h3>{check()}{a}</h3><p>{b}</p></li>' for a, b in ENGAGE)
+    eng = "".join(f'<li><span class="pf-eng-i">{check()}</span><h3>{a}</h3><p>{b}</p></li>' for a, b in ENGAGE)
     engage = f"""<section class="sheet pf-eng" id="engagements" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Nos engagements envers vous</h2><p>Ce que vous pouvez attendre de nous, quels que soient vos travaux.</p></div>
   <ul class="pf-checks pf-eng-list">{eng}</ul>
+  <p class="pf-mid"><a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
 </section>"""
 
     team = f"""<section class="sheet pf-team" id="qui" data-tone="paper">
@@ -296,7 +303,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
         cards.append(f"""    <li class="pf-trade"><figure class="frame"><img {src_attr} alt="{alt}" width="900" height="676" loading="lazy" sizes="(max-width: 760px) 46vw, 18vw"></figure>
       <h3><a class="pf-tl" href="/devis-travaux/{SLUG[k]}/">{h3}</a></h3><p>{words}</p><a class="link pf-pick" href="#projet" data-v="{k}">Devis {l.lower()}</a></li>""")
     trades = f"""<section class="sheet" id="travaux" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Toiture, façade, fenêtres, charpente, isolation</h2><p>Un artisan local pour chaque chantier.</p></div>
+  <div class="grid sp-head"><h2 data-split>Toiture, façade, fenêtres, charpente, isolation</h2><p>Pour chaque chantier, un artisan de votre secteur, qui se déplace avant de chiffrer.</p></div>
   <ul class="pf-trades">
 {chr(10).join(cards)}
   </ul>
@@ -345,7 +352,12 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   </div>
 </section>"""
 
-    rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>' for q, a in FAQ)
+    row = lambda q, a: f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{a}</p></div></details>'
+    top = [x for x in FAQ if x[0] in FAQ_TOP]
+    top.sort(key=lambda x: FAQ_TOP.index(x[0]))
+    more = [x for x in FAQ if x[0] not in FAQ_TOP]
+    rows = "\n".join(row(q, a) for q, a in top) + (f'\n      <details class="fq-more"><summary>Voir les {len(more)} autres questions</summary>\n'
+                                                      + "\n".join(row(q, a) for q, a in more) + "\n      </details>")
     faq = f"""<section class="faq sheet" id="questions" data-kind="faq" data-tone="light">
   <div class="grid fq-grid">
     <div class="fq-head"><h2 data-split>Vos questions sur les devis de travaux</h2><p>Une autre question&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p></div>
@@ -358,7 +370,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     end = f"""<section class="sheet pf-end" data-tone="accent">
   <div class="grid pf-end-grid">
     <h2 data-split>Décrivez vos travaux. Nous fixons la visite.</h2>
-    <div><p class="pf-season"></p><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></div>
+    <div><p class="pf-season"></p><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a>{people("pf-people-inv").replace("@@PHONE@@", phone).replace("@@PHONE_TXT@@", phone_txt)}</div>
   </div>
 </section>
 <a class="pf-sticky" href="#projet">Obtenir mon devis gratuit <span>1 min</span></a>"""
@@ -369,7 +381,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 </section>"""
     if parts:
         return dict(form=form, promise=promise, compare=compare, leak=leak, serious=serious, end=end)
-    return "\n\n".join([hero, process, trades, engage, leak_short, price, team, brief, serious, faq, end])  # tableau « Pas cinq entreprises » retiré
+    return "\n\n".join([hero, process, trades, engage, leak_short, price, team, serious, faq, brief, end])  # tableau « Pas cinq entreprises » retiré
 
 
 # Questions aussi posées sur une page métier : balisées là-bas seulement (Google : une FAQ répétée se balise une fois)
@@ -505,8 +517,16 @@ CSS = """<style id="pf-css">
 .pf-steps .pf-howto p{color:rgba(255,255,255,.75)}
 .pf-t{display:block;margin-bottom:6px;font-size:.8rem;line-height:1.3;color:rgba(255,255,255,.7)}
 .pf-eng-list{grid-template-columns:repeat(4,minmax(0,1fr))}
-.pf-eng-list h3{display:flex;align-items:flex-start;gap:10px}
-.pf-eng-list h3 svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--accent)}
+.pf-eng-list li{display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--rule);border-radius:var(--r);background:var(--bg)}
+.pf-eng-list h3{margin:0;font:400 clamp(1.2rem,1.5vw,1.4rem)/1.15 var(--f-display);letter-spacing:-.015em}
+.pf-eng-i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--tint,#DCE4FB);color:var(--accent)}
+.pf-eng-i svg{width:18px;height:18px}
+@media (max-width:760px){.pf-checks.pf-eng-list{gap:12px}.pf-eng-list li{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:14px;row-gap:6px;padding:18px}.pf-eng-i{grid-row:1 / span 2}.pf-eng-list h3{align-self:center}.pf-eng-list p{grid-column:2}}
+.pf-trust .pf-why-free{font-size:.92rem}
+.fq-more>summary{display:block;padding:1.2rem var(--cell);color:var(--accent);font-weight:500;cursor:pointer;list-style:none;text-decoration:underline;text-underline-offset:4px}
+.fq-more>summary::-webkit-details-marker{display:none}
+.fq-more[open]>summary{display:none}
+.pf-people-inv{margin-top:8px;color:rgba(255,255,255,.75)}.pf-people-inv b,.pf-people-inv a{color:#fff}.pf-people-inv .pf-av img{border-color:var(--accent)}
 .pf-team-grid{row-gap:28px;align-items:center}
 .pf-team-img{grid-column:1 / 3;margin:0}
 .pf-team-img img{display:block;width:100%;height:auto}
