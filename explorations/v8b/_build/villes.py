@@ -6,7 +6,61 @@ import json as _json
 import pathlib as _pl
 import re as _re
 
-from villes_data import CITIES  # données locales, une entrée par ville
+import math as _math
+
+from villes_data import CITIES as _BASE  # les six premières villes (données locales, une entrée par ville)
+
+# Code Insee, département et région des six premières villes (les fiches de villes_new/ les portent elles-mêmes)
+_META = {"lille": ("59350", 50.6292, 3.0573, "Nord", "59", "Hauts-de-France"), "rouen": ("76540", 49.4431, 1.0993, "Seine-Maritime", "76", "Normandie"),
+         "paris": ("75056", 48.8566, 2.3522, "Paris", "75", "Île-de-France"), "lyon": ("69123", 45.7640, 4.8357, "Rhône", "69", "Auvergne-Rhône-Alpes"),
+         "marseille": ("13055", 43.2965, 5.3698, "Bouches-du-Rhône", "13", "Provence-Alpes-Côte d’Azur"),
+         "toulouse": ("31555", 43.6047, 1.4442, "Haute-Garonne", "31", "Occitanie")}
+# Ordre d'affichage : des plus grandes communes aux plus petites (sert aussi de priorité aux étiquettes de la carte)
+ORDER = ["paris", "marseille", "lyon", "toulouse", "nice", "nantes", "montpellier", "strasbourg", "bordeaux", "lille", "rennes", "toulon", "reims",
+         "saint-etienne", "le-havre", "dijon", "grenoble", "angers", "nimes", "aix-en-provence", "clermont-ferrand", "le-mans", "brest", "tours",
+         "amiens", "annecy", "limoges", "metz", "perpignan", "besancon", "orleans", "rouen", "caen", "mulhouse", "nancy", "avignon", "poitiers",
+         "dunkerque", "versailles", "pau", "la-rochelle", "calais", "cannes", "beziers", "colmar", "bourges", "saint-nazaire", "ajaccio", "valence",
+         "quimper", "troyes", "lorient", "niort", "chambery", "la-roche-sur-yon", "vannes", "bayonne", "cherbourg-en-cotentin", "chartres", "laval"]
+
+
+def _new_cities():
+    """Fiches de villes_new/ qui passent le contrôle qualité ; les autres restent des brouillons, non publiés."""
+    import villes_check
+    folder = _pl.Path(__file__).parent / "villes_new"
+    if not folder.exists():
+        return []
+    pool = villes_check.others()
+    out = []
+    for p in sorted(folder.glob("*.py")):
+        if villes_check.ok(p, pool):
+            out.append(villes_check.load(p).CITY)
+        else:
+            print(f"  ville non publiée (contrôle qualité ou brouillon) : {p.stem}")
+    return out
+
+
+_rank = lambda c: (ORDER.index(c["slug"]) if c["slug"] in ORDER else len(ORDER), c["name"])
+CITIES = sorted([dict(c, insee=m[0], lat=m[1], lon=m[2], dept=m[3], depcode=m[4], region=m[5]) for c in _BASE for m in [_META[c["slug"]]]]
+                + _new_cities(), key=_rank)
+_MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+
+
+def verified(c):
+    """Date de vérification des sources : (ISO, en toutes lettres)."""
+    iso = c.get("verified", "2026-11-20")
+    y, m, d = (int(x) for x in iso.split("-"))
+    return iso, f"{'1er' if d == 1 else d} {_MOIS[m - 1]} {y}"
+
+
+def km(a, b):
+    """Distance à vol d'oiseau entre deux villes, en kilomètres."""
+    la1, lo1, la2, lo2 = map(_math.radians, (a["lat"], a["lon"], b["lat"], b["lon"]))
+    h = _math.sin((la2 - la1) / 2) ** 2 + _math.cos(la1) * _math.cos(la2) * _math.sin((lo2 - lo1) / 2) ** 2
+    return 12742 * _math.asin(_math.sqrt(h))
+
+
+def voisines(c, n=6):
+    return sorted((x for x in CITIES if x["slug"] != c["slug"]), key=lambda x: km(c, x))[:n]
 
 TRADE_H3 = {"toiture": "Couvreur à {v}", "facade": "Ravalement de façade à {v}", "fenetres": "Fenêtres et portes à {v}",
             "charpente": "Charpente à {v}", "isolation": "Isolation à {v}"}
@@ -21,6 +75,7 @@ CSS = """<style id="vl-css">
 .vl-others{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 64px;padding:0 var(--cell)}
 .vl-others .pf-olist{padding:0}
 .vl-oh{margin-bottom:12px;font-size:.8rem;color:var(--muted)}
+.vl-km{margin-left:6px;font-size:.8rem;color:var(--muted);white-space:nowrap}
 .vl-trades li{scroll-margin-top:96px}
 .vl-dl .link,.vl-trades .link,.vl-steps .link{display:inline;white-space:normal;min-height:0}
 .vl-more{align-items:center}
@@ -98,15 +153,40 @@ CSS = """<style id="vl-css">
 _MAP = _json.loads((_pl.Path(__file__).parent / "france_map.json").read_text(encoding="utf-8"))  # Natural Earth, domaine public
 
 
+def _xy(c):
+    """Position sur la carte : projection de la carte (Natural Earth, équirectangulaire), ajustée sur les six premières villes."""
+    if c["slug"] in _MAP["cities"]:
+        return tuple(_MAP["cities"][c["slug"]])
+    return (round(27.9265 * c["lon"] - 0.0069 * c["lat"] + 133.3579, 1), round(-0.0035 * c["lon"] - 40.5889 * c["lat"] + 2073.9614, 1))
+
+
 def carte(current=None):
-    """Carte de France des villes, cliquable ; la ville de la page est mise en avant."""
+    """Carte de France des villes, cliquable ; la ville de la page est mise en avant. Toutes les villes ont leur point ;
+    les noms s'affichent tant qu'ils ne se chevauchent pas (la ville de la page d'abord, puis les plus grandes)."""
+    W, H = _MAP["w"] + 72, _MAP["h"] + 16
+    boxes = [(x - 6, y - 6, x + 6, y + 6) for x, y in (_xy(c) for c in CITIES)]
+    hit = lambda b: b[0] < -12 or b[2] > W or b[1] < -16 or b[3] > H or any(b[0] < o[2] and o[0] < b[2] and b[1] < o[3] and o[1] < b[3] for o in placed)
+    placed, labels = [], {}
+    for c in sorted(CITIES, key=lambda c: (c["slug"] != current, _rank(c))):
+        x, y = _xy(c)
+        w = 9.2 * len(c["name"]) + 4
+        for lx, anchor in ((x + 12, "start"), (x - 12, "end")):
+            b = (lx, y - 12, lx + w, y + 6) if anchor == "start" else (lx - w, y - 12, lx, y + 6)
+            own = [o for o in boxes if not (abs((o[0] + o[2]) / 2 - x) < .1 and abs((o[1] + o[3]) / 2 - y) < .1)]
+            if not hit(b) and not any(b[0] < o[2] and o[0] < b[2] and b[1] < o[3] and o[1] < b[3] for o in own):
+                placed.append(b)
+                labels[c["slug"]] = (lx, anchor)
+                break
     pins = []
     for c in CITIES:
-        x, y = _MAP["cities"][c["slug"]]
+        x, y = _xy(c)
         on = c["slug"] == current
         dot = (f'<circle cx="{x}" cy="{y}" r="13" class="vl-halo"/><circle cx="{x}" cy="{y}" r="6.5" class="vl-dot is-on"/>' if on
                else f'<circle cx="{x}" cy="{y}" r="5" class="vl-dot"/>')
-        label = f'<text x="{x + 12}" y="{y + 4.5}" class="vl-lab{" is-on" if on else ""}">{c["name"]}</text>'
+        lab = labels.get(c["slug"])
+        ta = ' text-anchor="end"' if lab and lab[1] == "end" else ""
+        label = (f'<text x="{lab[0]}" y="{y + 4.5}" class="vl-lab{" is-on" if on else ""}"{ta}>{c["name"]}</text>'
+                 if lab else f'<title>{c["name"]}</title>')
         pins.append(f'<g>{dot}{label}</g>' if on else f'<a href="{path(c)}" aria-label="Devis travaux à {c["name"]}">{dot}{label}</a>')
     w, h = _MAP["w"], _MAP["h"]
     return (f'<svg class="vl-svg" viewBox="-12 -16 {w + 84} {h + 32}" role="img" aria-labelledby="vl-map-t"><title id="vl-map-t">Carte des villes : '
@@ -193,7 +273,7 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
     local = f"""<section class="sheet" id="a-savoir" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>Que faut-il savoir avant des travaux à {v} ?</h2><p>{c["answer"]}</p></div>
   <div class="grid"><dl class="pf-dl vl-dl">{facts}</dl></div>
-  <p class="vl-src">Par <a class="link" href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur de Bartier &amp; Co. Sources officielles vérifiées le <time datetime="2026-11-20">20 novembre 2026</time>. Une règle a changé ? <a class="link" href="mailto:contact@bartierandco.com">Écrivez-nous</a>.</p>
+  <p class="vl-src">Par <a class="link" href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur de Bartier &amp; Co. Sources officielles vérifiées le <time datetime="{verified(c)[0]}">{verified(c)[1]}</time>. Une règle a changé ? <a class="link" href="mailto:contact@bartierandco.com">Écrivez-nous</a>.</p>
 </section>"""
 
     items = []
@@ -249,11 +329,12 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
   </div>
 </section>"""
 
-    cities = "".join(f'<li><a class="link" href="{path(x)}">Devis travaux à {x["name"]}</a></li>' for x in CITIES if x["slug"] != c["slug"])
+    cities = "".join(f'<li><a class="link" href="{path(x)}">Devis travaux à {x["name"]}</a> <span class="vl-km">{round(km(c, x)):d} km</span></li>' for x in voisines(c))
+    cities += '<li><a class="link" href="/devis-travaux/#villes">Toutes les villes</a></li>'
     metiers = "".join(f'<li><a class="link" href="/devis-travaux/{PF.SLUG[x[0]]}/">{x[5]}</a></li>' for x in PF.TRADES)
     others = f"""<section class="sheet pf-others" data-tone="light">
   <div class="grid sp-head"><h2 data-split>Ailleurs en France</h2><p><a class="link" href="/devis-travaux/">Tous les devis de travaux</a></p></div>
-  <div class="vl-others"><div><p class="vl-oh">Autres villes</p><ul class="pf-olist">{cities}</ul></div><div><p class="vl-oh">Par métier</p><ul class="pf-olist">{metiers}</ul></div></div>
+  <div class="vl-others"><div><p class="vl-oh">Villes les plus proches</p><ul class="pf-olist">{cities}</ul></div><div><p class="vl-oh">Par métier</p><ul class="pf-olist">{metiers}</ul></div></div>
 </section>"""
 
     out = CSS + "\n" + "\n\n".join([hero, figures, local, trades, parts["promise"], steps, aides, leak, brief, faqs, others, parts["end"]])
@@ -275,13 +356,14 @@ def faq(c):
 def schema(SITE, faq_ld, bc_ld, PF, c):
     clean = lambda s: _re.sub("<[^>]+>", "", s).replace("&amp;", "&").replace("&nbsp;", " ")
     p = path(c)
-    lat, lon, dept = PLACE[c["slug"]]
     city = {"@type": "City", "name": c["name"], "sameAs": [c["wiki"], f"https://www.wikidata.org/wiki/{c['wikidata']}"],
-            "geo": {"@type": "GeoCoordinates", "latitude": lat, "longitude": lon},
-            "containedInPlace": {"@type": "AdministrativeArea", "name": dept}}
+            "identifier": {"@type": "PropertyValue", "propertyID": "Code officiel géographique (Insee)", "value": c["insee"]},
+            "geo": {"@type": "GeoCoordinates", "latitude": c["lat"], "longitude": c["lon"]},
+            "containedInPlace": {"@type": "AdministrativeArea", "name": c["dept"], "identifier": c["depcode"],
+                                 "containedInPlace": {"@type": "AdministrativeArea", "name": c["region"]}}}
     graph = [
         {"@type": "WebPage", "@id": SITE + p, "url": SITE + p, "name": c["title"], "description": c["desc"], "inLanguage": "fr-FR",
-         "dateModified": "@@MAJ@@", "lastReviewed": "2026-11-20", "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}, "about": city,
+         "dateModified": "@@MAJ@@", "lastReviewed": verified(c)[0], "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}, "about": city,
          "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur", "url": SITE + "/qui-sommes-nous/#charles"}},
         {"@type": "Service", "name": f"Devis travaux à {c['name']}", "serviceType": "Mise en relation avec un artisan : toiture, façade, fenêtres, charpente, isolation",
          "description": clean(c["answer"]), "url": SITE + p, "areaServed": city,

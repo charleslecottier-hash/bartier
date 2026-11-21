@@ -894,8 +894,13 @@ if "confidentialite" in LEGAL_READY and NOTICES.get("particulier_form_notice"):
 pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH)))
 import villes as VL  # pages « Devis travaux à <ville> »
 VL_HUB = "".join(f'<li><h3><a class="pf-tl" href="{VL.path(c)}">Devis travaux à {c["name"]}</a></h3><p>{c["hook"].rstrip(".")}</p></li>' for c in VL.CITIES)
+if len(VL.CITIES) > 8:  # au-delà de quelques villes : une liste par région, dans l'ordre alphabétique
+    _regs = sorted({c["region"] for c in VL.CITIES})
+    VL_HUB = "".join(f'<li class="vl-reg"><p class="vl-oh">{r}</p><ul class="vl-regl">' + "".join(
+        f'<li><a class="pf-tl" href="{VL.path(c)}">{c["name"]}</a><span>{c["hook"].rstrip(".")}</span></li>'
+        for c in sorted((c for c in VL.CITIES if c["region"] == r), key=lambda c: c["name"])) + "</ul></li>" for r in _regs)
 pf_body = pf_body if not VL.CITIES else pf_body.replace('<section class="sheet pf-leak is-short"', f"""<section class="sheet" id="villes" data-tone="paper">
-  <style>.vl-hubw{{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:40px 64px;align-items:center;padding:0 var(--cell)}}.vl-hub{{grid-template-columns:repeat(2,minmax(0,1fr));padding:0}}@media (max-width:760px){{.vl-hubw,.vl-hub{{grid-template-columns:1fr}}}}{VL.MAP_CSS}</style>
+  <style>.vl-reg{{list-style:none}}.vl-reg::before{{display:none}}.vl-regl{{display:grid;gap:14px;margin:0;padding:0;list-style:none}}.vl-regl li{{display:grid;gap:2px}}.vl-regl span{{font-size:.92rem;color:var(--muted)}}.vl-hub .vl-oh{{margin-bottom:10px;font-size:.8rem;color:var(--muted)}}.vl-hubw{{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:40px 64px;align-items:center;padding:0 var(--cell)}}.vl-hub{{grid-template-columns:repeat(2,minmax(0,1fr));padding:0}}@media (max-width:760px){{.vl-hubw,.vl-hub{{grid-template-columns:1fr}}}}{VL.MAP_CSS}</style>
   <div class="grid sp-head"><h2 data-split>Devis travaux par ville</h2><p>Les règles et les aides changent d’une ville à l’autre</p></div>
   <div class="vl-hubw"><figure class="vl-map">{VL.carte()}</figure><ul class="pf-checks vl-hub">{VL_HUB}</ul></div>
 </section>
@@ -1081,7 +1086,9 @@ write("/blog/", "Blog : chantiers, publicité, devis et DPE 2027 | Bartier & Co"
                  'Les plateformes de chantiers sont comparées dans <a class="link" href="/trouver-des-chantiers/">Trouver des chantiers</a>.'),
                 ("Pour les propriétaires",
                  'Les règles qui changent et les démarches avant des travaux : <a class="link" href="/blog/dpe-2027/">le DPE en 2027</a>, <a class="link" href="/devis-travaux/#prix">les prix par métier</a>, '
-                 'et les règles locales à ' + ", ".join(f'<a class="link" href="{VL.path(c)}">{c["name"]}</a>' for c in VL.CITIES[:-1]) + f' et <a class="link" href="{VL.path(VL.CITIES[-1])}">{VL.CITIES[-1]["name"]}</a>.'),
+                 'et les règles locales à ' + ", ".join(f'<a class="link" href="{VL.path(c)}">{c["name"]}</a>' for c in VL.CITIES[:5])
+                 + (f' et dans <a class="link" href="/devis-travaux/#villes">{len(VL.CITIES) - 5} autres villes</a>.' if len(VL.CITIES) > 6
+                    else f' et <a class="link" href="{VL.path(VL.CITIES[-1])}">{VL.CITIES[-1]["name"]}</a>.')),
                 ("Comment nous écrivons",
                  'Chaque article est signé par <a class="link" href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur, et cite ses sources officielles : Service-Public, Légifrance, ADEME, Insee. '
                  'Quand une règle change, l’article est mis à jour et daté.')],
@@ -1699,6 +1706,11 @@ for f in ["robots.txt", "llms.txt"]:
     (ROOT / f).write_text((V1.parent / f).read_text(encoding="utf-8"), encoding="utf-8")
 # Pas de lien vers une page ville qui n'existe pas encore
 _llms = (ROOT / "llms.txt").read_text(encoding="utf-8").split("\n")
+_vl_at = next((i for i, l in enumerate(_llms) if l.startswith("- [Devis travaux à ")), None)
+_llms = [l for l in _llms if not l.startswith("- [Devis travaux à ")]
+if _vl_at is not None:
+    _llms[_vl_at:_vl_at] = [f'- [Devis travaux à {c["name"]}]({SITE}{VL.path(c)}) : {c["hook"].rstrip(".")}. Règles locales, aides et conseil France Rénov’, par métier.'
+                            for c in VL.CITIES if VL.path(c) in paths]
 _llms = [l for l in _llms if not (m := re.search(r"/devis-travaux/([a-z-]+)/\)", l)) or f"/devis-travaux/{m.group(1)}/" in paths]
 (ROOT / "llms.txt").write_text("\n".join(_llms), encoding="utf-8")
 # Date de dernière modification : elle ne change que si le texte de la page change (empreinte gardée dans _build/lastmod.json).

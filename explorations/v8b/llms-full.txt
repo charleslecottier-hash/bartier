@@ -669,23 +669,23 @@ Devis isolation
 ### Devis travaux par ville
 Les règles et les aides changent d’une ville à l’autre
 
+#### Devis travaux à Paris
+Une autorisation même pour des fenêtres à l’identique
+
+#### Devis travaux à Marseille
+Ravalement imposé, et tout le département en zone termites
+
+#### Devis travaux à Lyon
+Site Unesco et nichoirs à martinets
+
+#### Devis travaux à Toulouse
+Centre ancien protégé, aide Silencio près de l’aéroport
+
 #### Devis travaux à Lille
 Ravalement obligatoire tous les dix ans, et aidé par la Ville
 
 #### Devis travaux à Rouen
 Secteur sauvegardé depuis 1964, ardoise et pans de bois
-
-#### Devis travaux à Paris
-Une autorisation même pour des fenêtres à l’identique
-
-#### Devis travaux à Lyon
-Site Unesco et nichoirs à martinets
-
-#### Devis travaux à Marseille
-Ravalement imposé, et tout le département en zone termites
-
-#### Devis travaux à Toulouse
-Centre ancien protégé, aide Silencio près de l’aéroport
 
 ### Une fuite de toiture ?
 Signalez-la : nous vous rappelons en priorité. En attendant, suivez les 5 bons réflexes.
@@ -767,7 +767,7 @@ Méfiez-vous du démarchage « après la tempête » et des prix valables « auj
 
 **La société**
 - Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
+Mis à jour le 21 novembre 2026
 
 ### Vos questions sur les devis de travaux
 Une autre question ? 07 81 01 89 36
@@ -959,7 +959,7 @@ Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr),
 
 **La société**
 - Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
+Mis à jour le 21 novembre 2026
 
 ### Devis toiture : vos questions
 Une autre question ? 07 81 01 89 36
@@ -1002,12 +1002,12 @@ Tous les devis de travaux
 - Charpente
 - Isolation des combles et des murs
 Par ville
+- Couvreur à Paris
+- Couvreur à Marseille
+- Couvreur à Lyon
+- Couvreur à Toulouse
 - Couvreur à Lille
 - Couvreur à Rouen
-- Couvreur à Paris
-- Couvreur à Lyon
-- Couvreur à Marseille
-- Couvreur à Toulouse
 
 ### Décrivez vos travaux. Nous fixons la visite.
 ou appelez le 07 81 01 89 36
@@ -1107,7 +1107,7 @@ Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr),
 
 **La société**
 - Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
+Mis à jour le 21 novembre 2026
 
 ### Devis façade : vos questions
 Une autre question ? 07 81 01 89 36
@@ -1138,12 +1138,12 @@ Tous les devis de travaux
 - Charpente
 - Isolation des combles et des murs
 Par ville
+- Ravalement de façade à Paris
+- Ravalement de façade à Marseille
+- Ravalement de façade à Lyon
+- Ravalement de façade à Toulouse
 - Ravalement de façade à Lille
 - Ravalement de façade à Rouen
-- Ravalement de façade à Paris
-- Ravalement de façade à Lyon
-- Ravalement de façade à Marseille
-- Ravalement de façade à Toulouse
 
 ### Décrivez vos travaux. Nous fixons la visite.
 ou appelez le 07 81 01 89 36
@@ -1241,7 +1241,7 @@ Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr),
 
 **La société**
 - Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
+Mis à jour le 21 novembre 2026
 
 ### Devis fenêtres et portes : vos questions
 Une autre question ? 07 81 01 89 36
@@ -1275,12 +1275,12 @@ Tous les devis de travaux
 - Charpente
 - Isolation des combles et des murs
 Par ville
+- Fenêtres et portes à Paris
+- Fenêtres et portes à Marseille
+- Fenêtres et portes à Lyon
+- Fenêtres et portes à Toulouse
 - Fenêtres et portes à Lille
 - Fenêtres et portes à Rouen
-- Fenêtres et portes à Paris
-- Fenêtres et portes à Lyon
-- Fenêtres et portes à Marseille
-- Fenêtres et portes à Toulouse
 
 ### Décrivez vos travaux. Nous fixons la visite.
 ou appelez le 07 81 01 89 36
@@ -1379,7 +1379,7 @@ Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr),
 
 **La société**
 - Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
+Mis à jour le 21 novembre 2026
 
 ### Devis charpente : vos questions
 Une autre question ? 07 81 01 89 36
@@ -1410,12 +1410,12 @@ Tous les devis de travaux
 - Fenêtres et portes
 - Isolation des combles et des murs
 Par ville
+- Charpente à Paris
+- Charpente à Marseille
+- Charpente à Lyon
+- Charpente à Toulouse
 - Charpente à Lille
 - Charpente à Rouen
-- Charpente à Paris
-- Charpente à Lyon
-- Charpente à Marseille
-- Charpente à Toulouse
 
 ### Décrivez vos travaux. Nous fixons la visite.
 ou appelez le 07 81 01 89 36
@@ -1515,7 +1515,7 @@ Vérifiez cinq points : son immatriculation (annuaire-entreprises.data.gouv.fr),
 
 **La société**
 - Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
+Mis à jour le 21 novembre 2026
 
 ### Devis isolation : vos questions
 Une autre question ? 07 81 01 89 36
@@ -1546,389 +1546,12 @@ Tous les devis de travaux
 - Fenêtres et portes
 - Charpente
 Par ville
+- Isolation à Paris
+- Isolation à Marseille
+- Isolation à Lyon
+- Isolation à Toulouse
 - Isolation à Lille
 - Isolation à Rouen
-- Isolation à Paris
-- Isolation à Lyon
-- Isolation à Marseille
-- Isolation à Toulouse
-
-### Décrivez vos travaux. Nous fixons la visite.
-ou appelez le 07 81 01 89 36
-
----
-
-## Devis travaux à Lille : toiture, façade, fenêtres, isolation
-
-Adresse : https://bartierandco.com/devis-travaux/lille/
-
-Travaux à Lille : ravalement tous les 10 ans, charte couleurs, Vieux-Lille protégé, aides de la Ville et de la Métropole. Un seul artisan vient chiffrer.
-
-Pas cinq artisans. Un seul, près de chez vous.
-Décrivez vos travaux à Lille en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
-- Visite et devis offerts
-- Sans engagement
-- Un seul artisan
-Pressé ? 07 81 01 89 36
-
-### Lille en quelques chiffres
-À Lille, le ravalement est obligatoire au moins tous les dix ans, et la Ville aide à le financer, sans condition de revenus
-- 79,3 % des logements sont des appartements Insee, 2023
-- 27,6 % des résidences principales datent d’avant 1946 Insee, 2023
-- 177 ha de site patrimonial remarquable, Vieux-Lille et centre Ville de Lille
-- 61 teintes pour les maçonneries dans la charte couleurs de la Ville Ville de Lille
-
-### Que faut-il savoir avant des travaux à Lille ?
-Les logements sont surtout des appartements (79 %), et plus d’un quart des résidences principales datent d’avant 1946. La façade lilloise mêle brique, badigeon et pierres locales : toute modification d’aspect demande une autorisation, et dans le Vieux-Lille, l’architecte des Bâtiments de France donne son avis.
-
-**Ravalement**
-- Obligatoire au moins tous les 10 ans, sous injonction administrative. Toute intervention qui modifie l’aspect d’une façade demande une autorisation d’urbanisme (guide des façades).
-
-**Vieux-Lille**
-- Le site patrimonial remarquable couvre 177 hectares depuis l’arrêté du 22 mars 2023 ; son nouveau plan de sauvegarde est encore en concertation. L’architecte des Bâtiments de France y donne son avis, comme aux abords des monuments historiques (Ville de Lille).
-
-**Urbanisme**
-- Le PLU3 de la Métropole européenne de Lille s’applique depuis le 18 octobre 2024 (MEL).
-
-**Couleurs**
-- La charte de la Ville propose 61 teintes pour les maçonneries, 12 pour les joints et 130 pour les menuiseries. Palettes à l’Hôtel de Ville (charte couleurs).
-
-**Termites et mérule**
-- Aucun arrêté préfectoral dans le Nord, ni pour les termites ni pour la mérule (Cerema, 2025).
-
-**Climat**
-- Zone H1a. À Lille-Lesquin, 126 jours de pluie par an et 64 jours de rafales d’au moins 58 km/h, surtout d’octobre à mars (Météo-France, normales 1971-2000).
-Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? Écrivez-nous.
-
-### Vos travaux à Lille, métier par métier
-Maisons de ville en brique, maisons bourgeoises, hôtels particuliers, immeubles de rapport : la Ville distingue six familles de bâti, chacune avec ses façades
-
-#### Couvreur à Lille
-Avec 126 jours de pluie par an et des coups de vent d’octobre à mars, gouttières, chéneaux et solins travaillent : faites-les vérifier avant l’hiver.
-Dans le Vieux-Lille et aux abords des monuments historiques, changer de matériau de couverture ou créer une fenêtre de toit passe par l’avis de l’architecte des Bâtiments de France.
-Devis toiture Prix d’une toiture
-
-#### Ravalement de façade à Lille
-Brique, badigeon, enduit, grès, pierre blanche et pierre bleue : la Ville recommande des badigeons à la chaux et le soin des joints de brique (guide des façades).
-Son aide au ravalement : 15 €/m² traité, plafonnée à 15 000 €, sans condition de revenus, pour les propriétaires et les copropriétés (guide des aides, 2024). L’isolation par l’extérieur n’y est pas comptée comme du ravalement.
-Devis façade Prix d’un ravalement
-
-#### Fenêtres et portes à Lille
-Pour remplacer des menuiseries, la Ville recommande le bois peint plutôt que le PVC ou l’aluminium, et sa charte propose 130 teintes pour menuiseries et ferronneries.
-Logement exposé au bruit routier, à partir de 65 dB(A) : la Prime Bruit de la Métropole aide à l’isolation acoustique, sous conditions de ressources (Maison de l’Habitat Durable).
-Devis fenêtres Prix d’une fenêtre
-
-#### Charpente à Lille
-Ni termites ni mérule : aucun arrêté préfectoral ne vise le Nord. Faites quand même contrôler les bois lors d’une réfection de toiture, surtout après une infiltration.
-Une surélévation ou une extension change l’aspect du bâtiment : déclaration préalable ou permis, selon la surface créée.
-Devis charpente Prix d’une charpente
-
-#### Isolation à Lille
-La Ville aide les propriétaires occupants sous plafonds de l’Anah : de 15 à 25 % des travaux hors taxes, jusqu’à 40 000 €, si le logement atteint au moins l’étiquette C après travaux (guide des aides, 2024).
-Pour de petits travaux d’isolation (joints, portes, fenêtres), la Métropole prend en charge 50 %, jusqu’à 2 500 €, pour les propriétaires occupants très modestes (AMELIO).
-Devis isolation Prix de l’isolation
-
-### Fini les artisans qui ne rappellent pas.
-Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
-- 5 min pour vous rappeler, en semaine de 8 h à 19 h
-- 1 appel pour fixer la date de visite
-- 1 SMS de rappel avant la visite
-- 0 € pour vous : visite et devis offerts, sans engagement
-ou appelez le 07 81 01 89 36
-
-### Quelles démarches avant des travaux à Lille ?
-Dans l’ordre, du Vieux-Lille aux quartiers
-
-#### Vérifiez si vous êtes en secteur protégé
-Vieux-Lille, centre ou abords d’un monument historique : l’architecte des Bâtiments de France donne son avis. 03 28 36 78 70.
-
-#### Choisissez vos teintes
-Palettes de la charte couleurs à l’Hôtel de Ville et en mairie de quartier (Ville de Lille).
-
-#### Déposez l’autorisation d’urbanisme
-En ligne sur le guichet GNAU de la Métropole, ou au guichet n° 7 de l’Hôtel de Ville, du lundi au vendredi de 8 h 30 à 12 h. 03 20 49 51 65.
-
-#### Faites autoriser l’échafaudage
-Au moins 10 jours ouvrés avant, par courriel à autorisations.temporaires@mairie-lille.fr. 03 20 49 52 50 (démarche).
-
-#### Demandez les aides avant les travaux
-Les aides de la Ville se demandent avant de commencer. Conseil gratuit à la Maison de l’Habitat Durable.
-
-### Quelles aides pour vos travaux à Lille ?
-Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
-Conseil public, gratuit et neutre
-
-#### Maison de l’Habitat Durable
-L’Espace Conseil France Rénov’ de la Métropole, avec AMELIO : 7 bis rue Racine, 59000 Lille. 03 59 00 03 59. Conseillers AMELIO : 03 20 21 27 77. maisonhabitatdurable-lillemetropole.fr.
-
-#### Aide au ravalement
-La Ville verse 15 €/m² traité, plafonnés à 15 000 €, sans condition de revenus, aux propriétaires et aux syndicats de copropriétaires (guide des aides, 2024).
-
-#### Passoire thermique et Haute performance
-15 à 25 % des travaux hors taxes, plafonnés à 25 000 ou 40 000 €, pour les propriétaires occupants sous plafonds de l’Anah, avec au moins l’étiquette C après travaux et un artisan RGE.
-
-#### Petits travaux et Prime Bruit
-La Métropole finance 50 % de petits travaux d’isolation, jusqu’à 2 500 €, pour les ménages très modestes, et aide à isoler du bruit routier les logements exposés.
-
-#### Aides nationales
-MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
-
-### Une fuite de toiture à Lille ?
-Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
-
-### Devis travaux à Lille : l’essentiel
-
-**Le service**
-- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Lille et alentours.
-
-**Pour qui**
-- Les propriétaires à Lille, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
-
-**Le prix pour vous**
-- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
-
-**Le délai**
-- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
-
-**Le rendez-vous**
-- Fixé pendant notre appel, rappelé par SMS avant la visite.
-
-**Combien d’artisans**
-- Un seul. Vos coordonnées ne vont à personne d’autre.
-
-**La zone**
-- Selon votre commune. Hors zone, nous vous le disons à l’appel.
-
-**La société**
-- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
-
-### Travaux à Lille : vos questions
-Une autre question ? 07 81 01 89 36
-Voir toutes les questions
-
-**Le ravalement est-il obligatoire à Lille ?**
-Oui, au moins tous les dix ans, sous injonction administrative, rappelle la Ville. Toute modification de l’aspect d’une façade demande une autorisation d’urbanisme. La Ville aide à hauteur de 15 €/m² traité, jusqu’à 15 000 €, sans condition de revenus (guide des aides, 2024).
-
-**Quelles couleurs pour ma façade à Lille ?**
-La charte couleurs de la Ville propose 61 teintes pour les maçonneries, 12 pour les joints et 130 pour les menuiseries et ferronneries. Les palettes sont à l’Hôtel de Ville et en mairie de quartier.
-
-**Peut-on poser des fenêtres en PVC à Lille ?**
-La Ville recommande le bois peint plutôt que le PVC ou l’aluminium pour remplacer des menuiseries. Dans le Vieux-Lille et aux abords des monuments historiques, l’architecte des Bâtiments de France donne son avis.
-
-**Lille est-elle concernée par les termites ou la mérule ?**
-Non : aucun arrêté préfectoral ne vise le Nord, ni pour les termites ni pour la mérule (Cerema, 2025).
-
-**Quelles aides pour rénover son logement à Lille ?**
-Aide au ravalement de la Ville, aides Passoire thermique et Haute performance pour les propriétaires occupants, petits travaux et Prime Bruit de la Métropole, et aides nationales. Conseil gratuit à la Maison de l’Habitat Durable : 03 59 00 03 59.
-
-**Comment faire autoriser un échafaudage à Lille ?**
-Demandez une autorisation d’occupation du domaine public au moins 10 jours ouvrés avant, par courriel à autorisations.temporaires@mairie-lille.fr (03 20 49 52 50).
-
-**Intervenez-vous partout à Lille ?**
-Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
-
-### Ailleurs en France
-Tous les devis de travaux
-Autres villes
-- Devis travaux à Rouen
-- Devis travaux à Paris
-- Devis travaux à Lyon
-- Devis travaux à Marseille
-- Devis travaux à Toulouse
-Par métier
-- Toiture et couverture
-- Ravalement de façade
-- Fenêtres et portes
-- Charpente
-- Isolation des combles et des murs
-
-### Décrivez vos travaux. Nous fixons la visite.
-ou appelez le 07 81 01 89 36
-
----
-
-## Devis travaux à Rouen : toiture, façade, fenêtres, isolation
-
-Adresse : https://bartierandco.com/devis-travaux/rouen/
-
-Travaux à Rouen : secteur sauvegardé, ravalement, ardoise et pans de bois, aides de la Région et de la Métropole. Un seul artisan vient chiffrer, gratuitement.
-
-Pas cinq artisans. Un seul, près de chez vous.
-Décrivez vos travaux à Rouen en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
-- Visite et devis offerts
-- Sans engagement
-- Un seul artisan
-Pressé ? 07 81 01 89 36
-
-### Rouen en quelques chiffres
-À Rouen, le centre ancien est un secteur sauvegardé depuis 1964 : toute modification d’aspect y demande l’avis de l’architecte des Bâtiments de France
-- 85,8 % des logements sont des appartements Insee, 2023
-- 49,3 % des résidences principales datent d’avant 1971 Insee, 2023
-- 134 jours de pluie par an à Rouen-Boos Météo-France, normales 1991-2020
-- 1964 création du secteur sauvegardé du centre ancien ministère de la Culture
-
-### Que faut-il savoir avant des travaux à Rouen ?
-Près de la moitié des résidences principales datent d’avant 1971, et 85,8 % des logements sont des appartements. Partout, le ravalement demande une déclaration préalable ; rue Beauvoisine et rue Saint-Sever, la Ville l’impose. Pour une maison de plus de 15 ans, la Région aide jusqu’à 10 000 € pour une rénovation globale.
-
-**Ravalement**
-- Soumis à déclaration préalable (Ville de Rouen). Rue Beauvoisine et rue Saint-Sever, il est imposé par arrêté du maire, avec une aide de 7 000 € au plus par immeuble (OPAH-RU).
-
-**Centre ancien**
-- Secteur sauvegardé régi par un plan de sauvegarde approuvé en 1986 : toute modification d’aspect y est soumise à autorisation, avec l’avis de l’architecte des Bâtiments de France (PSMV).
-
-**Urbanisme**
-- Hors centre ancien, le PLU de la Métropole Rouen Normandie s’applique depuis le 13 février 2020, modifié pour la dernière fois en mai 2026 (Métropole).
-
-**Termites**
-- Rouen n’est pas en zone termites, mais trois communes voisines le sont depuis 2023 : Sotteville-lès-Rouen, Le Petit-Quevilly et Saint-Étienne-du-Rouvray (préfecture).
-
-**Climat**
-- 847,5 mm de pluie par an et près de 50 jours de rafales d’au moins 58 km/h à Rouen-Boos, surtout de novembre à mars (Météo-France).
-
-**Clôtures**
-- Une déclaration préalable est exigée pour toute clôture dans les 71 communes de la Métropole (délibération du 13 février 2020).
-Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? Écrivez-nous.
-
-### Vos travaux à Rouen, métier par métier
-À Rouen, pans de bois, pierre, brique et ardoise ont chacun leurs règles, surtout dans le centre ancien
-
-#### Couvreur à Rouen
-Dans le centre ancien, la couverture habituelle est l’ardoise naturelle, et la tuile plate sur les maisons à pans de bois les plus anciennes. Tuiles mécaniques, fibrociment, ardoises posées en losange, zinc apparent et gouttières en plastique y sont refusés (PSMV).
-Avec 134 jours de pluie par an et des coups de vent l’hiver, faites vérifier ardoises et gouttières avant la mauvaise saison.
-Devis toiture Prix d’une toiture
-
-#### Ravalement de façade à Rouen
-Pans de bois, pierre apparente, brique et pierre, maçonnerie enduite de préférence à la chaux : dans le centre ancien, les enduits en ciment gris ou rugueux sont refusés (PSMV).
-Partout, le ravalement demande une déclaration préalable. Rue Beauvoisine et rue Saint-Sever, il est imposé, avec une aide de 7 000 € au plus par immeuble.
-Devis façade Prix d’un ravalement
-
-#### Fenêtres et portes à Rouen
-Dans le secteur sauvegardé, réparer, repeindre ou remplacer les menuiseries extérieures est soumis à autorisation, avec l’avis de l’architecte des Bâtiments de France (PSMV).
-Ailleurs, une déclaration préalable suffit dès que l’aspect des fenêtres change.
-Devis fenêtres Prix d’une fenêtre
-
-#### Charpente à Rouen
-Rouen n’est pas en zone termites, contrairement à Sotteville-lès-Rouen, au Petit-Quevilly et à Saint-Étienne-du-Rouvray depuis l’arrêté préfectoral du 12 juin 2023.
-Pour une maison à pans de bois, faites vérifier les bois apparents et la charpente avant un ravalement.
-Devis charpente Prix d’une charpente
-
-#### Isolation à Rouen
-Le chèque éco-énergie Normandie aide les propriétaires de maisons de plus de 15 ans : 600 € pour l’audit, 6 500 € pour une première étape et 10 000 € pour une rénovation globale de niveau BBC (Région Normandie).
-Dans le centre ancien, une isolation par l’extérieur change l’aspect de la façade et demande l’avis de l’architecte des Bâtiments de France. L’isolation des combles ne touche pas à la façade.
-Devis isolation Prix de l’isolation
-
-### Fini les artisans qui ne rappellent pas.
-Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
-- 5 min pour vous rappeler, en semaine de 8 h à 19 h
-- 1 appel pour fixer la date de visite
-- 1 SMS de rappel avant la visite
-- 0 € pour vous : visite et devis offerts, sans engagement
-ou appelez le 07 81 01 89 36
-
-### Quelles démarches avant des travaux à Rouen ?
-Dans l’ordre, du centre ancien aux quartiers récents
-
-#### Vérifiez si vous êtes dans le secteur sauvegardé
-Dans le centre ancien ou aux abords d’un monument historique, l’architecte des Bâtiments de France donne son avis.
-
-#### Regardez si votre rue est en campagne
-Rue Beauvoisine et rue Saint-Sever, le ravalement est imposé par arrêté du maire, avec une aide de l’OPAH-RU.
-
-#### Déposez la déclaration préalable
-En ligne sur le guichet GNAU, ou à la direction de l’urbanisme, 14 bis avenue Pasteur. 02 76 30 31 00 (Ville de Rouen).
-
-#### Faites autoriser l’échafaudage
-L’occupation du trottoir se demande à la direction des Espaces publics et naturels de la Ville. 02 35 08 87 45 (démarche).
-
-#### Passez par Énergies Métropole
-Conseil gratuit sur les travaux et les aides, avant de signer le devis.
-
-### Quelles aides pour vos travaux à Rouen ?
-Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
-Conseil public, gratuit et neutre
-
-#### Énergies Métropole
-L’Espace Conseil France Rénov’ de la Métropole Rouen Normandie : conseil gratuit et neutre. 9 bis rue Jeanne-d’Arc, 76000 Rouen. 02 76 30 32 32. energies.metropole-rouen-normandie.fr.
-
-#### OPAH-RU de Rouen 2024-2029
-Ville, Métropole et Anah aident à rénover près de 500 logements du centre-ville, avec un volet ravalement : jusqu’à 7 000 € par immeuble dans les rues concernées (Métropole).
-
-#### Chèque éco-énergie Normandie
-Pour les maisons de plus de 15 ans : 600 € pour l’audit, 6 500 € pour une première étape BBC, 10 000 € pour une rénovation globale BBC (Région Normandie).
-
-#### Aides nationales
-MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
-
-### Une fuite de toiture à Rouen ?
-Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
-
-### Devis travaux à Rouen : l’essentiel
-
-**Le service**
-- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Rouen et alentours.
-
-**Pour qui**
-- Les propriétaires à Rouen, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
-
-**Le prix pour vous**
-- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
-
-**Le délai**
-- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
-
-**Le rendez-vous**
-- Fixé pendant notre appel, rappelé par SMS avant la visite.
-
-**Combien d’artisans**
-- Un seul. Vos coordonnées ne vont à personne d’autre.
-
-**La zone**
-- Selon votre commune. Hors zone, nous vous le disons à l’appel.
-
-**La société**
-- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
-
-### Travaux à Rouen : vos questions
-Une autre question ? 07 81 01 89 36
-Voir toutes les questions
-
-**Le ravalement est-il obligatoire à Rouen ?**
-La Ville l’impose par campagnes et par arrêté du maire : en ce moment rue Beauvoisine et rue Saint-Sever, avec une aide de 7 000 € au plus par immeuble. Partout, un ravalement demande une déclaration préalable.
-
-**Quelles règles dans le centre ancien de Rouen ?**
-C’est un secteur sauvegardé depuis 1964, régi par un plan de sauvegarde : toute modification d’aspect y est soumise à autorisation, avec l’avis de l’architecte des Bâtiments de France. Tuiles mécaniques, ardoises en losange, zinc apparent, gouttières en plastique et enduits en ciment gris y sont refusés.
-
-**Peut-on changer ses fenêtres dans le secteur sauvegardé ?**
-Oui, avec une autorisation : réparer, repeindre ou remplacer des menuiseries extérieures y est soumis à autorisation et à l’avis de l’architecte des Bâtiments de France.
-
-**Rouen est-elle en zone termites ?**
-Non. Trois communes voisines le sont depuis l’arrêté préfectoral du 12 juin 2023 : Sotteville-lès-Rouen, Le Petit-Quevilly et Saint-Étienne-du-Rouvray.
-
-**Quelles aides pour rénover sa maison à Rouen ?**
-Le chèque éco-énergie Normandie (600 € pour l’audit, jusqu’à 10 000 € pour une rénovation globale BBC), l’OPAH-RU dans le centre-ville et les aides nationales comme MaPrimeRénov’. Énergies Métropole vous conseille gratuitement : 02 76 30 32 32.
-
-**Comment déposer une déclaration préalable à Rouen ?**
-En ligne sur le guichet numérique GNAU de la Métropole, ou à la direction de l’urbanisme, 14 bis avenue Pasteur (02 76 30 31 00).
-
-**Intervenez-vous partout à Rouen ?**
-Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
-
-### Ailleurs en France
-Tous les devis de travaux
-Autres villes
-- Devis travaux à Lille
-- Devis travaux à Paris
-- Devis travaux à Lyon
-- Devis travaux à Marseille
-- Devis travaux à Toulouse
-Par métier
-- Toiture et couverture
-- Ravalement de façade
-- Fenêtres et portes
-- Charpente
-- Isolation des combles et des murs
 
 ### Décrivez vos travaux. Nous fixons la visite.
 ou appelez le 07 81 01 89 36
@@ -2075,7 +1698,7 @@ Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
 
 **La société**
 - Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
+Mis à jour le 21 novembre 2026
 
 ### Travaux à Paris : vos questions
 Une autre question ? 07 81 01 89 36
@@ -2104,199 +1727,13 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 
 ### Ailleurs en France
 Tous les devis de travaux
-Autres villes
-- Devis travaux à Lille
-- Devis travaux à Rouen
-- Devis travaux à Lyon
-- Devis travaux à Marseille
-- Devis travaux à Toulouse
-Par métier
-- Toiture et couverture
-- Ravalement de façade
-- Fenêtres et portes
-- Charpente
-- Isolation des combles et des murs
-
-### Décrivez vos travaux. Nous fixons la visite.
-ou appelez le 07 81 01 89 36
-
----
-
-## Devis travaux à Lyon : toiture, façade, fenêtres, isolation
-
-Adresse : https://bartierandco.com/devis-travaux/lyon/
-
-Travaux à Lyon : ravalement imposé, site Unesco, nichoirs à martinets, aides Écoréno’v. Un seul artisan vient chiffrer, gratuitement.
-
-Pas cinq artisans. Un seul, près de chez vous.
-Décrivez vos travaux à Lyon en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
-- Visite et devis offerts
-- Sans engagement
-- Un seul artisan
-Pressé ? 07 81 01 89 36
-
-### Lyon en quelques chiffres
-À Lyon, la Ville impose le ravalement rue par rue, et Écoréno’v aide tous les propriétaires à rénover, sans condition de ressources
-- 96,1 % des logements sont des appartements Insee, 2023
-- 45,5 % des résidences principales datent d’avant 1971 Insee, 2023
-- 427 ha de site historique inscrit à l’Unesco depuis 1998 Ville de Lyon
-- 30,6 jours par an à 30 °C ou plus à Lyon-Bron Météo-France, normales 1991-2020
-
-### Que faut-il savoir avant des travaux à Lyon ?
-Sur 100 logements, 96 sont des appartements : la plupart des travaux de toiture et de façade se votent en copropriété. Tout ravalement demande une déclaration préalable. Dans le site historique inscrit à l’Unesco et les deux sites patrimoniaux remarquables, l’architecte des Bâtiments de France donne son avis.
-
-**Ravalement**
-- Obligatoire tous les dix ans depuis l’arrêté préfectoral du 18 octobre 1977. L’arrêté pluriannuel 2021-2026 fixe les rues, année par année ; après l’injonction, le propriétaire a un an pour faire les travaux (Ville de Lyon).
-
-**Déclaration préalable**
-- Exigée pour tout ravalement, d’immeuble comme de maison (Ville de Lyon).
-
-**Patrimoine**
-- Site historique inscrit à l’Unesco : 427 hectares de Fourvière, du Vieux-Lyon, des pentes de la Croix-Rousse et de la Presqu’île. Le Vieux-Lyon et les pentes de la Croix-Rousse sont des sites patrimoniaux remarquables (Métropole de Lyon).
-
-**Urbanisme**
-- Le PLU-H de la Métropole s’applique depuis 2019 ; sa modification n° 4 est exécutoire depuis le 23 janvier 2025 (Métropole de Lyon).
-
-**Termites et mérule**
-- Lyon est en partie couverte par un arrêté termites de 2009 et par un arrêté mérule de 2023, le seul du Rhône (Cerema).
-
-**Martinets**
-- Avant un ravalement, la Ville demande un diagnostic des oiseaux nicheurs, et le PLU-H prévoit des nichoirs à martinets (article 3.1.7).
-Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? Écrivez-nous.
-
-### Vos travaux à Lyon, métier par métier
-Enduit à la chaux, pierre de taille, ciment moulé, pisé de la Croix-Rousse : la charte du ravalement de la Ville recense 12 types de façades
-
-#### Couvreur à Lyon
-Le Rhône marque la limite nord des toits à faible pente couverts de tuile creuse, dite tuile canal, en terre cuite (fiche UDAP 69). La Ville prévoit aussi des couvertures en zinc et des brisis en ardoise ou en zinc.
-Dans les secteurs protégés, les fenêtres de toit sont limitées en taille et en nombre (charte 2024).
-Devis toiture Prix d’une toiture
-
-#### Ravalement de façade à Lyon
-La façade lyonnaise la plus courante est un enduit à la chaux sur moellons de pierre, avec un rez-de-chaussée en pierre de taille. On trouve aussi le ciment prompt moulé rive gauche et le pisé de terre sur le plateau de la Croix-Rousse (fiches de la Ville, 2024).
-Un ravalement d’au moins 50 % d’une paroi oblige en principe à isoler (article R173-4 du code de la construction), sauf exceptions prévues par le texte.
-Devis façade Prix d’un ravalement
-
-#### Fenêtres et portes à Lyon
-Dans les secteurs protégés, le PVC et le blanc pur sont proscrits dans de nombreux cas (charte 2024). L’avis de l’architecte des Bâtiments de France est requis en site patrimonial remarquable et aux abords des monuments historiques.
-Ailleurs, changer l’aspect de ses fenêtres demande une déclaration préalable.
-Devis fenêtres Prix d’une fenêtre
-
-#### Charpente à Lyon
-Lyon est en partie concernée par l’arrêté préfectoral termites du 27 mai 2009, avec Sainte-Foy-lès-Lyon et Francheville, et par l’arrêté mérule du 30 mai 2023. Faites contrôler les bois lors d’une réfection de toiture.
-À la vente, l’état relatif aux termites est obligatoire dans les zones délimitées par arrêté.
-Devis charpente Prix d’une charpente
-
-#### Isolation à Lyon
-Écoréno’v, l’aide de la Métropole, s’adresse à tous les propriétaires, sans condition de ressources : audit, maîtrise d’œuvre et travaux de rénovation globale, avec des bonus pour les matériaux biosourcés et le confort d’été (ALEC Lyon).
-Avec 30,6 jours par an à 30 °C ou plus à Lyon-Bron, isoler la toiture protège aussi de la chaleur.
-Devis isolation Prix de l’isolation
-
-### Fini les artisans qui ne rappellent pas.
-Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
-- 5 min pour vous rappeler, en semaine de 8 h à 19 h
-- 1 appel pour fixer la date de visite
-- 1 SMS de rappel avant la visite
-- 0 € pour vous : visite et devis offerts, sans engagement
-ou appelez le 07 81 01 89 36
-
-### Quelles démarches avant des travaux à Lyon ?
-Dans l’ordre, pour un immeuble comme pour une maison
-
-#### Vérifiez si votre rue est en campagne
-L’arrêté pluriannuel 2021-2026 liste les rues, année par année. Après l’injonction, vous avez un an pour faire les travaux (Ville de Lyon).
-
-#### Vérifiez la protection de l’adresse
-Site Unesco, Vieux-Lyon, pentes de la Croix-Rousse ou abords d’un monument historique : l’architecte des Bâtiments de France donne son avis.
-
-#### Faites le diagnostic des oiseaux
-Avant un ravalement, la Ville demande de repérer martinets et hirondelles, et le PLU-H prévoit des nichoirs (pièces à fournir).
-
-#### Déposez la déclaration préalable
-En ligne sur Toodego, ou au service urbanisme appliqué, 198 avenue Jean-Jaurès, 69007 Lyon. 04 26 99 63 80.
-
-#### Demandez le permis de stationnement
-Pour un échafaudage, en ligne au moins 8 jours avant. Le tarif passe de 26,50 € à 1,80 € par m² et par mois pour un ravalement obligatoire ou des travaux thermiques (Ville de Lyon).
-
-### Quelles aides pour vos travaux à Lyon ?
-Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
-Conseil public, gratuit et neutre
-
-#### ALEC Lyon
-L’Espace Conseil France Rénov’ de la Métropole : 12-14 avenue Antoine-Dutrievoz, 69100 Villeurbanne. 04 37 48 25 90, du lundi au vendredi, de 9 h à 12 h et de 14 h à 17 h. alec-lyon.org.
-
-#### Écoréno’v
-L’aide de la Métropole, pour tous les propriétaires. En copropriété : 3 500 € par lot pour le niveau BBC, 2 000 € pour au moins 35 % de gain, plus des bonus (ALEC Lyon, règlement 2024).
-
-#### Aides de la Ville
-Valorisation du patrimoine architectural (40 % de certains travaux), Écopatrimoine pour les enduits correcteurs thermiques, restauration des traboules (synthèse des aides, 2024).
-
-#### Aides nationales
-MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
-
-### Une fuite de toiture à Lyon ?
-Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
-
-### Devis travaux à Lyon : l’essentiel
-
-**Le service**
-- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Lyon et alentours.
-
-**Pour qui**
-- Les propriétaires à Lyon, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
-
-**Le prix pour vous**
-- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
-
-**Le délai**
-- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
-
-**Le rendez-vous**
-- Fixé pendant notre appel, rappelé par SMS avant la visite.
-
-**Combien d’artisans**
-- Un seul. Vos coordonnées ne vont à personne d’autre.
-
-**La zone**
-- Selon votre commune. Hors zone, nous vous le disons à l’appel.
-
-**La société**
-- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
-
-### Travaux à Lyon : vos questions
-Une autre question ? 07 81 01 89 36
-Voir toutes les questions
-
-**Le ravalement est-il obligatoire à Lyon ?**
-Oui, tous les dix ans, depuis l’arrêté préfectoral de 1977. La Ville l’impose rue par rue selon l’arrêté pluriannuel 2021-2026 : après l’injonction, le propriétaire a un an pour faire les travaux. Tout ravalement demande une déclaration préalable.
-
-**Pourquoi poser des nichoirs à martinets lors d’un ravalement ?**
-Le PLU-H de la Métropole le prévoit (article 3.1.7) : avant un ravalement, la Ville demande un diagnostic des oiseaux nicheurs, martinets et hirondelles, pour ne pas détruire leurs nids et leur offrir des nichoirs.
-
-**Peut-on poser des fenêtres en PVC à Lyon ?**
-Dans les secteurs protégés, le PVC et le blanc pur sont proscrits dans de nombreux cas, et l’architecte des Bâtiments de France donne son avis. Ailleurs, une déclaration préalable suffit dès que l’aspect change.
-
-**Lyon est-elle concernée par les termites et la mérule ?**
-En partie : un arrêté préfectoral de 2009 délimite des zones termites, et un arrêté de 2023 des zones mérule. Faites contrôler les bois lors de travaux de toiture.
-
-**Quelles aides pour rénover son logement à Lyon ?**
-Écoréno’v, l’aide de la Métropole, sans condition de ressources, les aides patrimoniales de la Ville et les aides nationales. L’ALEC vous conseille gratuitement : 04 37 48 25 90.
-
-**Combien coûte un échafaudage sur le trottoir à Lyon ?**
-Le permis de stationnement coûte 20 € de droit fixe, puis 26,50 € par m² et par mois, ou 1,80 € pour un ravalement obligatoire fait dans les deux ans suivant l’injonction ou des travaux thermiques. Demande en ligne au moins 8 jours avant.
-
-**Intervenez-vous partout à Lyon ?**
-Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
-
-### Ailleurs en France
-Tous les devis de travaux
-Autres villes
-- Devis travaux à Lille
-- Devis travaux à Rouen
-- Devis travaux à Paris
-- Devis travaux à Marseille
-- Devis travaux à Toulouse
+Villes les plus proches
+- Devis travaux à Rouen 112 km
+- Devis travaux à Lille 204 km
+- Devis travaux à Lyon 391 km
+- Devis travaux à Toulouse 588 km
+- Devis travaux à Marseille 660 km
+- Toutes les villes
 Par métier
 - Toiture et couverture
 - Ravalement de façade
@@ -2452,7 +1889,7 @@ Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
 
 **La société**
 - Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
+Mis à jour le 21 novembre 2026
 
 ### Travaux à Marseille : vos questions
 Une autre question ? 07 81 01 89 36
@@ -2481,12 +1918,201 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 
 ### Ailleurs en France
 Tous les devis de travaux
-Autres villes
-- Devis travaux à Lille
-- Devis travaux à Rouen
-- Devis travaux à Paris
-- Devis travaux à Lyon
-- Devis travaux à Toulouse
+Villes les plus proches
+- Devis travaux à Lyon 278 km
+- Devis travaux à Toulouse 319 km
+- Devis travaux à Paris 660 km
+- Devis travaux à Rouen 758 km
+- Devis travaux à Lille 834 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Lyon : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/lyon/
+
+Travaux à Lyon : ravalement imposé, site Unesco, nichoirs à martinets, aides Écoréno’v. Un seul artisan vient chiffrer, gratuitement.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Lyon en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Lyon en quelques chiffres
+À Lyon, la Ville impose le ravalement rue par rue, et Écoréno’v aide tous les propriétaires à rénover, sans condition de ressources
+- 96,1 % des logements sont des appartements Insee, 2023
+- 45,5 % des résidences principales datent d’avant 1971 Insee, 2023
+- 427 ha de site historique inscrit à l’Unesco depuis 1998 Ville de Lyon
+- 30,6 jours par an à 30 °C ou plus à Lyon-Bron Météo-France, normales 1991-2020
+
+### Que faut-il savoir avant des travaux à Lyon ?
+Sur 100 logements, 96 sont des appartements : la plupart des travaux de toiture et de façade se votent en copropriété. Tout ravalement demande une déclaration préalable. Dans le site historique inscrit à l’Unesco et les deux sites patrimoniaux remarquables, l’architecte des Bâtiments de France donne son avis.
+
+**Ravalement**
+- Obligatoire tous les dix ans depuis l’arrêté préfectoral du 18 octobre 1977. L’arrêté pluriannuel 2021-2026 fixe les rues, année par année ; après l’injonction, le propriétaire a un an pour faire les travaux (Ville de Lyon).
+
+**Déclaration préalable**
+- Exigée pour tout ravalement, d’immeuble comme de maison (Ville de Lyon).
+
+**Patrimoine**
+- Site historique inscrit à l’Unesco : 427 hectares de Fourvière, du Vieux-Lyon, des pentes de la Croix-Rousse et de la Presqu’île. Le Vieux-Lyon et les pentes de la Croix-Rousse sont des sites patrimoniaux remarquables (Métropole de Lyon).
+
+**Urbanisme**
+- Le PLU-H de la Métropole s’applique depuis 2019 ; sa modification n° 4 est exécutoire depuis le 23 janvier 2025 (Métropole de Lyon).
+
+**Termites et mérule**
+- Lyon est en partie couverte par un arrêté termites de 2009 et par un arrêté mérule de 2023, le seul du Rhône (Cerema).
+
+**Martinets**
+- Avant un ravalement, la Ville demande un diagnostic des oiseaux nicheurs, et le PLU-H prévoit des nichoirs à martinets (article 3.1.7).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Lyon, métier par métier
+Enduit à la chaux, pierre de taille, ciment moulé, pisé de la Croix-Rousse : la charte du ravalement de la Ville recense 12 types de façades
+
+#### Couvreur à Lyon
+Le Rhône marque la limite nord des toits à faible pente couverts de tuile creuse, dite tuile canal, en terre cuite (fiche UDAP 69). La Ville prévoit aussi des couvertures en zinc et des brisis en ardoise ou en zinc.
+Dans les secteurs protégés, les fenêtres de toit sont limitées en taille et en nombre (charte 2024).
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Lyon
+La façade lyonnaise la plus courante est un enduit à la chaux sur moellons de pierre, avec un rez-de-chaussée en pierre de taille. On trouve aussi le ciment prompt moulé rive gauche et le pisé de terre sur le plateau de la Croix-Rousse (fiches de la Ville, 2024).
+Un ravalement d’au moins 50 % d’une paroi oblige en principe à isoler (article R173-4 du code de la construction), sauf exceptions prévues par le texte.
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Lyon
+Dans les secteurs protégés, le PVC et le blanc pur sont proscrits dans de nombreux cas (charte 2024). L’avis de l’architecte des Bâtiments de France est requis en site patrimonial remarquable et aux abords des monuments historiques.
+Ailleurs, changer l’aspect de ses fenêtres demande une déclaration préalable.
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Lyon
+Lyon est en partie concernée par l’arrêté préfectoral termites du 27 mai 2009, avec Sainte-Foy-lès-Lyon et Francheville, et par l’arrêté mérule du 30 mai 2023. Faites contrôler les bois lors d’une réfection de toiture.
+À la vente, l’état relatif aux termites est obligatoire dans les zones délimitées par arrêté.
+Devis charpente Prix d’une charpente
+
+#### Isolation à Lyon
+Écoréno’v, l’aide de la Métropole, s’adresse à tous les propriétaires, sans condition de ressources : audit, maîtrise d’œuvre et travaux de rénovation globale, avec des bonus pour les matériaux biosourcés et le confort d’été (ALEC Lyon).
+Avec 30,6 jours par an à 30 °C ou plus à Lyon-Bron, isoler la toiture protège aussi de la chaleur.
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Lyon ?
+Dans l’ordre, pour un immeuble comme pour une maison
+
+#### Vérifiez si votre rue est en campagne
+L’arrêté pluriannuel 2021-2026 liste les rues, année par année. Après l’injonction, vous avez un an pour faire les travaux (Ville de Lyon).
+
+#### Vérifiez la protection de l’adresse
+Site Unesco, Vieux-Lyon, pentes de la Croix-Rousse ou abords d’un monument historique : l’architecte des Bâtiments de France donne son avis.
+
+#### Faites le diagnostic des oiseaux
+Avant un ravalement, la Ville demande de repérer martinets et hirondelles, et le PLU-H prévoit des nichoirs (pièces à fournir).
+
+#### Déposez la déclaration préalable
+En ligne sur Toodego, ou au service urbanisme appliqué, 198 avenue Jean-Jaurès, 69007 Lyon. 04 26 99 63 80.
+
+#### Demandez le permis de stationnement
+Pour un échafaudage, en ligne au moins 8 jours avant. Le tarif passe de 26,50 € à 1,80 € par m² et par mois pour un ravalement obligatoire ou des travaux thermiques (Ville de Lyon).
+
+### Quelles aides pour vos travaux à Lyon ?
+Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
+Conseil public, gratuit et neutre
+
+#### ALEC Lyon
+L’Espace Conseil France Rénov’ de la Métropole : 12-14 avenue Antoine-Dutrievoz, 69100 Villeurbanne. 04 37 48 25 90, du lundi au vendredi, de 9 h à 12 h et de 14 h à 17 h. alec-lyon.org.
+
+#### Écoréno’v
+L’aide de la Métropole, pour tous les propriétaires. En copropriété : 3 500 € par lot pour le niveau BBC, 2 000 € pour au moins 35 % de gain, plus des bonus (ALEC Lyon, règlement 2024).
+
+#### Aides de la Ville
+Valorisation du patrimoine architectural (40 % de certains travaux), Écopatrimoine pour les enduits correcteurs thermiques, restauration des traboules (synthèse des aides, 2024).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Lyon ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Lyon : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Lyon et alentours.
+
+**Pour qui**
+- Les propriétaires à Lyon, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Lyon : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Le ravalement est-il obligatoire à Lyon ?**
+Oui, tous les dix ans, depuis l’arrêté préfectoral de 1977. La Ville l’impose rue par rue selon l’arrêté pluriannuel 2021-2026 : après l’injonction, le propriétaire a un an pour faire les travaux. Tout ravalement demande une déclaration préalable.
+
+**Pourquoi poser des nichoirs à martinets lors d’un ravalement ?**
+Le PLU-H de la Métropole le prévoit (article 3.1.7) : avant un ravalement, la Ville demande un diagnostic des oiseaux nicheurs, martinets et hirondelles, pour ne pas détruire leurs nids et leur offrir des nichoirs.
+
+**Peut-on poser des fenêtres en PVC à Lyon ?**
+Dans les secteurs protégés, le PVC et le blanc pur sont proscrits dans de nombreux cas, et l’architecte des Bâtiments de France donne son avis. Ailleurs, une déclaration préalable suffit dès que l’aspect change.
+
+**Lyon est-elle concernée par les termites et la mérule ?**
+En partie : un arrêté préfectoral de 2009 délimite des zones termites, et un arrêté de 2023 des zones mérule. Faites contrôler les bois lors de travaux de toiture.
+
+**Quelles aides pour rénover son logement à Lyon ?**
+Écoréno’v, l’aide de la Métropole, sans condition de ressources, les aides patrimoniales de la Ville et les aides nationales. L’ALEC vous conseille gratuitement : 04 37 48 25 90.
+
+**Combien coûte un échafaudage sur le trottoir à Lyon ?**
+Le permis de stationnement coûte 20 € de droit fixe, puis 26,50 € par m² et par mois, ou 1,80 € pour un ravalement obligatoire fait dans les deux ans suivant l’injonction ou des travaux thermiques. Demande en ligne au moins 8 jours avant.
+
+**Intervenez-vous partout à Lyon ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Marseille 278 km
+- Devis travaux à Toulouse 360 km
+- Devis travaux à Paris 391 km
+- Devis travaux à Rouen 496 km
+- Devis travaux à Lille 557 km
+- Toutes les villes
 Par métier
 - Toiture et couverture
 - Ravalement de façade
@@ -2642,7 +2268,7 @@ Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
 
 **La société**
 - Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
-Mis à jour le 20 novembre 2026
+Mis à jour le 21 novembre 2026
 
 ### Travaux à Toulouse : vos questions
 Une autre question ? 07 81 01 89 36
@@ -2671,12 +2297,392 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 
 ### Ailleurs en France
 Tous les devis de travaux
-Autres villes
-- Devis travaux à Lille
-- Devis travaux à Rouen
-- Devis travaux à Paris
-- Devis travaux à Lyon
-- Devis travaux à Marseille
+Villes les plus proches
+- Devis travaux à Marseille 319 km
+- Devis travaux à Lyon 360 km
+- Devis travaux à Paris 588 km
+- Devis travaux à Rouen 650 km
+- Devis travaux à Lille 791 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Lille : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/lille/
+
+Travaux à Lille : ravalement tous les 10 ans, charte couleurs, Vieux-Lille protégé, aides de la Ville et de la Métropole. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Lille en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Lille en quelques chiffres
+À Lille, le ravalement est obligatoire au moins tous les dix ans, et la Ville aide à le financer, sans condition de revenus
+- 79,3 % des logements sont des appartements Insee, 2023
+- 27,6 % des résidences principales datent d’avant 1946 Insee, 2023
+- 177 ha de site patrimonial remarquable, Vieux-Lille et centre Ville de Lille
+- 61 teintes pour les maçonneries dans la charte couleurs de la Ville Ville de Lille
+
+### Que faut-il savoir avant des travaux à Lille ?
+Les logements sont surtout des appartements (79 %), et plus d’un quart des résidences principales datent d’avant 1946. La façade lilloise mêle brique, badigeon et pierres locales : toute modification d’aspect demande une autorisation, et dans le Vieux-Lille, l’architecte des Bâtiments de France donne son avis.
+
+**Ravalement**
+- Obligatoire au moins tous les 10 ans, sous injonction administrative. Toute intervention qui modifie l’aspect d’une façade demande une autorisation d’urbanisme (guide des façades).
+
+**Vieux-Lille**
+- Le site patrimonial remarquable couvre 177 hectares depuis l’arrêté du 22 mars 2023 ; son nouveau plan de sauvegarde est encore en concertation. L’architecte des Bâtiments de France y donne son avis, comme aux abords des monuments historiques (Ville de Lille).
+
+**Urbanisme**
+- Le PLU3 de la Métropole européenne de Lille s’applique depuis le 18 octobre 2024 (MEL).
+
+**Couleurs**
+- La charte de la Ville propose 61 teintes pour les maçonneries, 12 pour les joints et 130 pour les menuiseries. Palettes à l’Hôtel de Ville (charte couleurs).
+
+**Termites et mérule**
+- Aucun arrêté préfectoral dans le Nord, ni pour les termites ni pour la mérule (Cerema, 2025).
+
+**Climat**
+- Zone H1a. À Lille-Lesquin, 126 jours de pluie par an et 64 jours de rafales d’au moins 58 km/h, surtout d’octobre à mars (Météo-France, normales 1971-2000).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Lille, métier par métier
+Maisons de ville en brique, maisons bourgeoises, hôtels particuliers, immeubles de rapport : la Ville distingue six familles de bâti, chacune avec ses façades
+
+#### Couvreur à Lille
+Avec 126 jours de pluie par an et des coups de vent d’octobre à mars, gouttières, chéneaux et solins travaillent : faites-les vérifier avant l’hiver.
+Dans le Vieux-Lille et aux abords des monuments historiques, changer de matériau de couverture ou créer une fenêtre de toit passe par l’avis de l’architecte des Bâtiments de France.
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Lille
+Brique, badigeon, enduit, grès, pierre blanche et pierre bleue : la Ville recommande des badigeons à la chaux et le soin des joints de brique (guide des façades).
+Son aide au ravalement : 15 €/m² traité, plafonnée à 15 000 €, sans condition de revenus, pour les propriétaires et les copropriétés (guide des aides, 2024). L’isolation par l’extérieur n’y est pas comptée comme du ravalement.
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Lille
+Pour remplacer des menuiseries, la Ville recommande le bois peint plutôt que le PVC ou l’aluminium, et sa charte propose 130 teintes pour menuiseries et ferronneries.
+Logement exposé au bruit routier, à partir de 65 dB(A) : la Prime Bruit de la Métropole aide à l’isolation acoustique, sous conditions de ressources (Maison de l’Habitat Durable).
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Lille
+Ni termites ni mérule : aucun arrêté préfectoral ne vise le Nord. Faites quand même contrôler les bois lors d’une réfection de toiture, surtout après une infiltration.
+Une surélévation ou une extension change l’aspect du bâtiment : déclaration préalable ou permis, selon la surface créée.
+Devis charpente Prix d’une charpente
+
+#### Isolation à Lille
+La Ville aide les propriétaires occupants sous plafonds de l’Anah : de 15 à 25 % des travaux hors taxes, jusqu’à 40 000 €, si le logement atteint au moins l’étiquette C après travaux (guide des aides, 2024).
+Pour de petits travaux d’isolation (joints, portes, fenêtres), la Métropole prend en charge 50 %, jusqu’à 2 500 €, pour les propriétaires occupants très modestes (AMELIO).
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Lille ?
+Dans l’ordre, du Vieux-Lille aux quartiers
+
+#### Vérifiez si vous êtes en secteur protégé
+Vieux-Lille, centre ou abords d’un monument historique : l’architecte des Bâtiments de France donne son avis. 03 28 36 78 70.
+
+#### Choisissez vos teintes
+Palettes de la charte couleurs à l’Hôtel de Ville et en mairie de quartier (Ville de Lille).
+
+#### Déposez l’autorisation d’urbanisme
+En ligne sur le guichet GNAU de la Métropole, ou au guichet n° 7 de l’Hôtel de Ville, du lundi au vendredi de 8 h 30 à 12 h. 03 20 49 51 65.
+
+#### Faites autoriser l’échafaudage
+Au moins 10 jours ouvrés avant, par courriel à autorisations.temporaires@mairie-lille.fr. 03 20 49 52 50 (démarche).
+
+#### Demandez les aides avant les travaux
+Les aides de la Ville se demandent avant de commencer. Conseil gratuit à la Maison de l’Habitat Durable.
+
+### Quelles aides pour vos travaux à Lille ?
+Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
+Conseil public, gratuit et neutre
+
+#### Maison de l’Habitat Durable
+L’Espace Conseil France Rénov’ de la Métropole, avec AMELIO : 7 bis rue Racine, 59000 Lille. 03 59 00 03 59. Conseillers AMELIO : 03 20 21 27 77. maisonhabitatdurable-lillemetropole.fr.
+
+#### Aide au ravalement
+La Ville verse 15 €/m² traité, plafonnés à 15 000 €, sans condition de revenus, aux propriétaires et aux syndicats de copropriétaires (guide des aides, 2024).
+
+#### Passoire thermique et Haute performance
+15 à 25 % des travaux hors taxes, plafonnés à 25 000 ou 40 000 €, pour les propriétaires occupants sous plafonds de l’Anah, avec au moins l’étiquette C après travaux et un artisan RGE.
+
+#### Petits travaux et Prime Bruit
+La Métropole finance 50 % de petits travaux d’isolation, jusqu’à 2 500 €, pour les ménages très modestes, et aide à isoler du bruit routier les logements exposés.
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Lille ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Lille : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Lille et alentours.
+
+**Pour qui**
+- Les propriétaires à Lille, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Lille : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Le ravalement est-il obligatoire à Lille ?**
+Oui, au moins tous les dix ans, sous injonction administrative, rappelle la Ville. Toute modification de l’aspect d’une façade demande une autorisation d’urbanisme. La Ville aide à hauteur de 15 €/m² traité, jusqu’à 15 000 €, sans condition de revenus (guide des aides, 2024).
+
+**Quelles couleurs pour ma façade à Lille ?**
+La charte couleurs de la Ville propose 61 teintes pour les maçonneries, 12 pour les joints et 130 pour les menuiseries et ferronneries. Les palettes sont à l’Hôtel de Ville et en mairie de quartier.
+
+**Peut-on poser des fenêtres en PVC à Lille ?**
+La Ville recommande le bois peint plutôt que le PVC ou l’aluminium pour remplacer des menuiseries. Dans le Vieux-Lille et aux abords des monuments historiques, l’architecte des Bâtiments de France donne son avis.
+
+**Lille est-elle concernée par les termites ou la mérule ?**
+Non : aucun arrêté préfectoral ne vise le Nord, ni pour les termites ni pour la mérule (Cerema, 2025).
+
+**Quelles aides pour rénover son logement à Lille ?**
+Aide au ravalement de la Ville, aides Passoire thermique et Haute performance pour les propriétaires occupants, petits travaux et Prime Bruit de la Métropole, et aides nationales. Conseil gratuit à la Maison de l’Habitat Durable : 03 59 00 03 59.
+
+**Comment faire autoriser un échafaudage à Lille ?**
+Demandez une autorisation d’occupation du domaine public au moins 10 jours ouvrés avant, par courriel à autorisations.temporaires@mairie-lille.fr (03 20 49 52 50).
+
+**Intervenez-vous partout à Lille ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Rouen 192 km
+- Devis travaux à Paris 204 km
+- Devis travaux à Lyon 557 km
+- Devis travaux à Toulouse 791 km
+- Devis travaux à Marseille 834 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Rouen : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/rouen/
+
+Travaux à Rouen : secteur sauvegardé, ravalement, ardoise et pans de bois, aides de la Région et de la Métropole. Un seul artisan vient chiffrer, gratuitement.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Rouen en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Rouen en quelques chiffres
+À Rouen, le centre ancien est un secteur sauvegardé depuis 1964 : toute modification d’aspect y demande l’avis de l’architecte des Bâtiments de France
+- 85,8 % des logements sont des appartements Insee, 2023
+- 49,3 % des résidences principales datent d’avant 1971 Insee, 2023
+- 134 jours de pluie par an à Rouen-Boos Météo-France, normales 1991-2020
+- 1964 création du secteur sauvegardé du centre ancien ministère de la Culture
+
+### Que faut-il savoir avant des travaux à Rouen ?
+Près de la moitié des résidences principales datent d’avant 1971, et 85,8 % des logements sont des appartements. Partout, le ravalement demande une déclaration préalable ; rue Beauvoisine et rue Saint-Sever, la Ville l’impose. Pour une maison de plus de 15 ans, la Région aide jusqu’à 10 000 € pour une rénovation globale.
+
+**Ravalement**
+- Soumis à déclaration préalable (Ville de Rouen). Rue Beauvoisine et rue Saint-Sever, il est imposé par arrêté du maire, avec une aide de 7 000 € au plus par immeuble (OPAH-RU).
+
+**Centre ancien**
+- Secteur sauvegardé régi par un plan de sauvegarde approuvé en 1986 : toute modification d’aspect y est soumise à autorisation, avec l’avis de l’architecte des Bâtiments de France (PSMV).
+
+**Urbanisme**
+- Hors centre ancien, le PLU de la Métropole Rouen Normandie s’applique depuis le 13 février 2020, modifié pour la dernière fois en mai 2026 (Métropole).
+
+**Termites**
+- Rouen n’est pas en zone termites, mais trois communes voisines le sont depuis 2023 : Sotteville-lès-Rouen, Le Petit-Quevilly et Saint-Étienne-du-Rouvray (préfecture).
+
+**Climat**
+- 847,5 mm de pluie par an et près de 50 jours de rafales d’au moins 58 km/h à Rouen-Boos, surtout de novembre à mars (Météo-France).
+
+**Clôtures**
+- Une déclaration préalable est exigée pour toute clôture dans les 71 communes de la Métropole (délibération du 13 février 2020).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 20 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Rouen, métier par métier
+À Rouen, pans de bois, pierre, brique et ardoise ont chacun leurs règles, surtout dans le centre ancien
+
+#### Couvreur à Rouen
+Dans le centre ancien, la couverture habituelle est l’ardoise naturelle, et la tuile plate sur les maisons à pans de bois les plus anciennes. Tuiles mécaniques, fibrociment, ardoises posées en losange, zinc apparent et gouttières en plastique y sont refusés (PSMV).
+Avec 134 jours de pluie par an et des coups de vent l’hiver, faites vérifier ardoises et gouttières avant la mauvaise saison.
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Rouen
+Pans de bois, pierre apparente, brique et pierre, maçonnerie enduite de préférence à la chaux : dans le centre ancien, les enduits en ciment gris ou rugueux sont refusés (PSMV).
+Partout, le ravalement demande une déclaration préalable. Rue Beauvoisine et rue Saint-Sever, il est imposé, avec une aide de 7 000 € au plus par immeuble.
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Rouen
+Dans le secteur sauvegardé, réparer, repeindre ou remplacer les menuiseries extérieures est soumis à autorisation, avec l’avis de l’architecte des Bâtiments de France (PSMV).
+Ailleurs, une déclaration préalable suffit dès que l’aspect des fenêtres change.
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Rouen
+Rouen n’est pas en zone termites, contrairement à Sotteville-lès-Rouen, au Petit-Quevilly et à Saint-Étienne-du-Rouvray depuis l’arrêté préfectoral du 12 juin 2023.
+Pour une maison à pans de bois, faites vérifier les bois apparents et la charpente avant un ravalement.
+Devis charpente Prix d’une charpente
+
+#### Isolation à Rouen
+Le chèque éco-énergie Normandie aide les propriétaires de maisons de plus de 15 ans : 600 € pour l’audit, 6 500 € pour une première étape et 10 000 € pour une rénovation globale de niveau BBC (Région Normandie).
+Dans le centre ancien, une isolation par l’extérieur change l’aspect de la façade et demande l’avis de l’architecte des Bâtiments de France. L’isolation des combles ne touche pas à la façade.
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Rouen ?
+Dans l’ordre, du centre ancien aux quartiers récents
+
+#### Vérifiez si vous êtes dans le secteur sauvegardé
+Dans le centre ancien ou aux abords d’un monument historique, l’architecte des Bâtiments de France donne son avis.
+
+#### Regardez si votre rue est en campagne
+Rue Beauvoisine et rue Saint-Sever, le ravalement est imposé par arrêté du maire, avec une aide de l’OPAH-RU.
+
+#### Déposez la déclaration préalable
+En ligne sur le guichet GNAU, ou à la direction de l’urbanisme, 14 bis avenue Pasteur. 02 76 30 31 00 (Ville de Rouen).
+
+#### Faites autoriser l’échafaudage
+L’occupation du trottoir se demande à la direction des Espaces publics et naturels de la Ville. 02 35 08 87 45 (démarche).
+
+#### Passez par Énergies Métropole
+Conseil gratuit sur les travaux et les aides, avant de signer le devis.
+
+### Quelles aides pour vos travaux à Rouen ?
+Les aides se demandent avant de signer le devis, et le conseil public est gratuit.
+Conseil public, gratuit et neutre
+
+#### Énergies Métropole
+L’Espace Conseil France Rénov’ de la Métropole Rouen Normandie : conseil gratuit et neutre. 9 bis rue Jeanne-d’Arc, 76000 Rouen. 02 76 30 32 32. energies.metropole-rouen-normandie.fr.
+
+#### OPAH-RU de Rouen 2024-2029
+Ville, Métropole et Anah aident à rénover près de 500 logements du centre-ville, avec un volet ravalement : jusqu’à 7 000 € par immeuble dans les rues concernées (Métropole).
+
+#### Chèque éco-énergie Normandie
+Pour les maisons de plus de 15 ans : 600 € pour l’audit, 6 500 € pour une première étape BBC, 10 000 € pour une rénovation globale BBC (Région Normandie).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Rouen ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Rouen : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Rouen et alentours.
+
+**Pour qui**
+- Les propriétaires à Rouen, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Rouen : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Le ravalement est-il obligatoire à Rouen ?**
+La Ville l’impose par campagnes et par arrêté du maire : en ce moment rue Beauvoisine et rue Saint-Sever, avec une aide de 7 000 € au plus par immeuble. Partout, un ravalement demande une déclaration préalable.
+
+**Quelles règles dans le centre ancien de Rouen ?**
+C’est un secteur sauvegardé depuis 1964, régi par un plan de sauvegarde : toute modification d’aspect y est soumise à autorisation, avec l’avis de l’architecte des Bâtiments de France. Tuiles mécaniques, ardoises en losange, zinc apparent, gouttières en plastique et enduits en ciment gris y sont refusés.
+
+**Peut-on changer ses fenêtres dans le secteur sauvegardé ?**
+Oui, avec une autorisation : réparer, repeindre ou remplacer des menuiseries extérieures y est soumis à autorisation et à l’avis de l’architecte des Bâtiments de France.
+
+**Rouen est-elle en zone termites ?**
+Non. Trois communes voisines le sont depuis l’arrêté préfectoral du 12 juin 2023 : Sotteville-lès-Rouen, Le Petit-Quevilly et Saint-Étienne-du-Rouvray.
+
+**Quelles aides pour rénover sa maison à Rouen ?**
+Le chèque éco-énergie Normandie (600 € pour l’audit, jusqu’à 10 000 € pour une rénovation globale BBC), l’OPAH-RU dans le centre-ville et les aides nationales comme MaPrimeRénov’. Énergies Métropole vous conseille gratuitement : 02 76 30 32 32.
+
+**Comment déposer une déclaration préalable à Rouen ?**
+En ligne sur le guichet numérique GNAU de la Métropole, ou à la direction de l’urbanisme, 14 bis avenue Pasteur (02 76 30 31 00).
+
+**Intervenez-vous partout à Rouen ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Paris 112 km
+- Devis travaux à Lille 192 km
+- Devis travaux à Lyon 496 km
+- Devis travaux à Toulouse 650 km
+- Devis travaux à Marseille 758 km
+- Toutes les villes
 Par métier
 - Toiture et couverture
 - Ravalement de façade
@@ -2863,7 +2869,7 @@ Trouver des chantiers sans attendre le bouche-à-oreille : choisir entre demande
 - 02
 
 #### Pour les propriétaires
-Les règles qui changent et les démarches avant des travaux : le DPE en 2027, les prix par métier, et les règles locales à Lille, Rouen, Paris, Lyon, Marseille et Toulouse.
+Les règles qui changent et les démarches avant des travaux : le DPE en 2027, les prix par métier, et les règles locales à Paris, Marseille, Lyon, Toulouse, Lille et Rouen.
 - 03
 
 #### Comment nous écrivons
