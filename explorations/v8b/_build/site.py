@@ -234,15 +234,15 @@ PORTRAIT = {"charles": "charles-le-cottier", "martin": "martin-barthelemy"}
 def portrait(k):
     return SITE + f"/assets/photos/{PORTRAIT[k]}-700x875-nb.webp"
 ORG_REF = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "url": SITE + "/"}
-WEBSITE = {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}
-ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "alternateName": "Bartier and Co",
+WEBSITE = {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Bartier & Co", "alternateName": ["Bartier and Co", "bartierandco.com"], "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}
+ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "legalName": "Bartier & Co SAS", "alternateName": ["Bartier and Co", "Bartier et Co", "Bartier&Co", "bartierandco"],
        "slogan": "Faire équipe. Faire la différence.", "url": SITE + "/", "logo": SITE + "/assets/logo-bartier.png", "image": SITE + "/assets/og.png",
        "email": "contact@bartierandco.com", "telephone": PHONE,
        "address": {"@type": "PostalAddress", "addressCountry": "FR"},
        "contactPoint": {"@type": "ContactPoint", "telephone": PHONE, "email": "contact@bartierandco.com", "contactType": "customer service", "areaServed": "FR", "availableLanguage": "French",
                         "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "19:00"}},
        "areaServed": {"@type": "Country", "name": "France"},
-       "knowsAbout": ["Google Ads", "Meta Ads", "Publicité locale", "Couverture", "Ravalement de façade", "Menuiserie extérieure", "Charpente", "Isolation"],
+       "knowsAbout": ["Google Ads", "Meta Ads", "Publicité locale", "Devis de travaux", "Couverture", "Ravalement de façade", "Menuiserie extérieure", "Charpente", "Isolation", "Rénovation énergétique"],
        "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434", "https://www.linkedin.com/company/bartier-co"],
        "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de 5 minutes, visites de devis fixées directement dans leur agenda. Pour les propriétaires, mise en relation gratuite avec un artisan de leur secteur.",
        "makesOffer": [{"@type": "Offer", "itemOffered": {"@id": SITE + u + "#service"}} for u in ("/devis-travaux/", "/google-ads/", "/meta-ads/")],
@@ -254,7 +254,7 @@ home = re.sub(r'<meta (?:property="og:|name="twitter:)[^>]*>\n?', "", home)
 # (en ligne, la balise robots de l'accueil est remplacée par la passe finale, comme partout : extraits longs autorisés)
 _ht = html.unescape(re.search(r"<title>(.*?)</title>", home).group(1))
 _hd = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', home).group(1))
-_ld = {"@context": "https://schema.org", "@graph": [ORG, {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Bartier & Co", "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}]}
+_ld = {"@context": "https://schema.org", "@graph": [ORG, {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Bartier & Co", "alternateName": ["Bartier and Co", "bartierandco.com"], "inLanguage": "fr-FR", "publisher": {"@id": SITE + "/#org"}}]}
 # Questions-réponses visibles de l'accueil, reprises telles quelles
 _txt = lambda s: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", s))).replace("'", "’").strip()
 _qa = re.findall(r'<details class="fq"><summary><span>(.*?)</span>.*?<div class="fq-a">(.*?)</div>\s*</details>', home, flags=re.S)
@@ -1766,6 +1766,34 @@ for p in paths:
     if "@@MAJ" in _t:
         _y, _m, _d = _lm[p]["date"].split("-")
         _f.write_text(_t.replace("@@MAJFR@@", f"{int(_d)} {_MOIS[int(_m) - 1]} {_y}").replace("@@MAJ@@", _lm[p]["date"]), encoding="utf-8")
+def _add_modified(p):
+    """Fraîcheur lisible par les moteurs et les IA : dateModified (date réelle de dernière modification du texte) sur la page web de chaque URL."""
+    f = ROOT / p.strip("/") / "index.html"
+    d = f.read_text(encoding="utf-8")
+    if '"dateModified"' in d or "application/ld+json" not in d:
+        return
+    def one(m):
+        try:
+            j = json.loads(m.group(1))
+        except Exception:
+            return m.group(0)
+        nodes = j.get("@graph", [j]) if isinstance(j, dict) else j
+        for n in nodes:
+            t = n.get("@type")
+            if t in ("WebPage", "AboutPage", "CollectionPage", "ContactPage", "FAQPage") and not n.get("dateModified"):
+                n["dateModified"] = _lm[p]["date"]
+                one.done = True
+                break
+        return '<script type="application/ld+json">' + json.dumps(j, ensure_ascii=False, separators=(",", ":")) + "</script>"
+    one.done = False
+    d2 = re.sub(r'<script type="application/ld\+json">([\s\S]*?)</script>', one, d)
+    if not one.done:
+        node = {"@context": "https://schema.org", "@type": "WebPage", "@id": SITE + p + "#webpage", "url": SITE + p, "inLanguage": "fr-FR",
+                "isPartOf": {"@id": SITE + "/#website"}, "dateModified": _lm[p]["date"]}
+        d2 = d2.replace("</head>", '<script type="application/ld+json">' + json.dumps(node, ensure_ascii=False, separators=(",", ":")) + "</script>\n</head>", 1)
+    f.write_text(d2, encoding="utf-8")
+for p in paths:
+    _add_modified(p)
 urls = "\n".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{_lm[p]['date']}</lastmod></url>" for p in paths if p not in REVIEW)
 (ROOT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
 import llmsfull
