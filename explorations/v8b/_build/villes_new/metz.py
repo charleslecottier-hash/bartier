@@ -1,4 +1,5 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+REVIEWED = "2026-11-21"
 PUBLISH = "2026-12-05"  # vague 2 : publication deux semaines après la vague 1 (voir VILLES.md)
 
 # Sources consultées le 21/11/2026. La page insee.fr de Metz répond en erreur 500 ce jour : chiffres pris par l'API Melodi (RP 2023).

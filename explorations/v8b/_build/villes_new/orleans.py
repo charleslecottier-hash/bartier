@@ -1,4 +1,5 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+REVIEWED = "2026-11-21"
 PUBLISH = "2026-12-05"  # vague 2 : publication deux semaines après la vague 1 (voir VILLES.md)
 
 # Sources consultées le 21/11/2026. Les pages insee.fr répondent en erreur 500 ce jour : chiffres pris par l'API Melodi (RP 2023).
@@ -64,15 +65,15 @@ CITY = dict(
                       "rafales d’au moins 58 km/h (" + L("Météo-France", _MF) + ", normales 1991-2020).")],
     trades_intro="Maisons à pans de bois du centre médiéval, immeubles des rues Royale et Jeanne-d’Arc, pavillons de La Source : le cahier communal du PLU métropolitain règle l’aspect de chacun.",
     trades={
-        "toiture": ["À Orléans, les toitures traditionnelles en ardoise ou en tuile de terre cuite petit moule doivent être conservées, et une "
-                    "réfection respecte les pentes et les matériaux d’origine. Ardoise, tuile de terre cuite et zinc sont les couvertures à "
+        "toiture": ["À Orléans, les toitures traditionnelles d’origine en ardoise ou en tuile de terre cuite petit moule doivent être conservées, et une "
+                    "réfection respecte les pentes et les matériaux de la construction. Ardoise, tuile de terre cuite et zinc sont les couvertures à "
                     "privilégier (" + L("cahier communal du PLU métropolitain", _REGL) + ").",
                     "Dans les zones pavillonnaires de La Source, les toits à pans sont d’aspect ardoise, posée droite : la pose en losange y est "
                     "interdite. Partout, les châssis de toit et les cadres de panneaux solaires sont de teinte foncée, dans le plan de la toiture, "
                     "et les ouvertures de combles ne dépassent pas le tiers de la longueur du toit."],
         "facade": ["La pierre de taille et la brique prévues pour rester apparentes sont conservées. Les enduits blanc pur ou de teinte vive et les "
-                   "finitions rustique, tyrolienne ou écrasée sont interdits. Sur un immeuble d’intérêt patrimonial, on passe un badigeon ou on "
-                   "nettoie à l’eau plutôt que de peindre l’enduit (" + L("cahier communal du PLU métropolitain", _REGL) + ").",
+                   "finitions rustique, tyrolienne ou écrasée sont interdits. Sur un immeuble d’intérêt patrimonial, la peinture de l’enduit est "
+                   "proscrite : prévoyez un badigeon traditionnel ou un nettoyage à l’eau (" + L("cahier communal du PLU métropolitain", _REGL) + ").",
                    "Dans le site patrimonial remarquable, une expertise patrimoniale de la façade précède le ravalement, qui vise son état "
                    "historique. La Ville verse jusqu’à 35 % du montant hors taxes une fois les travaux jugés conformes par l’architecte des "
                    "Bâtiments de France (" + L("Ville d’Orléans", _RAV) + ")."],
@@ -80,15 +81,15 @@ CITY = dict(
                      "coffres de volets roulants se posent au nu intérieur du mur, y compris lors d’un changement de menuiseries ("
                      + L("cahier communal du PLU métropolitain", _REGL) + ").",
                      "Sur les bâtiments remarquables repérés par le PLU métropolitain, les fenêtres, volets et persiennes traditionnels sont "
-                     "conservés tant que leur état le permet. Lors d’un ravalement dans le site patrimonial remarquable, la couleur des menuiseries "
+                     "conservés tant que leur état le permet (" + L("cahier communal", _REGL) + "). Lors d’un ravalement dans le site patrimonial remarquable, la couleur des menuiseries "
                      "se valide sur place avec les services de la Mairie (" + L("guide du ravalement", _GUIDE) + ")."],
         "charpente": ["Le centre médiéval compte des façades à pans de bois. Un arrêté municipal de 1824 enjoignait de les couvrir de lattes et de "
                       "plâtre contre le feu (" + L("cahier communal, annexes", _ANN) + ") : sous un enduit ancien, la structure peut être en bois, "
                       "à faire vérifier avant de toucher à la façade ou à la toiture.",
-                      "La commune a été reconnue neuf fois en catastrophe naturelle pour sécheresse, de 1989 à 2020 (" + L("Géorisques", _CATNAT)
-                      + "), et son sous-sol compte 483 anciennes carrières recensées. Sur une maison fissurée, faites diagnostiquer la structure "
-                        "avant de refaire la charpente."],
-        "isolation": ["Ma Métro Rénov’ verse 2 000 € par logement pour une isolation en matériaux biosourcés, hors combles perdus, sans condition "
+                      "Géorisques compte à Orléans neuf arrêtés de catastrophe naturelle pour sécheresse entre 1989 et 2020 (" + L("Géorisques", _CATNAT)
+                      + "), sur un sous-sol où 483 carrières sont recensées. Si les murs porteurs se fissurent, faites étudier le sol et les "
+                        "appuis avant de reprendre la charpente."],
+        "isolation": ["Avec Ma Métro Rénov’, Orléans Métropole verse 2 000 € par logement pour une isolation en matériaux biosourcés, hors combles perdus, sans condition "
                       "de ressources (" + L("ANIL", _ANIL_BIO) + "), et 10 000 € pour une rénovation qui atteint l’étiquette A ou B, sous "
                       "conditions de ressources ou de conventionnement. Ces primes sont ouvertes jusqu’au 31 décembre 2026 (" + L("ANIL", _ANIL_BBC) + ", 2026).",
                       "Avec une isolation par l’extérieur, les volets battants sont reposés à leur emplacement et les coffres de volets roulants "
