@@ -42,10 +42,10 @@ CITY = dict(
     figures_intro="L’essentiel en chiffres, de l’Écusson aux quartiers récents.",
     figures=[("87,0 <small>%</small>", "des logements sont des appartements", S("Insee, 2023", _INSEE)),
              ("30,6 <small>%</small>", "des résidences principales sont occupées par leur propriétaire", S("Insee, 2023", _INSEE)),
-             ("96 <small>ha</small>", "de secteur sauvegardé autour de l’Écusson", S("Ville de Montpellier", _PSMV)),
+             ("96 <small>ha</small>", "de secteur sauvegardé, Écusson compris", S("Ville de Montpellier", _PSMV)),
              ("299,5 <small>mm</small>", "de pluie en un jour, le 29 septembre 2014", S("Météo-France", _MF))],
     answer=("À Montpellier, 87,0 % des logements sont des appartements, et moins d’un tiers des résidences principales datent d’avant 1971. "
-            "Dans l’Écusson, secteur sauvegardé de 96 hectares, tout projet, même intérieur, passe par l’avis conforme de l’architecte des "
+            "Dans le secteur sauvegardé de 96 hectares, Écusson compris, tout projet, même intérieur, passe par l’avis conforme de l’architecte des "
             "Bâtiments de France. Ailleurs, la Ville peut imposer le ravalement par quartier, et tout l’Hérault est en zone termites depuis 2001."),
     facts=[("Ravalement", "Montpellier est sur la liste préfectorale des communes qui peuvent imposer le ravalement : le conseil municipal "
                           "en fixe les périmètres, comme à Celleneuve (" + L("règlement de 2022", _RAV) + "). Les aides propres au "
@@ -54,12 +54,12 @@ CITY = dict(
                        "démolition ou modification, même intérieure, y est soumise à autorisation avec l’avis conforme de l’architecte des "
                        "Bâtiments de France (" + L("guide du PSMV", _PSMV) + ")."),
            ("Urbanisme", "Le PLUi Climat des 31 communes de la Métropole a été adopté le 16 juillet 2025 (" + L("En Commun", _PLUI) + "). "
-                         "Autour de l’Écusson, des AVAP protègent les faubourgs (" + L("Ville de Montpellier", _CV) + ")."),
+                         "Autour du centre historique, trois AVAP protègent les faubourgs (" + L("guide du PSMV", _PSMV) + ")."),
            ("Termites", "Tout le département de l’Hérault est déclaré termité depuis l’arrêté préfectoral du 20 juin 2001. Aucun arrêté ne "
                         "vise la mérule (" + L("préfecture de l’Hérault", _TERM) + ")."),
            ("Pluie et vent", "639,2 mm de pluie par an à Montpellier-aéroport, dont plus de 40 % de septembre à novembre, et des rafales à "
                              "58 km/h ou plus 69,2 jours par an (" + L("Météo-France", _MF) + ", normales 1991-2020). La Ville compte en moyenne "
-                             "5 à 10 épisodes d’inondation par an (" + L("DICRIM", _DICRIM) + ", 2026)."),
+                             "5 à 10 épisodes d’inondation par an (" + L("DICRIM", _DICRIM) + ")."),
            ("Séisme et sols", "Sismicité faible : les règles parasismiques ne visent que les bâtiments stratégiques, comme les hôpitaux. "
                               "Le retrait-gonflement des argiles revient avec les variations climatiques et peut fissurer les façades ("
                               + L("DICRIM", _DICRIM) + ").")],
@@ -108,7 +108,7 @@ CITY = dict(
                                               "la direction des usages et de la valorisation de l’espace public. L’entreprise peut la déposer "
                                               "pour vous (" + L("Ville de Montpellier", _PROC) + ")."),
            ("Appelez l’ALEC avant de signer", "Conseil gratuit sur les travaux et les aides : les demandes d’aide se font avant de signer "
-                                              "les devis et de commencer le chantier.")],
+                                              "les devis et de commencer le chantier (" + L("ALEC", _ALEC) + ").")],
     aides_intro="Demandez conseil, puis les aides, avant de signer le moindre devis.",
     aides=[("ALEC Montpellier Métropole", "L’Espace Conseil France Rénov’ de la Métropole : conseil gratuit et neutre. 33 bis rue du "
                                           "Faubourg-Saint-Jaumes, 34000 Montpellier. 04 67 91 96 91, du mardi au vendredi de 13 h à 18 h. "
@@ -123,10 +123,10 @@ CITY = dict(
            NATIONAL],
     faq=[("Le ravalement est-il obligatoire à Montpellier ?",
           "La Ville peut l’imposer : elle figure sur la liste préfectorale, et le conseil municipal fixe des périmètres de ravalement "
-          "obligatoire, comme à Celleneuve. Ailleurs, elle préconise un ravalement tous les dix ans. Ses aides au ravalement "
+          "obligatoire, comme à Celleneuve. Elle préconise aussi un ravalement tous les dix ans. Ses aides au ravalement "
           "sont aujourd’hui suspendues."),
          ("Quelles règles pour des travaux dans l’Écusson ?",
-          "L’Écusson est un secteur sauvegardé de 96 hectares. Toute construction, démolition ou modification, même intérieure, y demande "
+          "L’Écusson est au cœur d’un secteur sauvegardé de 96 hectares. Toute construction, démolition ou modification, même intérieure, y demande "
           "une autorisation avec l’avis conforme de l’architecte des Bâtiments de France, et chaque immeuble a sa fiche de prescriptions."),
          ("Faut-il une autorisation pour changer ses fenêtres à Montpellier ?",
           "Oui, une déclaration préalable dès que l’aspect change, à déposer à la direction de l’urbanisme appliqué ou sur le guichet "

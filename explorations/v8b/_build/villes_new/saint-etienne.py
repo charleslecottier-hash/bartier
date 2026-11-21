@@ -80,8 +80,9 @@ CITY = dict(
                       "un isolant sur les chevrons, faites vérifier que la charpente porte la charge. La commune est en zone de sismicité 2, faible ("
                       + L("Géorisques", _SISMO) + ")."],
         "isolation": ["Bouthéon compte 2 507,6 degrés-jours unifiés par an (" + L("Météo-France", _MF) + ", 1991-2020) : le chauffage pèse. "
-                      "Pour remplacer un chauffage au bois installé avant 2005, Saint-Étienne Métropole verse jusqu’à 1 500 €, et jusqu’à 10 000 € de plus "
-                      "si vous améliorez aussi isolation et ventilation, jusqu’à fin 2027 (" + L("Saint-Étienne Métropole", _SEM) + ").",
+                      "Jusqu’à fin 2027, Saint-Étienne Métropole verse au plus 1 500 € pour remplacer un chauffage au bois installé avant 2005, et une "
+                      "aide complémentaire pouvant atteindre 10 000 € si vous améliorez aussi isolation et ventilation ("
+                      + L("Saint-Étienne Métropole", _SEM) + ").",
                       "En zone 3 de potentiel radon, Géorisques conseille, après une isolation ou un changement de fenêtres, de garder un renouvellement "
                       "d’air suffisant et de refaire une mesure (" + L("fiche radon", _FRADON) + "). Pour un ravalement aidé, le plan façades exige un "
                       "document de Rénov’actions42 sur les travaux de performance énergétique possibles (" + L("plan façades", _PF) + ")."]},
@@ -99,7 +100,7 @@ CITY = dict(
                                            "Métropole. En site patrimonial remarquable, comptez en général 2 mois d’instruction."),
            ("Faites autoriser l’échafaudage", "Une autorisation d’occupation du domaine public, payante, se demande au moins 12 jours avant le chantier, "
                                               "par courriel à droitdevoirie@saint-etienne.fr. 04 77 48 73 18 (" + L("démarche", _ODP) + ").")],
-    aides_intro="À Saint-Étienne, la Ville aide les façades du centre, et la Métropole les quartiers anciens et le chauffage au bois.",
+    aides_intro="À Saint-Étienne, la Ville aide les façades du centre ; la Métropole, deux quartiers en OPAH-RU et le remplacement du chauffage au bois.",
     aides=[("Rénov’actions42", "L’Espace Conseil France Rénov’ de Saint-Étienne, service public de la rénovation porté par les collectivités de la Loire : "
                                "Maison de l’Habitat et du Logement, 20 A rue Balaÿ, 42000 Saint-Étienne. 04 77 41 41 25, du lundi au vendredi de 9 h à 18 h ("
                                + L("annuaire Service-Public", _ECFR) + ", " + L("Saint-Étienne Métropole", _SEM) + ", " + L("renovactions42.org", _R42) + ")."),
@@ -111,9 +112,9 @@ CITY = dict(
                                                                 "propriétaires et les copropriétés, avec des aides renforcées sous conditions. "
                                                                 "Tarentaize-Beaubrun-Couriot : CAP Métropole, 04 77 49 25 18. Saint-Roch : "
                                                                 "EPASE, 07 64 18 79 46 (" + L("Saint-Étienne Métropole", _SEM) + ")."),
-           ("Fonds Air Bois", "Jusqu’à fin 2027, jusqu’à 1 500 € pour remplacer un chauffage au bois installé avant 2005 par un appareil "
-                              "labellisé Flamme verte, et une aide complémentaire jusqu’à 10 000 € si vous améliorez aussi isolation et "
-                              "ventilation. Les cheminées à foyer ouvert sont interdites d’usage depuis le 1er avril 2025, par arrêté préfectoral ("
+           ("Fonds Air Bois", "Aide prolongée jusqu’à fin 2027 : au plus 1 500 € pour remplacer un chauffage au bois installé avant 2005 par un "
+                              "appareil labellisé Flamme verte, et une aide complémentaire pouvant atteindre 10 000 € si vous améliorez aussi "
+                              "isolation et ventilation. Les cheminées à foyer ouvert sont interdites d’usage depuis le 1er avril 2025, par arrêté préfectoral ("
                               + L("Saint-Étienne Métropole", _SEM) + ")."),
            ("Label de la Fondation du patrimoine", "Par convention avec la Ville, un immeuble labellisé permet de déduire du revenu imposable jusqu’à 100 % "
                                                    "du montant des travaux (" + L("plan façades", _PF) + ")."),

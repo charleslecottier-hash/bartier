@@ -262,8 +262,10 @@ ROUEN = dict(
                                   "02 76 30 32 32. " + L("energies.metropole-rouen-normandie.fr", _EM_76) + "."),
            ("OPAH-RU de Rouen 2024-2029", "Ville, Métropole et Anah aident à rénover près de 500 logements du centre-ville, avec un volet ravalement : jusqu’à 7 000 € "
                                           "par immeuble dans les rues concernées (" + L("Métropole", "https://www.metropole-rouen-normandie.fr/file-download/download/public/636734") + ")."),
-           ("Chèque éco-énergie Normandie", "Pour les maisons de plus de 15 ans : 600 € pour l’audit, 6 500 € pour une première étape BBC, 10 000 € pour une "
-                                            "rénovation globale BBC (" + L("Région Normandie", "https://www.normandie.fr/idee-action-cheque-eco-energie-normandie-aide-travaux") + ")."),
+           ("Chèque éco-énergie Normandie", "Pour les maisons de plus de 15 ans : 600 € pour l’audit, sans condition de ressources. Sous conditions de ressources, "
+                                            "6 500 € pour une première étape BBC (étiquette C au moins après travaux) ou 10 000 € pour une rénovation globale BBC "
+                                            "(étiquette A ou B), plus jusqu’à 2 000 € pour une énergie renouvelable ou une VMC double flux ("
+                                            + L("Région Normandie", "https://cheque-eco-energie.normandie.fr/content/aide-travaux") + ")."),
            NATIONAL],
     faq=[("Le ravalement est-il obligatoire à Rouen ?",
           "La Ville l’impose par campagnes et par arrêté du maire : en ce moment rue Beauvoisine et rue Saint-Sever, avec une aide de 7 000 € au plus par immeuble. "
