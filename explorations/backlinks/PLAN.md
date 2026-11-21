@@ -127,6 +127,6 @@ relient le profil à la marque.
 | | Bing Places | Import de la fiche Google, adresse masquée | fiche | à faire |
 | 20/11/2026 | Zenodo | Synthèse DPE 2027 (PDF, CC BY 4.0), DOI 10.5281/zenodo.24396449 (toutes versions : 10.5281/zenodo.24396448), https://zenodo.org/records/24396449 | /blog/dpe-2027/ dans « Related works » ; le blog renvoie vers le DOI | fait |
 | 20/11/2026 | LinkedIn | Article « DPE 2027 : qu'est-ce qui change pour votre logement ? » (particuliers, questions-réponses) | /blog/dpe-2027/ et /devis-travaux/ | fait |
-| 21/11/2026 | LinkedIn | Post 2 : fuite de toiture (PDF 03 en document) | /devis-travaux/toiture/ | à publier |
-| 21/11/2026 | Facebook | Post 2 : fuite de toiture (lien du deck) | /devis-travaux/toiture/ | à publier |
+| 21/11/2026 | LinkedIn | Post 2 : fuite de toiture (PDF 03 en document) | /devis-travaux/toiture/ | fait |
+| 21/11/2026 | Facebook | Post 2 : fuite de toiture (lien du deck) | /devis-travaux/toiture/ | fait |
 | | | | | |
