@@ -28,6 +28,10 @@ TRADES, PROJECT, ARTICLES = M["TRADES"], M["PROJECT"], P["ARTICLES"]
 GOOGLE_FAQ, META_FAQ = P["GOOGLE_FAQ"], P["META_FAQ"]
 
 
+DD_JS = '<script id="dd-js">(function(){document.querySelectorAll(".hdr-dd").forEach(function(dd){var t=dd.querySelector(".hdr-dd-t"),m=dd.querySelector(".hdr-dd-menu");if(!t||!m)return;var set=function(o){dd.classList.toggle("is-open",o);t.setAttribute("aria-expanded",String(o))};t.addEventListener("keydown",function(e){if(e.key==="ArrowDown"||e.key===" "){e.preventDefault();set(true);var a=m.querySelector("a");if(a)a.focus()}});dd.addEventListener("keydown",function(e){if(e.key==="Escape"&&dd.classList.contains("is-open")){set(false);t.focus()}});dd.addEventListener("focusout",function(e){if(!dd.contains(e.relatedTarget))set(false)})});var h=document.querySelector(".hdr"),y0=scrollY;if(h)addEventListener("scroll",function(){var y=scrollY,d=y-y0;if(Math.abs(d)<8)return;h.classList.toggle("is-up",d>0&&y>160&&!document.documentElement.classList.contains("menu-open"));y0=y},{passive:true})})();</script>'
+ANIM_OPEN = '(function(){var run=function(){'
+ANIM_CLOSE = '},go=function(){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",run):run()};if(!(window.matchMedia&&matchMedia(__MQ__).matches)){go();return}var l=["gsap.min.js","ScrollTrigger.min.js","SplitText.min.js"],n=0;l.forEach(function(s){var e=document.createElement("script");e.src="/assets/js/"+s;e.async=false;e.onload=e.onerror=function(){if(++n===l.length)go()};document.head.appendChild(e)})})();'
+
 def fr(text):
     text = text.replace("'", "’")
     return re.sub(r" ([;:?!»])", NB + r"\1", text).replace("« ", "«" + NB)
@@ -63,7 +67,7 @@ def _dd_link(st, sd, sh, parent):
 def _nav_item(t, h):
     if h in NAV_SUB:
         sub = "".join(_dd_link(st, sd, sh, h) for st, sd, sh in NAV_SUB[h])
-        return f'      <div class="hdr-dd"><a class="link hdr-dd-t" href="{h}" aria-haspopup="true">{t}{NAV_CHEV}</a><div class="hdr-dd-menu">{sub}</div></div>'
+        return f'      <div class="hdr-dd"><a class="link hdr-dd-t" href="{h}" aria-expanded="false">{t}{NAV_CHEV}</a><div class="hdr-dd-menu">{sub}</div></div>'
     return f'      <a class="link" href="{h}">{t}</a>'
 nav_html = "\n".join(_nav_item(t, h) for t, h in NAV)
 def _menu_item(t, h):  # sur téléphone : « Comment ça marche » et « Métiers » s'ouvrent comme des listes
@@ -183,13 +187,12 @@ WA_HTML = f"""<div class="wa" id="wa">
 <script>
 (function(){{var w=document.getElementById('wa');if(!w)return;var b=w.querySelector('.wa-fab');
 function set(o){{w.classList.remove('is-tip');w.classList.toggle('is-open',o);b.setAttribute('aria-expanded',String(o));}}
-b.addEventListener('click',function(){{set(!w.classList.contains('is-open'))}});
+b.addEventListener('click',function(){{var o=!w.classList.contains('is-open');set(o);if(o){{var pn=w.querySelector('.wa-panel');pn.setAttribute('tabindex','-1');pn.focus({{preventScroll:true}})}}}});
 w.querySelector('.wa-tip-go').addEventListener('click',function(){{set(true)}});
 w.querySelector('.wa-tip-x').addEventListener('click',function(){{w.classList.remove('is-tip')}});
 w.querySelector('[data-wa-close]').addEventListener('click',function(){{set(false);b.focus()}});
-document.addEventListener('keydown',function(e){{if(e.key==='Escape')set(false)}});
+document.addEventListener('keydown',function(e){{if(e.key==='Escape'&&w.classList.contains('is-open')){{set(false);b.focus()}}}});
 document.addEventListener('click',function(e){{if(!w.contains(e.target))set(false)}});
-try{{if(!sessionStorage.getItem('bc-wa')){{setTimeout(function(){{if(w.classList.contains('is-away')||w.classList.contains('is-open'))return;if(window.innerWidth<761)w.classList.add('is-tip');else set(true);try{{sessionStorage.setItem('bc-wa','1')}}catch(e){{}}}},window.innerWidth<761?7000:4500);}}}}catch(e){{}}
 w.querySelectorAll('[data-wa]').forEach(function(a){{a.addEventListener('click',function(){{(window.dataLayer=window.dataLayer||[]).push({{event:'contact_martin',canal:a.dataset.wa}})}})}});
 }})();
 </script>
@@ -1597,6 +1600,10 @@ for f in PAGES_OUT:
         doc = doc.replace("</body>", TC_CALC_JS.replace("<script>", '<script id="tc-js">', 1) + "\n</body>", 1)
     if 'id="wa"' in doc and "wa-mini" not in doc:  # bulle WhatsApp : réduite à l'icône une fois la page entamée, pour ne rien cacher
         doc = doc.replace("</body>", '<script id="wa-mini">(function(){var w=document.getElementById("wa");if(!w)return;var f=function(){w.classList.toggle("is-mini",scrollY>innerHeight*1.1)};addEventListener("scroll",f,{passive:true});f()})();</script>\n</body>', 1)
+    if 'class="hdr-dd"' in doc and 'id="dd-js"' not in doc:
+        doc = doc.replace("</body>", DD_JS + "\n</body>", 1)
+    if f != ROOT / "index.html":
+        doc = doc.replace('aria-label="Bartier &amp; Co, retour en haut"', 'aria-label="Bartier &amp; Co, accueil"')
     if "<main>" in doc and 'class="skip"' not in doc:  # clavier : aller directement au contenu
         doc = doc.replace("<main>", '<main id="contenu" tabindex="-1"' + ('' if f == ROOT / "index.html" else ' class="is-inner"') + '>', 1)  # is-inner : réglages téléphone des pages intérieures (l'accueil garde les siens)
         doc = re.sub(r"(<body[^>]*>)", r'\1\n<a class="skip" href="#contenu">Aller au contenu</a>', doc, count=1)
@@ -1626,11 +1633,12 @@ for f in PAGES_OUT:
     # Vitesse : les bibliothèques d'animation ne bloquent plus l'affichage (defer) ; le script qui les utilise attend l'analyse de la page
     if '<script src="/assets/js/gsap.min.js"></script>' in doc:
         for _lib in ("gsap.min.js", "ScrollTrigger.min.js", "SplitText.min.js"):
-            doc = doc.replace(f'<script src="/assets/js/{_lib}"></script>', f'<script src="/assets/js/{_lib}" defer></script>')
+            doc = doc.replace(f'<script src="/assets/js/{_lib}"></script>\n', "").replace(f'<script src="/assets/js/{_lib}"></script>', "")
         _i = doc.find("<script>(()=>{const $=(s,r=document)")
         if _i > 0:
             _j = doc.index("</script>", _i)
-            doc = doc[:_i + 8] + 'document.addEventListener("DOMContentLoaded",function(){' + doc[_i + 8:_j] + "});" + doc[_j:]
+            _mq = '"(prefers-reduced-motion:no-preference)"' if 'class="hero-pin' in doc else '"(min-width:1025px) and (prefers-reduced-motion:no-preference)"'
+            doc = doc[:_i + 8] + ANIM_OPEN + doc[_i + 8:_j] + ANIM_CLOSE.replace("__MQ__", _mq) + doc[_j:]
     # pages Google Ads et Meta Ads : l'image de fond de la maquette est le plus grand élément du haut de page
     if 'fetchpriority="high"' not in doc and 'class="mk-bg"' in doc:
         doc = re.sub(r'<img\b([^>]*class="mk-bg")', r'<img fetchpriority="high"\1', doc, count=1)
@@ -1655,7 +1663,7 @@ CSP_HEADER = "; ".join([
     "connect-src " + " ".join(["'self'"] + _CSP_NET),
     "frame-src " + (" ".join(["https://td.doubleclick.net", "https://www.googletagmanager.com"]) if _G else "'none'"),
     "media-src 'self'", "manifest-src 'self'", "worker-src 'self'",
-    "object-src 'none'", "base-uri 'self'", "form-action 'self'", "frame-ancestors 'none'",
+    "object-src 'none'", "base-uri 'none'", "form-action 'self'", "frame-ancestors 'none'",
     "upgrade-insecure-requests"])
 SECURITY_HEADERS = [
     {"key": "Content-Security-Policy", "value": CSP_HEADER},
@@ -1785,7 +1793,7 @@ def _csp_meta(doc):
         if t and t.group(1).lower() not in ("", "text/javascript", "module", "application/javascript"):
             continue  # données structurées (application/ld+json) : jamais exécutées
         hashes.append("'sha256-" + _b64.b64encode(_h.sha256(body.encode("utf-8")).digest()).decode() + "'")
-    pol = "script-src " + " ".join(CSP_SCRIPT + sorted(set(hashes))) + "; object-src 'none'; base-uri 'self'"
+    pol = "script-src " + " ".join(CSP_SCRIPT + sorted(set(hashes))) + "; object-src 'none'; base-uri 'none'"
     doc = re.sub(r'<meta http-equiv="Content-Security-Policy"[^>]*>\n?', "", doc)
     return doc.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta http-equiv="Content-Security-Policy" content="' + pol + '">', 1)
 for _f in [ROOT / p.strip("/") / "index.html" for p in paths] + [ROOT / "404.html"]:

@@ -152,8 +152,8 @@ def build(img, phone, phone_txt, crumbs, parts=False):
         '<button type="button" class="pf-tile" data-v="autre">Autre projet</button>'
     form = f"""<div class="pf-card" id="projet">
       <p class="pf-live" aria-live="polite"><i></i><span class="pf-live-t">Rappel en moins de 5 minutes, en semaine</span></p>
-      <form class="pf-form" novalidate aria-label="Demande de devis de travaux">
-        <div class="pf-top"><p class="pf-count">Étape <b class="pf-n">1</b> sur 5 · 1 minute</p><button type="button" class="pf-back" hidden>← Retour</button></div>
+      <form class="pf-form" method="post" action="/api/lead" novalidate aria-label="Demande de devis de travaux">
+        <div class="pf-top"><p class="pf-count" id="pf-count">Étape <b class="pf-n">1</b> sur 5 · 1 minute</p><button type="button" class="pf-back" hidden>← Retour</button></div>
         <p class="pf-bar"><i></i></p>
         <fieldset class="pf-step is-on" data-step="1"><legend>Quels travaux&nbsp;?</legend><div class="pf-grid">{tiles}</div><input type="hidden" name="travaux"></fieldset>
         <fieldset class="pf-step" data-step="2"><legend>Précisez votre besoin</legend><div class="pf-list pf-need"></div><input type="hidden" name="besoin"></fieldset>
@@ -166,13 +166,13 @@ def build(img, phone, phone_txt, crumbs, parts=False):
           <p class="pf-note pf-tenant" hidden>Les travaux sur le toit, la façade ou les fenêtres se décident avec le propriétaire. Transmettez-lui cette page&nbsp;: la demande lui prend une minute.</p></fieldset>
         <fieldset class="pf-step" data-step="5"><legend>Dernière étape&nbsp;: où vous joindre&nbsp;?</legend>
           <div class="pf-fields">
-            <label class="pf-f"><span>Code postal du chantier</span><input name="code_postal" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="Ex. 80000" required></label>
-            <label class="pf-f"><span>Prénom</span><input name="prenom" autocomplete="given-name" placeholder="Votre prénom" required></label>
-            <label class="pf-f is-wide"><span>Téléphone</span><input name="telephone" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" required></label>
+            <label class="pf-f" for="pf-cp"><span>Code postal du chantier</span><input id="pf-cp" name="code_postal" aria-invalid="false" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="Ex. 80000" required></label>
+            <label class="pf-f" for="pf-prenom"><span>Prénom</span><input id="pf-prenom" name="prenom" aria-invalid="false" autocomplete="given-name" placeholder="Votre prénom" required></label>
+            <label class="pf-f is-wide" for="pf-tel"><span>Téléphone</span><input id="pf-tel" name="telephone" aria-invalid="false" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" required></label>
           </div>
-          <label class="pf-consent"><input type="checkbox" name="consentement" required><span>{CONSENT}</span></label>
+          <label class="pf-consent" for="pf-ok"><input id="pf-ok" type="checkbox" name="consentement" required aria-invalid="false"><span>{CONSENT}</span></label>
           <input class="pf-hp" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <p class="pf-err" role="alert" hidden></p>
+          <p class="pf-err" id="pf-err" aria-live="polite" hidden></p>
           <button type="submit" class="btn pf-submit"><span>Être rappelé gratuitement</span>{tick()}</button>
           <p class="pf-small">Gratuit, sans engagement. {PRIVACY}</p>
         </fieldset>
@@ -450,7 +450,7 @@ CSS = """<style id="pf-css">
 .pf-btn-inv{background:#fff;color:var(--accent)}
 .pf-live{display:flex;align-items:center;gap:8px;margin:-4px 0 14px;font-size:.85rem;color:var(--muted)}
 .pf-live i{width:9px;height:9px;border-radius:50%;background:#b8bec6;flex:none}
-.pf-live.is-on{color:#137333}.pf-live.is-on i{background:#1e8e3e;box-shadow:0 0 0 0 rgba(30,142,62,.5);animation:pfPulse 2s infinite}
+.pf-live.is-on{color:#137333}.pf-live.is-on i{background:#1e8e3e;box-shadow:0 0 0 0 rgba(30,142,62,.5);animation:pfPulse 2s 4}
 @keyframes pfPulse{70%{box-shadow:0 0 0 7px rgba(30,142,62,0)}100%{box-shadow:0 0 0 0 rgba(30,142,62,0)}}
 .pf-keep{margin-top:6px;font-weight:500}
 .pf-proms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin:0;padding:0 var(--cell);list-style:none}
@@ -504,25 +504,28 @@ var NEEDS=__NEEDS__, WHO=__WHO__, LABEL=__LABEL__;
 var f=document.querySelector(".pf-form");if(!f)return;
 var steps=[].slice.call(f.querySelectorAll(".pf-step")),cur=0,n=f.querySelector(".pf-n"),bar=f.querySelector(".pf-bar i"),back=f.querySelector(".pf-back");
 var dl=function(e,p){(window.dataLayer=window.dataLayer||[]).push(Object.assign({event:e},p||{}))};
+function sel(x,on){x.classList.toggle("is-sel",on);x.setAttribute("aria-pressed",on?"true":"false")}
+f.querySelectorAll(".pf-tile,.pf-opt").forEach(function(x){x.setAttribute("aria-pressed",x.classList.contains("is-sel")?"true":"false")});
 function val(k){var e=f.querySelector("[name="+k+"]");return e?(e.value||"").trim():""}
 function set(k,v){f.querySelector("[name="+k+"]").value=v}
-function show(i){steps.forEach(function(s,j){s.classList.toggle("is-on",j===i)});cur=i;n.textContent=i+1;bar.style.width=(100*(i+1)/steps.length)+"%";back.hidden=i===0;
-  if(i===4){var c=f.querySelector("[name=code_postal]");if(c&&window.innerWidth>760)setTimeout(function(){c.focus()},200)}}
+function show(i,mv){steps.forEach(function(s,j){s.classList.toggle("is-on",j===i)});cur=i;n.textContent=i+1;bar.style.width=(100*(i+1)/steps.length)+"%";back.hidden=i===0;
+  if(i===4){var c=f.querySelector("[name=code_postal]");if(c&&window.innerWidth>760){setTimeout(function(){c.focus()},200);return}}
+  if(mv!==false){var lg=steps[i].querySelector("legend");if(lg){lg.setAttribute("tabindex","-1");lg.setAttribute("aria-describedby","pf-count");lg.focus({preventScroll:true})}}}
 function fillNeeds(t){var box=f.querySelector(".pf-need"),list=NEEDS[t]||["Rénovation globale","Extension","Autre projet"];
-  box.innerHTML=list.map(function(x){return "<button type=\"button\" class=\"pf-opt\" data-v=\""+x+"\">"+x+"</button>"}).join("")}
-function pickTrade(t,jump){set("travaux",t);f.querySelectorAll(".pf-tile").forEach(function(b){b.classList.toggle("is-sel",b.dataset.v===t)});fillNeeds(t);
+  box.innerHTML=list.map(function(x){return "<button type=\"button\" class=\"pf-opt\" data-v=\""+x+"\" aria-pressed=\"false\">"+x+"</button>"}).join("")}
+function pickTrade(t,jump){set("travaux",t);f.querySelectorAll(".pf-tile").forEach(function(b){sel(b,b.dataset.v===t)});fillNeeds(t);
   var w=document.querySelector(".pf-who");if(w)w.textContent=WHO[t]||"artisans";if(jump)show(1)}
-function pickLeak(){var o=f.querySelector(".pf-need .pf-opt");if(o){o.classList.add("is-sel");set("besoin",o.dataset.v);show(2)}}
+function pickLeak(mv){var o=f.querySelector(".pf-need .pf-opt");if(o){sel(o,true);set("besoin",o.dataset.v);show(2,mv)}}
 f.addEventListener("click",function(e){var b=e.target.closest(".pf-tile,.pf-opt");if(!b||!f.contains(b))return;
   var st=b.closest(".pf-step"),inp=st.querySelector("input[type=hidden]");
-  st.querySelectorAll(".pf-tile,.pf-opt").forEach(function(x){x.classList.toggle("is-sel",x===b)});
+  st.querySelectorAll(".pf-tile,.pf-opt").forEach(function(x){sel(x,x===b)});
   if(b.classList.contains("pf-tile")){pickTrade(b.dataset.v,false);if(cur===0)dl("particulier_debut",{travaux:b.dataset.v})}else inp.value=b.dataset.v;
   if(inp.name==="statut"){var ten=b.dataset.v==="Locataire";st.querySelector(".pf-tenant").hidden=!ten;if(ten)return}
   setTimeout(function(){show(cur+1)},230)});
 back.addEventListener("click",function(){if(cur>0)show(cur-1)});
 document.querySelectorAll(".pf-pick").forEach(function(a){a.addEventListener("click",function(){pickTrade(a.dataset.v,true);if(a.dataset.need==="fuite")pickLeak()})});
 var q=new URLSearchParams(location.search),t=q.get("travaux")||f.dataset.preset;
-if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,true);if(q.get("besoin")==="fuite")pickLeak()}
+if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,false);show(1,false);if(q.get("besoin")==="fuite")pickLeak(false)}
 (function(){var l=document.querySelector(".pf-live"),t=l&&l.querySelector(".pf-live-t"),w=nextOpen();
   if(l){if(!w){l.classList.add("is-on");t.textContent="Disponibles maintenant · rappel en moins de 5 min"}else t.textContent="Rappel "+w+" · demandes enregistrées 24\u00a0h/24"}
   var m=new Date().getMonth(),se=document.querySelector(".pf-season"),S=["Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité."];
@@ -532,13 +535,13 @@ function nextOpen(){var d=new Date(),day=d.getDay(),h=d.getHours()+d.getMinutes(
   if(day>=1&&day<=4&&h>=19)return "demain dès 8 h";if(day>=1&&day<=5&&h<8)return "ce matin dès 8 h";return "lundi dès 8 h"}
 function check(){var err=f.querySelector(".pf-err"),bad=[];
   var cp=f.querySelector("[name=code_postal]"),pr=f.querySelector("[name=prenom]"),tel=f.querySelector("[name=telephone]"),ok=f.querySelector("[name=consentement]");
-  [cp,pr,tel,ok].forEach(function(x){x.removeAttribute("aria-invalid")});
+  [cp,pr,tel,ok].forEach(function(x){x.setAttribute("aria-invalid","false");x.removeAttribute("aria-describedby")});
   if(!/^\d{5}$/.test(cp.value.trim()))bad.push([cp,"un code postal à 5 chiffres"]);
   if(pr.value.trim().length<2)bad.push([pr,"votre prénom"]);
-  if(tel.value.replace(/\D/g,"").length<10)bad.push([tel,"un numéro de téléphone"]);
+  if(tel.value.replace(/\D/g,"").length<10)bad.push([tel,"un numéro de téléphone à 10 chiffres"]);
   if(!ok.checked)bad.push([ok,"votre accord pour être rappelé"]);
-  bad.forEach(function(b){b[0].setAttribute("aria-invalid","true")});
-  if(bad.length){err.textContent="Il manque "+bad.map(function(b){return b[1]}).join(", ")+".";err.hidden=false}else err.hidden=true;
+  bad.forEach(function(b){b[0].setAttribute("aria-invalid","true");b[0].setAttribute("aria-describedby","pf-err")});
+  if(bad.length){var tx="Il manque "+bad.map(function(b){return b[1]}).join(", ")+".";if(err.textContent!==tx)err.textContent=tx;err.hidden=false}else err.hidden=true;
   return bad}
 /* une fois l'erreur affichée, elle se met à jour pendant la saisie et disparaît quand tout est bon */
 f.addEventListener("input",function(e){if(!f.querySelector(".pf-err").hidden&&e.target.closest(".pf-step"))check()});
@@ -554,7 +557,7 @@ f.addEventListener("submit",function(e){e.preventDefault();var err=f.querySelect
   f.querySelectorAll(".pf-wa").forEach(function(a){a.href="https://wa.me/33781018936?text="+encodeURIComponent(msg)});
   var fin=false,end=function(sent){if(fin)return;fin=true;btn.disabled=false;lab.textContent=old;
     dl("particulier_demande",{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),envoi:sent?"auto":"manuel"});
-    done.setAttribute("data-state",sent?"sent":"manual");steps.forEach(function(s){s.classList.remove("is-on")});f.querySelector(".pf-top").style.display="none";f.querySelector(".pf-bar").style.display="none";done.hidden=false;
+    done.setAttribute("data-state",sent?"sent":"manual");steps.forEach(function(s){s.classList.remove("is-on")});f.querySelector(".pf-top").style.display="none";f.querySelector(".pf-bar").style.display="none";done.hidden=false;done.setAttribute("tabindex","-1");done.focus({preventScroll:true});
     document.getElementById("projet").scrollIntoView({behavior:"smooth",block:"start"})};
   var body={type:"particulier",fields:{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),code_postal:val("code_postal"),prenom:val("prenom"),telephone:val("telephone")},consent:{text:f.querySelector(".pf-consent span").textContent,at:new Date().toISOString()},page:location.pathname,site_web:""};
   btn.disabled=true;lab.textContent="Envoi…";var t=setTimeout(function(){end(false)},6000);

@@ -116,12 +116,14 @@
     box.focus();
   }
   function closePanel() { if (!panel) return; panel.remove(); panel = null; if (!ui) root.classList.remove("cc-open"); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
-  function close() { if (ui) { ui.remove(); ui = null; } if (panel) { panel.remove(); panel = null; if (lastFocus && lastFocus.focus) lastFocus.focus(); } root.classList.remove("cc-open"); }
+  function close() { if (ui) { var had = ui.contains(d.activeElement); ui.remove(); ui = null; if (had && !panel) { var m = d.getElementById("contenu"); if (m) m.focus({ preventScroll: true }); } } if (panel) { panel.remove(); panel = null; if (lastFocus && lastFocus.focus) lastFocus.focus(); } root.classList.remove("cc-open"); }
   d.addEventListener("click", function (e) {
     var t = e.target.closest && e.target.closest('[data-cookies],a[href="#cookies"],a[href$="/#cookies"]');
     if (!t) return; e.preventDefault(); prefs();
   });
   window.bcConsent = { get: function () { return state; }, open: prefs, reset: function () { try { localStorage.removeItem(KEY); } catch (e) {} state = null; banner(); } };
   state = read();
-  if (state) apply(); else if (d.body) banner(); else d.addEventListener("DOMContentLoaded", banner);
+  // pas de bandeau tant qu’aucun outil de mesure ou de publicité n’est branché (rien à accepter) ; « Gérer mes cookies » reste disponible
+  var any = !!(TAGS.ga4 || TAGS.gads || TAGS.meta);
+  if (state) apply(); else if (any) { if (d.body) banner(); else d.addEventListener("DOMContentLoaded", banner); }
 })();

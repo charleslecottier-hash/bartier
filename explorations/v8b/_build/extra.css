@@ -579,12 +579,12 @@ h1,h2,h3{text-wrap:balance}
 .dd-chev{width:9px;height:6px;flex:none;transition:transform .25s var(--ease)}
 .hdr-dd-menu{position:absolute;top:calc(100% + 12px);left:-14px;z-index:60;display:grid;gap:2px;min-width:290px;padding:8px;background:var(--bg);color:var(--ink);border-radius:var(--r);box-shadow:0 22px 48px -22px rgba(10,20,36,.5),0 0 0 1px rgba(10,20,36,.08);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility 0s .2s}
 .hdr-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
-.hdr-dd:hover .hdr-dd-menu,.hdr-dd:focus-within .hdr-dd-menu{opacity:1;visibility:visible;transform:none;transition:opacity .2s,transform .2s}
-.hdr-dd:hover .dd-chev,.hdr-dd:focus-within .dd-chev{transform:rotate(180deg)}
+.hdr-dd:hover .hdr-dd-menu,.hdr-dd.is-open .hdr-dd-menu{opacity:1;visibility:visible;transform:none;transition:opacity .2s,transform .2s}
+.hdr-dd:hover .dd-chev,.hdr-dd.is-open .dd-chev{transform:rotate(180deg)}
 .hdr-dd-menu a{display:grid;gap:2px;padding:10px 12px;border-radius:calc(var(--r) - 2px);color:var(--ink);text-decoration:none;white-space:normal}
 .hdr-dd-menu b{font-weight:500;font-size:.95rem;line-height:1.3}
 .hdr-dd-menu small{font-size:.82rem;line-height:1.35;color:#5b616b}
-.hdr-dd-menu a:hover,.hdr-dd-menu a:focus-visible{background:var(--paper);outline:none}
+.hdr-dd-menu a:hover,.hdr-dd-menu a:focus-visible{background:var(--paper)}
 .hdr-dd-menu a:hover b{color:var(--accent)}
 
 /* ——— Guides (Trouver des chantiers, fiche plateforme) : sommaire en tête, texte large et lisible, tableaux à pleine largeur ——— */
@@ -721,15 +721,15 @@ main section.sheet.tc-sec,main section.sheet.tc-us{padding-top:clamp(64px,6.5vw,
 /* Exemples d'annonces des pages métiers : une carte Facebook crédible (photo du métier, texte lisible, bouton qui ne paraît pas désactivé) */
 .ad-card{display:flex;flex-direction:column;gap:0;padding:0;overflow:hidden;background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(10,20,36,.06),0 16px 40px -20px rgba(10,20,36,.3);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#050505}
 .ad-head{display:flex;align-items:center;gap:8px;padding:12px 16px 8px}
-.ad-av{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:600;letter-spacing:0}
-.ad-card .ad-meta{display:flex;flex-direction:column;margin:0;font-size:12px;line-height:1.3;color:#65676b}
-.ad-card .ad-meta b{font-size:14px;font-weight:600;color:#050505}
-.ad-card .ad-text{margin:0;padding:4px 16px 12px;font-size:14px;line-height:1.4;color:#050505}
+.ad-av{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;font-size:0.75rem;font-weight:600;letter-spacing:0}
+.ad-card .ad-meta{display:flex;flex-direction:column;margin:0;font-size:0.75rem;line-height:1.3;color:#65676b}
+.ad-card .ad-meta b{font-size:0.875rem;font-weight:600;color:#050505}
+.ad-card .ad-text{margin:0;padding:4px 16px 12px;font-size:0.875rem;line-height:1.4;color:#050505}
 .ad-img{margin:0;aspect-ratio:1.91 / 1;background:#e4e6eb}
 .ad-img img{display:block;width:100%;height:100%;object-fit:cover;filter:none}
 .ad-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:#f0f2f5}
-.ad-card .ad-angle{margin:0;font-size:15px;line-height:1.25;font-weight:600;color:#050505;text-transform:none;letter-spacing:0}
-.ad-card .ad-cta{flex:none;margin:0;padding:8px 12px;border-radius:6px;background:#e4e6eb;color:#050505;font-size:14px;font-weight:600;line-height:1.2;white-space:nowrap}
+.ad-card .ad-angle{margin:0;font-size:0.9375rem;line-height:1.25;font-weight:600;color:#050505;text-transform:none;letter-spacing:0}
+.ad-card .ad-cta{flex:none;margin:0;padding:8px 12px;border-radius:6px;background:#e4e6eb;color:#050505;font-size:0.875rem;font-weight:600;line-height:1.2;white-space:nowrap}
 /* Étiquettes : plus de majuscules espacées */
 .pf-t{text-transform:none;letter-spacing:0;font-weight:500}
 /* Calculateur : pas de halo dans le panneau bleu */
@@ -1114,8 +1114,8 @@ section.tr-ads .ad-img{height:auto}
   section.tr-ads ul.sp-cols{align-items:stretch}
   section.tr-ads .ad-card{height:100%}
   section.tr-ads .ad-bar{margin-top:auto;gap:8px;padding:10px 12px}
-  section.tr-ads .ad-card .ad-angle{font-size:14px}
-  section.tr-ads .ad-card .ad-cta{padding:7px 10px;font-size:13px}
+  section.tr-ads .ad-card .ad-angle{font-size:0.875rem}
+  section.tr-ads .ad-card .ad-cta{padding:7px 10px;font-size:0.8125rem}
   .tr-card-k span{white-space:nowrap}
   /* barre « Décrire mes travaux » : texte sur une ligne, flèche à droite */
   a.pf-sticky{flex-direction:row;align-items:center;justify-content:flex-start;gap:10px;padding:0 16px}
@@ -1152,7 +1152,7 @@ section.tr-ads .ad-img{height:auto}
   .is-inner h1{font-size:2rem!important;line-height:1.08!important;letter-spacing:-.03em!important;font-weight:400}
   .is-inner h2:not(.pf-brief h2){font-size:1.625rem!important;line-height:1.15!important;letter-spacing:-.02em!important;font-weight:400}
   .is-inner .sector-name{font-size:1.875rem!important;line-height:1.1!important}
-  .is-inner .seasons h3,.is-inner .process h3{font-size:18px!important;line-height:1.25!important}
+  .is-inner .seasons h3,.is-inner .process h3{font-size:1.125rem!important;line-height:1.25!important}
   .is-inner .sheet:not(.pg-top){padding-top:48px;padding-bottom:48px}
   .is-inner .sp-head{row-gap:10px}
   .is-inner .sp-head:not(:last-child){margin-bottom:24px}
@@ -1318,16 +1318,16 @@ section.tr-ads .ad-img{height:auto}
    Texte courant 16 px · introduction 17 px · texte de carte 15 px · sources et mentions 13 px
    Titre de carte 18 px · grandes cartes 20 px · intertitres d'article 19 px · bouton principal pleine largeur, 52 px */
 @media (max-width:760px){
-  main .sp-head p,main .fq-a p,main .fq-head p,main .more-list li,main .prose p:not(.src):not(.answer),main .prose li,main dd,main .tc-us-txt p:not(.tc-trades){font-size:16px!important;line-height:1.55!important}
-  main .lead,main .dq-lead,main .pf-ser-head p,main .prose p.answer{font-size:17px!important;line-height:1.5!important}
-  main li > p:not([class]),main .pl-txt,main .how-txt,main .sector-note,main .tc-trades,main .pf-why,main .tc-foot,main .ws-cols p,main .pf-time p{font-size:15px!important;line-height:1.5!important}
-  main .pf-src,main .tc-src,main .prose .src,main .post-meta-line,main .ca-legal,main .pf-live{font-size:13px!important;line-height:1.45!important}
-  main h3:not(.sector-name){font-size:18px!important;line-height:1.25!important;letter-spacing:-.01em!important}
-  main .how-card h3,main .art-aside h3{font-size:20px!important;line-height:1.2!important}
-  main .prose h3{font-size:19px!important;line-height:1.3!important}
-  main .sector-name{font-size:28px!important}
-  main .pf-ref,main .tc-formula{font-size:18px!important;line-height:1.4!important}
-  main .pf-band p{font-size:18px}
+  main .sp-head p,main .fq-a p,main .fq-head p,main .more-list li,main .prose p:not(.src):not(.answer),main .prose li,main dd,main .tc-us-txt p:not(.tc-trades){font-size:1rem!important;line-height:1.55!important}
+  main .lead,main .dq-lead,main .pf-ser-head p,main .prose p.answer{font-size:1.0625rem!important;line-height:1.5!important}
+  main li > p:not([class]),main .pl-txt,main .how-txt,main .sector-note,main .tc-trades,main .pf-why,main .tc-foot,main .ws-cols p,main .pf-time p{font-size:0.9375rem!important;line-height:1.5!important}
+  main .pf-src,main .tc-src,main .prose .src,main .post-meta-line,main .ca-legal,main .pf-live{font-size:0.8125rem!important;line-height:1.45!important}
+  main h3:not(.sector-name){font-size:1.125rem!important;line-height:1.25!important;letter-spacing:-.01em!important}
+  main .how-card h3,main .art-aside h3{font-size:1.25rem!important;line-height:1.2!important}
+  main .prose h3{font-size:1.1875rem!important;line-height:1.3!important}
+  main .sector-name{font-size:1.75rem!important}
+  main .pf-ref,main .tc-formula{font-size:1.125rem!important;line-height:1.4!important}
+  main .pf-band p{font-size:1.125rem}
   /* boutons principaux : même largeur, même hauteur, libellé à gauche et flèche à droite */
   main a.btn,main button.btn:not(.dq-back){display:flex;width:100%;min-height:52px;align-items:center;justify-content:space-between;padding:0 18px}
   main .dq a.btn,main .dq button.btn,main .pf-form a.btn,main .pf-form button.btn{justify-content:center}
@@ -1358,7 +1358,7 @@ section.tr-ads .ad-img{height:auto}
 @media (max-width:760px){
   main .tc-foot .link,main .tc-trades .link,main .tc-loss p .link,main #services p > .link,main .fq-head p > .link{display:inline;min-height:0;padding:10px 0;background:none;white-space:normal;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em}
   main .fq-head p{line-height:1.6}
-  .dq-wa-link .link{font-size:15px}
+  .dq-wa-link .link{font-size:0.9375rem}
   .is-inner .pg-top:has(.gd-toc){padding-bottom:32px}
   .is-inner .journal.sheet{padding-top:8px}
 }
@@ -1412,3 +1412,6 @@ section.tr-ads .ad-img{height:auto}
 .pledge.is-plain .pl-step h3{margin:0;font:400 clamp(1.3rem,1.9vw,1.8rem)/1.18 var(--f-display);letter-spacing:-.02em;max-width:17ch}
 .pledge.is-plain .pl-txt{max-width:30ch}
 @media (max-width:760px){.pledge.is-plain .pl-step h3{font-size:1.3rem!important;line-height:1.2!important;max-width:none}}
+
+/* ——— Téléphone : l'en-tête se replie quand on descend, revient dès qu'on remonte ——— */
+@media (max-width:760px){.hdr{transition:transform .3s cubic-bezier(.2,.7,.2,1)}.hdr.is-up:not(:focus-within){transform:translateY(-100%)}html.menu-open .hdr{transform:none}}

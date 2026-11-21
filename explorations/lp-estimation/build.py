@@ -172,15 +172,15 @@ def gallery_html(m, cfg, key, urls, own):
     figs = "".join(
         f'<figure class="es-gal-item"><img src="{u}" alt="{a(cap)}" width="{w}" height="{h_}" loading="lazy" decoding="async">'
         '</figure>' for u, w, h_, cap in urls)
-    return (f'<section class="es-gal" aria-labelledby="es-gal-h"><div class="es-gal-head"><h2 id="es-gal-h">{e(title)}</h2>{sub}</div>'
-            f'<div class="es-gal-row" data-n="{len(urls)}">{figs}</div></section>')
+    return (f'<section class="es-gal"><div class="es-gal-head"><h2 id="es-gal-h">{e(title)}</h2>{sub}</div>'
+            f'<div class="es-gal-row" data-n="{len(urls)}" role="region" aria-label="Photos des chantiers" tabindex="0">{figs}</div></section>')
 
 
 def end_html(m, cfg):
     tel = cfg.get("telephone", "")
     telh = "+33" + re.sub(r"\D", "", tel)[1:] if tel else ""
     call = f'<a class="es-end-call" href="tel:{telh}">{ico("phone")}<span>ou appelez le {e(tel)}</span></a>' if tel else ""
-    return (f'<section class="es-end" aria-labelledby="es-end-h"><h2 id="es-end-h">Prêt à connaître le prix de vos travaux ?</h2>'
+    return (f'<section class="es-end"><h2 id="es-end-h">Prêt à connaître le prix de vos travaux ?</h2>'
             '<p>Six questions, une minute. Gratuit et sans engagement.</p>'
             f'<a class="es-cta es-end-cta" href="#estimation" data-start><b>Calculer mon prix{ico("arrow")}</b></a>{call}</section>')
 
@@ -208,7 +208,7 @@ def zone_html(m, cfg):
                       f'<circle class="es-map-dot" cx="{W // 2}" cy="{H // 2}" r="7"/></svg>'
                       f'<span class="es-map-chip" aria-hidden="true">{e(z["nom"])}</span></div>'
                       '<span class="es-map-src">Plan © IGN</span></div>')
-    return (f'<section class="es-area" aria-labelledby="es-area-h"><div class="es-area-head"><h2 id="es-area-h">{e(fr(cfg.get("rappel") or "Notre zone d’intervention"))}</h2>'
+    return (f'<section class="es-area"><div class="es-area-head"><h2 id="es-area-h">{e(fr(cfg.get("rappel") or "Notre zone d’intervention"))}</h2>'
             f'<p>Nous intervenons dans un rayon de <b>{km}\u00a0km</b> autour de <b>{e(z["nom"])}{dep}</b>.</p>{hrs}{btn}</div>{carte_html}</section>')
 
 
@@ -228,8 +228,8 @@ def team_html(m, cfg, key, photo_url=""):
     sub = f"{role[:1].upper() + role[1:]} · {cfg['entreprise']}" if pre and role else (cfg["entreprise"] if pre else "")
     hrs = cfg.get("horaires", "").strip()
     lines = "".join(f"<span>{e(x)}</span>" for x in (sub, hrs[:1].upper() + hrs[1:] if hrs else "") if x)
-    return (f'<section class="es-team" aria-labelledby="es-team-h"><h2 id="es-team-h">Ce que nous faisons</h2><div class="es-team-card">'
-            f'<ul class="es-team-list">{lis}</ul><div class="es-who es-team-who"><span class="es-av">{av}</span><p><b>{e(name)}</b>{lines}</p>{stars(cfg)}</div></div></section>')
+    return (f'<section class="es-team"><h2 id="es-team-h">Ce que nous faisons</h2><div class="es-team-card">'
+            f'<ul class="es-team-list" role="list">{lis}</ul><div class="es-who es-team-who"><span class="es-av">{av}</span><p><b>{e(name)}</b>{lines}</p>{stars(cfg)}</div></div></section>')
 
 
 def prix_txt(m, cfg, key, o):
@@ -263,9 +263,9 @@ def spec_html(m, cfg, key, accent):
         vis = (f'<img class="es-sp-img" src="{ph[0]}" alt="{a(ph[1])}" width="800" height="500" loading="lazy" decoding="async"{sty}>' if ph else
                f'<div class="es-sp-art" aria-hidden="true">{icons.house(o[2], o[3], accent)}</div>')
         cards.append(f'<article class="es-sp">{vis}<div class="es-sp-b">'
-                     f'<h3>{e(o[0])}</h3><p>{e(intro)}</p><ul>{lis}</ul><p class="es-sp-fin">{e(fin)}</p>'
-                     f'<a class="es-sp-go" href="?projet={sl}" data-pick="{sl}">Estimer ce projet{ico("arrow")}</a></div></article>')
-    return (f'<section class="es-spec" aria-labelledby="es-spec-h"><div class="es-spec-head"><h2 id="es-spec-h">Nos spécialités</h2>'
+                     f'<h3>{e(o[0])}</h3><p>{e(intro)}</p><ul role="list">{lis}</ul><p class="es-sp-fin">{e(fin)}</p>'
+                     f'<a class="es-sp-go" href="?projet={sl}" data-pick="{sl}">Estimer ce projet<span class="es-vh"> : {e(o[0])}</span>{ico("arrow")}</a></div></article>')
+    return (f'<section class="es-spec"><div class="es-spec-head"><h2 id="es-spec-h">Nos spécialités</h2>'
             f'<p>Choisissez votre projet pour en estimer le prix.</p>{note}</div><div class="es-spec-list">{"".join(cards)}</div></section>')
 
 
@@ -315,41 +315,41 @@ def q_html(q, sid, accent, cfg):
     miss = a(MISS.get(n, "une réponse"))
     if q["t"] == "cards":
         opts = "".join(
-            f'<button type="button" class="es-opt" data-q="{n}" data-v="{a(o[0])}" data-slug="{slug(o[0])}" aria-pressed="false">{CK}'
+            f'<button type="button" class="es-opt" data-q="{n}" data-v="{a(o[0])}" data-slug="{slug(o[0])}" role="radio" aria-checked="false">{CK}'
             f'<span class="es-ico">{icons.house(o[2], o[3], accent)}</span>'
             f'<span class="es-ot"><b>{e(o[0])}</b><span>{e(o[1])}</span></span></button>'
             for o in q["opts"])
-        return f'<div class="es-opts" role="group" aria-labelledby="{sid}" data-req="{n}" data-miss="{miss}">{opts}</div>'
+        return f'<div class="es-opts" role="radiogroup" aria-labelledby="{sid}" data-req="{n}" data-miss="{miss}">{opts}</div>'
     if q["t"] == "tiles":
         opts = "".join(
-            f'<button type="button" class="es-tile" data-q="{n}" data-v="{a(lab)}" aria-pressed="false">{CK}<span class="es-sw">{icons.swatch(sw)}</span><span>{e(lab)}</span></button>'
+            f'<button type="button" class="es-tile" data-q="{n}" data-v="{a(lab)}" role="radio" aria-checked="false">{CK}<span class="es-sw">{icons.swatch(sw)}</span><span>{e(lab)}</span></button>'
             for lab, sw in q["opts"])
-        return f'<div class="es-tiles" role="group" aria-labelledby="{sid}" data-req="{n}" data-miss="{miss}">{opts}</div>'
+        return f'<div class="es-tiles" role="radiogroup" aria-labelledby="{sid}" data-req="{n}" data-miss="{miss}">{opts}</div>'
     if q["t"] == "range":
         units = list(q["units"]) if q.get("units") else q["unit"]
         lo = units[0] if isinstance(units, list) and q["min"] == 0 and units[0] else f'{q["min"]} {units if isinstance(units, str) else units[1 if q["min"] < 2 else 2]}'
         hi = f'{q["max"]} {units if isinstance(units, str) else units[2]}'
         return (f'<div class="es-field es-rangef"><label class="es-lab" for="es-{n}">{e(q["label"])}</label>'
-                f'<div class="es-stepper"><button type="button" class="es-sb" data-step="-1" aria-label="Moins">{ico("minus")}</button>'
-                f'<output for="es-{n}" aria-live="polite"></output>'
-                f'<button type="button" class="es-sb" data-step="1" aria-label="Plus">{ico("plus")}</button></div>'
+                f'<div class="es-stepper"><button type="button" class="es-sb" data-step="-1" aria-label="Moins ({a(q['label'])})">{ico("minus")}</button>'
+                f'<output for="es-{n}"></output>'
+                f'<button type="button" class="es-sb" data-step="1" aria-label="Plus ({a(q['label'])})">{ico("plus")}</button></div>'
                 f'<input class="es-range" type="range" id="es-{n}" data-q="{n}" min="{q["min"]}" max="{q["max"]}" step="{q["step"]}" value="{q["val"]}" data-units="{a(json.dumps(units, ensure_ascii=False))}">'
                 f'<div class="es-mm" aria-hidden="true"><span>{e(lo)}</span><span>{e(hi)}</span></div></div>')
     if q["t"] in ("seg", "chips"):
         lid = f"es-l-{n}"
         multi = ' data-multi' if q.get("multi") else ""
         btns = "".join(
-            f'<button type="button" class="es-chip" data-q="{n}" data-v="{a(o)}" aria-pressed="false"{multi}{" data-excl" if o == q.get("excl") else ""}>{e(o)}</button>'
+            f'<button type="button" class="es-chip" data-q="{n}" data-v="{a(o)}" role="{'checkbox' if multi else 'radio'}" aria-checked="false"{multi}{" data-excl" if o == q.get("excl") else ""}>{e(o)}</button>'
             for o in q["opts"])
         show = f' data-show="{a(json.dumps(q["show"], ensure_ascii=False))}" hidden' if q.get("show") else ""
         return (f'<div class="es-field" data-req="{n}" data-miss="{miss}"{show}><p class="es-lab" id="{lid}">{e(q["label"])}</p>'
-                f'<div class="es-seg" role="group" aria-labelledby="{lid}">{btns}</div></div>')
+                f'<div class="es-seg" role="{'group' if multi else 'radiogroup'}" aria-labelledby="{lid}">{btns}</div></div>')
     if q["t"] == "cp":
         zone = (f'<p class="es-note es-zone" hidden>Ce code postal semble hors de la zone habituelle de {e(cfg["entreprise"])}'
                 f'{" (" + e(cfg["zone"]) + ")" if cfg.get("zone") else ""}. Vous pouvez continuer : nous vous dirons si nous pouvons intervenir.</p>'
                 if cfg.get("departements") else "")
         return (f'<div class="es-field"><label class="es-lab" for="es-cp">{e(q["label"])}</label>'
-                f'<div class="es-cp-row"><input class="es-in es-in-cp" id="es-cp" name="code_postal" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="Ex. 69003">'
+                f'<div class="es-cp-row"><input class="es-in es-in-cp" id="es-cp" name="code_postal" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{{5}}" required aria-invalid="false" enterkeyhint="next" placeholder="Ex. 69003">'
                 f'<span class="es-cp-hint" aria-live="polite"></span></div></div>{zone}'
                 '<p class="es-note es-tenant" hidden>Les travaux sur le bâti se décident avec le propriétaire. Faites l’estimation, puis transmettez-la-lui.</p>')
     raise ValueError(q["t"])
@@ -364,18 +364,18 @@ def steps_html(m, cfg, accent, photo_url=""):
         body = "".join(q_html(q, sid, accent, cfg) for q in st["qs"])
         if i == 1:  # rappel du projet choisi, avec son illustration
             body = '<div class="es-ctx" hidden><span class="es-ctx-ico"></span><span><small>Votre projet</small><b class="es-ctx-t"></b></span></div>' + body
-        out.append(f'<div class="es-step" role="group" aria-labelledby="{sid}"{auto}><h2 class="es-q" id="{sid}" tabindex="-1">{e(st["title"])}</h2>'
+        out.append(f'<div class="es-step"{auto}><h2 class="es-q" id="{sid}" tabindex="-1" aria-describedby="es-stepn">{e(st["title"])}</h2>'
                    f'<p class="es-sub">{e(re.sub(r"\.$", "", st["sub"]) if st["sub"].count(". ") == 0 else st["sub"])}</p>{body}</div>')
     sid = f"es-q{len(allsteps) + 1}"
     out.append(
-        f'<div class="es-step es-contact" role="group" aria-labelledby="{sid}"><h2 class="es-q" id="{sid}" tabindex="-1" data-h>Votre estimation est prête</h2>'
-        '<p class="es-sub" data-s></p><ul class="es-recap" aria-label="Vos réponses"></ul>'
+        f'<div class="es-step es-contact"><h2 class="es-q" id="{sid}" tabindex="-1" aria-describedby="es-stepn" data-h>Votre estimation est prête</h2>'
+        '<p class="es-sub" data-s></p><ul class="es-recap" role="list"></ul>'
         f'<div class="es-teaser" aria-hidden="true"><p class="es-t-k">Estimation indicative</p><p class="es-blur">0 000 € à 0 000 €</p>'
         f'<p class="es-lock">{ico("lock")}Affichée dès que vous validez</p></div>'
         + who_card(cfg, photo_url) +
         '<div class="es-two">'
-        '<div><label class="es-lab" for="es-prenom">Prénom</label><input class="es-in" id="es-prenom" name="prenom" autocomplete="given-name" maxlength="60"></div>'
-        '<div><label class="es-lab" for="es-tel">Téléphone</label><input class="es-in" id="es-tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="06 12 34 56 78"></div>'
+        '<div><label class="es-lab" for="es-prenom">Prénom</label><input class="es-in" id="es-prenom" name="prenom" autocomplete="given-name" maxlength="60" minlength="2" required aria-invalid="false" enterkeyhint="next"></div>'
+        '<div><label class="es-lab" for="es-tel">Téléphone</label><input class="es-in" id="es-tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required aria-invalid="false" enterkeyhint="done" placeholder="06 12 34 56 78"></div>'
         '</div>'
         '<input class="es-hp" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">'
         f'<p class="es-priv">{ico("lock")}<span class="es-consent">{e("En validant, vous acceptez d’être rappelé par " + cfg["entreprise"] + " au sujet de ce projet. Vos coordonnées ne servent qu’à cela : elles ne sont ni vendues ni cédées.")}</span></p></div>')
@@ -462,7 +462,9 @@ def legal_html(m, cfg, key):
             "au sujet de votre projet et à préparer un devis, à votre demande. Ils sont conservés trois ans après le dernier contact, puis supprimés. "
             "Ils ne sont ni vendus ni cédés.</p>")
     if cfg.get("envoi"):
-        priv += "<p>Votre demande transite par un prestataire technique qui agit pour notre compte et ne l’utilise pas pour lui-même.</p>"
+        priv += ("<p>Votre demande transite par un prestataire technique qui agit pour notre compte et ne l’utilise pas pour lui-même. "
+                 "Si vous arrivez par une publicité, les paramètres de campagne présents dans l’adresse de la page (source, campagne, "
+                 "identifiant de clic Google ou Meta) sont joints à votre demande, pour savoir quelle annonce vous a amené.</p>")
     if cfg.get("whatsapp"):
         priv += "<p>Si vous envoyez votre demande par WhatsApp, elle passe par ce service, édité par Meta.</p>"
     priv += ("<p>Pendant votre visite, vos réponses restent dans votre navigateur (stockage de session), pour ne pas les perdre si la page se recharge. "
@@ -483,7 +485,7 @@ CSS = """
 :root{--bg:#F4F5F7;--ink:#0A1424;--ink2:#2B3444;--muted:#5B6475;--line:rgba(10,20,36,.1);--line2:rgba(10,20,36,.18);--soft:#F1F3F6;--go:#15803D;--go-h:#116B33;--go-bar:#16A34A;--go-bg:#EDF8F1;--go-ring:rgba(22,163,74,.2);--sun:#FFE15A;--ease:cubic-bezier(.2,.8,.2,1);--f:"Host Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:light}
 *{box-sizing:border-box;margin:0}
 html{-webkit-text-size-adjust:100%}
-body{min-height:100vh;display:flex;flex-direction:column;font:400 16px/1.5 var(--f);color:var(--ink);background:var(--bg) url("__CLOVER__") 0 0/300px 300px repeat;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;display:flex;flex-direction:column;font:400 1rem/1.5 var(--f);color:var(--ink);background:var(--bg) url("__CLOVER__") 0 0/300px 300px repeat;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
@@ -497,7 +499,7 @@ svg{display:block}
 .es-call:hover{background:var(--go-h)}
 .es-call svg{width:18px;height:18px}
 .es-call .es-short{display:none}
-@media (max-width:380px){.es-call .es-num{display:none}.es-call .es-short{display:inline}}
+@media (max-width:23.75em){.es-call .es-num{display:none}.es-call .es-short{display:inline}}
 .es-main{flex:1;display:grid;gap:48px;width:100%;max-width:1180px;margin:0 auto;padding:8px 16px 64px}
 .es-kick{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:.9rem;color:var(--ink2)}
 .es-kick svg{width:18px;height:18px;color:var(--muted)}
@@ -545,7 +547,7 @@ svg{display:block}
 .es-gal-row::-webkit-scrollbar{display:none}
 .es-gal-item{flex:0 0 78%;margin:0;scroll-snap-align:start}
 .es-gal-item img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;background:#DCE1E8}
-@media (min-width:640px){.es-gal-row{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));margin:24px 0 0;padding:0;overflow:visible}.es-gal-row[data-n="2"]{--n:2}.es-gal-row[data-n="1"]{--n:1}.es-gal-item img{aspect-ratio:4/3}}
+@media (min-width:40em){.es-gal-row{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));margin:24px 0 0;padding:0;overflow:visible}.es-gal-row[data-n="2"]{--n:2}.es-gal-row[data-n="1"]{--n:1}.es-gal-item img{aspect-ratio:4/3}}
 .es-team{grid-column:1/-1;width:100%;max-width:760px;margin:24px auto 0}
 .es-team h2,.es-spec h2{font-size:clamp(1.6rem,6.4vw,2.2rem);font-weight:500;line-height:1.15;letter-spacing:-.025em;text-align:center;text-wrap:balance}
 .es-team-card{margin-top:28px;padding:28px 24px;border:1px solid var(--line);border-radius:24px;background:#fff}
@@ -558,15 +560,15 @@ svg{display:block}
 .es-team-who .es-av span{font-size:1.3rem}
 .es-team-who b{font-size:1.1rem;font-weight:600}
 .es-team-who p span{margin-top:2px;font-size:.92rem}
-.es-team-who p span+span{color:#8A92A1}
-@media (min-width:640px){.es-team-card{padding:32px 40px}.es-team-list{grid-template-columns:auto auto;column-gap:48px}}
+.es-team-who p span+span{color:var(--muted)}
+@media (min-width:40em){.es-team-card{padding:32px 40px}.es-team-list{grid-template-columns:auto auto;column-gap:48px}}
 .es-spec{grid-column:1/-1;width:100%;max-width:1116px;margin:24px auto 0}
 .es-spec-head{text-align:center}
 .es-spec-head p{margin-top:12px;font-size:1.05rem;color:var(--muted)}
 .es-spec-list{display:grid;gap:16px;margin-top:32px}
 .es-sp{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#fff}
 .es-sp-img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#DCE1E8}
-.es-spec-note{margin-top:4px;font-size:.88rem;color:#8A92A1}
+.es-spec-note{margin-top:4px;font-size:.88rem;color:var(--muted)}
 .es-sp-art{display:grid;place-items:center;height:208px;padding:12px;background:linear-gradient(180deg,#F8F9FB,#EDF0F4)}
 .es-sp-art svg{width:auto;height:100%;max-width:100%}
 .es-sp-b{display:flex;flex:1;flex-direction:column;align-items:center;padding:24px;text-align:center}
@@ -578,9 +580,9 @@ svg{display:block}
 .es-sp-go{display:inline-flex;align-items:center;gap:8px;align-self:center;min-height:48px;margin-top:auto;padding-top:12px;color:var(--go);font-weight:600;text-decoration:none}
 .es-sp-go svg{width:18px;height:18px;transition:transform .2s var(--ease)}
 .es-sp-go:hover svg{transform:translateX(3px)}
-@media (min-width:640px){.es-spec-list{grid-template-columns:1fr 1fr}}
-@media (min-width:960px){.es-spec-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:959px){.es-proof .es-trust{display:none}}
+@media (min-width:40em){.es-spec-list{grid-template-columns:1fr 1fr}}
+@media (min-width:60em){.es-spec-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:59.9375em){.es-proof .es-trust{display:none}}
 .es-area{grid-column:1/-1;width:100%;max-width:760px;margin:24px auto 0}
 .es-area-head{text-align:center}
 .es-area h2{font-size:clamp(1.6rem,6.4vw,2.2rem);font-weight:500;line-height:1.15;letter-spacing:-.025em;text-wrap:balance}
@@ -597,13 +599,13 @@ svg{display:block}
 .es-map-dot{fill:var(--go);stroke:#fff;stroke-width:4;filter:drop-shadow(0 2px 4px rgba(10,20,36,.25))}
 .es-map-chip{position:absolute;left:50%;top:50%;transform:translate(-50%,calc(-100% - 18px));padding:8px 16px;border-radius:12px;background:#fff;font-size:1rem;font-weight:600;white-space:nowrap;box-shadow:0 8px 24px -8px rgba(10,20,36,.3)}
 .es-map-src{position:absolute;right:12px;bottom:8px;font-size:.72rem;color:var(--muted)}
-@media (min-width:640px){.es-map{height:440px}}
+@media (min-width:40em){.es-map{height:440px}}
 .es-sticky{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:64px;padding:10px 20px;border-radius:16px;background:var(--go);color:#fff;text-decoration:none;box-shadow:0 16px 32px -12px rgba(10,20,36,.55);transform:translateY(calc(100% + 32px));visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s .3s}
 .es-sticky.is-on{transform:none;visibility:visible;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
 .es-sticky b{display:inline-flex;align-items:center;gap:8px;font-size:1.12rem;font-weight:600}
 .es-sticky b svg{width:20px;height:20px}
 .es-sticky small{font-size:.84rem;opacity:.9}
-@media (min-width:960px){.es-sticky{display:none}}
+@media (min-width:60em){.es-sticky{display:none}}
 @media (prefers-reduced-motion:reduce){.es-sticky,.es-sticky.is-on{transition:none}}
 .es-end{grid-column:1/-1;width:100%;max-width:760px;margin:24px auto 0;padding:40px 24px;border-radius:24px;background:var(--ink);color:#fff;text-align:center}
 .es-end h2{font-size:clamp(1.6rem,6.4vw,2.2rem);font-weight:500;line-height:1.15;letter-spacing:-.025em;text-wrap:balance}
@@ -624,8 +626,8 @@ svg{display:block}
 .es-faq details+details{border-top:1px solid var(--line)}
 .es-faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:12px 0;font-weight:500;cursor:pointer;list-style:none}
 .es-faq summary::-webkit-details-marker{display:none}
-.es-faq summary::after{content:"+";flex:none;font-size:1.3rem;font-weight:400;color:var(--muted)}
-.es-faq details[open] summary::after{content:"−"}
+.es-faq summary::after{content:"+";content:"+" / "";flex:none;font-size:1.3rem;font-weight:400;color:var(--muted)}
+.es-faq details[open] summary::after{content:"−";content:"−" / ""}
 .es-faq details p{padding-bottom:16px;color:var(--ink2)}
 .es-card{position:relative;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 1px 2px rgba(10,20,36,.04),0 30px 70px -44px rgba(10,20,36,.45);scroll-margin-top:0}
 .es-head{position:sticky;top:0;z-index:4;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;row-gap:8px;padding:16px 20px 12px;border-radius:20px 20px 0 0;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:.86rem;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -633,7 +635,7 @@ svg{display:block}
 .es-bar{flex-basis:100%;height:6px;overflow:hidden;border-radius:6px;background:#E6E9EE}
 .es-bar i{display:block;width:0;height:100%;border-radius:inherit;background:var(--go-bar);transition:width .5s var(--ease)}
 .es-body{padding:4px 20px 24px}
-@media (max-width:959px){.es-card{display:flex;flex-direction:column;min-height:100vh;min-height:100svh}.es-body{flex:1}}
+@media (max-width:59.9375em){.es-card{display:flex;flex-direction:column;min-height:100vh;min-height:100svh}.es-body{flex:1}}
 .es-step{display:none}
 .es-step.is-on{display:block}
 .es-fwd{animation:es-fwd .4s var(--ease)}
@@ -656,10 +658,10 @@ svg{display:block}
 .es-ck{position:absolute;top:8px;left:8px;z-index:1;display:grid;place-items:center;width:24px;height:24px;border:1.5px solid var(--line2);border-radius:50%;background:rgba(255,255,255,.9);color:#fff}
 .es-ck svg{width:14px;height:14px;opacity:0}
 .es-opt:hover,.es-tile:hover,.es-chip:hover,.es-sb:hover{border-color:var(--line2)}
-.es-opt[aria-pressed="true"],.es-tile[aria-pressed="true"]{border-color:var(--go);box-shadow:0 0 0 3px var(--go-ring)}
-.es-opt[aria-pressed="true"] .es-ico{background:linear-gradient(180deg,#F2FAF5,#E3F3E9)}
-[aria-pressed="true"]>.es-ck{border-color:var(--go);background:var(--go);animation:es-pop .35s var(--ease)}
-[aria-pressed="true"]>.es-ck svg{opacity:1}
+.es-opt[aria-checked="true"],.es-tile[aria-checked="true"]{border-color:var(--go);box-shadow:0 0 0 3px var(--go-ring)}
+.es-opt[aria-checked="true"] .es-ico{background:linear-gradient(180deg,#F2FAF5,#E3F3E9)}
+[aria-checked="true"]>.es-ck{border-color:var(--go);background:var(--go);animation:es-pop .35s var(--ease)}
+[aria-checked="true"]>.es-ck svg{opacity:1}
 @keyframes es-pop{50%{transform:scale(1.22)}}
 .es-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px}
 .es-tile{position:relative;display:flex;flex-direction:column;gap:8px;padding:8px 8px 12px;border:1.5px solid var(--line);border-radius:16px;background:#fff;font-size:.88rem;font-weight:500;line-height:1.25;text-align:center;transition:border-color .15s,box-shadow .15s,transform .15s}
@@ -670,7 +672,7 @@ svg{display:block}
 .es-lab{display:block;margin-bottom:12px;font-size:1rem;font-weight:500}
 .es-seg{display:flex;flex-wrap:wrap;gap:8px}
 .es-chip{flex:1 1 auto;min-height:52px;padding:0 16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:.95rem;font-weight:500;text-align:center;transition:border-color .15s,box-shadow .15s,background .15s,transform .15s}
-.es-chip[aria-pressed="true"]{border-color:var(--go);background:var(--go-bg);color:#0B4D24;box-shadow:0 0 0 3px var(--go-ring)}
+.es-chip[aria-checked="true"]{border-color:var(--go);background:var(--go-bg);color:#0B4D24;box-shadow:0 0 0 3px var(--go-ring)}
 .es-ctx{display:flex;align-items:center;gap:16px;margin-top:20px;padding:8px 16px 8px 8px;border:1px solid var(--line);border-radius:16px}
 .es-ctx-ico{flex:none;display:grid;place-items:center;width:112px;height:84px;border-radius:8px;background:linear-gradient(180deg,#F8F9FB,#EDF0F4)}
 .es-ctx-ico svg{width:100px;height:auto}
@@ -683,23 +685,23 @@ svg{display:block}
 .es-sb{display:grid;place-items:center;width:52px;height:52px;border:1.5px solid var(--line);border-radius:50%;background:#fff;transition:border-color .15s,transform .15s}
 .es-sb svg{width:20px;height:20px}
 .es-range{-webkit-appearance:none;appearance:none;width:100%;height:44px;margin:8px 0 0;background:transparent;cursor:pointer;--p:50%}
-.es-range::-webkit-slider-runnable-track{height:8px;border-radius:8px;background:linear-gradient(to right,var(--go-bar) var(--p),#DCE0E6 var(--p))}
-.es-range::-moz-range-track{height:8px;border-radius:8px;background:#DCE0E6}
+.es-range::-webkit-slider-runnable-track{height:8px;border-radius:8px;background:linear-gradient(to right,var(--go) var(--p),#767F8F var(--p))}
+.es-range::-moz-range-track{height:8px;border-radius:8px;background:#767F8F}
 .es-range::-moz-range-progress{height:8px;border-radius:8px;background:var(--go-bar)}
 .es-range::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;margin-top:-12px;border:4px solid var(--go);border-radius:50%;background:#fff;box-shadow:0 4px 12px -2px rgba(10,20,36,.35)}
 .es-range::-moz-range-thumb{width:24px;height:24px;border:4px solid var(--go);border-radius:50%;background:#fff}
 .es-mm{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted)}
-.es-in{width:100%;height:56px;padding:0 16px;border:1.5px solid var(--line2);border-radius:12px;background:#fff;font:inherit;font-size:1.08rem;transition:border-color .15s,box-shadow .15s}
-.es-in:focus{border-color:var(--go);outline:none;box-shadow:0 0 0 3px var(--go-ring)}
+.es-in{width:100%;min-height:56px;padding:0 16px;border:1.5px solid #8C929C;border-radius:12px;background:#fff;font:inherit;font-size:1.08rem;transition:border-color .15s,box-shadow .15s}
+.es-in:focus{border-color:var(--go);outline:2px solid transparent;outline-offset:2px;box-shadow:0 0 0 3px var(--go-ring)}
 .es-in[aria-invalid="true"]{border-color:#B42318}
 .es-cp-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
 .es-in-cp{width:168px;font-size:1.25rem;font-weight:500;letter-spacing:.06em;font-variant-numeric:tabular-nums}
 .es-cp-hint{font-size:.95rem;font-weight:500;color:var(--muted)}
 .es-cp-hint.is-ok{color:var(--go)}
-.es-cp-hint.is-ok::before{content:"✓ "}
+.es-cp-hint.is-ok::before{content:"✓ ";content:"✓ " / ""}
 .es-cp-hint.is-warn{color:#B45309}
 .es-two{display:grid;gap:16px;margin-top:20px}
-@media (min-width:640px){.es-two{grid-template-columns:1fr 1fr}}
+@media (min-width:40em){.es-two{grid-template-columns:1fr 1fr}}
 .es-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .es-priv{display:flex;gap:8px;margin-top:12px;font-size:.84rem;line-height:1.45;color:var(--muted)}
 .es-priv svg{flex:none;width:18px;height:18px;margin-top:0}
@@ -718,7 +720,7 @@ svg{display:block}
 .es-back svg{width:20px;height:20px}
 .es-next{display:inline-flex;flex:1;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 20px;border:0;border-radius:12px;background:var(--go);color:#fff;font-size:1.06rem;font-weight:500;box-shadow:inset 0 1px 0 rgba(255,255,255,.18);transition:background .2s,opacity .2s}
 .es-next:hover{background:var(--go-h)}
-.es-next.is-off{opacity:.42}
+.es-next.is-off,.es-next.is-off:hover{background:#6B7A70}
 .es-next span{white-space:nowrap}
 .es-next svg{width:20px;height:20px}
 .es-res{padding-top:8px}
@@ -757,16 +759,16 @@ svg{display:block}
 .es-ico svg{transition:transform .3s var(--ease)}
 @media (hover:hover){.es-opt:hover .es-ico svg{transform:translateY(-3px)}}
 .es-again{min-height:44px;margin-top:0;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
-@media (min-width:640px){.es-head{padding:20px 28px 16px}.es-body{padding:8px 28px 28px}.es-nav{padding:16px 28px}.es-opts{gap:12px}}
-@media (max-width:959px){.es-intro{text-align:center}.es-kick{justify-content:center}.es-pill,.es-lead{margin-left:auto;margin-right:auto}
+@media (min-width:40em){.es-head{padding:20px 28px 16px}.es-body{padding:8px 28px 28px}.es-nav{padding:16px 28px}.es-opts{gap:12px}}
+@media (max-width:59.9375em){.es-intro{text-align:center}.es-kick{justify-content:center}.es-pill,.es-lead{margin-left:auto;margin-right:auto}
 .es-intro .es-cta{display:inline-flex;width:auto;min-width:min(100%,320px);padding:12px 32px}.es-facts{justify-content:center}}
-@media (max-width:639px){.es-opts{grid-template-columns:1fr}
+@media (max-width:39.9375em){.es-opts{grid-template-columns:1fr}
 .es-opt,.es-opt:last-child:nth-child(odd){grid-column:auto;flex-direction:row;align-items:center;min-height:84px;padding:10px 44px 10px 12px}
-.es-ico,.es-opt:last-child:nth-child(odd) .es-ico,.es-opt[aria-pressed="true"] .es-ico{flex:0 0 68px;align-self:center;height:60px;aspect-ratio:auto;padding:0;background:none}
+.es-ico,.es-opt:last-child:nth-child(odd) .es-ico,.es-opt[aria-checked="true"] .es-ico{flex:0 0 68px;align-self:center;height:60px;aspect-ratio:auto;padding:0;background:none}
 .es-ico svg,.es-opt:last-child:nth-child(odd) .es-ico svg{width:100%;max-width:none;height:100%;max-height:none}
 .es-ot{padding:0 0 0 14px}.es-ot b{font-size:1.04rem}.es-ot span{margin-top:2px;font-size:.88rem}
-.es-opt>.es-ck{top:calc(50% - 12px);left:auto;right:12px;opacity:0}.es-opt[aria-pressed="true"]>.es-ck{opacity:1}}
-@media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;grid-template-rows:auto 1fr;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{grid-column:1;grid-row:1;padding-top:36px}
+.es-opt>.es-ck{top:calc(50% - 12px);left:auto;right:12px;opacity:0}.es-opt[aria-checked="true"]>.es-ck{opacity:1}}
+@media (min-width:60em){.es-main{grid-template-columns:minmax(0,1fr) 540px;grid-template-rows:auto 1fr;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{grid-column:1;grid-row:1;padding-top:36px}
 .es-quiz{grid-column:2;grid-row:1/span 2}.es-proof{grid-column:1;grid-row:2;margin-top:-48px}.es-proof .es-scene{margin-top:0}.es-scene{display:block}.es-ex{display:none}.es-scene-art{max-width:270px}.es-intro .es-cta{display:none}.es-lead{font-size:1.12rem}}
 .es-ftr{padding:40px 16px 48px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted);text-align:center}
 .es-by{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px}
@@ -778,15 +780,18 @@ svg{display:block}
 .es-legal details:last-child{border-bottom:1px solid var(--line)}
 .es-legal summary{display:flex;align-items:center;justify-content:space-between;min-height:48px;cursor:pointer;color:var(--ink2);font-weight:500;list-style:none}
 .es-legal summary::-webkit-details-marker{display:none}
-.es-legal summary::after{content:"+";font-size:1.2rem;color:var(--muted)}
-.es-legal details[open] summary::after{content:"−"}
+.es-legal summary::after{content:"+";content:"+" / "";font-size:1.2rem;color:var(--muted)}
+.es-legal details[open] summary::after{content:"−";content:"−" / ""}
 .es-legal details p{padding-bottom:12px;line-height:1.5}
 .es-legal a,.es-cc-open{color:var(--ink2);text-decoration:underline;text-underline-offset:2px}
 .es-cc-open{padding:0;border:0;background:none;font-size:inherit}
 .es-cc{position:fixed;left:12px;right:12px;bottom:12px;z-index:10;display:grid;gap:12px;max-width:560px;margin:0 auto;padding:16px;border-radius:16px;background:var(--ink);color:#fff;font-size:.9rem;line-height:1.45;box-shadow:0 20px 50px -20px rgba(10,20,36,.6)}
 .es-cc div{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .es-cc button{min-height:46px;border:1.5px solid #fff;border-radius:12px;background:transparent;color:#fff;font-weight:500}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-property:color,background-color,border-color,box-shadow,opacity!important}}
+.es-vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+@media (forced-colors:active){.es-chip[aria-checked="true"],.es-opt[aria-checked="true"],.es-tile[aria-checked="true"]{outline:3px solid Highlight;outline-offset:2px}}
+@media (max-width:59.9375em){html{scroll-padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}}
 """
 
 JS = r"""(function(){
@@ -802,14 +807,16 @@ var SK="es-"+C.key;
 function save(x){try{var o={A:A,cur:cur,t:Date.now()};for(var k in x)o[k]=x[k];sessionStorage.setItem(SK,JSON.stringify(o))}catch(e){}}
 function load(){try{var o=JSON.parse(sessionStorage.getItem(SK));return o&&o.A&&Date.now()-o.t<72e5?o:null}catch(e){return null}}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-function nb(n){return Math.round(n).toLocaleString("fr-FR").replace(/\s/g,"\u202f")}
+var NF,DF;function fmt(){if(!NF&&window.Intl){NF=new Intl.NumberFormat("fr-FR");DF=new Intl.DateTimeFormat("fr-FR",{day:"numeric",month:"long",year:"numeric"})}}
+(window.requestIdleCallback||function(c){setTimeout(c,300)})(fmt);
+function nb(n){fmt();n=Math.round(n);return(NF?NF.format(n):String(n)).replace(/\s/g,"\u202f")}
 function eur(n){return nb(n)+"\u00a0€"}
 function lab(v,u){if(Array.isArray(u)){if(v===0&&u[0])return u[0];return v+"\u00a0"+(v>1?u[2]:u[1])}return v+"\u00a0"+u}
 function val(k){var x=f.querySelector("[name="+k+"]");return x?(x.value||"").trim():""}
 function toCard(){var y=Math.round(f.getBoundingClientRect().top+scrollY);if(Math.abs(scrollY-y)>4&&(innerWidth<960||scrollY>y))scrollTo({top:y,behavior:RM?"auto":"smooth"})}
 /* curseurs et boutons − / + */
 each(f.querySelectorAll(".es-range"),function(r){var box=r.closest(".es-field"),o=box.querySelector("output"),u=JSON.parse(r.getAttribute("data-units"));
-  function up(){var v=+r.value;A[r.getAttribute("data-q")]=v;o.textContent=lab(v,u);r.style.setProperty("--p",(100*(v-r.min)/(r.max-r.min))+"%")}
+  function up(){var v=+r.value;A[r.getAttribute("data-q")]=v;o.textContent=lab(v,u);r.setAttribute("aria-valuetext",lab(v,u));r.style.setProperty("--p",(100*(v-r.min)/(r.max-r.min))+"%")}
   r.addEventListener("input",function(){up();begin()});
   each(box.querySelectorAll("[data-step]"),function(b){b.addEventListener("click",function(){r.value=Math.min(+r.max,Math.max(+r.min,+r.value+(+r.step)*(+b.getAttribute("data-step"))));up();begin()})});
   up()});
@@ -820,11 +827,11 @@ function refresh(){each(f.querySelectorAll("[data-show]"),function(x){var s=JSON
 /* choix */
 f.addEventListener("click",function(ev){var b=ev.target.closest("button[data-q]");if(!b||!f.contains(b))return;
   var k=b.getAttribute("data-q"),g=f.querySelectorAll('button[data-q="'+k+'"]'),multi=b.hasAttribute("data-multi");
-  if(multi){var on=b.getAttribute("aria-pressed")!=="true",ex=b.hasAttribute("data-excl");
-    each(g,function(x){if(x===b)x.setAttribute("aria-pressed",on?"true":"false");else if(on&&(ex||x.hasAttribute("data-excl")))x.setAttribute("aria-pressed","false")});
-    var sel=[].filter.call(g,function(x){return x.getAttribute("aria-pressed")==="true"}).map(function(x){return x.getAttribute("data-v")});if(sel.length)A[k]=sel;else delete A[k]}
-  else{each(g,function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});A[k]=b.getAttribute("data-v")}
-  begin();err.hidden=true;refresh();save();
+  if(multi){var on=b.getAttribute("aria-checked")!=="true",ex=b.hasAttribute("data-excl");
+    each(g,function(x){if(x===b)x.setAttribute("aria-checked",on?"true":"false");else if(on&&(ex||x.hasAttribute("data-excl")))x.setAttribute("aria-checked","false")});
+    var sel=[].filter.call(g,function(x){return x.getAttribute("aria-checked")==="true"}).map(function(x){return x.getAttribute("data-v")});if(sel.length)A[k]=sel;else delete A[k]}
+  else{each(g,function(x){x.setAttribute("aria-checked",x===b?"true":"false")});A[k]=b.getAttribute("data-v")}
+  begin();clearErr();refresh();save();
   if(navigator.vibrate)try{navigator.vibrate(8)}catch(x){}
   var st=steps[cur];if(st&&st.hasAttribute("data-auto")&&!multi)setTimeout(function(){if(steps[cur]===st)go(1)},320)});
 /* calcul */
@@ -866,21 +873,21 @@ function prep(){var st=steps[N-1],h=st.querySelector("[data-h]"),s=st.querySelec
 function show(i,dir,push){cur=i;each(steps,function(s,j){s.classList.toggle("is-on",j===i);s.classList.remove("es-fwd","es-bwd")});
   var st=steps[i];if(dir&&!RM){void st.offsetWidth;st.classList.add(dir>0?"es-fwd":"es-bwd")}
   var p=Math.round(100*(i+1)/(N+1));bar.style.width=p+"%";pct.textContent=p+"\u00a0%";var rem=N-i;num.textContent=rem===1?"Dernière étape":rem===2?"Avant-dernière étape":rem===3?"Plus que 3 étapes":"Étape "+(i+1)+" sur "+N;
-  back.hidden=i===0;nav.hidden=i===0&&st.hasAttribute("data-auto");err.hidden=true;
+  back.hidden=i===0;nav.hidden=i===0&&st.hasAttribute("data-auto");clearErr();
   if(i===N-1)prep();refresh();
-  var cx=st.querySelector(".es-ctx"),sel=f.querySelector('.es-opt[aria-pressed="true"]');if(cx&&sel){cx.querySelector(".es-ctx-ico").innerHTML=sel.querySelector(".es-ico").innerHTML;cx.querySelector(".es-ctx-t").textContent=A.travaux;cx.hidden=false}
+  var cx=st.querySelector(".es-ctx"),sel=f.querySelector('.es-opt[aria-checked="true"]');if(cx&&sel){cx.querySelector(".es-ctx-ico").innerHTML=sel.querySelector(".es-ico").innerHTML;cx.querySelector(".es-ctx-t").textContent=A.travaux;cx.hidden=false}
   nextL.textContent=i===N-1?(rows().length?"Voir mon estimation":"Envoyer ma demande"):"Suivant";
   if(push)try{history.pushState({es:i},"")}catch(x){}
   if(!done)save();
   if(dir){toCard();var h=st.querySelector(".es-q");if(h)try{h.focus({preventScroll:true})}catch(x){}}}
 try{history.replaceState({es:0},"")}catch(x){}
-addEventListener("popstate",function(ev){if(done)return;var s=ev.state&&typeof ev.state.es==="number"?ev.state.es:0;if(s!==cur)show(s,s<cur?-1:1,false)});
+addEventListener("popstate",function(ev){if(done){if(ev.state&&typeof ev.state.es==="number")try{history.go(-Math.max(1,ev.state.es))}catch(x){}return}var s=ev.state&&typeof ev.state.es==="number"?ev.state.es:0;if(s!==cur)show(s,s<cur?-1:1,false)});
 back.addEventListener("click",function(){if(history.state&&typeof history.state.es==="number"&&history.state.es>0)history.back();else if(cur>0)show(cur-1,-1,false)});
-each(d.querySelectorAll("[data-start]"),function(b){b.addEventListener("click",function(ev){ev.preventDefault();begin();toCard()})});
+each(d.querySelectorAll("[data-start]"),function(b){b.addEventListener("click",function(ev){ev.preventDefault();begin();toCard();focusCur()})});
 each(d.querySelectorAll("[data-pick]"),function(b){b.addEventListener("click",function(ev){ev.preventDefault();var ob=f.querySelector('.es-opt[data-slug="'+b.getAttribute("data-pick")+'"]');
-  if(ob&&!done&&cur<=1){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-pressed",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");
+  if(ob&&!done&&cur<=1){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-checked",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");
     if(!started){started=true;dl("estimation_debut",{projet:b.getAttribute("data-pick"),depuis:"carte"})}if(cur===0){show(1,0,false);try{history.pushState({es:1},"")}catch(x){}}else show(1,0,false);save({})}
-  toCard()})});
+  toCard();focusCur()})});
 /* bouton collant (téléphone) : seulement entre les sections, jamais par-dessus le questionnaire ni une fois l'estimation affichée */
 var sk=d.querySelector(".es-sticky"),skRes=f.querySelector(".es-res");
 if(sk&&window.IntersectionObserver){var skT=[".es-intro",".es-quiz",".es-end",".es-ftr",".es-cc"].map(function(q){return d.querySelector(q)}).filter(Boolean),skV=[],
@@ -888,42 +895,45 @@ if(sk&&window.IntersectionObserver){var skT=[".es-intro",".es-quiz",".es-end",".
     sk.classList.toggle("is-on",skRes.hidden&&skV.indexOf(true)<0)});
   skT.forEach(function(t){skIO.observe(t)})}
 function check(i){var st=steps[i],bad=missing(i);
-  var cp=st.querySelector("[name=code_postal]");if(cp){var ok=/^\d{5}$/.test(cp.value.trim());if(ok){A.code_postal=cp.value.trim();cp.removeAttribute("aria-invalid")}else{cp.setAttribute("aria-invalid","true");bad.push("un code postal à 5 chiffres")}}
+  var cp=st.querySelector("[name=code_postal]");if(cp){var ok=/^\d{5}$/.test(cp.value.trim());inv(cp,!ok);if(ok)A.code_postal=cp.value.trim();else bad.push("un code postal à 5 chiffres")}
   var pr=st.querySelector("[name=prenom]");if(pr){var tel=st.querySelector("[name=telephone]");
-    if(pr.value.trim().length<2){pr.setAttribute("aria-invalid","true");bad.push("votre prénom")}else pr.removeAttribute("aria-invalid");
-    var tg=tel.value.replace(/\D/g,"");if(!/^0[1-9]\d{8}$/.test(tg)&&!/^(33|0033)[1-9]\d{8}$/.test(tg)){tel.setAttribute("aria-invalid","true");bad.push("un numéro de téléphone valide (10 chiffres)")}else tel.removeAttribute("aria-invalid");
+    inv(pr,pr.value.trim().length<2);if(pr.value.trim().length<2)bad.push("votre prénom");
+    var tg=tel.value.replace(/\D/g,"");var tb=!/^0[1-9]\d{8}$/.test(tg)&&!/^(33|0033)[1-9]\d{8}$/.test(tg);inv(tel,tb);if(tb)bad.push("un numéro de téléphone valide (10 chiffres)");
 }
   return bad}
+function inv(x,b){x.setAttribute("aria-invalid",b?"true":"false");if(b)x.setAttribute("aria-describedby","es-err");else x.removeAttribute("aria-describedby")}
+function clearErr(){err.hidden=true;each(f.querySelectorAll('[aria-describedby="es-err"]'),function(x){x.removeAttribute("aria-describedby")})}
+function firstMiss(i){var r=null;each(steps[i].querySelectorAll("[data-req]"),function(x){if(r||x.hidden)return;var v=A[x.getAttribute("data-req")];if(v===undefined||v===""||(Array.isArray(v)&&!v.length))r=x.querySelector("button")});return r}
+function focusCur(){var h=done?res.querySelector("#es-res-h"):steps[cur].querySelector(".es-q");if(h)try{h.focus({preventScroll:true})}catch(x){}}
 function go(dir){if(dir<=0)return;var bad=check(cur);
-  if(bad.length){err.textContent="Il manque "+bad.join(", ")+".";err.hidden=false;var x=steps[cur].querySelector('[aria-invalid="true"]');if(x)x.focus();return}
+  if(bad.length){err.textContent="Il manque "+bad.join(", ")+".";err.hidden=false;var x=steps[cur].querySelector('[aria-invalid="true"]')||firstMiss(cur);if(x){x.setAttribute("aria-describedby","es-err");x.focus()}return}
   if(cur===N-1){submit();return}
   dl("estimation_etape",{etape:cur+1});show(cur+1,1,true)}
-next.addEventListener("click",function(){go(1)});
 f.addEventListener("submit",function(ev){ev.preventDefault();go(1)});
-f.addEventListener("input",function(){if(err.hidden)return;var bad=check(cur);if(bad.length)err.textContent="Il manque "+bad.join(", ")+".";else err.hidden=true});
+f.addEventListener("input",function(){if(err.hidden)return;var bad=check(cur);if(bad.length){var t="Il manque "+bad.join(", ")+".";if(err.textContent!==t)err.textContent=t}else clearErr()});
 /* résultat */
-function render(E,pr,telf,state){var sel=f.querySelector('.es-opt[aria-pressed="true"] .es-ico'),pic=sel?sel.innerHTML:"",o=C.opts[A.travaux]||{},date=new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
-  var h='<div class="es-rcpt-top"><span class="es-rcpt-ent">'+esc(C.ent)+'</span><span>'+esc(date)+'</span></div>'
+function render(E,pr,telf,state){var sel=f.querySelector('.es-opt[aria-checked="true"] .es-ico'),pic=sel?sel.innerHTML:"",o=C.opts[A.travaux]||{},date=(fmt(),DF?DF.format(new Date()):"");
+  var h='<h2 class="es-vh" id="es-res-h" tabindex="-1">'+(E.rows.length?"Votre estimation":"Votre demande")+'</h2><div class="es-rcpt-top"><span class="es-rcpt-ent">'+esc(C.ent)+'</span><span>'+esc(date)+'</span></div>'
    +'<div class="es-rid">'+(pic?'<span class="es-rid-ico">'+pic+'</span>':'')+'<div><p class="es-res-k">Estimation pour '+esc(pr)+(place()?" · "+esc(place()):"")+'</p><p class="es-rid-t">'+esc(A.travaux)+'</p></div></div>';
-  if(E.rows.length){h+='<p class="es-amount" data-count>'+amount(E)+'</p><p class="es-amount-f">Pose comprise, pour '+ql()+'. Fourchette indicative, sans valeur contractuelle.</p><ul class="es-lines">';
+  if(E.rows.length){h+='<p class="es-amount" data-count>'+amount(E)+'</p><p class="es-amount-f">Pose comprise, pour '+ql()+'. Fourchette indicative, sans valeur contractuelle.</p><ul class="es-lines" role="list">';
     E.rows.forEach(function(r){h+='<li><span>'+esc(r.l)+'</span><span class="es-val">'+rowAmount(r)+'</span><span class="es-calc">'+ql()+" × "+rowUnit(r)+" · "+(r.src?'Source\u00a0: <a href="'+esc(r.src[1])+'" target="_blank" rel="noopener">'+esc(r.src[0])+"</a>":"Tarif de "+esc(C.ent))+'</span></li>'});h+="</ul>"}
   else h+='<p class="es-amount">À chiffrer sur place</p><p class="es-amount-f">'+esc(o.vt||"Ce type de travaux se chiffre après une visite.")+'</p>';
   C.notes.forEach(function(n){if(A[n.q]===n.eq)h+='<p class="es-note">'+esc(n.txt)+"</p>"});
   var vis=[];C.visite.forEach(function(r){var v=A[r.q];if((r.gt!==undefined&&v>r.gt)||(r.eq!==undefined&&v===r.eq))vis.push(r.txt.replace("{v}",v).replace("(s)",v>1?"s":""))});
-  if(vis.length){h+='<p class="es-h3">À chiffrer à la visite</p><ul class="es-list">';vis.forEach(function(v){h+="<li>"+esc(v)+"</li>"});h+="</ul>"}
-  h+='<p class="es-h3">Ce qui fait varier le prix</p><p class="es-p">'+esc(C.varie)+'</p>';
+  if(vis.length){h+='<h3 class="es-h3">À chiffrer à la visite</h3><ul class="es-list" role="list">';vis.forEach(function(v){h+="<li>"+esc(v)+"</li>"});h+="</ul>"}
+  h+='<h3 class="es-h3">Ce qui fait varier le prix</h3><p class="es-p">'+esc(C.varie)+'</p>';
   if(C.aides)h+='<p class="es-note">'+esc(C.aides)+'</p>';
   if(A.statut==="Locataire")h+='<p class="es-note">Les travaux sur le bâti se décident avec le propriétaire\u00a0: transmettez-lui cette estimation.</p>';
   if(outZone())h+='<p class="es-note es-zone">Votre chantier semble hors de la zone habituelle de '+esc(C.ent)+(C.zone?" ("+esc(C.zone)+")":"")+'. Nous vous dirons rapidement si nous pouvons intervenir.</p>';
   var call=C.tel?'<a class="es-btn es-btn-call" href="tel:'+C.telh+'">'+ICO.phone+"Appeler le "+esc(C.tel)+"</a>":"";
-  h+='<div class="es-box" data-state="'+state+'"><p class="es-box-k">Prochaine étape</p>'
-   +'<div class="es-s-sending"><p class="es-box-h">Envoi de votre demande…</p></div>'
-   +'<div class="es-s-sent"><p class="es-box-h">C’est noté, '+esc(pr)+'.</p><p class="es-box-p">'+esc(C.who)+" vous rappelle au "+esc(telf)+(C.horaires?", "+esc(C.horaires):"")+' pour fixer une visite et vous remettre un devis.</p>'
+  h+='<div class="es-box" data-state="'+state+'"><p class="es-box-k">Prochaine étape</p><p class="es-vh" role="status" data-st></p>'
+   +'<div class="es-s-sending"><h3 class="es-box-h">Envoi de votre demande…</h3></div>'
+   +'<div class="es-s-sent"><h3 class="es-box-h">C’est noté, '+esc(pr)+'.</h3><p class="es-box-p">'+esc(C.who)+" vous rappelle au "+(telf?esc(telf):"numéro indiqué")+(C.horaires?", "+esc(C.horaires):"")+' pour fixer une visite et vous remettre un devis.</p>'
      +(C.wa?'<p class="es-box-p es-box-photo">En attendant, envoyez quelques photos du chantier\u00a0: la visite sera mieux préparée.</p>':"")
      +'<div class="es-acts">'+(C.wa?'<a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa-photo>'+ICO.wa+"Envoyer des photos</a>":"")+call+"</div></div>"
-   +'<div class="es-s-manual">'+(C.wa?'<p class="es-box-h">Envoyez votre demande à '+esc(C.ent)+'</p><p class="es-box-p">Votre message est déjà rédigé. Ajoutez-y quelques photos du chantier si vous pouvez\u00a0: la visite sera mieux préparée.</p><div class="es-acts"><a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa>'+ICO.wa+"Envoyer sur WhatsApp</a>"+call+"</div>"
-     :'<p class="es-box-h">Appelez '+esc(C.ent)+' pour fixer la visite</p><div class="es-acts">'+call+"</div>")+"</div></div>"
-   +'<div class="es-after"><button type="button" class="es-share">'+ICO.share+'<span>Partager l’estimation</span></button><button type="button" class="es-again">Refaire une estimation</button></div>';
+   +'<div class="es-s-manual">'+(C.wa?'<h3 class="es-box-h">Envoyez votre demande à '+esc(C.ent)+'</h3><p class="es-box-p">Votre message est déjà rédigé. Ajoutez-y quelques photos du chantier si vous pouvez\u00a0: la visite sera mieux préparée.</p><div class="es-acts"><a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa>'+ICO.wa+"Envoyer sur WhatsApp</a>"+call+"</div>"
+     :'<h3 class="es-box-h">Appelez '+esc(C.ent)+' pour fixer la visite</h3><div class="es-acts">'+call+"</div>")+"</div></div>"
+   +'<div class="es-after"><button type="button" class="es-share">'+ICO.share+'<span>Partager l’estimation</span></button><span class="es-vh" role="status" data-sh-st></span><button type="button" class="es-again">Refaire une estimation</button></div>';
   return h}
 function countUp(el,E){if(RM||!el||!window.requestAnimationFrame)return;var t0=0,D=1100;
   function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/D),q=1-Math.pow(1-k,3);el.textContent=k<1?amount(E,Math.round(E.lo*q/10)*10,Math.round(E.hi*q/10)*10):amount(E);if(k<1)requestAnimationFrame(step)}
@@ -931,35 +941,36 @@ function countUp(el,E){if(RM||!el||!window.requestAnimationFrame)return;var t0=0
 function finish(pr,tel,state,anim){var E=estimate(),dg=tel.replace(/\D/g,""),telf=dg.length===10?dg.replace(/(\d{2})(?=\d)/g,"$1\u00a0"):tel;
   var est=E.rows.length?amount(E):"à chiffrer sur place";
   var det=C.details.map(function(k){var v=A[k[0]];if(v===undefined||v===0)return null;return k[1]+"\u00a0: "+(Array.isArray(v)?v.join(", "):v)}).filter(Boolean);
-  var msg="Bonjour, j’ai fait l’estimation "+C.nom+" sur votre site. Travaux\u00a0: "+A.travaux+", "+ql()+". Estimation\u00a0: "+est+". "+det.join(". ")+". "+A.delai+", "+(A.statut||"").toLowerCase()+", code postal "+place()+". "+pr+", "+telf+".";
+  var msg="Bonjour, j’ai fait l’estimation "+C.nom+" sur votre site. Travaux\u00a0: "+A.travaux+", "+ql()+". Estimation\u00a0: "+est+". "+det.join(". ")+". "+A.delai+", "+(A.statut||"").toLowerCase()+", code postal "+place()+". "+pr+(telf?", "+telf:"")+".";
   res.innerHTML=render(E,pr,telf,state);res.hidden=false;each(steps,function(s){s.classList.remove("is-on")});
   head.hidden=true;nav.hidden=true;err.hidden=true;done=true;
   try{history.replaceState({es:"fin"},"")}catch(x){}
-  toCard();if(anim)countUp(res.querySelector("[data-count]"),E);
+  toCard();if(anim){countUp(res.querySelector("[data-count]"),E);focusCur()}d.title=(E.rows.length?"Votre estimation":"Votre demande")+" | "+C.ent;
   var wa=res.querySelector("[data-wa]");if(wa)wa.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent(msg);
-  var wp=res.querySelector("[data-wa-photo]");if(wp)wp.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent("Bonjour, voici des photos pour mon estimation "+C.nom+" ("+A.travaux+", code postal "+place()+"). "+pr+", "+telf+".");
+  var wp=res.querySelector("[data-wa-photo]");if(wp)wp.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent("Bonjour, voici des photos pour mon estimation "+C.nom+" ("+A.travaux+", code postal "+place()+"). "+pr+(telf?", "+telf:"")+".");
   res.querySelector(".es-again").addEventListener("click",function(){try{sessionStorage.removeItem(SK)}catch(x){}location.href=location.pathname+location.search});
   var sh=res.querySelector(".es-share"),url=location.origin+location.pathname,txt="Estimation "+C.nom+" ("+C.ent+")\u00a0: "+A.travaux+", "+ql()+". "+(E.rows.length?est+", pose comprise, fourchette indicative.":"À chiffrer sur place.");
   sh.addEventListener("click",function(){if(navigator.share){navigator.share({title:"Estimation "+C.nom,text:txt,url:url}).catch(function(){})}
-    else if(navigator.clipboard){navigator.clipboard.writeText(txt+" "+url).then(function(){sh.querySelector("span").textContent="Copié, vous pouvez le coller"})}});
+    else if(navigator.clipboard){navigator.clipboard.writeText(txt+" "+url).then(function(){shM("Copié, vous pouvez le coller")},function(){shM("Copie impossible")})}});
+  var shL=sh.querySelector("span"),shT=shL.textContent,shS=res.querySelector("[data-sh-st]"),shTm;function shM(t){shL.textContent=t;shS.textContent=t;clearTimeout(shTm);shTm=setTimeout(function(){shL.textContent=shT;shS.textContent=""},3000)}
   return{E:E,est:est,det:det,msg:msg,box:res.querySelector(".es-box")}}
 function submit(){if(val("site_web"))return;var pr=val("prenom"),tel=val("telephone"),st0=C.envoi?"sending":"manual",R=finish(pr,tel,st0,true),est=R.est,det=R.det,msg=R.msg,box=R.box;
-  save({done:1,pr:pr,tel:tel,st:C.envoi?"manual":st0});
+  save({done:1,pr:pr,st:C.envoi?"manual":st0});if(st0==="sending")box.querySelector("[data-st]").textContent="Envoi de votre demande…";
   dl("estimation_demande",{travaux:A.travaux,delai:A.delai,statut:A.statut,estimation:est});
   if(window.fbq)window.fbq("track","Lead");
   if(!C.envoi)return;
   var body={type:"estimation",_subject:"Demande d’estimation "+C.nom+" · "+place(),message:msg,metier:C.key,entreprise:C.ent,fields:{travaux:A.travaux,quantite:ql(),estimation:est,details:det,delai:A.delai,statut:A.statut,code_postal:A.code_postal,commune:A.commune||"",prenom:pr,telephone:tel},
     consent:{text:f.querySelector(".es-consent").textContent,at:new Date().toISOString()},page:location.pathname,tracking:track,site_web:""};
-  var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");save({done:1,pr:pr,tel:tel,st:ok?"sent":"manual"});dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
+  var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");var bh=box.querySelector(".es-s-"+(ok?"sent":"manual")+" .es-box-h");box.querySelector("[data-st]").textContent=bh?bh.textContent:"";save({done:1,pr:pr,st:ok?"sent":"manual"});dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
   try{fetch(C.envoi,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(body)}).then(function(r){clearTimeout(t);end(r.ok)}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}}
 function restore(S){started=true;for(var k in S){var v=S[k];A[k]=v;
-    (Array.isArray(v)?v:[v]).forEach(function(x){var b=f.querySelector('button[data-q="'+k+'"][data-v="'+String(x).replace(/["\\]/g,"\\$&")+'"]');if(b)b.setAttribute("aria-pressed","true")});
+    (Array.isArray(v)?v:[v]).forEach(function(x){var b=f.querySelector('button[data-q="'+k+'"][data-v="'+String(x).replace(/["\\]/g,"\\$&")+'"]');if(b)b.setAttribute("aria-checked","true")});
     var r=f.querySelector('.es-range[data-q="'+k+'"]');if(r){r.value=v;r.dispatchEvent(new Event("input"))}}
   if(cpIn&&A.code_postal)cpIn.value=A.code_postal}
 var S0=load(),pj=(qs.get("projet")||"").replace(/[^a-z0-9-]/g,""),ob=pj&&f.querySelector('.es-opt[data-slug="'+pj+'"]');
-if(S0&&(S0.done||!ob)){restore(S0.A);if(S0.done){var pi=f.querySelector("#es-prenom"),ti=f.querySelector("#es-tel");if(pi)pi.value=S0.pr;if(ti)ti.value=S0.tel;finish(S0.pr,S0.tel,S0.st||"manual",false)}
+if(S0&&(S0.done||!ob)){restore(S0.A);if(S0.done){var pi=f.querySelector("#es-prenom");if(pi)pi.value=S0.pr;finish(S0.pr,"",S0.st||"manual",false)}
   else{show(S0.cur||0,0,false);try{history.replaceState({es:S0.cur||0},"")}catch(x){}}}
-else if(ob){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-pressed",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");started=true;dl("estimation_debut",{projet:pj});show(1,0,false);try{history.pushState({es:1},"")}catch(x){}}
+else if(ob){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-checked",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");started=true;dl("estimation_debut",{projet:pj});show(1,0,false);try{history.pushState({es:1},"")}catch(x){}}
 else show(0,0,false);
 })();"""
 
@@ -1008,7 +1019,7 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
         env_origin = f" {u.scheme}://{u.netloc}" if u.netloc else ""
     fb = " https://connect.facebook.net" if cfg.get("meta_pixel") else ""
     csp = (f"default-src 'self'; script-src 'self' {hashes}{fb}; style-src 'self' 'unsafe-inline'; img-src 'self' data:{' https://www.facebook.com' if fb else ''}; "
-           f"font-src 'self'; connect-src 'self' {GEO}{env_origin}{' https://www.facebook.com' + fb if fb else ''}; form-action 'none'; base-uri 'self'; object-src 'none'")
+           f"font-src 'self'; connect-src 'self' {GEO}{env_origin}{' https://www.facebook.com' + fb if fb else ''}; form-action 'none'; base-uri 'none'; object-src 'none'")
     title = f"{m['title']} | {ent}"
     h1 = re.sub(r"<mark>(.*?)</mark>", lambda x: "<mark>" + x.group(1).replace(" ", "\u00a0") + "</mark>", fr(m["h1"]))
     dom = cfg.get("domaine", "").rstrip("/")
@@ -1044,20 +1055,20 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
   </div>
   <section class="es-quiz" id="estimation" aria-label="Estimation">
     <form class="es-card" id="es-form" novalidate>
-      <div class="es-head"><span class="es-num-step">Étape 1 sur {n}</span><span class="es-pct">0 %</span><div class="es-bar" aria-hidden="true"><i></i></div></div>
+      <div class="es-head"><span class="es-num-step" id="es-stepn">Étape 1 sur {n}</span><span class="es-pct">0 %</span><div class="es-bar" aria-hidden="true"><i></i></div></div>
       <div class="es-body">
         {steps}
-        <div class="es-res" hidden aria-live="polite"></div>
-        <p class="es-err" role="alert" hidden></p>
+        <div class="es-res" hidden></div>
+        <p class="es-err" id="es-err" aria-live="polite" hidden></p>
         <noscript><p class="es-note">Le calculateur a besoin de JavaScript. Vous pouvez aussi appeler le {e(tel)}.</p></noscript>
       </div>
-      <div class="es-nav"><button type="button" class="es-back" aria-label="Question précédente" hidden>{ico('back')}</button><button type="button" class="es-next"><span>Suivant</span>{ico('arrow')}</button></div>
+      <div class="es-nav"><button type="button" class="es-back" aria-label="Question précédente" hidden>{ico('back')}</button><button type="submit" class="es-next"><span>Suivant</span>{ico('arrow')}</button></div>
     </form>
   </section>
   <div class="es-proof">
     {scene}
     {trust}
-    <ul class="es-facts">{facts_html}</ul>
+    <ul class="es-facts" role="list">{facts_html}</ul>
   </div>
   {team_html(m, cfg, key, photo_url)}
   {spec_html(m, cfg, key, accent)}
@@ -1153,7 +1164,7 @@ def build(path):
         warn.append("domaine manquant : sans lui, les liens partagés n’affichent pas d’image d’aperçu")
     sec = [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}, {"key": "X-Content-Type-Options", "value": "nosniff"},
            {"key": "X-Frame-Options", "value": "DENY"}, {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
-           {"key": "Strict-Transport-Security", "value": "max-age=63072000"},
+           {"key": "Strict-Transport-Security", "value": "max-age=63072000"}, {"key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups"},
            {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=()"},
            {"key": "Content-Security-Policy", "value": "frame-ancestors 'none'"}]
     (out / "vercel.json").write_text(json.dumps({
