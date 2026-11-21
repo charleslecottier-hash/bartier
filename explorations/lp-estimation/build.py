@@ -21,6 +21,7 @@ from urllib.parse import quote, urlparse
 import carte
 import icons
 from metiers import COMMON, M
+from prestations import TEXTES
 
 HERE = pathlib.Path(__file__).resolve().parent
 FONTS = HERE.parent / "v8b" / "assets" / "fonts"
@@ -209,6 +210,57 @@ def zone_html(m, cfg):
                       '<span class="es-map-src">Plan © IGN</span></div>')
     return (f'<section class="es-area" aria-labelledby="es-area-h"><div class="es-area-head"><h2 id="es-area-h">{e(fr(cfg.get("rappel") or "Notre zone d’intervention"))}</h2>'
             f'<p>Nous intervenons dans un rayon de <b>{km}\u00a0km</b> autour de <b>{e(z["nom"])}{dep}</b>.</p>{hrs}{btn}</div>{carte_html}</section>')
+
+
+METIER_LIGNE = {"toiture": "Couverture et réfection de toiture", "facade": "Ravalement de façade", "fenetres": "Fenêtres, baies et portes",
+                "charpente": "Charpente", "isolation": "Isolation des combles et des murs"}
+
+
+def team_html(m, cfg, key, photo_url=""):
+    """Ce que fait l'entreprise (ses métiers, plus ses « prestations » libres), puis la personne qui intervient."""
+    items = [METIER_LIGNE[k] for k in ORDER if k in cfg.get("metiers", ORDER)] + list(cfg.get("prestations", []))
+    tick = f'<span class="es-tick" aria-hidden="true">{ico("check")}</span>'
+    lis = "".join(f"<li>{tick}{e(x)}</li>" for x in items)
+    c = cfg.get("contact", {})
+    pre, role = c.get("prenom", "").strip(), c.get("role", "").strip()
+    av, _, _ = who(cfg, photo_url)
+    name = " ".join(x for x in (pre, c.get("nom", "").strip()) if x) or cfg["entreprise"]
+    sub = f"{role[:1].upper() + role[1:]} · {cfg['entreprise']}" if pre and role else (cfg["entreprise"] if pre else "")
+    hrs = cfg.get("horaires", "").strip()
+    lines = "".join(f"<span>{e(x)}</span>" for x in (sub, hrs[:1].upper() + hrs[1:] if hrs else "") if x)
+    return (f'<section class="es-team" aria-labelledby="es-team-h"><h2 id="es-team-h">Ce que nous faisons</h2><div class="es-team-card">'
+            f'<ul class="es-team-list">{lis}</ul><div class="es-who es-team-who"><span class="es-av">{av}</span><p><b>{e(name)}</b>{lines}</p>{stars(cfg)}</div></div></section>')
+
+
+def prix_txt(m, cfg, key, o):
+    """Phrase de prix d'une carte : tarif du client, sinon prix moyen publié, sinon chiffrage sur place."""
+    own = cfg.get("tarifs", {}).get(key, {}).get(o[0])
+    lines = o[4]
+    per = " par " + m["qty"]["one"]
+    if own or lines:
+        lo, hi = own if own else (min(x["lo"] for x in lines), max(x["hi"] for x in lines))
+        u = (lines[0]["u"] if lines else "€").replace("/m²", "").replace("€", "").strip()
+        amount = (f"environ {euro(lo)}" if lo == hi else f"{euro(lo).replace(chr(160) + '€', '')} à {euro(hi)}") + (f" {u}" if u else "") + per
+        who_ = f"Tarif indicatif de {cfg['entreprise']}" if own else f"Prix moyen publié par {lines[0]['src'][0].split(',')[0].replace('-', chr(8209))}"
+        return f"{who_} : {amount}, pose comprise."
+    return m.get("visite_txt", {}).get(o[0]) or "Se chiffre sur place, après une visite."
+
+
+def spec_html(m, cfg, key, accent):
+    cards = []
+    for o in m["steps"][0]["qs"][0]["opts"]:
+        t = TEXTES.get(key, {}).get(o[0])
+        if not t:
+            continue
+        intro, pts, aides = t
+        lis = "".join(f"<li><b>{e(b)}</b> : {e(x)}</li>" for b, x in pts)
+        fin = prix_txt(m, cfg, key, o) + (" Des aides peuvent réduire la facture si l’entreprise est certifiée RGE." if aides else "")
+        sl = slug(o[0])
+        cards.append(f'<article class="es-sp"><div class="es-sp-art" aria-hidden="true">{icons.house(o[2], o[3], accent)}</div><div class="es-sp-b">'
+                     f'<h3>{e(o[0])}</h3><p>{e(intro)}</p><ul>{lis}</ul><p class="es-sp-fin">{e(fin)}</p>'
+                     f'<a class="es-sp-go" href="?projet={sl}" data-pick="{sl}">Estimer ce projet{ico("arrow")}</a></div></article>')
+    return (f'<section class="es-spec" aria-labelledby="es-spec-h"><div class="es-spec-head"><h2 id="es-spec-h">Nos spécialités</h2>'
+            f'<p>Choisissez votre projet pour en estimer le prix.</p></div><div class="es-spec-list">{"".join(cards)}</div></section>')
 
 
 def favicon(accent):
@@ -488,6 +540,40 @@ svg{display:block}
 .es-gal-item{flex:0 0 78%;margin:0;scroll-snap-align:start}
 .es-gal-item img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;background:#DCE1E8}
 @media (min-width:640px){.es-gal-row{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));margin:24px 0 0;padding:0;overflow:visible}.es-gal-row[data-n="2"]{--n:2}.es-gal-row[data-n="1"]{--n:1}.es-gal-item img{aspect-ratio:4/3}}
+.es-team{grid-column:1/-1;width:100%;max-width:760px;margin:24px auto 0}
+.es-team h2,.es-spec h2{font-size:clamp(1.6rem,6.4vw,2.2rem);font-weight:500;line-height:1.15;letter-spacing:-.025em;text-align:center;text-wrap:balance}
+.es-team-card{margin-top:28px;padding:28px 24px;border:1px solid var(--line);border-radius:24px;background:#fff}
+.es-team-list{display:grid;gap:14px;padding:0;list-style:none;font-size:1.02rem;color:var(--ink2)}
+.es-team-list li{display:flex;align-items:center;gap:12px}
+.es-tick{flex:none;display:grid;place-items:center;width:24px;height:24px;border:1.5px solid var(--go);border-radius:50%;color:var(--go)}
+.es-tick svg{width:14px;height:14px;stroke-width:2.2}
+.es-team-who{margin-top:24px;padding-top:24px;border-top:1px solid var(--line);flex-wrap:wrap}
+.es-team-who .es-av{width:64px;height:64px;box-shadow:0 0 0 3px #fff,0 0 0 5px var(--go)}
+.es-team-who .es-av span{font-size:1.3rem}
+.es-team-who b{font-size:1.1rem;font-weight:600}
+.es-team-who p span{margin-top:2px;font-size:.92rem}
+.es-team-who p span+span{color:#8A92A1}
+@media (min-width:640px){.es-team-card{padding:32px 40px}.es-team-list{grid-template-columns:1fr 1fr;column-gap:24px}}
+.es-spec{grid-column:1/-1;width:100%;max-width:1116px;margin:24px auto 0}
+.es-spec-head{text-align:center}
+.es-spec-head p{margin-top:12px;font-size:1.05rem;color:var(--muted)}
+.es-spec-list{display:grid;gap:16px;margin-top:32px}
+.es-sp{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#fff}
+.es-sp-art{display:grid;place-items:center;height:208px;padding:12px;background:linear-gradient(180deg,#F8F9FB,#EDF0F4)}
+.es-sp-art svg{width:auto;height:100%;max-width:100%}
+.es-sp-b{display:flex;flex:1;flex-direction:column;padding:24px}
+.es-sp h3{font-size:1.32rem;font-weight:600;line-height:1.25;letter-spacing:-.015em}
+.es-sp-b>p:not(.es-sp-fin){margin-top:10px;line-height:1.6;color:var(--ink2)}
+.es-sp ul{display:grid;gap:8px;margin-top:14px;padding-left:20px;line-height:1.5;color:var(--ink2)}
+.es-sp li::marker{color:var(--muted)}
+.es-sp li b{font-weight:600;color:var(--ink)}
+.es-sp-fin{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:.92rem;line-height:1.5;color:var(--muted)}
+.es-sp-go{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:48px;margin-top:auto;padding-top:12px;color:var(--go);font-weight:600;text-decoration:none}
+.es-sp-go svg{width:18px;height:18px;transition:transform .2s var(--ease)}
+.es-sp-go:hover svg{transform:translateX(3px)}
+@media (min-width:640px){.es-spec-list{grid-template-columns:1fr 1fr}}
+@media (min-width:960px){.es-spec-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:959px){.es-proof .es-trust{display:none}}
 .es-area{grid-column:1/-1;width:100%;max-width:760px;margin:24px auto 0}
 .es-area-head{text-align:center}
 .es-area h2{font-size:clamp(1.6rem,6.4vw,2.2rem);font-weight:500;line-height:1.15;letter-spacing:-.025em;text-wrap:balance}
@@ -784,6 +870,10 @@ try{history.replaceState({es:0},"")}catch(x){}
 addEventListener("popstate",function(ev){if(done)return;var s=ev.state&&typeof ev.state.es==="number"?ev.state.es:0;if(s!==cur)show(s,s<cur?-1:1,false)});
 back.addEventListener("click",function(){if(history.state&&typeof history.state.es==="number"&&history.state.es>0)history.back();else if(cur>0)show(cur-1,-1,false)});
 each(d.querySelectorAll("[data-start]"),function(b){b.addEventListener("click",function(ev){ev.preventDefault();begin();toCard()})});
+each(d.querySelectorAll("[data-pick]"),function(b){b.addEventListener("click",function(ev){ev.preventDefault();var ob=f.querySelector('.es-opt[data-slug="'+b.getAttribute("data-pick")+'"]');
+  if(ob&&!done&&cur<=1){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-pressed",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");
+    if(!started){started=true;dl("estimation_debut",{projet:b.getAttribute("data-pick"),depuis:"carte"})}if(cur===0){show(1,0,false);try{history.pushState({es:1},"")}catch(x){}}else show(1,0,false);save({})}
+  toCard()})});
 /* bouton collant (téléphone) : seulement entre les sections, jamais par-dessus le questionnaire ni une fois l'estimation affichée */
 var sk=d.querySelector(".es-sticky"),skRes=f.querySelector(".es-res");
 if(sk&&window.IntersectionObserver){var skT=[".es-intro",".es-quiz",".es-end",".es-ftr",".es-cc"].map(function(q){return d.querySelector(q)}).filter(Boolean),skV=[],
@@ -962,6 +1052,8 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
     {trust}
     <ul class="es-facts">{facts_html}</ul>
   </div>
+  {team_html(m, cfg, key, photo_url)}
+  {spec_html(m, cfg, key, accent)}
   {gallery_html(m, cfg, key, gal_urls, gal_own)}
   {zone_html(m, cfg)}
   {faq_html(m, cfg, key)}

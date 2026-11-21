@@ -51,11 +51,12 @@ Pour qu'une annonce mène directement au bon projet, ajoutez `projet=` à l'adre
 | `rayon_km` | Rayon d'intervention en kilomètres (ex. `30`). Avec `ville`, il dessine la carte et sert au contrôle de zone |
 | `code_postal` | Facultatif : à remplir seulement si plusieurs communes portent le même nom que `ville` |
 | `departements` | Départements couverts (ex. `["59", "62"]`). Sert au contrôle de zone quand `ville` et `rayon_km` sont vides. Hors zone, le visiteur est prévenu, sans être bloqué |
-| `horaires` | Moment du rappel, repris après l'envoi (ex. « du lundi au vendredi ») |
-| `contact` | La personne qui rappelle : `prenom`, `role` (ex. « gérant »), `photo` (chemin relatif à la fiche). Affichée sous le bouton et à l'étape du numéro. Sans photo, ses initiales s'affichent |
+| `horaires` | Moment du rappel, repris après l'envoi et sous la personne qui intervient (ex. « du lundi au vendredi » ou « du lundi au samedi, 8 h à 19 h ») |
+| `contact` | La personne qui rappelle : `prenom`, `nom` (facultatif), `role` (ex. « gérant »), `photo` (chemin relatif à la fiche). Affichée sous le bouton, à l'étape du numéro et dans « Ce que nous faisons ». Sans photo, ses initiales s'affichent |
 | `rappel` | Engagement de rappel affiché sous la personne (ex. « Rappel sous 24 h ouvrées »). Uniquement si l'artisan le tient |
 | `avis` | Note et nombre d'avis Google, avec le lien vers la fiche (`note`, `nombre`, `lien`). Vide : rien ne s'affiche. Jamais d'avis inventés |
-| `metiers` | Métiers à générer, parmi `toiture`, `facade`, `fenetres`, `charpente`, `isolation` |
+| `metiers` | Métiers à générer, parmi `toiture`, `facade`, `fenetres`, `charpente`, `isolation`. Ils forment aussi la liste cochée de « Ce que nous faisons » |
+| `prestations` | Facultatif : lignes ajoutées à cette liste cochée (ex. `["Zinguerie et gouttières", "Étanchéité de toit-terrasse"]`) |
 | `accent` | Couleur de la partie mise en évidence dans les illustrations (couleur du client) |
 | `atouts` | Arguments ajoutés sous le bouton. Seulement des faits vérifiables : « Assurance décennale », « Certifié RGE », etc. |
 | `tarifs` | Tarifs propres à l'artisan, à la place des prix publiés (voir plus bas) |
@@ -77,6 +78,16 @@ Sur téléphone, le haut de page est centré : la zone, une accroche en surlign�
 Chaque option a sa propre illustration du chantier (mousse sur le toit, tuile manquante, façade à moitié repeinte, panneaux d'isolant…), et la tuile passe à la question suivante dès qu'on la touche. Les surfaces et les quantités se règlent avec un curseur et des boutons − et +. Le code postal affiche le nom de la commune grâce à l'API publique de l'État (geo.api.gouv.fr) ; hors des départements du client, la page prévient le visiteur sans le bloquer. Vers la fin, le compteur laisse place à « Plus que 3 étapes », « Avant-dernière étape », puis « Dernière étape ».
 
 À la dernière étape, l'estimation reste floutée jusqu'au numéro, qui se met en forme pendant la saisie. Il n'y a pas de case à cocher : une phrase d'information la remplace (« En validant, vous acceptez d'être rappelé… »), ce qui fait un champ obligatoire de moins. La demande vient du visiteur lui-même, et cela suffit pour le rappeler. L'estimation s'affiche ensuite comme un devis au nom de l'artisan, puis le visiteur est invité à envoyer des photos du chantier par WhatsApp. Si la page se recharge (fréquent dans le navigateur d'Instagram après un passage par WhatsApp), le visiteur retrouve ses réponses et son estimation ; elles s'effacent quand il ferme l'onglet. Il peut aussi partager l'estimation (au conjoint, au propriétaire) depuis son téléphone. Sous le questionnaire, une foire aux questions répond aux hésitations : gratuité, origine des prix, prix final, qui rappelle, locataires, et une question propre au métier. Tout en bas, un dernier encadré relance l'estimation (le bouton remonte au formulaire) et propose d'appeler l'artisan, pour le visiteur qui a tout lu sans se décider.
+
+## Ce que nous faisons, nos spécialités
+
+Sous le questionnaire, deux sections présentent l'artisan, comme sur une page de couvreur classique.
+
+« Ce que nous faisons » liste ses métiers avec une coche verte (plus les lignes du champ `prestations`), puis la personne qui intervient : photo ou initiales, prénom, rôle, entreprise et horaires.
+
+« Nos spécialités » montre une carte par type de travaux du questionnaire : le dessin du projet, une phrase, trois points qui décrivent le travail, puis le prix. Le prix est le tarif du client s'il l'a donné (`tarifs`), sinon le prix moyen publié, sinon « se chiffre sur place ». Le lien « Estimer ce projet » coche ce projet dans le questionnaire et y descend directement.
+
+Les textes des cartes sont dans `prestations.py`. Ils décrivent le travail sans rien promettre (délai, garantie, qualification) : relisez-les avec l'artisan et ajustez-les à sa façon de travailler avant de publier sa page.
 
 ## Les photos
 
