@@ -47,15 +47,15 @@ SVG = {  # pictogrammes au trait (grille de 24)
 }
 
 
-def clover_bg(col="#0A1424", op=".06"):
+def clover_bg(col="#0A1424", op=".028"):
     """Fond : trèfles à quatre feuilles en motif, dessinés en SVG (aucune image externe)."""
     leaf = "M0 0C-3-3-5-8-2-9-.8-9.4 0-8.5 0-7.5 0-8.5.8-9.4 2-9 5-8 3-3 0 0Z"
     def clover(x, y, r, k):
         leaves = "".join(f'<path d="{leaf}" transform="rotate({a})"/>' for a in (0, 90, 180, 270))
         return (f'<g transform="translate({x} {y}) rotate({r}) scale({k})" fill="{col}" fill-opacity="{op}">{leaves}'
                 f'<path d="M0 0q2 5 6 8" fill="none" stroke="{col}" stroke-opacity="{op}" stroke-width="1.6" stroke-linecap="round"/></g>')
-    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="168" height="168" viewBox="0 0 168 168">'
-           f'{clover(38, 40, 14, 1.25)}{clover(122, 120, -24, 1.05)}{clover(124, 34, 52, .7)}{clover(40, 128, -60, .8)}</svg>')
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">'
+           f'{clover(76, 78, 14, 4.6)}{clover(226, 228, -22, 4.2)}</svg>')
     return "data:image/svg+xml," + svg.replace("%", "%25").replace("#", "%23").replace("<", "%3C").replace(">", "%3E").replace('"', "'")
 
 
@@ -425,7 +425,7 @@ CSS = """
 :root{--bg:#F4F5F7;--ink:#0A1424;--ink2:#2B3444;--muted:#5B6475;--line:rgba(10,20,36,.1);--line2:rgba(10,20,36,.18);--soft:#F1F3F6;--go:#15803D;--go-h:#116B33;--go-bar:#16A34A;--go-bg:#EDF8F1;--go-ring:rgba(22,163,74,.2);--sun:#FFE15A;--ease:cubic-bezier(.2,.8,.2,1);--f:"Host Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:light}
 *{box-sizing:border-box;margin:0}
 html{-webkit-text-size-adjust:100%}
-body{min-height:100vh;display:flex;flex-direction:column;font:400 16px/1.5 var(--f);color:var(--ink);background:var(--bg) url("__CLOVER__") 0 0/168px 168px repeat;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;display:flex;flex-direction:column;font:400 16px/1.5 var(--f);color:var(--ink);background:var(--bg) url("__CLOVER__") 0 0/300px 300px repeat;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
@@ -443,8 +443,8 @@ svg{display:block}
 .es-main{flex:1;display:grid;gap:48px;width:100%;max-width:1180px;margin:0 auto;padding:8px 16px 64px}
 .es-kick{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:.9rem;color:var(--ink2)}
 .es-kick svg{width:18px;height:18px;color:var(--muted)}
-.es-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:var(--sun);font-size:.86rem;font-weight:500;line-height:1.3}
-.es-pill svg{flex:none;width:18px;height:18px}
+.es-pill{max-width:24em;font-size:1.02rem;line-height:1.9;color:var(--ink)}
+.es-pill span{padding:.22em .5em;border-radius:4px;background:#FFF4B3;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .es-h{margin-top:24px;font-weight:600;font-size:clamp(2.45rem,10.6vw,4.2rem);line-height:1.04;letter-spacing:-.04em}
 .es-h mark{display:inline-block;margin:.05em 0;padding:.01em .15em .05em;border-radius:.11em;background:var(--ink);color:#fff}
 .es-h em{font-style:italic;text-decoration:underline;text-decoration-color:var(--go-bar);text-decoration-thickness:.085em;text-underline-offset:.1em}
@@ -475,7 +475,7 @@ svg{display:block}
 .es-scene-art{display:block;max-width:250px;margin:0 auto}
 .es-scene-art svg{width:100%;height:auto}
 .es-scene{display:none}
-.es-ex{display:flex;align-items:center;gap:12px;margin-top:24px;padding:12px 16px 12px 12px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.es-ex{display:flex;align-items:center;gap:12px;margin-top:0;padding:12px 16px 12px 12px;border:1px solid var(--line);border-radius:16px;background:#fff}
 .es-ex .es-tag-k{display:block;font-size:.78rem;color:var(--muted)}
 .es-ex b{display:block;font-size:1.15rem;font-weight:600;line-height:1.25;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .es-ex .es-tag-t>span:last-child{display:block;font-size:.82rem;color:var(--ink2)}
@@ -665,7 +665,16 @@ svg{display:block}
 @media (hover:hover){.es-opt:hover .es-ico svg{transform:translateY(-3px)}}
 .es-again{min-height:44px;margin-top:0;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 @media (min-width:640px){.es-head{padding:20px 28px 16px}.es-body{padding:8px 28px 28px}.es-nav{padding:16px 28px}.es-opts{gap:12px}}
-@media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{padding-top:36px}.es-scene{display:block}.es-ex{display:none}.es-scene-art{max-width:270px}.es-intro .es-cta{display:none}.es-lead{font-size:1.12rem}}
+@media (max-width:959px){.es-intro{text-align:center}.es-kick{justify-content:center}.es-pill,.es-lead{margin-left:auto;margin-right:auto}
+.es-intro .es-cta{display:inline-flex;width:auto;min-width:min(100%,320px);padding:12px 32px}.es-facts{justify-content:center}}
+@media (max-width:639px){.es-opts{grid-template-columns:1fr}
+.es-opt,.es-opt:last-child:nth-child(odd){grid-column:auto;flex-direction:row;align-items:center;min-height:84px;padding:10px 44px 10px 12px}
+.es-ico,.es-opt:last-child:nth-child(odd) .es-ico,.es-opt[aria-pressed="true"] .es-ico{flex:0 0 68px;align-self:center;height:60px;aspect-ratio:auto;padding:0;background:none}
+.es-ico svg,.es-opt:last-child:nth-child(odd) .es-ico svg{width:100%;max-width:none;height:100%;max-height:none}
+.es-ot{padding:0 0 0 14px}.es-ot b{font-size:1.04rem}.es-ot span{margin-top:2px;font-size:.88rem}
+.es-opt>.es-ck{top:calc(50% - 12px);left:auto;right:12px;opacity:0}.es-opt[aria-pressed="true"]>.es-ck{opacity:1}}
+@media (min-width:960px){.es-main{grid-template-columns:minmax(0,1fr) 540px;grid-template-rows:auto 1fr;align-items:start;gap:72px;padding:36px 32px 96px}.es-intro{grid-column:1;grid-row:1;padding-top:36px}
+.es-quiz{grid-column:2;grid-row:1/span 2}.es-proof{grid-column:1;grid-row:2;margin-top:-48px}.es-proof .es-scene{margin-top:0}.es-scene{display:block}.es-ex{display:none}.es-scene-art{max-width:270px}.es-intro .es-cta{display:none}.es-lead{font-size:1.12rem}}
 .es-ftr{padding:40px 16px 48px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted);text-align:center}
 .es-by{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px}
 .es-by img{height:28px;width:auto;max-width:150px;object-fit:contain}
@@ -931,13 +940,10 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
 <header class="es-hdr"><span class="es-logo">{logo}</span>{call}</header>
 <main class="es-main">
   <div class="es-intro">
-    {kick}<p class="es-pill">{ico('alert')}{e(m['pill'])}</p>
+    {kick}<p class="es-pill"><span>{e(m['pill'])}</span></p>
     <h1 class="es-h">{h1}</h1>
     <p class="es-lead">{e(lead)}</p>
     <a class="es-cta" href="#estimation" data-start><b>Calculer mon prix{ico('down')}</b><small>Gratuit · 1 minute · sans engagement</small></a>
-    {scene}
-    {trust}
-    <ul class="es-facts">{facts_html}</ul>
   </div>
   <section class="es-quiz" id="estimation" aria-label="Estimation">
     <form class="es-card" id="es-form" novalidate>
@@ -951,6 +957,11 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
       <div class="es-nav"><button type="button" class="es-back" aria-label="Question précédente" hidden>{ico('back')}</button><button type="button" class="es-next"><span>Suivant</span>{ico('arrow')}</button></div>
     </form>
   </section>
+  <div class="es-proof">
+    {scene}
+    {trust}
+    <ul class="es-facts">{facts_html}</ul>
+  </div>
   {gallery_html(m, cfg, key, gal_urls, gal_own)}
   {zone_html(m, cfg)}
   {faq_html(m, cfg, key)}

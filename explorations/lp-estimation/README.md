@@ -72,7 +72,7 @@ Sans `envoi`, seul le bouton WhatsApp (ou l'appel) transmet la demande. Le visit
 
 ## Le parcours
 
-Sur téléphone, le titre et le bouton vert viennent en premier, puis un exemple d'estimation (la première option, à la quantité proposée) et le questionnaire juste en dessous. Une fois lancé, il occupe tout l'écran : la progression reste en haut et le bouton « Suivant » en bas, à portée du pouce. Sur ordinateur, le titre est à gauche et le questionnaire à droite, sans clic de plus.
+Sur téléphone, le haut de page est centré : la zone, une accroche en surligné jaune posée comme une question (« Tuiles cassées, fuite, mousse sur le toit ? »), le titre, une phrase et le bouton vert. Le questionnaire suit directement, et sa première réponse est visible sans faire défiler. Les réponses s'affichent en liste, un dessin à gauche, le libellé à droite. L'exemple d'estimation, la carte de la personne qui rappelle et la source des prix passent sous le questionnaire. Une fois lancé, il occupe tout l'écran : la progression reste en haut et le bouton « Suivant » en bas, à portée du pouce. Sur ordinateur, le titre est à gauche et le questionnaire à droite, sans clic de plus.
 
 Chaque option a sa propre illustration du chantier (mousse sur le toit, tuile manquante, façade à moitié repeinte, panneaux d'isolant…), et la tuile passe à la question suivante dès qu'on la touche. Les surfaces et les quantités se règlent avec un curseur et des boutons − et +. Le code postal affiche le nom de la commune grâce à l'API publique de l'État (geo.api.gouv.fr) ; hors des départements du client, la page prévient le visiteur sans le bloquer. Vers la fin, le compteur laisse place à « Plus que 3 étapes », « Avant-dernière étape », puis « Dernière étape ».
 
@@ -84,7 +84,7 @@ Sous le formulaire, une section montre le métier en photos : deux ou trois par 
 
 Dès que l'artisan fournit ses propres photos de chantier, mettez-les dans sa fiche (`realisations`). La section devient « Les chantiers de [entreprise] ». Les légendes ne s'affichent pas : elles servent de texte de remplacement aux lecteurs d'écran. De vraies photos inspirent bien plus confiance. Retirez-en d'abord les métadonnées (lieu, date, appareil).
 
-En haut de page, sur téléphone, un encadré compact donne l'exemple d'estimation, pour que le formulaire arrive vite. Sur ordinateur, la grande maison dessinée du métier porte cet exemple.
+Sur téléphone, un encadré compact donne l'exemple d'estimation, sous le questionnaire. Sur ordinateur, la grande maison dessinée du métier porte cet exemple, sous le titre.
 
 ## La zone d'intervention
 
