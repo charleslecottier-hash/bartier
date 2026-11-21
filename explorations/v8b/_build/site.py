@@ -925,13 +925,13 @@ VL_HUB_CSS = (""".vlh{display:grid;grid-template-columns:minmax(0,520px) minmax(
 @media (max-width:1100px){.vlh-list{columns:1}}
 @media (max-width:760px){.vlh{grid-template-columns:1fr;gap:32px}.vlh-map{position:static;max-width:400px}.vlh-c b{font-size:1.2rem}}
 @media (prefers-reduced-motion:reduce){.vlh-c svg,.vlh-c b,.vl-svg circle.vl-dot{transition:none}}""" + VL_HL)
-pf_body = pf_body if not VL.CITIES else pf_body.replace('<section class="sheet pf-leak is-short"', f"""<section class="sheet" id="villes" data-tone="paper">
+pf_body = pf_body if not VL.CITIES else pf_body.replace('<section class="sheet pf-end"', f"""<section class="sheet" id="villes" data-tone="paper">
   <style>{VL.MAP_CSS}{VL_HUB_CSS}</style>
   <div class="grid sp-head"><h2 data-split>Devis travaux par ville</h2><p>Les règles et les aides changent d’une ville à l’autre</p></div>
   <div class="vlh"><figure class="vl-map vlh-map">{VL.carte()}<figcaption>{len(VL.CITIES)} villes, chacune avec ses règles d’urbanisme, ses aides et ses démarches, vérifiées sur les sources officielles.</figcaption></figure><div class="vlh-list">{VL_HUB}</div></div>
 </section>
 
-<section class="sheet pf-leak is-short\"""", 1)
+<section class="sheet pf-end\"""", 1)
 pf_top = absolutize(BODY_OPEN)
 pf_top = pf_top.replace('class="link" href="/devis-travaux/"', 'class="link" href="/devis-travaux/" aria-current="page"', 1)
 pf_top = re.sub(r'<p class="hdr-tag">[^<]*', '<p class="hdr-tag">Vos travaux, un seul artisan près de chez vous', pf_top, count=1)

@@ -147,6 +147,33 @@ def trust(cls=""):
       </ul>"""
 
 
+def people(cls=""):
+    """Visages et noms des fondateurs, près du formulaire : on sait à qui on confie son numéro."""
+    av = "".join(f'<img src="/assets/photos/{n}-360x450-nb.webp" alt="" width="360" height="450" loading="lazy" decoding="async">'
+                 for n in ("charles-le-cottier", "martin-barthelemy"))
+    return (f'<p class="pf-people {cls}"><span class="pf-av" aria-hidden="true">{av}</span>'
+            f'<span><b>Charles et Martin</b>, fondateurs de Bartier &amp; Co.<br>Martin répond au '
+            f'<a href="tel:@@PHONE@@">@@PHONE_TXT@@</a>, en semaine de 8&nbsp;h à 19&nbsp;h.</span></p>')
+
+
+STEPS = [
+    ("Maintenant", "Vous décrivez vos travaux", "Cinq questions, une minute, sans créer de compte."),
+    ("Moins de 5 minutes après", "Nous vous rappelons", "En semaine, de 8 h à 19 h. Nous vérifions votre projet avec vous."),
+    ("Pendant l’appel", "La visite est fixée", "Avec l’artisan partenaire de votre secteur, selon vos disponibilités."),
+    ("Avant la visite", "Un SMS vous la rappelle", "Vous n’avez rien à noter ni à relancer."),
+    ("Le jour de la visite", "L’artisan chiffre chez vous", "Il voit le chantier et vous remet son devis, sans frais. Vous restez libre de refuser."),
+]
+
+ENGAGE = [
+    ("Gratuit du début à la fin", "Notre service, la visite et le devis ne vous coûtent rien. Vous ne payez que vos travaux, si vous acceptez le devis."),
+    ("Un seul artisan a votre numéro", "Vos coordonnées vont à l’artisan retenu, à personne d’autre. Vous pouvez demander leur suppression à tout moment."),
+    ("Vous restez libre", "Vous ne signez rien avec nous. Refusez le devis ou comparez-le, sans avoir à vous justifier."),
+    ("Hors zone, nous vous le disons", "Si aucun artisan partenaire ne couvre votre commune, vous le savez dès l’appel, et votre demande n’est transmise à personne."),
+]
+
+TEAM_IMG = "/assets/photos/fondateurs-bartier-co"
+
+
 def build(img, phone, phone_txt, crumbs, parts=False):
     tiles = "".join(f'<button type="button" class="pf-tile" data-v="{t[0]}">{t[1]}</button>' for t in TRADES) + \
         '<button type="button" class="pf-tile" data-v="autre">Autre projet</button>'
@@ -200,13 +227,13 @@ def build(img, phone, phone_txt, crumbs, parts=False):
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
       {crumbs}
-      <div class="pf-h1"><h1 class="pf-kw">Devis travaux : toiture, façade, fenêtres, charpente, isolation</h1> <p class="pf-big">Pas cinq <span class="pf-who">artisans</span>. <br>Un seul, près de chez vous.</p></div>
-      <p class="lead">Décrivez vos travaux en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
+      <div class="pf-h1"><h1 class="pf-kw">Devis travaux : toiture, façade, fenêtres, charpente, isolation</h1> <p class="pf-big pf-big-hub">Fini les <span class="pf-who">artisans</span> qui ne rappellent&nbsp;pas.</p></div>
+      <p class="lead">Décrivez vos travaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et la visite d’un artisan de votre secteur est fixée pendant l’appel.</p>
       {trust("d-only")}
-      <p class="pf-call d-only">Pressé&nbsp;? <a class="link" href="tel:{phone}">{phone_txt}</a></p>
+      {people("d-only").replace("@@PHONE@@", phone).replace("@@PHONE_TXT@@", phone_txt)}
     </div>
     {form}
-    <div class="pf-mtrust m-only">{trust()}</div>
+    <div class="pf-mtrust m-only">{trust()}{people().replace("@@PHONE@@", phone).replace("@@PHONE_TXT@@", phone_txt)}</div>
   </div>
 </section>"""
 
@@ -228,6 +255,34 @@ def build(img, phone, phone_txt, crumbs, parts=False):
     <li><b>0 <small>€</small></b> <span>pour vous&nbsp;: visite et devis offerts, sans engagement</span></li>
   </ul>
   <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
+</section>"""
+
+    steps = "".join(f'<li><span class="pf-t">{t}</span><h3>{h}</h3><p>{p}</p></li>' for t, h, p in STEPS)
+    process = f"""<section class="sheet pf-steps" id="promesse" data-tone="accent">
+  <div class="grid sp-head"><h2 data-split>Ce qui se passe après votre demande</h2><p>Vous ne relancez personne&nbsp;: la visite est fixée dès notre premier appel.</p></div>
+  <ol class="pf-howto">{steps}</ol>
+  <p class="pf-mid"><a class="btn pf-btn-inv" href="#projet"><span>Obtenir mon devis gratuit</span>{tick()}</a><a class="link pf-end-call" href="tel:{phone}">ou appelez le {phone_txt}</a></p>
+</section>"""
+
+    eng = "".join(f'<li><h3>{check()}{a}</h3><p>{b}</p></li>' for a, b in ENGAGE)
+    engage = f"""<section class="sheet pf-eng" id="engagements" data-tone="light">
+  <div class="grid sp-head"><h2 data-split>Nos engagements envers vous</h2><p>Ce que vous pouvez attendre de nous, quels que soient vos travaux.</p></div>
+  <ul class="pf-checks pf-eng-list">{eng}</ul>
+</section>"""
+
+    team = f"""<section class="sheet pf-team" id="qui" data-tone="paper">
+  <div class="grid pf-team-grid">
+    <figure class="frame pf-team-img"><img srcset="{TEAM_IMG}-480x360-nb.webp 480w, {TEAM_IMG}-800x600-nb.webp 800w, {TEAM_IMG}-1200x900-nb.webp 1200w" sizes="(max-width: 760px) 100vw, 50vw" src="{TEAM_IMG}-800x600-nb.webp" alt="Charles Le Cottier et Martin Barthélémy, fondateurs de Bartier &amp; Co" width="1200" height="900" loading="lazy" decoding="async"></figure>
+    <div class="pf-team-txt">
+      <h2 data-split>Qui est derrière Bartier &amp; Co&nbsp;?</h2>
+      <p class="pf-team-lead">Une société française fondée par Charles Le Cottier et Martin Barthélémy. Notre métier&nbsp;: trouver des clients aux artisans du bâtiment, avec un seul artisan par métier et par secteur.</p>
+      <dl class="pf-team-dl">
+        <div><dt>Pourquoi c’est gratuit pour vous</dt><dd>L’artisan partenaire nous confie sa publicité locale et nous rémunère. Vous ne payez que vos travaux, et seulement si vous acceptez son devis.</dd></div>
+        <div><dt>Pourquoi un seul artisan</dt><dd>Dans chaque secteur, nous travaillons avec une seule entreprise par métier. Votre demande va directement chez elle, et votre téléphone ne sonne pas cinq fois.</dd></div>
+      </dl>
+      <p class="pf-team-c"><a class="link" href="tel:{phone}">{phone_txt}</a><a class="link" href="https://wa.me/33781018936" target="_blank" rel="noopener" data-wa="particulier-equipe">WhatsApp</a><a class="link" href="mailto:contact@bartierandco.com">contact@bartierandco.com</a><a class="link" href="/qui-sommes-nous/">Qui sommes-nous</a></p>
+    </div>
+  </div>
 </section>"""
 
     def band(text, btn, sub=""):
@@ -314,7 +369,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
 </section>"""
     if parts:
         return dict(form=form, promise=promise, compare=compare, leak=leak, serious=serious, end=end)
-    return "\n\n".join([hero, promise, trades, leak_short, price, serious, brief, faq, end])  # tableau « Pas cinq entreprises » retiré
+    return "\n\n".join([hero, process, trades, engage, leak_short, price, team, brief, serious, faq, end])  # tableau « Pas cinq entreprises » retiré
 
 
 # Questions aussi posées sur une page métier : balisées là-bas seulement (Google : une FAQ répétée se balise une fois)
@@ -438,6 +493,33 @@ CSS = """<style id="pf-css">
 .pf-howto li,.pf-checks li,.pf-prices li{min-width:0;padding-top:14px;border-top:2px solid currentColor}
 .pf-howto li{counter-increment:pf}
 .pf-howto li::before{content:counter(pf,decimal-leading-zero);display:block;margin-bottom:10px;font:300 2rem/1 var(--f-display);color:var(--accent)}
+.pf-big-hub{text-wrap:balance}
+.pf-people a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.pf-people{display:flex;align-items:center;gap:14px;margin:0;font-size:.92rem;line-height:1.45;color:var(--muted)}
+.pf-people b{font-weight:500;color:var(--ink)}
+.pf-av{display:flex;flex:none}
+.pf-av img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid var(--bg);background:var(--paper)}
+.pf-av img+img{margin-left:-12px}
+.pf-mtrust .pf-people{margin-top:20px}
+.pf-steps .pf-howto li::before{color:#9fb6ff}
+.pf-steps .pf-howto p{color:rgba(255,255,255,.75)}
+.pf-t{display:block;margin-bottom:6px;font-size:.8rem;line-height:1.3;color:rgba(255,255,255,.7)}
+.pf-eng-list{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pf-eng-list h3{display:flex;align-items:flex-start;gap:10px}
+.pf-eng-list h3 svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--accent)}
+.pf-team-grid{row-gap:28px;align-items:center}
+.pf-team-img{grid-column:1 / 3;margin:0}
+.pf-team-img img{display:block;width:100%;height:auto}
+.pf-team-txt{grid-column:3 / 5;display:flex;flex-direction:column;gap:1.2rem}
+.pf-team-txt h2{font:300 clamp(2rem,3.4vw,3.2rem)/1.02 var(--f-display);letter-spacing:-.04em}
+.pf-team-lead{font:400 clamp(1.1rem,1.4vw,1.3rem)/1.4 var(--f-display);letter-spacing:-.01em}
+.pf-team-dl{display:grid;gap:16px;margin:0}
+.pf-team-dl div{padding-top:12px;border-top:1px solid var(--rule)}
+.pf-team-dl dt{margin-bottom:6px;font-weight:500}
+.pf-team-dl dd{margin:0;font-size:.95rem;line-height:1.5;color:var(--ink)}
+.pf-team-c{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-size:.95rem}
+@media (max-width:1024px){.pf-eng-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.pf-eng-list{grid-template-columns:1fr}.pf-team-img,.pf-team-txt{grid-column:1 / -1}.pf-steps .pf-howto{gap:0}.pf-steps .pf-howto li{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:12px;padding:16px 0;border-top-width:1px}.pf-steps .pf-howto li::before{grid-row:1 / span 3;margin:0;font-size:1.5rem}.pf-steps .pf-howto li>*{grid-column:2}.pf-steps .pf-howto h3{margin-bottom:4px}}
 .pf-leak .pf-howto li::before{color:#9fb6ff}
 .pf-howto h3,.pf-checks h3,.pf-prices h3{margin-bottom:8px;font:400 1.2rem/1.15 var(--f-display);letter-spacing:-.01em}
 .pf-howto p,.pf-checks p,.pf-prices p{font-size:.92rem;line-height:1.5}
