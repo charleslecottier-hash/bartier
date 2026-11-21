@@ -18,6 +18,7 @@ import sys
 import unicodedata
 from urllib.parse import quote, urlparse
 
+import carte
 import icons
 from metiers import COMMON, M
 
@@ -183,6 +184,33 @@ def end_html(m, cfg):
             f'<a class="es-cta es-end-cta" href="#estimation" data-start><b>Calculer mon prix{ico("arrow")}</b></a>{call}</section>')
 
 
+def zone_html(m, cfg):
+    z = cfg.get("_zone")
+    if not z:
+        return ""
+    tel = cfg.get("telephone", "")
+    telh = "+33" + re.sub(r"\D", "", tel)[1:] if tel else ""
+    who = "un artisan" if m["artisan"] == "artisan" else "un " + m["artisan"]
+    btn = (f'<a class="es-cta es-area-cta" href="tel:{telh}"><b>{ico("phone")}Parler à {e(who)}</b></a>' if tel else
+           f'<a class="es-cta es-area-cta" href="#estimation" data-start><b>Calculer mon prix{ico("arrow")}</b></a>')
+    dep = f" ({e(z['dep'])})" if z.get("dep") else ""
+    hrs = cfg.get("horaires", "").strip()
+    hrs = f'<p class="es-area-hrs">{e(fr(hrs[:1].upper() + hrs[1:]))}</p>' if hrs else ""
+    km = z["km"]
+    alt = f"Carte de la zone d’intervention : {km} km autour de {z['nom']}"
+    carte_html = ""
+    if z.get("url"):
+        W, H, R = carte.W, carte.H, carte.R
+        carte_html = (f'<div class="es-map"><div class="es-map-in" style="width:{W}px;height:{H}px">'
+                      f'<img src="{z["url"]}" width="{W}" height="{H}" alt="{a(alt)}" loading="lazy" decoding="async">'
+                      f'<svg viewBox="0 0 {W} {H}" aria-hidden="true"><circle class="es-map-zone" cx="{W // 2}" cy="{H // 2}" r="{R}"/>'
+                      f'<circle class="es-map-dot" cx="{W // 2}" cy="{H // 2}" r="7"/></svg>'
+                      f'<span class="es-map-chip" aria-hidden="true">{e(z["nom"])}</span></div>'
+                      '<span class="es-map-src">Plan © IGN</span></div>')
+    return (f'<section class="es-area" aria-labelledby="es-area-h"><div class="es-area-head"><h2 id="es-area-h">{e(fr(cfg.get("rappel") or "Notre zone d’intervention"))}</h2>'
+            f'<p>Nous intervenons dans un rayon de <b>{km}\u00a0km</b> autour de <b>{e(z["nom"])}{dep}</b>.</p>{hrs}{btn}</div>{carte_html}</section>')
+
+
 def favicon(accent):
     svg = (f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='{accent}'/>"
            "<path d='M16 7l9 7.5V25h-6v-6h-6v6H7V14.5z' fill='white'/></svg>")
@@ -333,6 +361,7 @@ def cfg_js(key, m, cfg):
     _, title, person = who(cfg)
     return dict(key=key, nom=m["nom"], ent=cfg["entreprise"], who=title if person else cfg["entreprise"], tel=tel, telh="+33" + re.sub(r"\D", "", tel)[1:] if tel else "",
                 wa=re.sub(r"\D", "", cfg.get("whatsapp", "")), envoi=cfg.get("envoi", ""), deps=cfg.get("departements", []), zone=cfg.get("zone", ""),
+                base=({"lat": cfg["_zone"]["lat"], "lon": cfg["_zone"]["lon"], "km": cfg["_zone"]["km"]} if cfg.get("_zone") else None),
                 horaires=fr(cfg.get("horaires", "")), px=cfg.get("meta_pixel", ""), qty=m["qty"], opts=opts, recap=recap, geo=GEO,
                 visite=[dict(r, txt=fr(r["txt"])) for r in m.get("visite", [])], notes=[dict(r, txt=fr(r["txt"])) for r in m.get("notes", [])],
                 varie=fr(m["varie"]), aides=fr(m.get("aides", "")), details=details_keys(m), own=bool(own))
@@ -368,6 +397,8 @@ def legal_html(m, cfg, key):
     if str(lg.get("mediateur", "")).strip():
         ment.append(f"<p>Médiateur de la consommation : {f('mediateur')}.</p>")
     ment.append(f"<p>Hébergeur : {f('hebergeur')}.</p>")
+    if (cfg.get("_zone") or {}).get("url"):
+        ment.append('<p>Carte : Plan IGN, © IGN, sous <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence/" target="_blank" rel="noopener">Licence Ouverte 2.0</a>.</p>')
     px = bool(cfg.get("meta_pixel"))
     priv = (f"<p>Responsable du traitement : {f('raison_sociale')}. Le prénom, le téléphone, le code postal et vos réponses servent à vous recontacter "
             "au sujet de votre projet et à préparer un devis, à votre demande. Ils sont conservés trois ans après le dernier contact, puis supprimés. "
@@ -457,6 +488,30 @@ svg{display:block}
 .es-gal-item{flex:0 0 78%;margin:0;scroll-snap-align:start}
 .es-gal-item img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;background:#DCE1E8}
 @media (min-width:640px){.es-gal-row{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));margin:24px 0 0;padding:0;overflow:visible}.es-gal-row[data-n="2"]{--n:2}.es-gal-row[data-n="1"]{--n:1}.es-gal-item img{aspect-ratio:4/3}}
+.es-area{grid-column:1/-1;width:100%;max-width:760px;margin:24px auto 0}
+.es-area-head{text-align:center}
+.es-area h2{font-size:clamp(1.6rem,6.4vw,2.2rem);font-weight:500;line-height:1.15;letter-spacing:-.025em;text-wrap:balance}
+.es-area-head p{max-width:44ch;margin:16px auto 0;font-size:1.08rem;line-height:1.6;color:var(--ink2)}
+.es-area-head p b{color:var(--ink);font-weight:600}
+.es-area-head .es-area-hrs{margin-top:8px;font-size:.95rem;color:var(--muted)}
+.es-area .es-area-cta{display:inline-flex;width:auto;min-width:min(100%,300px);min-height:64px;margin-top:28px}
+.es-area-cta b svg{width:20px;height:20px}
+.es-map{position:relative;height:400px;margin-top:32px;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#F1F3F6}
+.es-map-in{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.es-map-in img{display:block;width:100%;height:100%;max-width:none}
+.es-map-in svg{position:absolute;inset:0;width:100%;height:100%}
+.es-map-zone{fill:var(--go);fill-opacity:.08;stroke:var(--go);stroke-width:2.5;stroke-dasharray:10 8;stroke-linecap:round}
+.es-map-dot{fill:var(--go);stroke:#fff;stroke-width:4;filter:drop-shadow(0 2px 4px rgba(10,20,36,.25))}
+.es-map-chip{position:absolute;left:50%;top:50%;transform:translate(-50%,calc(-100% - 18px));padding:8px 16px;border-radius:12px;background:#fff;font-size:1rem;font-weight:600;white-space:nowrap;box-shadow:0 8px 24px -8px rgba(10,20,36,.3)}
+.es-map-src{position:absolute;right:12px;bottom:8px;font-size:.72rem;color:var(--muted)}
+@media (min-width:640px){.es-map{height:440px}}
+.es-sticky{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:64px;padding:10px 20px;border-radius:16px;background:var(--go);color:#fff;text-decoration:none;box-shadow:0 16px 32px -12px rgba(10,20,36,.55);transform:translateY(calc(100% + 32px));visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s .3s}
+.es-sticky.is-on{transform:none;visibility:visible;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.es-sticky b{display:inline-flex;align-items:center;gap:8px;font-size:1.12rem;font-weight:600}
+.es-sticky b svg{width:20px;height:20px}
+.es-sticky small{font-size:.84rem;opacity:.9}
+@media (min-width:960px){.es-sticky{display:none}}
+@media (prefers-reduced-motion:reduce){.es-sticky,.es-sticky.is-on{transition:none}}
 .es-end{grid-column:1/-1;width:100%;max-width:760px;margin:24px auto 0;padding:40px 24px;border-radius:24px;background:var(--ink);color:#fff;text-align:center}
 .es-end h2{font-size:clamp(1.6rem,6.4vw,2.2rem);font-weight:500;line-height:1.15;letter-spacing:-.025em;text-wrap:balance}
 .es-end p{margin-top:12px;color:#C9D1DD}
@@ -685,15 +740,18 @@ function amount(E,a,b){a=a===undefined?E.lo:a;b=b===undefined?E.hi:b;return E.fi
 function rowAmount(r){return r.lo===r.hi?"environ "+eur(Math.round(r.tlo/100)*100):eur(rnd(r.tlo,false))+" à "+eur(rnd(r.thi,true))}
 function rowUnit(r){return(r.lo===r.hi?(r.approx?"environ ":"")+nb(r.lo):nb(r.lo)+" à "+nb(r.hi))+"\u00a0"+r.u}
 function dep(cp){var x=cp.slice(0,2)==="97"?cp.slice(0,3):cp.slice(0,2);if(x==="20")x=+cp<20200?"2A":"2B";return x}
-function outZone(){return!!(C.deps.length&&A.code_postal&&C.deps.indexOf(dep(A.code_postal))<0&&C.deps.indexOf(A.code_postal.slice(0,2))<0)}
+function dist(a,b,c,e){var r=Math.PI/180,x=Math.sin((c-a)*r/2),y=Math.sin((e-b)*r/2);return 12742*Math.asin(Math.sqrt(x*x+Math.cos(a*r)*Math.cos(c*r)*y*y))}
+function outZone(){if(!A.code_postal)return false;if(C.base&&typeof A.km==="number")return A.km>C.base.km+5;return!!(C.deps.length&&C.deps.indexOf(dep(A.code_postal))<0&&C.deps.indexOf(A.code_postal.slice(0,2))<0)}
 function place(){return A.code_postal?A.code_postal+(A.commune?" "+A.commune.split(",")[0]:""):""}
 /* code postal : nom de la commune, zone d'intervention */
 var cpIn=f.querySelector("#es-cp"),cpHint=f.querySelector(".es-cp-hint"),zoneN=f.querySelector(".es-zone");
-if(cpIn)cpIn.addEventListener("input",function(){var v=cpIn.value.replace(/\D/g,"").slice(0,5);if(cpIn.value!==v)cpIn.value=v;A.commune="";cpHint.textContent="";cpHint.className="es-cp-hint";
+if(cpIn)cpIn.addEventListener("input",function(){var v=cpIn.value.replace(/\D/g,"").slice(0,5);if(cpIn.value!==v)cpIn.value=v;A.commune="";delete A.km;cpHint.textContent="";cpHint.className="es-cp-hint";
   if(v.length<5){if(zoneN)zoneN.hidden=true;return}
   A.code_postal=v;if(zoneN)zoneN.hidden=!outZone();
-  if(window.fetch)fetch(C.geo+"/communes?codePostal="+v+"&fields=nom&format=json").then(function(r){return r.ok?r.json():null}).then(function(l){if(!l||cpIn.value!==v)return;
-    if(l.length){var n=l.map(function(x){return x.nom});A.commune=n.slice(0,3).join(", ");cpHint.textContent=n.slice(0,2).join(", ")+(n.length>2?"…":"");cpHint.className="es-cp-hint is-ok"}
+  if(window.fetch)fetch(C.geo+"/communes?codePostal="+v+"&fields=nom,centre&format=json").then(function(r){return r.ok?r.json():null}).then(function(l){if(!l||cpIn.value!==v)return;
+    if(l.length){var n=l.map(function(x){return x.nom});
+      if(C.base){var ds=l.filter(function(x){return x.centre&&x.centre.coordinates}).map(function(x){return dist(C.base.lat,C.base.lon,x.centre.coordinates[1],x.centre.coordinates[0])});
+        if(ds.length){A.km=Math.round(Math.min.apply(null,ds));if(zoneN)zoneN.hidden=!outZone()}}A.commune=n.slice(0,3).join(", ");cpHint.textContent=n.slice(0,2).join(", ")+(n.length>2?"…":"");cpHint.className="es-cp-hint is-ok"}
     else{cpHint.textContent="Code postal introuvable, vérifiez-le";cpHint.className="es-cp-hint is-warn"}}).catch(function(){})});
 /* téléphone : 06 12 34 56 78 */
 var telIn=f.querySelector("#es-tel");if(telIn)telIn.addEventListener("input",function(){var g=telIn.value.replace(/\D/g,"");if(/^0/.test(g)&&g.length<=10){var fm=g.replace(/(\d{2})(?=\d)/g,"$1 ");if(fm!==telIn.value)telIn.value=fm}});
@@ -717,6 +775,12 @@ try{history.replaceState({es:0},"")}catch(x){}
 addEventListener("popstate",function(ev){if(done)return;var s=ev.state&&typeof ev.state.es==="number"?ev.state.es:0;if(s!==cur)show(s,s<cur?-1:1,false)});
 back.addEventListener("click",function(){if(history.state&&typeof history.state.es==="number"&&history.state.es>0)history.back();else if(cur>0)show(cur-1,-1,false)});
 each(d.querySelectorAll("[data-start]"),function(b){b.addEventListener("click",function(ev){ev.preventDefault();begin();toCard()})});
+/* bouton collant (téléphone) : seulement entre les sections, jamais par-dessus le questionnaire ni une fois l'estimation affichée */
+var sk=d.querySelector(".es-sticky"),skRes=f.querySelector(".es-res");
+if(sk&&window.IntersectionObserver){var skT=[".es-intro",".es-quiz",".es-end",".es-ftr",".es-cc"].map(function(q){return d.querySelector(q)}).filter(Boolean),skV=[],
+  skIO=new IntersectionObserver(function(es){es.forEach(function(x){skV[skT.indexOf(x.target)]=x.isIntersecting});
+    sk.classList.toggle("is-on",skRes.hidden&&skV.indexOf(true)<0)});
+  skT.forEach(function(t){skIO.observe(t)})}
 function check(i){var st=steps[i],bad=missing(i);
   var cp=st.querySelector("[name=code_postal]");if(cp){var ok=/^\d{5}$/.test(cp.value.trim());if(ok){A.code_postal=cp.value.trim();cp.removeAttribute("aria-invalid")}else{cp.setAttribute("aria-invalid","true");bad.push("un code postal à 5 chiffres")}}
   var pr=st.querySelector("[name=prenom]");if(pr){var tel=st.querySelector("[name=telephone]");
@@ -888,6 +952,7 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
     </form>
   </section>
   {gallery_html(m, cfg, key, gal_urls, gal_own)}
+  {zone_html(m, cfg)}
   {faq_html(m, cfg, key)}
   {end_html(m, cfg)}
 </main>
@@ -896,6 +961,7 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
   <p>Estimations indicatives, sans valeur contractuelle</p>
   <div class="es-legal">{legal_html(m, cfg, key)}</div>
 </footer>
+<a class="es-sticky" href="#estimation" data-start><b>Calculer mon prix{ico('down')}</b><small>Gratuit · 1 minute · sans engagement</small></a>
 {cc}
 {''.join(f'<script>{s}</script>' for s in scripts)}
 </body>
@@ -928,6 +994,10 @@ def build(path):
         shutil.copy(src, dst)
         photo_url = "/assets/" + dst.name
     keys = [k for k in ORDER if k in cfg.get("metiers", ORDER)]
+    cfg["_zone"], msg = carte.prepare(cfg, out)
+    print("  zone d’intervention :", msg)
+    if cfg["_zone"] and not cfg.get("zone"):
+        cfg["zone"] = f"{cfg['_zone']['nom']} et {cfg['_zone']['km']} km autour"
     (out / "assets" / "photos").mkdir(parents=True)
     photo_urls, og_src = {}, {}
     for k in keys:
@@ -964,6 +1034,7 @@ def build(path):
         "redirects": [{"source": "/", "destination": f"/{M[keys[0]]['slug']}/", "permanent": False}],
         "headers": [{"source": "/(.*)", "headers": sec},
                     {"source": "/assets/fonts/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}, indent=2), encoding="utf-8")
+    cfg.pop("_zone", None)
     (out / "robots.txt").write_text("User-agent: *\nDisallow:\n", encoding="utf-8")
     print(f"{cfg['slug']} : {len(keys)} pages ({', '.join('/' + M[k]['slug'] + '/' for k in keys)}) dans {out.relative_to(HERE)}")
     for k in keys:

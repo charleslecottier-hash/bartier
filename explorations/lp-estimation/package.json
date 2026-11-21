@@ -1,0 +1,8 @@
+{
+  "name": "lp-estimation",
+  "private": true,
+  "description": "Outil de rendu de la carte de zone des pages d'estimation",
+  "dependencies": {
+    "maplibre-gl": "^5.24.1"
+  }
+}

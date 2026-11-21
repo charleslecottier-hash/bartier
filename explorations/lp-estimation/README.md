@@ -9,17 +9,23 @@ Ces pages sont au nom du client, sur son domaine. Elles ne sont reliées ni au s
 ## Créer les pages d'un client
 
 1. Copiez `clients/exemple.json` en `clients/<slug-du-client>.json`, puis remplissez-le (voir le tableau plus bas).
-2. Lancez la génération :
+2. La première fois seulement, installez l'outil qui dessine la carte de la zone d'intervention :
+
+```bash
+npm install
+```
+
+3. Lancez la génération :
 
 ```bash
 python3 build.py clients/<slug-du-client>.json
 ```
 
-3. Le dossier `dist/<slug-du-client>/` contient tout ce qu'il faut :
+4. Le dossier `dist/<slug-du-client>/` contient tout ce qu'il faut :
    - une page par métier (`/toiture/`, `/ravalement-facade/`, `/fenetres/`, `/charpente/`, `/isolation/`) ;
-   - les polices et le logo ;
+   - les polices, le logo, les photos et la carte ;
    - un `vercel.json` qui ajoute les en-têtes de sécurité et le `noindex`, et redirige `/` vers la première page.
-4. Déployez ce dossier seul : un projet Vercel par client, sur son domaine ou un sous-domaine (par exemple `devis.entreprise-dupont.fr`).
+5. Déployez ce dossier seul : un projet Vercel par client, sur son domaine ou un sous-domaine (par exemple `devis.entreprise-dupont.fr`).
    Vercel protège un nouveau projet par une connexion à son compte : retirez cette protection (Settings, Deployment Protection) pour que la page soit publique.
 
 La fiche d'exemple est en ligne pour les tests : https://estimation-artisans-exemple-in-reach1.vercel.app/toiture/ (les numéros de téléphone et de WhatsApp sont fictifs).
@@ -40,8 +46,11 @@ Pour qu'une annonce mène directement au bon projet, ajoutez `projet=` à l'adre
 | `telephone` | Numéro affiché dans le bouton vert et à la fin |
 | `whatsapp` | Numéro WhatsApp au format international sans `+` (ex. `33612345678`). Vide : pas de bouton WhatsApp |
 | `envoi` | Adresse qui reçoit chaque demande en JSON (voir plus bas). Fortement conseillé |
-| `zone` | Zone d'intervention affichée en haut de page (ex. « Lille et 30 km autour ») |
-| `departements` | Départements couverts (ex. `["59", "62"]`). Hors zone, le visiteur est prévenu, sans être bloqué |
+| `zone` | Zone d'intervention affichée en haut de page (ex. « Lille et 30 km autour »). Vide, elle se déduit de `ville` et `rayon_km` |
+| `ville` | Commune d'où part l'artisan (ex. « Lille »). Centre de la carte de la zone d'intervention |
+| `rayon_km` | Rayon d'intervention en kilomètres (ex. `30`). Avec `ville`, il dessine la carte et sert au contrôle de zone |
+| `code_postal` | Facultatif : à remplir seulement si plusieurs communes portent le même nom que `ville` |
+| `departements` | Départements couverts (ex. `["59", "62"]`). Sert au contrôle de zone quand `ville` et `rayon_km` sont vides. Hors zone, le visiteur est prévenu, sans être bloqué |
 | `horaires` | Moment du rappel, repris après l'envoi (ex. « du lundi au vendredi ») |
 | `contact` | La personne qui rappelle : `prenom`, `role` (ex. « gérant »), `photo` (chemin relatif à la fiche). Affichée sous le bouton et à l'étape du numéro. Sans photo, ses initiales s'affichent |
 | `rappel` | Engagement de rappel affiché sous la personne (ex. « Rappel sous 24 h ouvrées »). Uniquement si l'artisan le tient |
@@ -76,6 +85,16 @@ Sous le formulaire, une section montre le métier en photos : deux ou trois par 
 Dès que l'artisan fournit ses propres photos de chantier, mettez-les dans sa fiche (`realisations`). La section devient « Les chantiers de [entreprise] ». Les légendes ne s'affichent pas : elles servent de texte de remplacement aux lecteurs d'écran. De vraies photos inspirent bien plus confiance. Retirez-en d'abord les métadonnées (lieu, date, appareil).
 
 En haut de page, sur téléphone, un encadré compact donne l'exemple d'estimation, pour que le formulaire arrive vite. Sur ordinateur, la grande maison dessinée du métier porte cet exemple.
+
+## La zone d'intervention
+
+Sous les photos, une section reprend la promesse de rappel (champ `rappel`), le rayon (« Nous intervenons dans un rayon de 30 km autour de Lille (59) »), les horaires et un bouton « Parler à un couvreur » (menuisier, façadier, charpentier ou artisan selon la page) qui appelle l'artisan. En dessous, une carte montre la zone : un cercle du rayon indiqué autour de la commune.
+
+La carte est le Plan IGN (données publiques, Licence Ouverte 2.0 : usage commercial libre en citant « © IGN », ce que font la carte et les mentions légales). Elle est dessinée une fois, à la génération, et publiée comme une simple image de 60 Ko environ : le navigateur du visiteur n'appelle aucun service de cartes, il n'y a donc ni cookie ni consentement à demander. La génération a besoin d'internet la première fois pour une commune donnée ; la carte est ensuite gardée dans `.cache/`.
+
+Le contrôle de zone du questionnaire utilise la même distance : à partir du code postal, la page calcule la distance entre la commune du visiteur et celle de l'artisan. Au-delà du rayon (plus 5 km de marge), le visiteur est prévenu que son chantier semble hors zone, sans être bloqué.
+
+Sur téléphone, un bouton « Calculer mon prix » reste en bas de l'écran quand le visiteur fait défiler les photos, la carte ou les questions. Il disparaît dès que le questionnaire, le haut ou le bas de la page sont à l'écran, et pour de bon une fois l'estimation affichée.
 
 ## L'image d'aperçu
 

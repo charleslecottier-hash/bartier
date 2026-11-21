@@ -8,6 +8,8 @@
   "whatsapp": "33639980000",
   "envoi": "",
   "zone": "Lille et 30 km autour",
+  "ville": "Lille",
+  "rayon_km": 30,
   "departements": [
     "59",
     "62"
