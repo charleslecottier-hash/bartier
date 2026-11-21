@@ -22,6 +22,7 @@ _INSEE = "https://www.insee.fr/fr/statistiques/2011101?geo=COM-<code Insee>"
 
 CITY = dict(
     slug="bordeaux", name="Bordeaux", cp="33000", insee="33063",
+    # a="au Havre",                  # seulement si « à <ville> » est incorrect (Le Havre, Les Sables-d’Olonne) ; sinon omettre
     lat=44.8378, lon=-0.5792, dept="Gironde", depcode="33", region="Nouvelle-Aquitaine",
     wiki="https://fr.wikipedia.org/wiki/Bordeaux", wikidata="Q1479",
     verified="2026-11-21",            # date de tes vérifications

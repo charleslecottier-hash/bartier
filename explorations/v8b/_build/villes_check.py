@@ -78,6 +78,8 @@ def check(path, net=False, pool=None):
         return [f"le fichier ne s’importe pas : {x}"], [], None
     if getattr(mod, "DRAFT", None):
         warn.append(f"marquée brouillon : {mod.DRAFT}")
+    if not getattr(mod, "REVIEWED", None):
+        warn.append("pas encore contre-vérifiée (pas de ligne REVIEWED) : non publiée")
     for k in REQ:
         if k not in c:
             err.append(f"champ manquant : {k}")
@@ -87,8 +89,10 @@ def check(path, net=False, pool=None):
         err.append(f"slug « {c['slug']} » différent du nom de fichier")
     if not re.fullmatch(r"[a-z0-9-]+", c["slug"]):
         err.append("slug invalide")
-    if c["title"] != f"Devis travaux à {c['name']} : toiture, façade, fenêtres, isolation":
+    if c["title"] != f"Devis travaux {c.get('a') or 'à ' + c['name']} : toiture, façade, fenêtres, isolation":
         warn.append("titre différent du modèle « Devis travaux à <ville> : toiture, façade, fenêtres, isolation »")
+    if re.search(r"(?:^|\s)(?:à|de) (?:Le|Les) [A-ZÉ]", plain(" ".join([c["title"], c["desc"], c["answer"], c["tldr"]]))) or " à Le " in str(c) or " à Les " in str(c):
+        err.append("« à Le … » : ajoutez la préposition de la ville (champ a=\"au Havre\") et écrivez « au Havre », « du Havre »")
     n = len(plain(c["desc"]))
     if not 120 <= n <= 165:
         err.append(f"desc : {n} caractères (visez 140 à 160)")
@@ -175,13 +179,15 @@ def check(path, net=False, pool=None):
 
 
 def ok(path, pool=None):
-    """Pour villes.py : la fiche est-elle publiable ?"""
+    """Pour villes.py : la fiche est-elle publiable ? Elle doit passer ce contrôle, ne pas être un brouillon,
+    et avoir été contre-vérifiée (ligne REVIEWED = "<date>" ajoutée après la relecture de ville-verificateur)."""
     err, _, _ = check(path, pool=pool)
     try:
-        draft = getattr(load(path), "DRAFT", None)
+        mod = load(path)
+        draft, reviewed = getattr(mod, "DRAFT", None), getattr(mod, "REVIEWED", None)
     except Exception:
-        draft = True
-    return not err and not draft
+        draft, reviewed = True, None
+    return not err and not draft and bool(reviewed)
 
 
 if __name__ == "__main__":

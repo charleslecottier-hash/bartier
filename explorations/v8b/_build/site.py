@@ -893,7 +893,7 @@ if "confidentialite" in LEGAL_READY and NOTICES.get("particulier_form_notice"):
     PF.PRIVACY = NOTICES["particulier_form_notice"]
 pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH)))
 import villes as VL  # pages « Devis travaux à <ville> »
-VL_HUB = "".join(f'<li><h3><a class="pf-tl" href="{VL.path(c)}">Devis travaux à {c["name"]}</a></h3><p>{c["hook"].rstrip(".")}</p></li>' for c in VL.CITIES)
+VL_HUB = "".join(f'<li><h3><a class="pf-tl" href="{VL.path(c)}">Devis travaux {VL.a_(c)}</a></h3><p>{c["hook"].rstrip(".")}</p></li>' for c in VL.CITIES)
 if len(VL.CITIES) > 8:  # au-delà de quelques villes : une liste par région, dans l'ordre alphabétique
     _regs = sorted({c["region"] for c in VL.CITIES})
     VL_HUB = "".join(f'<li class="vl-reg"><p class="vl-oh">{r}</p><ul class="vl-regl">' + "".join(
@@ -964,7 +964,7 @@ for k in PF.SLUG:
     sub = f"{PF.PATH}{PF.SLUG[k]}/"
     body = PF.build_trade(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH), (t[1], sub)), k)
     if VL.CITIES:
-        _tl = "".join(f'<li><a class="link" href="{VL.path(c)}#t-{k}">{VL.TRADE_H3[k].format(v=c["name"])}</a></li>' for c in VL.CITIES)
+        _tl = "".join(f'<li><a class="link" href="{VL.path(c)}#t-{k}">{VL.TRADE_H3[k].format(a=VL.a_(c))}</a></li>' for c in VL.CITIES)
         body = re.sub(r'(<section class="sheet pf-others".*?</ul>)', lambda m: m.group(1) + '\n  <p style="margin:36px 0 14px;padding:0 var(--cell);font-size:.8rem;color:var(--muted)">Par ville</p>\n  <ul class="pf-olist">' + _tl + '</ul>', body, count=1, flags=re.S)
     pf_write(sub, PF.PAGES[k]["title"], PF.PAGES[k]["desc"], body, PF.trade_schema(SITE, faq_ld, bc_ld, k))
 for c in VL.CITIES:
@@ -1709,7 +1709,7 @@ _llms = (ROOT / "llms.txt").read_text(encoding="utf-8").split("\n")
 _vl_at = next((i for i, l in enumerate(_llms) if l.startswith("- [Devis travaux à ")), None)
 _llms = [l for l in _llms if not l.startswith("- [Devis travaux à ")]
 if _vl_at is not None:
-    _llms[_vl_at:_vl_at] = [f'- [Devis travaux à {c["name"]}]({SITE}{VL.path(c)}) : {c["hook"].rstrip(".")}. Règles locales, aides et conseil France Rénov’, par métier.'
+    _llms[_vl_at:_vl_at] = [f'- [Devis travaux {VL.a_(c)}]({SITE}{VL.path(c)}) : {c["hook"].rstrip(".")}. Règles locales, aides et conseil France Rénov’, par métier.'
                             for c in VL.CITIES if VL.path(c) in paths]
 _llms = [l for l in _llms if not (m := re.search(r"/devis-travaux/([a-z-]+)/\)", l)) or f"/devis-travaux/{m.group(1)}/" in paths]
 (ROOT / "llms.txt").write_text("\n".join(_llms), encoding="utf-8")

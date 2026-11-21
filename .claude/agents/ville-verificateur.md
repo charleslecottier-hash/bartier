@@ -21,6 +21,8 @@ Les fiches sont dans `/home/user/bartier/explorations/v8b/_build/villes_new/<slu
 5. Corrige le fichier directement (Edit). Ne touche à aucun autre fichier, ne fais ni commit ni push.
 6. Relance `cd /home/user/bartier/explorations/v8b/_build && python3 villes_check.py <slug>` et corrige ce qu'il signale.
 
+Quand une fiche est publiable, ajoute en tête du fichier, juste après les imports, la ligne `REVIEWED = "<date du jour au format AAAA-MM-JJ>"` : sans elle, la page n'est pas publiée.
+
 Si, après corrections, une fiche n'a plus assez de matière locale prouvée (moins de 4 faits locaux solides, ou des métiers sans rien de propre à la ville), ne la complète pas avec du générique : ajoute en tête du fichier la ligne `DRAFT = "raison"` pour qu'elle ne soit pas publiée.
 
 Rends, par ville : le nombre d'affirmations vérifiées, la liste de ce que tu as corrigé ou retiré (une ligne chacun, avec la raison), et ton verdict : publiable ou brouillon.

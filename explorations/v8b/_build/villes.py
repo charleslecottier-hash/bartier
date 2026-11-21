@@ -62,8 +62,13 @@ def km(a, b):
 def voisines(c, n=6):
     return sorted((x for x in CITIES if x["slug"] != c["slug"]), key=lambda x: km(c, x))[:n]
 
-TRADE_H3 = {"toiture": "Couvreur à {v}", "facade": "Ravalement de façade à {v}", "fenetres": "Fenêtres et portes à {v}",
-            "charpente": "Charpente à {v}", "isolation": "Isolation à {v}"}
+TRADE_H3 = {"toiture": "Couvreur {a}", "facade": "Ravalement de façade {a}", "fenetres": "Fenêtres et portes {a}",
+            "charpente": "Charpente {a}", "isolation": "Isolation {a}"}
+
+
+def a_(c):
+    """« à Lyon », mais « au Havre » : la fiche peut donner sa préposition (champ « a »)."""
+    return c.get("a") or f"à {c['name']}"
 TRADE_MORE = {"toiture": "Prix d’une toiture", "facade": "Prix d’un ravalement", "fenetres": "Prix d’une fenêtre",
               "charpente": "Prix d’une charpente", "isolation": "Prix de l’isolation"}
 TRADE_PICK = {"toiture": "Devis toiture", "facade": "Devis façade", "fenetres": "Devis fenêtres", "charpente": "Devis charpente",
@@ -187,7 +192,7 @@ def carte(current=None):
         ta = ' text-anchor="end"' if lab and lab[1] == "end" else ""
         label = (f'<text x="{lab[0]}" y="{y + 4.5}" class="vl-lab{" is-on" if on else ""}"{ta}>{c["name"]}</text>'
                  if lab else f'<title>{c["name"]}</title>')
-        pins.append(f'<g>{dot}{label}</g>' if on else f'<a href="{path(c)}" aria-label="Devis travaux à {c["name"]}">{dot}{label}</a>')
+        pins.append(f'<g>{dot}{label}</g>' if on else f'<a href="{path(c)}" aria-label="Devis travaux {a_(c)}">{dot}{label}</a>')
     w, h = _MAP["w"], _MAP["h"]
     return (f'<svg class="vl-svg" viewBox="-12 -16 {w + 84} {h + 32}" role="img" aria-labelledby="vl-map-t"><title id="vl-map-t">Carte des villes : '
             + ", ".join(c["name"] for c in CITIES) + f'</title><path d="{_MAP["d"]}" class="vl-fr"/>' + "".join(pins) + '</svg>')
@@ -228,6 +233,7 @@ def _ext(label, url):
 def build_city(PF, phone, phone_txt, crumbs, c, img=None):
     tick = PF.tick()
     v = c["name"]
+    av = a_(c)
     one = lambda s: s[:-1] if s.endswith(".") and ". " not in s else s  # sous-titre d'une phrase : pas de point final
     c = dict(c, figures_intro=one(c["figures_intro"]), steps_intro=one(c["steps_intro"]), trades_intro=one(c["trades_intro"]))
     parts = PF.build(lambda a: ("", ""), phone, phone_txt, crumbs, parts=True)
@@ -237,8 +243,8 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
   <div class="grid pf-hero-grid">
     <div class="pf-intro">
       {crumbs}
-      <div class="pf-h1"><h1 class="pf-kw">Devis travaux à {v} : toiture, façade, fenêtres, isolation</h1> <p class="pf-big">Pas cinq <span class="pf-who">artisans</span>. <br>Un seul, près de chez vous.</p></div>
-      <p class="lead">Décrivez vos travaux à {v} en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
+      <div class="pf-h1"><h1 class="pf-kw">Devis travaux {av} : toiture, façade, fenêtres, isolation</h1> <p class="pf-big">Pas cinq <span class="pf-who">artisans</span>. <br>Un seul, près de chez vous.</p></div>
+      <p class="lead">Décrivez vos travaux {av} en 1 minute.<br>Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.</p>
       {PF.trust("d-only")}
       <p class="pf-call d-only">Pressé ? <a class="link" href="tel:{phone}">{phone_txt}</a></p>
     </div>
@@ -265,13 +271,13 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
 </section>"""
     steps = "".join(f"<li><h3>{a}</h3><p>{_contact(b)}</p></li>" for a, b in c["steps"])
     steps = f"""<section class="sheet" id="demarches" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Quelles démarches avant des travaux à {v} ?</h2><p>{c["steps_intro"]}</p></div>
+  <div class="grid sp-head"><h2 data-split>Quelles démarches avant des travaux {av} ?</h2><p>{c["steps_intro"]}</p></div>
   <ol class="pf-howto vl-steps">{steps}</ol>
 </section>"""
 
     facts = "".join(f"<div><dt>{a}</dt><dd>{_contact(b)}</dd></div>" for a, b in c["facts"])
     local = f"""<section class="sheet" id="a-savoir" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Que faut-il savoir avant des travaux à {v} ?</h2><p>{c["answer"]}</p></div>
+  <div class="grid sp-head"><h2 data-split>Que faut-il savoir avant des travaux {av} ?</h2><p>{c["answer"]}</p></div>
   <div class="grid"><dl class="pf-dl vl-dl">{facts}</dl></div>
   <p class="vl-src">Par <a class="link" href="/qui-sommes-nous/#charles">Charles Le Cottier</a>, cofondateur de Bartier &amp; Co. Sources officielles vérifiées le <time datetime="{verified(c)[0]}">{verified(c)[1]}</time>. Une règle a changé ? <a class="link" href="mailto:contact@bartierandco.com">Écrivez-nous</a>.</p>
 </section>"""
@@ -287,10 +293,10 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
             else:
                 src = f'src="{img(photos[k][0])[0]}" sizes="(max-width: 760px) 84px, 128px"'
             ph = f'<figure class="frame vl-tr-ph"><img {src} alt="{photos[k][1]}" width="400" height="400" loading="lazy"></figure>'
-        items.append(f'<li id="t-{k}" class="vl-tr">{ph}<div class="vl-tr-b"><h3>{TRADE_H3[k].format(v=v)}</h3>{paras}<p class="vl-more"><a class="link pf-pick" href="#projet" data-v="{k}">{TRADE_PICK[k]}</a>'
+        items.append(f'<li id="t-{k}" class="vl-tr">{ph}<div class="vl-tr-b"><h3>{TRADE_H3[k].format(a=av)}</h3>{paras}<p class="vl-more"><a class="link pf-pick" href="#projet" data-v="{k}">{TRADE_PICK[k]}</a>'
                      f'<a class="link" href="/devis-travaux/{PF.SLUG[k]}/">{TRADE_MORE[k]}</a></p></div></li>')
     trades = f"""<section class="sheet" id="travaux" data-tone="light">
-  <div class="grid sp-head"><h2 data-split>Vos travaux à {v}, métier par métier</h2><p>{c["trades_intro"]}</p></div>
+  <div class="grid sp-head"><h2 data-split>Vos travaux {av}, métier par métier</h2><p>{c["trades_intro"]}</p></div>
   <ul class="pf-checks vl-trades">{"".join(items)}</ul>
 </section>"""
 
@@ -300,20 +306,20 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
     adv = f'<li class="vl-adv"><div><p class="vl-adv-k">Conseil public, gratuit et neutre</p><h3>{a0}</h3><p>{_contact(b0)}</p></div>{call}</li>'
     aid = adv + "".join(f"<li><h3>{a}</h3><p>{_contact(b)}</p></li>" for a, b in c["aides"][1:])
     aides = f"""<section class="sheet" id="aides" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Quelles aides pour vos travaux à {v} ?</h2><p>{c["aides_intro"]}</p></div>
+  <div class="grid sp-head"><h2 data-split>Quelles aides pour vos travaux {av} ?</h2><p>{c["aides_intro"]}</p></div>
   <ul class="pf-checks vl-trades vl-aides">{aid}</ul>
 </section>"""
 
     leak = f"""<section class="sheet vl-leak" id="fuite-toiture" data-tone="light">
-  <div class="vl-leakbar"><div><h2>Une fuite de toiture à {v} ?</h2><p>Signalez-la : rappel prioritaire. En attendant, suivez <a class="link" href="/devis-travaux/toiture/#fuite-toiture">les 5 bons réflexes</a>.</p></div><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick}</a></div>
+  <div class="vl-leakbar"><div><h2>Une fuite de toiture {av} ?</h2><p>Signalez-la : rappel prioritaire. En attendant, suivez <a class="link" href="/devis-travaux/toiture/#fuite-toiture">les 5 bons réflexes</a>.</p></div><a class="btn pf-pick" href="#projet" data-v="toiture" data-need="fuite"><span>Signaler une fuite</span>{tick}</a></div>
 </section>"""
 
-    brief = [("Le service", f"Bartier &amp; Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à {v} et alentours."),
-             ("Pour qui", f"Les propriétaires à {v}, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.")] + PF.BRIEF[1:]
+    brief = [("Le service", f"Bartier &amp; Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation {av} et alentours."),
+             ("Pour qui", f"Les propriétaires {av}, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.")] + PF.BRIEF[1:]
     brief = "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in brief)
     brief = f"""<section class="sheet pf-brief" data-tone="light" aria-labelledby="pf-brief-h">
   <div class="grid pf-brief-grid">
-    <h2 id="pf-brief-h">Devis travaux à {v} : l’essentiel</h2>
+    <h2 id="pf-brief-h">Devis travaux {av} : l’essentiel</h2>
     <dl class="pf-dl">{brief}</dl>
     <p class="pf-upd">Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></p>
   </div>
@@ -322,14 +328,14 @@ def build_city(PF, phone, phone_txt, crumbs, c, img=None):
     rows = "\n".join(f'      <details class="fq"><summary><span>{q}</span><i class="fq-icon" aria-hidden="true"></i></summary><div class="fq-a"><p>{_contact(a)}</p></div></details>' for q, a in faq(c))
     faqs = f"""<section class="faq sheet" id="questions" data-kind="faq" data-tone="paper">
   <div class="grid fq-grid">
-    <div class="fq-head"><h2 data-split>Travaux à {v} : vos questions</h2><p>Une autre question ? <a class="link" href="tel:{phone}">{phone_txt}</a></p><p><a class="link" href="/devis-travaux/#questions">Voir toutes les questions</a></p></div>
+    <div class="fq-head"><h2 data-split>Travaux {av} : vos questions</h2><p>Une autre question ? <a class="link" href="tel:{phone}">{phone_txt}</a></p><p><a class="link" href="/devis-travaux/#questions">Voir toutes les questions</a></p></div>
     <div class="fq-list">
 {rows}
     </div>
   </div>
 </section>"""
 
-    cities = "".join(f'<li><a class="link" href="{path(x)}">Devis travaux à {x["name"]}</a> <span class="vl-km">{round(km(c, x)):d} km</span></li>' for x in voisines(c))
+    cities = "".join(f'<li><a class="link" href="{path(x)}">Devis travaux {a_(x)}</a> <span class="vl-km">{round(km(c, x)):d} km</span></li>' for x in voisines(c))
     cities += '<li><a class="link" href="/devis-travaux/#villes">Toutes les villes</a></li>'
     metiers = "".join(f'<li><a class="link" href="/devis-travaux/{PF.SLUG[x[0]]}/">{x[5]}</a></li>' for x in PF.TRADES)
     others = f"""<section class="sheet pf-others" data-tone="light">
@@ -348,7 +354,7 @@ PLACE = {"lille": (50.6292, 3.0573, "Nord"), "rouen": (49.4431, 1.0993, "Seine-M
 
 
 def faq(c):
-    return c["faq"] + [(f"Intervenez-vous partout à {c['name']} ?",
+    return c["faq"] + [(f"Intervenez-vous partout {a_(c)} ?",
                         "Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. "
                         "Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.")]
 
@@ -365,7 +371,7 @@ def schema(SITE, faq_ld, bc_ld, PF, c):
         {"@type": "WebPage", "@id": SITE + p, "url": SITE + p, "name": c["title"], "description": c["desc"], "inLanguage": "fr-FR",
          "dateModified": "@@MAJ@@", "lastReviewed": verified(c)[0], "isPartOf": {"@id": SITE + "/#website"}, "publisher": {"@id": SITE + "/#org"}, "about": city,
          "author": {"@type": "Person", "@id": SITE + "/qui-sommes-nous/#charles", "name": "Charles Le Cottier", "jobTitle": "Cofondateur", "url": SITE + "/qui-sommes-nous/#charles"}},
-        {"@type": "Service", "name": f"Devis travaux à {c['name']}", "serviceType": "Mise en relation avec un artisan : toiture, façade, fenêtres, charpente, isolation",
+        {"@type": "Service", "name": f"Devis travaux {a_(c)}", "serviceType": "Mise en relation avec un artisan : toiture, façade, fenêtres, charpente, isolation",
          "description": clean(c["answer"]), "url": SITE + p, "areaServed": city,
          "audience": {"@type": "Audience", "audienceType": "Propriétaires"},
          "provider": {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "url": SITE + "/"},
