@@ -1,4 +1,5 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+REVIEWED = "2026-11-21"
 
 # Sources consultées le 21/11/2026. La fiche « dossier complet » d'insee.fr renvoyait une erreur 500 ce jour-là :
 # les chiffres logement viennent du même jeu de données (Logements, principaux indicateurs du dossier complet) via l'API Melodi.
@@ -16,7 +17,9 @@ _UDAP = ("https://www.culture.gouv.fr/regions/drac-bretagne/politique-et-actions
          "les-unites-departementales-de-l-architecture-et-du-patrimoine-udap-en-bretagne/"
          "unite-departementale-de-l-architecture-et-du-patrimoine-udap-d-ille-et-vilaine-35")
 _ECOTRAVO = "https://logement.metropole.rennes.fr/ecotravo-vous-aide-a-renover-votre-logement/"
-_ALEC = "https://www.alec-rennes.org/"
+_ALEC = "https://www.alec-rennes.org/contact/"
+_ANIL_COPRO = "https://www.anil.org/aides-locales-travaux/details/ille-et-vilaine-ecotravo-copropriete-rennes-metropole-4623/"
+_E14 = "https://public.sig.rennesmetropole.fr/ressources/donnees/urbanisme/plui/envigueur/4_annexes/E14_Clotures_Ravalt_Demol.zip"
 _MF = "https://donneespubliques.meteofrance.fr/FichesClim/FICHECLIM_35281001.pdf"
 _SISM = "https://georisques.gouv.fr/api/v1/zonage_sismique?code_insee=35238"
 
@@ -26,7 +29,7 @@ CITY = dict(
     wiki="https://fr.wikipedia.org/wiki/Rennes", wikidata="Q647",
     verified="2026-11-21",
     tldr="À Rennes, le centre ancien est un secteur sauvegardé depuis 1966 : le PVC y est interdit, et les immeubles protégés gardent l’ardoise naturelle, sans isolation par l’extérieur",
-    hook="Centre ancien protégé : ni PVC ni isolation par l’extérieur.",
+    hook="Centre ancien sauvegardé : PVC interdit, ardoise naturelle sur le bâti protégé.",
     title="Devis travaux à Rennes : toiture, façade, fenêtres, isolation",
     desc="Travaux à Rennes : centre ancien en secteur sauvegardé, ardoise naturelle, PVC interdit, aides écoTravo jusqu’à 15 000 €. Un seul artisan vient chiffrer.",
     figures_intro="Ce qui compte avant de lancer des travaux dans la capitale bretonne.",
@@ -42,7 +45,7 @@ CITY = dict(
                              "Sainte-Anne (" + L("rapport du PSMV", _PSMV_RP) + "). Son plan de sauvegarde, révisé le 16 décembre 2013 et modifié le 6 février "
                              "2024, remplace le PLUi dans ce périmètre, et l’architecte des Bâtiments de France y donne son avis sur tous les travaux ("
                              + L("Rennes Métropole", _SPR) + ")."),
-           ("Menuiseries", "Dans le secteur sauvegardé, le PVC est interdit. Sur les immeubles protégés, la pose en « rénovation » sur l’ancien dormant l’est aussi ; dans les maisons "
+           ("Menuiseries", "Dans le secteur sauvegardé, le PVC est interdit sur les immeubles existants, protégés ou non. Sur les immeubles protégés, la pose en « rénovation » sur l’ancien dormant l’est aussi ; dans les maisons "
                            "médiévales et les immeubles reconstruits après l’incendie de 1720, les vitrages multiples sont interdits tant que les fenêtres "
                            "anciennes sont réparables (" + L("règlement du PSMV", _PSMV_REGL) + ", 2024)."),
            ("Toitures", "Sur les immeubles protégés du secteur sauvegardé, ardoise naturelle de provenance locale, de 4 à 6 mm d’épaisseur ; ardoise artificielle, tôle et "
@@ -50,7 +53,7 @@ CITY = dict(
                         + L("règlement du PSMV", _PSMV_REGL) + ")."),
            ("Urbanisme", "Le PLUi de Rennes Métropole, approuvé le 19 décembre 2019 pour 43 communes, a été modifié pour la dernière fois le 19 juin 2025 ; "
                          "ses annexes ont été mises à jour le 17 septembre 2026. Il exige qu’un ravalement ou une réfection de toiture améliore de façon "
-                         "significative la performance énergétique (" + L("documents du PLUi", _PLUI) + ")."),
+                         "significative la performance énergétique (" + L("documents du PLUi", _PLUI) + ", " + L("annexe E-14", _E14) + ")."),
            ("Patrimoine bâti d’intérêt local", "Hors secteur sauvegardé, le PLUi classe des édifices de 1 à 3 étoiles. Pour un 3 étoiles, la conservation de "
                                                 "tous les éléments de forte qualité patrimoniale est imposée, et tout travail sur un édifice repéré emploie "
                                                 "des techniques et des matériaux traditionnels (" + L("PLUi", _PLUI) + ")."),
@@ -66,12 +69,15 @@ CITY = dict(
         "facade": ["Sur les immeubles protégés du secteur sauvegardé, les enduits sont à la terre ou à la chaux et au sable, selon l’époque de l’immeuble, et les mortiers prêts à "
                    "l’emploi sont interdits. Les pans de bois apparents reçoivent une peinture perméante à la chaux ou à l’huile, sans enduit gratté ("
                    + L("règlement du PSMV", _PSMV_REGL) + ").",
-                   "Hors espace protégé, un simple ravalement se fait sans autorisation à Rennes. Changer la couleur de la façade demande en revanche une "
-                   "déclaration préalable (" + L("démarches d’urbanisme", _DEM) + "), et le PLUi demande que le ravalement améliore la performance énergétique."],
+                   "Hors espace protégé, un simple ravalement se fait sans autorisation à Rennes : la déclaration instituée par la Métropole en "
+                   "décembre 2023 vise d’autres communes (" + L("annexe E-14 du PLUi", _E14) + "). Changer la couleur de la façade demande en revanche "
+                   "une déclaration préalable (" + L("démarches d’urbanisme", _DEM) + "), et le PLUi demande que le ravalement améliore la "
+                   "performance énergétique (" + L("PLUi", _PLUI) + ")."],
         "fenetres": ["Sur les immeubles protégés du secteur sauvegardé, les nouvelles menuiseries reprennent l’essence, les dimensions et les moulures d’origine ; les petits bois "
                      "collés sur le vitrage sont interdits. Noir, blanc, couleurs saturées et bois naturel sont exclus des teintes (" + L("règlement du PSMV", _PSMV_REGL) + ").",
-                     "Ailleurs, remplacer une fenêtre par un modèle différent demande une déclaration préalable. En copropriété, écoTravo finance 20 % du "
-                     "montant hors taxes du remplacement des menuiseries d’origine (" + L("écoTravo", _ECOTRAVO) + ")."],
+                     "Ailleurs, remplacer une fenêtre par un modèle différent demande une déclaration préalable (" + L("démarches d’urbanisme", _DEM) + "). "
+                     "En copropriété, dans une rénovation au niveau BBC, écoTravo finance 20 % du montant hors taxes du remplacement des menuiseries "
+                     "d’origine (" + L("écoTravo", _ECOTRAVO) + ")."],
         "charpente": ["Sur les immeubles protégés du centre ancien, charpentes, escaliers, planchers et galeries sont conservés, restaurés ou restitués selon les témoins en "
                       "place. La création d’une trémie doit suivre la technique de la charpente existante et rester réversible (" + L("règlement du PSMV", _PSMV_REGL) + ").",
                       "Les doublages intérieurs y sont interdits dans les immeubles en pierre ou à pans de bois, sauf sous les rampants de toiture et dans les pièces d’eau. Lors d’une "
@@ -80,7 +86,7 @@ CITY = dict(
                       "posés à l’intérieur. Sur les autres immeubles du centre, elle est interdite sur les façades sur rue à modénatures et possible en "
                       "cœur d’îlot, sur une façade sans modénature (" + L("règlement du PSMV", _PSMV_REGL) + ").",
                       "Hors centre ancien, le PLUi autorise l’isolation extérieure au-delà des reculs, 0,50 m de hauteur en plus et un débord sur le "
-                      "trottoir s’il reste praticable (" + L("PLUi", _PLUI) + "). Pour une maison de plus de 15 ans portée au niveau BBC Rénovation, écoTravo verse jusqu’à 15 000 € ("
+                      "trottoir s’il reste praticable (" + L("PLUi", _PLUI) + "). Pour une maison de plus de 15 ans portée au niveau BBC Rénovation, écoTravo verse jusqu’à 15 000 € aux ménages éligibles à l’Anah ("
                       + L("écoTravo", _ECOTRAVO) + ")."]},
     steps_intro="Dans l’ordre, de la note d’urbanisme au conseil écoTravo.",
     steps=[("Vérifiez les règles de votre adresse", "Centre ancien, abords d’un monument historique, édifice à étoiles du PLUi : la note de "
@@ -93,9 +99,10 @@ CITY = dict(
            ("Faites autoriser l’échafaudage", "Envoyez le formulaire d’occupation temporaire du domaine public à dvgts@rennesmetropole.fr. Une redevance "
                                               "s’applique ; si la circulation change, demandez aussi un arrêté temporaire (" + L("Rennes Métropole", _VOIRIE) + ")."),
            ("Appelez écoTravo", "Conseil gratuit sur les travaux et les aides, avant de choisir le programme de travaux.")],
-    aides_intro="Le conseil public est gratuit, et écoTravo vous suit du début à la fin du projet.",
-    aides=[("écoTravo", "L’Espace Conseil France Rénov’ de Rennes Métropole, avec l’Alec du Pays de Rennes : 104 boulevard Georges-Clemenceau, 35200 Rennes. "
-                        "08 00 00 03 53. Copropriétés : 02 99 35 15 15. " + L("alec-rennes.org", _ALEC) + "."),
+    aides_intro="Le conseil écoTravo est gratuit, et ses aides se cumulent avec les aides nationales.",
+    aides=[("écoTravo", "L’Espace Conseil France Rénov’ de Rennes Métropole, avec l’Alec du Pays de Rennes : 104 boulevard Georges-Clemenceau, 35200 Rennes, "
+                        "sur rendez-vous du lundi au vendredi, de 9 h à 12 h et de 13 h 30 à 16 h 30. 08 00 00 03 53 (" + L("Alec", _ALEC) + "). "
+                        "Copropriétés : 02 99 35 22 00 (" + L("ANIL", _ANIL_COPRO) + ", 2026)."),
            ("écoTravo, maisons individuelles", "Pour une maison de plus de 15 ans en résidence principale, portée au niveau BBC Rénovation : jusqu’à 15 000 € "
                                                "pour les ménages éligibles à l’Anah, jusqu’à 8 000 € pour les ménages intermédiaires (" + L("Rennes Métropole", _ECOTRAVO) + ", 2026)."),
            ("écoTravo, copropriétés", "Immeubles construits avant 1990, visant le niveau BBC Rénovation : 3 500 € par lot principal, 1 500 € de plus en "
@@ -110,8 +117,8 @@ CITY = dict(
           "centre ancien ou aux abords d’un monument historique, une déclaration est exigée et l’architecte des Bâtiments de France donne son avis."),
          ("Peut-on poser des fenêtres en PVC à Rennes ?",
           "Pas dans le secteur sauvegardé du centre ancien, où le plan de sauvegarde interdit le PVC ; sur les immeubles protégés, la pose en rénovation et "
-          "les petits bois collés sont aussi interdits. Ailleurs, "
-          "remplacer une fenêtre par un modèle différent demande une déclaration préalable."),
+          "les petits bois collés sont aussi interdits. Ailleurs, remplacer une fenêtre par un modèle différent demande une déclaration préalable, "
+          "et un édifice à étoiles du PLUi demande des matériaux traditionnels."),
          ("Peut-on isoler par l’extérieur dans le centre de Rennes ?",
           "Non sur les immeubles protégés du secteur sauvegardé, ni sur les façades sur rue à modénatures. C’est possible en cœur d’îlot, sur une façade sans "
           "modénature. Hors centre ancien, le PLUi admet un débord sur le trottoir s’il reste praticable pour les personnes à mobilité réduite."),

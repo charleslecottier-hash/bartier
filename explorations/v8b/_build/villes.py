@@ -175,12 +175,14 @@ def carte(current=None):
     for c in sorted(CITIES, key=lambda c: (c["slug"] != current, _rank(c))):
         x, y = _xy(c)
         w = 9.2 * len(c["name"]) + 4
-        for lx, anchor in ((x + 12, "start"), (x - 12, "end")):
-            b = (lx, y - 12, lx + w, y + 6) if anchor == "start" else (lx - w, y - 12, lx, y + 6)
+        for lx, anchor, dy in ((x + 12, "start", 0), (x - 12, "end", 0), (x, "middle", -16), (x, "middle", 22),
+                               (x + 10, "start", 16), (x - 10, "end", 16), (x + 10, "start", -14), (x - 10, "end", -14)):
+            b = ((lx, y + dy - 12, lx + w, y + dy + 6) if anchor == "start" else (lx - w, y + dy - 12, lx, y + dy + 6) if anchor == "end"
+                 else (x - w / 2, y + dy - 16, x + w / 2, y + dy + 2))
             own = [o for o in boxes if not (abs((o[0] + o[2]) / 2 - x) < .1 and abs((o[1] + o[3]) / 2 - y) < .1)]
             if not hit(b) and not any(b[0] < o[2] and o[0] < b[2] and b[1] < o[3] and o[1] < b[3] for o in own):
                 placed.append(b)
-                labels[c["slug"]] = (lx, anchor)
+                labels[c["slug"]] = (lx, anchor, dy)
                 break
     pins = []
     for c in CITIES:
@@ -189,8 +191,8 @@ def carte(current=None):
         dot = (f'<circle cx="{x}" cy="{y}" r="13" class="vl-halo"/><circle cx="{x}" cy="{y}" r="6.5" class="vl-dot is-on"/>' if on
                else f'<circle cx="{x}" cy="{y}" r="5" class="vl-dot"/>')
         lab = labels.get(c["slug"])
-        ta = ' text-anchor="end"' if lab and lab[1] == "end" else ""
-        label = (f'<text x="{lab[0]}" y="{y + 4.5}" class="vl-lab{" is-on" if on else ""}"{ta}>{c["name"]}</text>'
+        ta = f' text-anchor="{lab[1]}"' if lab and lab[1] != "start" else ""
+        label = (f'<text x="{lab[0]}" y="{y + 4.5 + lab[2]}" class="vl-lab{" is-on" if on else ""}"{ta}>{c["name"]}</text>'
                  if lab else f'<title>{c["name"]}</title>')
         pins.append(f'<g>{dot}{label}</g>' if on else f'<a href="{path(c)}" aria-label="Devis travaux {a_(c)}">{dot}{label}</a>')
     w, h = _MAP["w"], _MAP["h"]

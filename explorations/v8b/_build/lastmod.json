@@ -5,7 +5,7 @@
  },
  "/blog/": {
   "date": "2026-11-21",
-  "sig": "6ea23f4d94f2b157"
+  "sig": "b9c3ea8402cd672c"
  },
  "/blog/dpe-2027/": {
   "date": "2026-11-20",
@@ -37,23 +37,23 @@
  },
  "/devis-travaux/": {
   "date": "2026-11-21",
-  "sig": "3385c4e475da35d9"
+  "sig": "90884fdd048c755a"
  },
  "/devis-travaux/bordeaux/": {
   "date": "2026-11-21",
-  "sig": "ae0ee107e11f177a"
+  "sig": "f8c73eed77f0c5a4"
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-21",
-  "sig": "44bc4235c3cd3e60"
+  "sig": "efa0ad72b693f735"
  },
  "/devis-travaux/dijon/": {
   "date": "2026-11-21",
-  "sig": "f54ece5b2dbbe9dd"
+  "sig": "d6f43f4eb88706c3"
  },
  "/devis-travaux/fenetres/": {
   "date": "2026-11-21",
-  "sig": "e3722f86caa6fb43"
+  "sig": "52df7ee48c56f0a2"
  },
  "/devis-travaux/grenoble/": {
   "date": "2026-11-21",
@@ -61,15 +61,15 @@
  },
  "/devis-travaux/isolation/": {
   "date": "2026-11-21",
-  "sig": "9a7714966cea1fa9"
+  "sig": "22621d566251d1e3"
  },
  "/devis-travaux/le-havre/": {
   "date": "2026-11-21",
-  "sig": "65c90c57d0399327"
+  "sig": "b481c9e7e2668e70"
  },
  "/devis-travaux/lille/": {
   "date": "2026-11-21",
-  "sig": "7c8e60811ffd10fe"
+  "sig": "c0e3bc2437df9309"
  },
  "/devis-travaux/lyon/": {
   "date": "2026-11-21",
@@ -85,7 +85,7 @@
  },
  "/devis-travaux/nantes/": {
   "date": "2026-11-21",
-  "sig": "5b1867815ec8fbf3"
+  "sig": "33be491228ad5464"
  },
  "/devis-travaux/nice/": {
   "date": "2026-11-21",
@@ -93,27 +93,35 @@
  },
  "/devis-travaux/paris/": {
   "date": "2026-11-21",
-  "sig": "bd7a2f6b22d8a471"
+  "sig": "1953a5fa6f4e9d88"
  },
  "/devis-travaux/ravalement-facade/": {
   "date": "2026-11-21",
-  "sig": "512a8ac185645971"
+  "sig": "510d7e3495de1bf4"
  },
  "/devis-travaux/reims/": {
   "date": "2026-11-21",
-  "sig": "cccba984ddddc738"
+  "sig": "dda03d1999ce0dcf"
+ },
+ "/devis-travaux/rennes/": {
+  "date": "2026-11-21",
+  "sig": "1cdf4fe2284b07a6"
  },
  "/devis-travaux/rouen/": {
   "date": "2026-11-21",
-  "sig": "c638bcee299bd415"
+  "sig": "fa38119cabcd23c5"
  },
  "/devis-travaux/saint-etienne/": {
   "date": "2026-11-21",
   "sig": "0716000e0176f5e8"
  },
+ "/devis-travaux/strasbourg/": {
+  "date": "2026-11-21",
+  "sig": "6b50a12e83182794"
+ },
  "/devis-travaux/toiture/": {
   "date": "2026-11-21",
-  "sig": "ff13845f9a70ad9f"
+  "sig": "cf382ffc8a094126"
  },
  "/devis-travaux/toulon/": {
   "date": "2026-11-21",

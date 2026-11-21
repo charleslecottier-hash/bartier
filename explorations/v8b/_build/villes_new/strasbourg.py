@@ -1,4 +1,5 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+REVIEWED = "2026-11-21"
 
 # Sources consultées le 21/11/2026. La fiche « dossier complet » d'insee.fr renvoyait une erreur 500 ce jour-là :
 # les chiffres logement viennent du même jeu de données (Logements, principaux indicateurs du dossier complet) via l'API Melodi.
@@ -46,13 +47,14 @@ CITY = dict(
     answer=("À Strasbourg, 92,4 % des logements sont des appartements et 22,2 % des résidences principales datent d’avant 1946. Depuis juillet 2023, "
             "le secteur sauvegardé couvre 210 hectares, de la Grande-Île au cœur de la Neustadt : un immeuble protégé par le plan de sauvegarde y demande "
             "un permis de construire, même pour un ravalement. Ailleurs, toute modification de l’aspect extérieur passe par une déclaration préalable."),
-    facts=[("Secteur sauvegardé", "Créé en 1974, il s’étend sur environ 210 hectares depuis l’arrêté préfectoral du 7 juillet 2023, qui a ajouté le nord "
-                                  "de la Grande-Île et le cœur de la Neustadt (" + L("Ville de Strasbourg", _PSMV) + "). La Grande-Île est inscrite à "
-                                  "l’Unesco depuis 1988, la Neustadt depuis 2017 (" + L("Unesco", _UNESCO) + ")."),
+    facts=[("Secteur sauvegardé", "Créé en 1974, il couvre environ 210 hectares depuis l’arrêté préfectoral du 7 juillet 2023, qui l’a révisé au sud "
+                                  "de la Grande-Île et étendu au nord et au cœur de la Neustadt (" + L("plan de sauvegarde", _PSMV) + "). La Grande-Île est "
+                                  "inscrite à l’Unesco depuis 1988, la Neustadt depuis 2017 (" + L("Ville de Strasbourg", _UNESCO) + ")."),
            ("Permis ou déclaration", "Ravalement, fenêtre de toit : toute modification de l’aspect extérieur demande une déclaration préalable. Pour un immeuble "
                                      "protégé par le plan de sauvegarde ou inscrit monument historique, il faut un permis de construire (" + L("Eurométropole", _FAQ) + ")."),
-           ("Ravalement", "Le dossier joint un échantillon de la teinte ou les références du nuancier. La Ville répond sous un mois, deux si l’architecte "
-                          "des Bâtiments de France est consulté ; sans réponse, l’accord est tacite (" + L("déclaration préalable", _DP) + ")."),
+           ("Ravalement", "La déclaration joint un échantillon de la teinte retenue, ou les références des teintes et du nuancier ("
+                          + L("déclaration préalable", _DP) + "). Elle se dépose sur le guichet numérique : une demande envoyée par courriel "
+                          "n’est pas prise en compte (" + L("guichet numérique", _GNAU) + ")."),
            ("Urbanisme", "Le PLU de l’Eurométropole, approuvé le 16 décembre 2016, couvre ses 33 communes depuis le 27 septembre 2019. Dernière "
                          "procédure : la modification simplifiée n° 6, approuvée le 6 février 2026 (" + L("Eurométropole", _PLU) + ")."),
            ("Risques", "Zone sismique 3, modérée (" + L("Géorisques", _SISM) + "). Géorisques recense aussi les inondations par débordement lent et par "
@@ -69,43 +71,46 @@ CITY = dict(
                     "L’UDAP conseille de sceller faîtières et arêtiers au mortier de chaux plutôt que de les poser à sec (" + L("UDAP", _UDAP_COUV) + ")."],
         "facade": ["Pour la pierre, le grès et le torchis des pans de bois, l’UDAP du Bas-Rhin recommande l’enduit à la chaux, qui laisse respirer le mur. "
                    "Les enduits ciment sont à éviter et les enduits plastiques ribbés ou granités sont proscrits (" + L("fiche façade", _UDAP_FAC) + ").",
-                   "Sur les immeubles d’architecture allemande, seule la peinture minérale au silicate convient ; les peintures plastiques, acryliques ou "
-                   "vinyliques sont interdites. Dans le secteur sauvegardé, un immeuble protégé demande un permis de construire pour son ravalement ("
-                   + L("Eurométropole", _FAQ) + ")."],
+                   "Pour repeindre une façade ancienne, immeubles d’architecture allemande compris, seule la peinture minérale au silicate convient ; "
+                   "les peintures épaisses plastiques, acryliques ou vinyliques sont interdites (" + L("fiche façade", _UDAP_FAC) + "). Dans le "
+                   "secteur sauvegardé, un immeuble protégé demande un permis de construire pour son ravalement (" + L("Eurométropole", _FAQ) + ")."],
         "fenetres": ["Tout changement de menuiseries extérieures demande une autorisation, même pour un remplacement dit à l’identique. La pose en "
                      "« rénovation », un nouveau dormant sur l’ancien, est proscrite ; en espace protégé, le bois peint est conservé ou restauré ("
                      + L("fiche menuiseries", _UDAP_MEN) + ", 2026).",
                      "Dans une rénovation énergétique aidée, l’Eurométropole verse un bonus si toutes les fenêtres du logement sont remplacées : 1 000 € "
                      "en bois, 1 500 € en bois-aluminium. Les fenêtres de toit comptent (" + L("règlement 2025", _REGL_MI) + ")."],
-        "charpente": ["Pour un pan de bois abîmé, l’UDAP demande une pièce de bois sec de même espèce et de même section, jamais un mur de pierre ou de "
+        "charpente": ["Pour un pan de bois abîmé, l’UDAP demande une pièce de bois sec de même espèce et de même dimension, jamais un mur de pierre ou de "
                       "parpaings. Gardez le torchis quand c’est possible, et les sablières à au moins 5 cm du sol (" + L("fiche pans de bois", _UDAP_PDB) + ", 2026).",
                       "Passer d’une couverture en simple recouvrement à une pose double alourdit le toit : faites vérifier que la charpente porte la charge. "
                       "Sur une charpente ancienne et saine, l’UDAP conseille plutôt une couverture plus légère (" + L("fiche couvertures", _UDAP_COUV) + ")."],
         "isolation": ["Pour une maison de plus de 15 ans en résidence principale, l’Eurométropole aide tous les revenus : 600 à 1 000 € pour un bouquet "
                       "de deux ou trois isolations (murs, toiture, plancher), 3 000 à 4 000 € pour atteindre l’étiquette B (" + L("règlement 2025", _REGL_MI) + ").",
                       "Avec un isolant biosourcé, le bonus atteint 1 500 € pour une isolation extérieure sous enduit et 2 000 € sous bardage. En copropriété, "
-                      "les critères Climaxion de la Région imposent d’isoler tous les murs à R ≥ 5, la toiture à R ≥ 7,5 et le plancher bas à R ≥ 3,5 ("
-                      + L("règlement copropriétés 2026", _REGL_CO) + ")."]},
+                      "les critères Climaxion de la Région s’appliquent : chaque paroi traitée est isolée en totalité, murs à R ≥ 5, toiture à R ≥ 7,5, "
+                      "plancher bas à R ≥ 3,5 (" + L("règlement copropriétés 2026", _REGL_CO) + ")."]},
     steps_intro="Dans l’ordre, de la protection de l’immeuble à l’échafaudage.",
     steps=[("Vérifiez la protection de votre immeuble", "Secteur sauvegardé, abords d’un monument historique ou rue sans protection : la police du bâtiment "
                                                      "vous renseigne au 03 68 98 51 11 (" + L("Ville de Strasbourg", _PSMV) + ")."),
            ("Consultez l’architecte des Bâtiments de France", "UDAP du Bas-Rhin, Palais du Rhin, 2 place de la République, 67082 Strasbourg cedex. "
                                                             "03 69 08 51 00 (" + L("UDAP", _UDAP_FAC) + ")."),
-           ("Déposez la déclaration ou le permis", "En ligne sur le " + L("guichet numérique", _GNAU) + " de Strasbourg ; un envoi par courriel n’est pas "
-                                                   "pris en compte. Sur papier, à la mairie, 1 parc de l’Étoile. 03 68 98 50 00."),
-           ("Faites autoriser l’échafaudage", "Au moins 15 jours avant, ou 3 semaines si la circulation est modifiée, sur demarches.strasbourg.eu, avec un "
-                                              "plan de l’emprise. 03 68 98 51 56, de 9 h à 11 h 30 en semaine (" + L("démarche", _ODP) + ")."),
-           ("Déposez les aides avant les travaux", "Les aides de l’Eurométropole ne sont pas versées si le chantier a commencé avant le dépôt du dossier complet. "
-                                                   "Conseil gratuit à l’Agence du climat.")],
-    aides_intro="Les aides de l’Eurométropole se demandent avant les travaux, par un accompagnateur agréé par l’Anah.",
-    aides=[("Agence du climat", "L’Espace Conseil France Rénov’ de l’Eurométropole de Strasbourg : 2 avenue de la Forêt-Noire, 67000 Strasbourg, sur rendez-vous. "
+           ("Déposez la déclaration ou le permis", "En ligne sur le " + L("guichet numérique", _GNAU) + " de Strasbourg, ou sur papier à la mairie, "
+                                                   "1 parc de l’Étoile. 03 68 98 50 00."),
+           ("Faites autoriser l’échafaudage", "L’occupant de la voie, en pratique l’entreprise, dépose la demande sur demarches.strasbourg.eu au moins 15 jours "
+                                              "avant, ou 3 semaines si la circulation est modifiée, avec un plan de l’emprise. 03 68 98 51 56, de 9 h à "
+                                              "11 h 30 en semaine (" + L("démarche", _ODP) + ")."),
+           ("Déposez les aides avant les travaux", "Ne commencez pas le chantier avant d’avoir déposé le dossier d’aide de l’Eurométropole : c’est une "
+                                                   "condition de ses aides. Conseil gratuit à l’Agence du climat.")],
+    aides_intro="Les aides de l’Eurométropole se demandent avant les travaux, avec un assistant à maîtrise d’ouvrage obligatoire.",
+    aides=[("Agence du climat", "L’Espace Conseil France Rénov’ de l’Eurométropole de Strasbourg : 2 avenue de la Forêt-Noire, 67000 Strasbourg. "
                                 "03 69 24 83 10, les lundis, mercredis et vendredis de 9 h à 12 h 15 et de 13 h 45 à 17 h 15, le jeudi de 13 h 45 à 17 h 15. "
                                 + L("Agence du climat", _AGENCE) + "."),
            ("Maisons individuelles", "Pour une maison de plus de 15 ans, sans plafond de revenus : 600 à 1 000 € par bouquet d’isolation ou 3 000 à 4 000 € "
                                      "au niveau BBC, 1 000 à 1 500 € pour la maîtrise d’œuvre, et des bonus biosourcés (jusqu’à 2 000 €), fenêtres en bois "
-                                     "(jusqu’à 1 500 €) et protections solaires (jusqu’à 1 000 €). Règlement 2024-2026 (" + L("Eurométropole", _AIDES_MI) + ")."),
+                                     "(jusqu’à 1 500 €) et protections solaires (jusqu’à 1 000 €). Dispositif 2024-2026 (" + L("Eurométropole", _AIDES_MI) + ", "
+                                     + L("règlement 2025", _REGL_MI) + ")."),
            ("Copropriétés", "Jusqu’à 80 logements, 750 à 1 000 € par logement pour un bouquet de deux ou trois isolations, davantage au-delà, plus 500 € "
-                            "par logement au niveau BBC. Gain énergétique d’au moins 35 % et copropriété immatriculée (" + L("Eurométropole", _AIDES_CO) + ")."),
+                            "par logement au niveau BBC (" + L("règlement 2026", _REGL_CO) + "). Gain énergétique d’au moins 35 % et copropriété "
+                            "immatriculée (" + L("Eurométropole", _AIDES_CO) + ")."),
            ("Complément aux aides de l’Anah", "Pour les ménages modestes ou très modestes en maison de plus de 15 ans : 5 % ou 10 % des dépenses en plus de "
                                               "l’Anah, sur 40 000 € de travaux au plus, avec un gain d’au moins deux classes d’étiquette (" + L("ANIL", _ANIL_ANAH) + ", 2026)."),
            NATIONAL],
@@ -114,7 +119,8 @@ CITY = dict(
           "le plan de sauvegarde ou inscrit monument historique, il faut un permis de construire."),
          ("Quelles règles dans le secteur sauvegardé de Strasbourg ?",
           "Depuis le 7 juillet 2023, il couvre environ 210 hectares, de la Grande-Île au cœur de la Neustadt. L’architecte des Bâtiments de France y donne "
-          "son avis, et l’instruction d’une déclaration préalable passe alors d’un à deux mois."),
+          "son avis, et un immeuble protégé par le plan de sauvegarde demande un permis de construire. Pour savoir si votre immeuble l’est, appelez la "
+          "police du bâtiment : 03 68 98 51 11."),
          ("Quelles tuiles pour un toit à Strasbourg ?",
           "Sur le bâti ancien, des tuiles plates écailles en terre cuite rouge, comme la queue-de-castor, au format courant de 16 sur 38 cm. L’UDAP du "
           "Bas-Rhin déconseille les tuiles béton et les tuiles noires engobées."),
@@ -125,6 +131,6 @@ CITY = dict(
           "L’Eurométropole aide les maisons de plus de 15 ans sans plafond de revenus, jusqu’à 4 000 € au niveau BBC plus des bonus, ainsi que les "
           "copropriétés. Conseil gratuit à l’Agence du climat : 03 69 24 83 10."),
          ("Comment faire autoriser un échafaudage à Strasbourg ?",
-          "Demandez l’occupation du domaine public sur demarches.strasbourg.eu au moins 15 jours avant, 3 semaines si la circulation est modifiée. "
-          "Renseignements : 03 68 98 51 56.")],
+          "L’entreprise qui occupe la voie demande l’occupation du domaine public sur demarches.strasbourg.eu au moins 15 jours avant, 3 semaines si "
+          "la circulation est modifiée. Renseignements : 03 68 98 51 56.")],
 )

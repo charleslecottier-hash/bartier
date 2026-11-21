@@ -43,8 +43,8 @@ CITY = dict(
           "en bois y sont la règle, et dans toute la ville, repeindre ses volets demande une déclaration préalable"),
     hook="Plan de sauvegarde de 200 ha, ardoise et tuffeau.",
     title="Devis travaux à Angers : toiture, façade, fenêtres, isolation",
-    desc=("Travaux à Angers : plan de sauvegarde de 200 ha, ardoise naturelle, volets et façades sous déclaration, aides de "
-          "la Ville et de la Métropole. Un seul artisan vient chiffrer."),
+    desc=("Travaux à Angers : plan de sauvegarde de 200 ha, ardoise naturelle, volets sous déclaration, aides de la "
+          "Métropole. Un seul artisan vient chiffrer."),
     figures_intro="Le bâti angevin en quatre chiffres, de la Doutre aux quartiers d’après-guerre.",
     figures=[("77,0 <small>%</small>", "des logements sont des appartements", S("Insee, 2023", _INSEE)),
              ("36,3 <small>%</small>", "des résidences principales datent d’avant 1971", S("Insee, 2023", _INSEE)),
@@ -69,7 +69,8 @@ CITY = dict(
                                   "La Ménitré et deux secteurs de Corzé sont classés (" + L("préfecture", _TERM) + "). Aucun arrêté mérule "
                                   "dans le Maine-et-Loire (" + L("préfecture", _MERULE) + ", 2026)."),
            ("Risques et climat", "Les bords de Maine relèvent du plan de prévention du risque inondation de la Confluence de la Maine, "
-                                 "approuvé le 19 octobre 2009 (" + L("règlement", _PPRI) + "). Zone sismique 2, faible, et potentiel radon "
+                                 "approuvé le 19 octobre 2009 (" + L("règlement", _PPRI) + ", " + L("Autorité environnementale", _MRAE)
+                                 + "). Zone sismique 2, faible, et potentiel radon "
                                  "de catégorie 3, la plus élevée ("
                                  + L("Géorisques", _RADON) + "). À Beaucouzé, 709,3 mm de pluie et 31,6 jours de gel par an ("
                                  + L("Météo-France", _MF) + ", normales 1991-2020).")],
@@ -85,8 +86,9 @@ CITY = dict(
         "facade": ["Les joints du tuffeau se refont au mortier de chaux naturelle avec sablon et poudre de tuffeau ; les joints au ciment sont "
                    "interdits, comme le sablage, le disque ou l’acide sur la pierre. Un enduit ciment qui dégrade le tuffeau doit être retiré, et "
                    "les enduits se font à la chaux naturelle et au sable de Loire (" + L("règlement du PSMV", _PSMV) + ").",
-                   "Ravaler demande une déclaration préalable. Dans un périmètre de campagne, la Ville aide après les travaux ; hors campagne, "
-                   "elle a par exemple versé 6 855,65 € pour un immeuble de la place Molière en septembre 2025 (" + L("Ville d’Angers", _RAV) + ")."],
+                   "Ravaler demande une déclaration préalable, et l’échafaudage sur le trottoir une autorisation demandée au moins 30 jours avant ("
+                   + L("formulaire", _ODP_F) + "). Hors campagne, la Ville a par exemple versé 6 855,65 € pour un immeuble de la place Molière "
+                   "en septembre 2025 (" + L("Ville d’Angers", _RAV) + ")."],
         "fenetres": ["Dans le plan de sauvegarde, le bois peint est le matériau de référence et peut être imposé. Le PVC, le noir et le blanc pur "
                      "sont interdits, et les volets roulants ne sont pas admis sur les bâtiments d’avant 1930, sauf s’ils étaient d’origine ("
                      + L("règlement du PSMV", _PSMV) + ").",
