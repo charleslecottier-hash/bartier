@@ -17,7 +17,6 @@ _CATNAT = "https://georisques.gouv.fr/api/v1/gaspar/catnat?code_insee=57463&page
 _UDAP = "https://www.culture.gouv.fr/regions/drac-grand-est/services/patrimoines-architecture/udap/udap-de-la-moselle"
 _URBA = "https://metz.fr/famille/logement/permis_construire.php"
 _PORTAIL = "https://urbanisme.eurometropolemetz.eu/"
-_GEO = "https://geo.metzmetropole.fr/"
 _ODP = "https://metz.fr/fichiers/2026/03/02/Formulaire_ODP_METZ_Stationnement_2026.pdf"
 _ALEC = "https://www.alec-paysmessin.fr/maisons-individuelles/"
 _RENOV = "https://www.eurometropolemetz.eu/vivre-habiter/se-loger/renover-son-logement"
@@ -91,15 +90,15 @@ CITY = dict(
                       "l’entre-deux-guerres, avec corniches, bandeaux et encadrements reconstitués (" + L("règlement du plan de sauvegarde", _PSMV_REG) + ").",
                       "En Outre-Seille, l’Eurométropole ajoute aux aides de l’Anah 10 % des travaux d’énergie hors taxes, jusqu’à 3 500 €, pour les "
                       "propriétaires occupants modestes ou très modestes (" + L("Eurométropole", _RENOV) + ", 2026)."]},
-    steps_intro="Dans l’ordre, de la carte des secteurs à l’échafaudage.",
-    steps=[("Repérez votre secteur", "Secteur sauvegardé, abords d’un monument ou zone du PLU : cherchez votre adresse puis votre parcelle sur "
-                                     + L("Géo Metz Métropole", _GEO) + " pour lire le règlement qui s’applique."),
-           ("Montrez le projet à l’architecte des Bâtiments de France", "L’UDAP de la Moselle le reçoit chaque semaine à Metz, sur rendez-vous, avant "
-                                                                        "le dépôt. 10/12 place Saint-Étienne. 03 87 36 08 27 (" + L("UDAP", _UDAP) + ")."),
-           ("Déposez la déclaration préalable", "En ligne sur le " + L("portail urbanisme", _PORTAIL) + " de l’Eurométropole, qui instruit les "
+    steps_intro="Dans l’ordre, du repérage du secteur à l’occupation de la rue.",
+    steps=[("Repérez votre secteur", "Secteur sauvegardé, abords d’un monument ou zone du PLU : le " + L("portail urbanisme", _PORTAIL)
+                                     + " de l’Eurométropole permet de consulter les règles locales avant de préparer le dossier."),
+           ("Montrez le projet à l’architecte des Bâtiments de France", "Il examine les projets avant le dépôt, chaque semaine à Metz, sur "
+                                                                        "rendez-vous pris auprès de l’UDAP de la Moselle, 10/12 place Saint-Étienne. 03 87 36 08 27 (" + L("UDAP", _UDAP) + ")."),
+           ("Déposez la déclaration préalable", "En ligne sur ce même " + L("portail", _PORTAIL) + ". L’Eurométropole instruit les "
                                                 "dossiers de Metz. Par courrier : service Urbanisme réglementaire et qualité urbaine, 144 route de "
                                                 "Thionville, 57050 Metz (" + L("Ville de Metz", _URBA) + ")."),
-           ("Faites autoriser l’occupation de la rue", "Le permis ne vaut pas autorisation d’occuper le domaine public : le service Travaux et "
+           ("Faites autoriser l’occupation de la rue", "Le permis ou la déclaration ne vaut pas autorisation d’occuper le domaine public : le service Travaux et "
                                                        "coordination des espaces publics la délivre, après avis de l’urbanisme. Sur le plateau "
                                                        "piétonnier, un véhicule de chantier paie 19,80 € par jour en 2026, à demander 15 jours "
                                                        "avant : circulation@mairie-metz.fr, 03 87 55 54 52 (" + L("formulaire", _ODP) + ")."),
@@ -125,7 +124,7 @@ CITY = dict(
           "demandent une autorisation et l’avis conforme de l’architecte des Bâtiments de France. Les panneaux solaires sont interdits sur les immeubles protégés."),
          ("Peut-on poser des fenêtres en PVC dans le centre de Metz ?",
           "Pas dans le secteur sauvegardé : les menuiseries neuves y sont en bois, ou en métal si l’immeuble s’y prête, et la pose dite « rénovation » "
-          "est interdite. Dans les six périmètres d’abords de monuments, l’architecte des Bâtiments de France donne aussi son accord."),
+          "est interdite. Aux abords des monuments historiques, l’architecte des Bâtiments de France donne aussi son accord."),
          ("Metz est-elle en zone inondable ?",
           "En partie. Le plan de prévention des risques d’inondation, approuvé le 28 juin 2005, couvre la Moselle, la Seille et le ruisseau de "
           "Vallières. Vérifiez le zonage de votre parcelle avant des travaux au rez-de-chaussée."),

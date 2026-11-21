@@ -34,7 +34,7 @@ CITY = dict(
          "en bois, et deux îlots de la ville sont classés à risque de mérule depuis décembre 2025, une première en Indre-et-Loire",
     hook="Secteur sauvegardé de 150 hectares, tuffeau et ardoise, termites et mérule.",
     title="Devis travaux à Tours : toiture, façade, fenêtres, isolation",
-    desc="Travaux à Tours : secteur sauvegardé, tuffeau et ardoise, termites et mérule, val inondable entre Loire et Cher, conseil ARTEMIS. Un seul artisan vient chiffrer.",
+    desc="Travaux à Tours : secteur sauvegardé, tuffeau et ardoise, termites et mérule, val inondable entre Loire et Cher. Un seul artisan vient chiffrer.",
     figures_intro="Ce qui compte avant de lancer des travaux à Tours, entre Loire et Cher.",
     figures=[("80,9 <small>%</small>", "des logements sont des appartements", S("Insee, 2023", _INSEE)),
              ("45,2 <small>%</small>", "des résidences principales datent d’avant 1971", S("Insee, 2023", _INSEE)),
@@ -65,7 +65,7 @@ CITY = dict(
                     "Dans les quartiers de lotissements, le PLU interdit la tôle ondulée, le bac acier, le fibrociment et l’ardoise posée en losange. "
                     "La station de Tours compte 37,4 jours de rafales d’au moins 58 km/h par an, surtout de décembre à avril : faites revoir ardoises "
                     "et faîtages avant l’hiver (" + L("Météo-France", _MF) + ")."],
-        "facade": ["Le tuffeau appareillé reste apparent. Le plan de sauvegarde impose un nettoyage à l’eau à basse ou moyenne pression, proscrit le sablage "
+        "facade": ["Dans le secteur sauvegardé, le tuffeau appareillé reste apparent. Le plan de sauvegarde impose un nettoyage à l’eau à basse ou moyenne pression, proscrit le sablage "
                    "et tout hydrofuge, et reprend les joints au mortier de chaux. Les enduits se font à la chaux, avec du sable de Loire ou du Loir ("
                    + L("plan de sauvegarde", _PSMV) + ").",
                    "Dans les quartiers d’habitat, le PLU demande qu’un ravalement améliore si nécessaire la performance énergétique : label BBC Rénovation "
