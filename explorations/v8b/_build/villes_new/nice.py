@@ -79,7 +79,7 @@ CITY = dict(
         "charpente": ["Nice est en zone de surveillance et de lutte contre les termites sur tout son territoire (" + L("préfecture", _TERM) + "). "
                       "En démolition, même partielle, les bois contaminés sont brûlés sur place ou traités avant d’être transportés.",
                       "En zone de sismicité 4, les règles parasismiques de l’Eurocode 8 s’imposent aux projets soumis à permis de construire ("
-                      "" + L("DICRIM", _DICRIM) + "). Ne déposez pas génoises ni avant-toits pour simplifier "
+                      + L("DICRIM", _DICRIM) + "). Ne déposez pas génoises ni avant-toits pour simplifier "
                       "un ravalement : la Ville rappelle que cela bouleverse la statique de la partie concernée (" + L("guide du ravalement", _GUIDE) + ")."],
         "isolation": ["L’isolation par l’extérieur est interdite dans le Vieux-Nice, et la Ville la déconseille sur les bâtiments d’avant les "
                       "années 1950 et sur les façades très ornées (" + L("guide du ravalement", _GUIDE) + "). Sur les immeubles repérés "

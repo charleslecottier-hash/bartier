@@ -25,7 +25,7 @@ CITY = dict(
     wiki="https://fr.wikipedia.org/wiki/Saint-%C3%89tienne", wikidata="Q42716",
     verified="2026-11-21",
     tldr="À Saint-Étienne, le ravalement est imposé dans certaines rues de l’hyper-centre, et la Ville le subventionne pour les immeubles "
-         "d’avant 1960 situés en site patrimonial remarquable",
+         "du centre construits avant 1960 et situés en site patrimonial remarquable",
     hook="Ravalement imposé dans l’hyper-centre, aidé par le plan façades.",
     title="Devis travaux à Saint-Étienne : toiture, façade, fenêtres, isolation",
     desc="Travaux à Saint-Étienne : cinq sites patrimoniaux remarquables, ravalement imposé dans l’hyper-centre, plan façades, radon. Un seul artisan vient chiffrer.",
@@ -33,7 +33,7 @@ CITY = dict(
     figures=[("87,1 <small>%</small>", "des logements sont des appartements", S("Insee, 2023", _INSEE)),
              ("34,6 <small>%</small>", "des résidences principales datent de 1946 à 1970", S("Insee, 2023", _INSEE)),
              ("5", "sites patrimoniaux remarquables dans la ville", S("UDAP de la Loire, 2025", _UDAP)),
-             ("59,7 <small>jours</small>", "de gel par an à Saint-Étienne-Bouthéon", S("Météo-France, normales 1991-2020", _MF))],
+             ("59,7 <small>jours</small>", "de gel par an à la station de Saint-Étienne-Bouthéon", S("Météo-France, normales 1991-2020", _MF))],
     answer=("87,1 % des logements sont des appartements, et 34,6 % des résidences principales datent de 1946 à 1970. Cinq secteurs sont des sites "
             "patrimoniaux remarquables, où les travaux passent par l’accord de l’architecte des Bâtiments de France. Dans certaines rues de "
             "l’hyper-centre, la Ville impose le ravalement ; son plan façades aide les immeubles d’avant 1960."),
@@ -50,11 +50,11 @@ CITY = dict(
            ("Radon", "La commune est classée en zone 3, à potentiel radon significatif (" + L("Géorisques", _RADON) + "). Géorisques recommande d’y "
                      "mesurer le radon dans les pièces occupées les plus basses, pendant au moins 2 mois en période de chauffe ("
                      + L("fiche radon", _FRADON) + ")."),
-           ("Climat", "À Saint-Étienne-Bouthéon, à 395 m d’altitude : 59,7 jours de gel, 20,5 jours de neige et 33,9 jours avec des rafales de "
+           ("Climat", "À la station de Saint-Étienne-Bouthéon, à 395 m d’altitude : 59,7 jours de gel, 20,5 jours de neige et 33,9 jours avec des rafales de "
                       "58 km/h ou plus, chaque année (" + L("Météo-France", _MF) + ", normales 1991-2020).")],
     trades_intro="Immeubles anciens du centre, hivers froids, sous-sol minier : à Saint-Étienne, chaque métier a ses points de vigilance.",
     trades={
-        "toiture": ["Avec 59,7 jours de gel et 33,9 jours de rafales d’au moins 58 km/h par an à Bouthéon (" + L("Météo-France", _MF) + ", 1991-2020), "
+        "toiture": ["Avec 59,7 jours de gel et 33,9 jours de coups de vent à 58 km/h ou plus par an à Bouthéon (" + L("Météo-France", _MF) + ", 1991-2020), "
                     "tuiles, solins et gouttières travaillent tout l’hiver. Faites-les contrôler à l’automne, avant les premières gelées.",
                     "Dans les sites patrimoniaux remarquables, les règles d’urbanisme peuvent porter sur les toitures (" + L("Ville de Saint-Étienne", _SPR)
                     + "). Dans le centre, le plan façades subventionne aussi la restauration des parties sommitales de toiture, avec une visite préalable "
@@ -66,7 +66,7 @@ CITY = dict(
                    "rues sont sous injonction de ravalement. Pour un immeuble labellisé par la Fondation du patrimoine, jusqu’à 100 % des travaux se "
                    "déduisent du revenu imposable (" + L("plan façades", _PF) + ")."],
         "fenetres": ["En site patrimonial remarquable, la déclaration préalable pour changer des fenêtres est soumise à l’accord de l’architecte des "
-                     "Bâtiments de France et s’instruit en 2 mois, contre 1 mois ailleurs (" + L("Service-Public", SP + "F17578") + ", "
+                     "Bâtiments de France et s’instruit en général en 2 mois, contre 1 mois ailleurs (" + L("Service-Public", SP + "F17578") + ", "
                      + L("ministère de la Culture", _CULT) + ").",
                      "La Ville rappelle que les règles de ses sites patrimoniaux portent sur les matériaux employés (" + L("Ville de Saint-Étienne", _SPR)
                      + "). Avant de choisir bois, aluminium ou PVC, demandez les préconisations de l’UDAP de la Loire, qui reçoit sur rendez-vous ("
@@ -94,7 +94,7 @@ CITY = dict(
            ("Faites le point sur l’énergie", "Le plan façades exige un document de Rénov’actions42 sur les travaux de performance énergétique possibles. "
                                              "C’est aussi le moment de demander les aides, avant de signer."),
            ("Déposez la demande en ligne", "Déclaration préalable ou permis se déposent sur le " + L("guichet numérique", _GNAU) + " de Saint-Étienne "
-                                           "Métropole. En site patrimonial remarquable, comptez 2 mois d’instruction."),
+                                           "Métropole. En site patrimonial remarquable, comptez en général 2 mois d’instruction."),
            ("Faites autoriser l’échafaudage", "Une autorisation d’occupation du domaine public, payante, se demande au moins 12 jours avant le chantier, "
                                               "par courriel à droitdevoirie@saint-etienne.fr. 04 77 48 73 18 (" + L("démarche", _ODP) + ").")],
     aides_intro="À Saint-Étienne, la Ville aide les façades du centre et la Métropole les copropriétés.",
@@ -109,7 +109,7 @@ CITY = dict(
                                         "gain énergétique dépasse 35 %, avec des primes individuelles pour les propriétaires occupants modestes ("
                                         + L("Rénov’actions42, 2026", _R42A) + ")."),
            ("Label de la Fondation du patrimoine", "Par convention avec la Ville, un immeuble labellisé permet de déduire du revenu imposable jusqu’à 100 % "
-                                                   "du montant des travaux de façade (" + L("plan façades", _PF) + ")."),
+                                                   "du montant des travaux (" + L("plan façades", _PF) + ")."),
            NATIONAL],
     faq=[("Le ravalement est-il obligatoire à Saint-Étienne ?",
           "Dans certaines rues de l’hyper-centre, oui : la Ville a pris des injonctions de ravalement (article L126-3 du code de la construction et de "
@@ -120,7 +120,7 @@ CITY = dict(
           "Pour une adresse précise, interrogez l’UDAP de la Loire : 04 77 49 35 50."),
          ("Faut-il une autorisation pour changer ses fenêtres à Saint-Étienne ?",
           "Oui, une déclaration préalable dès que l’aspect extérieur change, sur le guichet numérique de Saint-Étienne Métropole. En site patrimonial "
-          "remarquable, l’architecte des Bâtiments de France doit donner son accord, et l’instruction prend 2 mois."),
+          "remarquable, l’architecte des Bâtiments de France doit donner son accord, et l’instruction prend en général 2 mois."),
          ("Les anciennes mines limitent-elles les travaux à Saint-Étienne ?",
           "Sur une petite partie de la ville : moins de 8 % de la zone urbanisée est touchée par des restrictions liées aux risques miniers, adaptées au "
           "niveau d’aléa. Pour une extension ou une surélévation, vérifiez votre parcelle auprès du service urbanisme."),

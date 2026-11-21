@@ -31,7 +31,7 @@ CITY = dict(
     desc="Travaux au Havre : centre Perret protégé, toits-terrasses, vent de mer, aide au ravalement des façades en brique. Un seul artisan vient chiffrer.",
     figures_intro="Ce qui compte avant de lancer des travaux dans la ville reconstruite.",
     figures=[("73,2 <small>%</small>", "des logements sont des appartements", S("Insee, 2023", _INSEE)),
-             ("42,4 <small>%</small>", "des résidences principales datent de 1946 à 1970, les années de la Reconstruction", S("Insee, 2023", _INSEE)),
+             ("42,4 <small>%</small>", "des résidences principales datent de 1946 à 1970", S("Insee, 2023", _INSEE)),
              ("2005", "inscription du centre reconstruit au patrimoine mondial de l’Unesco", S("Ville du Havre", _UNESCO)),
              ("180 <small>km/h</small>", "record de rafale au cap de la Hève, le 16 octobre 1987", S("Météo-France", _MF))],
     answer=("Près de trois logements sur quatre sont des appartements (73,2 %), et 42,4 % des résidences principales datent de 1946 à 1970. "
@@ -65,19 +65,19 @@ CITY = dict(
                     "Faites vérifier relevés d’étanchéité, couvertines et fixations avant l’hiver."],
         "facade": ["Dans le centre reconstruit, un ravalement porte toujours sur un bâtiment entier, et sur tout l’îlot quand ses immeubles viennent "
                    "d’un même projet. Le béton retrouve son aspect d’origine : sablage interdit, aciers oxydés mis à nu, passivés puis enrobés de mortier. "
-                   "Les immeubles de catégories 1 et 2 sont restitués dans leur état d’origine (" + L("règlement du SPR", _SPR) + ").",
+                   "En catégories 1 et 2, les motifs décoratifs supprimés ou abîmés sont restitués (" + L("règlement du SPR", _SPR) + ").",
                    "À Thiers-Coty-Flaubert, Sainte-Marie et Saint-Léon, la Ville aide le ravalement des façades en brique jusqu’au 31 décembre 2026 : "
                    "30 % des travaux hors taxes, plafonnés à 6 000 € par 100 m² de façade, y compris pour retrouver la brique sous un enduit. "
                    "Les travaux attendent son accord (" + L("Ville du Havre", _RAV) + ")."],
         "fenetres": ["Dans le centre reconstruit, une fenêtre neuve garde les dimensions, la position dans la baie et la couleur de l’ancienne. En catégorie 1, "
-                     "tout se remplace à l’identique et le PVC est proscrit, comme en catégorie 2. Ailleurs, la section des profils et la surface vitrée "
-                     "peuvent varier de 15 % au plus. La pose en rénovation, qui garde l’ancien dormant, est proscrite partout dans le site "
-                     "(" + L("règlement du SPR", _SPR) + ").",
+                     "tout se remplace à l’identique et le PVC est proscrit, comme en catégorie 2. Dans les autres cas, la section des profils et la surface vitrée "
+                     "peuvent varier de 15 % au plus. La pose en rénovation, qui garde l’ancien dormant, est proscrite pour tous les immeubles de la "
+                     "Reconstruction (" + L("règlement du SPR", _SPR) + ").",
                      "Le règlement recommande le bois, matériau des menuiseries de la Reconstruction. En catégories 1 et 2, persiennes et volets en PVC "
                      "sont interdits ; à défaut des couleurs d’origine, ils se peignent en gris RAL 7037. Hors du centre reconstruit aussi, un remplacement "
                      "de menuiseries passe par une déclaration préalable (" + L("Ville du Havre", _DP) + ")."],
         "charpente": ["Le Havre n’est pas classé en zone termites : l’arrêté préfectoral du 12 juin 2023 ne vise que trois communes de l’agglomération "
-                      "de Rouen (" + L("préfecture", _TERM) + "). Dans le centre reconstruit, les immeubles des XVIIIe et XIXe siècles gardent des toits "
+                      "de Rouen (" + L("préfecture", _TERM) + "). Dans le centre reconstruit, les immeubles des XVIIIe et XIXe siècles sont couverts de toits "
                       "à deux pentes, de 30° à 60°, ou à combles brisés (" + L("règlement du SPR", _SPR) + ").",
                       "Pour ces immeubles d’avant la Reconstruction, le règlement fait conserver les volumes de toiture et les couvertures en ardoise "
                       "naturelle, zinc ou tuile petit format ; les matériaux synthétiques sont interdits. L’isolation par-dessus les chevrons (sarking) "
@@ -91,7 +91,7 @@ CITY = dict(
     steps_intro="Dans l’ordre, du centre reconstruit aux quartiers de la ville haute.",
     steps=[("Trouvez la catégorie de votre immeuble", "Dans le centre reconstruit, le plan du site patrimonial remarquable donne la catégorie de chaque "
                                                      "bâtiment, et donc ses règles (" + L("règlement du SPR", _SPR) + "). Service urbanisme de la Ville : "
-                                                     "02 79 92 76 90, urbanisme@lehavre.fr."),
+                                                     "02 79 92 76 90, urbanisme@lehavre.fr (" + L("Ville du Havre", _UNESCO) + ")."),
            ("Façade en brique : contactez la Ville", "À Thiers-Coty-Flaubert, Sainte-Marie et Saint-Léon, le service Urbanisme et prospective fixe les "
                                                     "prescriptions avant les devis. 02 35 22 27 96 (" + L("campagnes de ravalement", _RAV) + ")."),
            ("Déposez la déclaration préalable", "En ligne sur le portail Mes démarches (netsve.lehavre.fr), ou au service Droit des sols et permis de "
@@ -117,7 +117,7 @@ CITY = dict(
           "déclaration préalable."),
          ("Faut-il une autorisation pour changer ses fenêtres au Havre ?",
           "Oui, la Ville soumet le remplacement de menuiseries à déclaration préalable. Dans le centre reconstruit, la fenêtre neuve garde dimensions, "
-          "position et couleur ; la pose en rénovation est proscrite, et le PVC l’est en catégories 1 et 2."),
+          "position et couleur ; la pose en rénovation est proscrite pour les immeubles de la Reconstruction, et le PVC l’est en catégories 1 et 2."),
          ("Peut-on isoler sa façade par l’extérieur dans le centre reconstruit ?",
           "Pas en catégories 1 et 2. En catégories 3 et 4, c’est possible dans un projet d’ensemble, au-dessus du soubassement et sans bardage PVC. "
           "Sinon, le règlement oriente vers l’isolation par l’intérieur ou le remplissage de la lame d’air."),
