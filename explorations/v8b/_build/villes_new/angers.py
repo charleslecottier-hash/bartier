@@ -23,6 +23,7 @@ _RAV = "https://presse.angers.fr/private/uploads/piecesjointes/cahier-de-deliber
 _RAV2 = "https://presse.angers.fr/private/uploads/piecesjointes/cahier-des-deliberations-conseil-municipal-1512.pdf"
 _TERM = ("https://www.maine-et-loire.gouv.fr/Actions-de-l-Etat/Urbanisme-amenagement-du-territoire-construction-et-logement/"
          "Batiment-Construction/Termites-et-merule/Les-termites-dans-le-Maine-et-Loire")
+_TERM_PL = "https://www.maine-et-loire.gouv.fr/contenu/telechargement/20449/135854/file/A4-Plaquette-Termites_Dec_2023.pdf"
 _MERULE = ("https://www.maine-et-loire.gouv.fr/Actions-de-l-Etat/Urbanisme-amenagement-du-territoire-construction-et-logement/"
            "Batiment-Construction/Termites-et-merule/La-merule")
 _MF = "https://donneespubliques.meteofrance.fr/FichesClim/FICHECLIM_49020001.pdf"
@@ -67,8 +68,9 @@ CITY = dict(
            ("Termites et mérule", "Angers ne figure dans aucun arrêté préfectoral termites ; dans l’arrondissement, Seiches-sur-le-Loir, "
                                   "La Ménitré et deux secteurs de Corzé sont classés (" + L("préfecture", _TERM) + "). Aucun arrêté mérule "
                                   "dans le Maine-et-Loire (" + L("préfecture", _MERULE) + ", 2026)."),
-           ("Risques et climat", "Les bords de Maine relèvent du plan de prévention du risque inondation de la Confluence de la Maine ("
-                                 + L("règlement", _PPRI) + "). Zone sismique 2, faible, et potentiel radon de catégorie 3, la plus élevée ("
+           ("Risques et climat", "Les bords de Maine relèvent du plan de prévention du risque inondation de la Confluence de la Maine, "
+                                 "approuvé le 19 octobre 2009 (" + L("règlement", _PPRI) + "). Zone sismique 2, faible, et potentiel radon "
+                                 "de catégorie 3, la plus élevée ("
                                  + L("Géorisques", _RADON) + "). À Beaucouzé, 709,3 mm de pluie et 31,6 jours de gel par an ("
                                  + L("Météo-France", _MF) + ", normales 1991-2020).")],
     trades_intro="Ardoise, tuffeau, schiste et pans de bois : dans le centre historique, chaque matériau a son article du plan de sauvegarde.",
@@ -80,9 +82,9 @@ CITY = dict(
                     "32,6 jours de rafales d’au moins 58 km/h par an, surtout de décembre à février (" + L("Météo-France", _MF) + ") : le faîtage "
                     "à l’angevine est le plus résistant, et le faîtage en zinc, le plus fragile, est à éviter aux vents forts ("
                     + L("fiche conseil n° 1", _FC01) + ")."],
-        "facade": ["Les joints du tuffeau se refont au mortier de chaux naturelle avec sablon et poudre de tuffeau ; joints et enduits au ciment "
-                   "sont interdits, et un enduit ciment qui abîme la pierre peut devoir être retiré. Les enduits se font à la chaux naturelle "
-                   "et au sable de Loire (" + L("règlement du PSMV", _PSMV) + ").",
+        "facade": ["Les joints du tuffeau se refont au mortier de chaux naturelle avec sablon et poudre de tuffeau ; les joints au ciment sont "
+                   "interdits, comme le sablage, le disque ou l’acide sur la pierre. Un enduit ciment qui dégrade le tuffeau doit être retiré, et "
+                   "les enduits se font à la chaux naturelle et au sable de Loire (" + L("règlement du PSMV", _PSMV) + ").",
                    "Ravaler demande une déclaration préalable. Dans un périmètre de campagne, la Ville aide après les travaux ; hors campagne, "
                    "elle a par exemple versé 6 855,65 € pour un immeuble de la place Molière en septembre 2025 (" + L("Ville d’Angers", _RAV) + ")."],
         "fenetres": ["Dans le plan de sauvegarde, le bois peint est le matériau de référence et peut être imposé. Le PVC, le noir et le blanc pur "
@@ -90,8 +92,9 @@ CITY = dict(
                      + L("règlement du PSMV", _PSMV) + ").",
                      "Ailleurs, percer un mur pour une fenêtre demande une déclaration préalable. En zone inondable de la Confluence de la Maine, "
                      "le plan de prévention recommande portes, fenêtres et dormants en matériaux insensibles à l’eau (" + L("règlement du PPRi", _PPRI) + ")."],
-        "charpente": ["Angers n’est pas classée en zone termites, mais Corzé l’est par arrêtés de 2018 et 2023, et La Ménitré depuis 2009 ("
-                      + L("préfecture", _TERM) + "). Si vous achetez dans ces communes, l’état termites est exigé à la vente.",
+        "charpente": ["Angers n’est pas classée en zone termites. Deux secteurs de Corzé le sont, par arrêtés de 2018 et 2023, et La Ménitré "
+                      "depuis 2009 (" + L("préfecture", _TERM) + "). Dans ces zones, les bois doivent être protégés lors de travaux, et un état "
+                      "termites est exigé à la vente (" + L("plaquette de la préfecture", _TERM_PL) + ", 2023).",
                       "Dans le centre historique, une charpente d’intérêt patrimonial doit rester apparente quand on isole les combles, et le "
                       "rehaussement de toiture pour isoler par l’extérieur n’est admis que s’il ne change pas le volume du toit ni des lucarnes ("
                       + L("règlement du PSMV", _PSMV) + ")."],
@@ -122,8 +125,8 @@ CITY = dict(
            ("Aide municipale au ravalement", "Dans les périmètres de campagne, et hors campagne pour les immeubles d’intérêt historique ou "
                                              "architectural. Elle est votée en conseil municipal et versée après les travaux : 8 340 € pour un "
                                              "immeuble rue du Chanoine-Colonel-Panaget en décembre 2025 (" + L("Ville d’Angers", _RAV2) + ")."),
-           ("Conseil juridique sur le logement", "Les juristes de l’ADIL 49 conseillent sur le montage financier, les aides et les contrats de "
-                                                 "travaux : 02 41 43 00 00, touche 2 (" + L("Métropole", _MCM) + ")."),
+           ("Conseil juridique sur le logement", "Des juristes spécialistes du logement étudient le plan de financement, les contrats et les "
+                                                 "aides mobilisables. Rendez-vous au 02 41 43 00 00, touche 2 (" + L("Métropole", _MCM) + ")."),
            NATIONAL],
     faq=[("Le ravalement est-il obligatoire à Angers ?",
           "La Ville l’impose par campagnes, dans des périmètres définis, et verse alors une aide municipale après les travaux. "
