@@ -138,3 +138,43 @@ TEXTES = {
              ("Sol plus chaud", "dans les pièces du dessus")], True),
     },
 }
+
+# Photo de chaque carte : (fichier de photos/, texte de remplacement, cadrage CSS). Photos libres de droits (voir photos/SOURCES.md),
+# présentées comme photos d'illustration. Une carte sans photo garde le dessin du projet. Les photos de l'artisan
+# (champ « photos_prestations » de sa fiche) passent avant.
+PHOTOS = {
+    "toiture": {
+        "Nettoyage et démoussage": ("toit-mousse-800.webp", "", "center"),
+        "Démoussage et traitement": ("toiture-tuiles-800.webp", "Tuiles de toiture en gros plan", "center"),
+        "Réparation ou fuite": ("toiture-800.webp", "Réparation d’une toiture en tuiles", "center"),
+        "Remplacement de la couverture": ("toiture-ardoise-800.webp", "Couvreur au travail sur une toiture en ardoise", "center 40%"),
+        "Réfection complète": ("charpente-800.webp", "Charpente en bois en cours de pose", "center"),
+        "Isolation par l’extérieur": ("sarking-800.webp", "", "center"),
+    },
+    "facade": {
+        "Mise en peinture": ("facade-peinture-800.webp", "", "center"),
+        "Nouvel enduit": ("facade-enduit-800.webp", "Enduit appliqué à la taloche sur un mur en pierre", "center 45%"),
+        "Ravalement avec isolation": ("ite-800.webp", "", "center"),
+        "Fissures à reprendre": ("fissure-800.webp", "", "center"),
+    },
+    "fenetres": {
+        "Remplacer des fenêtres": ("fenetres-800.webp", "Découpe d’un cadre de fenêtre", "center"),
+        "Créer une ouverture": ("ouverture-800.webp", "", "center"),
+        "Baie vitrée ou porte-fenêtre": ("baie-800.webp", "", "center"),
+        "Porte d’entrée": ("porte-800.webp", "", "center"),
+        "Volets": ("volets-800.webp", "", "center"),
+    },
+    "charpente": {
+        "Traitement du bois": ("bois-traitement-800.webp", "", "center"),
+        "Réparation ou renfort": ("charpente-poutre-800.webp", "Travail d’une pièce de bois de charpente", "center 45%"),
+        "Rénovation de la charpente": ("charpente-charpentier-800.webp", "Charpentier sur une structure en bois", "center 35%"),
+        "Charpente et couverture": ("charpente-800.webp", "Charpente en bois en cours de pose", "center"),
+        "Extension ou surélévation": ("extension-800.webp", "", "center"),
+    },
+    "isolation": {
+        "Combles perdus": ("combles-perdus-800.webp", "", "center"),
+        "Combles aménagés": ("isolation-800.webp", "Pose de laine isolante entre les montants d’un mur", "center"),
+        "Murs par l’extérieur": ("ite-800.webp", "", "center"),
+        "Plancher bas": ("plancher-bas-800.webp", "", "center"),
+    },
+}

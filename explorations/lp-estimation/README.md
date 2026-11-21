@@ -85,21 +85,23 @@ Sous le questionnaire, deux sections présentent l'artisan, comme sur une page d
 
 « Ce que nous faisons » liste ses métiers avec une coche verte (plus les lignes du champ `prestations`), puis la personne qui intervient : photo ou initiales, prénom, rôle, entreprise et horaires.
 
-« Nos spécialités » montre une carte par type de travaux du questionnaire : le dessin du projet, une phrase, trois points qui décrivent le travail, puis le prix. Le prix est le tarif du client s'il l'a donné (`tarifs`), sinon le prix moyen publié, sinon « se chiffre sur place ». Le lien « Estimer ce projet » coche ce projet dans le questionnaire et y descend directement.
+« Nos spécialités » montre une carte par type de travaux du questionnaire : une photo, une phrase, trois points qui décrivent le travail, puis le prix. Le prix est le tarif du client s'il l'a donné (`tarifs`), sinon le prix moyen publié, sinon « se chiffre sur place ». Le lien « Estimer ce projet » coche ce projet dans le questionnaire et y descend directement.
 
 Les textes des cartes sont dans `prestations.py`. Ils décrivent le travail sans rien promettre (délai, garantie, qualification) : relisez-les avec l'artisan et ajustez-les à sa façon de travailler avant de publier sa page.
 
 ## Les photos
 
-Sous le formulaire, une section montre le métier en photos : deux ou trois par page, à faire défiler du doigt sur téléphone. Par défaut, ce sont des photos libres de droits (voir `photos/SOURCES.md` : licences Unsplash et Pexels, usage commercial gratuit), titrées « [Le métier], en images » avec la mention « Photos d'illustration du métier ». Elles ne montrent pas les chantiers de l'artisan et ne doivent jamais être présentées comme tels.
+Chaque carte de « Nos spécialités » a sa photo. Par défaut, ce sont des photos libres de droits (voir `photos/SOURCES.md` : licences Unsplash et Pexels, usage commercial gratuit), avec la mention « Photos d'illustration du métier » sous le titre de la section. Elles ne montrent pas les chantiers de l'artisan et ne doivent jamais être présentées comme tels. Le choix des photos par carte est dans `prestations.py` (`PHOTOS`) ; une carte sans photo garde le dessin du projet.
 
-Dès que l'artisan fournit ses propres photos de chantier, mettez-les dans sa fiche (`realisations`). La section devient « Les chantiers de [entreprise] ». Les légendes ne s'affichent pas : elles servent de texte de remplacement aux lecteurs d'écran. De vraies photos inspirent bien plus confiance. Retirez-en d'abord les métadonnées (lieu, date, appareil).
+Dès que l'artisan fournit une photo de ses chantiers pour un type de travaux, mettez-la dans sa fiche, champ `photos_prestations`, rangée par métier puis par projet : `{"toiture": {"Nettoyage et démoussage": "photos/demoussage.jpg"}}`. Elle remplace la photo d'illustration de cette carte. Quand toutes les cartes ont leur vraie photo, la mention « Photos d'illustration » disparaît.
+
+Pour une galerie de ses chantiers, utilisez le champ `realisations` : une section « Les chantiers de [entreprise] » s'ajoute sous les cartes, à faire défiler du doigt sur téléphone. Les légendes ne s'affichent pas : elles servent de texte de remplacement aux lecteurs d'écran. Sans `realisations`, cette section n'apparaît pas. Dans tous les cas, retirez d'abord les métadonnées des photos (lieu, date, appareil).
 
 Sur téléphone, un encadré compact donne l'exemple d'estimation, sous le questionnaire. Sur ordinateur, la grande maison dessinée du métier porte cet exemple, sous le titre.
 
 ## La zone d'intervention
 
-Sous les photos, une section reprend la promesse de rappel (champ `rappel`), le rayon (« Nous intervenons dans un rayon de 30 km autour de Lille (59) »), les horaires et un bouton « Parler à un couvreur » (menuisier, façadier, charpentier ou artisan selon la page) qui appelle l'artisan. En dessous, une carte montre la zone : un cercle du rayon indiqué autour de la commune.
+Sous les cartes, une section reprend la promesse de rappel (champ `rappel`), le rayon (« Nous intervenons dans un rayon de 30 km autour de Lille (59) »), les horaires et un bouton « Parler à un couvreur » (menuisier, façadier, charpentier ou artisan selon la page) qui appelle l'artisan. En dessous, une carte montre la zone : un cercle du rayon indiqué autour de la commune.
 
 La carte est le Plan IGN (données publiques, Licence Ouverte 2.0 : usage commercial libre en citant « © IGN », ce que font la carte et les mentions légales). Elle est dessinée une fois, à la génération, et publiée comme une simple image de 60 Ko environ : le navigateur du visiteur n'appelle aucun service de cartes, il n'y a donc ni cookie ni consentement à demander. La génération a besoin d'internet la première fois pour une commune donnée ; la carte est ensuite gardée dans `.cache/`.
 

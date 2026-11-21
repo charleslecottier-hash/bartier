@@ -21,7 +21,7 @@ from urllib.parse import quote, urlparse
 import carte
 import icons
 from metiers import COMMON, M
-from prestations import TEXTES
+from prestations import PHOTOS, TEXTES
 
 HERE = pathlib.Path(__file__).resolve().parent
 FONTS = HERE.parent / "v8b" / "assets" / "fonts"
@@ -247,6 +247,8 @@ def prix_txt(m, cfg, key, o):
 
 
 def spec_html(m, cfg, key, accent):
+    stock = any(not v[3] for v in cfg.get("_spec", {}).get(key, {}).values())
+    note = '<p class="es-spec-note">Photos d’illustration du métier</p>' if stock else ""
     cards = []
     for o in m["steps"][0]["qs"][0]["opts"]:
         t = TEXTES.get(key, {}).get(o[0])
@@ -256,11 +258,15 @@ def spec_html(m, cfg, key, accent):
         lis = "".join(f"<li><b>{e(b)}</b> : {e(x)}</li>" for b, x in pts)
         fin = prix_txt(m, cfg, key, o) + (" Des aides peuvent réduire la facture si l’entreprise est certifiée RGE." if aides else "")
         sl = slug(o[0])
-        cards.append(f'<article class="es-sp"><div class="es-sp-art" aria-hidden="true">{icons.house(o[2], o[3], accent)}</div><div class="es-sp-b">'
+        ph = cfg.get("_spec", {}).get(key, {}).get(o[0])
+        sty = f' style="object-position:{ph[2]}"' if ph and ph[2] != "center" else ""
+        vis = (f'<img class="es-sp-img" src="{ph[0]}" alt="{a(ph[1])}" width="800" height="500" loading="lazy" decoding="async"{sty}>' if ph else
+               f'<div class="es-sp-art" aria-hidden="true">{icons.house(o[2], o[3], accent)}</div>')
+        cards.append(f'<article class="es-sp">{vis}<div class="es-sp-b">'
                      f'<h3>{e(o[0])}</h3><p>{e(intro)}</p><ul>{lis}</ul><p class="es-sp-fin">{e(fin)}</p>'
                      f'<a class="es-sp-go" href="?projet={sl}" data-pick="{sl}">Estimer ce projet{ico("arrow")}</a></div></article>')
     return (f'<section class="es-spec" aria-labelledby="es-spec-h"><div class="es-spec-head"><h2 id="es-spec-h">Nos spécialités</h2>'
-            f'<p>Choisissez votre projet pour en estimer le prix.</p></div><div class="es-spec-list">{"".join(cards)}</div></section>')
+            f'<p>Choisissez votre projet pour en estimer le prix.</p>{note}</div><div class="es-spec-list">{"".join(cards)}</div></section>')
 
 
 def favicon(accent):
@@ -559,6 +565,8 @@ svg{display:block}
 .es-spec-head p{margin-top:12px;font-size:1.05rem;color:var(--muted)}
 .es-spec-list{display:grid;gap:16px;margin-top:32px}
 .es-sp{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#fff}
+.es-sp-img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#DCE1E8}
+.es-spec-note{margin-top:4px;font-size:.88rem;color:#8A92A1}
 .es-sp-art{display:grid;place-items:center;height:208px;padding:12px;background:linear-gradient(180deg,#F8F9FB,#EDF0F4)}
 .es-sp-art svg{width:auto;height:100%;max-width:100%}
 .es-sp-b{display:flex;flex:1;flex-direction:column;align-items:center;padding:24px;text-align:center}
@@ -1053,7 +1061,7 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
   </div>
   {team_html(m, cfg, key, photo_url)}
   {spec_html(m, cfg, key, accent)}
-  {gallery_html(m, cfg, key, gal_urls, gal_own)}
+  {gallery_html(m, cfg, key, gal_urls, gal_own) if gal_own else ""}
   {zone_html(m, cfg)}
   {faq_html(m, cfg, key)}
   {end_html(m, cfg)}
@@ -1107,11 +1115,28 @@ def build(path):
         urls = []
         for i, (src, w, h_, cap) in enumerate(items):
             src = pathlib.Path(src) if not own else (pathlib.Path(path).parent / src).resolve()
-            name = (f"{M[k]['slug']}-chantier-{i + 1}{src.suffix.lower()}" if own else src.name)
-            shutil.copy(src, out / "assets" / "photos" / name)
-            urls.append((f"/assets/photos/{name}", w, h_, cap))
+            if i == 0:
+                og_src[k] = src  # l'image d'aperçu reprend la première photo (celle de l'artisan s'il en a donné)
+            if own:  # la galerie ne s'affiche que pour les vrais chantiers du client
+                name = f"{M[k]['slug']}-chantier-{i + 1}{src.suffix.lower()}"
+                shutil.copy(src, out / "assets" / "photos" / name)
+                urls.append((f"/assets/photos/{name}", w, h_, cap))
         photo_urls[k] = (urls, own)
-        og_src[k] = out / urls[0][0].lstrip("/")
+        # photos des cartes « Nos spécialités » : celle de l'artisan pour ce projet, sinon la photo libre de droits du métier
+        spec, mine = {}, cfg.get("photos_prestations", {}).get(k, {})
+        for lab, (f_, alt, pos) in PHOTOS.get(k, {}).items():
+            srcp = HERE / "photos" / f_
+            if lab in mine:
+                srcp = (pathlib.Path(path).parent / mine[lab]).resolve()
+                name = f"{M[k]['slug']}-{slug(lab)}{srcp.suffix.lower()}"
+                alt, pos = f"{lab}, un chantier de {cfg['entreprise']}", "center"
+            elif not srcp.exists():
+                continue
+            else:
+                name = f_
+            shutil.copy(srcp, out / "assets" / "photos" / name)
+            spec[lab] = (f"/assets/photos/{name}", alt, pos, lab in mine)
+        cfg.setdefault("_spec", {})[k] = spec
     for k in keys:
         d = out / M[k]["slug"]
         d.mkdir(parents=True)
@@ -1137,6 +1162,7 @@ def build(path):
         "headers": [{"source": "/(.*)", "headers": sec},
                     {"source": "/assets/fonts/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}]}, indent=2), encoding="utf-8")
     cfg.pop("_zone", None)
+    cfg.pop("_spec", None)
     (out / "robots.txt").write_text("User-agent: *\nDisallow:\n", encoding="utf-8")
     print(f"{cfg['slug']} : {len(keys)} pages ({', '.join('/' + M[k]['slug'] + '/' for k in keys)}) dans {out.relative_to(HERE)}")
     for k in keys:
