@@ -32,7 +32,7 @@ CITY = dict(
     wiki="https://fr.wikipedia.org/wiki/Toulon", wikidata="Q44160",
     verified="2026-11-21",
     tldr="À Toulon, le grand centre-ville est un site patrimonial remarquable où chaque chantier passe par l’architecte des Bâtiments de France, "
-         "et la Ville paie 32 % des ravalements qu’elle impose",
+         "et la Ville paie 32 % du hors-taxe des ravalements qu’elle impose",
     hook="Centre protégé, ravalements imposés et aidés, rafales plus de 100 jours par an.",
     title="Devis travaux à Toulon : toiture, façade, fenêtres, isolation",
     desc="Travaux à Toulon : centre protégé, ravalement imposé et aidé à 32 %, zone termites, rafales de vent, aides de la Métropole. Un seul artisan vient chiffrer.",
@@ -40,7 +40,7 @@ CITY = dict(
     figures=[("79,2 <small>%</small>", "des logements sont des appartements", S("Insee, 2023", _INSEE)),
              ("60,1 <small>%</small>", "des résidences principales datent d’avant 1971", S("Insee, 2023", _INSEE)),
              ("108,9 <small>jours</small>", "par an avec des rafales d’au moins 58 km/h", S("Météo-France, normales 1991-2020", _MF)),
-             ("32 <small>%</small>", "des travaux de ravalement payés par la Ville dans les rues en campagne", S("Ville de Toulon", _URBA))],
+             ("32 <small>%</small>", "du hors-taxe d’un ravalement imposé, payés par la Ville avec un plafond", S("Ville de Toulon", _URBA))],
     answer=("À Toulon, 79,2 % des logements sont des appartements et 60,1 % des résidences principales datent d’avant 1971. Dans le site patrimonial "
             "remarquable du centre, tous les travaux demandent une autorisation et l’avis de l’architecte des Bâtiments de France. Toute la commune "
             "est en zone termites depuis l’arrêté préfectoral du 10 décembre 2018."),
