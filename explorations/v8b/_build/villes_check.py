@@ -184,10 +184,14 @@ def ok(path, pool=None):
     err, _, _ = check(path, pool=pool)
     try:
         mod = load(path)
-        draft, reviewed = getattr(mod, "DRAFT", None), getattr(mod, "REVIEWED", None)
+        draft, reviewed, when = getattr(mod, "DRAFT", None), getattr(mod, "REVIEWED", None), getattr(mod, "PUBLISH", "")
     except Exception:
-        draft, reviewed = True, None
-    return not err and not draft and bool(reviewed)
+        draft, reviewed, when = True, None, ""
+    import datetime
+    later = bool(when) and datetime.date.today().isoformat() < when  # publication programmée (vagues espacées)
+    if later:
+        print(f"  {path.stem} : publication programmée le {when}")
+    return not err and not draft and bool(reviewed) and not later
 
 
 if __name__ == "__main__":

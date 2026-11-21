@@ -5,7 +5,7 @@
  },
  "/blog/": {
   "date": "2026-11-21",
-  "sig": "cf5893d3805531d1"
+  "sig": "c4e7787bdcf675f5"
  },
  "/blog/dpe-2027/": {
   "date": "2026-11-20",
@@ -37,51 +37,71 @@
  },
  "/devis-travaux/": {
   "date": "2026-11-21",
-  "sig": "754f801871a3e5e7"
+  "sig": "f7e2570d556d6ff1"
+ },
+ "/devis-travaux/bordeaux/": {
+  "date": "2026-11-21",
+  "sig": "01b842497339d691"
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-21",
-  "sig": "8136bdccd2754eba"
+  "sig": "d9f11963a1a4b54c"
+ },
+ "/devis-travaux/dijon/": {
+  "date": "2026-11-21",
+  "sig": "6575a56913739477"
  },
  "/devis-travaux/fenetres/": {
   "date": "2026-11-21",
-  "sig": "54c735af083be3ec"
+  "sig": "dc45cbdfe9281500"
+ },
+ "/devis-travaux/grenoble/": {
+  "date": "2026-11-21",
+  "sig": "9f8a01f170a464b5"
  },
  "/devis-travaux/isolation/": {
   "date": "2026-11-21",
-  "sig": "f69b0bc1b07930fb"
+  "sig": "450a65ea754a6d71"
  },
  "/devis-travaux/lille/": {
   "date": "2026-11-21",
-  "sig": "6db05253118e378c"
+  "sig": "1af1875fcd34ea9e"
  },
  "/devis-travaux/lyon/": {
   "date": "2026-11-21",
-  "sig": "c7a6c346322e3002"
+  "sig": "3ed5a96ab187717c"
  },
  "/devis-travaux/marseille/": {
   "date": "2026-11-21",
-  "sig": "6c9eb3a18f967994"
+  "sig": "3e57bc797d42fb45"
+ },
+ "/devis-travaux/nantes/": {
+  "date": "2026-11-21",
+  "sig": "c37ded35f1eec321"
+ },
+ "/devis-travaux/nice/": {
+  "date": "2026-11-21",
+  "sig": "ac5df269344e05d1"
  },
  "/devis-travaux/paris/": {
   "date": "2026-11-21",
-  "sig": "bb9759346d5693ae"
+  "sig": "da03cbd78eafa432"
  },
  "/devis-travaux/ravalement-facade/": {
   "date": "2026-11-21",
-  "sig": "0a4340b668a8f358"
+  "sig": "8e31b5cedce816c6"
  },
  "/devis-travaux/rouen/": {
   "date": "2026-11-21",
-  "sig": "3e67c585650417cc"
+  "sig": "8ea9073a059f1f2f"
  },
  "/devis-travaux/toiture/": {
   "date": "2026-11-21",
-  "sig": "d5f3ab01dce4a08d"
+  "sig": "cd911a00c1800553"
  },
  "/devis-travaux/toulouse/": {
   "date": "2026-11-21",
-  "sig": "93f210d1b4e535b2"
+  "sig": "b5823bc85aa0ca60"
  },
  "/google-ads/": {
   "date": "2026-11-19",

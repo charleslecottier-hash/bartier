@@ -668,24 +668,26 @@ Devis isolation
 
 ### Devis travaux par ville
 Les règles et les aides changent d’une ville à l’autre
-
-#### Devis travaux à Paris
-Une autorisation même pour des fenêtres à l’identique
-
-#### Devis travaux à Marseille
-Ravalement imposé, et tout le département en zone termites
-
-#### Devis travaux à Lyon
-Site Unesco et nichoirs à martinets
-
-#### Devis travaux à Toulouse
-Centre ancien protégé, aide Silencio près de l’aéroport
-
-#### Devis travaux à Lille
-Ravalement obligatoire tous les dix ans, et aidé par la Ville
-
-#### Devis travaux à Rouen
-Secteur sauvegardé depuis 1964, ardoise et pans de bois
+Auvergne-Rhône-Alpes
+- Grenoble Immeubles d’après-guerre, isolés avec l’aide Mur Mur
+- Lyon Site Unesco et nichoirs à martinets
+Bourgogne-Franche-Comté
+- Dijon Secteur sauvegardé de 97 ha et petites tuiles vernissées
+Hauts-de-France
+- Lille Ravalement obligatoire tous les dix ans, et aidé par la Ville
+Normandie
+- Rouen Secteur sauvegardé depuis 1964, ardoise et pans de bois
+Nouvelle-Aquitaine
+- Bordeaux La pierre de taille reste nue, sans peinture ni isolation extérieure
+Occitanie
+- Toulouse Centre ancien protégé, aide Silencio près de l’aéroport
+Pays de la Loire
+- Nantes Ravalement tous les dix ans, fenêtres en bois dans le centre historique
+Provence-Alpes-Côte d’Azur
+- Marseille Ravalement imposé, et tout le département en zone termites
+- Nice Ville largement protégée, zone sismique 4 et zone termites
+Île-de-France
+- Paris Une autorisation même pour des fenêtres à l’identique
 
 ### Une fuite de toiture ?
 Signalez-la : nous vous rappelons en priorité. En attendant, suivez les 5 bons réflexes.
@@ -1006,7 +1008,12 @@ Par ville
 - Couvreur à Marseille
 - Couvreur à Lyon
 - Couvreur à Toulouse
+- Couvreur à Nice
+- Couvreur à Nantes
+- Couvreur à Bordeaux
 - Couvreur à Lille
+- Couvreur à Dijon
+- Couvreur à Grenoble
 - Couvreur à Rouen
 
 ### Décrivez vos travaux. Nous fixons la visite.
@@ -1142,7 +1149,12 @@ Par ville
 - Ravalement de façade à Marseille
 - Ravalement de façade à Lyon
 - Ravalement de façade à Toulouse
+- Ravalement de façade à Nice
+- Ravalement de façade à Nantes
+- Ravalement de façade à Bordeaux
 - Ravalement de façade à Lille
+- Ravalement de façade à Dijon
+- Ravalement de façade à Grenoble
 - Ravalement de façade à Rouen
 
 ### Décrivez vos travaux. Nous fixons la visite.
@@ -1279,7 +1291,12 @@ Par ville
 - Fenêtres et portes à Marseille
 - Fenêtres et portes à Lyon
 - Fenêtres et portes à Toulouse
+- Fenêtres et portes à Nice
+- Fenêtres et portes à Nantes
+- Fenêtres et portes à Bordeaux
 - Fenêtres et portes à Lille
+- Fenêtres et portes à Dijon
+- Fenêtres et portes à Grenoble
 - Fenêtres et portes à Rouen
 
 ### Décrivez vos travaux. Nous fixons la visite.
@@ -1414,7 +1431,12 @@ Par ville
 - Charpente à Marseille
 - Charpente à Lyon
 - Charpente à Toulouse
+- Charpente à Nice
+- Charpente à Nantes
+- Charpente à Bordeaux
 - Charpente à Lille
+- Charpente à Dijon
+- Charpente à Grenoble
 - Charpente à Rouen
 
 ### Décrivez vos travaux. Nous fixons la visite.
@@ -1550,7 +1572,12 @@ Par ville
 - Isolation à Marseille
 - Isolation à Lyon
 - Isolation à Toulouse
+- Isolation à Nice
+- Isolation à Nantes
+- Isolation à Bordeaux
 - Isolation à Lille
+- Isolation à Dijon
+- Isolation à Grenoble
 - Isolation à Rouen
 
 ### Décrivez vos travaux. Nous fixons la visite.
@@ -1730,9 +1757,10 @@ Tous les devis de travaux
 Villes les plus proches
 - Devis travaux à Rouen 112 km
 - Devis travaux à Lille 204 km
+- Devis travaux à Dijon 263 km
+- Devis travaux à Nantes 343 km
 - Devis travaux à Lyon 391 km
-- Devis travaux à Toulouse 588 km
-- Devis travaux à Marseille 660 km
+- Devis travaux à Grenoble 481 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -1919,11 +1947,12 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 ### Ailleurs en France
 Tous les devis de travaux
 Villes les plus proches
+- Devis travaux à Nice 160 km
+- Devis travaux à Grenoble 212 km
 - Devis travaux à Lyon 278 km
 - Devis travaux à Toulouse 319 km
-- Devis travaux à Paris 660 km
-- Devis travaux à Rouen 758 km
-- Devis travaux à Lille 834 km
+- Devis travaux à Dijon 448 km
+- Devis travaux à Bordeaux 505 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -2107,11 +2136,12 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 ### Ailleurs en France
 Tous les devis de travaux
 Villes les plus proches
+- Devis travaux à Grenoble 95 km
+- Devis travaux à Dijon 174 km
 - Devis travaux à Marseille 278 km
+- Devis travaux à Nice 299 km
 - Devis travaux à Toulouse 360 km
 - Devis travaux à Paris 391 km
-- Devis travaux à Rouen 496 km
-- Devis travaux à Lille 557 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -2298,11 +2328,582 @@ Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commu
 ### Ailleurs en France
 Tous les devis de travaux
 Villes les plus proches
+- Devis travaux à Bordeaux 212 km
 - Devis travaux à Marseille 319 km
 - Devis travaux à Lyon 360 km
-- Devis travaux à Paris 588 km
-- Devis travaux à Rouen 650 km
-- Devis travaux à Lille 791 km
+- Devis travaux à Grenoble 383 km
+- Devis travaux à Nantes 465 km
+- Devis travaux à Nice 469 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Nice : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/nice/
+
+Travaux à Nice : Vieux-Nice et site Unesco protégés, nuancier de la Ville, zone sismique 4, termites, aide aux façades. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Nice en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Nice en quelques chiffres
+À Nice, l’architecte des Bâtiments de France est consulté dans la majeure partie de la ville, et la commune est en zone de sismicité 4 et en zone de lutte contre les termites
+- 92,7 % des logements sont des appartements Insee, 2023
+- 53,3 % des résidences principales datent d’avant 1971 Insee, 2023
+- 522 ha inscrits au patrimoine mondial de l’Unesco en 2021 Ville de Nice
+- 791,3 mm de pluie par an, dont un tiers en octobre et novembre Météo-France, normales 1991-2020
+
+### Que faut-il savoir avant des travaux à Nice ?
+À Nice, 92,7 % des logements sont des appartements et 53,3 % des résidences principales datent d’avant 1971. Dans la majeure partie de la ville, abords de monuments ou site patrimonial remarquable, l’architecte des Bâtiments de France est consulté et l’instruction d’un ravalement prend un mois de plus. La commune est aussi en zone de sismicité 4 et en zone de lutte contre les termites.
+
+**Secteurs protégés**
+- Trois sites patrimoniaux remarquables : le Vieux-Nice, secteur sauvegardé depuis 1969 (guide du ravalement), le port, et environ 600 hectares de la Promenade des Anglais aux quartiers nord (UDAP 06, rapport de l’AVAP). Ce dernier couvre les 522 hectares inscrits à l’Unesco (Ville de Nice).
+
+**Ravalement**
+- La Ville demande une déclaration préalable pour tout ravalement, même pour repeindre une façade déjà peinte (guide du ravalement, 2022). Respecter les teintes de son nuancier peut conditionner l’autorisation et la subvention (Ville de Nice).
+
+**Urbanisme**
+- Le PLU métropolitain de Nice Côte d’Azur a été approuvé le 25 octobre 2019. Sa dernière modification a été approuvée le 11 juillet 2025 (Métropole).
+
+**Séisme**
+- Zone de sismicité 4, moyenne. Un plan de prévention des risques sismiques couvre toute la commune depuis le 28 janvier 2019, avec cinq zones de B0 à B4 selon la nature du sol (DICRIM, 2026).
+
+**Termites**
+- Nice fait partie des 42 communes des Alpes-Maritimes en zone de surveillance et de lutte contre les termites (arrêté préfectoral du 10 mars 2017). Qui découvre des termites doit le déclarer en mairie (préfecture).
+
+**Climat**
+- 791,3 mm de pluie par an à la station de Nice, dont un tiers en octobre et novembre, et 1,1 jour de gel par an. Record : 191,4 mm en une journée, le 13 octobre 1973 (Météo-France, normales 1991-2020).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 21 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Nice, métier par métier
+Du bâti néoclassique aux immeubles récents, le guide de la Ville décrit six périodes de construction, chacune avec ses matériaux
+
+#### Couvreur à Nice
+Tuiles rondes ou plates, ardoise à la Mansart, dômes, toits-terrasses : Nice a presque tous les types de couverture (guide du ravalement). Dans le site patrimonial remarquable de la Promenade et des quartiers nord, une réfection restaure la couverture d’époque (tuile canal rouge orangé, tuile de Marseille, ardoise ou zinc) et les terrasses « tropéziennes » taillées dans le toit sont interdites (règlement).
+Octobre et novembre apportent un tiers des 791,3 mm de pluie annuels (Météo-France). La plupart des dégâts de façade viennent d’une étanchéité défaillante au-dessus : la Ville demande de vérifier couverture, liteaux et charpente à chaque ravalement, toits-terrasses et balcons filants compris.
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Nice
+Le guide de la Ville décrit les façades niçoises époque par époque, jusqu’aux enduits teintés dans la masse du XXe siècle, les « bétons colorés ». Dans le site patrimonial remarquable de la Promenade et des quartiers nord, la conservation ou la restitution des décors peints en trompe-l’œil, avec des techniques traditionnelles comme le badigeon de chaux, peut être imposée sur les immeubles d’avant 1923 (règlement).
+Le dossier de déclaration préalable décrit les supports, le mode opératoire et les produits. La Ville peut y demander de rétablir l’état d’origine ou un décor disparu (guide du ravalement, 2022).
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Nice
+Dans le site patrimonial remarquable de la Promenade et des quartiers nord, une fenêtre en bois se remplace en bois massif, et poser une fenêtre de rénovation sur l’ancien dormant est interdit. Volets roulants, persiennes et portes en PVC y sont aussi interdits (règlement).
+Partout, la Ville déconseille la pose sur l’ancien dormant : les profils en PVC, plus larges, réduisent la surface vitrée de 20 à 30 % (guide du ravalement). Les climatiseurs en applique sur la façade sont interdits dans ce site patrimonial remarquable. Ils peuvent y être tolérés s’ils sont intégrés à la baie, derrière une grille ou des persiennes (règlement) : prévoyez leur place dès le projet.
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Nice
+Nice est en zone de surveillance et de lutte contre les termites sur tout son territoire (préfecture). En démolition, même partielle, les bois contaminés sont brûlés sur place ou traités avant d’être transportés.
+En zone de sismicité 4, les règles parasismiques de l’Eurocode 8 s’imposent aux projets soumis à permis de construire (DICRIM). Ne déposez pas génoises ni avant-toits pour simplifier un ravalement : la Ville rappelle que cela bouleverse la statique de la partie concernée (guide du ravalement).
+Devis charpente Prix d’une charpente
+
+#### Isolation à Nice
+L’isolation par l’extérieur est interdite dans le Vieux-Nice, et la Ville la déconseille sur les bâtiments d’avant les années 1950 et sur les façades très ornées (guide du ravalement). Dans le site patrimonial remarquable de la Promenade et des quartiers nord, elle peut être refusée sur les immeubles d’avant 1947 (règlement).
+À la station de Nice, 88,3 jours par an dépassent 25 °C et il gèle 1,1 jour par an (Météo-France). L’Espace Conseil France Rénov’ de la Métropole aide à choisir les travaux et estime les subventions, en priorité pour une rénovation globale (Métropole).
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Nice ?
+Les démarches à suivre, de la vérification du secteur à la demande d’aide
+
+#### Vérifiez si votre immeuble est protégé
+Vieux-Nice, port, Promenade des Anglais et quartiers nord, abords d’un monument : l’architecte des Bâtiments de France est consulté. UDAP 06, villa Césarie, 41 avenue Thiers. 04 93 16 59 10, le matin (culture.gouv.fr).
+
+#### Choisissez les teintes
+La Ville met un nuancier à disposition. La teinte se choisit dans un nuancier adapté au matériau : NCS pour la façade, RAL pour les ferronneries, nuancier chaux pour une façade à la chaux (guide du ravalement).
+
+#### Déposez la déclaration préalable
+En ligne sur le guichet e-permis, ou sur rendez-vous au service des autorisations d’urbanisme, Le Connexio, 7/11 avenue Giscard-d’Estaing, le lundi, le mercredi et le vendredi de 9 h à 12 h 30. Instruction : un mois après le dossier complet, plus si l’ABF est consulté. Allo Mairie : 3906 (Ville de Nice).
+
+#### Faites autoriser l’échafaudage
+Une emprise de chantier sur le trottoir demande une autorisation d’occupation du domaine public, en ligne sur le portail Mes démarches de la Ville (démarches). Les travaux qui touchent la voirie passent par la plateforme Viazur de la Métropole, avec un mois d’instruction (Métropole).
+
+#### Demandez les aides avant le chantier
+La subvention de façade doit être validée par le conseil municipal avant le début des travaux. Pour l’énergie, appelez d’abord l’Espace Conseil France Rénov’ de la Métropole.
+
+### Quelles aides pour vos travaux à Nice ?
+Conseil public gratuit d’abord, puis les aides locales, toujours avant le début des travaux.
+Conseil public, gratuit et neutre
+
+#### Espace Conseil France Rénov’ de la Métropole
+Le service d’accompagnement à la rénovation énergétique de la Métropole Nice Côte d’Azur est l’Espace Conseil France Rénov’ qui couvre Nice (annuaire France Rénov’) : conseil gratuit et neutre. Immeuble Plaza, boulevard René-Cassin, 06200 Nice, du mardi au jeudi de 9 h à 12 h, sur rendez-vous. 04 97 13 39 44. nicecotedazur.org.
+
+#### Subvention de la Ville pour les façades
+Pour un immeuble d’habitation situé dans un périmètre fixé par le conseil municipal, la Ville peut financer une part du ravalement des façades visibles de la rue (guide du ravalement, 2022). Son budget 2026 y consacre 338 390 € (Ville de Nice). Renseignements au pôle Architecture et rénovation du service des autorisations d’urbanisme.
+
+#### Aides de l’Anah avec la Métropole
+Pour les propriétaires occupants sous plafonds de ressources, conseil et information à la Maison de l’Habitant, 6 allée Philippe-Séguin, Nice (tram Libération). 04 97 13 55 11 (Métropole).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Nice ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Nice : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Nice et alentours.
+
+**Pour qui**
+- Les propriétaires à Nice, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Nice : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Faut-il une autorisation pour un ravalement à Nice ?**
+Oui. La Ville demande une déclaration préalable pour tout ravalement, même une simple remise en peinture. Dans la majeure partie de la ville, l’architecte des Bâtiments de France est consulté, et l’instruction dure un mois de plus.
+
+**Peut-on poser des fenêtres en PVC à Nice ?**
+Pas dans le site patrimonial remarquable de la Promenade et des quartiers nord : une fenêtre en bois s’y remplace en bois massif, et volets roulants, persiennes et portes en PVC y sont interdits. Ailleurs, la Ville déconseille le PVC posé sur l’ancien dormant, qui réduit la surface vitrée de 20 à 30 %. Changer ses menuiseries demande une déclaration préalable.
+
+**Nice est-elle en zone sismique ?**
+Oui, en zone 4, de sismicité moyenne. Le plan de prévention des risques sismiques approuvé le 28 janvier 2019 couvre toute la commune, avec cinq zones réglementaires selon la nature du sol.
+
+**Nice est-elle concernée par les termites ?**
+Oui. Nice fait partie des 42 communes des Alpes-Maritimes en zone de surveillance et de lutte contre les termites depuis l’arrêté préfectoral du 10 mars 2017. Un vendeur doit annexer à l’acte un diagnostic termites datant de moins de six mois.
+
+**Peut-on isoler une façade par l’extérieur à Nice ?**
+Pas dans le Vieux-Nice, où le règlement du secteur sauvegardé l’interdit. Dans le site patrimonial remarquable de la Promenade et des quartiers nord, elle peut être refusée sur les immeubles d’avant 1947. La Ville la déconseille sur les bâtiments d’avant les années 1950 et la juge surtout utile sur le béton récent peu isolé.
+
+**Quelles aides pour rénover son logement à Nice ?**
+La subvention de la Ville pour les façades, dans les périmètres votés par le conseil municipal, les aides de l’Anah, avec le conseil de la Maison de l’Habitant (04 97 13 55 11), et les aides nationales. Conseil gratuit à l’Espace Conseil France Rénov’ de la Métropole : 04 97 13 39 44.
+
+**Intervenez-vous partout à Nice ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Marseille 160 km
+- Devis travaux à Grenoble 206 km
+- Devis travaux à Lyon 299 km
+- Devis travaux à Dijon 438 km
+- Devis travaux à Toulouse 469 km
+- Devis travaux à Bordeaux 637 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Nantes : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/nantes/
+
+Travaux à Nantes : ravalement tous les 10 ans, pas de PVC en secteur sauvegardé, permis de démolir, aide jusqu’à 20 000 €. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Nantes en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Nantes en quelques chiffres
+À Nantes, le maire peut imposer le ravalement tous les dix ans, et dans le secteur sauvegardé de 126 hectares, les fenêtres sont en bois peint, sans PVC
+- 80,6 % des logements sont des appartements Insee, 2023
+- 21,7 % des résidences principales datent de 1946 à 1970 Insee, 2023
+- 126 ha de secteur sauvegardé dans le centre historique Nantes Métropole
+- 20 000 € d’aide au plus de la Métropole pour rénover une maison au niveau BBC Nantes Métropole, 2026
+
+### Que faut-il savoir avant des travaux à Nantes ?
+Huit logements sur dix sont des appartements (80,6 %), et 21,7 % des résidences principales datent de 1946 à 1970. Le maire peut imposer le ravalement au moins tous les dix ans, et un permis de démolir est exigé sur toute la commune, même pour une démolition partielle. Dans le secteur sauvegardé de 126 hectares, le PVC est interdit pour les fenêtres.
+
+**Ravalement**
+- Nantes fait partie des communes où un arrêté préfectoral permet au maire d’imposer le ravalement au moins une fois tous les 10 ans (Service-Public, 2026). La Ville rappelle cette obligation d’entretien des façades aux propriétaires (Ville de Nantes).
+
+**Centre historique**
+- Secteur sauvegardé depuis le 22 mars 1972 (ministère de la Culture), devenu site patrimonial remarquable : 126 hectares et un peu plus de 10 000 logements, sous un plan de sauvegarde révisé en 2017 et modifié le 6 décembre 2023. Il protège aussi l’intérieur des immeubles (Nantes Métropole).
+
+**Permis de démolir**
+- Exigé sur toute la commune depuis la délibération du 5 octobre 2007, pour démolir ou rendre inutilisable tout ou partie d’une construction. Si vos travaux ne relèvent que d’une déclaration préalable, le permis de démolir se demande en parallèle (Ville de Nantes).
+
+**Urbanisme**
+- Hors centre historique, le PLU métropolitain s’applique aux 24 communes depuis son approbation du 5 avril 2019. Sa modification n° 2 a été approuvée le 7 février 2025 (Nantes Métropole).
+
+**Inondation et séisme**
+- Le plan de prévention du risque inondation de la Loire aval s’applique depuis son approbation du 31 mars 2014 (préfecture). La commune compte 14 arrêtés de catastrophe naturelle pour inondation, le dernier pour les inondations du 8 au 23 février 2026 (Géorisques). Zone de sismicité 3, modérée (Géorisques).
+
+**Climat**
+- À Nantes-Bouguenais, 819,5 mm de pluie, 119,7 jours de pluie d’au moins 1 mm, 42,8 jours de rafales d’au moins 58 km/h et 29,1 jours à 0 °C ou moins par an (Météo-France, normales 1991-2020).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 21 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Nantes, métier par métier
+Ardoise, tuffeau et granit nantais dans le centre historique ; ailleurs, le PLU métropolitain
+
+#### Couvreur à Nantes
+Dans le secteur sauvegardé, l’ardoise est naturelle, posée au clou ou au crochet teinté, avec des faîteaux nantais en terre cuite. Ardoises d’imitation et descentes en PVC y sont interdites, comme les couvertures en fibrociment ou métalliques qui n’étaient pas d’origine (PSMV).
+Un châssis de toit y mesure au plus 0,80 m de large sur 1 m de haut, axé sur les fenêtres du dessous, et il est interdit sur les toits qui donnent sur les anciens bras de la Loire, les cours et les places ordonnancés. Avec 42,8 jours de rafales d’au moins 58 km/h par an, surtout en décembre et janvier, faites contrôler ardoises et crochets avant l’hiver (Météo-France).
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Nantes
+Le maire peut imposer le ravalement au moins tous les dix ans. Pour un bâtiment protégé ou d’intérêt patrimonial, la Ville finance 80 % du diagnostic patrimonial réalisé par un architecte, plafonné à 2 000 € ou 5 000 € selon le nombre de façades (Ville de Nantes).
+Dans le secteur sauvegardé, les façades mêlent tuffeau et autres calcaires, sur des seuils et soubassements en granit nantais, le plus souvent beige rosé. Sablage, disque et acide y sont proscrits : on nettoie par brossage, lavage à faible pression ou nébulisation, et la peinture des enduits traditionnels est interdite (PSMV).
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Nantes
+Une aide de la Ville prend en charge 80 % du diagnostic d’une menuiserie ancienne remarquable, sans plafond, réalisé par un architecte ou un menuisier. Avec la Fondation du patrimoine, la restauration de menuiseries anciennes compatible avec une amélioration énergétique peut être aidée à 2 % du coût des travaux (Ville de Nantes).
+Dans le secteur sauvegardé, les fenêtres sont en bois peint et le PVC est interdit. La fenêtre neuve se pose dans la feuillure d’origine, sans recul pour loger un isolant, et une double fenêtre intérieure est admise si elle ne touche pas un décor. Les volets roulants sont interdits sur les immeubles protégés (PSMV).
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Nantes
+Dans le secteur sauvegardé, le volume du toit d’un immeuble protégé se garde sans surélévation, sauf cas exceptionnels. Une charpente d’intérêt se restaure avec soin, l’isolant ne doit pas menacer sa pérennité, et une charpente exceptionnelle peut devoir rester apparente (PSMV).
+Nantes est en zone de sismicité 3, modérée (Géorisques). Dans un immeuble protégé du secteur sauvegardé, les travaux intérieurs respectent les prescriptions parasismiques et ne doivent pas fragiliser la structure (PSMV).
+Devis charpente Prix d’une charpente
+
+#### Isolation à Nantes
+Mon Projet Rénov Maison aide les propriétaires sans condition de ressources : 250 € pour l’audit, obligatoire, puis 7 000 € ou 14 000 € pour une rénovation BBC selon la performance atteinte, et 6 000 € de plus avec des isolants biosourcés (Nantes Métropole, 2026).
+Dans le secteur sauvegardé, l’isolation par l’extérieur est interdite sur les immeubles protégés, hors rares façades secondaires, et les panneaux solaires aussi. Un immeuble non protégé peut être isolé par l’extérieur si le projet améliore l’architecture sans rompre l’alignement de la rue (PSMV).
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Nantes ?
+Dans l’ordre, de la règle de votre parcelle à l’échafaudage
+
+#### Lisez la règle de votre parcelle
+La carte interactive du PLUm donne les prescriptions de chaque parcelle, hors secteur sauvegardé. En secteur protégé, l’architecte des Bâtiments de France donne son avis : UDAP de Loire-Atlantique, 02 40 14 28 19, par téléphone le lundi, le mardi et le jeudi de 9 h à 12 h (ministère de la Culture).
+
+#### Prenez conseil pour un immeuble ancien
+L’architecte conseil de la direction du patrimoine de la Ville reçoit sur rendez-vous, 13 rue de Briord, en lien avec l’architecte des Bâtiments de France. 02 40 41 56 80 (Ville de Nantes).
+
+#### Demandez l’aide avant les travaux
+Rendez-vous France Rénov’ obligatoire, puis demande Mon Projet Rénov en ligne. Des travaux commencés avant le dépôt de la demande ne sont pas aidés.
+
+#### Déposez la déclaration préalable
+En ligne sur les e-services de Nantes Métropole, ou à la direction de l’urbanisme réglementaire, 5 rue Vasco-de-Gama, du lundi au vendredi de 8 h 30 (9 h le mercredi) à 12 h et de 14 h à 17 h. 02 40 41 59 55 (Ville de Nantes).
+
+#### Faites autoriser l’échafaudage
+Au moins 14 jours avant le chantier, avec un plan, au service Réglementation des usages de l’espace public. S’il prend des places de stationnement, posez les panneaux 48 heures avant (démarche).
+
+### Quelles aides pour vos travaux à Nantes ?
+À Nantes, chaque aide se demande avant de commencer, après un rendez-vous de conseil gratuit.
+Conseil public, gratuit et neutre
+
+#### La Maison de l’Habitant
+Elle réunit l’Espace Conseil France Rénov’ et l’ADIL de Loire-Atlantique : 12 rue du Président-Herriot, 44000 Nantes. 02 40 89 30 15, puis touche 1 pour la rénovation. Du lundi au jeudi de 9 h à 12 h 30 et de 13 h 30 à 17 h, fermé le mardi matin ; le vendredi matin, par téléphone ou sur rendez-vous. metropole.nantes.fr.
+
+#### Mon Projet Rénov Maison
+Sans condition de ressources : 250 € pour l’audit, jusqu’à 20 000 € pour une rénovation BBC, dont 6 000 € avec des isolants biosourcés. La demande se dépose avant de commencer (Nantes Métropole, 2026).
+
+#### Mon Projet Rénov Copropriété
+Jusqu’à 5 000 € par bâtiment pour l’audit global et 20 000 € pour la maîtrise d’œuvre. Pour les travaux BBC, un tiers du coût hors taxes, dans la limite de 40 000 € HT de travaux par lot principal (Nantes Métropole).
+
+#### Aides patrimoine de la Ville
+Pour un immeuble protégé : 20 % des travaux en secteur prioritaire, jusqu’à 150 000 €, ou 10 % ailleurs, jusqu’à 75 000 €. Un propriétaire occupant d’un seul logement peut recevoir en plus jusqu’à 20 000 €, selon ses revenus (Ville de Nantes, 2025).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Nantes ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Nantes : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Nantes et alentours.
+
+**Pour qui**
+- Les propriétaires à Nantes, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Nantes : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Le ravalement est-il obligatoire à Nantes ?**
+Oui. Nantes fait partie des communes où un arrêté préfectoral permet au maire d’imposer le ravalement au moins une fois tous les 10 ans. Pour un immeuble protégé, la Ville aide le diagnostic patrimonial à 80 % et les travaux à 10 % ou 20 %.
+
+**Faut-il une autorisation pour changer ses fenêtres à Nantes ?**
+Oui, dès que le remplacement change l’aspect du bâtiment : la Ville demande une déclaration préalable, même pour une seule menuiserie. Dans le secteur sauvegardé, les fenêtres sont en bois peint et le PVC est interdit.
+
+**Peut-on poser des volets roulants dans le centre historique de Nantes ?**
+Pas sur un immeuble protégé du secteur sauvegardé, sauf dispositif d’origine. Sur un immeuble non protégé, seulement sur une façade invisible de l’espace public et sans coffre apparent.
+
+**Peut-on isoler par l’extérieur à Nantes ?**
+Dans le secteur sauvegardé, c’est interdit sur les immeubles protégés ; sur les autres, le projet doit améliorer l’architecture et respecter l’alignement de la rue. Ailleurs, le PLU métropolitain s’applique, avec une déclaration préalable.
+
+**Quelles aides pour rénover sa maison à Nantes ?**
+Mon Projet Rénov Maison de Nantes Métropole, sans condition de ressources : 250 € pour l’audit et jusqu’à 20 000 € pour une rénovation BBC, en plus des aides nationales. Rendez-vous obligatoire avant : Maison de l’Habitant, 02 40 89 30 15.
+
+**Comment faire autoriser un échafaudage à Nantes ?**
+Demandez une autorisation d’occupation de l’espace public au moins deux semaines avant, avec un plan. Elle est payante, selon la rue, la durée et la surface occupée.
+
+**Intervenez-vous partout à Nantes ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Bordeaux 275 km
+- Devis travaux à Rouen 316 km
+- Devis travaux à Paris 343 km
+- Devis travaux à Toulouse 465 km
+- Devis travaux à Dijon 498 km
+- Devis travaux à Lille 507 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Bordeaux : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/bordeaux/
+
+Travaux à Bordeaux : pierre de taille sans peinture, secteur sauvegardé, zone termites, aide Ma Rénov jusqu’à 29 000 €. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Bordeaux en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Bordeaux en quelques chiffres
+À Bordeaux, la façade en pierre reste nue : ni peinture ni isolation par l’extérieur dans la ville de pierre, et l’architecte des Bâtiments de France valide tout changement dans le secteur sauvegardé
+- 79,0 % des logements sont des appartements Insee, 2023
+- 22,8 % des résidences principales datent d’avant 1919 Insee, 2023
+- 150 ha de secteur sauvegardé dans le centre ancien, protégé depuis 1967 PSMV, 2021
+- 23 reconnaissances de catastrophe naturelle pour sécheresse depuis 1989 Géorisques
+
+### Que faut-il savoir avant des travaux à Bordeaux ?
+Les logements sont surtout des appartements (79,0 %), et 22,8 % des résidences principales datent d’avant 1919. Dans la ville de pierre, le PLU interdit de peindre une façade en pierre et de l’isoler par l’extérieur ; dans le secteur sauvegardé, tout changement passe par l’architecte des Bâtiments de France. Toute la Gironde est en zone termites depuis 2001.
+
+**Centre ancien**
+- Secteur sauvegardé depuis le 16 février 1967, devenu site patrimonial remarquable : son plan de sauvegarde couvre 150,28 hectares (rapport de présentation), et sa révision a été approuvée le 18 février 2022 (Bordeaux Métropole). Tout travail qui modifie un immeuble, dehors comme dedans, demande l’accord de l’architecte des Bâtiments de France (PSMV).
+
+**Ville de pierre**
+- Hors secteur sauvegardé, la zone UP1 du PLU protège la ville de pierre : façades en pierre ou en brique sans peinture, film, résine ni hydrofuge, et aucune isolation par l’extérieur sur un mur en pierre de taille (PLU, zone UP1).
+
+**Urbanisme**
+- Le PLU 3.1 de Bordeaux Métropole, issu de la révision du 16 décembre 2016, s’applique depuis le 24 février 2017. Sa 11e modification, approuvée le 2 février 2024, a mis à jour les plans de la ville de pierre (Bordeaux Métropole). Une nouvelle révision a été lancée le 6 juin 2025 (délibération).
+
+**Inondation**
+- Un plan de prévention du risque d’inondation propre à Bordeaux, pour les crues lentes et la submersion marine, est approuvé depuis le 5 décembre 2023. En zone inondable, ses règles s’ajoutent au PLU (Géorisques).
+
+**Termites**
+- Toute la Gironde est déclarée infestée par l’arrêté préfectoral du 12 février 2001. Si des termites sont trouvés, le maire peut imposer des travaux de traitement dans un délai de six mois (Ville de Bordeaux).
+
+**Climat et sols**
+- À Bordeaux-Mérignac, 924,9 mm de pluie et 25,5 jours à 30 °C ou plus par an (Météo-France, normales 1991-2020). La commune compte 23 reconnaissances de catastrophe naturelle pour sécheresse depuis 1989 (Géorisques).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 21 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Bordeaux, métier par métier
+Dans le centre ancien comme dans la ville de pierre, deux textes encadrent vos travaux : le plan de sauvegarde et le PLU
+
+#### Couvreur à Bordeaux
+Dans le secteur sauvegardé, le plan de sauvegarde fixe la couverture : tuile canal dite de Gironde sur les édifices anciens, tuile de Marseille à partir du milieu du XIXe siècle, ardoise naturelle ou zinc selon le comble. Gouttières et chéneaux y sont en zinc ou en cuivre, et les capteurs photovoltaïques n’y sont pas autorisés sur le bâti existant (PSMV).
+Dans la ville de pierre, un châssis de toit doit faire moins de 0,80 m² et rester dans le plan de la couverture (PLU, zone UP1). En 2018, Bordeaux Métropole a survolé de nuit ses 28 communes en infrarouge pour repérer les pertes de chaleur par les toits : un conseiller Ma Rénov vous aide à lire celle de votre maison (thermographie aérienne).
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Bordeaux
+Dans la ville de pierre, les façades en pierre appareillée ou en brique restent naturelles, sans peinture, film, résine ni hydrofuge. Sur une construction protégée, le sablage est exclu : on nettoie par pulvérisation d’eau, micro-fines, laser ou gommage (PLU, zone UP1).
+Dans le secteur sauvegardé, la pierre de taille reste apparente. Si elle a été peinte ou enduite, le ravalement lui rend son aspect d’origine, et seul un badigeon de chaux coloré par des terres est admis. Les joints se refont au mortier de chaux naturelle et sable de rivière (PSMV).
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Bordeaux
+Dans le secteur sauvegardé, on répare d’abord les menuiseries anciennes. Une fenêtre neuve y est en bois ou en acier peint, de couleur claire non blanche, plutôt dans les gris, et les volets roulants en PVC ou en aluminium sont refusés (PSMV).
+Dans la ville de pierre, les coffres de volets roulants se posent à l’intérieur, invisibles de la rue. Sur une construction protégée, une fenêtre à la française ne peut pas devenir coulissante ou à l’anglaise, et la menuiserie ne se pose pas au nu extérieur de la façade (PLU, zone UP1).
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Bordeaux
+Toute la Gironde est zone infestée par les termites depuis l’arrêté préfectoral du 12 février 2001. Tout foyer doit être déclaré, et le traitement doit être fait par une autre entreprise que celle qui a établi le diagnostic (Ville de Bordeaux).
+Pour isoler des combles dans le secteur sauvegardé, l’isolant ne doit pas menacer les bois de charpente, qui restent ventilés (PSMV). Hors secteur, une surélévation doit respecter la hauteur des bâtiments voisins, surtout s’ils sont protégés (Ville de Bordeaux).
+Devis charpente Prix d’une charpente
+
+#### Isolation à Bordeaux
+Ma Rénov Bordeaux Métropole complète MaPrimeRénov’ : jusqu’à 29 000 € pour une rénovation d’ampleur, jusqu’à 15 000 € pour des travaux par geste, isolation comprise (Ville de Bordeaux, 2026). Le dossier se dépose avant les travaux, et les devis se signent après l’accord de la Métropole (Ma Rénov).
+Sur un mur en pierre de taille de la ville de pierre, l’isolation par l’extérieur est interdite. Dans le secteur sauvegardé, le plan de sauvegarde privilégie un enduit isolant mince à l’intérieur, perméable à la vapeur d’eau. Avec 25,5 jours à 30 °C ou plus par an à Mérignac, pensez aussi au confort d’été (Météo-France).
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Bordeaux ?
+Dans l’ordre, du repérage de votre adresse à l’échafaudage
+
+#### Repérez la règle de votre adresse
+La carte interactive du PLU situe votre terrain et renvoie au règlement de sa zone (Ville de Bordeaux). En secteur protégé, l’architecte des Bâtiments de France donne son avis : UDAP de la Gironde, 54 rue Magendie, 05 56 00 87 10, par téléphone du lundi au jeudi de 14 h à 16 h (ministère de la Culture).
+
+#### Rencontrez un conseiller Ma Rénov
+Rendez-vous gratuit au 05 57 20 70 20 ou en ligne. Le dossier d’aide se dépose avant les travaux, et les devis se signent après l’accord de Bordeaux Métropole.
+
+#### Déposez la déclaration préalable
+En ligne sur le portail urbanisme de Bordeaux Métropole, ou au service droit des sols, Cité municipale, 4 rue Claude-Bonnier : sans rendez-vous du lundi au vendredi de 9 h à 16 h 45, dès 9 h 30 le jeudi. 05 24 57 16 07 (Ville de Bordeaux).
+
+#### Faites autoriser l’échafaudage
+Trois semaines avant le chantier, sur le portail des démarches de la Ville. Une emprise clôturée coûte 0,60 € le m² par jour ; sans autorisation, la taxe monte à 18,73 € le m² par jour (Ville de Bordeaux).
+
+### Quelles aides pour vos travaux à Bordeaux ?
+À Bordeaux, le dossier d’aide part avant la signature des devis, et le conseil Ma Rénov est gratuit.
+Conseil public, gratuit et neutre
+
+#### Ma Rénov Bordeaux Métropole
+L’Espace Conseil France Rénov’ de Bordeaux Métropole : conseil gratuit et neutre, en rendez-vous dans les communes ou en visioconférence. Esplanade Charles-de-Gaulle, 33045 Bordeaux Cedex. 05 57 20 70 20, du lundi au vendredi de 8 h à 18 h 30. marenov.bordeaux-metropole.fr.
+
+#### Aide Ma Rénov aux logements
+En complément de MaPrimeRénov’ : jusqu’à 29 000 € pour une rénovation d’ampleur, avec au moins deux gestes d’isolation et deux classes énergétiques gagnées, et jusqu’à 15 000 € pour une rénovation par geste, avec au moins un geste d’isolation (Ville de Bordeaux, 2026, Ma Rénov).
+
+#### Ma Rénov copropriétés
+Jusqu’à 20 % des travaux de rénovation énergétique financés par l’Anah, plus une prime de 750 € ou 1 500 € par propriétaire occupant modeste ou très modeste (Ville de Bordeaux).
+
+#### Expertise structure
+La Ville prend en charge jusqu’à 50 % du montant TTC, plafonné à 1 000 € par immeuble, pour faire expertiser la structure d’un immeuble collectif. Centre de gestion des aides à la pierre : 05 56 10 19 20 (Ville de Bordeaux).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Bordeaux ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Bordeaux : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Bordeaux et alentours.
+
+**Pour qui**
+- Les propriétaires à Bordeaux, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Bordeaux : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Peut-on peindre une façade en pierre à Bordeaux ?**
+Pas dans la ville de pierre : le PLU impose des façades en pierre ou en brique naturelles, sans peinture, résine ni hydrofuge. Dans le secteur sauvegardé, seul un badigeon de chaux coloré par des terres est admis, et une pierre déjà peinte retrouve son aspect d’origine au ravalement.
+
+**Faut-il l’accord de l’architecte des Bâtiments de France à Bordeaux ?**
+Oui dans le secteur sauvegardé, pour tout travail qui modifie un immeuble, même à l’intérieur. Aux abords d’un monument historique, l’architecte des Bâtiments de France donne aussi son avis. UDAP de la Gironde : 05 56 00 87 10.
+
+**Peut-on isoler par l’extérieur une maison en pierre à Bordeaux ?**
+Pas sur un mur en pierre de taille de la ville de pierre : le PLU l’interdit. Restent les combles, les planchers et l’isolation par l’intérieur, que Ma Rénov Bordeaux Métropole aide jusqu’à 15 000 € en rénovation par geste.
+
+**Bordeaux est-elle en zone termites ?**
+Oui, comme toute la Gironde depuis l’arrêté préfectoral du 12 février 2001. Un état relatif aux termites est joint à toute vente, et le maire peut imposer un traitement dans un délai de six mois.
+
+**Quelles aides pour rénover son logement à Bordeaux ?**
+Ma Rénov Bordeaux Métropole, jusqu’à 29 000 € pour une rénovation d’ampleur et 15 000 € pour une rénovation par geste, Ma Rénov copropriétés, l’aide de la Ville aux expertises de structure, et les aides nationales. Conseil gratuit : 05 57 20 70 20.
+
+**Comment faire autoriser un échafaudage à Bordeaux ?**
+Demandez l’occupation du domaine public trois semaines avant le chantier, sur le portail des démarches de la Ville. Elle est payante, selon la surface, le type et la durée d’occupation.
+
+**Intervenez-vous partout à Bordeaux ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Toulouse 212 km
+- Devis travaux à Nantes 275 km
+- Devis travaux à Lyon 436 km
+- Devis travaux à Grenoble 497 km
+- Devis travaux à Paris 499 km
+- Devis travaux à Marseille 505 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -2491,9 +3092,391 @@ Tous les devis de travaux
 Villes les plus proches
 - Devis travaux à Rouen 192 km
 - Devis travaux à Paris 204 km
+- Devis travaux à Dijon 395 km
+- Devis travaux à Nantes 507 km
 - Devis travaux à Lyon 557 km
-- Devis travaux à Toulouse 791 km
-- Devis travaux à Marseille 834 km
+- Devis travaux à Grenoble 637 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Dijon : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/dijon/
+
+Travaux à Dijon : secteur sauvegardé de 97 ha, tuiles vernissées, faubourgs protégés, aide Façades Liberté de la Ville. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Dijon en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Dijon en quelques chiffres
+À Dijon, le centre historique est un secteur sauvegardé de 97 hectares, et les faubourgs anciens ont leur propre règlement patrimonial, lié aux Climats du vignoble de Bourgogne
+- 85,3 % des logements sont des appartements Insee, 2023
+- 42,0 % des résidences principales datent d’avant 1971 Insee, 2023
+- 97 ha de secteur sauvegardé dans le centre historique Dijon métropole
+- 61,5 jours de gel par an à Dijon-Longvic Météo-France, 1991-2020
+
+### Que faut-il savoir avant des travaux à Dijon ?
+À Dijon, 85,3 % des logements sont des appartements, et 42,0 % des résidences principales datent d’avant 1971. Le centre historique est un secteur sauvegardé de 97 hectares, régi par un plan de sauvegarde qui fixe matériaux et teintes. Les faubourgs anciens ont leur propre règlement patrimonial, lié aux Climats du vignoble de Bourgogne inscrits à l’Unesco.
+
+**Centre historique**
+- Secteur sauvegardé depuis le 19 août 1966 (ministère de la Culture), il couvre 97 hectares. Son plan de sauvegarde, approuvé par décret le 8 février 1990, remplace le PLUi-HD sur ce périmètre et s’applique à tout projet (Dijon métropole).
+
+**Faubourgs**
+- Les faubourgs anciens font partie d’un second site patrimonial remarquable, lié aux Climats du vignoble de Bourgogne, inscrits au patrimoine mondial le 4 juillet 2015 (rapport de présentation). Son règlement, modifié le 27 juin 2024, range chaque bâtiment dans l’une de quatre catégories, des « remarquables » aux « autres constructions ». Sans l’accord de l’architecte des Bâtiments de France, aucune autorisation de travaux n’y est délivrée (règlement).
+
+**Abords des monuments**
+- Cinq périmètres délimités des abords ont été créés à Dijon par arrêtés préfectoraux du 22 avril 2022, dont celui du centre ancien, des faubourgs et du parc de la Colombière. Dans ces périmètres, l’avis de l’architecte des Bâtiments de France est conforme : il s’impose (Dijon métropole).
+
+**Urbanisme**
+- Le PLUi-HD de Dijon métropole, approuvé le 19 décembre 2019, est exécutoire depuis le 23 janvier 2020 (Dijon métropole). Sa modification n° 1 s’applique depuis le 1er mai 2022 (Métropole), et sa modification simplifiée n° 1 depuis le 2 mai 2024 (Métropole).
+
+**Risques naturels**
+- Le plan de prévention des risques naturels de Dijon, approuvé le 7 décembre 2015, couvre les inondations par ruissellement et débordement de cours d’eau, et les mouvements de terrain, dont le retrait-gonflement des argiles (note de présentation). Dijon est en zone de sismicité 1, très faible (Géorisques).
+
+**Climat**
+- À Dijon-Longvic : 61,5 jours de gel et 8,3 jours sans dégel par an, 743,4 mm de pluie et 29,8 jours de rafales d’au moins 58 km/h (Météo-France, normales 1991-2020).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 21 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Dijon, métier par métier
+Pierre de Bourgogne et toits de petites tuiles : dans le centre et les faubourgs, deux règlements fixent les matériaux
+
+#### Couvreur à Dijon
+Dans le secteur sauvegardé, le plan rappelle que les petites tuiles colorées et vernissées font l’originalité des toits bourguignons, et fait choisir le matériau édifice par édifice. Tuile mécanique, ardoise posée sur la diagonale, fibrociment, tôle ondulée et zinc apparent y sont interdits. Pour des tuiles neuves, le panachage des teintes est exigé (plan de sauvegarde).
+L’ardoise doit y être de schiste naturel, de teinte proche de celle d’Angers-Trélazé : le plan écarte les ardoises importées qui ne résistent pas aux gels de la région. Les chiens-assis sont interdits, et les lucarnes s’accordent à la façade en dimension, forme et matériau (plan de sauvegarde). À Dijon-Longvic, il gèle 61,5 jours par an.
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Dijon
+Dans le secteur sauvegardé, la pierre de taille ne se peint pas, et ses joints se refont au mortier de chaux sans ciment, au nu de la pierre. Une pierre remplacée se choisit après recherche en carrières de Bourgogne. Les façades enduites le sont de préférence à la chaux grasse et aux sables colorés. Le sablage, les enduits au mortier de ciment gris et les enduits plastiques sont proscrits (plan de sauvegarde).
+Rue de la Liberté, entre la place François-Rude et la place de la Libération, la Ville finance 50 % hors taxes des ravalements, jusqu’à 250 €/m², sur 17 immeubles protégés au titre des monuments historiques. L’opération court jusqu’en avril 2027 (Ville de Dijon).
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Dijon
+Dans le secteur sauvegardé, les menuiseries se refont à l’identique quand le modèle d’origine existe, sinon d’après un immeuble du même type et de la même époque, et le dossier doit montrer le modèle. Elles sont peintes d’un ton adapté à l’époque : le plan rappelle que toutes les menuiseries anciennes étaient en bois peint (plan de sauvegarde).
+Dans les faubourgs, le PVC est interdit sur les bâtiments remarquables, et vu de la rue sur les bâtiments caractéristiques. Sur les autres constructions, il reste refusé en façade visible, sauf pour remplacer un élément déjà en PVC, et le blanc est exclu sauf parti d’origine (règlement des faubourgs).
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Dijon
+Dans le secteur sauvegardé, les toits gardent ou retrouvent leur pente d’origine. Un édifice en petites tuiles le reste sur ses deux versants, pour équilibrer la charpente, et les tuiles anciennes de récupération vont d’abord sur les parties visibles (plan de sauvegarde).
+Les façades à pans de bois peuvent y être dégagées si leur intérêt archéologique est démontré. Le bois d’ossature reçoit alors un traitement insecticide et fongicide avant d’être protégé, avec un colombage pas trop foncé, accordé à l’enduit de remplissage (plan de sauvegarde).
+Devis charpente Prix d’une charpente
+
+#### Isolation à Dijon
+Dans les faubourgs, un bâtiment remarquable ne s’isole par l’extérieur qu’avec des procédés traditionnels, enduit à la chaux ou bardage, conformes à son style. Sur les autres constructions, l’isolation extérieure doit respecter l’architecture, et des brise-soleil peuvent être autorisés (règlement des faubourgs).
+La copropriété Arquebuse, 108 logements construits en 1960, a voté en 2021 une rénovation de niveau BBC : combles, façades isolées par l’extérieur, menuiseries et ventilation (Dijon métropole). Les conseillers Rénovéco accompagnent gratuitement ce type de projet.
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Dijon ?
+Dans l’ordre, du secteur sauvegardé aux faubourgs
+
+#### Repérez votre secteur
+Secteur sauvegardé ou faubourgs : les plans et règlements sont en ligne (Dijon métropole). Dans un périmètre délimité des abords, l’avis de l’architecte des Bâtiments de France s’impose (Dijon métropole).
+
+#### Prenez un rendez-vous technique
+Le service Droit des sols de Dijon métropole reçoit sur rendez-vous les mardis et jeudis, pour 20 minutes, avant le dépôt (prise de rendez-vous).
+
+#### Déposez la déclaration préalable
+Pour un bien à Dijon, le dossier se dépose directement à Dijon métropole, 40 avenue du Drapeau, et non en mairie, ou en ligne sur le guichet unique. 03 80 50 35 35 (Dijon métropole).
+
+#### Faites autoriser l’échafaudage
+Échafaudage, palissade, benne ou dépôt de matériaux sur l’espace public : demande en ligne à la Ville au moins 15 jours avant (démarche). Mairie : 03 80 74 51 51.
+
+#### Passez par Rénovéco
+Conseil gratuit sur les travaux et les aides, sur rendez-vous, avant de signer un devis. 03 80 48 89 89.
+
+### Quelles aides pour vos travaux à Dijon ?
+Rénovéco est le service public de conseil de la métropole : passez-y avant de signer un devis.
+Conseil public, gratuit et neutre
+
+#### Rénovéco-Dijon métropole
+L’Espace Conseil France Rénov’ des 23 communes de la métropole (France Rénov’) : conseil gratuit, objectif et personnalisé, sur rendez-vous. 1 boulevard Voltaire, 21000 Dijon. 03 80 48 89 89. dijon-metropole.fr.
+
+#### Opération Façades Liberté
+La Ville finance 50 % hors taxes des travaux sur les 17 immeubles de la rue de la Liberté dite « des arcades » : jusqu’à 250 €/m² de ravalement, 15 000 € pour les menuiseries des étages et 3 000 € pour les cheminées. Devantures : 40 %, jusqu’à 25 000 € HT par commerce. Jusqu’en avril 2027. URBANIS : 03 80 71 17 12 (Ville de Dijon).
+
+#### Copropriétés
+Un conseiller Rénovéco référent copropriété accompagne les copropriétés à chaque étape d’une rénovation globale, de la définition du projet aux travaux. 03 80 59 12 80 (Dijon métropole).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Dijon ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Dijon : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Dijon et alentours.
+
+**Pour qui**
+- Les propriétaires à Dijon, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Dijon : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Quelles règles dans le secteur sauvegardé de Dijon ?**
+Le centre historique, 97 hectares, suit un plan de sauvegarde approuvé en 1990 qui remplace le PLUi-HD. Tout projet doit le respecter, avec l’avis de l’architecte des Bâtiments de France. Le plan y interdit notamment la tuile mécanique, l’ardoise posée sur la diagonale et les enduits au mortier de ciment gris.
+
+**Quelles tuiles pour un toit dans le centre de Dijon ?**
+Le plan de sauvegarde rappelle que les petites tuiles colorées et vernissées font l’originalité des toits bourguignons, et fait choisir le matériau édifice par édifice. Pour des tuiles neuves, le panachage des teintes est exigé. Un édifice en petites tuiles le reste sur ses deux versants.
+
+**Peut-on poser des fenêtres en PVC à Dijon ?**
+Dans le secteur sauvegardé, les menuiseries se refont à l’identique ou d’après un modèle de la même époque, et le plan rappelle qu’elles étaient toutes en bois peint. Dans les faubourgs, le PVC est interdit sur les bâtiments remarquables, et vu de la rue sur les bâtiments caractéristiques.
+
+**Quelles aides pour ravaler une façade rue de la Liberté ?**
+L’opération Façades Liberté finance 50 % hors taxes des travaux, jusqu’à 250 €/m² de ravalement, sur les 17 immeubles des arcades, entre la place François-Rude et la place de la Libération. Elle court jusqu’en avril 2027. Renseignements chez URBANIS : 03 80 71 17 12.
+
+**Où déposer une déclaration préalable à Dijon ?**
+Directement à Dijon métropole, 40 avenue du Drapeau, et non en mairie, ou en ligne sur le guichet unique. Un rendez-vous technique est possible les mardis et jeudis. 03 80 50 35 35.
+
+**Dijon est-elle exposée aux risques naturels ?**
+Un plan de prévention approuvé le 7 décembre 2015 couvre les inondations et les mouvements de terrain, dont le retrait-gonflement des argiles. Le risque sismique est très faible : zone 1.
+
+**Intervenez-vous partout à Dijon ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Lyon 174 km
+- Devis travaux à Grenoble 243 km
+- Devis travaux à Paris 263 km
+- Devis travaux à Rouen 375 km
+- Devis travaux à Lille 395 km
+- Devis travaux à Nice 438 km
+- Toutes les villes
+Par métier
+- Toiture et couverture
+- Ravalement de façade
+- Fenêtres et portes
+- Charpente
+- Isolation des combles et des murs
+
+### Décrivez vos travaux. Nous fixons la visite.
+ou appelez le 07 81 01 89 36
+
+---
+
+## Devis travaux à Grenoble : toiture, façade, fenêtres, isolation
+
+Adresse : https://bartierandco.com/devis-travaux/grenoble/
+
+Travaux à Grenoble : ravalement tous les 10 ans, centre en site patrimonial, zone termites, aides Mur Mur de la Métropole. Un seul artisan vient chiffrer.
+
+Pas cinq artisans. Un seul, près de chez vous.
+Décrivez vos travaux à Grenoble en 1 minute. Nous vous rappelons en moins de 5 minutes en semaine, et nous fixons la visite.
+- Visite et devis offerts
+- Sans engagement
+- Un seul artisan
+Pressé ? 07 81 01 89 36
+
+### Grenoble en quelques chiffres
+À Grenoble, plus d’un tiers des résidences principales datent de 1946 à 1970, et la Métropole aide à les isoler avec Mur Mur, en copropriété comme en maison
+- 95,4 % des logements sont des appartements Insee, 2023
+- 34,4 % des résidences principales datent de 1946 à 1970 Insee, 2023
+- 1 200 copropriétés construites entre 1945 et 1975 Ville de Grenoble, 2025
+- 35,3 jours à 30 °C ou plus par an, à Grenoble-Le Versoud Météo-France, 1999-2020
+
+### Que faut-il savoir avant des travaux à Grenoble ?
+À Grenoble, 95,4 % des logements sont des appartements, et 34,4 % des résidences principales datent de 1946 à 1970. Le ravalement y est obligatoire au moins tous les dix ans, et dans le site patrimonial remarquable du centre, l’architecte des Bâtiments de France doit donner son accord. La ville est aussi en zone de lutte contre les termites et en zone de sismicité 4.
+
+**Ravalement**
+- Obligatoire au moins une fois tous les dix ans, sur rue comme sur cour. La Ville fixe ses campagnes pluriannuelles par arrêté municipal, et le ravalement demande une déclaration préalable (Ville de Grenoble).
+
+**Centre ancien**
+- L’ancienne AVAP, créée le 18 novembre 2013, est devenue le site patrimonial remarquable. Elle couvre la ville ancienne et ses extensions du XIXe siècle, de l’Île Verte au parc Paul-Mistral. Tout changement d’aspect y demande l’accord de l’architecte des Bâtiments de France (règlement du SPR).
+
+**Urbanisme**
+- Le PLUi de Grenoble-Alpes Métropole a été approuvé le 20 décembre 2019 (délibération). Sa révision allégée n° 1, approuvée le 7 novembre 2025, y intègre le plan de prévention du risque d’inondation du Drac aval (Métropole). Il protège certains bâtiments sur trois niveaux, chacun avec ses prescriptions de travaux (Ville de Grenoble).
+
+**Termites**
+- Grenoble fait partie des 21 communes de la zone de lutte et de surveillance créée par l’arrêté préfectoral du 1er octobre 2002, avec Saint-Martin-d’Hères, Meylan ou La Tronche (ADIL de l’Isère).
+
+**Séisme et inondation**
+- Grenoble est en zone de sismicité 4, moyenne (Géorisques). Elle entre aussi dans le plan de prévention du risque d’inondation du Drac aval, approuvé le 17 juillet 2023. En zone inondable, les mesures prescrites aux bâtiments existants, comme une zone refuge, sont à réaliser dans les 5 ans suivant l’approbation, dans la limite de 10 % de la valeur vénale du bien (préfecture de l’Isère).
+
+**Climat**
+- À la station de Grenoble-Le Versoud : 67,2 jours de gel, 35,3 jours à 30 °C ou plus et 981,1 mm de pluie par an, mais seulement 13,6 jours de rafales d’au moins 58 km/h (Météo-France, 1999-2020).
+Par Charles Le Cottier, cofondateur de Bartier & Co. Sources officielles vérifiées le 21 novembre 2026. Une règle a changé ? Écrivez-nous.
+
+### Vos travaux à Grenoble, métier par métier
+Immeubles d’après-guerre, pierre calcaire, ciment moulé du XIXe siècle et toits de tuiles : à Grenoble, les règles changent d’un quartier à l’autre
+
+#### Couvreur à Grenoble
+Dans le site patrimonial remarquable, les toits des immeubles protégés gardent leur pente et leur forme. On y couvre en tuile canal ou mécanique de terre cuite rouge brun ou rouge vieilli, en tuile plate petit moule ou en ardoise, conservée là où elle était d’origine. Fibrociment, tôle ondulée, bac acier et PVC y sont interdits (règlement du SPR).
+Une fenêtre de toit y reste invisible de face depuis la rue, mesure au plus 78 × 140 cm ou moins de 1 m², et prend le modèle « patrimoine » à meneau central sur les immeubles d’avant le milieu du XXe siècle. Le règlement conseille de l’équiper d’un store extérieur, surtout à l’est, au sud et à l’ouest (règlement du SPR) : on compte 35,3 jours à 30 °C ou plus par an à Grenoble-Le Versoud.
+Devis toiture Prix d’une toiture
+
+#### Ravalement de façade à Grenoble
+Le ravalement est obligatoire au moins tous les dix ans, par campagnes fixées par arrêté municipal. L’architecte conseil de la Ville aide à définir les travaux (04 76 76 36 12), et un carnet couleurs par type d’immeuble guide les teintes. Les propriétaires modestes et très modestes reçoivent 10 % du reste à charge, jusqu’à 2 000 € (Ville de Grenoble).
+Autour de la place Victor-Hugo, les immeubles du XIXe siècle exploitent le ciment moulé : ces décors ne s’enduisent pas. Les murs en moellons faits pour être enduits se ré-enduisent à la chaux naturelle ou au ciment naturel selon l’époque, jamais au ciment artificiel (règlement du SPR).
+Devis façade Prix d’un ravalement
+
+#### Fenêtres et portes à Grenoble
+Dans le site patrimonial remarquable, les menuiseries des immeubles protégés sont en bois ou en métal. Le PVC y est interdit, et des fenêtres en PVC déjà posées sur la façade ne servent pas d’argument. Le blanc et le bois laissé naturel sont refusés, sauf disposition d’origine (règlement du SPR).
+Un remplacement partiel y demande un plan d’ensemble de la façade, approuvé par la copropriété le cas échéant (règlement du SPR). Pendant un ravalement, la Ville finance 20 à 30 % du prix hors taxes des menuiseries en bois, selon vos ressources, sur devis global de la façade (Ville de Grenoble).
+Devis fenêtres Prix d’une fenêtre
+
+#### Charpente à Grenoble
+Grenoble est en zone de lutte et de surveillance contre les termites depuis l’arrêté préfectoral du 1er octobre 2002. Profitez d’une réfection de toiture pour faire contrôler les bois. À la vente, l’état relatif aux termites doit dater de moins de six mois (ADIL de l’Isère).
+Dans le site patrimonial remarquable, faîtages, rives et arêtiers d’origine sont conservés ou refaits à l’identique. Les débords de toit gardent au moins 50 cm, à chevrons apparents ou voliges sous rampant, avec des planches d’égout en bois de 18 cm de haut au plus (règlement du SPR).
+Devis charpente Prix d’une charpente
+
+#### Isolation à Grenoble
+Mur Mur, l’aide de la Métropole, prend en charge à 100 % l’accompagnement des copropriétés de plus de 15 ans, et finance 80 % de l’étude de maîtrise d’œuvre, jusqu’à 8 000 €, si le projet vise au moins 35 % de gain énergétique (Métropole). À Grenoble, 1 200 copropriétés datent de 1945 à 1975, et 300 sont inscrites au dispositif depuis 2015 (Ville de Grenoble, 2025).
+Dans le site patrimonial remarquable, l’isolation par l’extérieur en panneaux est interdite sur les immeubles les plus protégés, et le polystyrène comme le polyuréthane y sont exclus. Un enduit isolant de type chaux-chanvre reste possible s’il préserve les décors (règlement du SPR). Pour un enduit isolant, la Ville verse 2 % du coût des travaux aux copropriétés qui obtiennent le label de la Fondation du patrimoine (Ville de Grenoble).
+Devis isolation Prix de l’isolation
+
+### Fini les artisans qui ne rappellent pas.
+Vous laissez un message, vous relancez, vous attendez. Ici, la visite est fixée pendant notre appel.
+- 5 min pour vous rappeler, en semaine de 8 h à 19 h
+- 1 appel pour fixer la date de visite
+- 1 SMS de rappel avant la visite
+- 0 € pour vous : visite et devis offerts, sans engagement
+ou appelez le 07 81 01 89 36
+
+### Quelles démarches avant des travaux à Grenoble ?
+Dans l’ordre, du centre ancien aux quartiers d’après-guerre
+
+#### Vérifiez si votre immeuble est protégé
+Dans le site patrimonial remarquable, l’architecte des Bâtiments de France doit donner son accord. Aux abords d’un monument historique, son accord est requis en périmètre délimité ou en covisibilité. Un bâtiment repéré au PLUi suit ses propres prescriptions. Le Service Conseil et Urbanisme Réglementaire répond les lundis, mardis et jeudis de 9 h à 12 h. 04 76 76 39 62 (Ville de Grenoble).
+
+#### Préparez le ravalement avec la Ville
+Si vous avez reçu un arrêté de ravalement, la Ville conseille d’appeler l’architecte conseil pour préciser le programme des travaux : 04 76 76 36 12. Les dossiers d’aide se demandent au Service Conseil et Urbanisme Réglementaire (Ville de Grenoble).
+
+#### Déposez la déclaration préalable
+En ligne sur le guichet numérique de la Métropole, ou à l’accueil de l’Hôtel de Ville, 11 boulevard Jean-Pain. L’instruction prend un mois, un de plus en secteur protégé (Ville de Grenoble).
+
+#### Faites autoriser le chantier sur la voie publique
+Toute occupation du domaine public est soumise à autorisation et à redevance. Pour réserver des places de stationnement pendant les travaux, l’entreprise fait la demande en ligne à la Ville au moins 15 jours ouvrés avant. Les arrêtés de circulation pour travaux se demandent aussi en ligne (démarche).
+
+#### Appelez l’ALEC avant de signer
+Conseil gratuit sur Mur Mur et les autres aides. 04 76 00 19 09.
+
+### Quelles aides pour vos travaux à Grenoble ?
+Ne commencez pas les travaux avant d’avoir reçu la notification de l’aide.
+Conseil public, gratuit et neutre
+
+#### ALEC de la métropole grenobloise
+L’Espace Conseil France Rénov’ de la métropole : conseil gratuit, neutre et indépendant, sur rendez-vous. 14 avenue Benoît-Frachon, 38400 Saint-Martin-d’Hères. 04 76 00 19 09. alec-grenoble.org.
+
+#### Mur Mur maisons
+Pour une résidence principale de plus de 15 ans : 80 % de l’audit énergétique, jusqu’à 700 €, puis une prime travaux de 600 € à 11 800 € selon le projet et vos ressources, avec au moins trois postes dont l’isolation des murs ou de la toiture (Métropole).
+
+#### Mur Mur copropriétés
+Accompagnement pris en charge à 100 % par la Métropole, et 80 % de l’étude de maîtrise d’œuvre, jusqu’à 8 000 €, si le projet vise au moins 35 % de gain énergétique. Jusqu’à 75 % des travaux pour les propriétaires occupants les plus modestes (Métropole). La Ville ajoute des aides quand la rénovation vise le niveau BBC (Ville de Grenoble, 2025).
+
+#### Aides de la Ville au ravalement
+10 % du reste à charge, jusqu’à 2 000 €, pour les propriétaires modestes et très modestes. 20 à 30 % du prix hors taxes des menuiseries en bois remplacées pendant le ravalement. 2 % du coût pour un enduit isolant labellisé par la Fondation du patrimoine (Ville de Grenoble).
+
+#### Aides nationales
+MaPrimeRénov’, primes CEE et éco-prêt à taux zéro, avec une entreprise certifiée RGE. La TVA est de 5,5 % pour les travaux d’amélioration énergétique et de 10 % pour l’entretien d’un logement de plus de deux ans. Votre cas : france-renov.gouv.fr.
+
+### Une fuite de toiture à Grenoble ?
+Signalez-la : rappel prioritaire. En attendant, suivez les 5 bons réflexes.
+
+### Devis travaux à Grenoble : l’essentiel
+
+**Le service**
+- Bartier & Co vous met gratuitement en relation avec l’artisan partenaire qui couvre votre commune, pour vos travaux de toiture, façade, fenêtres, charpente ou isolation à Grenoble et alentours.
+
+**Pour qui**
+- Les propriétaires à Grenoble, occupants ou bailleurs, en maison ou en copropriété. Locataire ? Transmettez la page à votre propriétaire.
+
+**Le prix pour vous**
+- Gratuit, visite et devis compris. Les artisans nous rémunèrent.
+
+**Le délai**
+- Rappel en moins de 5 minutes, en semaine de 8 h à 19 h. Sinon, dès la réouverture.
+
+**Le rendez-vous**
+- Fixé pendant notre appel, rappelé par SMS avant la visite.
+
+**Combien d’artisans**
+- Un seul. Vos coordonnées ne vont à personne d’autre.
+
+**La zone**
+- Selon votre commune. Hors zone, nous vous le disons à l’appel.
+
+**La société**
+- Bartier & Co, SAS en cours d’immatriculation. Mentions légales.
+Mis à jour le 21 novembre 2026
+
+### Travaux à Grenoble : vos questions
+Une autre question ? 07 81 01 89 36
+Voir toutes les questions
+
+**Le ravalement est-il obligatoire à Grenoble ?**
+Oui, au moins une fois tous les dix ans, sur rue comme sur cour. La Ville lance des campagnes par arrêté municipal, et le ravalement demande une déclaration préalable. Les propriétaires modestes reçoivent 10 % du reste à charge, jusqu’à 2 000 €.
+
+**Peut-on poser des fenêtres en PVC à Grenoble ?**
+Pas sur les immeubles protégés du site patrimonial remarquable : les menuiseries y sont en bois ou en métal, et le blanc est refusé sauf disposition d’origine. Ailleurs, modifier l’aspect d’une façade demande une déclaration préalable.
+
+**Grenoble est-elle en zone termites ?**
+Oui. L’arrêté préfectoral du 1er octobre 2002 place Grenoble et 20 autres communes de l’agglomération en zone de lutte et de surveillance. À la vente, l’état relatif aux termites doit dater de moins de six mois.
+
+**Quelles aides pour isoler sa copropriété à Grenoble ?**
+Mur Mur, de la Métropole, accompagne gratuitement les copropriétés de plus de 15 ans et finance 80 % de l’étude de maîtrise d’œuvre, jusqu’à 8 000 €. La Ville ajoute des aides si le projet vise le niveau BBC. L’ALEC vous conseille : 04 76 00 19 09.
+
+**Peut-on isoler par l’extérieur dans le centre de Grenoble ?**
+Dans le site patrimonial remarquable, les panneaux isolants sont interdits sur les immeubles les plus protégés, et le polystyrène comme le polyuréthane sont exclus. Un enduit isolant de type chaux-chanvre reste possible s’il préserve les décors.
+
+**Comment déposer une déclaration préalable à Grenoble ?**
+En ligne sur le guichet numérique de la Métropole, ou à l’Hôtel de Ville, 11 boulevard Jean-Pain. L’instruction prend un mois, un de plus si l’architecte des Bâtiments de France est consulté. Renseignements : 04 76 76 39 62.
+
+**Intervenez-vous partout à Grenoble ?**
+Nous vous mettons en relation avec l’artisan partenaire qui couvre votre commune et votre métier. Si aucun ne la couvre, nous vous le disons dès l’appel et votre demande n’est transmise à personne.
+
+### Ailleurs en France
+Tous les devis de travaux
+Villes les plus proches
+- Devis travaux à Lyon 95 km
+- Devis travaux à Nice 206 km
+- Devis travaux à Marseille 212 km
+- Devis travaux à Dijon 243 km
+- Devis travaux à Toulouse 383 km
+- Devis travaux à Paris 481 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -2679,9 +3662,10 @@ Tous les devis de travaux
 Villes les plus proches
 - Devis travaux à Paris 112 km
 - Devis travaux à Lille 192 km
+- Devis travaux à Nantes 316 km
+- Devis travaux à Dijon 375 km
 - Devis travaux à Lyon 496 km
-- Devis travaux à Toulouse 650 km
-- Devis travaux à Marseille 758 km
+- Devis travaux à Bordeaux 528 km
 - Toutes les villes
 Par métier
 - Toiture et couverture
@@ -2869,7 +3853,7 @@ Trouver des chantiers sans attendre le bouche-à-oreille : choisir entre demande
 - 02
 
 #### Pour les propriétaires
-Les règles qui changent et les démarches avant des travaux : le DPE en 2027, les prix par métier, et les règles locales à Paris, Marseille, Lyon, Toulouse, Lille et Rouen.
+Les règles qui changent et les démarches avant des travaux : le DPE en 2027, les prix par métier, et les règles locales à Paris, Marseille, Lyon, Toulouse, Nice et dans 6 autres villes.
 - 03
 
 #### Comment nous écrivons

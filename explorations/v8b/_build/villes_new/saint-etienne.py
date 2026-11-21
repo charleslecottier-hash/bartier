@@ -1,5 +1,7 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
 
+REVIEWED = "2026-11-21"
+
 # Sources consultées le 21/11/2026.
 _INSEE = "https://www.insee.fr/fr/statistiques/2011101?geo=COM-42218"
 _SPR = "https://www.saint-etienne.fr/sites-patrimoniaux-remarquables"
@@ -17,7 +19,7 @@ _GNAU = "https://urbanisme.saint-etienne-metropole.fr/"
 _ODP = "https://connect.saint-etienne.fr/demarche/115/4"
 _ECFR = "https://lannuaire.service-public.gouv.fr/auvergne-rhone-alpes/loire/8ed3e0b9-cc20-471f-b090-7ab943cc581f"
 _R42 = "https://www.renovactions42.org/"
-_R42A = "https://www.renovactions42.org/aides-locales-renovactions-42"
+_SEM = "https://www.saint-etienne-metropole.fr/habiter-se-deplacer/amelioration-de-lhabitat/les-differents-types-daides-la-renovation"
 
 CITY = dict(
     slug="saint-etienne", name="Saint-Étienne", cp="42000", insee="42218",
@@ -36,7 +38,7 @@ CITY = dict(
              ("59,7 <small>jours</small>", "de gel par an à la station de Saint-Étienne-Bouthéon", S("Météo-France, normales 1991-2020", _MF))],
     answer=("87,1 % des logements sont des appartements, et 34,6 % des résidences principales datent de 1946 à 1970. Cinq secteurs sont des sites "
             "patrimoniaux remarquables, où les travaux passent par l’accord de l’architecte des Bâtiments de France. Dans certaines rues de "
-            "l’hyper-centre, la Ville impose le ravalement ; son plan façades aide les immeubles d’avant 1960."),
+            "l’hyper-centre, la Ville impose le ravalement ; son plan façades aide les immeubles du centre construits avant 1960."),
     facts=[("Sites patrimoniaux remarquables", "Crêt-de-Roc et Tarentaize-Beaubrun-Séverine depuis 2004, Centre-Nord et Couriot-Manufacture depuis 2016, "
                                                "Centre-Sud depuis le 28 mars 2024 (" + L("Ville de Saint-Étienne", _SPR) + "). Les autorisations de travaux "
                                                "y sont soumises à l’accord de l’architecte des Bâtiments de France (" + L("ministère de la Culture", _CULT) + ")."),
@@ -78,8 +80,8 @@ CITY = dict(
                       "un isolant sur les chevrons, faites vérifier que la charpente porte la charge. La commune est en zone de sismicité 2, faible ("
                       + L("Géorisques", _SISMO) + ")."],
         "isolation": ["Bouthéon compte 2 507,6 degrés-jours unifiés par an (" + L("Météo-France", _MF) + ", 1991-2020) : le chauffage pèse. "
-                      "En copropriété, Saint-Étienne Métropole finance 10 % des travaux hors taxes, jusqu’à 15 000 € par logement, au-delà de 35 % "
-                      "de gain énergétique (" + L("Rénov’actions42, 2026", _R42A) + ").",
+                      "Pour remplacer un chauffage au bois installé avant 2005, Saint-Étienne Métropole verse jusqu’à 1 500 €, et jusqu’à 10 000 € de plus "
+                      "si vous améliorez aussi isolation et ventilation, jusqu’à fin 2027 (" + L("Saint-Étienne Métropole", _SEM) + ").",
                       "En zone 3 de potentiel radon, Géorisques conseille, après une isolation ou un changement de fenêtres, de garder un renouvellement "
                       "d’air suffisant et de refaire une mesure (" + L("fiche radon", _FRADON) + "). Pour un ravalement aidé, le plan façades exige un "
                       "document de Rénov’actions42 sur les travaux de performance énergétique possibles (" + L("plan façades", _PF) + ")."]},
@@ -92,22 +94,27 @@ CITY = dict(
                                                                         "suit avec l’architecte conseil de la Ville et l’architecte des Bâtiments de "
                                                                         "France. 04 77 48 65 53 (" + L("plan façades", _PF) + ")."),
            ("Faites le point sur l’énergie", "Le plan façades exige un document de Rénov’actions42 sur les travaux de performance énergétique possibles. "
-                                             "C’est aussi le moment de demander les aides, avant de signer."),
+                                             "Déposez aussi les demandes d’aide avant de commencer les travaux (" + L("Saint-Étienne Métropole", _SEM) + ")."),
            ("Déposez la demande en ligne", "Déclaration préalable ou permis se déposent sur le " + L("guichet numérique", _GNAU) + " de Saint-Étienne "
                                            "Métropole. En site patrimonial remarquable, comptez en général 2 mois d’instruction."),
            ("Faites autoriser l’échafaudage", "Une autorisation d’occupation du domaine public, payante, se demande au moins 12 jours avant le chantier, "
                                               "par courriel à droitdevoirie@saint-etienne.fr. 04 77 48 73 18 (" + L("démarche", _ODP) + ").")],
-    aides_intro="À Saint-Étienne, la Ville aide les façades du centre et la Métropole les copropriétés.",
+    aides_intro="À Saint-Étienne, la Ville aide les façades du centre, et la Métropole les quartiers anciens et le chauffage au bois.",
     aides=[("Rénov’actions42", "L’Espace Conseil France Rénov’ de Saint-Étienne, service public de la rénovation porté par les collectivités de la Loire : "
-                               "Maison de l’Habitat et du Logement, 20 A rue Balaÿ, 42000 Saint-Étienne. 04 77 41 41 25 ("
-                               + L("annuaire Service-Public", _ECFR) + ", " + L("renovactions42.org", _R42) + ")."),
+                               "Maison de l’Habitat et du Logement, 20 A rue Balaÿ, 42000 Saint-Étienne. 04 77 41 41 25, du lundi au vendredi de 9 h à 18 h ("
+                               + L("annuaire Service-Public", _ECFR) + ", " + L("Saint-Étienne Métropole", _SEM) + ", " + L("renovactions42.org", _R42) + ")."),
            ("Plan façades 2021-2026", "La Ville subventionne le ravalement et la restauration d’éléments remarquables (sculptures, devantures menuisées, "
                                       "modénatures, parties sommitales de toiture) des immeubles d’avant 1960 du centre intra-boulevard, en site "
                                       "patrimonial remarquable. Aide majorée de 5 points dans l’hyper-centre si les délais sont tenus ("
                                       + L("Ville de Saint-Étienne", _PF) + ")."),
-           ("Copropriétés énergivores", "Saint-Étienne Métropole finance 10 % du coût hors taxes des travaux, plafonnés à 15 000 € par logement, quand le "
-                                        "gain énergétique dépasse 35 %, avec des primes individuelles pour les propriétaires occupants modestes ("
-                                        + L("Rénov’actions42, 2026", _R42A) + ")."),
+           ("OPAH-RU Tarentaize-Beaubrun-Couriot et Saint-Roch", "Dans ces deux quartiers, Saint-Étienne Métropole accompagne gratuitement les "
+                                                                "propriétaires et les copropriétés, avec des aides renforcées sous conditions. "
+                                                                "Tarentaize-Beaubrun-Couriot : CAP Métropole, 04 77 49 25 18. Saint-Roch : "
+                                                                "EPASE, 07 64 18 79 46 (" + L("Saint-Étienne Métropole", _SEM) + ")."),
+           ("Fonds Air Bois", "Jusqu’à fin 2027, jusqu’à 1 500 € pour remplacer un chauffage au bois installé avant 2005 par un appareil "
+                              "labellisé Flamme verte, et une aide complémentaire jusqu’à 10 000 € si vous améliorez aussi isolation et "
+                              "ventilation. Les cheminées à foyer ouvert sont interdites d’usage depuis le 1er avril 2025, par arrêté préfectoral ("
+                              + L("Saint-Étienne Métropole", _SEM) + ")."),
            ("Label de la Fondation du patrimoine", "Par convention avec la Ville, un immeuble labellisé permet de déduire du revenu imposable jusqu’à 100 % "
                                                    "du montant des travaux (" + L("plan façades", _PF) + ")."),
            NATIONAL],
@@ -128,6 +135,6 @@ CITY = dict(
           "Oui, la commune est en zone 3, à potentiel radon significatif. Mesurez le radon au moins 2 mois en période de chauffe, et gardez un "
           "renouvellement d’air suffisant après une isolation ou un changement de fenêtres."),
          ("Quelles aides pour rénover son logement à Saint-Étienne ?",
-          "Le plan façades de la Ville pour le centre, l’aide de Saint-Étienne Métropole aux copropriétés énergivores (10 % des travaux, jusqu’à "
-          "15 000 € par logement) et les aides nationales. Conseil gratuit à Rénov’actions42 : 04 77 41 41 25.")],
+          "Le plan façades de la Ville pour le centre, les aides renforcées de Saint-Étienne Métropole à Tarentaize-Beaubrun-Couriot et à "
+          "Saint-Roch, le Fonds Air Bois (jusqu’à 1 500 €) et les aides nationales. Conseil gratuit à Rénov’actions42 : 04 77 41 41 25.")],
 )

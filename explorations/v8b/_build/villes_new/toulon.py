@@ -1,4 +1,5 @@
 from villes_data import L, S, SP, NATIONAL  # liens dans le texte, sources discrètes, Service-Public, aides nationales
+REVIEWED = "2026-11-21"
 
 # Sources consultées le 21/11/2026.
 _INSEE = "https://api.insee.fr/melodi/data/DS_RP_LOGEMENT_PRINC?GEO=COM-83137"  # dossier complet, RP 2023 (page insee.fr en erreur 500 ce jour)
@@ -13,8 +14,7 @@ _TERM = ("https://www.var.gouv.fr/Actions-de-l-Etat/Amenagement-du-territoire-co
          "Termites-et-insectes-xylophages/Le-Var-et-les-termites")
 _TERM_AP = "https://www.var.gouv.fr/contenu/telechargement/32833/218998/file/AP_liste%20des%20communes%20cotamin%C3%A9es%20termites.pdf"
 _PAC = "https://toulon.fr/sites/default/files/2026-09/PAC_Le_LAS_TOULON_28_aout_2026_VF.pdf"
-_DP = "https://demarches.toulon.fr/infos_demarches/urbanisme-foncier/la-declaration-prealable-de-travaux/"
-_GU = "https://urbanisme.mairie-toulon.fr/guichet-unique/?nCommune=83137"
+_DP = "https://demarches.toulon.fr/infos_demarches/urbanisme-foncier/la-declaration-prealable-de-travaux/"  # lien vers le guichet unique (le guichet lui-même répond 403 aux robots)
 _ECHAF = "https://demarches.toulon.fr/infos_demarches/urbanisme-foncier/installation-dechafaudage-palissade-grue/"
 _UDAP = ("https://www.culture.gouv.fr/regions/drac-provence-alpes-cote-d-azur/la-direction-regionale-des-affaires-culturelles-drac-provence-alpes-cote-d-azur/"
          "unites-departementales-de-l-architecture-et-du-patrimoine-udap-de-provence-alpes-cote-d-azur/udap-du-var")
@@ -32,10 +32,10 @@ CITY = dict(
     wiki="https://fr.wikipedia.org/wiki/Toulon", wikidata="Q44160",
     verified="2026-11-21",
     tldr="À Toulon, le grand centre-ville est un site patrimonial remarquable où chaque chantier passe par l’architecte des Bâtiments de France, "
-         "et la Ville paie 32 % du hors-taxe des ravalements qu’elle impose",
-    hook="Centre protégé, ravalements imposés et aidés, rafales plus de 100 jours par an.",
+         "et la Ville paie 32 % du hors-taxe, avec plafond, des ravalements qu’elle impose",
+    hook="Centre protégé, ravalements imposés et aidés, fortes rafales plus de 100 jours par an.",
     title="Devis travaux à Toulon : toiture, façade, fenêtres, isolation",
-    desc="Travaux à Toulon : centre protégé, ravalement imposé et aidé à 32 %, zone termites, rafales de vent, aides de la Métropole. Un seul artisan vient chiffrer.",
+    desc="Travaux à Toulon : centre protégé, ravalement imposé et aidé à 32 %, zone termites, fortes rafales, conseil gratuit. Un seul artisan vient chiffrer.",
     figures_intro="Ce qui compte avant de lancer des travaux entre le mont Faron et la rade.",
     figures=[("79,2 <small>%</small>", "des logements sont des appartements", S("Insee, 2023", _INSEE)),
              ("60,1 <small>%</small>", "des résidences principales datent d’avant 1971", S("Insee, 2023", _INSEE)),
@@ -52,10 +52,11 @@ CITY = dict(
            ("Urbanisme", "Le PLU de Toulon, approuvé le 27 juillet 2012, est géré par la Métropole Toulon Provence Méditerranée depuis le 1er janvier 2018. "
                          "Sa modification simplifiée n° 9 a été prescrite le 5 mars 2026 (" + L("Ville de Toulon", _PLU) + ")."),
            ("Termites", "Toulon fait partie des 81 communes du Var classées en zone contaminée sur tout leur territoire par l’arrêté préfectoral du "
-                        "10 décembre 2018. Toute présence de termites se déclare en mairie (" + L("préfecture du Var", _TERM) + ")."),
-           ("Vent et chaleur", "À la station de Toulon, 108,9 jours par an de rafales d’au moins 58 km/h, dont 6,3 au-delà de 100 km/h, et 36,6 jours "
+                        "10 décembre 2018. Toute présence de termites se déclare en mairie (" + L("arrêté préfectoral", _TERM_AP) + ", "
+                        + L("préfecture du Var", _TERM) + ")."),
+           ("Vent et chaleur", "À la station de Toulon, 108,9 jours par an de rafales d’au moins 58 km/h, dont 6,3 d’au moins 100 km/h, et 36,6 jours "
                                "à 30 °C ou plus (" + L("Météo-France", _MF) + ", normales 1991-2020)."),
-           ("Inondation", "Le préfet a porté à la connaissance de la commune, le 28 août 2026, une nouvelle carte de l’aléa inondation par débordement du Las. "
+           ("Inondation", "Le préfet a porté à la connaissance de la commune, le 28 août 2026, l’aléa inondation par débordement du Las. "
                           "En zone inondable, les traitements de façade et les réfections de toiture restent admis s’ils n’aggravent pas le risque ("
                           + L("porter à connaissance", _PAC) + ").")],
     trades_intro="Vieille ville médiévale, Haute ville haussmannienne, immeubles bâtis de 1946 à 1970, plus d’un tiers des résidences principales : à Toulon, les règles changent d’un secteur à l’autre.",
@@ -65,21 +66,24 @@ CITY = dict(
                     + L("règlement de l’AVAP", _AVAP) + ").",
                     "Avec 108,9 jours de rafales d’au moins 58 km/h par an, faites contrôler faîtage et tuiles de rive après chaque coup de vent. Dans le Var, "
                     "les toits ont une pente faible, de 27 à 33 % (" + L("UDAP du Var", _TUILE) + ")."],
-        "facade": ["Dans la vieille ville, les enduits se refont à la chaux en trois couches, finis frottassés, talochés ou gravés « à la marseillaise », puis "
+        "facade": ["Dans la vieille ville, les enduits se refont à la chaux en trois couches, finis frottassés, talochés ou regravés en faux appareil « à la marseillaise », puis "
                    "peints au lait de chaux ou à la peinture minérale dans une teinte du nuancier de la Ville. Peindre la pierre de taille est interdit ("
                    + L("règlement de l’AVAP", _AVAP) + ").",
                    "Dans les rues en campagne, la Ville paie 32 % du hors-taxe ; aux Halles, l’aide est plafonnée de 14 000 à 27 000 € selon l’immeuble et "
-                   "demande un maître d’œuvre. Détruire un nid de martinets supprime l’aide : faites-les repérer avant le chantier (" + L("règlement de campagne", _RAV) + ")."],
+                   "demande un maître d’œuvre. Détruire volontairement un nid de martinets supprime l’aide : faites-les repérer avant le chantier (" + L("règlement de campagne", _RAV) + ")."],
         "fenetres": ["Dans la vieille ville, les menuiseries neuves sont en principe en bois, sur le modèle de l’immeuble, peintes dans une teinte du nuancier, "
                      "jamais en blanc pur. Les persiennes provençales sont gardées ou refaites à l’identique (" + L("règlement de l’AVAP", _AVAP) + ").",
-                     "Changer ses fenêtres ou ses volets modifie l’aspect extérieur et demande une déclaration préalable (" + L("Service-Public", SP + "F17578")
-                     + "). Dans la vieille ville, les climatiseurs en saillie sur la façade sont interdits ; ils peuvent aller dans une cour ou derrière une ventelle."],
-        "charpente": ["Toute la commune est en zone termites depuis 2018. Si vous en trouvez en ouvrant une toiture, déclarez-les en mairie. Les bois "
-                      "contaminés d’une démolition sont brûlés sur place ou traités avant tout transport (" + L("arrêté préfectoral", _TERM_AP) + ").",
+                     "Dans le site patrimonial remarquable, changer ses menuiseries ou ses volets demande une déclaration préalable et l’avis motivé de "
+                     "l’architecte des Bâtiments de France (" + L("plaquette de la Ville", _PLAQ) + "). Dans la vieille ville, les climatiseurs en saillie "
+                     "sur la façade sont interdits ; ils peuvent aller dans une cour arrière ou derrière une ventelle (" + L("règlement de l’AVAP", _AVAP) + ")."],
+        "charpente": ["Toute la commune est en zone termites depuis 2018. Si vous en trouvez en ouvrant une toiture, déclarez-les en mairie. Dans un "
+                      "périmètre d’infestation délimité par arrêté municipal, les bois contaminés d’une démolition sont brûlés sur place ou traités "
+                      "avant tout transport (" + L("arrêté préfectoral", _TERM_AP) + ").",
                       "Le long du Las, en zone inondable, une surélévation reste possible si le nouveau plancher est au moins 0,40 m au-dessus de la cote de "
                       "crue de référence, sans créer de logement en plus (" + L("porter à connaissance", _PAC) + ", 2026)."],
         "isolation": ["Ici, isoler sert aussi contre la chaleur : 36,6 jours par an atteignent 30 °C. Dans un mur ancien, gardez l’inertie et des matériaux "
-                      "perméables à la vapeur d’eau, conseille l’architecte des Bâtiments de France (" + L("UDAP du Var", _THERM) + ").",
+                      "perméables à la vapeur d’eau, conseille l’UDAP du Var, le service de l’architecte des Bâtiments de France ("
+                      + L("fiche conseil", _THERM) + ").",
                       "Dans la vieille ville, l’isolation par l’extérieur est interdite sur les façades sur rue et possible en cœur d’îlot. Une pompe à chaleur "
                       "n’y va que dans une cour intérieure ou intégrée à la façade (" + L("règlement de l’AVAP", _AVAP) + ")."]},
     steps_intro="Dans l’ordre, avant de signer le moindre devis.",
@@ -88,17 +92,17 @@ CITY = dict(
                                                                           "de 9 h à 12 h (" + L("ministère de la Culture", _UDAP) + ")."),
            ("Demandez la fiche de l’architecte conseil", "Dans les rues en campagne de ravalement, l’architecte conseil de la Ville fixe les prescriptions, sur "
                                                          "rendez-vous : 04 94 36 33 39. Service Environnement urbain : 04 94 36 33 87 (" + L("règlement de campagne", _RAV) + ")."),
-           ("Déposez la déclaration préalable", "En ligne sur le " + L("guichet unique", _GU) + " de la Ville, par courrier, ou au service Droit des sols, "
-                                                "10e étage de l’Hôtel de Ville, les lundis, mercredis et vendredis matin sur rendez-vous. 04 94 36 30 70 ("
-                                                + L("démarche", _DP) + ")."),
+           ("Déposez la déclaration préalable", "En ligne sur le guichet unique de la Ville, par courrier, ou au service Droit des sols, "
+                                                "10e étage de l’Hôtel de Ville, les lundis, mercredis et vendredis de 9 h à 12 h sur rendez-vous. "
+                                                "04 94 36 30 70 (" + L("démarche et accès au guichet", _DP) + ")."),
            ("Faites autoriser l’échafaudage", "Au moins 45 jours avant le chantier, auprès du service des Emplacements : odp@mairie-toulon.fr, 04 94 36 83 57 ("
                                               + L("démarche", _ECHAF) + ")."),
-           ("Appelez Bien chez Soi", "Conseil gratuit sur les travaux et les aides. Ne commencez rien avant le dépôt de la demande de subvention ("
+           ("Appelez Bien chez Soi", "Conseil gratuit sur la rénovation énergétique et les aides. Ne commencez rien avant le dépôt de la demande de subvention ("
                                      + L("Métropole", _TPM) + ").")],
     aides_intro="À Toulon, la demande d’aide se dépose avant le début des travaux, et le conseil public ne coûte rien.",
     aides=[("Bien chez Soi", "L’Espace Conseil France Rénov’ de Toulon, service gratuit de la Métropole Toulon Provence Méditerranée : 217 avenue de la "
-                             "Victoire-du-8-Mai-45, 83000 Toulon. 08 05 69 23 20, du lundi au vendredi (" + L("annuaire de l’administration", _ECFR) + "). "
-                             + L("bienchezsoi-tpm.fr", _BCS) + "."),
+                             "Victoire-du-8-Mai-45, 83000 Toulon. 08 05 69 23 20, du lundi au vendredi de 9 h à 17 h (" + L("annuaire de l’administration", _ECFR) + "). "
+                             "Il couvre les 12 communes de la Métropole, hors secteurs d’OPAH-RU (" + L("bienchezsoi-tpm.fr", _BCS) + ")."),
            ("Aide au ravalement de la Ville", "32 % du montant hors taxes des travaux subventionnables, avec plafond, pour les propriétaires qui ont reçu un arrêté "
                                               "d’injonction (" + L("Ville de Toulon", _URBA) + "). Aux Halles, le plafond va de 14 000 à 27 000 € par immeuble ("
                                               + L("règlement", _RAV) + ")."),
@@ -113,7 +117,7 @@ CITY = dict(
           "Tuiles rondes en terre cuite posées en couvert et courant, pente de 30 % au plus, débord en génoise ou en chevrons. Les altanas sont conservées, et une "
           "fenêtre de toit de 60 x 80 cm au plus n’est admise que dans certains cas."),
          ("L’isolation par l’extérieur est-elle permise dans la vieille ville de Toulon ?",
-          "Sur les façades sur rue, non : le règlement de l’AVAP l’interdit, à cause de l’emprise sur le trottoir et de l’intérêt des façades. En cœur d’îlot et dans "
+          "Sur les façades sur rue, non : le règlement de l’AVAP l’interdit, à cause de l’empiètement sur le domaine public et de l’intérêt des façades. En cœur d’îlot et dans "
           "les cours intérieures, elle est possible."),
          ("Toulon est-elle en zone termites ?",
           "Oui, sur tout son territoire, avec 80 autres communes du Var, depuis l’arrêté préfectoral du 10 décembre 2018. Pour vendre, il faut annexer à l’acte un "
@@ -123,5 +127,6 @@ CITY = dict(
           "(jusqu’à 14 000 €) et les aides nationales. Bien chez Soi, l’Espace Conseil France Rénov’, vous guide gratuitement : 08 05 69 23 20."),
          ("Comment faire autoriser un échafaudage à Toulon ?",
           "Écrivez au service des Emplacements au moins 45 jours avant le début des travaux, à odp@mairie-toulon.fr, ou appelez le 04 94 36 83 57. "
-          "Une demande tardive n’est pas traitée (" + L("démarche", _ECHAF) + ").")],
+          "Une demande tardive n’est pas traitée. Si l’immeuble a un commerce au rez-de-chaussée, la pose est interdite du 15 décembre au 15 janvier "
+          "et du 1er juillet au 31 août (" + L("démarche", _ECHAF) + ").")],
 )
