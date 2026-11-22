@@ -45,4 +45,4 @@ Les sources des pages sont dans `explorations/v8b/_build/legal/`. Les informatio
 ## 5. Avant de brancher le domaine
 
 - Compléter la partie 1 : le générateur signale à chaque construction les informations manquantes.
-- Retirer la balise `noindex`, brancher l'envoi automatique des formulaires (la fonction est préparée dans `_build/wip/`, non activée), puis relire les quatre pages une dernière fois.
+- Retirer la balise `noindex`, brancher l'envoi automatique des formulaires (fonction `api/lead.js` en ligne depuis le 22 novembre 2026 ; destination : le Google Sheet « Bartier & Co, demandes du site », par le script `_build/sheets/apps-script.gs`, à déployer une fois comme application Web puis adresse /exec à mettre dans LEAD_SHEET_URL sur Vercel), puis relire les quatre pages une dernière fois.

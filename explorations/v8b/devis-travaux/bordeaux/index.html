@@ -2,7 +2,7 @@
 <html lang="fr">
 <head><meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-3CoPjDGNsMWIA3qkMewAlgEdiC4KTWUxSE4oJFCfh14=' 'sha256-DRV7wDuGeUuRLEw21MWXXmoY20dkN/iJBX9gIv1sUqI=' 'sha256-HBy+XQq+DzZJuPrQ9IWmsh5iGmdKJ2gJYaz/I0JHGKk=' 'sha256-MR4tOloyQBoAm915uDqhlabhpnNPcMDm6hJDalJaQ88=' 'sha256-eQfczpUWq8ruLx93fi+Eaz9hSigYLgWpRI2Wjs4HEM0=' 'sha256-emXW80tMCi28HiOD8b7PFpEm1LN9q8OE65YtFLbA9fk=' 'sha256-gFpEyESWD5x5GN8Ln0/BsNW7QSq7M22RjzWgpRPm2Rw=' 'sha256-gSq/2EaipVbdo5C0kLlhaZyq6bjZhZ5V/mUTfzyz95Y=' 'sha256-hBhLY+UEeIAu9TPqMcpMNw56lwUdbmYzTQVIVHWp3Ek=' 'sha256-u4ctR96u8muW5qetujZe8wuGSAIsuP1R4Mv6Bg3dWfY=' 'sha256-zL+HyR3xaCJICy47NREQQDFfLcRzmGeP2g6NObhYang=' 'sha256-zWFhanvEKMOsymecW6GjzAht4MWZsyCr+VubiVpTnYY='; object-src 'none'; base-uri 'none'">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-3CoPjDGNsMWIA3qkMewAlgEdiC4KTWUxSE4oJFCfh14=' 'sha256-DRV7wDuGeUuRLEw21MWXXmoY20dkN/iJBX9gIv1sUqI=' 'sha256-EGQCZMm14a3IpLmlFxXZc+2wnbGmVcQZHqabpiC8agM=' 'sha256-Hn637nsrq4sh8fwbGccUx1Uo+Cn0+V3hsxkl5aeyVUA=' 'sha256-MR4tOloyQBoAm915uDqhlabhpnNPcMDm6hJDalJaQ88=' 'sha256-eQfczpUWq8ruLx93fi+Eaz9hSigYLgWpRI2Wjs4HEM0=' 'sha256-emXW80tMCi28HiOD8b7PFpEm1LN9q8OE65YtFLbA9fk=' 'sha256-gFpEyESWD5x5GN8Ln0/BsNW7QSq7M22RjzWgpRPm2Rw=' 'sha256-gSq/2EaipVbdo5C0kLlhaZyq6bjZhZ5V/mUTfzyz95Y=' 'sha256-u4ctR96u8muW5qetujZe8wuGSAIsuP1R4Mv6Bg3dWfY=' 'sha256-zL+HyR3xaCJICy47NREQQDFfLcRzmGeP2g6NObhYang=' 'sha256-zWFhanvEKMOsymecW6GjzAht4MWZsyCr+VubiVpTnYY='; object-src 'none'; base-uri 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Devis travaux à Bordeaux : toiture, façade, fenêtres, isolation</title>
 <meta name="theme-color" content="#ffffff">
@@ -96,7 +96,7 @@
     </div>
     <div class="pf-card" id="projet">
       <p class="pf-live" aria-live="polite"><i></i><span class="pf-live-t">Rappel en moins de 5&nbsp;minutes, en semaine</span></p>
-      <form class="pf-form" method="post" action="/api/lead" novalidate aria-label="Demande de devis de travaux">
+      <form class="pf-form" method="post" action="/api/lead/" novalidate aria-label="Demande de devis de travaux">
         <div class="pf-top"><p class="pf-count" id="pf-count">Étape <b class="pf-n">1</b> sur 5 · 1 minute</p><button type="button" class="pf-back" hidden>← Retour</button></div>
         <p class="pf-bar"><i></i></p>
         <fieldset class="pf-step is-on" data-step="1"><legend>Quels travaux&nbsp;?</legend><div class="pf-grid"><button type="button" class="pf-tile" data-v="toiture">Toiture</button> <button type="button" class="pf-tile" data-v="facade">Façade</button> <button type="button" class="pf-tile" data-v="fenetres">Fenêtres et portes</button> <button type="button" class="pf-tile" data-v="charpente">Charpente</button> <button type="button" class="pf-tile" data-v="isolation">Isolation</button> <button type="button" class="pf-tile" data-v="autre">Autre projet</button></div><input type="hidden" name="travaux"></fieldset>
@@ -327,8 +327,8 @@ f.addEventListener('submit',function(e){e.preventDefault();if(!ok(cur))return;if
  var btn=f.querySelector('.dq-submit'),lab=btn.querySelector('span'),old=lab.textContent,fields={};['metier','code_postal','equipes','capacite','prenom','telephone','entreprise','email'].forEach(function(k){var r=f.querySelector('input[name="'+k+'"]:checked');fields[k]=r?r.value:val(k)});fields.telephone=phone(fields.telephone);
  var body={type:'artisan',fields:fields,page:val('page'),site_web:''};keys.forEach(function(k){body[k]=val(k)});
  btn.disabled=true;lab.textContent='Envoi…';
- var done=false,end=function(sent){if(done)return;done=true;btn.disabled=false;lab.textContent=old;finish(sent)},t=setTimeout(function(){end(false)},6000);
- try{fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
+ var done=false,end=function(sent){if(done)return;done=true;btn.disabled=false;lab.textContent=old;finish(sent)},t=setTimeout(function(){end(false)},10000);
+ try{fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
 })();
 </script>
 <script>
@@ -435,9 +435,9 @@ f.addEventListener("submit",function(e){e.preventDefault();var err=f.querySelect
     dl("particulier_demande",{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),envoi:sent?"auto":"manuel"});
     done.setAttribute("data-state",sent?"sent":"manual");steps.forEach(function(s){s.classList.remove("is-on")});f.querySelector(".pf-top").style.display="none";f.querySelector(".pf-bar").style.display="none";done.hidden=false;done.setAttribute("tabindex","-1");done.focus({preventScroll:true});
     document.getElementById("projet").scrollIntoView({behavior:"smooth",block:"start"})};
-  var body={type:"particulier",fields:{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),code_postal:val("code_postal"),prenom:val("prenom"),telephone:val("telephone")},consent:{text:f.querySelector(".pf-consent span").textContent,at:new Date().toISOString()},page:location.pathname,site_web:""};
-  btn.disabled=true;lab.textContent="Envoi…";var t=setTimeout(function(){end(false)},6000);
-  try{fetch("/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
+  var body={type:"particulier",fields:{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),code_postal:val("code_postal"),prenom:val("prenom"),telephone:val("telephone")},consent:{text:f.querySelector(".pf-consent span").textContent,at:new Date().toISOString()},page:location.pathname,site_web:""};try{var uq=new URLSearchParams(location.search);["utm_source","utm_medium","utm_campaign","utm_content"].forEach(function(k){var v=uq.get(k);if(v)body[k]=v.slice(0,200)})}catch(x){}
+  btn.disabled=true;lab.textContent="Envoi…";var t=setTimeout(function(){end(false)},10000);
+  try{fetch("/api/lead/",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
 var sticky=document.querySelector(".pf-sticky"),card=document.getElementById("projet"),endS=document.querySelector(".pf-end");
 if(sticky&&"IntersectionObserver" in window){var vis=new Set();var io=new IntersectionObserver(function(es){es.forEach(function(x){x.isIntersecting?vis.add(x.target):vis.delete(x.target)});sticky.classList.toggle("is-on",vis.size===0&&scrollY>200)},{threshold:0});[card,endS,document.querySelector(".ftr")].forEach(function(x){x&&io.observe(x)});
   addEventListener("scroll",function(){if(scrollY<=200)sticky.classList.remove("is-on");else if(vis.size===0)sticky.classList.add("is-on")},{passive:true})}

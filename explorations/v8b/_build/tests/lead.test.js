@@ -9,7 +9,7 @@ const path = require('node:path');
 const handler = require(path.join(__dirname, '..', '..', 'api', 'lead.js'));
 const { normalisePhone, validate, buildEmail } = handler;
 
-const ENV_KEYS = ['RESEND_API_KEY', 'LEAD_TO', 'LEAD_FROM', 'LEAD_WEBHOOK_URL', 'LEAD_WEBHOOK_SECRET'];
+const ENV_KEYS = ['RESEND_API_KEY', 'LEAD_TO', 'LEAD_FROM', 'LEAD_WEBHOOK_URL', 'LEAD_WEBHOOK_SECRET', 'LEAD_SHEET_URL', 'LEAD_SHEET_KEY'];
 const realFetch = global.fetch;
 const realLog = console.log;
 let logs = [];
@@ -469,4 +469,80 @@ test('aucune donnée personnelle dans les journaux', async () => {
   }
   assert.ok(all.includes('"type":"artisan"') && all.includes('"type":"particulier"'));
   assert.ok(all.includes('"outcome":"delivered"') && all.includes('"outcome":"invalid"') && all.includes('"outcome":"delivery_failed"'));
+});
+
+/* ---------- Google Sheets (Apps Script) ---------- */
+
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbTEST_abcdefghij-0123456789/exec';
+const SHEET_KEY = 'k'.repeat(48);
+const ECHO = 'https://script.googleusercontent.com/macros/echo?user_content_key=abc&lib=x';
+function useSheet() { process.env.LEAD_SHEET_URL = SHEET_URL; process.env.LEAD_SHEET_KEY = SHEET_KEY; }
+const res302 = (loc) => ({ ok: false, status: 302, headers: { get: (h) => (h.toLowerCase() === 'location' ? loc : null) } });
+const resJson = (o, status = 200) => ({ ok: status < 300, status, headers: { get: () => null }, text: async () => JSON.stringify(o) });
+
+test('tableau : POST sans suivre la redirection, puis GET de la réponse Apps Script', async () => {
+  useSheet();
+  mockFetch((url, init) => (url === SHEET_URL ? res302(ECHO) : resJson({ ok: true })));
+  const r = await call(particulier());
+  assert.strictEqual(r.status, 200);
+  assert.deepStrictEqual(r.json, { ok: true });
+  assert.strictEqual(calls.length, 2);
+  assert.strictEqual(calls[0].init.method, 'POST');
+  assert.strictEqual(calls[0].init.redirect, 'manual');
+  const sent = JSON.parse(calls[0].init.body);
+  assert.strictEqual(sent.cle, SHEET_KEY);
+  assert.strictEqual(sent.lead.type, 'particulier');
+  assert.strictEqual(sent.lead.fields.telephone, '+33712345678');
+  assert.ok(sent.lead.consent && sent.lead.consent.at);
+  assert.strictEqual(calls[1].url, ECHO);
+  assert.strictEqual(calls[1].init.method, 'GET');
+  assert.strictEqual(calls[1].init.redirect, 'error');
+});
+
+test('tableau : réponse directe sans redirection acceptée', async () => {
+  useSheet();
+  mockFetch(() => resJson({ ok: true }));
+  const r = await call(artisan());
+  assert.strictEqual(r.status, 200);
+  assert.strictEqual(calls.length, 1);
+});
+
+test('tableau : redirection vers un autre hôte refusée', async () => {
+  useSheet();
+  for (const loc of ['https://evil.example/x', 'http://script.googleusercontent.com/macros/echo', 'pas une adresse']) {
+    calls = [];
+    mockFetch((url) => (url === SHEET_URL ? res302(loc) : resJson({ ok: true })));
+    const r = await call(artisan());
+    assert.strictEqual(r.status, 502, loc);
+    assert.strictEqual(calls.length, 1, loc);
+  }
+});
+
+test('tableau : clé refusée ou réponse illisible = échec, sans détail au visiteur', async () => {
+  useSheet();
+  for (const reply of [resJson({ ok: false, error: 'cle' }), { ok: true, status: 200, headers: { get: () => null }, text: async () => '<html>' }, resJson({ ok: true }, 500)]) {
+    mockFetch((url) => (url === SHEET_URL ? res302(ECHO) : reply));
+    const r = await call(particulier());
+    assert.strictEqual(r.status, 502);
+    assert.deepStrictEqual(r.json, { ok: false, error: 'delivery_failed' });
+  }
+  assert.ok(!logs.join('\n').includes('Marie'), 'aucune donnée personnelle dans les journaux');
+});
+
+test('tableau : adresse ou clé non conformes = non configuré, aucun appel', async () => {
+  for (const [url, key] of [['https://example.com/macros/s/AKfycbTEST_abcdefghij/exec', SHEET_KEY], ['http://script.google.com/macros/s/AKfycbTEST_abcdefghij/exec', SHEET_KEY],
+    ['https://script.google.com/macros/s/AKfycbTEST_abcdefghij/exec?x=1', SHEET_KEY], [SHEET_URL, 'court'], [SHEET_URL, '']]) {
+    process.env.LEAD_SHEET_URL = url; process.env.LEAD_SHEET_KEY = key; calls = [];
+    mockFetch(() => resJson({ ok: true }));
+    const r = await call(artisan());
+    assert.strictEqual(r.status, 503, url + ' ' + key);
+    assert.strictEqual(calls.length, 0);
+  }
+});
+
+test('tableau et e-mail ensemble : un seul canal qui réussit suffit', async () => {
+  useSheet(); useResend();
+  mockFetch((url) => (url === 'https://api.resend.com/emails' ? { ok: false, status: 500 } : url === SHEET_URL ? res302(ECHO) : resJson({ ok: true })));
+  const r = await call(particulier());
+  assert.strictEqual(r.status, 200);
 });

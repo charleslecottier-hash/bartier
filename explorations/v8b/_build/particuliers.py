@@ -191,7 +191,7 @@ def build(img, phone, phone_txt, crumbs, parts=False):
         '<button type="button" class="pf-tile" data-v="autre">Autre projet</button>'
     form = f"""<div class="pf-card" id="projet">
       <p class="pf-live" aria-live="polite"><i></i><span class="pf-live-t">Rappel en moins de 5 minutes, en semaine</span></p>
-      <form class="pf-form" method="post" action="/api/lead" novalidate aria-label="Demande de devis de travaux">
+      <form class="pf-form" method="post" action="/api/lead/" novalidate aria-label="Demande de devis de travaux">
         <div class="pf-top"><p class="pf-count" id="pf-count">Étape <b class="pf-n">1</b> sur 5 · 1 minute</p><button type="button" class="pf-back" hidden>← Retour</button></div>
         <p class="pf-bar"><i></i></p>
         <fieldset class="pf-step is-on" data-step="1"><legend>Quels travaux&nbsp;?</legend><div class="pf-grid">{tiles}</div><input type="hidden" name="travaux"></fieldset>
@@ -682,9 +682,9 @@ f.addEventListener("submit",function(e){e.preventDefault();var err=f.querySelect
     dl("particulier_demande",{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),envoi:sent?"auto":"manuel"});
     done.setAttribute("data-state",sent?"sent":"manual");steps.forEach(function(s){s.classList.remove("is-on")});f.querySelector(".pf-top").style.display="none";f.querySelector(".pf-bar").style.display="none";done.hidden=false;done.setAttribute("tabindex","-1");done.focus({preventScroll:true});
     document.getElementById("projet").scrollIntoView({behavior:"smooth",block:"start"})};
-  var body={type:"particulier",fields:{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),code_postal:val("code_postal"),prenom:val("prenom"),telephone:val("telephone")},consent:{text:f.querySelector(".pf-consent span").textContent,at:new Date().toISOString()},page:location.pathname,site_web:""};
-  btn.disabled=true;lab.textContent="Envoi…";var t=setTimeout(function(){end(false)},6000);
-  try{fetch("/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
+  var body={type:"particulier",fields:{travaux:val("travaux"),besoin:val("besoin"),delai:val("delai"),statut:val("statut"),code_postal:val("code_postal"),prenom:val("prenom"),telephone:val("telephone")},consent:{text:f.querySelector(".pf-consent span").textContent,at:new Date().toISOString()},page:location.pathname,site_web:""};try{var uq=new URLSearchParams(location.search);["utm_source","utm_medium","utm_campaign","utm_content"].forEach(function(k){var v=uq.get(k);if(v)body[k]=v.slice(0,200)})}catch(x){}
+  btn.disabled=true;lab.textContent="Envoi…";var t=setTimeout(function(){end(false)},10000);
+  try{fetch("/api/lead/",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
 var sticky=document.querySelector(".pf-sticky"),card=document.getElementById("projet"),endS=document.querySelector(".pf-end");
 if(sticky&&"IntersectionObserver" in window){var vis=new Set();var io=new IntersectionObserver(function(es){es.forEach(function(x){x.isIntersecting?vis.add(x.target):vis.delete(x.target)});sticky.classList.toggle("is-on",vis.size===0&&scrollY>200)},{threshold:0});[card,endS,document.querySelector(".ftr")].forEach(function(x){x&&io.observe(x)});
   addEventListener("scroll",function(){if(scrollY<=200)sticky.classList.remove("is-on");else if(vis.size===0)sticky.classList.add("is-on")},{passive:true})}

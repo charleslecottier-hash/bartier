@@ -9,6 +9,8 @@
  *   LEAD_FROM            expéditeur vérifié chez Resend ("Nom <adresse>")
  *   LEAD_WEBHOOK_URL     webhook générique (https uniquement), reçoit la demande en JSON
  *   LEAD_WEBHOOK_SECRET  si présent : en-tête X-Bartier-Signature = HMAC-SHA256 hex du corps
+ *   LEAD_SHEET_URL       adresse /exec de l'application Web Apps Script liée au Google Sheet des demandes
+ *   LEAD_SHEET_KEY       clé partagée avec ce script (constante CLE de _build/sheets/apps-script.gs)
  *
  * Aucune donnée personnelle n'est journalisée : seuls le type, l'issue et des codes d'erreur.
  * L'adresse IP sert uniquement à la limite de débit en mémoire : elle n'est ni stockée ni transmise.
@@ -272,6 +274,39 @@ function sendWebhook(lead, env) {
   return post(env.LEAD_WEBHOOK_URL.trim(), headers, body);
 }
 
+// Google Sheets, par une application Web Apps Script (_build/sheets/apps-script.gs).
+// Apps Script exécute doPost puis répond par une redirection vers sa réponse, servie par
+// script.googleusercontent.com : on suit cette seule redirection, vers ce seul hôte, en GET.
+function sheetUrl(value) {
+  try {
+    const u = new URL(String(value).trim());
+    return u.protocol === 'https:' && u.hostname === 'script.google.com' && /^\/macros\/s\/[\w-]{10,}\/exec$/.test(u.pathname) && !u.search && !u.hash;
+  } catch (e) { return false; }
+}
+
+async function sendSheet(lead, env) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  try {
+    const body = JSON.stringify({ cle: String(env.LEAD_SHEET_KEY).trim(), lead });
+    let r = await fetch(String(env.LEAD_SHEET_URL).trim(), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, signal: ctrl.signal, redirect: 'manual' });
+    if (r.status === 301 || r.status === 302 || r.status === 303) {
+      let loc;
+      try { loc = new URL(r.headers.get('location') || ''); } catch (e) { return 'bad_redirect'; }
+      if (loc.protocol !== 'https:' || loc.hostname !== 'script.googleusercontent.com') return 'bad_redirect';
+      r = await fetch(loc.href, { method: 'GET', signal: ctrl.signal, redirect: 'error' });
+    }
+    if (!r.ok) return 'http_' + r.status;
+    let j = null;
+    try { j = JSON.parse(await r.text()); } catch (e) { j = null; }
+    return j && j.ok === true ? null : 'sheet_' + (j && typeof j.error === 'string' ? j.error.slice(0, 20).replace(/[^a-z_]/g, '') : 'bad_response');
+  } catch (e) {
+    return e && e.name === 'AbortError' ? 'timeout' : 'network';
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 function httpsUrl(value) {
   try { return new URL(String(value).trim()).protocol === 'https:'; } catch (e) { return false; }
 }
@@ -418,6 +453,10 @@ async function handler(req, res) {
   const errors = [];
   const jobs = [];
   if (env.RESEND_API_KEY && env.LEAD_TO && env.LEAD_FROM) jobs.push(['resend', sendResend(lead, env)]);
+  if (env.LEAD_SHEET_URL) {
+    if (sheetUrl(env.LEAD_SHEET_URL) && env.LEAD_SHEET_KEY && String(env.LEAD_SHEET_KEY).trim().length >= 24) jobs.push(['sheet', sendSheet(lead, env)]);
+    else errors.push('sheet:bad_config');
+  }
   if (env.LEAD_WEBHOOK_URL) {
     if (httpsUrl(env.LEAD_WEBHOOK_URL)) jobs.push(['webhook', sendWebhook(lead, env)]);
     else errors.push('webhook:not_https');

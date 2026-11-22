@@ -381,7 +381,7 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
       <div class="dq-team"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><p>Martin vous répond sous un jour ouvré.</p></div>
       <p class="dq-wa-link"><a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20mon%20secteur%20est-il%20encore%20libre%20%3F" target="_blank" rel="noopener" data-wa="form-side">Ou écrire directement à Martin sur WhatsApp</a></p>
     </div>
-    <form class="dq" id="dq" method="post" action="/api/lead" novalidate>
+    <form class="dq" id="dq" method="post" action="/api/lead/" novalidate>
       <div class="dq-top"><p class="dq-count" aria-live="polite">Étape 1 sur 5</p><button type="button" class="dq-back" hidden>← Retour</button></div>
       <div class="dq-bar" aria-hidden="true"><i></i></div>
 
@@ -576,8 +576,8 @@ f.addEventListener('submit',function(e){e.preventDefault();if(!ok(cur))return;if
  var btn=f.querySelector('.dq-submit'),lab=btn.querySelector('span'),old=lab.textContent,fields={};['metier','code_postal','equipes','capacite','prenom','telephone','entreprise','email'].forEach(function(k){var r=f.querySelector('input[name="'+k+'"]:checked');fields[k]=r?r.value:val(k)});fields.telephone=phone(fields.telephone);
  var body={type:'artisan',fields:fields,page:val('page'),site_web:''};keys.forEach(function(k){body[k]=val(k)});
  btn.disabled=true;lab.textContent='Envoi…';
- var done=false,end=function(sent){if(done)return;done=true;btn.disabled=false;lab.textContent=old;finish(sent)},t=setTimeout(function(){end(false)},6000);
- try{fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
+ var done=false,end=function(sent){if(done)return;done=true;btn.disabled=false;lab.textContent=old;finish(sent)},t=setTimeout(function(){end(false)},10000);
+ try{fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
 })();
 </script>
 <script>

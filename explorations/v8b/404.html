@@ -2,7 +2,7 @@
 <html lang="fr">
 <head><meta name="robots" content="noindex">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-3CoPjDGNsMWIA3qkMewAlgEdiC4KTWUxSE4oJFCfh14=' 'sha256-8NH+BahN9O5+xhyaS9XaJz1xWmE3/4vsPCpRNyEkAdc=' 'sha256-CE2yYDWVyqk98U7iWHVa96aCQv4AIwy0LwWKWT8nOX4=' 'sha256-DRV7wDuGeUuRLEw21MWXXmoY20dkN/iJBX9gIv1sUqI=' 'sha256-HBy+XQq+DzZJuPrQ9IWmsh5iGmdKJ2gJYaz/I0JHGKk=' 'sha256-MR4tOloyQBoAm915uDqhlabhpnNPcMDm6hJDalJaQ88=' 'sha256-eQfczpUWq8ruLx93fi+Eaz9hSigYLgWpRI2Wjs4HEM0=' 'sha256-gFpEyESWD5x5GN8Ln0/BsNW7QSq7M22RjzWgpRPm2Rw=' 'sha256-gSq/2EaipVbdo5C0kLlhaZyq6bjZhZ5V/mUTfzyz95Y=' 'sha256-lbo7Dur36QMAvk2R1yrPzSbuViJZewnu/d+fcGFmV2Y=' 'sha256-u4ctR96u8muW5qetujZe8wuGSAIsuP1R4Mv6Bg3dWfY=' 'sha256-zWFhanvEKMOsymecW6GjzAht4MWZsyCr+VubiVpTnYY='; object-src 'none'; base-uri 'none'">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-3CoPjDGNsMWIA3qkMewAlgEdiC4KTWUxSE4oJFCfh14=' 'sha256-8NH+BahN9O5+xhyaS9XaJz1xWmE3/4vsPCpRNyEkAdc=' 'sha256-CE2yYDWVyqk98U7iWHVa96aCQv4AIwy0LwWKWT8nOX4=' 'sha256-DRV7wDuGeUuRLEw21MWXXmoY20dkN/iJBX9gIv1sUqI=' 'sha256-EGQCZMm14a3IpLmlFxXZc+2wnbGmVcQZHqabpiC8agM=' 'sha256-MR4tOloyQBoAm915uDqhlabhpnNPcMDm6hJDalJaQ88=' 'sha256-eQfczpUWq8ruLx93fi+Eaz9hSigYLgWpRI2Wjs4HEM0=' 'sha256-gFpEyESWD5x5GN8Ln0/BsNW7QSq7M22RjzWgpRPm2Rw=' 'sha256-gSq/2EaipVbdo5C0kLlhaZyq6bjZhZ5V/mUTfzyz95Y=' 'sha256-lbo7Dur36QMAvk2R1yrPzSbuViJZewnu/d+fcGFmV2Y=' 'sha256-u4ctR96u8muW5qetujZe8wuGSAIsuP1R4Mv6Bg3dWfY=' 'sha256-zWFhanvEKMOsymecW6GjzAht4MWZsyCr+VubiVpTnYY='; object-src 'none'; base-uri 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page introuvable | Bartier &amp; Co</title>
 <meta name="theme-color" content="#ffffff">
@@ -200,8 +200,8 @@ f.addEventListener('submit',function(e){e.preventDefault();if(!ok(cur))return;if
  var btn=f.querySelector('.dq-submit'),lab=btn.querySelector('span'),old=lab.textContent,fields={};['metier','code_postal','equipes','capacite','prenom','telephone','entreprise','email'].forEach(function(k){var r=f.querySelector('input[name="'+k+'"]:checked');fields[k]=r?r.value:val(k)});fields.telephone=phone(fields.telephone);
  var body={type:'artisan',fields:fields,page:val('page'),site_web:''};keys.forEach(function(k){body[k]=val(k)});
  btn.disabled=true;lab.textContent='Envoi…';
- var done=false,end=function(sent){if(done)return;done=true;btn.disabled=false;lab.textContent=old;finish(sent)},t=setTimeout(function(){end(false)},6000);
- try{fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
+ var done=false,end=function(sent){if(done)return;done=true;btn.disabled=false;lab.textContent=old;finish(sent)},t=setTimeout(function(){end(false)},10000);
+ try{fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.ok?r.json():null}).then(function(j){clearTimeout(t);end(!!(j&&j.ok))}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}});
 })();
 </script>
 <script>
