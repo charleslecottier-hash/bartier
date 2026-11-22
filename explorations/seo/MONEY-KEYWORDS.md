@@ -48,7 +48,9 @@ Ce ne sont pas des guides, ce sont des pages d'action.
 | démoussage toiture devis, artisan, autour de moi | /devis-travaux/toiture/demoussage/ | en ligne le 22/11 |
 | changer gouttière, artisan zinguerie | /devis-travaux/toiture/gouttieres/ | en ligne le 22/11 (prix hors pose seulement, faute de source fiable pour la pose) |
 | entreprise isolation extérieure (autour de moi, RGE) | /devis-travaux/isolation/exterieur/ | en ligne le 22/11 (le mot RGE n'y sert qu'à expliquer la condition des aides) |
-| traitement charpente devis, artisan | /devis-travaux/charpente/traitement/ | à créer |
+| traitement charpente devis, artisan | /devis-travaux/charpente/traitement/ | en ligne le 22/11 (arrêtés termites et mérule de 12 villes) |
+| enduit et crépi de façade, nettoyage de façade | /devis-travaux/ravalement-facade/enduit-crepi/ et /nettoyage/ | en ligne le 22/11 |
+| volets roulants : devis, artisan | /devis-travaux/fenetres/volets/ | en ligne le 22/11 |
 | porte d'entrée, baie vitrée : devis, artisan | /devis-travaux/fenetres/porte-entree/ et /baie-vitree/ | en ligne le 22/11 |
 
 ## Ordre conseillé
@@ -57,7 +59,7 @@ Ce ne sont pas des guides, ce sont des pages d'action.
 2. Fait le 22/11 : toiture en urgence et démoussage.
 3. Fait le 22/11 : couvreur et ravalement dans les 18 villes déjà vérifiées (l'entreprise couvre toute la France). Chaque page doit avoir ses propres faits locaux (règles d'urbanisme, aides, climat), tirés des fiches ville déjà vérifiées. Sans cela, Google traite ces pages comme des pages satellites et les écarte.
 4. Fait le 22/11 : fenêtres, charpente et isolation dans les 18 villes ; gouttières, isolation par l'extérieur, porte d'entrée, baie vitrée.
-4 bis. Reste : traitement de charpente (trouver une source de prix fiable), les villes du 5 décembre (pages générées automatiquement à leur publication), le suivi Search Console.
+4 bis. Fait le 22/11 : traitement de charpente, enduit et crépi, nettoyage de façade, volets roulants ; la page Devis travaux renvoie vers les 10 sous-services. Reste : les villes du 5 décembre (pages générées automatiquement à leur publication), le suivi Search Console.
 5. Plus d'articles informatifs pour les particuliers.
 
 ## Garde-fous

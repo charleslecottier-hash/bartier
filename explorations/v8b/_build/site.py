@@ -994,6 +994,16 @@ def pf_write(path, title, desc, body, schema):
     paths.append(path)
 
 
+# Les travaux précis les plus recherchés (pages « money ») : liés depuis la page Devis travaux
+import money as MC
+_top = [("Couvreur en urgence", MC.URGENCE["path"]), ("Démoussage de toiture", MC.DEMOUSSAGE["path"])] + [(x["kw"].split(" :")[0], x["path"]) for x in MC.SUBS]
+_top = "".join(f'<li><a class="link" href="{h}">{t}</a></li>' for t, h in _top)
+pf_body = pf_body.replace('<section class="sheet pf-eng" id="engagements"', f"""<section class="sheet pf-others" id="demandes" data-tone="light">
+  <div class="grid sp-head"><h2 data-split>Les travaux les plus demandés</h2><p>Prix sourcés, règles locales et devis gratuit pour chacun</p></div>
+  <ul class="pf-olist">{_top}</ul>
+</section>
+
+<section class="sheet pf-eng" id="engagements\"""", 1)
 pf_write(PF.PATH, PF.TITLE, PF.DESC, pf_body, pf_schema)
 for k in PF.SLUG:
     t = next(x for x in PF.TRADES if x[0] == k)

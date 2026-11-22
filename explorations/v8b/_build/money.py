@@ -334,7 +334,8 @@ SUBS = [
          price_h2="Prix d’une gouttière", price_ref="Gouttière seule, hors pose, au mètre linéaire&nbsp;: 10 à 15 € en zinc, 15 à 20 € en acier, 25 à 35 € en cuivre.",
          price_src=QE_ZING, price_cap="Prix indicatifs de la gouttière seule, hors pose", price_rows=[("Zinc", "10 à 15 €/m linéaire"), ("Acier", "15 à 20 €/m linéaire"), ("Cuivre", "25 à 35 €/m linéaire")],
          price_note="La pose, la dépose de l’ancienne installation et l’accès (nacelle ou échafaudage) s’ajoutent : le couvreur les chiffre lors de la visite.",
-         local=True,
+         rules=("toiture", r"gouttières?[^.]*(zinc|cuivre|PVC|plastique)|descentes en PVC", "toiture", "Ce que les villes imposent",
+                "Dans les secteurs protégés, le matériau des gouttières est souvent fixé. Relevé dans nos fiches ville vérifiées"),
          faq=[("Combien coûte une gouttière ?", "Hors pose, comptez 10 à 15 € le mètre linéaire en zinc, 15 à 20 € en acier et 25 à 35 € en cuivre (QuelleEnergie). La pose et l’accès au toit sont chiffrés lors de la visite."),
               ("Couvreur ou zingueur : qui appeler ?", "Le couvreur zingueur pose et répare les gouttières, chéneaux et descentes. C’est lui que nous vous envoyons."),
               ("Faut-il une autorisation pour changer ses gouttières ?", "À l’identique, en général non. En secteur protégé, le matériau peut être imposé : zinc ou cuivre, et pas de PVC, dans plusieurs villes. Renseignez-vous en mairie avant de commander.")]),
@@ -390,20 +391,106 @@ SUBS = [
               ("PVC ou aluminium ?", "Le PVC est le plus économique. L’aluminium permet des profils fins et de grandes baies."),
               ("Faut-il une autorisation ?", "Remplacer à l’identique ne demande en général rien. Créer une ouverture ou changer l’aspect de la façade demande une déclaration préalable en mairie.")]),
 ]
-PARENT = {"toiture": ("Toiture", "/devis-travaux/toiture/"), "isolation": ("Isolation", "/devis-travaux/isolation/"), "fenetres": ("Fenêtres et portes", "/devis-travaux/fenetres/")}
+OBAT_TRAIT = ("Obat, 11/2024", "https://travaux.obat.fr/guides/prix-traitement-charpente/")
+SG_CREPI = ("La Maison Saint-Gobain, 08/2026", "https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/prix-crepi-m2")
+SG_ENDUIT = ("La Maison Saint-Gobain, 08/2026", "https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/prix-enduit-m2")
+SG_NETFAC = ("La Maison Saint-Gobain, 07/2025", "https://www.lamaisonsaintgobain.fr/facades/conseils/renover-la-facade-de-sa-maison/comment-traiter-sa-facade-contre-les-salissures-mousses-algues-et-lichens")
+SG_RAV = ("La Maison Saint-Gobain, 08/2026", "https://www.lamaisonsaintgobain.fr/facades/conseils/avant-de-vous-lancer-dans-les-travaux-de-facades/le-prix-d-un-ravalement-de-facade")
+SG_VOLET = ("La Maison Saint-Gobain, 12/2025", "https://www.lamaisonsaintgobain.fr/guides-travaux/menuiseries-exterieures/prix-volet-roulant-electrique")
+SUBS += [
+    dict(key="charpente", path="/devis-travaux/charpente/traitement/", crumb="Traitement du bois", need="Traitement du bois", pro="un charpentier",
+         title="Traitement de charpente : devis gratuit près de chez vous", kw="Traitement de charpente : devis gratuit",
+         desc="Traitement de charpente contre les insectes et les champignons : 25 à 35 €/m² en moyenne (Obat). Un charpentier de votre secteur vient chiffrer. Devis gratuit.",
+         service="Traitement de charpente",
+         what_h2="Comment le bois est traité", what_sub="Les méthodes et leur prix moyen, selon Obat",
+         what=[("Par pulvérisation", "Un produit insecticide et fongicide est pulvérisé sur le bois : 15 à 30 €/m²."),
+               ("Par injection", "Le produit est injecté au cœur des poutres, pour un traitement curatif en profondeur : environ 35 €/m²."),
+               ("Par air chaud", "Les combles sont chauffés à 55 °C pour éliminer champignons, larves et nuisibles : 10 à 25 €/m²."),
+               ("Le diagnostic d’abord", "Le charpentier repère les zones atteintes avant de traiter. Un diagnostic préventif est conseillé tous les 5 à 10 ans.")],
+         price_h2="Prix d’un traitement de charpente", price_ref="Traitement de charpente&nbsp;: de 25 à 35 €/m² en moyenne, soit 3&nbsp;000 à 4&nbsp;000 € pour une charpente.",
+         price_src=OBAT_TRAIT, price_cap="Prix moyens indicatifs",
+         price_rows=[("Traitement, en moyenne", "25 à 35 €/m²"), ("Par pulvérisation", "15 à 30 €/m²"), ("Par injection", "environ 35 €/m²"), ("Par air chaud", "10 à 25 €/m²"),
+                     ("Diagnostic de charpente", "200 à 250 €"), ("Diagnostic termites", "environ 150 €"), ("Diagnostic mérule", "250 à 300 €")],
+         price_note="Si des pièces sont trop abîmées, il faut les remplacer : une rénovation complète de charpente coûte environ 190 €/m².",
+         rules=("charpente", r"termite|mérule|capricorne|insecte", "charpente", "Termites et mérule : ville par ville",
+                "Les arrêtés préfectoraux relevés dans nos fiches ville vérifiées"),
+         faq=[("Combien coûte un traitement de charpente ?", "De 25 à 35 €/m² en moyenne, soit 3 000 à 4 000 € pour une charpente (Obat, 11/2024). Le prix dépend de la méthode et de l’état du bois."),
+              ("Comment savoir si ma charpente est attaquée ?", "Du bois qui s’effrite, de la sciure ou de petits trous, des galeries, des traces d’humidité. Au moindre doute, faites-la inspecter."),
+              ("Qui fait le diagnostic termites ?", "Un diagnostiqueur certifié et indépendant. Il coûte environ 150 €, et le diagnostic mérule 250 à 300 € (Obat)."),
+              ("Tous les combien faire contrôler sa charpente ?", "Un diagnostic préventif tous les 5 à 10 ans (Obat), et à chaque réfection de toiture, quand le bois est accessible.")]),
+    dict(key="facade", path="/devis-travaux/ravalement-facade/enduit-crepi/", crumb="Enduit et crépi", need="Ravalement complet", pro="un façadier",
+         title="Crépi et enduit de façade : devis gratuit près de chez vous", kw="Crépi et enduit de façade : devis gratuit",
+         desc="Crépi ou enduit de façade : 50 à 70 €/m² posé sur une façade saine (La Maison Saint-Gobain). Un façadier de votre secteur vient chiffrer. Devis gratuit.",
+         service="Enduit et crépi de façade",
+         what_h2="Quel enduit pour votre façade ?", what_sub="Les principaux types, pose comprise (La Maison Saint-Gobain, 08/2026)",
+         what=[("Monocouche", "Appliqué en une seule passe, le plus rapide et le plus économique : 50 à 60 €/m²."),
+               ("Traditionnel multicouche", "Plusieurs passes et un séchage plus long, pour les façades anciennes ou irrégulières : 60 à 70 €/m²."),
+               ("À la chaux ou en terre", "Des matériaux naturels et respirants : 70 à 80 €/m²."),
+               ("Décrépir avant", "Si l’ancien enduit est à retirer, comptez 20 à 35 €/m² de plus.")],
+         price_h2="Prix d’un crépi de façade", price_ref="Crépi ou enduit, fourni et posé&nbsp;: de 50 à 70 €/m² sur une façade saine, jusqu’à 80 €/m² si elle est très abîmée.",
+         price_src=SG_CREPI, price_cap="Prix moyens au m², pose comprise",
+         price_rows=[("Façade saine", "50 à 70 €/m²"), ("Fissures moyennes", "60 à 75 €/m²"), ("Fissures importantes", "70 à 80 €/m²"), ("Décrépir l’ancien enduit", "20 à 35 €/m²"),
+                     ("Façade de 100 m²", "5\u00a0000 à 8\u00a0000 €"), ("Façade de 200 m²", "10\u00a0000 à 16\u00a0000 €")],
+         price_note="Avec une isolation par l’extérieur sous enduit, comptez 160 à 215 €/m².",
+         rules=("facade", r"enduit|chaux|crépi|badigeon", "facade", "Ce que les villes imposent", "Enduits, chaux et teintes relevés dans nos fiches ville vérifiées"),
+         faq=[("Combien coûte un crépi de façade ?", "De 50 à 70 €/m² fourni et posé sur une façade saine, jusqu’à 80 €/m² si elle est très abîmée. Pour 100 m² de façade, comptez 5 000 à 8 000 € (La Maison Saint-Gobain, 08/2026)."),
+              ("Crépi ou enduit : quelle différence ?", "Le crépi désigne en général un enduit projeté, à l’aspect granuleux. L’enduit peut aussi être lissé, gratté ou taloché : le façadier vous montre les finitions."),
+              ("Faut-il une autorisation ?", "Un ravalement qui modifie l’aspect extérieur, une nouvelle teinte par exemple, demande en général une déclaration préalable en mairie. Le plan local d’urbanisme peut imposer des couleurs.")],
+         faq_extra=[("facade", "Quelle TVA")]),
+    dict(key="facade", path="/devis-travaux/ravalement-facade/nettoyage/", crumb="Nettoyage de façade", need="Nettoyage, peinture", pro="un façadier",
+         title="Nettoyage de façade : devis gratuit près de chez vous", kw="Nettoyage de façade : devis gratuit",
+         desc="Nettoyage et traitement de façade contre mousses, algues et salissures : 15 à 50 €/m² (La Maison Saint-Gobain). Un façadier de votre secteur vient chiffrer.",
+         service="Nettoyage et traitement de façade",
+         what_h2="Les 4 étapes d’un traitement de façade", what_sub="Selon La Maison Saint-Gobain",
+         what=[("Le diagnostic", "Le façadier identifie les salissures, mousses, algues ou lichens, et l’état du support."),
+               ("La préparation", "La façade est nettoyée avant tout traitement."),
+               ("Le traitement", "Un produit adapté est appliqué, le plus souvent au pulvérisateur."),
+               ("La protection", "Un produit de protection limite le retour des salissures et facilite l’entretien.")],
+         price_h2="Prix d’un nettoyage de façade", price_ref="Traitement d’une façade par un professionnel&nbsp;: de 15 à 50 €/m², selon l’état de la façade et le produit.",
+         price_src=SG_NETFAC, price_cap="Prix moyens au m²",
+         price_rows=[("Nettoyage et traitement par un professionnel", "15 à 50 €/m²"), ("Pour comparer : ravalement complet", "50 à 100 €/m²", SG_RAV)],
+         price_note="Si l’enduit est fissuré ou se décolle, un nettoyage ne suffit pas : il faut un ravalement.",
+         rules=("facade", r"nettoy|sablage|gommage|ruissel", "facade", "Ce que les villes imposent", "Méthodes de nettoyage relevées dans nos fiches ville vérifiées"),
+         faq=[("Combien coûte un nettoyage de façade ?", "De 15 à 50 €/m² par un professionnel, selon l’état de la façade et le produit choisi (La Maison Saint-Gobain, 07/2025)."),
+              ("Nettoyage ou ravalement ?", "Un nettoyage suffit quand le support est sain. Si l’enduit est fissuré ou se décolle, il faut un ravalement : le façadier vous le dit lors de la visite."),
+              ("Faut-il une autorisation ?", "En secteur protégé, ou dans les communes qui l’imposent, même un ravalement à l’identique demande une déclaration préalable. Renseignez-vous en mairie.")]),
+    dict(key="fenetres", path="/devis-travaux/fenetres/volets/", crumb="Volets roulants", need="Volets", pro="un menuisier",
+         title="Volets roulants posés : devis gratuit près de chez vous", kw="Volets roulants : devis gratuit",
+         desc="Volet roulant électrique posé : 600 à 800 € pour une fenêtre, 1 000 à 1 300 € pour une baie (La Maison Saint-Gobain). Un menuisier de votre secteur vient chiffrer.",
+         service="Pose de volets roulants",
+         what_h2="Quelle motorisation ?", what_sub="Prix moyens du moteur, hors pose (La Maison Saint-Gobain, 12/2025)",
+         what=[("Filaire", "Le moteur est relié à un interrupteur mural : 200 à 500 €."),
+               ("Sans fil", "Il se commande à distance, sans câble à tirer jusqu’à un interrupteur : 250 à 600 €."),
+               ("Centralisée", "Tous les volets se commandent ensemble : 300 à 850 €."),
+               ("Sur mesure", "Pour une ouverture hors standard, le prix monte : voir le tableau ci-dessous.")],
+         price_h2="Prix d’un volet roulant électrique", price_ref="Volet roulant électrique, fourni et posé, en dimensions standard&nbsp;: de 600 € pour une fenêtre à 1&nbsp;300 € pour une baie coulissante.",
+         price_src=SG_VOLET, price_cap="Prix TTC fourni et posé",
+         price_rows=[("Fenêtre, standard", "600 à 800 €"), ("Fenêtre, sur mesure", "800 à 1\u00a0000 €"), ("Porte-fenêtre, standard", "800 à 1\u00a0000 €"),
+                     ("Porte-fenêtre, sur mesure", "1\u00a0000 à 1\u00a0200 €"), ("Baie coulissante, standard", "1\u00a0000 à 1\u00a0300 €"),
+                     ("Baie coulissante, sur mesure", "1\u00a0300 à 1\u00a0500 €"), ("Fenêtre de toit", "800 €")],
+         price_note="Le menuisier vérifie les dimensions et le passage du câble lors de la visite.",
+         rules=("fenetres", r"volet|persienne|jalousie", "fenetres", "Ce que les villes imposent", "Volets et persiennes relevés dans nos fiches ville vérifiées"),
+         faq=[("Combien coûte un volet roulant électrique posé ?", "De 600 à 800 € pour une fenêtre, 800 à 1 000 € pour une porte-fenêtre et 1 000 à 1 300 € pour une baie coulissante, en dimensions standard (La Maison Saint-Gobain, 12/2025)."),
+              ("Filaire ou sans fil ?", "Le filaire est relié à un interrupteur mural. Le sans-fil évite de tirer un câble, pour un moteur un peu plus cher : 250 à 600 € contre 200 à 500 € hors pose."),
+              ("Faut-il une autorisation ?", "Des volets roulants changent l’aspect de la façade : une déclaration préalable en mairie est en général nécessaire. En secteur protégé, les coffres apparents peuvent être refusés, comme dans l’Écusson à Montpellier.")]),
+]
+PARENT = {"toiture": ("Toiture", "/devis-travaux/toiture/"), "isolation": ("Isolation", "/devis-travaux/isolation/"), "fenetres": ("Fenêtres et portes", "/devis-travaux/fenetres/"),
+          "charpente": ("Charpente", "/devis-travaux/charpente/"), "facade": ("Façade", "/devis-travaux/ravalement-facade/")}
 
 
-def gutter_local(PF, VL):
-    """Règles des gouttières relevées dans les fiches ville vérifiées."""
+def city_rules(PF, VL, rules):
+    """Règles relevées dans les fiches ville vérifiées : un paragraphe par ville, avec un lien vers la page métier de la ville."""
+    src, rx, link_key, h2, sub = rules
     rows = []
     for c in VL.CITIES:
-        for p in c["trades"]["toiture"]:
-            s = re.sub(r"\s*\([^()]*<a [^)]*\)", "", p)  # la source reste sur la page de la ville
-            if re.search(r"gouttières?[^.]*(zinc|cuivre|PVC|plastique)|descentes en PVC", CLEAN(s), re.I):
-                rows.append((c, CLEAN(s).strip()))
-    items = "".join(f'<li><h3><a class="link" href="{city_path(PF, "toiture", c)}">Couvreur {VL.a_(c)}</a></h3><p>{txt}</p></li>' for c, txt in rows)
+        for p in c["trades"][src]:
+            s = CLEAN(re.sub(r"\s*\([^()]*<a [^)]*\)", "", p)).strip()
+            if re.search(rx, s, re.I):
+                rows.append((c, s))
+                break
+    items = "".join(f'<li><h3><a class="link" href="{city_path(PF, link_key, c)}">{CITY_TRADES[link_key]["link"].format(a=VL.a_(c))}</a></h3><p>{txt}</p></li>' for c, txt in rows)
     return f"""<section class="sheet" id="villes" data-tone="paper">
-  <div class="grid sp-head"><h2 data-split>Ce que les villes imposent</h2><p>Dans les secteurs protégés, le matériau des gouttières est souvent fixé. Relevé dans nos fiches ville vérifiées</p></div>
+  <div class="grid sp-head"><h2 data-split>{h2}</h2><p>{sub}</p></div>
   <ul class="pf-checks pf-needs mc-list">{items}</ul>
 </section>""" if rows else ""
 
@@ -423,7 +510,7 @@ def build_sub(PF, VL, phone, phone_txt, crumbs, img, S):
   {_band(PF, S["kw"].split(" :")[0] + " : devis en 1 minute", "Visite et devis offerts. Sans engagement.")}
 </section>"""
     n, u = S["price_src"]
-    rows = "".join(f'<tr><td>{a}</td><td>{b}</td><td>{EXT(n.replace("La Maison ", ""), u)}</td></tr>' for a, b in S["price_rows"])
+    rows = "".join(f'<tr><td>{r[0]}</td><td>{r[1]}</td><td>{EXT((r[2] if len(r) > 2 else (n, u))[0].replace("La Maison ", ""), (r[2] if len(r) > 2 else (n, u))[1])}</td></tr>' for r in S["price_rows"])
     price = f"""<section class="sheet" id="prix" data-tone="paper">
   <div class="grid sp-head"><h2 data-split>{S["price_h2"]}</h2><p>{S["price_cap"]}</p></div>
   <div class="pf-refbox"><p class="pf-ref">{S["price_ref"]}</p><p class="pf-src">Source&nbsp;: {EXT(n, u)}</p>
@@ -432,9 +519,10 @@ def build_sub(PF, VL, phone, phone_txt, crumbs, img, S):
   <a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>{PF.tick()}</a></div>
   <p class="pf-upd" style="padding:0 var(--cell)">Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></p>
 </section>"""
-    local = gutter_local(PF, VL) if S.get("local") else ""
-    faq = _faq_block(S["faq"], f'{S["crumb"]} : vos questions', phone, phone_txt)
+    local = city_rules(PF, VL, S["rules"]) if S.get("rules") else ""
+    faq_rows = S["faq"] + [qa for k, pre in S.get("faq_extra", []) for qa in PF.PAGES[k]["faq"] if qa[0].startswith(pre)]
+    faq = _faq_block(faq_rows, f'{S["crumb"]} : vos questions', phone, phone_txt)
     sibs = [(x["crumb"], x["path"]) for x in SUBS if x["key"] == S["key"] and x["path"] != S["path"]]
     links = [(HUB[S["key"]], f"/devis-travaux/{PF.SLUG[S['key']]}/")] + sibs + [(CITY_TRADES[S["key"]]["link"].format(a=VL.a_(c)), city_path(PF, S["key"], c)) for c in VL.CITIES[:6]]
     others = _others("Autres travaux", links, more=("Tous les devis de travaux", "/devis-travaux/"))
-    return "\n\n".join([hero, what, price, local, blocks["promise"], faq, others, blocks["end"]]), S["faq"]
+    return "\n\n".join([hero, what, price, local, blocks["promise"], faq, others, blocks["end"]]), faq_rows

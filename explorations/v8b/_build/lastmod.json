@@ -40,8 +40,8 @@
   "sig": "7694db0a3ca7ea2f"
  },
  "/devis-travaux/": {
-  "date": "2026-11-21",
-  "sig": "a60d1f87450ea8fe"
+  "date": "2026-11-22",
+  "sig": "cb844a1e9ffa61ef"
  },
  "/devis-travaux/bordeaux/": {
   "date": "2026-11-22",
@@ -49,79 +49,83 @@
  },
  "/devis-travaux/charpente/": {
   "date": "2026-11-22",
-  "sig": "8ea034c34cf69f00"
+  "sig": "7d2ced1bddab78a9"
  },
  "/devis-travaux/charpente/bordeaux/": {
   "date": "2026-11-22",
-  "sig": "f9c755589b06c6bc"
+  "sig": "08296687ed835d8c"
  },
  "/devis-travaux/charpente/dijon/": {
   "date": "2026-11-22",
-  "sig": "fc920ade5c34fab2"
+  "sig": "af5507a232889f24"
  },
  "/devis-travaux/charpente/grenoble/": {
   "date": "2026-11-22",
-  "sig": "3658e61124f1dfb5"
+  "sig": "eb607a9fc1a8e329"
  },
  "/devis-travaux/charpente/le-havre/": {
   "date": "2026-11-22",
-  "sig": "3fa9c757f0ae426a"
+  "sig": "b478d6a5e4ce5325"
  },
  "/devis-travaux/charpente/lille/": {
   "date": "2026-11-22",
-  "sig": "7e421d32c6e3a9b8"
+  "sig": "afdef33206338426"
  },
  "/devis-travaux/charpente/lyon/": {
   "date": "2026-11-22",
-  "sig": "e581bb280be727d5"
+  "sig": "992ae5b120a019d5"
  },
  "/devis-travaux/charpente/marseille/": {
   "date": "2026-11-22",
-  "sig": "9caf533ce6d6098f"
+  "sig": "a1335c51cc6e0837"
  },
  "/devis-travaux/charpente/montpellier/": {
   "date": "2026-11-22",
-  "sig": "40115c1307daf935"
+  "sig": "4994f19f000d5e53"
  },
  "/devis-travaux/charpente/nantes/": {
   "date": "2026-11-22",
-  "sig": "746ee32859f09a7e"
+  "sig": "3c46f51b80935960"
  },
  "/devis-travaux/charpente/nice/": {
   "date": "2026-11-22",
-  "sig": "38f3b26d53e14ac4"
+  "sig": "30e56d5523c518f9"
  },
  "/devis-travaux/charpente/paris/": {
   "date": "2026-11-22",
-  "sig": "6a226aa205e2de6f"
+  "sig": "aaf3204bce137e8c"
  },
  "/devis-travaux/charpente/reims/": {
   "date": "2026-11-22",
-  "sig": "800c9daf01e52450"
+  "sig": "737558dd852450ac"
  },
  "/devis-travaux/charpente/rennes/": {
   "date": "2026-11-22",
-  "sig": "c3dc9d4d898da6b5"
+  "sig": "6fe1f0660a5f42fa"
  },
  "/devis-travaux/charpente/rouen/": {
   "date": "2026-11-22",
-  "sig": "c04389e3ea0b3a50"
+  "sig": "4615a45b4d8c58e1"
  },
  "/devis-travaux/charpente/saint-etienne/": {
   "date": "2026-11-22",
-  "sig": "b643fd3dc41026b7"
+  "sig": "8215711a4229a2d1"
  },
  "/devis-travaux/charpente/strasbourg/": {
   "date": "2026-11-22",
-  "sig": "d4fb23dbbc18180e"
+  "sig": "c3a12711381a952f"
  },
  "/devis-travaux/charpente/toulon/": {
   "date": "2026-11-22",
-  "sig": "1ed19d549072aefe"
+  "sig": "a2af9444a9a2d01c"
  },
  "/devis-travaux/charpente/toulouse/": {
   "date": "2026-11-22",
-  "sig": "fab6ce3054f1248f"
+  "sig": "4d940512d24449eb"
+ },
+ "/devis-travaux/charpente/traitement/": {
+  "date": "2026-11-22",
+  "sig": "d35d3204b6abad62"
  },
  "/devis-travaux/dijon/": {
   "date": "2026-11-22",
@@ -129,87 +133,91 @@
  },
  "/devis-travaux/fenetres/": {
   "date": "2026-11-22",
-  "sig": "43d7f9b190c61219"
+  "sig": "9ffeb341f06de9df"
  },
  "/devis-travaux/fenetres/baie-vitree/": {
   "date": "2026-11-22",
-  "sig": "06a0121aea704c38"
+  "sig": "3957bef56b057035"
  },
  "/devis-travaux/fenetres/bordeaux/": {
   "date": "2026-11-22",
-  "sig": "e798b3a7a9174230"
+  "sig": "7fe75290a0a0d45c"
  },
  "/devis-travaux/fenetres/dijon/": {
   "date": "2026-11-22",
-  "sig": "0012d77545fa7018"
+  "sig": "ed19456bb6ea582c"
  },
  "/devis-travaux/fenetres/grenoble/": {
   "date": "2026-11-22",
-  "sig": "3f33fef033c0c5c6"
+  "sig": "525e7e8f9661e687"
  },
  "/devis-travaux/fenetres/le-havre/": {
   "date": "2026-11-22",
-  "sig": "976b06c0c7bcac68"
+  "sig": "81b8c7002de0509d"
  },
  "/devis-travaux/fenetres/lille/": {
   "date": "2026-11-22",
-  "sig": "5ddd24d50b105216"
+  "sig": "6c8bdd3abbe5328d"
  },
  "/devis-travaux/fenetres/lyon/": {
   "date": "2026-11-22",
-  "sig": "577357655d3d2ada"
+  "sig": "942e159e4c82c94b"
  },
  "/devis-travaux/fenetres/marseille/": {
   "date": "2026-11-22",
-  "sig": "e053f74538558cbc"
+  "sig": "ad23500dc19392f5"
  },
  "/devis-travaux/fenetres/montpellier/": {
   "date": "2026-11-22",
-  "sig": "46705ab2ca55b517"
+  "sig": "528016afde924b31"
  },
  "/devis-travaux/fenetres/nantes/": {
   "date": "2026-11-22",
-  "sig": "78f8d25c1381f8c4"
+  "sig": "be6e88861ce1da20"
  },
  "/devis-travaux/fenetres/nice/": {
   "date": "2026-11-22",
-  "sig": "af415613543cd50e"
+  "sig": "83a2dfc5a41bfa9d"
  },
  "/devis-travaux/fenetres/paris/": {
   "date": "2026-11-22",
-  "sig": "bc03471265551fc9"
+  "sig": "0281932916c377bb"
  },
  "/devis-travaux/fenetres/porte-entree/": {
   "date": "2026-11-22",
-  "sig": "fc6c48620cd45db2"
+  "sig": "e87e3e143d73b28b"
  },
  "/devis-travaux/fenetres/reims/": {
   "date": "2026-11-22",
-  "sig": "1fef2abdeb975525"
+  "sig": "ea2fbe266a83b842"
  },
  "/devis-travaux/fenetres/rennes/": {
   "date": "2026-11-22",
-  "sig": "5126d6e33f90a4dc"
+  "sig": "4177bd0bf059179e"
  },
  "/devis-travaux/fenetres/rouen/": {
   "date": "2026-11-22",
-  "sig": "66617b56c66b2578"
+  "sig": "5bca45aa109fcc8e"
  },
  "/devis-travaux/fenetres/saint-etienne/": {
   "date": "2026-11-22",
-  "sig": "d5695a6c5967d897"
+  "sig": "a6bff671150b4780"
  },
  "/devis-travaux/fenetres/strasbourg/": {
   "date": "2026-11-22",
-  "sig": "6920e4125570fb65"
+  "sig": "5a7e4047d1bd7678"
  },
  "/devis-travaux/fenetres/toulon/": {
   "date": "2026-11-22",
-  "sig": "ad327af3c31b8b6e"
+  "sig": "142f4572642bd769"
  },
  "/devis-travaux/fenetres/toulouse/": {
   "date": "2026-11-22",
-  "sig": "fdd81a9dd54dc36d"
+  "sig": "b650a1ef48fc25c9"
+ },
+ "/devis-travaux/fenetres/volets/": {
+  "date": "2026-11-22",
+  "sig": "acc7612ec1a20ea4"
  },
  "/devis-travaux/grenoble/": {
   "date": "2026-11-22",
@@ -329,79 +337,87 @@
  },
  "/devis-travaux/ravalement-facade/": {
   "date": "2026-11-22",
-  "sig": "62bd20f4fba32d44"
+  "sig": "50d2092ddc647057"
  },
  "/devis-travaux/ravalement-facade/bordeaux/": {
   "date": "2026-11-22",
-  "sig": "fbfa64f6509dae63"
+  "sig": "bd5fa49cbf05f272"
  },
  "/devis-travaux/ravalement-facade/dijon/": {
   "date": "2026-11-22",
-  "sig": "01803ebfe5e14a24"
+  "sig": "16426688c58ff83e"
+ },
+ "/devis-travaux/ravalement-facade/enduit-crepi/": {
+  "date": "2026-11-22",
+  "sig": "336d4c9ea446fec4"
  },
  "/devis-travaux/ravalement-facade/grenoble/": {
   "date": "2026-11-22",
-  "sig": "ec7e1325f98dc5e6"
+  "sig": "7596a43afef11533"
  },
  "/devis-travaux/ravalement-facade/le-havre/": {
   "date": "2026-11-22",
-  "sig": "9924a65cbed574a4"
+  "sig": "3fba0374fd7eb860"
  },
  "/devis-travaux/ravalement-facade/lille/": {
   "date": "2026-11-22",
-  "sig": "46c5ecc712b64886"
+  "sig": "f443580be5941f68"
  },
  "/devis-travaux/ravalement-facade/lyon/": {
   "date": "2026-11-22",
-  "sig": "bb49f13a0ac2bf4c"
+  "sig": "72cc81929bf376c2"
  },
  "/devis-travaux/ravalement-facade/marseille/": {
   "date": "2026-11-22",
-  "sig": "07169d2a20047f81"
+  "sig": "376bc93c21c49dc8"
  },
  "/devis-travaux/ravalement-facade/montpellier/": {
   "date": "2026-11-22",
-  "sig": "349ec60adf96b3e2"
+  "sig": "7fc5cc1c661062f1"
  },
  "/devis-travaux/ravalement-facade/nantes/": {
   "date": "2026-11-22",
-  "sig": "b65eb3052ef72cd8"
+  "sig": "5087736c6dc7515b"
+ },
+ "/devis-travaux/ravalement-facade/nettoyage/": {
+  "date": "2026-11-22",
+  "sig": "c5d516aaa1fc50f8"
  },
  "/devis-travaux/ravalement-facade/nice/": {
   "date": "2026-11-22",
-  "sig": "49d7ab9b0f5c1c66"
+  "sig": "340283525c36beae"
  },
  "/devis-travaux/ravalement-facade/paris/": {
   "date": "2026-11-22",
-  "sig": "3f6005c97c5f8714"
+  "sig": "8ace0db47c533419"
  },
  "/devis-travaux/ravalement-facade/reims/": {
   "date": "2026-11-22",
-  "sig": "cbc4a51befcbee8f"
+  "sig": "91970bfd839aa7a3"
  },
  "/devis-travaux/ravalement-facade/rennes/": {
   "date": "2026-11-22",
-  "sig": "2a0a47c23818d60f"
+  "sig": "525c87270c731c1f"
  },
  "/devis-travaux/ravalement-facade/rouen/": {
   "date": "2026-11-22",
-  "sig": "f1794e3fb96c6518"
+  "sig": "4557e288b1e334ab"
  },
  "/devis-travaux/ravalement-facade/saint-etienne/": {
   "date": "2026-11-22",
-  "sig": "e95ae2f178054888"
+  "sig": "9fbb0dd45155dc1c"
  },
  "/devis-travaux/ravalement-facade/strasbourg/": {
   "date": "2026-11-22",
-  "sig": "8d7555bad508eaad"
+  "sig": "a06ede7a81829f36"
  },
  "/devis-travaux/ravalement-facade/toulon/": {
   "date": "2026-11-22",
-  "sig": "95aa5e91446a21a1"
+  "sig": "5d3daeb931e624de"
  },
  "/devis-travaux/ravalement-facade/toulouse/": {
   "date": "2026-11-22",
-  "sig": "c57869c46e9fe8ea"
+  "sig": "12e7a2d712855d88"
  },
  "/devis-travaux/reims/": {
   "date": "2026-11-22",
