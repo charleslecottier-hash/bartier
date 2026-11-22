@@ -129,4 +129,7 @@ relient le profil à la marque.
 | 20/11/2026 | LinkedIn | Article « DPE 2027 : qu'est-ce qui change pour votre logement ? » (particuliers, questions-réponses) | /blog/dpe-2027/ et /devis-travaux/ | fait |
 | 21/11/2026 | LinkedIn | Post 2 : fuite de toiture (PDF 03 en document) | /devis-travaux/toiture/ | fait |
 | 21/11/2026 | Facebook | Post 2 : fuite de toiture (lien du deck) | /devis-travaux/toiture/ | fait |
+| 22/11/2026 | LinkedIn | Post 3 : travaux à chaque saison (PDF 08 en document) | /devis-travaux/ | à publier |
+| 22/11/2026 | Facebook | Post 3 : travaux à chaque saison (lien du deck) | /devis-travaux/ | à publier |
+| | Calaméo | Deck 8 : travaux à chaque saison | /devis-travaux/ | à faire |
 | | | | | |
