@@ -11,10 +11,10 @@
   <url><loc>https://bartierandco.com/meta-ads/</loc><lastmod>2026-11-21</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/</loc><lastmod>2026-11-21</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/toiture/</loc><lastmod>2026-11-22</lastmod></url>
-  <url><loc>https://bartierandco.com/devis-travaux/ravalement-facade/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/ravalement-facade/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/fenetres/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/charpente/</loc><lastmod>2026-11-22</lastmod></url>
-  <url><loc>https://bartierandco.com/devis-travaux/isolation/</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/paris/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/marseille/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/lyon/</loc><lastmod>2026-11-22</lastmod></url>
@@ -35,6 +35,10 @@
   <url><loc>https://bartierandco.com/devis-travaux/rouen/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/toiture/urgence/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/toiture/demoussage/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/toiture/gouttieres/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/exterieur/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/porte-entree/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/baie-vitree/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/toiture/paris/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/toiture/marseille/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/toiture/lyon/</loc><lastmod>2026-11-22</lastmod></url>
@@ -71,6 +75,60 @@
   <url><loc>https://bartierandco.com/devis-travaux/ravalement-facade/dijon/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/ravalement-facade/grenoble/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/devis-travaux/ravalement-facade/rouen/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/paris/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/marseille/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/lyon/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/toulouse/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/nice/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/nantes/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/montpellier/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/strasbourg/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/bordeaux/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/lille/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/rennes/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/toulon/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/reims/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/saint-etienne/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/le-havre/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/dijon/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/grenoble/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/fenetres/rouen/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/paris/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/marseille/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/lyon/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/toulouse/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/nice/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/nantes/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/montpellier/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/strasbourg/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/bordeaux/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/lille/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/rennes/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/toulon/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/reims/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/saint-etienne/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/le-havre/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/dijon/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/grenoble/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/charpente/rouen/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/paris/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/marseille/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/lyon/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/toulouse/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/nice/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/nantes/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/montpellier/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/strasbourg/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/bordeaux/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/lille/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/rennes/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/toulon/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/reims/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/saint-etienne/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/le-havre/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/dijon/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/grenoble/</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://bartierandco.com/devis-travaux/isolation/rouen/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/qui-sommes-nous/</loc><lastmod>2026-11-21</lastmod></url>
   <url><loc>https://bartierandco.com/questions/</loc><lastmod>2026-11-22</lastmod></url>
   <url><loc>https://bartierandco.com/blog/</loc><lastmod>2026-11-21</lastmod></url>

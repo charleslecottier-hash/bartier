@@ -1021,6 +1021,10 @@ for _pg, _build, _service, _howto in ((MC.URGENCE, lambda cr: MC.build_urgence(P
     _items = [("Devis travaux", PF.PATH), _roof, (_pg["crumb"], _pg["path"])]
     _body, _rows = _build(crumbs(*_items))
     pf_write(_pg["path"], _pg["title"], _pg["desc"], MC.CSS + "\n" + _body, MC.sub_schema(SITE, PF, faq_ld, bc_ld, _pg, _rows, _service, _items, howto=_howto))
+for _S in MC.SUBS:
+    _items = [("Devis travaux", PF.PATH), MC.PARENT[_S["key"]], (_S["crumb"], _S["path"])]
+    _body, _rows = MC.build_sub(PF, VL, PHONE, PHONE_TXT, crumbs(*_items), _IMG, _S)
+    pf_write(_S["path"], _S["title"], _S["desc"], VL.CSS + MC.CSS + "\n" + _body, MC.sub_schema(SITE, PF, faq_ld, bc_ld, _S, _rows, _S["service"], _items, pro=_S["pro"]))
 for _k in MC.CITY_TRADES:
     _tt = next(x for x in PF.TRADES if x[0] == _k)
     for c in VL.CITIES:
