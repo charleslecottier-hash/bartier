@@ -1419,3 +1419,5 @@ section.tr-ads .ad-img{height:auto}
 
 /* Menu : entre 901 et 1599 px, Google Ads et Meta Ads passent dans « Comment ça marche » pour laisser la place à Tarifs */
 @media (min-width:901px) and (max-width:1599px){.hdr-nav > a[href="/google-ads/"],.hdr-nav > a[href="/meta-ads/"]{display:none}}
+/* Très petits téléphones (320 px) : le bouton de l'en-tête ne doit pas recouvrir le logo */
+@media (max-width:360px){.hdr-side a.hdr-cta{padding:0 10px;font-size:.8rem}.hdr-side a.hdr-cta .tick{display:none}.hdr-menu{margin-left:.4rem}}

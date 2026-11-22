@@ -248,7 +248,12 @@ a,button,label,summary{-webkit-tap-highlight-color:transparent;touch-action:mani
 @media (max-width:1024px){.tf-head{grid-column:1 / -1;position:static}.tf-head p{max-width:46ch}.tf-box{grid-column:1 / -1}}
 @media (max-width:900px){.tf-box{grid-template-columns:minmax(0,1fr)}.tf-est{padding-bottom:12px}}
 @media (max-width:640px){.tf-all thead{display:none}.tf-all tr{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;padding:16px 0;border-bottom:1px solid var(--rule)}.tf-all tbody tr:last-child{border-bottom:0}.tf-all th,.tf-all td{padding:0;border:0;white-space:normal}.tf-all tbody th{grid-column:1 / -1;font:400 1.15rem/1.2 var(--f-display)}.tf-all tbody th::after{content:" de budget publicité par mois";font:400 .85rem var(--f-text);color:var(--muted)}.tf-all td::before{content:attr(data-label);display:block;margin-bottom:2px;font-size:.75rem;font-weight:400;color:var(--muted)}}
-@media (max-width:440px){.tf-seg{grid-template-columns:repeat(2,minmax(0,1fr))}.tf-offer{margin:0 8px 8px}}
+.tf-sum{display:none}
+@media (max-width:900px){.tf-pick{position:sticky;top:var(--hdr);z-index:4;padding:16px 20px 14px;background:var(--bg);border-bottom:1px solid var(--rule);transition:top .3s cubic-bezier(.2,.7,.2,1)}.tf-pick legend{margin-bottom:10px;font-size:.9rem}.tf-sum{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 12px;margin:12px 2px 0;font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}.tf-sum b{margin-right:2px;font:400 1.2rem/1 var(--f-display);letter-spacing:-.02em;color:var(--ink)}.tf-sum>span{white-space:nowrap}.tf-est{gap:20px;padding:24px 20px 16px}.tf-rows{gap:18px}}
+@media (max-width:760px){html:has(.hdr.is-up:not(:focus-within)) .tf-pick{top:0}}
+@media (max-width:440px){.tf-seg span{min-height:44px;font-size:1rem;letter-spacing:-.03em}.tf-offer{margin:0 8px 8px;padding:24px 20px}.tf-price b{font-size:3rem}.tf-note{padding-inline:20px}.tf-all{margin-inline:20px}}
+.tf-eur{font-style:normal}
+@media (max-width:360px){.tf-pick{padding-inline:14px}.tf-seg span{font-size:1rem}.tf-eur{display:none}.tf-est{padding-inline:16px}.tf-l{font-size:.88rem}.tf-v{font-size:1.1rem}.tf-ca b{font-size:1.4rem}.tf-price b{font-size:2.6rem}.tf-offer{padding:22px 16px}}
 @media (prefers-reduced-motion:reduce){.tf-bar i,.tf-seg span{transition:none}.tf-offer .is-bump{animation:none}}
 </style>
 <link rel="canonical" href="https://bartierandco.com/">
@@ -440,10 +445,10 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
     <div class="tf-box">
       <fieldset class="tf-pick">
         <legend>Votre budget publicité par mois</legend>
-        <div class="tf-seg"><label><input type="radio" name="tf-b" value="0"><span>1 000 €</span></label><label><input type="radio" name="tf-b" value="1" checked><span>2 000 €</span></label><label><input type="radio" name="tf-b" value="2"><span>3 000 €</span></label><label><input type="radio" name="tf-b" value="3"><span>5 000 €</span></label></div>
+        <div class="tf-seg"><label><input type="radio" name="tf-b" value="0"><span>1 000<i class="tf-eur"> €</i></span></label><label><input type="radio" name="tf-b" value="1" checked><span>2 000<i class="tf-eur"> €</i></span></label><label><input type="radio" name="tf-b" value="2"><span>3 000<i class="tf-eur"> €</i></span></label><label><input type="radio" name="tf-b" value="3"><span>5 000<i class="tf-eur"> €</i></span></label></div><p class="tf-sum" aria-hidden="true"><span><b data-k="p2">1 490 €</b> HT par mois</span><span>+ <span data-k="b2">2 000 €</span> de pub</span></p>
       </fieldset>
       <div class="tf-est">
-        <p class="tf-k">Ce que ce budget peut donner, chaque mois</p>
+        <p class="tf-k">Estimations pour ce budget, par mois</p>
         <ul class="tf-rows"><li class="tf-row" data-k="d"><span class="tf-l">Demandes reçues</span><b class="tf-v">44 à 100</b><span class="tf-bar" aria-hidden="true"><i class="tf-hi" style="width:40.0%"></i><i class="tf-lo" style="width:17.6%"></i></span></li><li class="tf-row" data-k="q"><span class="tf-l">Visites fixées chez des propriétaires vérifiés</span><b class="tf-v">11 à 40</b><span class="tf-bar" aria-hidden="true"><i class="tf-hi" style="width:40.0%"></i><i class="tf-lo" style="width:11.0%"></i></span></li><li class="tf-row" data-k="v"><span class="tf-l">Visites honorées</span><b class="tf-v">8 à 30</b><span class="tf-bar" aria-hidden="true"><i class="tf-hi" style="width:40.0%"></i><i class="tf-lo" style="width:10.7%"></i></span></li><li class="tf-row" data-k="c"><span class="tf-l">Chantiers signés</span><b class="tf-v">3 à 10</b><span class="tf-bar" aria-hidden="true"><i class="tf-hi" style="width:40.0%"></i><i class="tf-lo" style="width:12.0%"></i></span></li></ul>
         <p class="tf-ca"><span>Chiffre d’affaires estimé pour vous</span><b data-k="ca">15 000 à 50 000 €</b></p>
       </div>
@@ -638,7 +643,7 @@ var price=box.querySelector('[data-k="p"]'),live=document.getElementById('tf-liv
 function count(to){var from=+price.dataset.n||to;price.dataset.n=to;cancelAnimationFrame(raf);if(still||from===to){price.textContent=eur(to);return}
 var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/450),e=1-Math.pow(1-k,3);price.textContent=eur(Math.round((from+(to-from)*e)/10)*10);if(k<1)raf=requestAnimationFrame(f)})(t0)}
 function show(i){var r=T[i];K.forEach(function(k,j){var row=box.querySelector('.tf-row[data-k="'+k+'"]'),v=r[j+1];if(!row)return;row.querySelector('.tf-v').textContent=rng(v);row.querySelector('.tf-lo').style.width=(v[0]/MX[j]*100).toFixed(1)+'%';row.querySelector('.tf-hi').style.width=(v[1]/MX[j]*100).toFixed(1)+'%'});
-box.querySelector('[data-k="ca"]').textContent=nf(r[5][0])+' à '+eur(r[5][1]);box.querySelector('[data-k="b"]').textContent=eur(r[0]);count(r[6]);
+box.querySelector('[data-k="ca"]').textContent=nf(r[5][0])+' à '+eur(r[5][1]);box.querySelector('[data-k="b"]').textContent=eur(r[0]);var p2=box.querySelector('[data-k="p2"]'),b2=box.querySelector('[data-k="b2"]');if(p2)p2.textContent=eur(r[6]);if(b2)b2.textContent=eur(r[0]);count(r[6]);
 var pl=box.querySelector('.tf-plus');pl.classList.remove('is-bump');void pl.offsetWidth;pl.classList.add('is-bump');
 if(cta)cta.href='https://wa.me/33781018936?text='+encodeURIComponent(msg+String(r[0]).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' € par mois.');
 if(live)live.textContent='Budget de '+eur(r[0])+' par mois : '+rng(r[1])+' demandes, '+rng(r[2])+' visites fixées, '+rng(r[4])+' chantiers signés. Notre prix : '+eur(r[6])+' HT par mois.'}
