@@ -54,6 +54,7 @@ NAV_SUB = {"#services": [("Accueil", "", "/"),
                          ("Google Ads", "", "/google-ads/"),
                          ("Meta Ads", "", "/meta-ads/"),
                          ("Questions fréquentes", "", "/questions/"),
+                         ("Chiffres du bâtiment", "", "/chiffres-du-batiment/"),
                          ("Notre méthode", "", "#services")],
            # « Métiers » ouvre la liste des cinq métiers
            "/metiers/": [("Couverture et zinguerie", "", "/metiers/couverture/"),
@@ -653,6 +654,12 @@ def more(title, all_text, all_href, links):
 </section>"""
 
 
+# Lien de chaque page métier vers l'index Insee de son corps d'état (observatoire)
+TRADE_INDEX = {"couverture": ("Index BT32 : le coût des travaux de couverture", "/chiffres-du-batiment/indices-bt/bt32/"),
+               "menuiserie-exterieure": ("Index BT26 : le coût des fenêtres PVC", "/chiffres-du-batiment/indices-bt/bt26/"),
+               "facade": ("Index BT52 : le coût du ravalement", "/chiffres-du-batiment/indices-bt/bt52/"),
+               "charpente": ("Index BT16b : le coût de la charpente bois", "/chiffres-du-batiment/indices-bt/bt16b/"),
+               "isolation": ("Index BT55 : le coût de l’isolation par l’extérieur", "/chiffres-du-batiment/indices-bt/bt55/")}
 TRADE_LABEL = {"couverture": "Couvreurs", "menuiserie-exterieure": "Menuisiers", "facade": "Façadiers", "charpente": "Charpentiers", "isolation": "Entreprises d'isolation"}
 READ_ADS = [(a["short"], f"/blog/{a['slug']}/") for a in ARTICLES if a["slug"] in ("google-ads-ou-meta-ads-artisan", "lead-partage-lead-exclusif-rendez-vous-qualifie")]
 
@@ -781,7 +788,7 @@ for t in TRADES:
   </ul>
 </section>""",
         faq(trade_faq, f"Les questions des {t['who'].lower()}", all_href="/questions/"),
-        more("Autres métiers", "Tous les métiers", "/metiers/", [(TRADE_LABEL[x["slug"]], f"/metiers/{x['slug']}/") for x in TRADES if x["slug"] != t["slug"]]),
+        more("Aller plus loin", "Tous les métiers", "/metiers/", [TRADE_INDEX[t["slug"]]] + [(TRADE_LABEL[x["slug"]], f"/metiers/{x['slug']}/") for x in TRADES if x["slug"] != t["slug"]]),
     ])
     write(path, f"{t['title']} | Bartier & Co" if len(t['title']) <= 45 else t['title'], meta_desc, body, nav="/metiers/", metier=t["radio"], form_h2=TRADE_SOLO[t["slug"]],
           schema={"@context": "https://schema.org", "@graph": [
@@ -1507,6 +1514,41 @@ write_plain("/lexique/", "Lexique des chantiers et des travaux | Bartier & Co",
                                      "url": f"{SITE}/lexique/#{s}", "inDefinedTermSet": {"@id": SITE + "/lexique/#lexique"}} for s, t, d, _, _ in LX.CLIENTS + LX.TRAVAUX]},
                 bc_ld(("Lexique", "/lexique/"))]})
 paths.append("/lexique/")
+
+# ——— Observatoire « Les chiffres du bâtiment » : index BT de l'Insee et calculateur (_build/observatoire.py, données _build/indices_bt.py) ———
+import observatoire as OB
+
+_ob_name = ("Chiffres du bâtiment", OB.BASE)
+_ob_list = ("Indices BT", OB.LIST)
+_ob_ds = OB.dataset_ld(SITE, OB.BASE)
+
+
+def ob_write(path, built, items, extra):
+    title, desc, body, faqs = built
+    write_plain(path, title, desc, OB.OB_CSS + "\n" + body,
+                schema={"@context": "https://schema.org", "@graph": extra + [faq_ld(faqs), bc_ld(*items)]})
+    paths.append(path)
+
+
+ob_write(OB.BASE, OB.page_hub(crumbs(_ob_name), TICK_SVG, PHONE, PHONE_TXT), [_ob_name], [_ob_ds])
+ob_write(OB.LIST, OB.page_list(crumbs(_ob_name, _ob_list), TICK_SVG, PHONE, PHONE_TXT), [_ob_name, _ob_list],
+         [{"@type": "CollectionPage", "@id": SITE + OB.LIST + "#page", "url": SITE + OB.LIST, "name": f"Indices BT {OB.mois(OB.LAST_P)}", "inLanguage": "fr-FR",
+           "isPartOf": {"@id": SITE + "/#website"}, "about": {"@id": SITE + OB.BASE + "#donnees"}, "dateModified": OB.MAJ}, _ob_ds])
+for _c, _x in OB.IDX.items():
+    _p = OB.path(_c)
+    ob_write(_p, OB.page_index(_c, crumbs(_ob_name, _ob_list, (_c, _p)), TICK_SVG, PHONE, PHONE_TXT), [_ob_name, _ob_list, (_c, _p)],
+             [{"@type": "Dataset", "@id": SITE + _p + "#donnees", "name": f"Index {_c} : {_x['nom']}, base 2010", "url": SITE + _p, "inLanguage": "fr-FR",
+               "description": f"Série mensuelle de l’index {_c} de l’Insee ({_x['nom'].lower()}), base 100 en 2010, de {OB.mois(_x['valeurs'][0][0])} à {OB.mois(_x['valeurs'][-1][0])}.",
+               "temporalCoverage": f"{_x['valeurs'][0][0]}/{_x['valeurs'][-1][0]}", "dateModified": _x["maj"], "identifier": f"idbank Insee {_x['idbank']}",
+               "isPartOf": {"@id": SITE + OB.BASE + "#donnees"}, "creditText": "Source : Insee", "creator": {"@type": "Organization", "name": "Insee", "url": "https://www.insee.fr/"},
+               "publisher": {"@id": SITE + "/#org"}, "spatialCoverage": {"@type": "Country", "name": "France"},
+               "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": SITE + "/assets/data/indices-bt.csv"}]}])
+_ob_calc = ("Révision de prix", OB.CALC)
+ob_write(OB.CALC, OB.page_calc(crumbs(_ob_name, _ob_calc), TICK_SVG, PHONE, PHONE_TXT), [_ob_name, _ob_calc],
+         [{"@type": "WebApplication", "@id": SITE + OB.CALC + "#outil", "name": "Calculateur de révision de prix (index BT)", "url": SITE + OB.CALC,
+           "applicationCategory": "BusinessApplication", "operatingSystem": "Tous", "inLanguage": "fr-FR", "isAccessibleForFree": True,
+           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@id": SITE + "/#org"},
+           "description": "Calcule la révision d’un prix avec la formule P = P0 × (a + (1 − a) × In / I0) et les index BT publiés par l’Insee."}])
 
 # ——— Page 404 ———
 nf_body = """<section class="sheet pg-top" data-tone="light">

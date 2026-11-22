@@ -10,7 +10,8 @@
 - [Qui sommes-nous](https://bartierandco.com/qui-sommes-nous/) : les fondateurs et la façon de travailler.
 - [Devis travaux, pour les particuliers](https://bartierandco.com/devis-travaux/) : un propriétaire décrit ses travaux de toiture, façade, fenêtres, charpente ou isolation, il est rappelé en moins de 5 minutes en semaine et mis en relation avec un seul artisan de son secteur. Gratuit pour le particulier.
 - [Comment trouver des chantiers](https://bartierandco.com/trouver-des-chantiers/) : les 8 canaux comparés (bouche-à-oreille, fiche Google, plateformes de devis, apporteurs d'affaires, sous-traitance, annonces locales, flyers, réseaux), avec le calcul du coût par chantier signé.
-- [Lexique](https://bartierandco.com/lexique/) : définitions courtes (demande de devis, rendez-vous qualifié, coût par chantier signé, taux de signature, garanties, déclaration préalable, RGE, démarchage en 2026), avec leurs sources officielles.
+- [Lexique](https://bartierandco.com/lexique/) : définitions courtes (demande de devis, rendez-vous qualifié, coût par chantier signé, taux de signature, garanties, déclaration préalable, RGE, démarchage en 2026, index BT, révision de prix), avec leurs sources officielles.
+- [Chiffres du bâtiment](https://bartierandco.com/chiffres-du-batiment/) : les 37 index BT de l’Insee mis à jour chaque mois, une page par index avec son historique depuis 2014 ([BT01](https://bartierandco.com/chiffres-du-batiment/indices-bt/bt01/), [tous les index](https://bartierandco.com/chiffres-du-batiment/indices-bt/)), un [calculateur de révision de prix](https://bartierandco.com/chiffres-du-batiment/revision-de-prix/) et les données en CSV et JSON. Source : Insee.
 - [Questions fréquentes](https://bartierandco.com/questions/) : prix, engagement, publicité, exclusivité, rappel des demandes, cadre légal, métiers.
 - [Contenu complet du site](https://bartierandco.com/llms-full.txt) : le texte de toutes les pages en un seul fichier.
 

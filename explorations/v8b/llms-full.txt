@@ -232,7 +232,8 @@ Non. Nos annonces et nos questions écartent les petits dépannages. Si un propr
 **Les demandes arrivent-elles seulement après une tempête ?**
 Non. Nos annonces changent avec la saison : vérification après les intempéries, entretien avant l’hiver, rénovation complète au printemps. Le but est un agenda régulier toute l’année.
 
-### Autres métiers
+### Aller plus loin
+- Index BT32 : le coût des travaux de couverture
 - Menuisiers
 - Façadiers
 - Charpentiers
@@ -300,7 +301,8 @@ Oui. Nos annonces ne promettent ni aide ni prix d’appel. Le propriétaire sait
 **Je travaille surtout l’aluminium. Pouvez-vous filtrer ?**
 Oui. Nous adaptons les annonces et les questions à ce que vous posez : matériaux, gammes, types d’ouvertures. Les projets hors de votre offre sont écartés.
 
-### Autres métiers
+### Aller plus loin
+- Index BT26 : le coût des fenêtres PVC
 - Couvreurs
 - Façadiers
 - Charpentiers
@@ -367,7 +369,8 @@ Notre méthode vise les maisons individuelles, où le propriétaire décide seul
 **Pouvez-vous viser seulement l’isolation par l’extérieur ?**
 Oui. Les annonces et les questions s’adaptent aux chantiers que vous voulez développer en priorité.
 
-### Autres métiers
+### Aller plus loin
+- Index BT52 : le coût du ravalement
 - Couvreurs
 - Menuisiers
 - Charpentiers
@@ -433,7 +436,8 @@ Oui, à condition de trier tôt. Nos questions portent sur l’avancement des pl
 **Pouvez-vous écarter les demandes de couverture ?**
 Oui. Ou, si vous faites aussi la couverture, les garder. Nous réglons le tri selon ce que vous réalisez.
 
-### Autres métiers
+### Aller plus loin
+- Index BT16b : le coût de la charpente bois
 - Couvreurs
 - Menuisiers
 - Façadiers
@@ -500,7 +504,8 @@ Oui. Nous ne démarchons personne. Nous rappelons uniquement des propriétaires 
 **Faut-il être certifié RGE ?**
 Ce n’est pas obligatoire pour travailler avec nous. Si vous l’êtes, nous pouvons le mettre en avant dans vos annonces. Nous ne promettons jamais d’aide au propriétaire.
 
-### Autres métiers
+### Aller plus loin
+- Index BT55 : le coût de l’isolation par l’extérieur
 - Couvreurs
 - Menuisiers
 - Façadiers
@@ -17215,7 +17220,7 @@ Définitions claires pour artisans et particuliers : demande de devis, rendez-v
 
 Lexique
 Les mots que croisent artisans et propriétaires, expliqués en deux ou trois phrases, avec la source officielle quand elle existe.
-Mis à jour le 19 novembre 2026
+Mis à jour le 22 novembre 2026
 
 ### Trouver des clients
 Pour les artisans du bâtiment : demandes, rendez-vous, coûts et règles d’appel.
@@ -17277,6 +17282,14 @@ Pour les propriétaires, et pour les artisans qui leur répondent.
 Un devis est la proposition écrite et détaillée d’un artisan : travaux, matériaux, prix et délais. Une fois accepté, il engage l’artisan au prix indiqué. Pour un dépannage, une réparation ou un entretien à domicile, le devis détaillé est obligatoire au-delà de 150 € TTC, ou dès que le client le demande.
 Source : Service-Public, devis obligatoire
 
+#### Index BT
+Un index BT est un indice publié chaque mois par l’Insee qui mesure l’évolution du coût des travaux de bâtiment, corps d’état par corps d’état, en base 100 en 2010. Quand le contrat le prévoit, il sert à réviser ou actualiser le prix d’un marché ou d’un devis. Le BT01 couvre tous les corps d’état.
+Voir aussi : les index BT du mois · Source : Insee, index du bâtiment base 2010
+
+#### Révision de prix
+La révision de prix ajuste le prix d’un marché pendant les travaux, selon une formule écrite dans le contrat et un index comme le BT01. Sans clause de révision, le prix reste ferme. Dans un contrat de construction de maison individuelle, seul le BT01 peut servir à réviser le prix.
+Voir aussi : le calculateur de révision de prix · Source : Code de la construction et de l’habitation, art. L231-11
+
 #### Réception des travaux
 La réception est le moment où le propriétaire accepte les travaux, avec ou sans réserves, en général par un procès-verbal signé. Elle fait partir les garanties de 1, 2 et 10 ans.
 
@@ -17310,3 +17323,3916 @@ Voir aussi : reconnaître un artisan sérieux · Source : Annuaire des entrepris
 - Vous êtes artisan : vérifier si votre secteur est libre
 - Vous êtes propriétaire : décrire vos travaux
 - Toutes les questions fréquentes
+
+---
+
+## Chiffres du bâtiment : index BT et révision de prix
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/
+
+Les 37 index BT de l’Insee mis à jour chaque mois (septembre 2026 : BT01 à 139,1), un calculateur de révision de prix et les données en accès libre.
+
+Observatoire
+Les 37 index BT publiés chaque mois par l’Insee, un calculateur de révision de prix et les données en accès libre. Dernier mois publié : septembre 2026.
+Index BT de septembre 2026 sur 1 an
+- BT01 Tous corps d’état 139,1 +4,4 %
+- BT50 Rénovation et entretien 141,3 +4,1 %
+- BT32 Couverture en tuiles de terre cuite 148,9 +4,9 %
+- BT16b Charpente bois 146,5 +4,9 %
+- BT52 Imperméabilité de façades 149,3 +7,6 %
+- BT26 Fenêtres et baies en PVC 141,8 +5,3 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Le bâtiment en septembre 2026
+Le coût des travaux par rapport au même mois de l’année précédente, d’après les index de l’Insee
+BT01 sur un an
++4,4 %
+tous corps d’état, septembre 2026 par rapport à septembre 2025
+Index en hausse sur un an
+36 sur 36
+index publiés depuis plus d’un an
+Plus forte hausse
++9,6 %
+BT28, fermeture de baies en métal ferreux
+Plus faible hausse
++2,3 %
+BT45, vitrerie, miroiterie
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### L’index BT01 depuis 2014
+Tous corps d’état, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+
+### Quel index pour quels travaux ?
+L’index le plus proche de chaque type de chantier, d’après les intitulés de l’Insee. Le bon index reste celui que fixe votre contrat
+- Travaux | Index | Valeur | Sur 1 mois | Sur 1 an
+- Toiture en tuiles de terre cuite | BT32 | 148,9 | −0,3 % | +4,9 %
+- Toiture en tuiles béton | BT33 | 141,7 | +0,1 % | +5,7 %
+- Toiture en ardoise | BT30 | 153,9 | +0,3 % | +3,8 %
+- Toiture et bardage en zinc ou en métal | BT34 | 151,5 | +0,3 % | +9,1 %
+- Toiture en bac acier | BT49 | 151,3 | +0,6 % | +5,4 %
+- Charpente en bois | BT16b | 146,5 | +0,1 % | +4,9 %
+- Ravalement, imperméabilité de façade | BT52 | 149,3 | −0,8 % | +7,6 %
+- Isolation par l’extérieur sous enduit | BT55 | 142,0 | 0,0 % | –
+- Peinture de façade | BT46 | 139,8 | −0,8 % | +3,5 %
+- Fenêtres PVC | BT26 | 141,8 | +4,0 % | +5,3 %
+- Fenêtres aluminium | BT27 | 148,7 | −0,1 % | +6,7 %
+- Fenêtres en bois | BT19b | 147,5 | +0,3 % | +4,1 %
+- Étanchéité de toiture-terrasse | BT53 | 141,2 | −2,7 % | +6,4 %
+- Rénovation et entretien, tous corps d’état | BT50 | 141,3 | −0,1 % | +4,1 %
+- Construction neuve, tous corps d’état | BT01 | 139,1 | −0,2 % | +4,4 %
+
+### Les outils
+
+#### Calculateur de révision de prix
+Choisissez l’index, les deux mois et le prix initial : le prix révisé et la formule détaillée, à copier dans votre facture.
+
+#### Tous les index BT
+Dernière valeur, évolution sur un mois et sur un an, et une page par index avec tout l’historique.
+
+#### Les données en CSV
+Toutes les valeurs depuis octobre 2014, prêtes pour un tableur. Réutilisation libre en citant l’Insee.
+
+### Méthode
+Les valeurs sont celles publiées par l’Insee dans sa base de données macroéconomiques (jeu « Index bâtiment, travaux publics et divers de la construction », base 2010). Nous les reprenons sans retouche, chaque mois, après la publication officielle.
+Les variations sont calculées par nos soins : sur un mois, par rapport au mois précédent ; sur un an, par rapport au même mois de l’année précédente. Depuis janvier 2026, l’Insee publie un nouvel index, le BT55 (isolation thermique par l’extérieur), et a arrêté le BT12.
+L’observatoire est réalisé par Bartier & Co, l’agence qui trouve des clients aux artisans du bâtiment.
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Index BT : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Qu’est-ce qu’un index BT ?**
+Un index publié chaque mois par l’Insee, qui mesure l’évolution du coût des travaux de bâtiment, corps d’état par corps d’état. Les index BT servent à réviser ou actualiser le prix d’un marché ou d’un devis, quand le contrat le prévoit.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+**Quel index BT pour un contrat de construction de maison individuelle ?**
+Le BT01, tous corps d’état : si le contrat prévoit une révision du prix, elle ne peut être calculée qu’avec cet index (Code de la construction et de l’habitation, art. L231-11).
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Révision ou actualisation : quelle différence ?**
+La révision fait suivre l’index au prix pendant l’exécution des travaux, selon la formule du contrat. L’actualisation ajuste une seule fois un prix ferme quand les travaux démarrent longtemps après la date du prix.
+
+### Aller plus loin
+- Calculateur de révision de prix
+- Tous les index BT
+- Lexique des chantiers et des travaux
+- Trouver des chantiers
+
+---
+
+## Indices BT septembre 2026 : toutes les valeurs (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/
+
+Les 37 index BT du bâtiment de septembre 2026, base 2010 : BT01 à 139,1. Évolutions sur un mois et sur un an, historique et données en CSV. Source Insee.
+
+Index du bâtiment
+Les 37 index BT publiés chaque mois par l’Insee, base 100 en 2010, classés par famille de travaux, et le BT12, arrêté fin 2025.
+Index BT01 septembre 2026
+139,1
+
+**sur 1 mois**
+- −0,2 %
+
+**sur 1 an**
+- +4,4 %
+
+**depuis 2010**
+- +39,1 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Tous corps d’état et rénovation
+- Index | Travaux | Dernière valeur | Sur 1 mois | Sur 1 an
+- BT01 | Tous corps d’état | 139,1 sept. 2026 | −0,2 % | +4,4 %
+- BT50 | Rénovation et entretien, tous corps d’état | 141,3 sept. 2026 | −0,1 % | +4,1 %
+
+### Couverture, charpente et étanchéité
+- Index | Travaux | Dernière valeur | Sur 1 mois | Sur 1 an
+- BT16b | Charpente bois | 146,5 sept. 2026 | +0,1 % | +4,9 %
+- BT30 | Couverture en ardoises de schiste | 153,9 sept. 2026 | +0,3 % | +3,8 %
+- BT32 | Couverture en tuiles en terre cuite | 148,9 sept. 2026 | −0,3 % | +4,9 %
+- BT33 | Couverture en tuiles en béton | 141,7 sept. 2026 | +0,1 % | +5,7 %
+- BT34 | Couverture en zinc et en métal (sauf cuivre) | 151,5 sept. 2026 | +0,3 % | +9,1 %
+- BT35 | Couverture en bardeaux bitumés | 154,3 sept. 2026 | −0,1 % | +5,9 %
+- BT49 | Couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité | 151,3 sept. 2026 | +0,6 % | +5,4 %
+- BT53 | Étanchéité | 141,2 sept. 2026 | −2,7 % | +6,4 %
+
+### Façade et isolation
+- Index | Travaux | Dernière valeur | Sur 1 mois | Sur 1 an
+- BT52 | Imperméabilité de façades | 149,3 sept. 2026 | −0,8 % | +7,6 %
+- BT55 | Isolation thermique par l’extérieur, enduit sur isolant | 142,0 sept. 2026 | 0,0 % | –
+- BT46 | Peinture, tenture, revêtements muraux | 139,8 sept. 2026 | −0,8 % | +3,5 %
+
+### Menuiseries et fermetures
+- Index | Travaux | Dernière valeur | Sur 1 mois | Sur 1 an
+- BT19b | Menuiserie extérieure en bois | 147,5 sept. 2026 | +0,3 % | +4,1 %
+- BT18a | Menuiserie intérieure en bois | 142,3 sept. 2026 | +0,1 % | +4,3 %
+- BT26 | Fermeture de baies en plastique y compris fenêtre PVC | 141,8 sept. 2026 | +4,0 % | +5,3 %
+- BT51 | Menuiseries PVC | 136,1 sept. 2026 | 0,0 % | +2,5 %
+- BT27 | Fermeture de baies en aluminium | 148,7 sept. 2026 | −0,1 % | +6,7 %
+- BT43 | Menuiserie en alliage d’aluminium | 143,5 sept. 2026 | −0,1 % | +4,7 %
+- BT28 | Fermeture de baies en métal ferreux | 141,8 sept. 2026 | +0,4 % | +9,6 %
+- BT42 | Menuiserie en acier et serrurerie | 146,6 sept. 2026 | +0,6 % | +5,2 %
+- BT45 | Vitrerie, miroiterie | 154,1 sept. 2026 | +0,5 % | +2,3 %
+
+### Gros œuvre et structure
+- Index | Travaux | Dernière valeur | Sur 1 mois | Sur 1 an
+- BT02 | Terrassements | 147,6 sept. 2026 | −0,3 % | +8,4 %
+- BT03 | Maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie) | 140,3 sept. 2026 | −0,3 % | +3,7 %
+- BT06 | Ossature, ouvrages en béton armé | 136,9 sept. 2026 | −0,1 % | +3,9 %
+- BT07 | Ossature et charpentes métalliques | 153,6 sept. 2026 | +0,5 % | +5,9 %
+- BT54 | Ossature bois | 142,4 sept. 2026 | +0,1 % | +5,0 %
+- BT08 | Plâtre et préfabriqués | 133,9 sept. 2026 | −0,1 % | +4,2 %
+
+### Revêtements
+- Index | Travaux | Dernière valeur | Sur 1 mois | Sur 1 an
+- BT09 | Carrelage et revêtement céramique | 134,9 sept. 2026 | −0,3 % | +3,0 %
+- BT10 | Revêtements en plastiques | 142,2 sept. 2026 | −0,4 % | +3,5 %
+- BT11 | Revêtements en textiles | 147,6 sept. 2026 | −0,4 % | +4,0 %
+- BT12 | Revêtements en textiles naturels série arrêtée | 142,9 déc. 2025 | +0,6 % | +2,5 %
+- BT14 | Revêtements en plaque de pierre naturelle sciée et produits assimilés | 143,2 sept. 2026 | +0,3 % | +2,5 %
+
+### Équipements techniques
+- Index | Travaux | Dernière valeur | Sur 1 mois | Sur 1 an
+- BT38 | Plomberie sanitaire (y compris appareils) | 149,1 sept. 2026 | −0,2 % | +8,5 %
+- BT40 | Chauffage central (à l’exclusion du chauffage électrique) | 134,3 sept. 2026 | +0,6 % | +3,2 %
+- BT41 | Ventilation et conditionnement d’air | 141,0 sept. 2026 | 0,0 % | +3,4 %
+- BT47 | Électricité | 136,4 sept. 2026 | +0,1 % | +5,5 %
+- BT48 | Ascenseurs | 144,5 sept. 2026 | −0,3 % | +8,7 %
+
+### Source
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Index BT : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Qu’est-ce qu’un index BT ?**
+Un index publié chaque mois par l’Insee, qui mesure l’évolution du coût des travaux de bâtiment, corps d’état par corps d’état. Les index BT servent à réviser ou actualiser le prix d’un marché ou d’un devis, quand le contrat le prévoit.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+**Quel index BT pour un contrat de construction de maison individuelle ?**
+Le BT01, tous corps d’état : si le contrat prévoit une révision du prix, elle ne peut être calculée qu’avec cet index (Code de la construction et de l’habitation, art. L231-11).
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Révision ou actualisation : quelle différence ?**
+La révision fait suivre l’index au prix pendant l’exécution des travaux, selon la formule du contrat. L’actualisation ajuste une seule fois un prix ferme quand les travaux démarrent longtemps après la date du prix.
+
+### Aller plus loin
+- Calculateur de révision de prix
+- Les chiffres du bâtiment
+- Lexique
+
+---
+
+## Indice BT01 septembre 2026 : 139,1 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt01/
+
+Index BT01 (tous corps d’état) de septembre 2026 : 139,1, +4,4 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Tous corps d’état et rénovation
+L’index BT01 de l’Insee mesure l’évolution du coût des travaux de tous corps d’état. Valeur de septembre 2026 : 139,1.
+Index BT01 septembre 2026
+139,1
+
+**sur 1 mois**
+- −0,2 %
+
+**sur 1 an**
+- +4,4 %
+
+**depuis 2010**
+- +39,1 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT01
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 139,1 | +4,4 %
+- août 2026 | 139,4 | +4,3 %
+- juillet 2026 | 138,9 | +4,1 %
+- juin 2026 | 138,3 | +3,9 %
+- mai 2026 | 137,9 | +3,8 %
+- avril 2026 | 137,5 | +3,5 %
+- mars 2026 | 135,9 | +2,6 %
+- février 2026 | 135,1 | +2,3 %
+- janvier 2026 | 134,7 | +2,0 %
+- décembre 2025 | 133,7 | +1,5 %
+- novembre 2025 | 133,3 | +1,4 %
+- octobre 2025 | 133,2 | +1,5 %
+- septembre 2025 | 133,3 | +1,6 %
+- août 2025 | 133,7 | +1,5 %
+- juillet 2025 | 133,4 | +1,7 %
+- juin 2025 | 133,1 | +1,4 %
+- mai 2025 | 132,9 | +1,2 %
+- avril 2025 | 132,9 | +1,5 %
+- mars 2025 | 132,5 | +1,2 %
+- février 2025 | 132,1 | +0,8 %
+- janvier 2025 | 132,0 | +0,9 %
+- décembre 2024 | 131,7 | +0,8 %
+- novembre 2024 | 131,5 | +0,9 %
+- octobre 2024 | 131,2 | +0,7 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 104,3 | 103,6 | 104,7
+- 2016 | 104,2 | 103,2 | 105,2
+- 2017 | 106,5 | 105,7 | 107,4
+- 2018 | 109,1 | 108,0 | 109,7
+- 2019 | 111,0 | 110,1 | 111,6
+- 2020 | 112,3 | 111,5 | 113,6
+- 2021 | 117,5 | 114,4 | 119,7
+- 2022 | 125,8 | 121,4 | 127,9
+- 2023 | 130,1 | 128,4 | 130,6
+- 2024 | 131,2 | 130,8 | 131,7
+- 2025 | 133,0 | 132,0 | 133,7
+
+### À quoi sert l’index BT01 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de tous corps d’état, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : construction neuve, tous corps d’état.
+Le BT01 est le seul index autorisé pour réviser le prix d’un contrat de construction de maison individuelle (Code de la construction et de l’habitation, art. L231-11).
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT01 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 435 €.
+Calculer une révision avec le BT01
+
+### Index BT01 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT01 en septembre 2026 ?**
+139,1, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +4,4 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT01 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT50 · Rénovation et entretien, tous corps d’état
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT02 septembre 2026 : 147,6 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt02/
+
+Index BT02 (terrassements) de septembre 2026 : 147,6, +8,4 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Gros œuvre et structure
+L’index BT02 de l’Insee mesure l’évolution du coût des travaux de terrassements. Valeur de septembre 2026 : 147,6.
+Index BT02 septembre 2026
+147,6
+
+**sur 1 mois**
+- −0,3 %
+
+**sur 1 an**
+- +8,4 %
+
+**depuis 2010**
+- +47,6 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT02
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 147,6 | +8,4 %
+- août 2026 | 148,0 | +8,0 %
+- juillet 2026 | 145,2 | +6,5 %
+- juin 2026 | 143,1 | +5,8 %
+- mai 2026 | 145,3 | +7,9 %
+- avril 2026 | 147,1 | +9,0 %
+- mars 2026 | 143,3 | +5,7 %
+- février 2026 | 137,9 | +1,2 %
+- janvier 2026 | 137,2 | +0,9 %
+- décembre 2025 | 135,8 | +0,5 %
+- novembre 2025 | 136,7 | +1,6 %
+- octobre 2025 | 136,0 | +1,4 %
+- septembre 2025 | 136,1 | +1,6 %
+- août 2025 | 137,0 | +1,1 %
+- juillet 2025 | 136,4 | +0,4 %
+- juin 2025 | 135,2 | −0,2 %
+- mai 2025 | 134,6 | −0,7 %
+- avril 2025 | 135,0 | −1,2 %
+- mars 2025 | 135,6 | −0,5 %
+- février 2025 | 136,2 | −0,3 %
+- janvier 2025 | 136,0 | +0,7 %
+- décembre 2024 | 135,1 | 0,0 %
+- novembre 2024 | 134,6 | −0,9 %
+- octobre 2024 | 134,1 | −1,8 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 105,8 | 104,8 | 106,9
+- 2016 | 105,6 | 104,1 | 107,0
+- 2017 | 108,2 | 107,4 | 109,0
+- 2018 | 112,1 | 110,6 | 113,7
+- 2019 | 114,0 | 112,5 | 115,0
+- 2020 | 113,0 | 111,4 | 115,2
+- 2021 | 117,5 | 114,3 | 120,0
+- 2022 | 129,0 | 122,1 | 132,1
+- 2023 | 134,6 | 132,8 | 136,8
+- 2024 | 135,4 | 133,9 | 136,7
+- 2025 | 135,9 | 134,6 | 137,0
+
+### À quoi sert l’index BT02 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de terrassements, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT02 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 845 €.
+Calculer une révision avec le BT02
+
+### Index BT02 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT02 en septembre 2026 ?**
+147,6, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +8,4 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT02 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT03 · Maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie)
+- BT06 · Ossature, ouvrages en béton armé
+- BT07 · Ossature et charpentes métalliques
+- BT54 · Ossature bois
+- BT08 · Plâtre et préfabriqués
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT03 septembre 2026 : 140,3 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt03/
+
+Index BT03 (maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie)) de septembre 2026 : 140,3, +3,7 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Gros œuvre et structure
+L’index BT03 de l’Insee mesure l’évolution du coût des travaux de maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie). Valeur de septembre 2026 : 140,3.
+Index BT03 septembre 2026
+140,3
+
+**sur 1 mois**
+- −0,3 %
+
+**sur 1 an**
+- +3,7 %
+
+**depuis 2010**
+- +40,3 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT03
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 140,3 | +3,7 %
+- août 2026 | 140,7 | +3,5 %
+- juillet 2026 | 140,4 | +3,7 %
+- juin 2026 | 139,8 | +3,6 %
+- mai 2026 | 139,2 | +3,3 %
+- avril 2026 | 139,0 | +3,1 %
+- mars 2026 | 137,5 | +2,4 %
+- février 2026 | 136,7 | +1,9 %
+- janvier 2026 | 136,2 | +1,8 %
+- décembre 2025 | 135,5 | +1,7 %
+- novembre 2025 | 135,3 | +1,7 %
+- octobre 2025 | 135,4 | +1,8 %
+- septembre 2025 | 135,3 | +1,8 %
+- août 2025 | 135,9 | +1,9 %
+- juillet 2025 | 135,4 | +1,8 %
+- juin 2025 | 135,0 | +1,7 %
+- mai 2025 | 134,8 | +1,4 %
+- avril 2025 | 134,8 | +1,3 %
+- mars 2025 | 134,3 | +1,0 %
+- février 2025 | 134,2 | +1,1 %
+- janvier 2025 | 133,8 | +1,1 %
+- décembre 2024 | 133,3 | +0,8 %
+- novembre 2024 | 133,1 | +1,2 %
+- octobre 2024 | 133,0 | +1,3 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 104,6 | 103,5 | 105,2
+- 2016 | 104,1 | 102,7 | 105,2
+- 2017 | 106,6 | 105,6 | 108,1
+- 2018 | 109,9 | 108,7 | 110,7
+- 2019 | 111,9 | 110,7 | 112,7
+- 2020 | 113,5 | 112,5 | 115,1
+- 2021 | 119,9 | 116,2 | 122,1
+- 2022 | 128,0 | 123,3 | 130,6
+- 2023 | 131,3 | 129,2 | 133,0
+- 2024 | 133,0 | 132,3 | 133,4
+- 2025 | 135,0 | 133,8 | 135,9
+
+### À quoi sert l’index BT03 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie), quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT03 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 370 €.
+Calculer une révision avec le BT03
+
+### Index BT03 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT03 en septembre 2026 ?**
+140,3, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +3,7 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT03 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT02 · Terrassements
+- BT06 · Ossature, ouvrages en béton armé
+- BT07 · Ossature et charpentes métalliques
+- BT54 · Ossature bois
+- BT08 · Plâtre et préfabriqués
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT06 septembre 2026 : 136,9 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt06/
+
+Index BT06 (ossature, ouvrages en béton armé) de septembre 2026 : 136,9, +3,9 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Gros œuvre et structure
+L’index BT06 de l’Insee mesure l’évolution du coût des travaux d’ossature, ouvrages en béton armé. Valeur de septembre 2026 : 136,9.
+Index BT06 septembre 2026
+136,9
+
+**sur 1 mois**
+- −0,1 %
+
+**sur 1 an**
+- +3,9 %
+
+**depuis 2010**
+- +36,9 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT06
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 136,9 | +3,9 %
+- août 2026 | 137,0 | +3,6 %
+- juillet 2026 | 136,5 | +3,4 %
+- juin 2026 | 136,0 | +3,4 %
+- mai 2026 | 135,6 | +3,3 %
+- avril 2026 | 135,8 | +3,4 %
+- mars 2026 | 134,3 | +2,7 %
+- février 2026 | 133,5 | +2,6 %
+- janvier 2026 | 133,0 | +2,5 %
+- décembre 2025 | 132,2 | +1,5 %
+- novembre 2025 | 131,8 | +1,5 %
+- octobre 2025 | 131,8 | +1,6 %
+- septembre 2025 | 131,8 | +1,7 %
+- août 2025 | 132,3 | +1,7 %
+- juillet 2025 | 132,0 | +2,2 %
+- juin 2025 | 131,5 | +1,2 %
+- mai 2025 | 131,3 | +1,1 %
+- avril 2025 | 131,3 | +1,3 %
+- mars 2025 | 130,8 | +1,0 %
+- février 2025 | 130,1 | +0,1 %
+- janvier 2025 | 129,7 | 0,0 %
+- décembre 2024 | 130,3 | +0,4 %
+- novembre 2024 | 129,9 | +0,5 %
+- octobre 2024 | 129,7 | +0,3 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 103,1 | 102,3 | 103,6
+- 2016 | 102,6 | 101,6 | 103,9
+- 2017 | 105,3 | 104,4 | 106,0
+- 2018 | 107,8 | 106,7 | 108,8
+- 2019 | 110,1 | 109,1 | 110,8
+- 2020 | 111,2 | 110,1 | 112,3
+- 2021 | 116,1 | 113,1 | 118,2
+- 2022 | 124,7 | 120,9 | 126,8
+- 2023 | 129,0 | 127,1 | 129,8
+- 2024 | 129,8 | 129,2 | 130,3
+- 2025 | 131,4 | 129,7 | 132,3
+
+### À quoi sert l’index BT06 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux d’ossature, ouvrages en béton armé, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT06 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 387 €.
+Calculer une révision avec le BT06
+
+### Index BT06 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT06 en septembre 2026 ?**
+136,9, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +3,9 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT06 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT02 · Terrassements
+- BT03 · Maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie)
+- BT07 · Ossature et charpentes métalliques
+- BT54 · Ossature bois
+- BT08 · Plâtre et préfabriqués
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT07 septembre 2026 : 153,6 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt07/
+
+Index BT07 (ossature et charpentes métalliques) de septembre 2026 : 153,6, +5,9 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Gros œuvre et structure
+L’index BT07 de l’Insee mesure l’évolution du coût des travaux d’ossature et charpentes métalliques. Valeur de septembre 2026 : 153,6.
+Index BT07 septembre 2026
+153,6
+
+**sur 1 mois**
+- +0,5 %
+
+**sur 1 an**
+- +5,9 %
+
+**depuis 2010**
+- +53,6 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT07
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 153,6 | +5,9 %
+- août 2026 | 152,8 | +3,9 %
+- juillet 2026 | 152,9 | +2,7 %
+- juin 2026 | 150,8 | +2,2 %
+- mai 2026 | 151,2 | +3,7 %
+- avril 2026 | 150,4 | +4,4 %
+- mars 2026 | 146,5 | −0,1 %
+- février 2026 | 144,6 | −1,2 %
+- janvier 2026 | 144,6 | −1,4 %
+- décembre 2025 | 143,8 | −1,2 %
+- novembre 2025 | 143,4 | +3,6 %
+- octobre 2025 | 143,8 | +3,9 %
+- septembre 2025 | 145,0 | −0,1 %
+- août 2025 | 147,0 | +4,3 %
+- juillet 2025 | 148,9 | +3,7 %
+- juin 2025 | 147,5 | +2,6 %
+- mai 2025 | 145,8 | +1,0 %
+- avril 2025 | 144,1 | −0,4 %
+- mars 2025 | 146,6 | +1,4 %
+- février 2025 | 146,3 | +6,0 %
+- janvier 2025 | 146,7 | +4,5 %
+- décembre 2024 | 145,6 | −0,7 %
+- novembre 2024 | 138,4 | −4,4 %
+- octobre 2024 | 138,4 | −4,7 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 100,8 | 98,8 | 101,8
+- 2016 | 99,9 | 98,8 | 101,5
+- 2017 | 104,9 | 101,1 | 108,7
+- 2018 | 113,5 | 110,5 | 115,6
+- 2019 | 113,2 | 110,6 | 115,4
+- 2020 | 110,5 | 109,3 | 111,5
+- 2021 | 137,7 | 117,7 | 153,3
+- 2022 | 169,0 | 150,5 | 191,7
+- 2023 | 153,0 | 144,7 | 159,5
+- 2024 | 142,3 | 138,0 | 145,6
+- 2025 | 145,7 | 143,4 | 148,9
+
+### À quoi sert l’index BT07 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux d’ossature et charpentes métalliques, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT07 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 593 €.
+Calculer une révision avec le BT07
+
+### Index BT07 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT07 en septembre 2026 ?**
+153,6, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +5,9 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT07 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT02 · Terrassements
+- BT03 · Maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie)
+- BT06 · Ossature, ouvrages en béton armé
+- BT54 · Ossature bois
+- BT08 · Plâtre et préfabriqués
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT08 septembre 2026 : 133,9 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt08/
+
+Index BT08 (plâtre et préfabriqués) de septembre 2026 : 133,9, +4,2 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Gros œuvre et structure
+L’index BT08 de l’Insee mesure l’évolution du coût des travaux de plâtre et préfabriqués. Valeur de septembre 2026 : 133,9.
+Index BT08 septembre 2026
+133,9
+
+**sur 1 mois**
+- −0,1 %
+
+**sur 1 an**
+- +4,2 %
+
+**depuis 2010**
+- +33,9 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT08
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 133,9 | +4,2 %
+- août 2026 | 134,0 | +4,0 %
+- juillet 2026 | 134,0 | +3,6 %
+- juin 2026 | 133,2 | +2,5 %
+- mai 2026 | 132,8 | +1,8 %
+- avril 2026 | 132,1 | +1,1 %
+- mars 2026 | 130,7 | +1,0 %
+- février 2026 | 130,1 | +1,4 %
+- janvier 2026 | 129,5 | +1,0 %
+- décembre 2025 | 128,4 | +0,5 %
+- novembre 2025 | 128,6 | +0,9 %
+- octobre 2025 | 128,4 | +0,8 %
+- septembre 2025 | 128,5 | +0,9 %
+- août 2025 | 128,8 | +0,8 %
+- juillet 2025 | 129,3 | +1,5 %
+- juin 2025 | 129,9 | +2,1 %
+- mai 2025 | 130,4 | +2,4 %
+- avril 2025 | 130,6 | +2,8 %
+- mars 2025 | 129,4 | +1,9 %
+- février 2025 | 128,3 | +1,2 %
+- janvier 2025 | 128,2 | +1,0 %
+- décembre 2024 | 127,7 | +0,9 %
+- novembre 2024 | 127,5 | +1,0 %
+- octobre 2024 | 127,4 | +0,6 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 104,2 | 103,6 | 104,5
+- 2016 | 104,5 | 103,6 | 105,5
+- 2017 | 106,2 | 105,7 | 107,1
+- 2018 | 108,6 | 107,5 | 109,5
+- 2019 | 111,1 | 110,1 | 112,0
+- 2020 | 113,2 | 112,4 | 114,2
+- 2021 | 116,8 | 114,8 | 118,0
+- 2022 | 122,8 | 119,3 | 124,6
+- 2023 | 126,4 | 125,0 | 127,6
+- 2024 | 127,3 | 126,8 | 127,8
+- 2025 | 129,1 | 128,2 | 130,6
+
+### À quoi sert l’index BT08 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de plâtre et préfabriqués, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT08 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 420 €.
+Calculer une révision avec le BT08
+
+### Index BT08 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT08 en septembre 2026 ?**
+133,9, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +4,2 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT08 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT02 · Terrassements
+- BT03 · Maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie)
+- BT06 · Ossature, ouvrages en béton armé
+- BT07 · Ossature et charpentes métalliques
+- BT54 · Ossature bois
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT09 septembre 2026 : 134,9 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt09/
+
+Index BT09 (carrelage et revêtement céramique) de septembre 2026 : 134,9, +3,0 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Revêtements
+L’index BT09 de l’Insee mesure l’évolution du coût des travaux de carrelage et revêtement céramique. Valeur de septembre 2026 : 134,9.
+Index BT09 septembre 2026
+134,9
+
+**sur 1 mois**
+- −0,3 %
+
+**sur 1 an**
+- +3,0 %
+
+**depuis 2010**
+- +34,9 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT09
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 134,9 | +3,0 %
+- août 2026 | 135,3 | +3,2 %
+- juillet 2026 | 134,3 | +1,9 %
+- juin 2026 | 134,2 | +1,9 %
+- mai 2026 | 134,3 | +2,2 %
+- avril 2026 | 134,3 | +2,8 %
+- mars 2026 | 132,9 | +1,8 %
+- février 2026 | 132,6 | +2,2 %
+- janvier 2026 | 132,0 | +1,9 %
+- décembre 2025 | 131,0 | +1,5 %
+- novembre 2025 | 130,7 | +1,6 %
+- octobre 2025 | 130,7 | +1,6 %
+- septembre 2025 | 131,0 | +1,3 %
+- août 2025 | 131,1 | +1,2 %
+- juillet 2025 | 131,8 | +2,2 %
+- juin 2025 | 131,7 | +1,5 %
+- mai 2025 | 131,4 | +1,8 %
+- avril 2025 | 130,7 | +1,8 %
+- mars 2025 | 130,5 | +1,7 %
+- février 2025 | 129,8 | +1,1 %
+- janvier 2025 | 129,6 | +0,5 %
+- décembre 2024 | 129,1 | +2,2 %
+- novembre 2024 | 128,6 | +0,9 %
+- octobre 2024 | 128,6 | +0,2 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 103,4 | 103,2 | 103,7
+- 2016 | 104,5 | 103,5 | 105,2
+- 2017 | 106,2 | 105,4 | 107,0
+- 2018 | 108,1 | 107,2 | 109,0
+- 2019 | 110,0 | 108,5 | 111,1
+- 2020 | 111,6 | 111,0 | 112,4
+- 2021 | 113,6 | 112,8 | 114,3
+- 2022 | 120,6 | 116,5 | 125,2
+- 2023 | 127,3 | 126,0 | 129,1
+- 2024 | 128,9 | 128,3 | 129,7
+- 2025 | 130,8 | 129,6 | 131,8
+
+### À quoi sert l’index BT09 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de carrelage et revêtement céramique, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT09 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 298 €.
+Calculer une révision avec le BT09
+
+### Index BT09 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT09 en septembre 2026 ?**
+134,9, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +3,0 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT09 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT10 · Revêtements en plastiques
+- BT11 · Revêtements en textiles
+- BT12 · Revêtements en textiles naturels
+- BT14 · Revêtements en plaque de pierre naturelle sciée et produits assimilés
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT10 septembre 2026 : 142,2 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt10/
+
+Index BT10 (revêtements en plastiques) de septembre 2026 : 142,2, +3,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Revêtements
+L’index BT10 de l’Insee mesure l’évolution du coût des travaux de revêtements en plastiques. Valeur de septembre 2026 : 142,2.
+Index BT10 septembre 2026
+142,2
+
+**sur 1 mois**
+- −0,4 %
+
+**sur 1 an**
+- +3,5 %
+
+**depuis 2010**
+- +42,2 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT10
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 142,2 | +3,5 %
+- août 2026 | 142,7 | +3,5 %
+- juillet 2026 | 142,6 | +3,6 %
+- juin 2026 | 141,6 | +3,1 %
+- mai 2026 | 140,7 | +2,7 %
+- avril 2026 | 140,6 | +2,9 %
+- mars 2026 | 139,3 | +1,9 %
+- février 2026 | 138,1 | +0,7 %
+- janvier 2026 | 137,7 | +0,7 %
+- décembre 2025 | 138,2 | +1,6 %
+- novembre 2025 | 136,9 | +0,7 %
+- octobre 2025 | 137,0 | +1,3 %
+- septembre 2025 | 137,4 | +1,0 %
+- août 2025 | 137,9 | +1,5 %
+- juillet 2025 | 137,6 | +1,8 %
+- juin 2025 | 137,3 | +1,4 %
+- mai 2025 | 137,0 | +1,8 %
+- avril 2025 | 136,7 | +1,6 %
+- mars 2025 | 136,7 | +1,2 %
+- février 2025 | 137,2 | +1,0 %
+- janvier 2025 | 136,7 | +1,6 %
+- décembre 2024 | 136,0 | +1,2 %
+- novembre 2024 | 136,0 | +2,3 %
+- octobre 2024 | 135,3 | +1,5 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 106,6 | 106,2 | 107,4
+- 2016 | 106,9 | 106,5 | 107,9
+- 2017 | 107,9 | 107,4 | 108,5
+- 2018 | 109,4 | 108,7 | 110,4
+- 2019 | 111,5 | 110,4 | 112,7
+- 2020 | 113,1 | 112,4 | 113,8
+- 2021 | 115,4 | 113,4 | 117,0
+- 2022 | 125,3 | 119,2 | 129,4
+- 2023 | 132,4 | 130,0 | 134,4
+- 2024 | 135,4 | 134,5 | 136,0
+- 2025 | 137,2 | 136,7 | 138,2
+
+### À quoi sert l’index BT10 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de revêtements en plastiques, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT10 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 349 €.
+Calculer une révision avec le BT10
+
+### Index BT10 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT10 en septembre 2026 ?**
+142,2, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +3,5 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT10 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT09 · Carrelage et revêtement céramique
+- BT11 · Revêtements en textiles
+- BT12 · Revêtements en textiles naturels
+- BT14 · Revêtements en plaque de pierre naturelle sciée et produits assimilés
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT11 septembre 2026 : 147,6 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt11/
+
+Index BT11 (revêtements en textiles) de septembre 2026 : 147,6, +4,0 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Revêtements
+L’index BT11 de l’Insee mesure l’évolution du coût des travaux de revêtements en textiles. Valeur de septembre 2026 : 147,6.
+Index BT11 septembre 2026
+147,6
+
+**sur 1 mois**
+- −0,4 %
+
+**sur 1 an**
+- +4,0 %
+
+**depuis 2010**
+- +47,6 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT11
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 147,6 | +4,0 %
+- août 2026 | 148,2 | +4,0 %
+- juillet 2026 | 147,4 | +3,4 %
+- juin 2026 | 147,0 | +3,6 %
+- mai 2026 | 145,6 | +3,0 %
+- avril 2026 | 145,7 | +2,8 %
+- mars 2026 | 145,0 | +3,2 %
+- février 2026 | 144,6 | +3,3 %
+- janvier 2026 | 144,1 | +3,1 %
+- décembre 2025 | 142,5 | +1,9 %
+- novembre 2025 | 141,7 | +1,5 %
+- octobre 2025 | 141,9 | +1,9 %
+- septembre 2025 | 141,9 | +2,0 %
+- août 2025 | 142,5 | +2,2 %
+- juillet 2025 | 142,6 | +2,4 %
+- juin 2025 | 141,9 | +2,2 %
+- mai 2025 | 141,3 | +2,0 %
+- avril 2025 | 141,8 | +2,8 %
+- mars 2025 | 140,5 | +1,9 %
+- février 2025 | 140,0 | +1,2 %
+- janvier 2025 | 139,8 | +0,9 %
+- décembre 2024 | 139,8 | +1,3 %
+- novembre 2024 | 139,6 | +1,4 %
+- octobre 2024 | 139,2 | +1,1 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 108,2 | 107,7 | 108,6
+- 2016 | 108,6 | 107,7 | 109,1
+- 2017 | 109,8 | 109,3 | 111,0
+- 2018 | 112,2 | 111,1 | 113,4
+- 2019 | 115,6 | 113,7 | 117,3
+- 2020 | 117,8 | 116,4 | 119,5
+- 2021 | 122,0 | 119,6 | 124,9
+- 2022 | 130,2 | 126,2 | 133,3
+- 2023 | 137,0 | 135,5 | 138,0
+- 2024 | 138,9 | 137,9 | 139,8
+- 2025 | 141,5 | 139,8 | 142,6
+
+### À quoi sert l’index BT11 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de revêtements en textiles, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT11 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 402 €.
+Calculer une révision avec le BT11
+
+### Index BT11 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT11 en septembre 2026 ?**
+147,6, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +4,0 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT11 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT09 · Carrelage et revêtement céramique
+- BT10 · Revêtements en plastiques
+- BT12 · Revêtements en textiles naturels
+- BT14 · Revêtements en plaque de pierre naturelle sciée et produits assimilés
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT12 décembre 2025 : 142,9 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt12/
+
+Index BT12 (revêtements en textiles naturels) de décembre 2025 : 142,9, +2,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Revêtements
+L’index BT12 de l’Insee mesure l’évolution du coût des travaux de revêtements en textiles naturels. Cette série est arrêtée : dernière valeur, 142,9 en décembre 2025.
+Index BT12 décembre 2025
+142,9
+
+**sur 1 mois**
+- +0,6 %
+
+**sur 1 an**
+- +2,5 %
+
+**depuis 2010**
+- +42,9 %
+Série arrêtée par l’Insee après décembre 2025 · base 100 en 2010
+
+### Courbe de l’index BT12
+De octobre 2014 à décembre 2025, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- décembre 2025 | 142,9 | +2,5 %
+- novembre 2025 | 142,1 | +2,0 %
+- octobre 2025 | 142,2 | +2,4 %
+- septembre 2025 | 142,3 | +2,6 %
+- août 2025 | 142,6 | +2,7 %
+- juillet 2025 | 142,6 | +2,9 %
+- juin 2025 | 142,0 | +2,6 %
+- mai 2025 | 141,3 | +2,5 %
+- avril 2025 | 141,9 | +3,2 %
+- mars 2025 | 140,5 | +2,3 %
+- février 2025 | 139,6 | +1,1 %
+- janvier 2025 | 139,4 | +1,2 %
+- décembre 2024 | 139,4 | +1,3 %
+- novembre 2024 | 139,3 | +1,5 %
+- octobre 2024 | 138,8 | +0,9 %
+- septembre 2024 | 138,7 | +0,9 %
+- août 2024 | 138,8 | +1,1 %
+- juillet 2024 | 138,6 | +1,1 %
+- juin 2024 | 138,4 | +1,3 %
+- mai 2024 | 137,9 | +1,2 %
+- avril 2024 | 137,5 | +0,8 %
+- mars 2024 | 137,4 | +1,1 %
+- février 2024 | 138,1 | +2,2 %
+- janvier 2024 | 137,8 | +2,0 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 107,7 | 107,1 | 108,1
+- 2016 | 108,2 | 107,1 | 108,7
+- 2017 | 109,2 | 108,7 | 110,3
+- 2018 | 111,4 | 110,2 | 112,8
+- 2019 | 114,8 | 112,6 | 116,8
+- 2020 | 117,1 | 115,3 | 119,1
+- 2021 | 121,9 | 119,0 | 125,0
+- 2022 | 129,9 | 126,0 | 132,6
+- 2023 | 136,6 | 135,1 | 137,6
+- 2024 | 138,4 | 137,4 | 139,4
+- 2025 | 141,6 | 139,4 | 142,9
+
+### À quoi sert l’index BT12 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de revêtements en textiles naturels, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT12 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre décembre 2024 et décembre 2025 : 10 000 € deviennent 10 251 €.
+Calculer une révision avec le BT12
+
+### Index BT12 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT12 en décembre 2025 ?**
+142,9, en base 100 en 2010 (Insee, données mises à jour le 13 février 2026). C’est +2,5 % par rapport à décembre 2024.
+
+**Quand l’Insee publie-t-il l’index BT12 ?**
+Plus du tout : la série est arrêtée, sa dernière valeur est celle de décembre 2025.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT09 · Carrelage et revêtement céramique
+- BT10 · Revêtements en plastiques
+- BT11 · Revêtements en textiles
+- BT14 · Revêtements en plaque de pierre naturelle sciée et produits assimilés
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT14 septembre 2026 : 143,2 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt14/
+
+Index BT14 (revêtements en plaque de pierre naturelle sciée et produits assimilés) de septembre 2026 : 143,2, +2,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Revêtements
+L’index BT14 de l’Insee mesure l’évolution du coût des travaux de revêtements en plaque de pierre naturelle sciée et produits assimilés. Valeur de septembre 2026 : 143,2.
+Index BT14 septembre 2026
+143,2
+
+**sur 1 mois**
+- +0,3 %
+
+**sur 1 an**
+- +2,5 %
+
+**depuis 2010**
+- +43,2 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT14
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 143,2 | +2,5 %
+- août 2026 | 142,8 | +2,1 %
+- juillet 2026 | 142,7 | +1,7 %
+- juin 2026 | 142,2 | +1,6 %
+- mai 2026 | 142,2 | +2,4 %
+- avril 2026 | 142,1 | +2,1 %
+- mars 2026 | 142,1 | +2,1 %
+- février 2026 | 141,3 | +1,4 %
+- janvier 2026 | 140,8 | +1,4 %
+- décembre 2025 | 140,4 | +2,3 %
+- novembre 2025 | 140,1 | +2,1 %
+- octobre 2025 | 140,1 | +2,0 %
+- septembre 2025 | 139,7 | +1,7 %
+- août 2025 | 139,9 | +2,0 %
+- juillet 2025 | 140,3 | +2,6 %
+- juin 2025 | 139,9 | +2,0 %
+- mai 2025 | 138,9 | +1,8 %
+- avril 2025 | 139,2 | +2,1 %
+- mars 2025 | 139,2 | +2,0 %
+- février 2025 | 139,3 | +2,1 %
+- janvier 2025 | 138,8 | +1,9 %
+- décembre 2024 | 137,2 | +1,6 %
+- novembre 2024 | 137,2 | +1,6 %
+- octobre 2024 | 137,4 | +1,6 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 108,5 | 107,9 | 109,0
+- 2016 | 109,4 | 108,8 | 110,1
+- 2017 | 111,4 | 111,0 | 111,8
+- 2018 | 112,9 | 112,3 | 113,6
+- 2019 | 115,6 | 114,5 | 116,3
+- 2020 | 117,5 | 117,1 | 118,0
+- 2021 | 119,9 | 119,2 | 120,4
+- 2022 | 125,2 | 122,1 | 127,7
+- 2023 | 132,8 | 128,8 | 135,3
+- 2024 | 136,8 | 136,2 | 137,4
+- 2025 | 139,7 | 138,8 | 140,4
+
+### À quoi sert l’index BT14 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de revêtements en plaque de pierre naturelle sciée et produits assimilés, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT14 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 251 €.
+Calculer une révision avec le BT14
+
+### Index BT14 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT14 en septembre 2026 ?**
+143,2, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +2,5 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT14 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT09 · Carrelage et revêtement céramique
+- BT10 · Revêtements en plastiques
+- BT11 · Revêtements en textiles
+- BT12 · Revêtements en textiles naturels
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT16b septembre 2026 : 146,5 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt16b/
+
+Index BT16b (charpente bois) de septembre 2026 : 146,5, +4,9 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Couverture, charpente et étanchéité
+L’index BT16b de l’Insee mesure l’évolution du coût des travaux de charpente bois. Valeur de septembre 2026 : 146,5.
+Index BT16b septembre 2026
+146,5
+
+**sur 1 mois**
+- +0,1 %
+
+**sur 1 an**
+- +4,9 %
+
+**depuis 2010**
+- +46,5 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT16b
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 146,5 | +4,9 %
+- août 2026 | 146,3 | +4,8 %
+- juillet 2026 | 145,9 | +4,3 %
+- juin 2026 | 145,3 | +3,9 %
+- mai 2026 | 145,2 | +4,7 %
+- avril 2026 | 144,7 | +3,8 %
+- mars 2026 | 143,4 | +2,9 %
+- février 2026 | 142,3 | +2,3 %
+- janvier 2026 | 141,6 | +2,0 %
+- décembre 2025 | 141,4 | +2,4 %
+- novembre 2025 | 140,8 | +2,1 %
+- octobre 2025 | 140,1 | +1,7 %
+- septembre 2025 | 139,6 | +1,6 %
+- août 2025 | 139,6 | +1,1 %
+- juillet 2025 | 139,9 | +1,7 %
+- juin 2025 | 139,8 | +1,9 %
+- mai 2025 | 138,7 | +1,5 %
+- avril 2025 | 139,4 | +1,1 %
+- mars 2025 | 139,3 | +1,3 %
+- février 2025 | 139,1 | +0,9 %
+- janvier 2025 | 138,8 | +1,0 %
+- décembre 2024 | 138,1 | +0,7 %
+- novembre 2024 | 137,9 | +0,7 %
+- octobre 2024 | 137,7 | +0,4 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 105,0 | 104,6 | 105,4
+- 2016 | 105,7 | 104,6 | 107,0
+- 2017 | 108,0 | 107,5 | 109,0
+- 2018 | 110,8 | 109,4 | 112,5
+- 2019 | 113,6 | 112,3 | 114,8
+- 2020 | 115,2 | 114,6 | 115,8
+- 2021 | 120,3 | 116,0 | 124,5
+- 2022 | 131,7 | 124,9 | 134,6
+- 2023 | 136,0 | 133,7 | 137,6
+- 2024 | 137,6 | 136,7 | 138,1
+- 2025 | 139,7 | 138,7 | 141,4
+
+### À quoi sert l’index BT16b ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de charpente bois, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : charpente en bois.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT16b aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 494 €.
+Calculer une révision avec le BT16b
+
+### Index BT16b : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT16b en septembre 2026 ?**
+146,5, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +4,9 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT16b ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT30 · Couverture en ardoises de schiste
+- BT32 · Couverture en tuiles en terre cuite
+- BT33 · Couverture en tuiles en béton
+- BT34 · Couverture en zinc et en métal (sauf cuivre)
+- BT35 · Couverture en bardeaux bitumés
+- BT49 · Couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité
+- BT53 · Étanchéité
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT18a septembre 2026 : 142,3 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt18a/
+
+Index BT18a (menuiserie intérieure en bois) de septembre 2026 : 142,3, +4,3 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Menuiseries et fermetures
+L’index BT18a de l’Insee mesure l’évolution du coût des travaux de menuiserie intérieure en bois. Valeur de septembre 2026 : 142,3.
+Index BT18a septembre 2026
+142,3
+
+**sur 1 mois**
+- +0,1 %
+
+**sur 1 an**
+- +4,3 %
+
+**depuis 2010**
+- +42,3 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT18a
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 142,3 | +4,3 %
+- août 2026 | 142,2 | +4,3 %
+- juillet 2026 | 141,7 | +4,1 %
+- juin 2026 | 141,3 | +4,4 %
+- mai 2026 | 140,9 | +4,5 %
+- avril 2026 | 140,0 | +3,9 %
+- mars 2026 | 139,6 | +3,7 %
+- février 2026 | 138,7 | +2,9 %
+- janvier 2026 | 138,2 | +3,2 %
+- décembre 2025 | 137,0 | +2,0 %
+- novembre 2025 | 137,0 | +2,4 %
+- octobre 2025 | 136,6 | +1,8 %
+- septembre 2025 | 136,4 | +2,2 %
+- août 2025 | 136,3 | +2,3 %
+- juillet 2025 | 136,1 | +2,4 %
+- juin 2025 | 135,4 | +2,0 %
+- mai 2025 | 134,8 | +1,5 %
+- avril 2025 | 134,7 | +1,7 %
+- mars 2025 | 134,6 | +1,5 %
+- février 2025 | 134,8 | +1,6 %
+- janvier 2025 | 133,9 | +1,1 %
+- décembre 2024 | 134,3 | +0,5 %
+- novembre 2024 | 133,8 | +0,5 %
+- octobre 2024 | 134,2 | +0,6 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 106,0 | 105,5 | 106,3
+- 2016 | 107,3 | 106,4 | 108,2
+- 2017 | 108,9 | 108,4 | 109,9
+- 2018 | 111,2 | 110,2 | 112,2
+- 2019 | 113,5 | 112,4 | 114,3
+- 2020 | 115,5 | 114,5 | 116,5
+- 2021 | 118,8 | 116,1 | 121,3
+- 2022 | 127,3 | 122,4 | 130,5
+- 2023 | 132,9 | 131,5 | 133,9
+- 2024 | 133,2 | 132,5 | 134,3
+- 2025 | 135,6 | 133,9 | 137,0
+
+### À quoi sert l’index BT18a ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de menuiserie intérieure en bois, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT18a aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 433 €.
+Calculer une révision avec le BT18a
+
+### Index BT18a : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT18a en septembre 2026 ?**
+142,3, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +4,3 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT18a ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT19b · Menuiserie extérieure en bois
+- BT26 · Fermeture de baies en plastique y compris fenêtre PVC
+- BT51 · Menuiseries PVC
+- BT27 · Fermeture de baies en aluminium
+- BT43 · Menuiserie en alliage d’aluminium
+- BT28 · Fermeture de baies en métal ferreux
+- BT42 · Menuiserie en acier et serrurerie
+- BT45 · Vitrerie, miroiterie
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT19b septembre 2026 : 147,5 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt19b/
+
+Index BT19b (menuiserie extérieure en bois) de septembre 2026 : 147,5, +4,1 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Menuiseries et fermetures
+L’index BT19b de l’Insee mesure l’évolution du coût des travaux de menuiserie extérieure en bois. Valeur de septembre 2026 : 147,5.
+Index BT19b septembre 2026
+147,5
+
+**sur 1 mois**
+- +0,3 %
+
+**sur 1 an**
+- +4,1 %
+
+**depuis 2010**
+- +47,5 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT19b
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 147,5 | +4,1 %
+- août 2026 | 147,1 | +4,0 %
+- juillet 2026 | 146,7 | +3,7 %
+- juin 2026 | 145,7 | +3,6 %
+- mai 2026 | 145,3 | +3,9 %
+- avril 2026 | 144,9 | +3,8 %
+- mars 2026 | 144,8 | +3,7 %
+- février 2026 | 143,9 | +2,9 %
+- janvier 2026 | 143,6 | +3,5 %
+- décembre 2025 | 142,3 | +2,5 %
+- novembre 2025 | 142,7 | +3,3 %
+- octobre 2025 | 142,1 | +2,7 %
+- septembre 2025 | 141,7 | +3,1 %
+- août 2025 | 141,4 | +2,8 %
+- juillet 2025 | 141,4 | +2,8 %
+- juin 2025 | 140,7 | +2,2 %
+- mai 2025 | 139,9 | +1,9 %
+- avril 2025 | 139,6 | +1,5 %
+- mars 2025 | 139,7 | +1,5 %
+- février 2025 | 139,8 | +1,8 %
+- janvier 2025 | 138,8 | +1,4 %
+- décembre 2024 | 138,8 | +0,2 %
+- novembre 2024 | 138,2 | 0,0 %
+- octobre 2024 | 138,4 | +0,3 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 105,9 | 105,7 | 106,4
+- 2016 | 107,2 | 106,3 | 108,0
+- 2017 | 108,9 | 108,2 | 109,9
+- 2018 | 112,1 | 110,6 | 113,3
+- 2019 | 114,5 | 113,2 | 115,2
+- 2020 | 115,8 | 115,0 | 116,7
+- 2021 | 119,1 | 116,6 | 121,9
+- 2022 | 129,2 | 122,8 | 134,5
+- 2023 | 137,1 | 135,4 | 138,5
+- 2024 | 137,7 | 136,9 | 138,8
+- 2025 | 140,8 | 138,8 | 142,7
+
+### À quoi sert l’index BT19b ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de menuiserie extérieure en bois, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : fenêtres en bois.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT19b aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 409 €.
+Calculer une révision avec le BT19b
+
+### Index BT19b : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT19b en septembre 2026 ?**
+147,5, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +4,1 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT19b ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT18a · Menuiserie intérieure en bois
+- BT26 · Fermeture de baies en plastique y compris fenêtre PVC
+- BT51 · Menuiseries PVC
+- BT27 · Fermeture de baies en aluminium
+- BT43 · Menuiserie en alliage d’aluminium
+- BT28 · Fermeture de baies en métal ferreux
+- BT42 · Menuiserie en acier et serrurerie
+- BT45 · Vitrerie, miroiterie
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT26 septembre 2026 : 141,8 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt26/
+
+Index BT26 (fermeture de baies en plastique y compris fenêtre pvc) de septembre 2026 : 141,8, +5,3 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Menuiseries et fermetures
+L’index BT26 de l’Insee mesure l’évolution du coût des travaux de fermeture de baies en plastique y compris fenêtre PVC. Valeur de septembre 2026 : 141,8.
+Index BT26 septembre 2026
+141,8
+
+**sur 1 mois**
+- +4,0 %
+
+**sur 1 an**
+- +5,3 %
+
+**depuis 2010**
+- +41,8 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT26
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 141,8 | +5,3 %
+- août 2026 | 136,3 | +1,5 %
+- juillet 2026 | 138,9 | +3,0 %
+- juin 2026 | 138,5 | +3,4 %
+- mai 2026 | 136,9 | +3,0 %
+- avril 2026 | 135,4 | +1,0 %
+- mars 2026 | 136,2 | +2,9 %
+- février 2026 | 133,7 | +0,8 %
+- janvier 2026 | 133,2 | +0,5 %
+- décembre 2025 | 134,9 | +1,1 %
+- novembre 2025 | 135,1 | +4,2 %
+- octobre 2025 | 134,8 | +1,5 %
+- septembre 2025 | 134,7 | +2,3 %
+- août 2025 | 134,3 | +1,8 %
+- juillet 2025 | 134,9 | +2,7 %
+- juin 2025 | 134,0 | +1,7 %
+- mai 2025 | 132,9 | +1,4 %
+- avril 2025 | 134,0 | +2,7 %
+- mars 2025 | 132,4 | +1,3 %
+- février 2025 | 132,7 | +0,4 %
+- janvier 2025 | 132,6 | +1,0 %
+- décembre 2024 | 133,4 | +0,4 %
+- novembre 2024 | 129,7 | −0,8 %
+- octobre 2024 | 132,8 | +0,2 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 104,0 | 103,6 | 104,9
+- 2016 | 105,1 | 104,1 | 106,1
+- 2017 | 106,2 | 104,4 | 108,0
+- 2018 | 108,6 | 107,4 | 109,6
+- 2019 | 109,4 | 108,5 | 110,0
+- 2020 | 110,6 | 109,7 | 111,7
+- 2021 | 114,6 | 111,6 | 119,1
+- 2022 | 127,3 | 120,3 | 133,9
+- 2023 | 131,9 | 130,5 | 133,6
+- 2024 | 131,5 | 129,7 | 133,4
+- 2025 | 133,9 | 132,4 | 135,1
+
+### À quoi sert l’index BT26 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de fermeture de baies en plastique y compris fenêtre PVC, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : fenêtres PVC.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT26 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 527 €.
+Calculer une révision avec le BT26
+
+### Index BT26 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT26 en septembre 2026 ?**
+141,8, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +5,3 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT26 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT19b · Menuiserie extérieure en bois
+- BT18a · Menuiserie intérieure en bois
+- BT51 · Menuiseries PVC
+- BT27 · Fermeture de baies en aluminium
+- BT43 · Menuiserie en alliage d’aluminium
+- BT28 · Fermeture de baies en métal ferreux
+- BT42 · Menuiserie en acier et serrurerie
+- BT45 · Vitrerie, miroiterie
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT27 septembre 2026 : 148,7 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt27/
+
+Index BT27 (fermeture de baies en aluminium) de septembre 2026 : 148,7, +6,7 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Menuiseries et fermetures
+L’index BT27 de l’Insee mesure l’évolution du coût des travaux de fermeture de baies en aluminium. Valeur de septembre 2026 : 148,7.
+Index BT27 septembre 2026
+148,7
+
+**sur 1 mois**
+- −0,1 %
+
+**sur 1 an**
+- +6,7 %
+
+**depuis 2010**
+- +48,7 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT27
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 148,7 | +6,7 %
+- août 2026 | 148,9 | +7,0 %
+- juillet 2026 | 148,2 | +6,0 %
+- juin 2026 | 149,5 | +7,4 %
+- mai 2026 | 149,5 | +7,8 %
+- avril 2026 | 148,1 | +6,1 %
+- mars 2026 | 145,8 | +3,1 %
+- février 2026 | 144,2 | +1,7 %
+- janvier 2026 | 142,9 | +3,0 %
+- décembre 2025 | 142,1 | +1,5 %
+- novembre 2025 | 141,7 | +1,5 %
+- octobre 2025 | 140,2 | +1,2 %
+- septembre 2025 | 139,4 | +1,7 %
+- août 2025 | 139,1 | +1,7 %
+- juillet 2025 | 139,8 | +1,7 %
+- juin 2025 | 139,2 | +1,4 %
+- mai 2025 | 138,7 | +0,4 %
+- avril 2025 | 139,6 | +2,5 %
+- mars 2025 | 141,4 | +5,1 %
+- février 2025 | 141,8 | +6,8 %
+- janvier 2025 | 138,7 | +3,9 %
+- décembre 2024 | 140,0 | +4,1 %
+- novembre 2024 | 139,6 | +3,3 %
+- octobre 2024 | 138,6 | +2,7 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 104,9 | 102,4 | 106,5
+- 2016 | 102,3 | 100,8 | 105,6
+- 2017 | 107,0 | 105,1 | 108,6
+- 2018 | 109,7 | 108,7 | 110,8
+- 2019 | 109,4 | 108,2 | 110,5
+- 2020 | 107,4 | 105,5 | 109,5
+- 2021 | 120,6 | 110,3 | 131,1
+- 2022 | 145,6 | 135,6 | 151,2
+- 2023 | 138,5 | 134,5 | 143,7
+- 2024 | 136,8 | 132,8 | 140,0
+- 2025 | 140,1 | 138,7 | 142,1
+
+### À quoi sert l’index BT27 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de fermeture de baies en aluminium, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : fenêtres aluminium.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT27 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 667 €.
+Calculer une révision avec le BT27
+
+### Index BT27 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT27 en septembre 2026 ?**
+148,7, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +6,7 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT27 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT19b · Menuiserie extérieure en bois
+- BT18a · Menuiserie intérieure en bois
+- BT26 · Fermeture de baies en plastique y compris fenêtre PVC
+- BT51 · Menuiseries PVC
+- BT43 · Menuiserie en alliage d’aluminium
+- BT28 · Fermeture de baies en métal ferreux
+- BT42 · Menuiserie en acier et serrurerie
+- BT45 · Vitrerie, miroiterie
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT28 septembre 2026 : 141,8 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt28/
+
+Index BT28 (fermeture de baies en métal ferreux) de septembre 2026 : 141,8, +9,6 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Menuiseries et fermetures
+L’index BT28 de l’Insee mesure l’évolution du coût des travaux de fermeture de baies en métal ferreux. Valeur de septembre 2026 : 141,8.
+Index BT28 septembre 2026
+141,8
+
+**sur 1 mois**
+- +0,4 %
+
+**sur 1 an**
+- +9,6 %
+
+**depuis 2010**
+- +41,8 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT28
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 141,8 | +9,6 %
+- août 2026 | 141,3 | +8,9 %
+- juillet 2026 | 141,1 | +8,2 %
+- juin 2026 | 139,9 | +7,4 %
+- mai 2026 | 139,4 | +6,8 %
+- avril 2026 | 138,3 | +6,8 %
+- mars 2026 | 135,9 | +4,9 %
+- février 2026 | 134,9 | +4,8 %
+- janvier 2026 | 133,4 | +3,7 %
+- décembre 2025 | 131,7 | +0,9 %
+- novembre 2025 | 130,3 | −0,8 %
+- octobre 2025 | 129,9 | −1,3 %
+- septembre 2025 | 129,4 | −0,5 %
+- août 2025 | 129,8 | −1,3 %
+- juillet 2025 | 130,4 | +0,2 %
+- juin 2025 | 130,3 | −0,1 %
+- mai 2025 | 130,5 | −2,3 %
+- avril 2025 | 129,5 | −2,3 %
+- mars 2025 | 129,6 | −1,7 %
+- février 2025 | 128,7 | −1,0 %
+- janvier 2025 | 128,7 | −1,5 %
+- décembre 2024 | 130,5 | −1,3 %
+- novembre 2024 | 131,4 | +1,4 %
+- octobre 2024 | 131,6 | +1,8 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 101,5 | 99,4 | 102,6
+- 2016 | 101,1 | 98,3 | 104,8
+- 2017 | 107,6 | 105,5 | 108,5
+- 2018 | 109,9 | 109,5 | 110,5
+- 2019 | 109,5 | 107,2 | 111,1
+- 2020 | 107,5 | 106,4 | 109,0
+- 2021 | 126,0 | 112,3 | 136,3
+- 2022 | 144,2 | 137,3 | 151,2
+- 2023 | 133,2 | 129,3 | 135,7
+- 2024 | 131,2 | 130,0 | 133,6
+- 2025 | 129,9 | 128,7 | 131,7
+
+### À quoi sert l’index BT28 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de fermeture de baies en métal ferreux, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT28 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 958 €.
+Calculer une révision avec le BT28
+
+### Index BT28 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT28 en septembre 2026 ?**
+141,8, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +9,6 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT28 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT19b · Menuiserie extérieure en bois
+- BT18a · Menuiserie intérieure en bois
+- BT26 · Fermeture de baies en plastique y compris fenêtre PVC
+- BT51 · Menuiseries PVC
+- BT27 · Fermeture de baies en aluminium
+- BT43 · Menuiserie en alliage d’aluminium
+- BT42 · Menuiserie en acier et serrurerie
+- BT45 · Vitrerie, miroiterie
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT30 septembre 2026 : 153,9 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt30/
+
+Index BT30 (couverture en ardoises de schiste) de septembre 2026 : 153,9, +3,8 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Couverture, charpente et étanchéité
+L’index BT30 de l’Insee mesure l’évolution du coût des travaux de couverture en ardoises de schiste. Valeur de septembre 2026 : 153,9.
+Index BT30 septembre 2026
+153,9
+
+**sur 1 mois**
+- +0,3 %
+
+**sur 1 an**
+- +3,8 %
+
+**depuis 2010**
+- +53,9 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT30
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 153,9 | +3,8 %
+- août 2026 | 153,4 | +3,4 %
+- juillet 2026 | 152,7 | +3,2 %
+- juin 2026 | 152,5 | +3,4 %
+- mai 2026 | 152,5 | +3,5 %
+- avril 2026 | 152,1 | +3,2 %
+- mars 2026 | 151,5 | +2,8 %
+- février 2026 | 150,3 | +1,9 %
+- janvier 2026 | 149,9 | +2,3 %
+- décembre 2025 | 149,5 | +2,3 %
+- novembre 2025 | 149,2 | +2,3 %
+- octobre 2025 | 148,9 | +2,1 %
+- septembre 2025 | 148,2 | +2,2 %
+- août 2025 | 148,3 | +1,9 %
+- juillet 2025 | 148,0 | +2,0 %
+- juin 2025 | 147,5 | +1,9 %
+- mai 2025 | 147,4 | +1,9 %
+- avril 2025 | 147,4 | +2,1 %
+- mars 2025 | 147,4 | +2,3 %
+- février 2025 | 147,5 | +2,5 %
+- janvier 2025 | 146,5 | +2,4 %
+- décembre 2024 | 146,1 | +2,2 %
+- novembre 2024 | 145,9 | +3,3 %
+- octobre 2024 | 145,8 | +3,2 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 107,9 | 107,5 | 108,5
+- 2016 | 108,6 | 107,3 | 110,4
+- 2017 | 111,3 | 110,4 | 112,5
+- 2018 | 113,2 | 112,6 | 113,9
+- 2019 | 115,0 | 113,9 | 115,6
+- 2020 | 116,6 | 115,7 | 118,3
+- 2021 | 122,8 | 118,7 | 128,6
+- 2022 | 133,6 | 129,0 | 135,8
+- 2023 | 140,7 | 136,5 | 143,0
+- 2024 | 144,8 | 143,0 | 146,1
+- 2025 | 148,0 | 146,5 | 149,5
+
+### À quoi sert l’index BT30 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de couverture en ardoises de schiste, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : toiture en ardoise.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT30 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 385 €.
+Calculer une révision avec le BT30
+
+### Index BT30 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT30 en septembre 2026 ?**
+153,9, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +3,8 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT30 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT16b · Charpente bois
+- BT32 · Couverture en tuiles en terre cuite
+- BT33 · Couverture en tuiles en béton
+- BT34 · Couverture en zinc et en métal (sauf cuivre)
+- BT35 · Couverture en bardeaux bitumés
+- BT49 · Couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité
+- BT53 · Étanchéité
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT32 septembre 2026 : 148,9 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt32/
+
+Index BT32 (couverture en tuiles en terre cuite) de septembre 2026 : 148,9, +4,9 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Couverture, charpente et étanchéité
+L’index BT32 de l’Insee mesure l’évolution du coût des travaux de couverture en tuiles en terre cuite. Valeur de septembre 2026 : 148,9.
+Index BT32 septembre 2026
+148,9
+
+**sur 1 mois**
+- −0,3 %
+
+**sur 1 an**
+- +4,9 %
+
+**depuis 2010**
+- +48,9 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT32
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 148,9 | +4,9 %
+- août 2026 | 149,3 | +4,9 %
+- juillet 2026 | 147,3 | +4,0 %
+- juin 2026 | 146,6 | +3,6 %
+- mai 2026 | 146,4 | +3,4 %
+- avril 2026 | 145,4 | +3,0 %
+- mars 2026 | 145,2 | +2,9 %
+- février 2026 | 145,1 | +2,8 %
+- janvier 2026 | 143,9 | +1,8 %
+- décembre 2025 | 143,2 | +2,6 %
+- novembre 2025 | 143,3 | +2,1 %
+- octobre 2025 | 142,7 | +1,3 %
+- septembre 2025 | 141,9 | +1,4 %
+- août 2025 | 142,3 | +0,9 %
+- juillet 2025 | 141,7 | +1,1 %
+- juin 2025 | 141,5 | +1,3 %
+- mai 2025 | 141,6 | +1,3 %
+- avril 2025 | 141,2 | +1,9 %
+- mars 2025 | 141,1 | +1,7 %
+- février 2025 | 141,2 | +1,7 %
+- janvier 2025 | 141,3 | +1,9 %
+- décembre 2024 | 139,6 | +1,3 %
+- novembre 2024 | 140,3 | +0,2 %
+- octobre 2024 | 140,9 | +1,4 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 106,3 | 105,5 | 107,1
+- 2016 | 107,4 | 106,0 | 109,1
+- 2017 | 109,7 | 109,1 | 110,7
+- 2018 | 111,8 | 111,0 | 112,5
+- 2019 | 113,2 | 111,9 | 113,7
+- 2020 | 114,4 | 113,5 | 115,6
+- 2021 | 118,9 | 116,0 | 122,2
+- 2022 | 131,4 | 124,8 | 134,3
+- 2023 | 138,6 | 136,6 | 140,0
+- 2024 | 139,7 | 138,6 | 141,1
+- 2025 | 141,9 | 141,1 | 143,3
+
+### À quoi sert l’index BT32 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de couverture en tuiles en terre cuite, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : toiture en tuiles de terre cuite.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT32 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 493 €.
+Calculer une révision avec le BT32
+
+### Index BT32 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT32 en septembre 2026 ?**
+148,9, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +4,9 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT32 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT16b · Charpente bois
+- BT30 · Couverture en ardoises de schiste
+- BT33 · Couverture en tuiles en béton
+- BT34 · Couverture en zinc et en métal (sauf cuivre)
+- BT35 · Couverture en bardeaux bitumés
+- BT49 · Couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité
+- BT53 · Étanchéité
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT33 septembre 2026 : 141,7 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt33/
+
+Index BT33 (couverture en tuiles en béton) de septembre 2026 : 141,7, +5,7 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Couverture, charpente et étanchéité
+L’index BT33 de l’Insee mesure l’évolution du coût des travaux de couverture en tuiles en béton. Valeur de septembre 2026 : 141,7.
+Index BT33 septembre 2026
+141,7
+
+**sur 1 mois**
+- +0,1 %
+
+**sur 1 an**
+- +5,7 %
+
+**depuis 2010**
+- +41,7 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT33
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 141,7 | +5,7 %
+- août 2026 | 141,5 | +5,3 %
+- juillet 2026 | 140,0 | +4,9 %
+- juin 2026 | 140,2 | +5,5 %
+- mai 2026 | 138,4 | +4,7 %
+- avril 2026 | 138,5 | +5,6 %
+- mars 2026 | 138,1 | +4,8 %
+- février 2026 | 136,6 | +4,8 %
+- janvier 2026 | 135,6 | +4,1 %
+- décembre 2025 | 135,4 | +3,9 %
+- novembre 2025 | 134,9 | +3,2 %
+- octobre 2025 | 134,5 | +2,5 %
+- septembre 2025 | 134,1 | +2,6 %
+- août 2025 | 134,4 | +2,6 %
+- juillet 2025 | 133,4 | +2,2 %
+- juin 2025 | 132,9 | +1,8 %
+- mai 2025 | 132,2 | +1,8 %
+- avril 2025 | 131,2 | +0,8 %
+- mars 2025 | 131,8 | +1,4 %
+- février 2025 | 130,4 | +0,7 %
+- janvier 2025 | 130,3 | +0,7 %
+- décembre 2024 | 130,3 | 0,0 %
+- novembre 2024 | 130,7 | +1,3 %
+- octobre 2024 | 131,2 | +0,6 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 106,3 | 105,9 | 106,7
+- 2016 | 106,9 | 106,2 | 108,0
+- 2017 | 109,0 | 108,2 | 109,8
+- 2018 | 111,5 | 110,5 | 112,2
+- 2019 | 112,8 | 111,7 | 113,4
+- 2020 | 113,9 | 112,5 | 115,2
+- 2021 | 117,5 | 114,5 | 119,7
+- 2022 | 124,8 | 119,8 | 126,7
+- 2023 | 130,1 | 129,0 | 131,5
+- 2024 | 130,3 | 129,4 | 131,2
+- 2025 | 133,0 | 130,3 | 135,4
+
+### À quoi sert l’index BT33 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de couverture en tuiles en béton, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : toiture en tuiles béton.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT33 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 567 €.
+Calculer une révision avec le BT33
+
+### Index BT33 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT33 en septembre 2026 ?**
+141,7, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +5,7 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT33 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT16b · Charpente bois
+- BT30 · Couverture en ardoises de schiste
+- BT32 · Couverture en tuiles en terre cuite
+- BT34 · Couverture en zinc et en métal (sauf cuivre)
+- BT35 · Couverture en bardeaux bitumés
+- BT49 · Couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité
+- BT53 · Étanchéité
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT34 septembre 2026 : 151,5 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt34/
+
+Index BT34 (couverture en zinc et en métal (sauf cuivre)) de septembre 2026 : 151,5, +9,1 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Couverture, charpente et étanchéité
+L’index BT34 de l’Insee mesure l’évolution du coût des travaux de couverture en zinc et en métal (sauf cuivre). Valeur de septembre 2026 : 151,5.
+Index BT34 septembre 2026
+151,5
+
+**sur 1 mois**
+- +0,3 %
+
+**sur 1 an**
+- +9,1 %
+
+**depuis 2010**
+- +51,5 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT34
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 151,5 | +9,1 %
+- août 2026 | 151,1 | +8,0 %
+- juillet 2026 | 149,3 | +7,7 %
+- juin 2026 | 149,4 | +8,7 %
+- mai 2026 | 147,8 | +6,3 %
+- avril 2026 | 146,0 | +4,7 %
+- mars 2026 | 146,1 | +4,7 %
+- février 2026 | 145,3 | +3,6 %
+- janvier 2026 | 144,7 | +2,5 %
+- décembre 2025 | 144,0 | +1,4 %
+- novembre 2025 | 143,0 | +1,3 %
+- octobre 2025 | 141,2 | +0,1 %
+- septembre 2025 | 138,9 | +0,9 %
+- août 2025 | 139,9 | −0,2 %
+- juillet 2025 | 138,6 | −0,4 %
+- juin 2025 | 137,5 | −0,9 %
+- mai 2025 | 139,1 | +0,3 %
+- avril 2025 | 139,4 | +2,3 %
+- mars 2025 | 139,5 | +3,6 %
+- février 2025 | 140,3 | +4,3 %
+- janvier 2025 | 141,2 | +4,1 %
+- décembre 2024 | 142,0 | +3,6 %
+- novembre 2024 | 141,1 | +3,6 %
+- octobre 2024 | 141,1 | +3,5 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 108,1 | 104,9 | 111,0
+- 2016 | 109,2 | 104,2 | 117,2
+- 2017 | 118,1 | 115,1 | 121,0
+- 2018 | 119,1 | 116,4 | 121,3
+- 2019 | 118,9 | 116,9 | 121,0
+- 2020 | 116,9 | 114,5 | 119,7
+- 2021 | 126,3 | 121,1 | 133,9
+- 2022 | 140,7 | 136,7 | 145,1
+- 2023 | 137,8 | 134,9 | 142,0
+- 2024 | 138,3 | 134,5 | 142,0
+- 2025 | 140,2 | 137,5 | 144,0
+
+### À quoi sert l’index BT34 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de couverture en zinc et en métal (sauf cuivre), quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : toiture et bardage en zinc ou en métal.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT34 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 907 €.
+Calculer une révision avec le BT34
+
+### Index BT34 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT34 en septembre 2026 ?**
+151,5, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +9,1 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT34 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT16b · Charpente bois
+- BT30 · Couverture en ardoises de schiste
+- BT32 · Couverture en tuiles en terre cuite
+- BT33 · Couverture en tuiles en béton
+- BT35 · Couverture en bardeaux bitumés
+- BT49 · Couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité
+- BT53 · Étanchéité
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT35 septembre 2026 : 154,3 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt35/
+
+Index BT35 (couverture en bardeaux bitumés) de septembre 2026 : 154,3, +5,9 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Couverture, charpente et étanchéité
+L’index BT35 de l’Insee mesure l’évolution du coût des travaux de couverture en bardeaux bitumés. Valeur de septembre 2026 : 154,3.
+Index BT35 septembre 2026
+154,3
+
+**sur 1 mois**
+- −0,1 %
+
+**sur 1 an**
+- +5,9 %
+
+**depuis 2010**
+- +54,3 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT35
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 154,3 | +5,9 %
+- août 2026 | 154,5 | +5,7 %
+- juillet 2026 | 154,4 | +6,1 %
+- juin 2026 | 154,9 | +6,2 %
+- mai 2026 | 152,9 | +4,8 %
+- avril 2026 | 149,7 | +2,6 %
+- mars 2026 | 147,8 | +1,1 %
+- février 2026 | 147,7 | +0,3 %
+- janvier 2026 | 147,4 | +0,1 %
+- décembre 2025 | 146,8 | 0,0 %
+- novembre 2025 | 146,4 | 0,0 %
+- octobre 2025 | 145,9 | −0,7 %
+- septembre 2025 | 145,7 | −0,5 %
+- août 2025 | 146,1 | −0,7 %
+- juillet 2025 | 145,5 | −1,0 %
+- juin 2025 | 145,8 | −0,3 %
+- mai 2025 | 145,9 | −0,4 %
+- avril 2025 | 145,9 | −0,9 %
+- mars 2025 | 146,2 | −0,6 %
+- février 2025 | 147,3 | +0,2 %
+- janvier 2025 | 147,3 | −0,3 %
+- décembre 2024 | 146,8 | −0,5 %
+- novembre 2024 | 146,4 | −1,0 %
+- octobre 2024 | 147,0 | −1,1 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 111,8 | 111,0 | 113,3
+- 2016 | 112,3 | 110,7 | 113,9
+- 2017 | 116,0 | 113,7 | 117,5
+- 2018 | 118,8 | 117,6 | 120,6
+- 2019 | 122,2 | 121,0 | 123,3
+- 2020 | 123,3 | 122,2 | 124,5
+- 2021 | 129,4 | 124,9 | 134,5
+- 2022 | 144,2 | 136,4 | 149,0
+- 2023 | 148,6 | 147,5 | 149,3
+- 2024 | 146,9 | 146,2 | 147,7
+- 2025 | 146,2 | 145,5 | 147,3
+
+### À quoi sert l’index BT35 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de couverture en bardeaux bitumés, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT35 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 590 €.
+Calculer une révision avec le BT35
+
+### Index BT35 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT35 en septembre 2026 ?**
+154,3, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +5,9 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT35 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT16b · Charpente bois
+- BT30 · Couverture en ardoises de schiste
+- BT32 · Couverture en tuiles en terre cuite
+- BT33 · Couverture en tuiles en béton
+- BT34 · Couverture en zinc et en métal (sauf cuivre)
+- BT49 · Couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité
+- BT53 · Étanchéité
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT38 septembre 2026 : 149,1 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt38/
+
+Index BT38 (plomberie sanitaire (y compris appareils)) de septembre 2026 : 149,1, +8,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Équipements techniques
+L’index BT38 de l’Insee mesure l’évolution du coût des travaux de plomberie sanitaire (y compris appareils). Valeur de septembre 2026 : 149,1.
+Index BT38 septembre 2026
+149,1
+
+**sur 1 mois**
+- −0,2 %
+
+**sur 1 an**
+- +8,5 %
+
+**depuis 2010**
+- +49,1 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT38
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 149,1 | +8,5 %
+- août 2026 | 149,4 | +8,6 %
+- juillet 2026 | 147,6 | +7,5 %
+- juin 2026 | 147,0 | +7,2 %
+- mai 2026 | 146,2 | +7,0 %
+- avril 2026 | 144,8 | +5,9 %
+- mars 2026 | 144,0 | +3,9 %
+- février 2026 | 143,7 | +4,9 %
+- janvier 2026 | 142,2 | +4,2 %
+- décembre 2025 | 140,8 | +3,8 %
+- novembre 2025 | 138,7 | +2,4 %
+- octobre 2025 | 137,3 | +1,5 %
+- septembre 2025 | 137,4 | +1,9 %
+- août 2025 | 137,6 | +2,0 %
+- juillet 2025 | 137,3 | +1,9 %
+- juin 2025 | 137,1 | +1,9 %
+- mai 2025 | 136,6 | +1,0 %
+- avril 2025 | 136,7 | +1,6 %
+- mars 2025 | 138,6 | +3,3 %
+- février 2025 | 137,0 | +1,9 %
+- janvier 2025 | 136,5 | +0,6 %
+- décembre 2024 | 135,6 | +0,1 %
+- novembre 2024 | 135,5 | 0,0 %
+- octobre 2024 | 135,3 | +0,1 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 107,1 | 106,3 | 107,8
+- 2016 | 106,8 | 105,9 | 108,0
+- 2017 | 109,3 | 108,3 | 109,9
+- 2018 | 111,8 | 110,8 | 112,4
+- 2019 | 113,7 | 112,4 | 114,6
+- 2020 | 115,3 | 114,3 | 116,3
+- 2021 | 120,2 | 116,6 | 122,6
+- 2022 | 127,6 | 124,0 | 129,7
+- 2023 | 134,1 | 131,3 | 136,0
+- 2024 | 135,0 | 134,2 | 135,7
+- 2025 | 137,6 | 136,5 | 140,8
+
+### À quoi sert l’index BT38 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de plomberie sanitaire (y compris appareils), quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT38 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 852 €.
+Calculer une révision avec le BT38
+
+### Index BT38 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT38 en septembre 2026 ?**
+149,1, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +8,5 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT38 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT40 · Chauffage central (à l’exclusion du chauffage électrique)
+- BT41 · Ventilation et conditionnement d’air
+- BT47 · Électricité
+- BT48 · Ascenseurs
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT40 septembre 2026 : 134,3 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt40/
+
+Index BT40 (chauffage central (à l’exclusion du chauffage électrique)) de septembre 2026 : 134,3, +3,2 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Équipements techniques
+L’index BT40 de l’Insee mesure l’évolution du coût des travaux de chauffage central (à l’exclusion du chauffage électrique). Valeur de septembre 2026 : 134,3.
+Index BT40 septembre 2026
+134,3
+
+**sur 1 mois**
+- +0,6 %
+
+**sur 1 an**
+- +3,2 %
+
+**depuis 2010**
+- +34,3 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT40
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 134,3 | +3,2 %
+- août 2026 | 133,5 | +2,6 %
+- juillet 2026 | 133,3 | +2,9 %
+- juin 2026 | 133,0 | +3,2 %
+- mai 2026 | 132,8 | +2,9 %
+- avril 2026 | 132,7 | +2,9 %
+- mars 2026 | 132,6 | +2,6 %
+- février 2026 | 131,8 | +2,6 %
+- janvier 2026 | 131,6 | +2,3 %
+- décembre 2025 | 130,1 | +1,5 %
+- novembre 2025 | 130,4 | +1,3 %
+- octobre 2025 | 130,0 | +1,2 %
+- septembre 2025 | 130,1 | +1,6 %
+- août 2025 | 130,1 | +1,6 %
+- juillet 2025 | 129,6 | +1,7 %
+- juin 2025 | 128,9 | +1,2 %
+- mai 2025 | 129,1 | +1,3 %
+- avril 2025 | 129,0 | +1,7 %
+- mars 2025 | 129,2 | +1,7 %
+- février 2025 | 128,5 | +1,0 %
+- janvier 2025 | 128,7 | +1,5 %
+- décembre 2024 | 128,2 | +1,4 %
+- novembre 2024 | 128,7 | +1,7 %
+- octobre 2024 | 128,4 | +1,6 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 103,8 | 103,1 | 104,7
+- 2016 | 103,9 | 103,2 | 104,5
+- 2017 | 105,5 | 104,9 | 106,0
+- 2018 | 107,4 | 105,9 | 108,2
+- 2019 | 109,5 | 108,3 | 110,4
+- 2020 | 111,1 | 110,2 | 112,1
+- 2021 | 113,8 | 112,2 | 115,6
+- 2022 | 120,6 | 116,8 | 123,9
+- 2023 | 125,8 | 124,6 | 127,0
+- 2024 | 127,6 | 126,8 | 128,7
+- 2025 | 129,5 | 128,5 | 130,4
+
+### À quoi sert l’index BT40 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de chauffage central (à l’exclusion du chauffage électrique), quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT40 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 323 €.
+Calculer une révision avec le BT40
+
+### Index BT40 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT40 en septembre 2026 ?**
+134,3, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +3,2 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT40 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT38 · Plomberie sanitaire (y compris appareils)
+- BT41 · Ventilation et conditionnement d’air
+- BT47 · Électricité
+- BT48 · Ascenseurs
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT41 septembre 2026 : 141,0 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt41/
+
+Index BT41 (ventilation et conditionnement d’air) de septembre 2026 : 141,0, +3,4 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Équipements techniques
+L’index BT41 de l’Insee mesure l’évolution du coût des travaux de ventilation et conditionnement d’air. Valeur de septembre 2026 : 141,0.
+Index BT41 septembre 2026
+141,0
+
+**sur 1 mois**
+- 0,0 %
+
+**sur 1 an**
+- +3,4 %
+
+**depuis 2010**
+- +41,0 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT41
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 141,0 | +3,4 %
+- août 2026 | 141,0 | +3,7 %
+- juillet 2026 | 139,3 | +3,0 %
+- juin 2026 | 139,0 | +3,1 %
+- mai 2026 | 139,3 | +4,1 %
+- avril 2026 | 139,3 | +3,9 %
+- mars 2026 | 138,3 | +2,9 %
+- février 2026 | 138,0 | +2,9 %
+- janvier 2026 | 138,2 | +2,8 %
+- décembre 2025 | 136,1 | +2,1 %
+- novembre 2025 | 136,6 | +2,4 %
+- octobre 2025 | 135,8 | +1,7 %
+- septembre 2025 | 136,3 | +2,6 %
+- août 2025 | 136,0 | +2,3 %
+- juillet 2025 | 135,3 | +2,4 %
+- juin 2025 | 134,8 | +2,1 %
+- mai 2025 | 133,8 | +1,3 %
+- avril 2025 | 134,1 | +1,4 %
+- mars 2025 | 134,4 | +2,3 %
+- février 2025 | 134,1 | +2,5 %
+- janvier 2025 | 134,4 | +2,9 %
+- décembre 2024 | 133,3 | +2,4 %
+- novembre 2024 | 133,4 | +2,5 %
+- octobre 2024 | 133,5 | +2,9 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 107,7 | 107,4 | 108,3
+- 2016 | 107,8 | 107,3 | 108,3
+- 2017 | 108,5 | 108,2 | 108,8
+- 2018 | 110,7 | 109,5 | 111,8
+- 2019 | 112,8 | 111,9 | 114,2
+- 2020 | 114,7 | 113,9 | 115,6
+- 2021 | 116,6 | 115,8 | 117,8
+- 2022 | 123,1 | 118,9 | 126,1
+- 2023 | 129,4 | 128,1 | 130,2
+- 2024 | 132,3 | 130,6 | 133,5
+- 2025 | 135,1 | 133,8 | 136,6
+
+### À quoi sert l’index BT41 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de ventilation et conditionnement d’air, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT41 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 345 €.
+Calculer une révision avec le BT41
+
+### Index BT41 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT41 en septembre 2026 ?**
+141,0, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +3,4 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT41 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT38 · Plomberie sanitaire (y compris appareils)
+- BT40 · Chauffage central (à l’exclusion du chauffage électrique)
+- BT47 · Électricité
+- BT48 · Ascenseurs
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT42 septembre 2026 : 146,6 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt42/
+
+Index BT42 (menuiserie en acier et serrurerie) de septembre 2026 : 146,6, +5,2 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Menuiseries et fermetures
+L’index BT42 de l’Insee mesure l’évolution du coût des travaux de menuiserie en acier et serrurerie. Valeur de septembre 2026 : 146,6.
+Index BT42 septembre 2026
+146,6
+
+**sur 1 mois**
+- +0,6 %
+
+**sur 1 an**
+- +5,2 %
+
+**depuis 2010**
+- +46,6 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT42
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 146,6 | +5,2 %
+- août 2026 | 145,7 | +4,7 %
+- juillet 2026 | 145,4 | +4,2 %
+- juin 2026 | 144,6 | +4,2 %
+- mai 2026 | 144,6 | +4,9 %
+- avril 2026 | 144,3 | +4,9 %
+- mars 2026 | 142,6 | +3,0 %
+- février 2026 | 140,6 | +1,7 %
+- janvier 2026 | 140,4 | +1,6 %
+- décembre 2025 | 139,6 | +1,2 %
+- novembre 2025 | 139,6 | +1,7 %
+- octobre 2025 | 139,2 | +1,2 %
+- septembre 2025 | 139,3 | +1,5 %
+- août 2025 | 139,2 | +1,4 %
+- juillet 2025 | 139,6 | +1,2 %
+- juin 2025 | 138,8 | +0,7 %
+- mai 2025 | 137,9 | −0,1 %
+- avril 2025 | 137,6 | −0,2 %
+- mars 2025 | 138,5 | +0,5 %
+- février 2025 | 138,3 | +0,9 %
+- janvier 2025 | 138,2 | +0,7 %
+- décembre 2024 | 138,0 | −0,3 %
+- novembre 2024 | 137,3 | −0,3 %
+- octobre 2024 | 137,6 | −0,1 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 100,9 | 98,7 | 102,1
+- 2016 | 99,9 | 97,0 | 103,2
+- 2017 | 107,2 | 105,1 | 108,6
+- 2018 | 111,6 | 109,6 | 112,7
+- 2019 | 113,0 | 112,7 | 113,3
+- 2020 | 112,8 | 111,9 | 113,9
+- 2021 | 122,8 | 115,6 | 128,8
+- 2022 | 139,2 | 130,6 | 144,7
+- 2023 | 140,4 | 137,7 | 142,2
+- 2024 | 137,6 | 137,0 | 138,0
+- 2025 | 138,8 | 137,6 | 139,6
+
+### À quoi sert l’index BT42 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de menuiserie en acier et serrurerie, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT42 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 524 €.
+Calculer une révision avec le BT42
+
+### Index BT42 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT42 en septembre 2026 ?**
+146,6, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +5,2 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT42 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT19b · Menuiserie extérieure en bois
+- BT18a · Menuiserie intérieure en bois
+- BT26 · Fermeture de baies en plastique y compris fenêtre PVC
+- BT51 · Menuiseries PVC
+- BT27 · Fermeture de baies en aluminium
+- BT43 · Menuiserie en alliage d’aluminium
+- BT28 · Fermeture de baies en métal ferreux
+- BT45 · Vitrerie, miroiterie
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT43 septembre 2026 : 143,5 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt43/
+
+Index BT43 (menuiserie en alliage d’aluminium) de septembre 2026 : 143,5, +4,7 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Menuiseries et fermetures
+L’index BT43 de l’Insee mesure l’évolution du coût des travaux de menuiserie en alliage d’aluminium. Valeur de septembre 2026 : 143,5.
+Index BT43 septembre 2026
+143,5
+
+**sur 1 mois**
+- −0,1 %
+
+**sur 1 an**
+- +4,7 %
+
+**depuis 2010**
+- +43,5 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT43
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 143,5 | +4,7 %
+- août 2026 | 143,7 | +5,0 %
+- juillet 2026 | 143,1 | +4,1 %
+- juin 2026 | 144,1 | +5,1 %
+- mai 2026 | 144,1 | +5,6 %
+- avril 2026 | 143,3 | +4,5 %
+- mars 2026 | 141,7 | +2,4 %
+- février 2026 | 140,3 | +1,0 %
+- janvier 2026 | 139,4 | +2,4 %
+- décembre 2025 | 139,2 | +1,6 %
+- novembre 2025 | 138,7 | +1,4 %
+- octobre 2025 | 137,5 | +1,2 %
+- septembre 2025 | 137,1 | +1,8 %
+- août 2025 | 136,8 | +1,6 %
+- juillet 2025 | 137,4 | +1,7 %
+- juin 2025 | 137,1 | +1,6 %
+- mai 2025 | 136,5 | +1,2 %
+- avril 2025 | 137,1 | +2,7 %
+- mars 2025 | 138,4 | +4,7 %
+- février 2025 | 138,9 | +5,8 %
+- janvier 2025 | 136,1 | +3,3 %
+- décembre 2024 | 137,0 | +3,6 %
+- novembre 2024 | 136,8 | +3,0 %
+- octobre 2024 | 135,9 | +2,3 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 105,3 | 103,9 | 106,4
+- 2016 | 103,6 | 102,6 | 106,0
+- 2017 | 107,1 | 105,5 | 108,3
+- 2018 | 109,4 | 108,2 | 110,5
+- 2019 | 110,1 | 109,8 | 110,5
+- 2020 | 109,7 | 108,3 | 111,4
+- 2021 | 117,6 | 111,3 | 124,7
+- 2022 | 135,1 | 128,3 | 138,2
+- 2023 | 134,0 | 132,3 | 136,6
+- 2024 | 134,4 | 131,3 | 137,0
+- 2025 | 137,6 | 136,1 | 139,2
+
+### À quoi sert l’index BT43 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de menuiserie en alliage d’aluminium, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT43 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 467 €.
+Calculer une révision avec le BT43
+
+### Index BT43 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT43 en septembre 2026 ?**
+143,5, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +4,7 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT43 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT19b · Menuiserie extérieure en bois
+- BT18a · Menuiserie intérieure en bois
+- BT26 · Fermeture de baies en plastique y compris fenêtre PVC
+- BT51 · Menuiseries PVC
+- BT27 · Fermeture de baies en aluminium
+- BT28 · Fermeture de baies en métal ferreux
+- BT42 · Menuiserie en acier et serrurerie
+- BT45 · Vitrerie, miroiterie
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT45 septembre 2026 : 154,1 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt45/
+
+Index BT45 (vitrerie, miroiterie) de septembre 2026 : 154,1, +2,3 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Menuiseries et fermetures
+L’index BT45 de l’Insee mesure l’évolution du coût des travaux de vitrerie, miroiterie. Valeur de septembre 2026 : 154,1.
+Index BT45 septembre 2026
+154,1
+
+**sur 1 mois**
+- +0,5 %
+
+**sur 1 an**
+- +2,3 %
+
+**depuis 2010**
+- +54,1 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT45
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 154,1 | +2,3 %
+- août 2026 | 153,4 | +2,7 %
+- juillet 2026 | 154,3 | +2,9 %
+- juin 2026 | 153,1 | +2,8 %
+- mai 2026 | 151,7 | +3,1 %
+- avril 2026 | 151,7 | +3,4 %
+- mars 2026 | 151,0 | +3,1 %
+- février 2026 | 150,7 | +2,7 %
+- janvier 2026 | 151,3 | +3,4 %
+- décembre 2025 | 151,3 | +3,0 %
+- novembre 2025 | 151,5 | +3,0 %
+- octobre 2025 | 151,6 | +2,9 %
+- septembre 2025 | 150,6 | +2,6 %
+- août 2025 | 149,3 | +0,6 %
+- juillet 2025 | 150,0 | +1,3 %
+- juin 2025 | 148,9 | +0,5 %
+- mai 2025 | 147,1 | −0,1 %
+- avril 2025 | 146,7 | −0,9 %
+- mars 2025 | 146,4 | −1,4 %
+- février 2025 | 146,7 | −1,8 %
+- janvier 2025 | 146,3 | −1,9 %
+- décembre 2024 | 146,9 | −2,4 %
+- novembre 2024 | 147,1 | −2,6 %
+- octobre 2024 | 147,3 | −2,5 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 107,2 | 106,5 | 108,5
+- 2016 | 108,9 | 107,6 | 109,8
+- 2017 | 111,6 | 109,7 | 112,8
+- 2018 | 116,3 | 113,3 | 118,4
+- 2019 | 120,0 | 118,7 | 120,9
+- 2020 | 121,0 | 120,0 | 121,7
+- 2021 | 124,1 | 122,2 | 127,5
+- 2022 | 137,5 | 128,5 | 148,8
+- 2023 | 152,2 | 150,5 | 153,5
+- 2024 | 147,9 | 146,8 | 149,4
+- 2025 | 148,9 | 146,3 | 151,6
+
+### À quoi sert l’index BT45 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de vitrerie, miroiterie, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT45 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 232 €.
+Calculer une révision avec le BT45
+
+### Index BT45 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT45 en septembre 2026 ?**
+154,1, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +2,3 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT45 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT19b · Menuiserie extérieure en bois
+- BT18a · Menuiserie intérieure en bois
+- BT26 · Fermeture de baies en plastique y compris fenêtre PVC
+- BT51 · Menuiseries PVC
+- BT27 · Fermeture de baies en aluminium
+- BT43 · Menuiserie en alliage d’aluminium
+- BT28 · Fermeture de baies en métal ferreux
+- BT42 · Menuiserie en acier et serrurerie
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT46 septembre 2026 : 139,8 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt46/
+
+Index BT46 (peinture, tenture, revêtements muraux) de septembre 2026 : 139,8, +3,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Façade et isolation
+L’index BT46 de l’Insee mesure l’évolution du coût des travaux de peinture, tenture, revêtements muraux. Valeur de septembre 2026 : 139,8.
+Index BT46 septembre 2026
+139,8
+
+**sur 1 mois**
+- −0,8 %
+
+**sur 1 an**
+- +3,5 %
+
+**depuis 2010**
+- +39,8 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT46
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 139,8 | +3,5 %
+- août 2026 | 140,9 | +3,9 %
+- juillet 2026 | 139,0 | +2,6 %
+- juin 2026 | 138,4 | +2,6 %
+- mai 2026 | 138,7 | +2,9 %
+- avril 2026 | 138,4 | +2,7 %
+- mars 2026 | 137,2 | +2,2 %
+- février 2026 | 136,6 | +2,2 %
+- janvier 2026 | 136,6 | +2,0 %
+- décembre 2025 | 135,9 | +1,4 %
+- novembre 2025 | 135,5 | +1,6 %
+- octobre 2025 | 135,3 | +1,6 %
+- septembre 2025 | 135,1 | +1,9 %
+- août 2025 | 135,6 | +1,9 %
+- juillet 2025 | 135,5 | +2,0 %
+- juin 2025 | 134,9 | +2,0 %
+- mai 2025 | 134,8 | +2,0 %
+- avril 2025 | 134,8 | +2,4 %
+- mars 2025 | 134,2 | +2,0 %
+- février 2025 | 133,6 | +1,6 %
+- janvier 2025 | 133,9 | +1,9 %
+- décembre 2024 | 134,0 | +2,4 %
+- novembre 2024 | 133,4 | +2,1 %
+- octobre 2024 | 133,2 | +2,1 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 106,9 | 106,7 | 107,2
+- 2016 | 107,5 | 106,8 | 108,3
+- 2017 | 109,1 | 108,2 | 110,2
+- 2018 | 111,4 | 110,2 | 112,2
+- 2019 | 113,8 | 112,7 | 114,5
+- 2020 | 116,1 | 115,0 | 117,1
+- 2021 | 118,7 | 117,4 | 120,2
+- 2022 | 124,1 | 121,1 | 126,8
+- 2023 | 129,6 | 127,5 | 131,3
+- 2024 | 132,5 | 131,4 | 134,0
+- 2025 | 134,9 | 133,6 | 135,9
+
+### À quoi sert l’index BT46 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de peinture, tenture, revêtements muraux, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : peinture de façade.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT46 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 348 €.
+Calculer une révision avec le BT46
+
+### Index BT46 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT46 en septembre 2026 ?**
+139,8, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +3,5 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT46 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT52 · Imperméabilité de façades
+- BT55 · Isolation thermique par l’extérieur, enduit sur isolant
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT47 septembre 2026 : 136,4 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt47/
+
+Index BT47 (électricité) de septembre 2026 : 136,4, +5,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Équipements techniques
+L’index BT47 de l’Insee mesure l’évolution du coût des travaux d’électricité. Valeur de septembre 2026 : 136,4.
+Index BT47 septembre 2026
+136,4
+
+**sur 1 mois**
+- +0,1 %
+
+**sur 1 an**
+- +5,5 %
+
+**depuis 2010**
+- +36,4 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT47
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 136,4 | +5,5 %
+- août 2026 | 136,2 | +5,3 %
+- juillet 2026 | 136,0 | +5,8 %
+- juin 2026 | 135,1 | +5,4 %
+- mai 2026 | 135,1 | +5,7 %
+- avril 2026 | 134,4 | +5,2 %
+- mars 2026 | 132,5 | +3,8 %
+- février 2026 | 132,1 | +3,7 %
+- janvier 2026 | 131,6 | +2,4 %
+- décembre 2025 | 129,7 | +1,6 %
+- novembre 2025 | 129,1 | +1,3 %
+- octobre 2025 | 129,0 | +1,9 %
+- septembre 2025 | 129,3 | +1,7 %
+- août 2025 | 129,3 | +1,7 %
+- juillet 2025 | 128,5 | +1,5 %
+- juin 2025 | 128,2 | +1,4 %
+- mai 2025 | 127,8 | +1,2 %
+- avril 2025 | 127,8 | +2,0 %
+- mars 2025 | 127,7 | +1,8 %
+- février 2025 | 127,4 | +1,0 %
+- janvier 2025 | 128,5 | +2,5 %
+- décembre 2024 | 127,6 | +1,7 %
+- novembre 2024 | 127,4 | +1,8 %
+- octobre 2024 | 126,6 | +1,3 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 104,2 | 102,6 | 104,9
+- 2016 | 105,1 | 104,4 | 105,6
+- 2017 | 106,7 | 106,3 | 107,3
+- 2018 | 108,3 | 107,5 | 109,1
+- 2019 | 109,7 | 109,0 | 110,1
+- 2020 | 110,9 | 110,1 | 111,9
+- 2021 | 114,6 | 112,4 | 116,4
+- 2022 | 120,3 | 117,0 | 122,2
+- 2023 | 124,9 | 123,0 | 125,9
+- 2024 | 126,5 | 125,3 | 127,6
+- 2025 | 128,5 | 127,4 | 129,7
+
+### À quoi sert l’index BT47 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux d’électricité, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT47 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 549 €.
+Calculer une révision avec le BT47
+
+### Index BT47 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT47 en septembre 2026 ?**
+136,4, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +5,5 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT47 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT38 · Plomberie sanitaire (y compris appareils)
+- BT40 · Chauffage central (à l’exclusion du chauffage électrique)
+- BT41 · Ventilation et conditionnement d’air
+- BT48 · Ascenseurs
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT48 septembre 2026 : 144,5 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt48/
+
+Index BT48 (ascenseurs) de septembre 2026 : 144,5, +8,7 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Équipements techniques
+L’index BT48 de l’Insee mesure l’évolution du coût des travaux d’ascenseurs. Valeur de septembre 2026 : 144,5.
+Index BT48 septembre 2026
+144,5
+
+**sur 1 mois**
+- −0,3 %
+
+**sur 1 an**
+- +8,7 %
+
+**depuis 2010**
+- +44,5 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT48
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 144,5 | +8,7 %
+- août 2026 | 144,9 | +8,3 %
+- juillet 2026 | 143,7 | +7,4 %
+- juin 2026 | 143,3 | +7,3 %
+- mai 2026 | 143,7 | +8,4 %
+- avril 2026 | 142,8 | +7,4 %
+- mars 2026 | 139,6 | +4,5 %
+- février 2026 | 139,5 | +4,8 %
+- janvier 2026 | 137,8 | +3,8 %
+- décembre 2025 | 136,6 | +2,9 %
+- novembre 2025 | 133,6 | +0,7 %
+- octobre 2025 | 133,1 | +0,3 %
+- septembre 2025 | 132,9 | +0,4 %
+- août 2025 | 133,8 | +0,9 %
+- juillet 2025 | 133,8 | +1,2 %
+- juin 2025 | 133,5 | +1,1 %
+- mai 2025 | 132,6 | 0,0 %
+- avril 2025 | 133,0 | +0,8 %
+- mars 2025 | 133,6 | +1,8 %
+- février 2025 | 133,1 | +1,9 %
+- janvier 2025 | 132,8 | +1,6 %
+- décembre 2024 | 132,7 | +1,3 %
+- novembre 2024 | 132,7 | +2,0 %
+- octobre 2024 | 132,7 | +2,1 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 104,5 | 103,8 | 105,2
+- 2016 | 104,4 | 103,1 | 106,0
+- 2017 | 107,6 | 106,4 | 108,6
+- 2018 | 110,0 | 109,1 | 110,9
+- 2019 | 111,8 | 110,8 | 112,5
+- 2020 | 113,0 | 111,9 | 114,7
+- 2021 | 123,3 | 116,4 | 128,2
+- 2022 | 132,7 | 129,7 | 135,0
+- 2023 | 131,0 | 130,0 | 131,9
+- 2024 | 132,0 | 130,6 | 132,7
+- 2025 | 133,5 | 132,6 | 136,6
+
+### À quoi sert l’index BT48 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux d’ascenseurs, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT48 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 873 €.
+Calculer une révision avec le BT48
+
+### Index BT48 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT48 en septembre 2026 ?**
+144,5, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +8,7 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT48 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT38 · Plomberie sanitaire (y compris appareils)
+- BT40 · Chauffage central (à l’exclusion du chauffage électrique)
+- BT41 · Ventilation et conditionnement d’air
+- BT47 · Électricité
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT49 septembre 2026 : 151,3 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt49/
+
+Index BT49 (couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité) de septembre 2026 : 151,3, +5,4 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Couverture, charpente et étanchéité
+L’index BT49 de l’Insee mesure l’évolution du coût des travaux de couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité. Valeur de septembre 2026 : 151,3.
+Index BT49 septembre 2026
+151,3
+
+**sur 1 mois**
+- +0,6 %
+
+**sur 1 an**
+- +5,4 %
+
+**depuis 2010**
+- +51,3 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT49
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 151,3 | +5,4 %
+- août 2026 | 150,4 | +3,7 %
+- juillet 2026 | 150,4 | +3,9 %
+- juin 2026 | 149,9 | +5,3 %
+- mai 2026 | 149,6 | +5,9 %
+- avril 2026 | 149,2 | +5,7 %
+- mars 2026 | 144,4 | +0,1 %
+- février 2026 | 143,0 | −0,8 %
+- janvier 2026 | 141,9 | −1,2 %
+- décembre 2025 | 141,8 | −0,9 %
+- novembre 2025 | 141,7 | −0,8 %
+- octobre 2025 | 140,8 | −1,2 %
+- septembre 2025 | 143,5 | +1,3 %
+- août 2025 | 145,0 | +1,1 %
+- juillet 2025 | 144,7 | +1,1 %
+- juin 2025 | 142,3 | −0,4 %
+- mai 2025 | 141,3 | −1,1 %
+- avril 2025 | 141,2 | −1,1 %
+- mars 2025 | 144,2 | +1,3 %
+- février 2025 | 144,2 | +1,5 %
+- janvier 2025 | 143,6 | +1,2 %
+- décembre 2024 | 143,1 | −2,8 %
+- novembre 2024 | 142,9 | −0,2 %
+- octobre 2024 | 142,5 | −0,8 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 105,4 | 104,3 | 106,0
+- 2016 | 104,8 | 103,8 | 106,1
+- 2017 | 107,9 | 105,9 | 109,1
+- 2018 | 113,0 | 109,9 | 114,9
+- 2019 | 114,6 | 113,9 | 115,3
+- 2020 | 114,1 | 112,5 | 115,1
+- 2021 | 122,0 | 116,3 | 130,7
+- 2022 | 136,8 | 128,8 | 145,6
+- 2023 | 146,3 | 143,2 | 149,8
+- 2024 | 142,6 | 141,6 | 143,4
+- 2025 | 142,9 | 140,8 | 145,0
+
+### À quoi sert l’index BT49 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : toiture en bac acier.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT49 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 544 €.
+Calculer une révision avec le BT49
+
+### Index BT49 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT49 en septembre 2026 ?**
+151,3, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +5,4 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT49 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT16b · Charpente bois
+- BT30 · Couverture en ardoises de schiste
+- BT32 · Couverture en tuiles en terre cuite
+- BT33 · Couverture en tuiles en béton
+- BT34 · Couverture en zinc et en métal (sauf cuivre)
+- BT35 · Couverture en bardeaux bitumés
+- BT53 · Étanchéité
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT50 septembre 2026 : 141,3 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt50/
+
+Index BT50 (rénovation et entretien, tous corps d’état) de septembre 2026 : 141,3, +4,1 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Tous corps d’état et rénovation
+L’index BT50 de l’Insee mesure l’évolution du coût des travaux de rénovation et entretien, tous corps d’état. Valeur de septembre 2026 : 141,3.
+Index BT50 septembre 2026
+141,3
+
+**sur 1 mois**
+- −0,1 %
+
+**sur 1 an**
+- +4,1 %
+
+**depuis 2010**
+- +41,3 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT50
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 141,3 | +4,1 %
+- août 2026 | 141,5 | +4,2 %
+- juillet 2026 | 140,8 | +3,9 %
+- juin 2026 | 140,2 | +3,9 %
+- mai 2026 | 140,0 | +4,0 %
+- avril 2026 | 139,6 | +3,7 %
+- mars 2026 | 138,5 | +3,0 %
+- février 2026 | 137,7 | +2,6 %
+- janvier 2026 | 137,3 | +2,4 %
+- décembre 2025 | 136,4 | +1,9 %
+- novembre 2025 | 136,1 | +1,9 %
+- octobre 2025 | 135,9 | +2,0 %
+- septembre 2025 | 135,7 | +2,0 %
+- août 2025 | 135,8 | +1,9 %
+- juillet 2025 | 135,5 | +2,0 %
+- juin 2025 | 135,0 | +1,8 %
+- mai 2025 | 134,6 | +1,6 %
+- avril 2025 | 134,6 | +1,7 %
+- mars 2025 | 134,5 | +1,8 %
+- février 2025 | 134,2 | +1,6 %
+- janvier 2025 | 134,1 | +1,7 %
+- décembre 2024 | 133,8 | +1,5 %
+- novembre 2024 | 133,5 | +1,4 %
+- octobre 2024 | 133,2 | +1,3 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 106,0 | 105,7 | 106,3
+- 2016 | 106,6 | 105,7 | 107,7
+- 2017 | 108,8 | 108,1 | 109,7
+- 2018 | 111,4 | 110,1 | 112,4
+- 2019 | 113,7 | 112,6 | 114,6
+- 2020 | 115,4 | 114,6 | 116,7
+- 2021 | 119,4 | 117,2 | 121,2
+- 2022 | 125,7 | 122,0 | 128,1
+- 2023 | 130,8 | 129,0 | 131,8
+- 2024 | 132,8 | 131,8 | 133,8
+- 2025 | 135,2 | 134,1 | 136,4
+
+### À quoi sert l’index BT50 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de rénovation et entretien, tous corps d’état, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : rénovation et entretien, tous corps d’état.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT50 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 413 €.
+Calculer une révision avec le BT50
+
+### Index BT50 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT50 en septembre 2026 ?**
+141,3, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +4,1 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT50 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT01 · Tous corps d’état
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT51 septembre 2026 : 136,1 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt51/
+
+Index BT51 (menuiseries pvc) de septembre 2026 : 136,1, +2,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Menuiseries et fermetures
+L’index BT51 de l’Insee mesure l’évolution du coût des travaux de menuiseries PVC. Valeur de septembre 2026 : 136,1.
+Index BT51 septembre 2026
+136,1
+
+**sur 1 mois**
+- 0,0 %
+
+**sur 1 an**
+- +2,5 %
+
+**depuis 2010**
+- +36,1 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT51
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 136,1 | +2,5 %
+- août 2026 | 136,1 | +2,4 %
+- juillet 2026 | 136,7 | +3,0 %
+- juin 2026 | 136,0 | +2,6 %
+- mai 2026 | 134,8 | +2,0 %
+- avril 2026 | 134,8 | +2,3 %
+- mars 2026 | 133,8 | +1,3 %
+- février 2026 | 132,7 | +0,1 %
+- janvier 2026 | 132,4 | 0,0 %
+- décembre 2025 | 133,5 | +1,3 %
+- novembre 2025 | 132,3 | +0,5 %
+- octobre 2025 | 132,1 | +0,8 %
+- septembre 2025 | 132,8 | +0,5 %
+- août 2025 | 132,9 | +0,6 %
+- juillet 2025 | 132,7 | +1,1 %
+- juin 2025 | 132,5 | +0,7 %
+- mai 2025 | 132,2 | +0,8 %
+- avril 2025 | 131,8 | +0,2 %
+- mars 2025 | 132,1 | +0,2 %
+- février 2025 | 132,6 | 0,0 %
+- janvier 2025 | 132,4 | +0,7 %
+- décembre 2024 | 131,8 | 0,0 %
+- novembre 2024 | 131,6 | +0,6 %
+- octobre 2024 | 131,1 | −0,1 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 104,6 | 103,2 | 105,5
+- 2016 | 105,0 | 104,5 | 105,8
+- 2017 | 105,9 | 105,2 | 106,4
+- 2018 | 107,3 | 106,3 | 108,3
+- 2019 | 109,1 | 108,2 | 110,1
+- 2020 | 110,4 | 109,9 | 110,9
+- 2021 | 112,7 | 110,6 | 114,5
+- 2022 | 122,4 | 116,5 | 126,6
+- 2023 | 130,3 | 127,9 | 131,8
+- 2024 | 131,7 | 131,1 | 132,6
+- 2025 | 132,5 | 131,8 | 133,5
+
+### À quoi sert l’index BT51 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux de menuiseries PVC, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT51 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 248 €.
+Calculer une révision avec le BT51
+
+### Index BT51 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT51 en septembre 2026 ?**
+136,1, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +2,5 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT51 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT19b · Menuiserie extérieure en bois
+- BT18a · Menuiserie intérieure en bois
+- BT26 · Fermeture de baies en plastique y compris fenêtre PVC
+- BT27 · Fermeture de baies en aluminium
+- BT43 · Menuiserie en alliage d’aluminium
+- BT28 · Fermeture de baies en métal ferreux
+- BT42 · Menuiserie en acier et serrurerie
+- BT45 · Vitrerie, miroiterie
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT52 septembre 2026 : 149,3 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt52/
+
+Index BT52 (imperméabilité de façades) de septembre 2026 : 149,3, +7,6 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Façade et isolation
+L’index BT52 de l’Insee mesure l’évolution du coût des travaux d’imperméabilité de façades. Valeur de septembre 2026 : 149,3.
+Index BT52 septembre 2026
+149,3
+
+**sur 1 mois**
+- −0,8 %
+
+**sur 1 an**
+- +7,6 %
+
+**depuis 2010**
+- +49,3 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT52
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 149,3 | +7,6 %
+- août 2026 | 150,5 | +8,1 %
+- juillet 2026 | 149,9 | +7,6 %
+- juin 2026 | 150,1 | +7,8 %
+- mai 2026 | 151,6 | +9,2 %
+- avril 2026 | 150,8 | +8,0 %
+- mars 2026 | 142,8 | +2,5 %
+- février 2026 | 140,5 | +0,2 %
+- janvier 2026 | 140,3 | +0,2 %
+- décembre 2025 | 139,5 | +0,9 %
+- novembre 2025 | 139,6 | +1,1 %
+- octobre 2025 | 139,0 | +0,7 %
+- septembre 2025 | 138,8 | +0,7 %
+- août 2025 | 139,2 | +1,1 %
+- juillet 2025 | 139,3 | +1,7 %
+- juin 2025 | 139,2 | +1,0 %
+- mai 2025 | 138,8 | +1,3 %
+- avril 2025 | 139,6 | +1,2 %
+- mars 2025 | 139,3 | +1,6 %
+- février 2025 | 140,2 | +2,4 %
+- janvier 2025 | 140,0 | +2,3 %
+- décembre 2024 | 138,2 | −0,7 %
+- novembre 2024 | 138,1 | −0,6 %
+- octobre 2024 | 138,0 | −0,6 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 106,1 | 104,8 | 107,6
+- 2016 | 106,7 | 104,8 | 108,6
+- 2017 | 111,1 | 110,1 | 112,5
+- 2018 | 114,3 | 112,6 | 115,9
+- 2019 | 116,7 | 115,6 | 117,8
+- 2020 | 118,0 | 116,2 | 119,8
+- 2021 | 129,5 | 121,2 | 136,2
+- 2022 | 145,9 | 139,5 | 149,1
+- 2023 | 139,6 | 136,9 | 142,8
+- 2024 | 137,5 | 136,8 | 138,2
+- 2025 | 139,4 | 138,8 | 140,2
+
+### À quoi sert l’index BT52 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux d’imperméabilité de façades, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : ravalement, imperméabilité de façade.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT52 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 756 €.
+Calculer une révision avec le BT52
+
+### Index BT52 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT52 en septembre 2026 ?**
+149,3, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +7,6 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT52 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT55 · Isolation thermique par l’extérieur, enduit sur isolant
+- BT46 · Peinture, tenture, revêtements muraux
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT53 septembre 2026 : 141,2 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt53/
+
+Index BT53 (étanchéité) de septembre 2026 : 141,2, +6,4 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Couverture, charpente et étanchéité
+L’index BT53 de l’Insee mesure l’évolution du coût des travaux d’étanchéité. Valeur de septembre 2026 : 141,2.
+Index BT53 septembre 2026
+141,2
+
+**sur 1 mois**
+- −2,7 %
+
+**sur 1 an**
+- +6,4 %
+
+**depuis 2010**
+- +41,2 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT53
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 141,2 | +6,4 %
+- août 2026 | 145,1 | +8,6 %
+- juillet 2026 | 144,0 | +7,8 %
+- juin 2026 | 146,6 | +10,0 %
+- mai 2026 | 142,6 | +6,6 %
+- avril 2026 | 138,5 | +3,4 %
+- mars 2026 | 133,2 | −0,8 %
+- février 2026 | 131,7 | −1,9 %
+- janvier 2026 | 132,0 | −1,6 %
+- décembre 2025 | 131,9 | −1,7 %
+- novembre 2025 | 132,3 | −1,3 %
+- octobre 2025 | 132,8 | −1,3 %
+- septembre 2025 | 132,7 | −1,0 %
+- août 2025 | 133,6 | −1,4 %
+- juillet 2025 | 133,6 | −1,3 %
+- juin 2025 | 133,3 | −1,3 %
+- mai 2025 | 133,8 | −0,4 %
+- avril 2025 | 133,9 | +0,1 %
+- mars 2025 | 134,3 | +0,3 %
+- février 2025 | 134,3 | +1,1 %
+- janvier 2025 | 134,2 | +0,8 %
+- décembre 2024 | 134,2 | +0,5 %
+- novembre 2024 | 134,1 | −0,1 %
+- octobre 2024 | 134,5 | −0,1 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 102,0 | 99,7 | 103,6
+- 2016 | 103,6 | 102,9 | 104,3
+- 2017 | 106,6 | 105,0 | 108,4
+- 2018 | 110,5 | 108,4 | 112,0
+- 2019 | 112,2 | 111,3 | 113,1
+- 2020 | 111,9 | 110,3 | 113,6
+- 2021 | 120,2 | 114,7 | 125,0
+- 2022 | 133,1 | 125,6 | 136,9
+- 2023 | 135,5 | 133,5 | 136,5
+- 2024 | 134,2 | 132,9 | 135,5
+- 2025 | 133,4 | 131,9 | 134,3
+
+### À quoi sert l’index BT53 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux d’étanchéité, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : étanchéité de toiture-terrasse.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT53 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 641 €.
+Calculer une révision avec le BT53
+
+### Index BT53 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT53 en septembre 2026 ?**
+141,2, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +6,4 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT53 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT16b · Charpente bois
+- BT30 · Couverture en ardoises de schiste
+- BT32 · Couverture en tuiles en terre cuite
+- BT33 · Couverture en tuiles en béton
+- BT34 · Couverture en zinc et en métal (sauf cuivre)
+- BT35 · Couverture en bardeaux bitumés
+- BT49 · Couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT54 septembre 2026 : 142,4 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt54/
+
+Index BT54 (ossature bois) de septembre 2026 : 142,4, +5,0 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Gros œuvre et structure
+L’index BT54 de l’Insee mesure l’évolution du coût des travaux d’ossature bois. Valeur de septembre 2026 : 142,4.
+Index BT54 septembre 2026
+142,4
+
+**sur 1 mois**
+- +0,1 %
+
+**sur 1 an**
+- +5,0 %
+
+**depuis 2010**
+- +42,4 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT54
+De octobre 2014 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 142,4 | +5,0 %
+- août 2026 | 142,3 | +4,9 %
+- juillet 2026 | 141,9 | +4,4 %
+- juin 2026 | 141,4 | +4,2 %
+- mai 2026 | 141,3 | +4,9 %
+- avril 2026 | 140,5 | +3,8 %
+- mars 2026 | 139,1 | +2,9 %
+- février 2026 | 138,2 | +2,2 %
+- janvier 2026 | 137,5 | +1,9 %
+- décembre 2025 | 137,2 | +2,0 %
+- novembre 2025 | 136,5 | +1,7 %
+- octobre 2025 | 136,0 | +1,4 %
+- septembre 2025 | 135,6 | +1,3 %
+- août 2025 | 135,7 | +0,9 %
+- juillet 2025 | 135,9 | +1,6 %
+- juin 2025 | 135,7 | +1,6 %
+- mai 2025 | 134,7 | +1,2 %
+- avril 2025 | 135,4 | +1,0 %
+- mars 2025 | 135,2 | +1,1 %
+- février 2025 | 135,2 | +0,8 %
+- janvier 2025 | 134,9 | +0,7 %
+- décembre 2024 | 134,5 | +0,6 %
+- novembre 2024 | 134,2 | +0,4 %
+- octobre 2024 | 134,1 | +0,1 %
+- Année | Moyenne | Plus bas | Plus haut
+- 2015 | 104,4 | 104,0 | 104,8
+- 2016 | 105,1 | 104,1 | 106,2
+- 2017 | 107,0 | 106,6 | 107,9
+- 2018 | 109,8 | 108,3 | 111,2
+- 2019 | 112,4 | 111,1 | 113,4
+- 2020 | 113,7 | 113,1 | 114,2
+- 2021 | 118,4 | 114,3 | 122,7
+- 2022 | 129,3 | 123,2 | 132,2
+- 2023 | 133,2 | 131,2 | 134,6
+- 2024 | 134,0 | 133,1 | 134,5
+- 2025 | 135,7 | 134,7 | 137,2
+
+### À quoi sert l’index BT54 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux d’ossature bois, quand le contrat le prévoit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT54 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre septembre 2025 et septembre 2026 : 10 000 € deviennent 10 501 €.
+Calculer une révision avec le BT54
+
+### Index BT54 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT54 en septembre 2026 ?**
+142,4, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026). C’est +5,0 % par rapport à septembre 2025.
+
+**Quand l’Insee publie-t-il l’index BT54 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT02 · Terrassements
+- BT03 · Maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie)
+- BT06 · Ossature, ouvrages en béton armé
+- BT07 · Ossature et charpentes métalliques
+- BT08 · Plâtre et préfabriqués
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Indice BT55 septembre 2026 : 142,0 (Insee)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt55/
+
+Index BT55 (isolation thermique par l’extérieur, enduit sur isolant) de septembre 2026 : 142,0. Courbe depuis 2026, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
+
+Index du bâtiment · Façade et isolation
+L’index BT55 de l’Insee mesure l’évolution du coût des travaux d’isolation thermique par l’extérieur, enduit sur isolant. Valeur de septembre 2026 : 142,0.
+Index BT55 septembre 2026
+142,0
+
+**sur 1 mois**
+- 0,0 %
+
+**depuis janv. 2026**
+- +2,6 %
+Publié par l’Insee le 13 novembre 2026 · base 100 en 2010
+
+### Courbe de l’index BT55
+De janvier 2026 à septembre 2026, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Les derniers mois
+Valeurs publiées et évolution par rapport au même mois de l’année précédente
+- Mois | Valeur | Sur 1 an
+- septembre 2026 | 142,0 | –
+- août 2026 | 142,0 | –
+- juillet 2026 | 141,7 | –
+- juin 2026 | 141,0 | –
+- mai 2026 | 140,5 | –
+- avril 2026 | 140,1 | –
+- mars 2026 | 138,9 | –
+- février 2026 | 138,3 | –
+- janvier 2026 | 138,4 | –
+
+### À quoi sert l’index BT55 ?
+Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux d’isolation thermique par l’extérieur, enduit sur isolant, quand le contrat le prévoit.
+D’après son intitulé, c’est l’index le plus proche pour : isolation par l’extérieur sous enduit.
+Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index BT55 aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre janvier 2026 et septembre 2026 : 10 000 € deviennent 10 260 €.
+Calculer une révision avec le BT55
+
+### Index BT55 : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Quelle est la valeur de l’index BT55 en septembre 2026 ?**
+142,0, en base 100 en 2010 (Insee, données mises à jour le 13 novembre 2026).
+
+**Quand l’Insee publie-t-il l’index BT55 ?**
+Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du 13 novembre 2026.
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Que veut dire « base 2010 » ?**
+La moyenne de l’année 2010 vaut 100. Un index à 139,1 indique un coût supérieur de 39,1 % à celui de 2010.
+
+### Index de la même famille
+- BT52 · Imperméabilité de façades
+- BT46 · Peinture, tenture, revêtements muraux
+- Tous les index BT
+- Calculateur de révision de prix
+
+---
+
+## Révision de prix BT01 : calculateur gratuit (index BT)
+
+Adresse : https://bartierandco.com/chiffres-du-batiment/revision-de-prix/
+
+Calculez la révision de prix d’un devis ou d’un marché avec le BT01 ou l’un des 37 index BT de l’Insee, à jour de septembre 2026. Formule détaillée, prête à copier.
+
+Outil gratuit
+Révisez le prix d’un devis ou d’un marché avec l’index BT de votre choix, à partir des valeurs officielles de l’Insee. Le calcul est fait dans votre navigateur.
+La formule de révision
+P = P0 × (a + (1 − a) × In / I0)
+
+**P0**
+- le prix initial, hors taxes
+
+**I0**
+- l’index du mois de référence
+
+**In**
+- l’index du mois de révision
+
+**a**
+- la partie fixe, si le contrat en prévoit une
+Index Insee à jour de septembre 2026
+
+### Votre calcul
+Les valeurs de l’index s’affichent dès que vous choisissez les mois
+Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
+
+### Comment l’utiliser
+- Choisissez l’index prévu par votre contrat : BT01 pour un contrat de construction de maison individuelle (Code de la construction et de l’habitation, art. L231-11), sinon l’index du corps d’état, par exemple BT32 pour une couverture en tuiles de terre cuite.
+- Choisissez les deux mois : celui de l’index de référence, I0, et celui de l’index de révision, In, comme les fixe votre contrat.
+- Indiquez la partie fixe si votre formule en prévoit une, par exemple 0,15 dans P = P0 × (0,15 + 0,85 × In / I0). Sans partie fixe, le prix suit entièrement l’index.
+- Copiez le calcul : la formule avec les valeurs de l’Insee, à joindre à votre facture ou à votre situation de travaux.
+
+### Révision de prix : vos questions
+Une autre question ? 07 81 01 89 36
+
+**Comment réviser un prix avec un index BT ?**
+Avec la formule de votre contrat, en général P = P0 × (a + (1 − a) × In / I0) : P0 le prix initial, I0 l’index du mois de référence, In celui du mois de révision et a la partie fixe éventuelle. Notre calculateur fait le calcul.
+
+**Révision ou actualisation : quelle différence ?**
+La révision fait suivre l’index au prix pendant l’exécution des travaux, selon la formule du contrat. L’actualisation ajuste une seule fois un prix ferme quand les travaux démarrent longtemps après la date du prix.
+
+**Quel index BT pour un contrat de construction de maison individuelle ?**
+Le BT01, tous corps d’état : si le contrat prévoit une révision du prix, elle ne peut être calculée qu’avec cet index (Code de la construction et de l’habitation, art. L231-11).
+
+**Les valeurs sont-elles à jour ?**
+Oui : ce sont les index publiés par l’Insee, mis à jour chaque mois. Dernier mois disponible : septembre 2026.
+
+### Aller plus loin
+- Tous les index BT
+- BT01 · Tous corps d’état
+- BT50 · Rénovation et entretien, tous corps d’état
+- Les chiffres du bâtiment

@@ -27,6 +27,170 @@
   "date": "2026-11-21",
   "sig": "16636b63687da461"
  },
+ "/chiffres-du-batiment/": {
+  "date": "2026-11-22",
+  "sig": "d00e3d500158cc8d"
+ },
+ "/chiffres-du-batiment/indices-bt/": {
+  "date": "2026-11-22",
+  "sig": "8415923ae83b135f"
+ },
+ "/chiffres-du-batiment/indices-bt/bt01/": {
+  "date": "2026-11-22",
+  "sig": "20e4f1a9586aff0b"
+ },
+ "/chiffres-du-batiment/indices-bt/bt02/": {
+  "date": "2026-11-22",
+  "sig": "e77139ff102e0908"
+ },
+ "/chiffres-du-batiment/indices-bt/bt03/": {
+  "date": "2026-11-22",
+  "sig": "4adc2b5e61649cba"
+ },
+ "/chiffres-du-batiment/indices-bt/bt06/": {
+  "date": "2026-11-22",
+  "sig": "af738d7796ba5c72"
+ },
+ "/chiffres-du-batiment/indices-bt/bt07/": {
+  "date": "2026-11-22",
+  "sig": "0932694f2bb720af"
+ },
+ "/chiffres-du-batiment/indices-bt/bt08/": {
+  "date": "2026-11-22",
+  "sig": "8ee1ec19cbbe05a1"
+ },
+ "/chiffres-du-batiment/indices-bt/bt09/": {
+  "date": "2026-11-22",
+  "sig": "0dbbcbaa66c7981f"
+ },
+ "/chiffres-du-batiment/indices-bt/bt10/": {
+  "date": "2026-11-22",
+  "sig": "61336f2e90d37e43"
+ },
+ "/chiffres-du-batiment/indices-bt/bt11/": {
+  "date": "2026-11-22",
+  "sig": "692ea2d0ac73af8c"
+ },
+ "/chiffres-du-batiment/indices-bt/bt12/": {
+  "date": "2026-11-22",
+  "sig": "64f5ea1d27c8687c"
+ },
+ "/chiffres-du-batiment/indices-bt/bt14/": {
+  "date": "2026-11-22",
+  "sig": "b25922d6c417ad12"
+ },
+ "/chiffres-du-batiment/indices-bt/bt16b/": {
+  "date": "2026-11-22",
+  "sig": "681a8c63276ed840"
+ },
+ "/chiffres-du-batiment/indices-bt/bt18a/": {
+  "date": "2026-11-22",
+  "sig": "6ba42df06e90158c"
+ },
+ "/chiffres-du-batiment/indices-bt/bt19b/": {
+  "date": "2026-11-22",
+  "sig": "0ce9495088a2a0e2"
+ },
+ "/chiffres-du-batiment/indices-bt/bt26/": {
+  "date": "2026-11-22",
+  "sig": "98b3c81e5f7e816b"
+ },
+ "/chiffres-du-batiment/indices-bt/bt27/": {
+  "date": "2026-11-22",
+  "sig": "cb458c4eae6d9191"
+ },
+ "/chiffres-du-batiment/indices-bt/bt28/": {
+  "date": "2026-11-22",
+  "sig": "2fb28a84e8d6820a"
+ },
+ "/chiffres-du-batiment/indices-bt/bt30/": {
+  "date": "2026-11-22",
+  "sig": "a771b1d238525562"
+ },
+ "/chiffres-du-batiment/indices-bt/bt32/": {
+  "date": "2026-11-22",
+  "sig": "9d11a86c508d22e4"
+ },
+ "/chiffres-du-batiment/indices-bt/bt33/": {
+  "date": "2026-11-22",
+  "sig": "389db46242e83be4"
+ },
+ "/chiffres-du-batiment/indices-bt/bt34/": {
+  "date": "2026-11-22",
+  "sig": "a889ce6f5833d0ae"
+ },
+ "/chiffres-du-batiment/indices-bt/bt35/": {
+  "date": "2026-11-22",
+  "sig": "c8c31e7a288dd291"
+ },
+ "/chiffres-du-batiment/indices-bt/bt38/": {
+  "date": "2026-11-22",
+  "sig": "fbbd1490f735d105"
+ },
+ "/chiffres-du-batiment/indices-bt/bt40/": {
+  "date": "2026-11-22",
+  "sig": "6b29e68bce321539"
+ },
+ "/chiffres-du-batiment/indices-bt/bt41/": {
+  "date": "2026-11-22",
+  "sig": "1853460c4dd8a5e0"
+ },
+ "/chiffres-du-batiment/indices-bt/bt42/": {
+  "date": "2026-11-22",
+  "sig": "093083c64f49040a"
+ },
+ "/chiffres-du-batiment/indices-bt/bt43/": {
+  "date": "2026-11-22",
+  "sig": "6366f613fa431971"
+ },
+ "/chiffres-du-batiment/indices-bt/bt45/": {
+  "date": "2026-11-22",
+  "sig": "1cbdc509bf2c52af"
+ },
+ "/chiffres-du-batiment/indices-bt/bt46/": {
+  "date": "2026-11-22",
+  "sig": "9ad27d6e271ece54"
+ },
+ "/chiffres-du-batiment/indices-bt/bt47/": {
+  "date": "2026-11-22",
+  "sig": "345a7f3e1f661141"
+ },
+ "/chiffres-du-batiment/indices-bt/bt48/": {
+  "date": "2026-11-22",
+  "sig": "e1af5596fc349435"
+ },
+ "/chiffres-du-batiment/indices-bt/bt49/": {
+  "date": "2026-11-22",
+  "sig": "17c6f9e3b95a4daf"
+ },
+ "/chiffres-du-batiment/indices-bt/bt50/": {
+  "date": "2026-11-22",
+  "sig": "24caa5814fcd6994"
+ },
+ "/chiffres-du-batiment/indices-bt/bt51/": {
+  "date": "2026-11-22",
+  "sig": "c1a528eeba944ede"
+ },
+ "/chiffres-du-batiment/indices-bt/bt52/": {
+  "date": "2026-11-22",
+  "sig": "fe6b0605fe15864e"
+ },
+ "/chiffres-du-batiment/indices-bt/bt53/": {
+  "date": "2026-11-22",
+  "sig": "689ecf02828c77c1"
+ },
+ "/chiffres-du-batiment/indices-bt/bt54/": {
+  "date": "2026-11-22",
+  "sig": "387bf236799445e9"
+ },
+ "/chiffres-du-batiment/indices-bt/bt55/": {
+  "date": "2026-11-22",
+  "sig": "16d8ffea9e74926b"
+ },
+ "/chiffres-du-batiment/revision-de-prix/": {
+  "date": "2026-11-22",
+  "sig": "fb938b5426487207"
+ },
  "/conditions-du-service/": {
   "date": "2026-11-19",
   "sig": "37f62f9a91f02522"
@@ -540,8 +704,8 @@
   "sig": "b73be99a34ba9dcc"
  },
  "/lexique/": {
-  "date": "2026-11-19",
-  "sig": "2501d4069352b0c4"
+  "date": "2026-11-22",
+  "sig": "cc47b44e24cd7912"
  },
  "/mentions-legales/": {
   "date": "2026-11-19",
@@ -556,24 +720,24 @@
   "sig": "83fadf50ed0be4f1"
  },
  "/metiers/charpente/": {
-  "date": "2026-11-21",
-  "sig": "71534e1b2497a96d"
+  "date": "2026-11-22",
+  "sig": "b05ebd711dd95b9f"
  },
  "/metiers/couverture/": {
-  "date": "2026-11-21",
-  "sig": "9290b951321978db"
+  "date": "2026-11-22",
+  "sig": "284d797c6e9a80cb"
  },
  "/metiers/facade/": {
-  "date": "2026-11-21",
-  "sig": "12d26b6318ee3e5c"
+  "date": "2026-11-22",
+  "sig": "06f7f5ff9c0e7fd5"
  },
  "/metiers/isolation/": {
-  "date": "2026-11-21",
-  "sig": "0106e305055292f8"
+  "date": "2026-11-22",
+  "sig": "e8681a6f94084299"
  },
  "/metiers/menuiserie-exterieure/": {
-  "date": "2026-11-21",
-  "sig": "4a80b3c831ec3441"
+  "date": "2026-11-22",
+  "sig": "33d9f485a5579461"
  },
  "/questions/": {
   "date": "2026-11-22",
