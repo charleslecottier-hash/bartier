@@ -46,11 +46,13 @@ def esc(t):
 home = (ROOT / "_build" / "home.src.html").read_text(encoding="utf-8")
 
 # Menu : le Blog est dans le pied de page
-NAV = [("Comment ça marche", "#services"), ("Métiers", "/metiers/"), ("Google Ads", "/google-ads/"), ("Meta Ads", "/meta-ads/"),
+NAV = [("Comment ça marche", "#services"), ("Tarifs", "#tarifs"), ("Métiers", "/metiers/"), ("Google Ads", "/google-ads/"), ("Meta Ads", "/meta-ads/"),
        ("Qui sommes-nous", "/qui-sommes-nous/"), ("Questions", "/questions/"), ("Particuliers", "/devis-travaux/")]
 # « Comment ça marche » ouvre une petite liste : l'accueil, le guide, les questions, puis la méthode sous un filet (comme « Métiers »)
 NAV_SUB = {"#services": [("Accueil", "", "/"),
                          ("Comment trouver des chantiers", "", "/trouver-des-chantiers/"),
+                         ("Google Ads", "", "/google-ads/"),
+                         ("Meta Ads", "", "/meta-ads/"),
                          ("Questions fréquentes", "", "/questions/"),
                          ("Notre méthode", "", "#services")],
            # « Métiers » ouvre la liste des cinq métiers
@@ -70,9 +72,10 @@ def _nav_item(t, h):
         return f'      <div class="hdr-dd"><a class="link hdr-dd-t" href="{h}" aria-expanded="false">{t}{NAV_CHEV}</a><div class="hdr-dd-menu">{sub}</div></div>'
     return f'      <a class="link" href="{h}">{t}</a>'
 nav_html = "\n".join(_nav_item(t, h) for t, h in NAV)
+NAV_TOP = {h for t, h in NAV}
 def _menu_item(t, h):  # sur téléphone : « Comment ça marche » et « Métiers » s'ouvrent comme des listes
-    if h in NAV_SUB:
-        sub = "".join(_dd_link(st, sd, sh, h) for st, sd, sh in NAV_SUB[h])
+    if h in NAV_SUB:  # sans répéter les pages déjà présentes en premier niveau du menu
+        sub = "".join(_dd_link(st, sd, sh, h) for st, sd, sh in NAV_SUB[h] if sh == h or sh not in NAV_TOP)
         return f'    <details class="menu-dd"><summary>{t}{NAV_CHEV}</summary><div class="menu-dd-list">{sub}</div></details>'
     return f'    <a href="{h}">{t}</a>'
 menu_html = "\n".join(_menu_item(t, h) for t, h in NAV) + '\n    <a href="#contact">Contact</a>'
@@ -246,6 +249,10 @@ ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "
        "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434", "https://www.linkedin.com/company/bartier-co"],
        "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de 5 minutes, visites de devis fixées directement dans leur agenda. Pour les propriétaires, mise en relation gratuite avec un artisan de leur secteur.",
        "makesOffer": [{"@type": "Offer", "itemOffered": {"@id": SITE + u + "#service"}} for u in ("/devis-travaux/", "/google-ads/", "/meta-ads/")],
+       "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Tarifs pour les artisans", "url": SITE + "/#tarifs", "itemListElement": [
+           {"@type": "Offer", "name": f"Accompagnement pour un budget publicitaire de {b} € par mois", "url": SITE + "/#tarifs", "priceCurrency": "EUR", "price": str(p),
+            "priceSpecification": {"@type": "UnitPriceSpecification", "price": str(p), "priceCurrency": "EUR", "unitCode": "MON", "valueAddedTaxIncluded": False}}
+           for b, p in (("1 000", 990), ("2 000", 1490), ("3 000", 1990), ("5 000", 2490))]},
        "founder": [{"@type": "Person", "@id": f"{SITE}/qui-sommes-nous/#{k}", "name": n, "jobTitle": j, "image": portrait(k)} for k, n, j in FOUNDERS]}
 ORG_PAGE = {k: ORG[k] for k in ("@type", "@id", "name", "legalName", "url", "logo", "email", "telephone", "address", "description", "sameAs", "areaServed")}
 home = re.sub(r'<link rel="canonical"[^>]*>\n?', "", home)
