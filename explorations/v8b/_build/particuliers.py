@@ -639,6 +639,7 @@ function fillNeeds(t){var box=f.querySelector(".pf-need"),list=NEEDS[t]||["Réno
 function pickTrade(t,jump){set("travaux",t);f.querySelectorAll(".pf-tile").forEach(function(b){sel(b,b.dataset.v===t)});fillNeeds(t);
   var w=document.querySelector(".pf-who");if(w)w.textContent=WHO[t]||"artisans";if(jump)show(1)}
 function pickLeak(mv){var o=f.querySelector(".pf-need .pf-opt");if(o){sel(o,true);set("besoin",o.dataset.v);show(2,mv)}}
+function pickNeed(v){var o=[].filter.call(f.querySelectorAll(".pf-need .pf-opt"),function(x){return x.dataset.v===v})[0];if(o){sel(o,true);set("besoin",v);show(2,false)}}
 f.addEventListener("click",function(e){var b=e.target.closest(".pf-tile,.pf-opt");if(!b||!f.contains(b))return;
   var st=b.closest(".pf-step"),inp=st.querySelector("input[type=hidden]");
   st.querySelectorAll(".pf-tile,.pf-opt").forEach(function(x){sel(x,x===b)});
@@ -648,7 +649,7 @@ f.addEventListener("click",function(e){var b=e.target.closest(".pf-tile,.pf-opt"
 back.addEventListener("click",function(){if(cur>0)show(cur-1)});
 document.querySelectorAll(".pf-pick").forEach(function(a){a.addEventListener("click",function(){pickTrade(a.dataset.v,true);if(a.dataset.need==="fuite")pickLeak()})});
 var q=new URLSearchParams(location.search),t=q.get("travaux")||f.dataset.preset;
-if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,false);show(1,false);if(q.get("besoin")==="fuite")pickLeak(false)}
+if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,false);show(1,false);var nd=q.get("besoin")||f.dataset.need;if(nd==="fuite")pickLeak(false);else if(nd)pickNeed(nd)}
 (function(){var l=document.querySelector(".pf-live"),t=l&&l.querySelector(".pf-live-t"),w=nextOpen();
   if(l){if(!w){l.classList.add("is-on");t.textContent="Disponibles maintenant · rappel en moins de 5 min"}else t.textContent="Rappel "+w+" · demandes enregistrées 24\u00a0h/24"}
   var m=new Date().getMonth(),se=document.querySelector(".pf-season"),S=["Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité."];
@@ -730,9 +731,9 @@ PAGES = {
         desc="Un couvreur de votre secteur vient chiffrer : réfection, fuite, zinguerie, démoussage. Devis gratuit, rappel en moins de 5 minutes en semaine.",
         kw="Couvreur : devis toiture gratuit", h2="Vos travaux de toiture", price_h2="Prix d’une réfection de toiture",
         needs=[("Réfection complète", "Dépose de l’ancienne couverture, écran sous-toiture, tuiles ou ardoises neuves."),
-               ("Fuite et réparation", "Tuiles cassées ou déplacées, faîtage, solins, recherche de l’origine d’une fuite."),
+               ("Fuite et réparation", "Tuiles cassées ou déplacées, faîtage, solins, recherche de l’origine d’une fuite. <a class=\"link\" href=\"/devis-travaux/toiture/urgence/\">Fuite en urgence</a>"),
                ("Zinguerie", "Gouttières, chéneaux, noues et descentes d’eau pluviale."),
-               ("Démoussage et nettoyage", "Mousses et lichens retirés, état des tuiles vérifié au passage.")],
+               ("Démoussage et nettoyage", "Mousses et lichens retirés, état des tuiles vérifié au passage. <a class=\"link\" href=\"/devis-travaux/toiture/demoussage/\">Devis démoussage</a>")],
         faq=[("Que doit contenir un devis de toiture ?",
               "Le détail de chaque poste en quantité et en prix unitaire (dépose, écran sous-toiture, liteaux, tuiles ou ardoises, faîtage, zinguerie), la main-d’œuvre, la date et la durée de validité, "
               "les coordonnées et le numéro d’immatriculation de l’entreprise, et l’assurance souscrite avec les coordonnées de l’assureur (Service-Public, fiche F31144)."),

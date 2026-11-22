@@ -2,7 +2,7 @@
 <html lang="fr">
 <head><meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-3CoPjDGNsMWIA3qkMewAlgEdiC4KTWUxSE4oJFCfh14=' 'sha256-DRV7wDuGeUuRLEw21MWXXmoY20dkN/iJBX9gIv1sUqI=' 'sha256-EGQCZMm14a3IpLmlFxXZc+2wnbGmVcQZHqabpiC8agM=' 'sha256-Hn637nsrq4sh8fwbGccUx1Uo+Cn0+V3hsxkl5aeyVUA=' 'sha256-MR4tOloyQBoAm915uDqhlabhpnNPcMDm6hJDalJaQ88=' 'sha256-eQfczpUWq8ruLx93fi+Eaz9hSigYLgWpRI2Wjs4HEM0=' 'sha256-emXW80tMCi28HiOD8b7PFpEm1LN9q8OE65YtFLbA9fk=' 'sha256-gFpEyESWD5x5GN8Ln0/BsNW7QSq7M22RjzWgpRPm2Rw=' 'sha256-gSq/2EaipVbdo5C0kLlhaZyq6bjZhZ5V/mUTfzyz95Y=' 'sha256-u4ctR96u8muW5qetujZe8wuGSAIsuP1R4Mv6Bg3dWfY=' 'sha256-zL+HyR3xaCJICy47NREQQDFfLcRzmGeP2g6NObhYang=' 'sha256-zWFhanvEKMOsymecW6GjzAht4MWZsyCr+VubiVpTnYY=' 'sha256-zq0MZsrtSoahFtxgk0YB0zNZFRtZvPfR2C5HiKyDHyA='; object-src 'none'; base-uri 'none'">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-3CoPjDGNsMWIA3qkMewAlgEdiC4KTWUxSE4oJFCfh14=' 'sha256-DRV7wDuGeUuRLEw21MWXXmoY20dkN/iJBX9gIv1sUqI=' 'sha256-EGQCZMm14a3IpLmlFxXZc+2wnbGmVcQZHqabpiC8agM=' 'sha256-MR4tOloyQBoAm915uDqhlabhpnNPcMDm6hJDalJaQ88=' 'sha256-ac39Iqz4WGXRXvifea1ysBaekMCicpH6cJwQCxggxJg=' 'sha256-eQfczpUWq8ruLx93fi+Eaz9hSigYLgWpRI2Wjs4HEM0=' 'sha256-emXW80tMCi28HiOD8b7PFpEm1LN9q8OE65YtFLbA9fk=' 'sha256-gFpEyESWD5x5GN8Ln0/BsNW7QSq7M22RjzWgpRPm2Rw=' 'sha256-gSq/2EaipVbdo5C0kLlhaZyq6bjZhZ5V/mUTfzyz95Y=' 'sha256-u4ctR96u8muW5qetujZe8wuGSAIsuP1R4Mv6Bg3dWfY=' 'sha256-zL+HyR3xaCJICy47NREQQDFfLcRzmGeP2g6NObhYang=' 'sha256-zWFhanvEKMOsymecW6GjzAht4MWZsyCr+VubiVpTnYY=' 'sha256-zq0MZsrtSoahFtxgk0YB0zNZFRtZvPfR2C5HiKyDHyA='; object-src 'none'; base-uri 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Devis travaux gratuit : toiture, façade, fenêtres, isolation</title>
 <meta name="theme-color" content="#ffffff">
@@ -452,6 +452,7 @@ function fillNeeds(t){var box=f.querySelector(".pf-need"),list=NEEDS[t]||["Réno
 function pickTrade(t,jump){set("travaux",t);f.querySelectorAll(".pf-tile").forEach(function(b){sel(b,b.dataset.v===t)});fillNeeds(t);
   var w=document.querySelector(".pf-who");if(w)w.textContent=WHO[t]||"artisans";if(jump)show(1)}
 function pickLeak(mv){var o=f.querySelector(".pf-need .pf-opt");if(o){sel(o,true);set("besoin",o.dataset.v);show(2,mv)}}
+function pickNeed(v){var o=[].filter.call(f.querySelectorAll(".pf-need .pf-opt"),function(x){return x.dataset.v===v})[0];if(o){sel(o,true);set("besoin",v);show(2,false)}}
 f.addEventListener("click",function(e){var b=e.target.closest(".pf-tile,.pf-opt");if(!b||!f.contains(b))return;
   var st=b.closest(".pf-step"),inp=st.querySelector("input[type=hidden]");
   st.querySelectorAll(".pf-tile,.pf-opt").forEach(function(x){sel(x,x===b)});
@@ -461,7 +462,7 @@ f.addEventListener("click",function(e){var b=e.target.closest(".pf-tile,.pf-opt"
 back.addEventListener("click",function(){if(cur>0)show(cur-1)});
 document.querySelectorAll(".pf-pick").forEach(function(a){a.addEventListener("click",function(){pickTrade(a.dataset.v,true);if(a.dataset.need==="fuite")pickLeak()})});
 var q=new URLSearchParams(location.search),t=q.get("travaux")||f.dataset.preset;
-if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,false);show(1,false);if(q.get("besoin")==="fuite")pickLeak(false)}
+if(t&&(NEEDS[t]||t==="autre")){pickTrade(t,false);show(1,false);var nd=q.get("besoin")||f.dataset.need;if(nd==="fuite")pickLeak(false);else if(nd)pickNeed(nd)}
 (function(){var l=document.querySelector(".pf-live"),t=l&&l.querySelector(".pf-live-t"),w=nextOpen();
   if(l){if(!w){l.classList.add("is-on");t.textContent="Disponibles maintenant · rappel en moins de 5 min"}else t.textContent="Rappel "+w+" · demandes enregistrées 24\u00a0h/24"}
   var m=new Date().getMonth(),se=document.querySelector(".pf-season"),S=["Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Printemps : la saison des rénovations.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Été : prévoyez votre visite avant la rentrée.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Automne : faites le point sur vos travaux avant l’hiver.","Hiver : les fuites et dégâts de tempête sont rappelés en priorité."];

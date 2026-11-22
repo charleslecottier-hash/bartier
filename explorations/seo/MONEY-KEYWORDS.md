@@ -42,9 +42,10 @@ Ce ne sont pas des guides, ce sont des pages d'action.
 | remplacement fenêtre, changer fenêtres devis, poseur et menuisier fenêtre | /devis-travaux/fenetres/ | titre et H1 réorientés le 22/11 |
 | charpentier, charpentier devis gratuit, charpentier près de chez moi | /devis-travaux/charpente/ | titre et H1 réorientés le 22/11 |
 | entreprise isolation combles, isolation combles devis | /devis-travaux/isolation/ | titre réorienté le 22/11 |
-| couvreur + ville, ravalement façade + ville, etc. | /devis-travaux/<métier>/<ville>/ | à créer |
-| couvreur urgence, fuite toiture urgence, bâche de toit | /devis-travaux/toiture/urgence/ | à créer |
-| démoussage toiture devis, artisan, autour de moi | /devis-travaux/toiture/demoussage/ | à créer |
+| couvreur + ville, ravalement façade + ville | /devis-travaux/toiture/<ville>/ et /devis-travaux/ravalement-facade/<ville>/ | 36 pages en ligne le 22/11 (18 villes × 2 métiers) |
+| fenêtres, charpente, isolation + ville | /devis-travaux/<métier>/<ville>/ | à créer |
+| couvreur urgence, fuite toiture urgence, bâche de toit | /devis-travaux/toiture/urgence/ | en ligne le 22/11 |
+| démoussage toiture devis, artisan, autour de moi | /devis-travaux/toiture/demoussage/ | en ligne le 22/11 |
 | changer gouttière, artisan zinguerie | /devis-travaux/toiture/gouttieres/ | à créer |
 | entreprise isolation extérieure (autour de moi, RGE) | /devis-travaux/isolation/exterieur/ | à créer |
 | traitement charpente devis, artisan | /devis-travaux/charpente/traitement/ | à créer |
@@ -53,8 +54,8 @@ Ce ne sont pas des guides, ce sont des pages d'action.
 ## Ordre conseillé
 
 1. Fait : titres, descriptions et H1 des 5 pages métier.
-2. Toiture en urgence et démoussage : la demande monte en hiver.
-3. Couvreur dans les 7 villes les plus suggérées, puis ravalement dans les mêmes villes. Chaque page doit avoir ses propres faits locaux (règles d'urbanisme, aides, climat), tirés des fiches ville déjà vérifiées. Sans cela, Google traite ces pages comme des pages satellites et les écarte.
+2. Fait le 22/11 : toiture en urgence et démoussage.
+3. Fait le 22/11 : couvreur et ravalement dans les 18 villes déjà vérifiées (l'entreprise couvre toute la France). Chaque page doit avoir ses propres faits locaux (règles d'urbanisme, aides, climat), tirés des fiches ville déjà vérifiées. Sans cela, Google traite ces pages comme des pages satellites et les écarte.
 4. Les autres métiers dans ces villes, puis les sous-services.
 5. Plus d'articles informatifs pour les particuliers.
 

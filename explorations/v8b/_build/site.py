@@ -903,6 +903,7 @@ if "confidentialite" in LEGAL_READY and NOTICES.get("particulier_form_notice"):
     PF.PRIVACY = NOTICES["particulier_form_notice"]
 pf_body = PF.build(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH)))
 import villes as VL  # pages « Devis travaux à <ville> »
+import money as MC  # pages « money » : urgence, démoussage, métier à <ville>
 _ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 _regs = sorted({c["region"] for c in VL.CITIES})
 VL_HUB = "".join(
@@ -999,13 +1000,34 @@ for k in PF.SLUG:
     sub = f"{PF.PATH}{PF.SLUG[k]}/"
     body = PF.build_trade(lambda a: (img(a)[0], html.escape(img(a)[1])), PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH), (t[1], sub)), k)
     if VL.CITIES:
-        _tl = "".join(f'<li><a class="link" href="{VL.path(c)}#t-{k}">{VL.TRADE_H3[k].format(a=VL.a_(c))}</a></li>' for c in VL.CITIES)
+        _tl = "".join((f'<li><a class="link" href="{MC.city_path(PF, k, c)}">{MC.CITY_TRADES[k]["link"].format(a=VL.a_(c))}</a></li>' if k in MC.CITY_TRADES else
+                       f'<li><a class="link" href="{VL.path(c)}#t-{k}">{VL.TRADE_H3[k].format(a=VL.a_(c))}</a></li>') for c in VL.CITIES)
         body = re.sub(r'(<section class="sheet pf-others".*?</ul>)', lambda m: m.group(1) + '\n  <p style="margin:36px 0 14px;padding:0 var(--cell);font-size:.8rem;color:var(--muted)">Par ville</p>\n  <ul class="pf-olist">' + _tl + '</ul>', body, count=1, flags=re.S)
     pf_write(sub, PF.PAGES[k]["title"], PF.PAGES[k]["desc"], body, PF.trade_schema(SITE, faq_ld, bc_ld, k))
 for c in VL.CITIES:
     sub = VL.path(c)
     body = VL.build_city(PF, PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH), (c["name"], sub)), c, img=lambda a: (img(a)[0], html.escape(img(a)[1])))
+    for _k in MC.CITY_TRADES:  # la page métier de la ville remplace le lien vers les prix nationaux
+        body = body.replace(f'<a class="link" href="/devis-travaux/{PF.SLUG[_k]}/">{VL.TRADE_MORE[_k]}</a>',
+                            f'<a class="link" href="{MC.city_path(PF, _k, c)}">{MC.CITY_TRADES[_k]["link"].format(a=VL.a_(c))}</a>', 1)
+    body = body.replace('href="/devis-travaux/toiture/#fuite-toiture">les 5 bons réflexes</a>', f'href="{MC.URGENCE["path"]}#fuite-toiture">les 5 bons réflexes</a>', 1)
     pf_write(sub, c["title"], c["desc"], body, VL.schema(SITE, faq_ld, bc_ld, PF, c))
+
+# ——— Pages « money » : toiture en urgence, démoussage, métier à <ville> ———
+_IMG = lambda a: (img(a)[0], html.escape(img(a)[1]))
+_roof = ("Toiture", f"{PF.PATH}{PF.SLUG['toiture']}/")
+for _pg, _build, _service, _howto in ((MC.URGENCE, lambda cr: MC.build_urgence(PF, PHONE, PHONE_TXT, cr), "Couvreur en urgence pour une fuite de toiture", ("Fuite de toiture ? Les 5 bons réflexes", PF.LEAK)),
+                                      (MC.DEMOUSSAGE, lambda cr: MC.build_demoussage(PF, PHONE, PHONE_TXT, cr, _IMG), "Démoussage de toiture", ("Les étapes d’un démoussage de toiture", MC.DEM_STEPS))):
+    _items = [("Devis travaux", PF.PATH), _roof, (_pg["crumb"], _pg["path"])]
+    _body, _rows = _build(crumbs(*_items))
+    pf_write(_pg["path"], _pg["title"], _pg["desc"], MC.CSS + "\n" + _body, MC.sub_schema(SITE, PF, faq_ld, bc_ld, _pg, _rows, _service, _items, howto=_howto))
+for _k in MC.CITY_TRADES:
+    _tt = next(x for x in PF.TRADES if x[0] == _k)
+    for c in VL.CITIES:
+        _p = MC.city_path(PF, _k, c)
+        _body, _rows = MC.build_trade_city(PF, VL, PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH), (_tt[1], f"{PF.PATH}{PF.SLUG[_k]}/"), (c["name"], _p)), _k, c, _IMG)
+        _ti, _de = MC.trade_city_meta(PF, VL, _k, c)
+        pf_write(_p, _ti, _de, VL.CSS + MC.CSS + "\n" + _body, MC.trade_city_schema(SITE, PF, VL, faq_ld, bc_ld, _k, c, _rows))
 
 # ——— Qui sommes-nous ———
 # En tête de page : les deux fondateurs côte à côte (image composée depuis _build/portraits/, sans métadonnées)
