@@ -944,6 +944,8 @@ pf_top = pf_top.replace('class="link" href="/devis-travaux/"', 'class="link" hre
 pf_top = re.sub(r'<p class="hdr-tag">[^<]*', '<p class="hdr-tag">Vos travaux, un seul artisan près de chez vous', pf_top, count=1)
 pf_top = pf_top.replace('<a class="hdr-cta" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="header"><span>Réserver un appel</span>', '<a class="hdr-cta" href="#projet"><span>Mon devis</span>', 1)
 pf_top = pf_top.replace('<span>Appeler Martin</span>', '<span>Nous appeler</span>', 1)
+# Pages particuliers : pas de lien « Tarifs » (ce sont les prix pour les artisans, le service est gratuit pour le propriétaire)
+pf_top = re.sub(r'\n[ ]*<a (?:class="link" )?href="/#tarifs">Tarifs</a>', '', pf_top)
 pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Obtenir mon devis gratuit</a>', 1)
 pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un seul artisan près de chez vous, sans frais</p>')
 pf_tail = absolutize(TAIL)

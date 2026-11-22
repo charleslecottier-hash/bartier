@@ -726,9 +726,9 @@ SLUG = {"toiture": "toiture", "facade": "ravalement-facade", "fenetres": "fenetr
 
 PAGES = {
     "toiture": dict(
-        title="Devis toiture 2026 : prix au m², exemple, un seul couvreur",
-        desc="Devis toiture gratuit : prix au m² sourcés (60 à 500\u00a0€/m², QuelleEnergie) et exemple de devis ligne par ligne. Un seul couvreur local vient chiffrer.",
-        kw="Devis toiture gratuit", h2="Vos travaux de toiture", price_h2="Prix d’une réfection de toiture",
+        title="Devis toiture gratuit : un couvreur près de chez vous",
+        desc="Un couvreur de votre secteur vient chiffrer : réfection, fuite, zinguerie, démoussage. Devis gratuit, rappel en moins de 5 minutes en semaine.",
+        kw="Couvreur : devis toiture gratuit", h2="Vos travaux de toiture", price_h2="Prix d’une réfection de toiture",
         needs=[("Réfection complète", "Dépose de l’ancienne couverture, écran sous-toiture, tuiles ou ardoises neuves."),
                ("Fuite et réparation", "Tuiles cassées ou déplacées, faîtage, solins, recherche de l’origine d’une fuite."),
                ("Zinguerie", "Gouttières, chéneaux, noues et descentes d’eau pluviale."),
@@ -744,8 +744,8 @@ PAGES = {
              ("Des aides pour refaire sa toiture ?", "Refaire la couverture seule n’ouvre en général pas droit à MaPrimeRénov’ : les aides visent la rénovation énergétique, comme l’isolation de la toiture, réalisée par une entreprise RGE. La TVA est en revanche de 10 % dans un logement de plus de deux ans, et de 5,5 % si les travaux améliorent sa performance énergétique. Vérifiez votre cas sur france-renov.gouv.fr.")],
         brief="Bartier &amp; Co vous met gratuitement en relation avec le couvreur partenaire de votre secteur : réfection, fuite, zinguerie ou démoussage. Visite et devis offerts."),
     "facade": dict(
-        title="Ravalement de façade : prix au m² et devis gratuit",
-        desc="Ravalement de façade, fissures, enduit, peinture, isolation par l’extérieur. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer. Gratuit.",
+        title="Entreprise de ravalement de façade : devis gratuit",
+        desc="Une entreprise de ravalement de votre secteur vient chiffrer : nettoyage, fissures, enduit, peinture, isolation par l’extérieur. Visite et devis gratuits.",
         kw="Ravalement de façade : devis gratuit", h2="Vos travaux de façade", price_h2="Prix d’un ravalement de façade",
         needs=[("Ravalement complet", "Nettoyage, reprise du support, enduit ou peinture de finition."),
                ("Fissures", "Diagnostic de l’origine et reprise des fissures avant finition."),
@@ -759,9 +759,9 @@ PAGES = {
              ("Quelle TVA pour un ravalement ?", "Dans un logement de plus de deux ans, la TVA est de 10 % sur un ravalement, et de 5,5 % s’il s’accompagne d’une isolation qui améliore la performance énergétique (Code général des impôts, art. 279-0 bis et 278-0 bis A).")],
         brief="Bartier &amp; Co vous met gratuitement en relation avec l’artisan façade partenaire de votre secteur : nettoyage, fissures, enduit, peinture ou isolation par l’extérieur. Visite et devis offerts."),
     "fenetres": dict(
-        title="Fenêtre PVC posée : prix et devis gratuit près de chez vous",
-        desc="Fenêtre PVC posée : 870 à 1\u00a0170\u00a0€ TTC (Saint-Gobain). Alu, bois, porte, volets : décrivez vos travaux en 1 minute, un seul menuisier local vient chiffrer.",
-        kw="Devis fenêtres et portes gratuit", h2="Vos travaux de fenêtres et portes", price_h2="Prix d’une fenêtre PVC posée",
+        title="Remplacement de fenêtres : devis gratuit près de chez vous",
+        desc="Un menuisier poseur de votre secteur chiffre vos fenêtres PVC, alu ou bois, porte d’entrée, baie vitrée ou volets. Visite et devis gratuits.",
+        kw="Remplacement de fenêtres : devis gratuit", h2="Vos travaux de fenêtres et portes", price_h2="Prix d’une fenêtre PVC posée",
         needs=[("Remplacement de fenêtres", "PVC, aluminium ou bois, double vitrage, sur mesure."),
                ("Porte d’entrée", "Isolation, sécurité et style de la façade."),
                ("Baie vitrée", "Coulissante ou à galandage, création ou remplacement."),
@@ -774,9 +774,9 @@ PAGES = {
              ("Des aides pour changer ses fenêtres ?", "Remplacer du simple vitrage par des fenêtres performantes peut ouvrir droit à des aides à la rénovation énergétique, avec une entreprise RGE : vérifiez votre cas sur france-renov.gouv.fr. Dans un logement de plus de deux ans, la TVA est de 5,5 % pour des fenêtres qui améliorent la performance énergétique, et de 10 % sinon.")],
         brief="Bartier &amp; Co vous met gratuitement en relation avec le menuisier partenaire de votre secteur, pour vos fenêtres, portes, baies vitrées ou volets. Visite et devis offerts."),
     "charpente": dict(
-        title="Devis charpente : un charpentier près de chez vous",
-        desc="Devis charpente gratuit : réparation, renfort, traitement du bois, surélévation. Décrivez vos travaux en 1 minute, un seul charpentier local vient chiffrer.",
-        kw="Devis charpente gratuit", h2="Vos travaux de charpente", price_h2="Prix de travaux de charpente",
+        title="Charpentier près de chez vous : devis charpente gratuit",
+        desc="Un charpentier de votre secteur vient chiffrer : réparation, renfort, traitement du bois, surélévation. Visite et devis gratuits, un seul artisan.",
+        kw="Charpentier : devis charpente gratuit", h2="Vos travaux de charpente", price_h2="Prix de travaux de charpente",
         needs=[("Réparation et renfort", "Pièces de bois abîmées remplacées ou doublées."),
                ("Traitement du bois", "Contre les insectes et les champignons, en curatif ou en préventif."),
                ("Extension et surélévation", "Nouvelle charpente pour agrandir ou créer un étage."),
@@ -789,8 +789,8 @@ PAGES = {
              ("Faut-il refaire la couverture en même temps ?", "Souvent, oui : la charpente est alors à nu et les deux chantiers se coordonnent. Le charpentier et le couvreur peuvent travailler ensemble.")],
         brief="Bartier &amp; Co vous met gratuitement en relation avec le charpentier partenaire de votre secteur, pour réparer, traiter ou créer votre charpente. Visite et devis offerts."),
     "isolation": dict(
-        title="Isolation des combles et murs : prix et devis gratuit",
-        desc="Isolation des combles perdus ou aménagés, des murs par l’extérieur, de la toiture. Décrivez vos travaux en 1 minute : un seul artisan local vient chiffrer.",
+        title="Entreprise d’isolation des combles et murs : devis gratuit",
+        desc="Une entreprise d’isolation de votre secteur chiffre vos combles perdus ou aménagés, vos murs ou votre toiture. Visite et devis gratuits.",
         kw="Isolation des combles et des murs : devis gratuit", h2="Vos travaux d’isolation", price_h2="Prix de l’isolation des combles",
         needs=[("Combles perdus", "Isolant soufflé ou déroulé sur le plancher des combles."),
                ("Combles aménagés", "Isolation sous les rampants, par l’intérieur."),
