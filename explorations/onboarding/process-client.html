@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Lancer un client, Bartier &amp; Co</title>
+<style>
+@font-face{font-family:"Host Grotesk";font-weight:300 700;src:url(../v8b/assets/fonts/host-grotesk-latin.woff2) format("woff2")}
+@font-face{font-family:"Host Grotesk";font-weight:300 700;src:url(../v8b/assets/fonts/host-grotesk-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+1E00-1EFF,U+2020,U+20A0-20C0}
+@page{size:A4;margin:16mm 16mm 18mm}
+:root{--ink:#0A1424;--ink2:#2B3444;--muted:#5B6475;--line:#DCE1E8;--soft:#F3F5F8;--accent:#2D5BE3;--tint:#E8EEFC;--go:#15803D;--go-bg:#EDF8F1;--warn:#9A5B00;--warn-bg:#FFF6E5}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:400 10.2pt/1.5 "Host Grotesk",Arial,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{page-break-after:always}
+.page:last-child{page-break-after:auto}
+header.top{display:flex;justify-content:space-between;align-items:center;padding-bottom:9px;border-bottom:1px solid var(--line);margin-bottom:16px}
+header.top img{height:22px}
+header.top span{font-size:8.5pt;color:var(--muted)}
+h1{font-size:22pt;line-height:1.1;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+.lead{font-size:11pt;color:var(--ink2);max-width:150mm;margin-bottom:14px}
+h2{font-size:15pt;font-weight:600;margin:0 0 10px;letter-spacing:-.005em}
+h2 .n{display:inline-block;min-width:24px;height:24px;line-height:24px;border-radius:6px;background:var(--accent);color:#fff;font-size:11pt;text-align:center;margin-right:8px;vertical-align:2px}
+h3{font-size:11pt;font-weight:600;margin:16px 0 6px}
+p{margin:0 0 8px}
+.muted{color:var(--muted)}
+.small{font-size:8.8pt}
+ol,ul{margin:0 0 10px 18px}
+li{margin:0 0 4px}
+table{width:100%;border-collapse:collapse;margin:6px 0 14px;font-size:9.6pt}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:8.6pt;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td.when{white-space:nowrap;font-weight:600;width:24mm}
+td.who{white-space:nowrap;width:26mm;color:var(--muted)}
+.box{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 12px;break-inside:avoid}
+.box.blue{background:var(--tint);border-color:#C9D6F8}
+.box.green{background:var(--go-bg);border-color:#C7E8D2}
+.box.warn{background:var(--warn-bg);border-color:#F1D9A8}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0 12px}
+.four div{border:1px solid var(--line);border-radius:10px;padding:8px 12px;break-inside:avoid}
+.four b{display:block;font-size:15pt;line-height:1;color:var(--accent);margin-bottom:3px}
+.mail{border:1px solid var(--line);border-radius:10px;overflow:hidden;break-inside:avoid;margin-bottom:12px}
+.mail .hd{background:var(--soft);padding:9px 14px;font-size:9.2pt;border-bottom:1px solid var(--line)}
+.mail .bd{padding:14px 16px;font-size:9.8pt}
+.mail .bd p{margin:0 0 8px}
+.ph{background:#FFF2B3;padding:0 3px;border-radius:3px}
+.check{list-style:none;margin-left:0}
+.check li{position:relative;padding-left:24px;margin-bottom:7px}
+.check li:before{content:"";position:absolute;left:0;top:2px;width:13px;height:13px;border:1.5px solid var(--ink2);border-radius:3px}
+.tag{display:inline-block;font-size:8pt;font-weight:600;padding:1px 7px;border-radius:99px;white-space:nowrap}
+.tag.ok{background:var(--go-bg);color:var(--go)}
+.tag.todo{background:var(--warn-bg);color:var(--warn)}
+.tag.dec{background:var(--tint);color:var(--accent)}
+.url{word-break:break-all}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:8.6pt;background:var(--soft);padding:0 4px;border-radius:4px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.preview{border:1px solid var(--line);border-radius:10px;padding:16px;break-inside:avoid}
+.preview .sj{font-weight:600;font-size:10pt;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+footer.src{margin-top:12px;font-size:8.2pt;color:var(--muted)}
+footer.src a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- ——— Page 1 : le process en bref ——— -->
+<section class="page">
+  <header class="top"><img src="../v8b/assets/logo-bartier-wordmark.svg" alt="Bartier &amp; Co"><span>Document interne · 23 novembre 2026</span></header>
+  <h1>Lancer un client</h1>
+  <p class="lead">De la signature au lancement des annonces, en une semaine environ. Le client fait quatre choses, Bartier &amp; Co fait tout le reste.</p>
+
+  <h2><span class="n">1</span>Côté client : 4 actions</h2>
+  <div class="four">
+    <div><b>1</b>Il signe le contrat et paie.</div>
+    <div><b>2</b>Il remplit le formulaire de démarrage : 5 minutes.</div>
+    <div><b>3</b>Il vous donne ses accès Facebook et Google Ads.</div>
+    <div><b>4</b>Il ajoute sa carte dans Google Ads et fait la vérification d’annonceur de Google.</div>
+  </div>
+
+  <h2><span class="n">2</span>Le déroulé</h2>
+  <table>
+    <tr><th>Quand</th><th>Quoi</th><th>Qui</th></tr>
+    <tr><td class="when">Jour 0</td><td>Signature. Le jour même, un seul e-mail de bienvenue : formulaire, accès, date de l’appel (page 2).</td><td class="who">Vous</td></tr>
+    <tr><td class="when">Jours 1 à 2</td><td>Il remplit le formulaire, donne ses accès, envoie son logo et ses photos. Il lance la vérification d’annonceur de Google.</td><td class="who">Client</td></tr>
+    <tr><td class="when">Jour 2</td><td>Appel de lancement, 30 minutes, avec un ordre du jour envoyé avant (page 3).</td><td class="who">Ensemble</td></tr>
+    <tr><td class="when">Jours 3 à 5</td><td>Domaine, page, pixel Meta, conversion Google, annonces, test d’une vraie demande (page 4).</td><td class="who">Vous</td></tr>
+    <tr><td class="when">Jour 5</td><td>Il valide sa page et ses annonces.</td><td class="who">Client</td></tr>
+    <tr><td class="when">Jour 6</td><td>Lancement des annonces.</td><td class="who">Vous</td></tr>
+    <tr><td class="when">Ensuite</td><td>Chaque demande arrive chez lui dans la minute. Point toutes les deux semaines, rapport chaque mois (page 5).</td><td class="who">Vous</td></tr>
+  </table>
+  <p class="small muted">Le seul délai que vous ne maîtrisez pas : la vérification d’annonceur de Google, qui peut prendre plusieurs jours. D’où l’intérêt de la lancer dès la signature.</p>
+
+  <h2 style="margin-top:12px"><span class="n">3</span>Les règles qui font la différence</h2>
+  <ul>
+    <li><b>Tout régler au départ :</b> contrat, accès, informations. On ne court pas après le client la semaine du lancement.</li>
+    <li><b>Un seul message de bienvenue</b>, qui contient tout ce dont il a besoin.</li>
+    <li><b>Un ordre du jour avant l’appel</b> : l’appel est court et ne sert qu’à décider.</li>
+    <li><b>Un seul canal de contact</b> (WhatsApp, 07 81 01 89 36) et des rapports à date fixe.</li>
+    <li><b>Chaque demande rappelée vite.</b> C’est ce qui fait signer des chantiers, plus que la publicité elle-même.</li>
+  </ul>
+  <footer class="src">Sources : guides d’accueil client pour agences publicitaires (Search Engine Land, AgencyAnalytics, procédure #PPCChat publiée par Karooya).</footer>
+</section>
+
+<!-- ——— Page 2 : l'e-mail de bienvenue ——— -->
+<section class="page">
+  <header class="top"><img src="../v8b/assets/logo-bartier-wordmark.svg" alt="Bartier &amp; Co"><span>Lancer un client · L’e-mail de bienvenue</span></header>
+  <h2><span class="n">4</span>L’e-mail de bienvenue</h2>
+  <p>À envoyer le jour de la signature, depuis contact@bartierandco.com. Remplacez ce qui est <span class="ph">surligné</span>.</p>
+  <div class="mail">
+    <div class="hd"><b>Objet :</b> Bienvenue chez Bartier &amp; Co : 3 étapes pour démarrer</div>
+    <div class="bd">
+      <p>Bonjour <span class="ph">Prénom</span>,</p>
+      <p>Merci pour votre confiance. Pour que votre page et vos annonces soient en ligne au plus vite, il nous faut trois choses de votre part :</p>
+      <p><b>1. Le formulaire de démarrage (5 minutes)</b><br>
+      <span class="url">https://docs.google.com/forms/d/e/1FAIpQLSeGF6tEZCbA7OYP6rGWO_vq22b_bZcUwqyhfMkvVGXXdne1_g/viewform</span></p>
+      <p><b>2. L’accès à vos comptes Facebook et Google Ads</b><br>
+      <span class="ph">Le lien d’accès, ou : les deux guides en pièce jointe, selon que vous avez déjà Facebook et Google Ads ou non.</span> Vos comptes restent à votre nom : nous les gérons pour vous. Vous n’avez pas de compte Google Ads ? Nous le créons, et vous n’aurez qu’à y ajouter votre carte.</p>
+      <p><b>3. Votre logo et 10 à 20 photos de vos chantiers</b><br>
+      Par WhatsApp au 07 81 01 89 36, ou en réponse à cet e-mail. De vraies photos, avant et après si possible.</p>
+      <p>Google vous demandera aussi de confirmer votre identité (« vérification de l’annonceur »). Faites-le dès réception : c’est souvent l’étape la plus longue.</p>
+      <p><b>Notre appel de lancement : <span class="ph">jour, date, heure</span></b>, 30 minutes. Au programme :</p>
+      <ol>
+        <li>vos objectifs : combien de chantiers en plus, et lesquels ;</li>
+        <li>votre zone et les chantiers que vous ne voulez pas ;</li>
+        <li>votre budget publicitaire ;</li>
+        <li>qui rappelle les demandes, et en combien de temps ;</li>
+        <li>ce que nous allons montrer sur votre page et dans vos annonces ;</li>
+        <li>les prochaines étapes.</li>
+      </ol>
+      <p>Une question d’ici là ? Un seul numéro : 07 81 01 89 36, par WhatsApp ou par téléphone.</p>
+      <p>À très vite,<br><span class="ph">Prénom</span>, Bartier &amp; Co</p>
+    </div>
+  </div>
+  <div class="box blue small"><b>Pièces jointes, si vous n’utilisez pas de lien d’accès :</b> le guide Meta 1 ou 2 et le guide Google 1 ou 2, selon ses réponses au formulaire (page Facebook, compte Google Ads).</div>
+</section>
+
+<!-- ——— Page 3 : l'appel de lancement ——— -->
+<section class="page">
+  <header class="top"><img src="../v8b/assets/logo-bartier-wordmark.svg" alt="Bartier &amp; Co"><span>Lancer un client · L’appel de lancement</span></header>
+  <h2><span class="n">5</span>L’appel de lancement (30 minutes)</h2>
+  <h3>Avant l’appel, préparez</h3>
+  <ul class="check">
+    <li>Ses réponses au formulaire (tableau des réponses).</li>
+    <li>Sa fiche sur <b>annuaire-entreprises.data.gouv.fr</b>, avec son SIRET : raison sociale, forme, capital, siège, immatriculation, TVA, dirigeant. Ce sont ses mentions légales.</li>
+    <li>Sa fiche Google : note, nombre d’avis, photos.</li>
+    <li>Les accès : sont-ils arrivés sur Meta et sur Google Ads ?</li>
+  </ul>
+  <h3>Pendant l’appel</h3>
+  <table>
+    <tr><th>Sujet</th><th>Ce qu’on décide</th><th>Durée</th></tr>
+    <tr><td><b>Objectifs</b></td><td>Combien de chantiers en plus par mois. Les travaux à développer en priorité.</td><td class="who">5 min</td></tr>
+    <tr><td><b>Zone et refus</b></td><td>Le rayon confirmé. Les chantiers qu’il ne veut pas (trop petits, trop loin, certains travaux). Ses périodes de congés.</td><td class="who">5 min</td></tr>
+    <tr><td><b>Budget</b></td><td>Le budget publicitaire mensuel, payé par lui à Google et à Meta, et sa répartition entre les deux.</td><td class="who">5 min</td></tr>
+    <tr><td><b>Rappel des demandes</b></td><td>Qui rappelle, en combien de temps. L’adresse e-mail qui reçoit chaque demande. Ses tarifs, s’il veut que l’estimation les utilise.</td><td class="who">5 min</td></tr>
+    <tr><td><b>Page et annonces</b></td><td>Ce qu’on montre : ses photos, ses qualifications, ses avis. Ce qu’on ne promet pas.</td><td class="who">5 min</td></tr>
+    <tr><td><b>Suite</b></td><td>La date de validation de la page et des annonces. La date de lancement. Le jour du point toutes les deux semaines.</td><td class="who">5 min</td></tr>
+  </table>
+  <div class="box warn small"><b>Règle :</b> rien d’inventé sur sa page. Pas d’avis, de chiffres ou de qualifications qu’il ne peut pas prouver. Seulement ses vraies photos.</div>
+</section>
+
+<!-- ——— Page 4 : la production ——— -->
+<section class="page">
+  <header class="top"><img src="../v8b/assets/logo-bartier-wordmark.svg" alt="Bartier &amp; Co"><span>Lancer un client · La production</span></header>
+  <h2><span class="n">6</span>La production (jours 3 à 5)</h2>
+  <p class="muted">Tout se fait avec l’outil des pages clients, <code>explorations/lp-estimation</code>. Le mode d’emploi détaillé est dans son README.</p>
+  <ul class="check">
+    <li><b>Le domaine.</b> Un nom à son nom, par exemple dupont-toiture.com. En .com, achetez-le dans Vercel (12,03 $ par an) : il se branche tout seul. En .fr, achetez-le chez OVH ou Gandi, puis ajoutez la ligne que Vercel indique.</li>
+    <li><b>Sa fiche.</b> Copiez <code>clients/exemple.json</code> et remplissez-la avec le formulaire et l’annuaire des entreprises. La correspondance question par question est dans <code>onboarding/README.md</code>. Mettez <code>"envoi": "tableau"</code> et son e-mail dans <code>alerte_email</code>.</li>
+    <li><b>Meta.</b> Dans votre portefeuille Bartier &amp; Co, créez un pixel à son nom et reliez-le à son compte publicitaire. Générez le jeton de l’API Conversions. Désactivez la « correspondance avancée automatique ». Notez l’identifiant du pixel dans <code>meta_pixel</code>.</li>
+    <li><b>Google.</b> Dans son compte Google Ads, créez la conversion « Demande de devis » : Objectifs, Conversions, nouvelle action de type Site Web, configuration manuelle. Notez l’identifiant AW-… et le libellé dans <code>google_ads</code>.</li>
+    <li><b>La page.</b> Générez-la : <code>python3 build.py clients/&lt;client&gt;.json</code>. Corrigez tout ce que l’outil signale « à compléter ».</li>
+    <li><b>La mise en ligne.</b> Un projet Vercel pour le client, avec ses variables : <code>LEAD_SHEET_URL</code>, <code>LEAD_SHEET_KEY</code>, <code>META_ACCESS_TOKEN</code>, et <code>META_TEST_EVENT_CODE</code> pendant les tests. Branchez le domaine.</li>
+    <li><b>Le test.</b> Ouvrez la page avec <code>?fbclid=test</code> à la fin de l’adresse et envoyez une vraie demande. Vérifiez trois choses : la ligne dans l’onglet du client, l’e-mail reçu par l’artisan, le Lead dans « Tester les événements » de Meta. Puis retirez le code de test.</li>
+    <li><b>Les annonces.</b> Rédigez-les, faites-les valider avec la page, et lancez.</li>
+  </ul>
+  <div class="box green small"><b>Comptez environ une heure par client</b> une fois le premier fait : un quart d’heure pour Meta et Google, le reste pour la fiche, la page et le test. C’est une estimation, à ajuster après les premiers clients.</div>
+</section>
+
+<!-- ——— Page 5 : après le lancement ——— -->
+<section class="page">
+  <header class="top"><img src="../v8b/assets/logo-bartier-wordmark.svg" alt="Bartier &amp; Co"><span>Lancer un client · Après le lancement</span></header>
+  <h2><span class="n">7</span>Après le lancement</h2>
+  <div class="cols">
+    <div>
+      <h3 style="margin-top:0">Chaque demande</h3>
+      <p>Elle s’écrit en une ligne dans l’onglet du client du Google Sheet « Bartier &amp; Co, demandes clients ». Dans la minute, l’artisan reçoit cet e-mail, avec le numéro cliquable depuis son téléphone.</p>
+      <p>La colonne <b>Suivi</b> dit ce que rapportent les annonces : À rappeler, Rappelé, Qualifié, Visite fixée, Devis remis, Signé, Sans suite, Hors zone. Tenez-la à jour à chaque point avec l’artisan.</p>
+      <h3>Toutes les deux semaines</h3>
+      <p>Un point de 15 minutes : les demandes reçues, leur qualité, ce que l’artisan a signé, ce qu’on ajuste.</p>
+      <h3>Chaque mois</h3>
+      <p>Un rapport court, toujours le même jour :</p>
+      <ul>
+        <li>demandes reçues, qualifiées et devis signés ;</li>
+        <li>budget dépensé sur Google et sur Meta ;</li>
+        <li>coût par demande qualifiée, canal par canal ;</li>
+        <li>ce qu’on change le mois suivant.</li>
+      </ul>
+      <p class="small muted">Vos chiffres viennent du tableau, qui contient toutes les demandes. Meta et Google n’en voient qu’une partie : celles des visiteurs qui ont donné leur accord.</p>
+    </div>
+    <div>
+      <p class="small muted" style="margin-bottom:6px">L’e-mail que reçoit l’artisan (exemple fictif) :</p>
+      <div class="preview"><div class="sj">Nouvelle demande : Jeanne, Toiture, 59000 Lille</div><!--EMAIL--></div>
+    </div>
+  </div>
+</section>
+
+<!-- ——— Page 6 : à mettre en place une fois, et le contrat ——— -->
+<section class="page">
+  <header class="top"><img src="../v8b/assets/logo-bartier-wordmark.svg" alt="Bartier &amp; Co"><span>Lancer un client · À mettre en place une fois</span></header>
+  <h2><span class="n">8</span>À mettre en place une seule fois, avant le premier client</h2>
+  <table>
+    <tr><th>Quoi</th><th>Comment</th><th>État</th></tr>
+    <tr><td><b>Formulaire de démarrage</b></td><td>En ligne. Liens dans <code>onboarding/README.md</code>.</td><td><span class="tag ok">Fait</span></td></tr>
+    <tr><td><b>Google Sheet des demandes</b></td><td>Créer « Bartier &amp; Co, demandes clients » avec adminbartier, y coller <code>lp-estimation/sheets/apps-script.gs</code>, choisir une clé, déployer en application Web. Sans lui, les pages ne reçoivent rien.</td><td><span class="tag todo">À faire</span></td></tr>
+    <tr><td><b>E-mail à l’artisan</b></td><td>Inclus dans le script du tableau. Il part du compte qui déploie le script : une centaine d’e-mails par jour avec un Gmail gratuit.</td><td><span class="tag ok">Prêt</span></td></tr>
+    <tr><td><b>Vercel en offre Pro</b></td><td>Le compte « InReach » est en offre gratuite, que Vercel réserve à un usage non commercial. Les pages clients et bartierandco.com sont commerciales.</td><td><span class="tag todo">À faire</span></td></tr>
+    <tr><td><b>Accès en un seul lien</b></td><td>Leadsie : le client clique et coche Meta et Google. Environ 49 $ par mois jusqu’à 3 nouveaux clients par mois (tarif affiché par Leadsie). Sinon, les guides Word, déjà prêts.</td><td><span class="tag dec">À décider</span></td></tr>
+    <tr><td><b>Modèle de contrat</b></td><td>Avec les clauses ci-dessous, relu par un avocat.</td><td><span class="tag todo">À faire</span></td></tr>
+    <tr><td><b>SIREN de Bartier &amp; Co</b></td><td>Pour facturer, et pour la vérification d’agence de Google.</td><td><span class="tag todo">En cours</span></td></tr>
+    <tr><td><b>Sécuriser adminbartier</b></td><td>Validation en deux étapes et codes de secours : ce compte ouvre tous vos clients.</td><td><span class="tag todo">À faire</span></td></tr>
+  </table>
+
+  <h2 style="margin-top:18px"><span class="n">9</span>Le contrat : les clauses à prévoir</h2>
+  <p class="small muted">Une liste de points à couvrir, pas un contrat. À faire rédiger ou relire par un avocat.</p>
+  <ul>
+    <li><b>La prestation :</b> page, annonces Google et Meta, suivi des demandes, point toutes les deux semaines, rapport mensuel.</li>
+    <li><b>Le prix et la durée :</b> abonnement mensuel, durée minimale s’il y en a une, préavis.</li>
+    <li><b>Le budget publicitaire :</b> payé par le client directement à Google et à Meta, sur ses comptes, avec sa carte. Il est distinct de vos honoraires.</li>
+    <li><b>Une obligation de moyens :</b> vous vous engagez sur le travail (page, annonces, suivi), pas sur un nombre de chantiers.</li>
+    <li><b>Ce qui appartient à qui :</b> ses comptes publicitaires et sa page Facebook restent à lui. Le domaine, la page et le pixel : à préciser, avec ce qui se passe s’il part (transfert ou non).</li>
+    <li><b>Les données de ses prospects :</b> un accord de sous-traitance (article 28 du RGPD). Vous traitez les coordonnées de ses prospects pour son compte.</li>
+    <li><b>Ses engagements :</b> rappeler les demandes, donner des informations exactes (assurance, qualifications), valider la page et les annonces.</li>
+    <li><b>La résiliation :</b> préavis, et ce qui est coupé, et quand.</li>
+  </ul>
+</section>
+
+</body>
+</html>
