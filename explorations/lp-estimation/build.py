@@ -331,6 +331,13 @@ def plats(cfg):
     return "Meta et Google" if meta and goo else "Meta" if meta else "Google" if goo else ""
 
 
+def alertes(cfg):
+    """Adresses de l'artisan prévenues par e-mail à chaque demande (champ alerte_email : une adresse, une liste, ou séparées par des virgules)."""
+    v = cfg.get("alerte_email", "")
+    vals = v if isinstance(v, list) else str(v).split(",")
+    return [x.strip() for x in vals if re.fullmatch(r"[^\s@<>,;]+@[^\s@<>,;]+\.[A-Za-z]{2,}", x.strip())][:3]
+
+
 def need(cfg, warn):
     lg = cfg.get("legal", {})
     for k, lab in [("raison_sociale", "raison sociale"), ("forme", "forme juridique"), ("siege", "siège"), ("siret", "SIRET"),
@@ -341,6 +348,8 @@ def need(cfg, warn):
         warn.append("téléphone manquant (mentions légales)")
     if not envoi_url(cfg) and not pub_wa(cfg):
         warn.append("aucune réception des demandes : mettez « envoi » à \"tableau\" (une ligne par demande dans le Google Sheet)")
+    if envoi_url(cfg) == "/api/lead/" and not alertes(cfg):
+        warn.append("alerte_email manquant : l’artisan ne sera pas prévenu par e-mail des nouvelles demandes")
     g = cfg.get("google_ads") or {}
     if (g.get("id") or g.get("label")) and not ga_send_to(cfg):
         warn.append("google_ads : « id » (AW-123456789) ou « label » invalide, la balise Google n’est pas posée")
@@ -1270,7 +1279,8 @@ def build(path):
         fn = (HERE / "api_lead.js").read_text(encoding="utf-8")
         fn = (fn.replace("__CLIENT__", json.dumps(cfg["entreprise"], ensure_ascii=False))
                 .replace("__METIERS__", json.dumps({k: M[k]["nom"] for k in keys}, ensure_ascii=False))
-                .replace("__PIXEL__", json.dumps(re.sub(r"\D", "", str(cfg.get("meta_pixel", ""))))))
+                .replace("__PIXEL__", json.dumps(re.sub(r"\D", "", str(cfg.get("meta_pixel", "")))))
+                .replace("__ALERTE__", json.dumps(alertes(cfg))))
         (out / "api" / "lead.js").write_text(fn, encoding="utf-8")
         print("  demandes : une ligne par demande dans le Google Sheet (fonction /api/lead/ ; LEAD_SHEET_URL et LEAD_SHEET_KEY à régler sur Vercel)"
               + (" ; API Conversions de Meta si META_ACCESS_TOKEN est réglé" if cfg.get("meta_pixel") else ""))

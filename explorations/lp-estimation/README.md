@@ -47,6 +47,7 @@ Pour qu'une annonce mène directement au bon projet, ajoutez `projet=` à l'adre
 | `boutons_appel` | `false` par défaut : aucun bouton d'appel ni WhatsApp, toutes les demandes passent par le formulaire. `true` : boutons d'appel (en-tête, zone, fin de page, résultat) et WhatsApp si `whatsapp` est rempli |
 | `whatsapp` | Numéro WhatsApp au format international sans `+` (ex. `33612345678`). Utilisé seulement avec `boutons_appel` |
 | `envoi` | `"tableau"` : chaque demande devient une ligne du Google Sheet (voir plus bas). C'est le réglage à utiliser. Une adresse https (Formspree, webhook) marche aussi |
+| `alerte_email` | Adresse de l'artisan prévenue par e-mail à chaque nouvelle demande (jusqu'à 3, séparées par des virgules). Avec `"envoi": "tableau"` |
 | `zone` | Zone d'intervention affichée en haut de page (ex. « Lille et 30 km autour »). Vide, elle se déduit de `ville` et `rayon_km` |
 | `ville` | Commune d'où part l'artisan (ex. « Lille »). Centre de la carte de la zone d'intervention |
 | `rayon_km` | Rayon d'intervention en kilomètres (ex. `30`). Avec `ville`, il dessine la carte et sert au contrôle de zone |
@@ -72,6 +73,8 @@ La génération liste les champs obligatoires manquants (« à compléter »). U
 Avec `"envoi": "tableau"`, la génération ajoute au dossier du client une fonction `api/lead.js` (source : `api_lead.js`). La page lui envoie la demande ; la fonction vérifie les champs et l'écrit en une ligne, en haut de l'onglet du client, dans le Google Sheet « Bartier & Co, demandes clients ». L'onglet se crée tout seul à la première demande. La colonne « Suivi » propose : À rappeler, Rappelé, Qualifié, Visite fixée, Devis remis, Signé, Sans suite, Hors zone.
 
 Chaque ligne garde aussi la source de la visite : les paramètres `utm_*`, l'identifiant de clic Google (`gclid`, `gbraid`, `wbraid`) et Meta (`fbclid`), l'accord donné pour la mesure des annonces, et un identifiant de demande. Une même demande renvoyée après une coupure n'est écrite qu'une fois.
+
+Dès que la ligne est écrite, l'artisan reçoit un e-mail avec la demande en clair et le numéro cliquable (adresses du champ `alerte_email`). L'e-mail part du compte Google qui a déployé le script ; un compte Gmail gratuit peut en envoyer une centaine par jour. Pour recevoir une copie de chaque alerte, mettez une adresse de Bartier & Co dans la constante `COPIE` du script. Une panne d'envoi n'empêche jamais la ligne d'être écrite.
 
 Si l'envoi échoue (connexion coupée), le visiteur voit « Votre demande n'est pas partie » et un bouton « Réessayer l'envoi ».
 
@@ -110,7 +113,7 @@ Redéployez après avoir ajouté les variables. Sans `LEAD_SHEET_URL` et `LEAD_S
 node --test tests/*.test.js
 ```
 
-Ils vérifient la fonction `/api/lead/` : ligne écrite, `Lead` envoyé à Meta seulement avec accord et sans données personnelles, refus d'un autre site, champ piège, champs invalides, panne du tableau ou de Meta.
+Ils vérifient le script du tableau (ligne, e-mail à l'artisan, doublons, clé, panne d'envoi) et la fonction `/api/lead/` : ligne écrite, `Lead` envoyé à Meta seulement avec accord et sans données personnelles, refus d'un autre site, champ piège, champs invalides, panne du tableau ou de Meta.
 
 ## Le parcours
 

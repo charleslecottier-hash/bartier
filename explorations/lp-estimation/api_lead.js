@@ -6,7 +6,7 @@
  *      à l'API Conversions de Meta, avec l'identifiant de clic lu dans l'adresse de la page.
  *
  * Fichier source : lp-estimation/api_lead.js. build.py le copie dans dist/<client>/api/lead.js
- * en remplissant les trois constantes CLIENT, METIERS et PIXEL. Fonction Vercel Node.js, CommonJS, sans dépendance.
+ * en remplissant les constantes CLIENT, METIERS, PIXEL et ALERTE. Fonction Vercel Node.js, CommonJS, sans dépendance.
  *
  * Variables d'environnement du projet Vercel du client (aucune adresse ni clé dans le code) :
  *   LEAD_SHEET_URL         adresse /exec de l'application Web Apps Script
@@ -21,6 +21,7 @@
 const CLIENT = __CLIENT__;
 const METIERS = __METIERS__;
 const PIXEL = __PIXEL__;
+const ALERTE = __ALERTE__; // adresses de l'artisan prévenues à chaque demande (fiche client : alerte_email)
 
 const MAX_BODY = 10 * 1024;
 const TIMEOUT_MS = 8000;
@@ -117,7 +118,7 @@ async function sendSheet(lead, env) {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
-    const body = JSON.stringify({ cle: String(env.LEAD_SHEET_KEY).trim(), client: CLIENT, lead });
+    const body = JSON.stringify({ cle: String(env.LEAD_SHEET_KEY).trim(), client: CLIENT, alerte: ALERTE, lead });
     let r = await fetch(String(env.LEAD_SHEET_URL).trim(), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, signal: ctrl.signal, redirect: 'manual' });
     if (r.status === 301 || r.status === 302 || r.status === 303) {
       let loc;

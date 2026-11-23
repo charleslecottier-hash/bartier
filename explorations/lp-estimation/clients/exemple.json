@@ -8,6 +8,7 @@
   "boutons_appel": false,
   "whatsapp": "33639980000",
   "envoi": "tableau",
+  "alerte_email": "",
   "zone": "Lille et 30 km autour",
   "ville": "Lille",
   "rayon_km": 30,

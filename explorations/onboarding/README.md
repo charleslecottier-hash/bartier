@@ -46,7 +46,7 @@ Le logo et les photos arrivent à part, par WhatsApp (07 81 01 89 36), par e-mai
 |---|---|
 | Nom de l'entreprise affiché | `entreprise` (et `slug`, en minuscules avec des tirets) |
 | Numéro SIRET | `legal.siret`, puis dans l'annuaire des entreprises : `legal.raison_sociale`, `legal.forme`, `legal.capital`, `legal.siege`, `legal.rcs`, `legal.tva`, `legal.directeur_publication` (le dirigeant, à confirmer à l'appel) |
-| Votre e-mail | `legal.email` |
+| Votre e-mail | `legal.email` et `alerte_email` (l'artisan reçoit chaque demande à cette adresse) |
 | Votre téléphone | `telephone` (mentions légales seulement) |
 | Assurance décennale | `legal.assurance_decennale` |
 | Médiateur de la consommation | `legal.mediateur` |

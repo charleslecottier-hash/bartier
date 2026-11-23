@@ -12,7 +12,8 @@ function load(pixel) {
   const src = fs.readFileSync(path.join(__dirname, '..', 'api_lead.js'), 'utf8')
     .replace('__CLIENT__', JSON.stringify('Toitures Test'))
     .replace('__METIERS__', JSON.stringify({ toiture: 'Toiture' }))
-    .replace('__PIXEL__', JSON.stringify(pixel));
+    .replace('__PIXEL__', JSON.stringify(pixel))
+    .replace('__ALERTE__', JSON.stringify(['artisan@exemple.fr']));
   const f = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'lead-')), 'lead.js');
   fs.writeFileSync(f, src);
   return require(f);
@@ -58,6 +59,7 @@ test('demande valide : une ligne dans le tableau et un Lead Meta avec l’identi
   assert.strictEqual(r.status, 200); assert.strictEqual(r.body.ok, true);
   const sheet = JSON.parse(calls.find((c) => c.url === SHEET).init.body);
   assert.strictEqual(sheet.client, 'Toitures Test');
+  assert.deepStrictEqual(sheet.alerte, ['artisan@exemple.fr']);
   assert.strictEqual(sheet.lead.fields.telephone, '+33612345678');
   assert.strictEqual(sheet.lead.metier, 'Toiture');
   assert.strictEqual(sheet.lead.accord, 'question');
