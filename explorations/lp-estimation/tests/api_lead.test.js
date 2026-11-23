@@ -49,6 +49,9 @@ function mockFetch(calls, opts) {
     if (String(url).startsWith(SHEET)) return { status: 302, headers: { get: () => 'https://script.googleusercontent.com/macros/echo?x=1' } };
     if (String(url).startsWith('https://script.googleusercontent.com/')) return { status: 200, ok: true, text: async () => JSON.stringify({ ok: !opts.sheetFails }) };
     if (String(url).startsWith('https://graph.facebook.com/')) return { status: opts.metaStatus || 200, ok: !opts.metaStatus };
+    if (String(url) === 'https://services.leadconnectorhq.com/contacts/upsert') return opts.ghlStatus
+      ? { status: opts.ghlStatus, ok: false } : { status: 201, ok: true, json: async () => ({ new: true, contact: { id: 'abcDEF123456' } }) };
+    if (String(url) === 'https://services.leadconnectorhq.com/contacts/abcDEF123456/notes') return { status: 201, ok: true };
     throw new Error('hôte inattendu ' + url);
   };
 }
@@ -143,4 +146,44 @@ test('identifiant de clic douteux : ignoré', async () => {
   await call(h, payload({ tracking: { fbclid: 'abc<script>' } }));
   const sheet = JSON.parse(calls.find((c) => c.url === SHEET).init.body);
   assert.ok(!('fbclid' in sheet.lead.tracking));
+});
+
+const GHL_ENV = { GHL_TOKEN: 'pit-0123456789abcdef0123456789', GHL_LOCATION_ID: 've9EPM428h8vShlRW1KT' };
+
+test('GoHighLevel seul : contact créé avec l’étiquette, puis note détaillée', async () => {
+  const h = load('123456789012345'); const calls = []; mockFetch(calls);
+  const r = await call(h, payload(), null, GHL_ENV);
+  assert.strictEqual(r.status, 200);
+  const up = calls.find((c) => c.url.endsWith('/contacts/upsert'));
+  assert.strictEqual(up.init.headers.Version, '2021-07-28');
+  assert.strictEqual(up.init.headers.Authorization, 'Bearer pit-0123456789abcdef0123456789');
+  const b = JSON.parse(up.init.body);
+  assert.strictEqual(b.locationId, 've9EPM428h8vShlRW1KT');
+  assert.strictEqual(b.phone, '+33612345678');
+  assert.strictEqual(b.firstName, 'Jeanne');
+  assert.deepStrictEqual(b.tags, ['demande-estimation', 'metier-toiture']);
+  const note = JSON.parse(calls.find((c) => c.url.endsWith('/notes')).init.body).body;
+  assert.match(note, /Travaux : Réfection/);
+  assert.match(note, /ID de la demande : abcdef12-3456-7890-abcd-ef1234567890/);
+  assert.ok(!calls.some((c) => c.url.startsWith(SHEET)), 'pas de tableau réglé');
+});
+
+test('GoHighLevel en panne mais tableau réglé : la demande est enregistrée', async () => {
+  const h = load(''); const calls = []; mockFetch(calls, { ghlStatus: 500 });
+  const r = await call(h, payload(), null, Object.assign({}, ENV, GHL_ENV));
+  assert.strictEqual(r.status, 200);
+  assert.ok(calls.some((c) => c.url === SHEET));
+});
+
+test('GoHighLevel et tableau en panne : erreur, la page propose de réessayer', async () => {
+  const h = load(''); const calls = []; mockFetch(calls, { ghlStatus: 401, sheetFails: true });
+  const r = await call(h, payload(), null, Object.assign({}, ENV, GHL_ENV));
+  assert.strictEqual(r.status, 502);
+});
+
+test('identifiant de sous-compte invalide : GoHighLevel considéré comme non réglé', async () => {
+  const h = load(''); const calls = []; mockFetch(calls);
+  const r = await call(h, payload(), null, { GHL_TOKEN: GHL_ENV.GHL_TOKEN, GHL_LOCATION_ID: 'x/../y' });
+  assert.strictEqual(r.status, 503);
+  assert.strictEqual(calls.length, 0);
 });

@@ -117,6 +117,9 @@ def faq_html(m, cfg, key):
     c = cfg.get("contact", {})
     pre, role, rappel = c.get("prenom", "").strip(), c.get("role", "").strip(), cfg.get("rappel", "").strip()
     who_txt = (f"{pre}, {role} de {ent}." if pre and role else f"{pre}, de {ent}." if pre else f"{ent}.") + (f" {rappel}." if rappel else "")
+    if cfg.get("prise_rdv"):
+        avec = f"{pre}, {role} de {ent}" if pre and role else f"{pre}, de {ent}" if pre else f"l’équipe de {ent}"
+        who_txt = f"Le service rendez-vous de {ent} vous appelle pour fixer une visite avec {avec}." + (f" {rappel}." if rappel else "")
     qa = [("L’estimation est-elle gratuite ?", "Oui. Elle est gratuite et ne vous engage à rien."),
           ("D’où viennent les prix ?", f"Des tarifs indicatifs de {ent}, pose comprise." if own else
            f"Des prix moyens publiés par {m['sources']}, pose comprise. Chaque ligne de l’estimation cite sa source et sa date."),
@@ -348,7 +351,7 @@ def need(cfg, warn):
         warn.append("téléphone manquant (mentions légales)")
     if not envoi_url(cfg) and not pub_wa(cfg):
         warn.append("aucune réception des demandes : mettez « envoi » à \"tableau\" (une ligne par demande dans le Google Sheet)")
-    if envoi_url(cfg) == "/api/lead/" and not alertes(cfg):
+    if envoi_url(cfg) == "/api/lead/" and not alertes(cfg) and not cfg.get("prise_rdv"):
         warn.append("alerte_email manquant : l’artisan ne sera pas prévenu par e-mail des nouvelles demandes")
     g = cfg.get("google_ads") or {}
     if (g.get("id") or g.get("label")) and not ga_send_to(cfg):
@@ -427,7 +430,7 @@ def steps_html(m, cfg, accent, photo_url=""):
         '<div><label class="es-lab" for="es-tel">Téléphone</label><input class="es-in" id="es-tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required aria-invalid="false" enterkeyhint="done" placeholder="06 12 34 56 78"></div>'
         '</div>'
         '<input class="es-hp" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">'
-        f'<p class="es-priv">{ico("lock")}<span class="es-consent">{e("En validant, vous acceptez d’être rappelé par " + cfg["entreprise"] + " au sujet de ce projet. Vos coordonnées ne servent qu’à cela : elles ne sont ni vendues ni cédées.")}</span></p>'
+        f'<p class="es-priv">{ico("lock")}<span class="es-consent">{e(("En validant, vous acceptez d’être contacté par " + cfg["entreprise"] + ", par téléphone et par SMS, pour fixer une visite au sujet de ce projet." if cfg.get("prise_rdv") else "En validant, vous acceptez d’être rappelé par " + cfg["entreprise"] + " au sujet de ce projet.") + " Vos coordonnées ne servent qu’à cela : elles ne sont ni vendues ni cédées.")}</span></p>'
         + (f'<fieldset class="es-mes" data-req="mesure" data-miss="votre réponse sur la mesure des annonces" hidden>'
            f'<legend>{e("Autorisez-vous " + cfg["entreprise"] + " à indiquer à " + plats(cfg) + " que votre demande vient de leur publicité ?")}</legend>'
            f'<p>{e("Cela sert à mesurer ses annonces. Ni votre nom ni votre numéro ne leur sont transmis.")}</p>'
@@ -441,6 +444,9 @@ def who_card(cfg, photo_url=""):
     av, title, person = who(cfg, photo_url)
     line = cfg.get("rappel") or "Rappel gratuit, sans engagement"
     head = f"{title}, vous rappelle" if person and "," in title else f"{title} vous rappelle"
+    if cfg.get("prise_rdv"):
+        head = f"{title}, vient chiffrer chez vous" if person and "," in title else f"{title} vient chiffrer chez vous"
+        line = cfg.get("rappel") or "Visite et devis gratuits"
     return f'<div class="es-who es-who-card"><span class="es-av">{av}</span><p><b>{e(head)}</b><span>{e(line)}</span></p></div>'
 
 
@@ -473,7 +479,7 @@ def cfg_js(key, m, cfg):
     recap = [q["name"] for st in m["steps"] for q in st["qs"] if q["t"] == "tiles"]
     _, title, person = who(cfg)
     return dict(key=key, nom=m["nom"], ent=cfg["entreprise"], who=title if person else cfg["entreprise"], tel=tel, telh="+33" + re.sub(r"\D", "", tel)[1:] if tel else "",
-                wa=pub_wa(cfg), envoi=envoi_url(cfg), ga=ga_send_to(cfg), tags=bool(plats(cfg)), deps=cfg.get("departements", []), zone=cfg.get("zone", ""),
+                wa=pub_wa(cfg), envoi=envoi_url(cfg), ga=ga_send_to(cfg), tags=bool(plats(cfg)), rdv=bool(cfg.get("prise_rdv")), deps=cfg.get("departements", []), zone=cfg.get("zone", ""),
                 base=({"lat": cfg["_zone"]["lat"], "lon": cfg["_zone"]["lon"], "km": cfg["_zone"]["km"]} if cfg.get("_zone") else None),
                 horaires=fr(cfg.get("horaires", "")), px=cfg.get("meta_pixel", ""), qty=m["qty"], opts=opts, recap=recap, geo=GEO,
                 visite=[dict(r, txt=fr(r["txt"])) for r in m.get("visite", [])], notes=[dict(r, txt=fr(r["txt"])) for r in m.get("notes", [])],
@@ -1009,7 +1015,7 @@ function render(E,pr,telf,state){var sel=f.querySelector('.es-opt[aria-checked="
   var call=C.tel?'<a class="es-btn es-btn-call" href="tel:'+C.telh+'">'+ICO.phone+"Appeler le "+esc(C.tel)+"</a>":"";
   h+='<div class="es-box" data-state="'+state+'"><p class="es-box-k">Prochaine étape</p><p class="es-vh" role="status" data-st></p>'
    +'<div class="es-s-sending"><h3 class="es-box-h">Envoi de votre demande…</h3></div>'
-   +'<div class="es-s-sent"><h3 class="es-box-h">C’est noté, '+esc(pr)+'.</h3><p class="es-box-p">'+esc(C.who)+" vous rappelle au "+(telf?esc(telf):"numéro indiqué")+(C.horaires?", "+esc(C.horaires):"")+' pour fixer une visite et vous remettre un devis.</p>'
+   +'<div class="es-s-sent"><h3 class="es-box-h">C’est noté, '+esc(pr)+'.</h3><p class="es-box-p">'+(C.rdv?"Le service rendez-vous de "+esc(C.ent)+" vous appelle au "+(telf?esc(telf):"numéro indiqué")+(C.horaires?", "+esc(C.horaires):"")+" pour fixer votre visite avec "+esc(C.who)+".":esc(C.who)+" vous rappelle au "+(telf?esc(telf):"numéro indiqué")+(C.horaires?", "+esc(C.horaires):"")+" pour fixer une visite et vous remettre un devis.")+'</p>'
      +(C.wa?'<p class="es-box-p es-box-photo">En attendant, envoyez quelques photos du chantier\u00a0: la visite sera mieux préparée.</p>':"")
      +'<div class="es-acts">'+(C.wa?'<a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa-photo>'+ICO.wa+"Envoyer des photos</a>":"")+call+"</div></div>"
    +'<div class="es-s-manual">'+(C.wa?'<h3 class="es-box-h">Envoyez votre demande à '+esc(C.ent)+'</h3><p class="es-box-p">Votre message est déjà rédigé. Ajoutez-y quelques photos du chantier si vous pouvez\u00a0: la visite sera mieux préparée.</p><div class="es-acts"><a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa>'+ICO.wa+"Envoyer sur WhatsApp</a>"+call+"</div>"
@@ -1093,7 +1099,7 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
     gal_urls, gal_own = photo_urls[key]
     av, title, person = who(cfg, photo_url)
     trust = (f'<div class="es-trust"><div class="es-who"><span class="es-av">{av}</span><p><b>{e(title)}</b>'
-             f'<span>{e(cfg.get("rappel") or ("Vous rappelle personnellement" if person else "Rappel gratuit, sans engagement"))}</span></p></div>{stars(cfg)}</div>')
+             f'<span>{e(cfg.get("rappel") or ("Visite et devis gratuits" if cfg.get("prise_rdv") else "Vous rappelle personnellement" if person else "Rappel gratuit, sans engagement"))}</span></p></div>{stars(cfg)}</div>')
     by = f'<img src="{logo_url}" alt="{a(ent)}" width="150" height="28">' if logo_url else f"<b>{e(ent)}</b>"
     ga = ga_send_to(cfg)
     tags = bool(cfg.get("meta_pixel") or ga)

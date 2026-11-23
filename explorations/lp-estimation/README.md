@@ -47,6 +47,7 @@ Pour qu'une annonce mène directement au bon projet, ajoutez `projet=` à l'adre
 | `boutons_appel` | `false` par défaut : aucun bouton d'appel ni WhatsApp, toutes les demandes passent par le formulaire. `true` : boutons d'appel (en-tête, zone, fin de page, résultat) et WhatsApp si `whatsapp` est rempli |
 | `whatsapp` | Numéro WhatsApp au format international sans `+` (ex. `33612345678`). Utilisé seulement avec `boutons_appel` |
 | `envoi` | `"tableau"` : chaque demande devient une ligne du Google Sheet (voir plus bas). C'est le réglage à utiliser. Une adresse https (Formspree, webhook) marche aussi |
+| `prise_rdv` | `true` quand Bartier & Co appelle chaque prospect pour caler la visite (modèle rendez-vous) : la page annonce « le service rendez-vous de [entreprise] vous appelle pour fixer une visite avec [contact] », et la phrase d'accord couvre l'appel et le SMS. La personne de `contact` est celle qui vient chiffrer |
 | `alerte_email` | Adresse de l'artisan prévenue par e-mail à chaque nouvelle demande (jusqu'à 3, séparées par des virgules). Avec `"envoi": "tableau"` |
 | `zone` | Zone d'intervention affichée en haut de page (ex. « Lille et 30 km autour »). Vide, elle se déduit de `ville` et `rayon_km` |
 | `ville` | Commune d'où part l'artisan (ex. « Lille »). Centre de la carte de la zone d'intervention |
@@ -67,6 +68,16 @@ Pour qu'une annonce mène directement au bon projet, ajoutez `projet=` à l'adre
 | `legal` | Mentions légales de l'artisan : raison sociale, forme, capital, siège, SIRET, RCS, TVA, directeur de la publication, e-mail, assurance décennale, médiateur, hébergeur |
 
 La génération liste les champs obligatoires manquants (« à compléter »). Une page ne doit pas être mise en ligne avec `[à compléter]` dans ses mentions légales.
+
+## GoHighLevel (modèle rendez-vous)
+
+Avec `GHL_TOKEN` et `GHL_LOCATION_ID` réglés sur le projet Vercel du client, chaque demande crée ou met à jour le contact du prospect dans le sous-compte GoHighLevel du client :
+
+- prénom, téléphone, code postal, commune, source « Page d'estimation [entreprise] » ;
+- étiquettes `demande-estimation` et `metier-<métier>` (par exemple `metier-toiture`) : l'automatisation qui démarre sur l'étiquette `demande-estimation` envoie le SMS au prospect et prévient le téléprospecteur ;
+- une note avec toute la demande : travaux, quantité, estimation affichée, détails, délai, statut, lieu, accord, source de la visite et identifiant de la demande.
+
+Le jeton se crée dans le sous-compte : Paramètres, Intégrations privées, avec le droit `contacts.write`. Il ne s'affiche qu'une fois. Le Google Sheet devient facultatif : s'il est aussi réglé, il garde une copie de chaque demande. La demande est enregistrée dès que l'une des deux destinations l'a reçue. Attention : la mise à jour d'un contact existant remplace ses étiquettes.
 
 ## Recevoir les demandes
 

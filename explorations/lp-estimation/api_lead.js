@@ -1,7 +1,9 @@
 'use strict';
 /**
  * POST /api/lead/ : reçoit la demande d'une page d'estimation client et
- *   1. l'écrit en une ligne dans le Google Sheet des demandes (application Web Apps Script, sheets/apps-script.gs) ;
+ *   1. crée ou met à jour le contact dans GoHighLevel (étiquette « demande-estimation » et note détaillée),
+ *      ce qui déclenche l'automatisation de prise de rendez-vous ; et/ou l'écrit en une ligne dans le Google Sheet
+ *      des demandes (application Web Apps Script, sheets/apps-script.gs). Il faut au moins l'un des deux ;
  *   2. si le visiteur a donné son accord (cookies acceptés, ou « oui » à la question de la dernière étape), envoie l'événement « Lead »
  *      à l'API Conversions de Meta, avec l'identifiant de clic lu dans l'adresse de la page.
  *
@@ -9,7 +11,9 @@
  * en remplissant les constantes CLIENT, METIERS, PIXEL et ALERTE. Fonction Vercel Node.js, CommonJS, sans dépendance.
  *
  * Variables d'environnement du projet Vercel du client (aucune adresse ni clé dans le code) :
- *   LEAD_SHEET_URL         adresse /exec de l'application Web Apps Script
+ *   GHL_TOKEN              jeton d'intégration privée du sous-compte GoHighLevel du client (droit contacts.write)
+ *   GHL_LOCATION_ID        identifiant du sous-compte (Location ID)
+ *   LEAD_SHEET_URL         facultatif avec GoHighLevel : adresse /exec de l'application Web Apps Script
  *   LEAD_SHEET_KEY         clé partagée avec ce script (constante CLE de sheets/apps-script.gs)
  *   META_ACCESS_TOKEN      facultatif : jeton d'accès de l'API Conversions (Gestionnaire d'événements)
  *   META_TEST_EVENT_CODE   facultatif : code de test du Gestionnaire d'événements, à retirer après les essais
@@ -137,6 +141,58 @@ async function sendSheet(lead, env) {
   }
 }
 
+/* ---------- GoHighLevel ---------- */
+
+const GHL = 'https://services.leadconnectorhq.com';
+
+function ghlOn(env) {
+  return !!(env.GHL_TOKEN && String(env.GHL_TOKEN).trim().length >= 20 && /^[A-Za-z0-9]{10,40}$/.test(String(env.GHL_LOCATION_ID || '').trim()));
+}
+
+function slugTag(v) {
+  return String(v).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+// La note lue par le téléprospecteur : la demande complète, en clair.
+function noteGhl(lead) {
+  const f = lead.fields, t = lead.tracking;
+  const l = [
+    'Demande d’estimation : ' + lead.metier + (lead.page ? ' (page ' + lead.page + ')' : ''),
+    'Travaux : ' + (f.travaux || '?'), f.quantite && 'Quantité : ' + f.quantite, f.estimation && 'Estimation affichée : ' + f.estimation,
+    f.details && 'Détails : ' + f.details, f.delai && 'Délai : ' + f.delai, f.statut && 'Statut : ' + f.statut,
+    'Lieu : ' + [f.code_postal, f.commune].filter(Boolean).join(' '),
+    'Accord mesure des annonces : ' + lead.accord,
+    Object.keys(t).length ? 'Source : ' + Object.keys(t).map((k) => k + '=' + t[k]).join(', ') : 'Source : accès direct',
+    'ID de la demande : ' + lead.eid,
+  ];
+  return l.filter(Boolean).join('\n');
+}
+
+async function sendGhl(lead, env) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  const headers = { Authorization: 'Bearer ' + String(env.GHL_TOKEN).trim(), Version: '2021-07-28', 'Content-Type': 'application/json', Accept: 'application/json' };
+  try {
+    const contact = {
+      locationId: String(env.GHL_LOCATION_ID).trim(), firstName: lead.fields.prenom, phone: lead.fields.telephone,
+      postalCode: lead.fields.code_postal || undefined, city: lead.fields.commune || undefined,
+      source: 'Page d’estimation ' + CLIENT, tags: ['demande-estimation', 'metier-' + slugTag(lead.metier)],
+    };
+    const r = await fetch(GHL + '/contacts/upsert', { method: 'POST', headers, body: JSON.stringify(contact), signal: ctrl.signal });
+    if (!r.ok) return 'ghl_http_' + r.status;
+    let j = null;
+    try { j = await r.json(); } catch (e) { j = null; }
+    const id = j && j.contact && j.contact.id;
+    if (!id || !/^[A-Za-z0-9]{6,64}$/.test(String(id))) return 'ghl_no_id';
+    const n = await fetch(GHL + '/contacts/' + encodeURIComponent(id) + '/notes', { method: 'POST', headers, body: JSON.stringify({ body: noteGhl(lead) }), signal: ctrl.signal });
+    return n.ok ? null : 'ghl_note_' + n.status; // le contact existe déjà : la demande n'est pas perdue
+  } catch (e) {
+    return e && e.name === 'AbortError' ? 'ghl_timeout' : 'ghl_network';
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 /* ---------- API Conversions de Meta ---------- */
 
 // Seulement avec l'accord du visiteur. Ni nom ni téléphone : identifiant de clic (fbc), cookie _fbp s'il existe,
@@ -245,16 +301,21 @@ async function handler(req, res, env = process.env) {
   if (clean(payload.site_web, 200)) { log('honeypot'); return send(res, 200, { ok: true }); }
   const v = validate(payload, Date.now());
   if (!v.ok) { log('invalid', [v.field]); return send(res, 422, { ok: false, error: 'invalid', field: v.field }); }
-  if (!sheetUrl(env.LEAD_SHEET_URL) || !env.LEAD_SHEET_KEY || String(env.LEAD_SHEET_KEY).trim().length < 16) {
+  const sheetOn = sheetUrl(env.LEAD_SHEET_URL) && env.LEAD_SHEET_KEY && String(env.LEAD_SHEET_KEY).trim().length >= 16;
+  const crmOn = ghlOn(env);
+  if (!sheetOn && !crmOn) {
     log('not_configured');
     return send(res, 503, { ok: false, error: 'not_configured' });
   }
-  const [sheetErr, metaErr] = await Promise.all([sendSheet(v.lead, env), sendMeta(v.lead, req, env)]);
+  const [sheetErr, ghlErr, metaErr] = await Promise.all([
+    sheetOn ? sendSheet(v.lead, env) : 'off', crmOn ? sendGhl(v.lead, env) : 'off', sendMeta(v.lead, req, env)]);
   const meta = metaErr === null ? 'meta_ok' : 'meta_' + String(metaErr).replace(/^meta_/, '');
-  if (sheetErr) { log('failed', [sheetErr, meta]); return send(res, 502, { ok: false, error: 'not_saved' }); }
-  log('saved', [meta]);
+  const codes = [crmOn ? (ghlErr === null ? 'ghl_ok' : ghlErr) : 'ghl_off', sheetOn ? (sheetErr === null ? 'sheet_ok' : sheetErr) : 'sheet_off', meta];
+  // Enregistrée si au moins une destination réglée l'a reçue (GoHighLevel ou le tableau).
+  if (!((crmOn && ghlErr === null) || (sheetOn && sheetErr === null))) { log('failed', codes); return send(res, 502, { ok: false, error: 'not_saved' }); }
+  log('saved', codes);
   return send(res, 200, { ok: true });
 }
 
 module.exports = handler;
-module.exports._test = { validate, normalisePhone, sameOrigin, sendMeta, sendSheet };
+module.exports._test = { validate, normalisePhone, sameOrigin, sendMeta, sendSheet, sendGhl, noteGhl };
