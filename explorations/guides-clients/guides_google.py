@@ -11,6 +11,7 @@ from docx.oxml import OxmlElement
 
 from guides_meta import (ACCENT, INK, PAPER, SOFT, TEL_TXT, TINT, WA, Guide, cell_margins, no_borders, runs, shade)
 
+MCC = "656-734-9439"  # compte Google Ads de Bartier & Co, utilisé pour gérer les comptes des clients
 GMAIL = "charleslecottier@gmail.com"  # adresse Google de Bartier & Co pour la fiche et Analytics (celle de l'ancien guide)
 ADS = "https://ads.google.com"
 
@@ -32,9 +33,11 @@ def besoin(g):
                [("Google Analytics, si votre site l’utilise : ", "b"), "pour mesurer les demandes qui arrivent par vos annonces."]])
     t = g.d.add_table(rows=1, cols=1); no_borders(t)
     c = t.cell(0, 0); shade(c, TINT); cell_margins(c, 200, 200, 260, 260)
-    p = c.paragraphs[0]; runs(p, ["Adresse Google de Bartier & Co (pour la fiche Google et Analytics)"], size=10, color=SOFT); p.paragraph_format.space_after = Pt(2)
+    p = c.paragraphs[0]; runs(p, ["Compte Google Ads de Bartier & Co (celui qui vous envoie la demande d’accès)"], size=10, color=SOFT); p.paragraph_format.space_after = Pt(2)
+    p = c.add_paragraph(); r = p.add_run(MCC); r.bold = True; r.font.size = Pt(17); r.font.name = "Consolas"; p.paragraph_format.space_after = Pt(8)
+    p = c.add_paragraph(); runs(p, ["Adresse Google de Bartier & Co (pour la fiche Google et Analytics)"], size=10, color=SOFT); p.paragraph_format.space_after = Pt(2)
     p = c.add_paragraph(); r = p.add_run(GMAIL); r.bold = True; r.font.size = Pt(17); r.font.name = "Consolas"; p.paragraph_format.space_after = Pt(4)
-    p = c.add_paragraph(); runs(p, ["Ce n’est pas un mot de passe : c’est l’adresse à laquelle vous donnez l’accès."], size=9.5, color=SOFT)
+    p = c.add_paragraph(); runs(p, ["Ni le numéro ni l’adresse ne sont des mots de passe : ils servent seulement à vérifier que l’accès va bien à Bartier & Co."], size=9.5, color=SOFT)
     g.d.add_paragraph().paragraph_format.space_after = Pt(2)
 
 
@@ -66,9 +69,14 @@ def etapes_ads(g, first=1, new_account=False):
     n += 1
     g.step(n, "Acceptez notre demande",
            ["Google vous prévient par e-mail qu’une demande de gestion de votre compte est arrivée de la part de Bartier & Co. Cliquez sur le bouton de l’e-mail, puis sur « Accepter ».",
+            [("Vérifiez avant d’accepter : ", "b"), f"la demande vient du compte {MCC}, Bartier & Co. Si un autre nom ou un autre numéro apparaît, ne l’acceptez pas et appelez-nous."],
             [("Pas d’e-mail ? ", "b"), "Dans Google Ads, cliquez sur « Administration » (la roue dentée, dans le menu de gauche), puis « Accès et sécurité », onglet « Gestionnaires ». La demande de Bartier & Co y attend votre accord : cliquez sur « Accepter »."]],
-           see="Bartier & Co dans la liste des gestionnaires de votre compte.",
+           see=f"Bartier & Co, compte {MCC}, dans la liste des gestionnaires de votre compte.",
            tip="vous ne trouvez pas « Administration » : sur l’ancienne présentation de Google Ads, passez par l’icône « Outils » (la clé), puis « Accès et sécurité ».")
+    g.box([[("Autre méthode, si notre demande ne vous arrive pas : ", "b"), "ajoutez directement notre adresse comme utilisateur de votre compte Google Ads."],
+           "1. Dans Google Ads : Administration › Accès et sécurité › onglet « Utilisateurs ».",
+           ["2. Cliquez sur le « + » bleu et saisissez ", (GMAIL, "b"), "."],
+           "3. Choisissez le niveau d’accès « Administrateur », puis « Envoyer l’invitation ». Prévenez-nous : nous acceptons de notre côté."])
     return n
 
 
@@ -238,6 +246,43 @@ def guide_2():
     return g.save("Guide accès Google 2 - Vous n'avez pas encore Google Ads - Bartier & Co.docx")
 
 
+def procedure_interne():
+    """Pour Charles et Martin : relier le compte Google Ads d'un client au compte Bartier & Co."""
+    g = Guide()
+    g.logo()
+    g.title("Relier un client Google Ads au compte Bartier & Co", f"Procédure interne · compte {MCC}")
+    g.para(f"Tous les comptes Google Ads des clients sont gérés depuis le compte Bartier & Co ({MCC}). Le client garde son compte et sa carte ; nous y accédons depuis ce compte. "
+           "Cette fiche décrit ce que nous faisons de notre côté, en face des guides clients 1 et 2.")
+    g.h1("Une seule fois : vérifier le type du compte")
+    g.box([[("Point à vérifier avant le premier client. ", "b"), f"Pour envoyer des demandes d’accès, le compte {MCC} doit être un compte administrateur (MCC). "
+            "Dans Google Ads, en haut à droite, le sélecteur de comptes affiche « Compte administrateur » sous son nom, et le menu de gauche contient « Comptes » avec la liste des sous-comptes."],
+           ["Si ce n’est pas un compte administrateur : créez-en un sur ", ("lien", "https://ads.google.com/home/tools/manager-accounts/", "ads.google.com/home/tools/manager-accounts"),
+            " avec le même compte Google, puis mettez à jour le numéro dans les guides clients. En attendant, la méthode de secours des guides fonctionne : le client ajoute "
+            f"{GMAIL} comme utilisateur « Administrateur »."]])
+    g.h1("Pour chaque client qui a déjà Google Ads (guide 1)")
+    g.step(1, "Envoyer le guide au client", ["Guide accès Google 1, par e-mail ou WhatsApp, avec ce message :",
+                                              [("« ", ""), "Bonjour, voici le guide pour nous donner l’accès à Google Ads. Il suffit de nous envoyer le numéro à 10 chiffres en haut à droite de votre compte : on s’occupe du reste. ", ("»", "")]])
+    g.step(2, "Recevoir son numéro à 10 chiffres", ["Le noter dans la fiche du client dans Pipedrive, avec la date."])
+    g.step(3, "Envoyer la demande depuis le compte Bartier & Co",
+           [f"Dans Google Ads, se placer sur le compte {MCC}. Menu de gauche : « Comptes » › « Sous-comptes », puis le « + » bleu › « Associer un compte existant ».",
+            "Saisir le numéro du client, puis « Envoyer la demande »."],
+           see="le compte du client dans la liste, avec le statut « En attente ».",
+           tip="les intitulés changent parfois. L’action à trouver est « associer » ou « lier » un compte existant à un compte administrateur.")
+    g.step(4, "Prévenir le client", [[("« ", ""), "C’est envoyé : vous allez recevoir un e-mail de Google. Vérifiez que la demande vient du compte ", (MCC, "b"), ", puis cliquez sur « Accepter ». ", ("»", "")]])
+    g.step(5, "Vérifier l’acceptation",
+           ["Dans « Comptes » › « Sous-comptes », le statut du client passe à « Actif ». S’il est toujours « En attente » au bout de 48 heures, appeler le client et faire l’étape avec lui."],
+           tip="le client a utilisé la méthode de secours (il a ajouté notre adresse comme utilisateur) : accepter l’e-mail d’invitation de Google reçu sur " + GMAIL + ".")
+    g.step(6, "Fiche Google et Analytics", [f"Accepter les invitations reçues sur {GMAIL} : « gestionnaire » de la fiche Google, « éditeur » d’Analytics."])
+    g.step(7, "Brancher le suivi", ["Dans Windsor.ai, le nouveau compte apparaît avec les autres. S’il n’y est pas, reconnecter Google Ads dans Windsor pour actualiser la liste des comptes."])
+    g.h1("Pour un client qui n’a pas Google Ads (guide 2)")
+    g.para("Deux possibilités :")
+    g.bullets([[("Le client crée son compte avec le guide 2, ", "b"), "puis on reprend à l’étape 2 ci-dessus. C’est la solution par défaut : le compte est à son nom dès le départ."],
+               [("Ou nous créons le compte depuis le compte Bartier & Co : ", "b"), "« Comptes » › « Sous-comptes » › « + » › « Créer un compte ». Nom : l’entreprise du client ; devise : euro ; fuseau : Paris. "
+                "Inviter ensuite le client comme « Administrateur » (Accès et sécurité › Utilisateurs), et lui faire ajouter sa carte dans « Facturation ». Utile au téléphone, avec un client peu à l’aise."]])
+    g.box([[("Règle : ", "b"), "jamais de campagne lancée sans l’accord écrit du client sur le budget, et jamais notre carte sur le compte d’un client. Le budget est payé directement à Google par le client."]], fill=TINT)
+    return g.save("Procédure interne - Relier un client Google Ads au compte Bartier & Co.docx")
+
+
 if __name__ == "__main__":
-    for f in (guide_1(), guide_2()):
+    for f in (guide_1(), guide_2(), procedure_interne()):
         print(f)
