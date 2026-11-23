@@ -72,7 +72,7 @@ def etapes_ads(g, first=1, new_account=False):
            ["Google vous prévient par e-mail qu’une demande de gestion de votre compte est arrivée de la part de Bartier & Co. Cliquez sur le bouton de l’e-mail, puis sur « Accepter ».",
             [("Vérifiez avant d’accepter : ", "b"), f"la demande vient du compte {MCC}, Bartier & Co. Si un autre nom ou un autre numéro apparaît, ne l’acceptez pas et appelez-nous."],
             [("Pas d’e-mail ? ", "b"), "Dans Google Ads, cliquez sur « Administration » (la roue dentée, dans le menu de gauche), puis « Accès et sécurité », onglet « Gestionnaires ». La demande de Bartier & Co y attend votre accord : cliquez sur « Accepter »."]],
-           see=f"Bartier & Co, compte {MCC}, dans la liste des gestionnaires de votre compte.",
+           see=f"Bartier & Co, compte {MCC}, dans la liste des gestionnaires de votre compte. La demande reste valable 20 jours : passé ce délai, prévenez-nous, nous la renvoyons.",
            tip="vous ne trouvez pas « Administration » : sur l’ancienne présentation de Google Ads, passez par l’icône « Outils » (la clé), puis « Accès et sécurité ».")
     g.box([[("Autre méthode, si notre demande ne vous arrive pas : ", "b"), "ajoutez directement notre adresse comme utilisateur de votre compte Google Ads."],
            "1. Dans Google Ads : Administration › Accès et sécurité › onglet « Utilisateurs ».",
@@ -258,28 +258,36 @@ def procedure_interne():
     g.box([[("Compte administrateur : ", "b"), f"{MCC}, créé le 23 novembre 2026 avec {GMAIL}. C’est lui qui envoie les demandes d’accès aux clients."],
            [("Compte publicitaire de Bartier & Co : ", "b"), f"{PUB}, pour nos propres annonces. Il ne sert pas aux clients."]])
     g.bullets([[("Ajouter Charles et Martin comme utilisateurs ", "b"), f"du compte administrateur, avec leur adresse personnelle, au niveau « Administrateur » : Admin › Accès et sécurité › Utilisateurs › « + ». Chacun se connecte ensuite avec sa propre adresse."],
-               [("Rattacher notre compte publicitaire ", "b"), f"au compte administrateur, pour tout voir au même endroit : Comptes › Sous-comptes › « + » › « Associer un compte existant » › {PUB}, puis accepter la demande dans le compte {PUB}."],
+               [("Rattacher notre compte publicitaire ", "b"), f"au compte administrateur, pour tout voir au même endroit : Comptes (barre de gauche) › Performances › bouton bleu rond « + » au-dessus du tableau › « Associer un compte existant » › {PUB}, puis accepter la demande dans le compte {PUB} (Admin › Accès et sécurité › onglet « Gestionnaires »). C’est aussi le meilleur entraînement avant le premier client."],
                [("Protéger ", "b"), f"{GMAIL} par la validation en deux étapes (myaccount.google.com › Sécurité) : ce compte donne accès à tous les clients."],
                [("Windsor.ai : ", "b"), "reconnecter Google Ads avec ce compte, pour que les comptes des clients apparaissent dans le suivi."]], style="List Number")
     g.h1("Pour chaque client qui a déjà Google Ads (guide 1)")
     g.step(1, "Envoyer le guide au client", ["Guide accès Google 1, par e-mail ou WhatsApp, avec ce message :",
                                               [("« ", ""), "Bonjour, voici le guide pour nous donner l’accès à Google Ads. Il suffit de nous envoyer le numéro à 10 chiffres en haut à droite de votre compte : on s’occupe du reste. ", ("»", "")]])
     g.step(2, "Recevoir son numéro à 10 chiffres", ["Le noter dans la fiche du client dans Pipedrive, avec la date."])
-    g.step(3, "Envoyer la demande depuis le compte Bartier & Co",
-           [f"Dans Google Ads, se placer sur le compte {MCC}. Menu de gauche : « Comptes » › « Sous-comptes », puis le « + » bleu › « Associer un compte existant ».",
-            "Saisir le numéro du client, puis « Envoyer la demande »."],
-           see="le compte du client dans la liste, avec le statut « En attente ».",
-           tip="les intitulés changent parfois. L’action à trouver est « associer » ou « lier » un compte existant à un compte administrateur.")
-    g.step(4, "Prévenir le client", [[("« ", ""), "C’est envoyé : vous allez recevoir un e-mail de Google. Vérifiez que la demande vient du compte ", (MCC, "b"), ", puis cliquez sur « Accepter ». ", ("»", "")]])
-    g.step(5, "Vérifier l’acceptation",
-           ["Dans « Comptes » › « Sous-comptes », le statut du client passe à « Actif ». S’il est toujours « En attente » au bout de 48 heures, appeler le client et faire l’étape avec lui."],
+    g.step(3, "Ouvrir la liste des comptes du compte administrateur",
+           [f"Dans Google Ads, vérifier en haut à gauche qu’on est bien sur « Bartier & Co {MCC} ». Cliquer sur l’icône « Comptes » dans la barre de gauche : la page « Performances » s’ouvre."],
+           img=("g-mcc-01-comptes.png", 4.2))
+    g.step(4, "Cliquer sur le bouton bleu rond « + », puis « Associer un compte existant »",
+           ["Le bouton est à gauche, juste au-dessus du tableau, à côté de l’entonnoir des filtres. Si une liste déroulante de comptes est ouverte en haut, la fermer d’abord (touche Échap)."],
+           img=("g-mcc-02-bouton-plus.png", 11))
+    g.step(5, "Remplir le panneau « Associer des comptes existants »",
+           ["Coller le numéro du client dans le grand cadre (un numéro par ligne si plusieurs clients). Laisser « This manager: Bartier & Co » comme administrateur direct. "
+            "Justification, facultative : « Bartier & Co : gestion de vos annonces Google ». Puis cliquer sur « Envoyer la demande », en bas à gauche du panneau."],
+           img=("g-mcc-03-associer.png", 14),
+           see="le compte du client dans l’onglet « Demandes d’association envoyées », en attente. La demande expire au bout de 20 jours.")
+    g.figure("g-mcc-04-envoyer.png", 6, "Le bouton « Envoyer la demande », en bas du panneau.")
+    g.step(6, "Prévenir le client", [[("« ", ""), "C’est envoyé : vous allez recevoir un e-mail de Google. Vérifiez que la demande vient du compte ", (MCC, "b"), ", puis cliquez sur « Accepter ». ", ("»", "")]])
+    g.step(7, "Vérifier l’acceptation",
+           ["Dans « Comptes » › « Performances », le compte du client apparaît, actif. Pour voir les demandes encore en attente : onglet « Demandes d’association envoyées ». "
+            "Sans réponse au bout de 48 heures, appeler le client et faire l’étape avec lui. Au-delà de 20 jours, la demande expire : la renvoyer."],
            tip="le client a utilisé la méthode de secours (il a ajouté notre adresse comme utilisateur) : accepter l’e-mail d’invitation de Google reçu sur " + GMAIL + ".")
-    g.step(6, "Fiche Google et Analytics", [f"Accepter les invitations reçues sur {GMAIL} : « gestionnaire » de la fiche Google, « éditeur » d’Analytics."])
-    g.step(7, "Brancher le suivi", ["Dans Windsor.ai, le nouveau compte apparaît avec les autres. S’il n’y est pas, reconnecter Google Ads dans Windsor pour actualiser la liste des comptes."])
+    g.step(8, "Fiche Google et Analytics", [f"Accepter les invitations reçues sur {GMAIL} : « gestionnaire » de la fiche Google, « éditeur » d’Analytics."])
+    g.step(9, "Brancher le suivi", ["Dans Windsor.ai, le nouveau compte apparaît avec les autres. S’il n’y est pas, reconnecter Google Ads dans Windsor pour actualiser la liste des comptes."])
     g.h1("Pour un client qui n’a pas Google Ads (guide 2)")
     g.para("Deux possibilités :")
     g.bullets([[("Le client crée son compte avec le guide 2, ", "b"), "puis on reprend à l’étape 2 ci-dessus. C’est la solution par défaut : le compte est à son nom dès le départ."],
-               [("Ou nous créons le compte depuis le compte Bartier & Co : ", "b"), "« Comptes » › « Sous-comptes » › « + » › « Créer un compte ». Nom : l’entreprise du client ; devise : euro ; fuseau : Paris. "
+               [("Ou nous créons le compte depuis le compte Bartier & Co : ", "b"), "Comptes › Performances › bouton bleu rond « + » › « Créer un compte ». Nom : l’entreprise du client ; devise : euro ; fuseau : Paris. "
                 "Inviter ensuite le client comme « Administrateur » (Accès et sécurité › Utilisateurs), et lui faire ajouter sa carte dans « Facturation ». Utile au téléphone, avec un client peu à l’aise."]])
     g.box([[("Règle : ", "b"), "jamais de campagne lancée sans l’accord écrit du client sur le budget, et jamais notre carte sur le compte d’un client. Le budget est payé directement à Google par le client."]], fill=TINT)
     return g.save("Procédure interne - Relier un client Google Ads au compte Bartier & Co.docx")
