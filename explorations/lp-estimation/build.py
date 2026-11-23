@@ -326,6 +326,11 @@ def tags_who(cfg):
     return "des cookies de Meta et de Google" if meta and goo else "un cookie de Meta" if meta else "des cookies de Google" if goo else ""
 
 
+def plats(cfg):
+    meta, goo = bool(cfg.get("meta_pixel")), bool(ga_send_to(cfg))
+    return "Meta et Google" if meta and goo else "Meta" if meta else "Google" if goo else ""
+
+
 def need(cfg, warn):
     lg = cfg.get("legal", {})
     for k, lab in [("raison_sociale", "raison sociale"), ("forme", "forme juridique"), ("siege", "siège"), ("siret", "SIRET"),
@@ -413,7 +418,9 @@ def steps_html(m, cfg, accent, photo_url=""):
         '<div><label class="es-lab" for="es-tel">Téléphone</label><input class="es-in" id="es-tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required aria-invalid="false" enterkeyhint="done" placeholder="06 12 34 56 78"></div>'
         '</div>'
         '<input class="es-hp" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">'
-        f'<p class="es-priv">{ico("lock")}<span class="es-consent">{e("En validant, vous acceptez d’être rappelé par " + cfg["entreprise"] + " au sujet de ce projet. Vos coordonnées ne servent qu’à cela : elles ne sont ni vendues ni cédées.")}</span></p></div>')
+        f'<p class="es-priv">{ico("lock")}<span class="es-consent">{e("En validant, vous acceptez d’être rappelé par " + cfg["entreprise"] + " au sujet de ce projet. Vos coordonnées ne servent qu’à cela : elles ne sont ni vendues ni cédées.")}</span></p>'
+        + (f'<label class="es-mes" hidden><input type="checkbox" name="mesure" value="1"><span>{e("Facultatif : j’accepte que " + cfg["entreprise"] + " indique à " + plats(cfg) + " que ma demande vient de leur publicité, pour mesurer ses annonces. Ni mon nom ni mon numéro ne leur sont transmis.")}</span></label>' if plats(cfg) else "")
+        + '</div>')
     return "".join(out), len(allsteps) + 1
 
 
@@ -453,7 +460,7 @@ def cfg_js(key, m, cfg):
     recap = [q["name"] for st in m["steps"] for q in st["qs"] if q["t"] == "tiles"]
     _, title, person = who(cfg)
     return dict(key=key, nom=m["nom"], ent=cfg["entreprise"], who=title if person else cfg["entreprise"], tel=tel, telh="+33" + re.sub(r"\D", "", tel)[1:] if tel else "",
-                wa=pub_wa(cfg), envoi=envoi_url(cfg), ga=ga_send_to(cfg), deps=cfg.get("departements", []), zone=cfg.get("zone", ""),
+                wa=pub_wa(cfg), envoi=envoi_url(cfg), ga=ga_send_to(cfg), tags=bool(plats(cfg)), deps=cfg.get("departements", []), zone=cfg.get("zone", ""),
                 base=({"lat": cfg["_zone"]["lat"], "lon": cfg["_zone"]["lon"], "km": cfg["_zone"]["km"]} if cfg.get("_zone") else None),
                 horaires=fr(cfg.get("horaires", "")), px=cfg.get("meta_pixel", ""), qty=m["qty"], opts=opts, recap=recap, geo=GEO,
                 visite=[dict(r, txt=fr(r["txt"])) for r in m.get("visite", [])], notes=[dict(r, txt=fr(r["txt"])) for r in m.get("notes", [])],
@@ -507,10 +514,17 @@ def legal_html(m, cfg, key):
     priv += "<p>Le nom de votre commune s’affiche grâce à l’API publique de l’État (geo.api.gouv.fr), qui ne reçoit que le code postal.</p>"
     priv += (f"<p>Vous pouvez accéder à vos données, les rectifier, les effacer ou vous opposer à leur traitement en écrivant à {f('email')}. "
              "En cas de difficulté, vous pouvez saisir la CNIL (cnil.fr).</p>")
-    priv += (f"<p>Avec votre accord seulement, {tags_who(cfg)} mesure{'' if tags_who(cfg) == 'un cookie de Meta' else 'nt'} l’efficacité de nos annonces : "
-             "quelle annonce vous a amené et si vous avez envoyé une demande. Ni votre nom ni votre numéro ne leur sont transmis. "
-             "Sans accord, rien n’est déposé et rien ne leur est envoyé. "
-             '<button type="button" class="es-cc-open">Changer mon choix</button></p>' if px else "<p>Ce site ne dépose aucun cookie et n’utilise aucun outil de mesure.</p>")
+    if px:
+        priv += (f"<p>Mesure des annonces. Avec votre accord seulement, {tags_who(cfg)} "
+                 f"mesure{'' if tags_who(cfg) == 'un cookie de Meta' else 'nt'} l’efficacité de nos annonces. "
+                 f"Si vous avez accepté ces cookies, ou coché la case facultative au moment d’envoyer votre demande, nous indiquons aussi à {plats(cfg)} "
+                 "que votre demande vient de leur publicité : l’identifiant du clic sur l’annonce (présent dans l’adresse de la page), "
+                 "l’heure de la demande, l’adresse de la page"
+                 + (", ainsi que, pour Meta, votre adresse IP et le type de votre navigateur" if cfg.get("meta_pixel") else "") + ". "
+                 "Ni votre nom ni votre numéro ne leur sont transmis. Sans accord, aucun cookie n’est déposé et rien ne leur est envoyé. "
+                 '<button type="button" class="es-cc-open">Changer mon choix</button></p>')
+    else:
+        priv += "<p>Ce site ne dépose aucun cookie et n’utilise aucun outil de mesure.</p>"
     return (f'<details><summary>Conditions d’utilisation</summary>{cond}</details>'
             f'<details id="mentions-legales"><summary>Mentions légales</summary>{"".join(ment)}</details>'
             f'<details id="confidentialite"><summary>Confidentialité</summary>{priv}</details>')
@@ -740,6 +754,9 @@ svg{display:block}
 .es-two{display:grid;gap:16px;margin-top:20px}
 @media (min-width:40em){.es-two{grid-template-columns:1fr 1fr}}
 .es-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.es-mes{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-size:.84rem;line-height:1.45;color:var(--muted);cursor:pointer}
+.es-mes[hidden]{display:none}
+.es-mes input{flex:none;width:20px;height:20px;margin:0;accent-color:var(--go);cursor:pointer}
 .es-priv{display:flex;gap:8px;margin-top:12px;font-size:.84rem;line-height:1.45;color:var(--muted)}
 .es-priv svg{flex:none;width:18px;height:18px;margin-top:0}
 .es-note{margin-top:16px;padding:12px 16px;border-radius:12px;background:var(--soft);font-size:.92rem;line-height:1.45;color:var(--ink2)}
@@ -836,12 +853,19 @@ var C=__CFG__,ICO=__ICO__,d=document,RM=!!(window.matchMedia&&matchMedia("(prefe
 var f=d.getElementById("es-form");if(!f)return;
 var steps=[].slice.call(f.querySelectorAll(".es-step")),N=steps.length,cur=0,A={},done=false,started=false;
 var bar=f.querySelector(".es-bar i"),pct=f.querySelector(".es-pct"),num=f.querySelector(".es-num-step"),back=f.querySelector(".es-back"),next=f.querySelector(".es-next"),nextL=next.querySelector("span"),nav=f.querySelector(".es-nav"),head=f.querySelector(".es-head"),err=f.querySelector(".es-err"),res=f.querySelector(".es-res");
-var qs=new URLSearchParams(location.search),track={};["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid"].forEach(function(k){if(qs.get(k))track[k]=qs.get(k).slice(0,200)});
+var qs=new URLSearchParams(location.search),track={},T0=Date.now(),EID="";["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid","gbraid","wbraid"].forEach(function(k){if(qs.get(k))track[k]=qs.get(k).slice(0,200)});
+function cookiesOk(){try{var v=JSON.parse(localStorage.getItem("es-consent"));return!!(v&&v.ok)}catch(e){return false}}
+function fromAd(){return!!(track.fbclid||track.gclid||track.gbraid||track.wbraid)}
+function accord(){if(!C.tags)return"sans objet";if(cookiesOk())return"cookies";var c=f.querySelector("[name=mesure]");return c&&c.checked&&!c.closest("[hidden]")?"case":"non"}
+function newId(){try{if(window.crypto&&crypto.randomUUID)return crypto.randomUUID()}catch(e){}return Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,12)}
+function cookie(n){var m=document.cookie.match(new RegExp("(?:^|; )"+n+"=([^;]*)"));return m?decodeURIComponent(m[1]):""}
+/* conversion côté navigateur : seulement si les cookies sont acceptés (balises chargées), avec le même identifiant que l'API */
+function conv(){try{if(!cookiesOk())return;if(window.fbq)window.fbq("track","Lead",{},{eventID:EID});if(window.gtag&&C.ga)window.gtag("event","conversion",{send_to:C.ga,transaction_id:EID})}catch(e){}}
 function each(l,fn){[].forEach.call(l,fn)}
 function dl(ev,p){var o={event:ev,metier:C.key};for(var k in p)o[k]=p[k];(window.dataLayer=window.dataLayer||[]).push(o)}
 function begin(){if(!started){started=true;dl("estimation_debut",{})}}
 var SK="es-"+C.key;
-function save(x){try{var o={A:A,cur:cur,t:Date.now()};for(var k in x)o[k]=x[k];sessionStorage.setItem(SK,JSON.stringify(o))}catch(e){}}
+function save(x){try{var o={A:A,cur:cur,t:Date.now(),eid:EID};for(var k in x)o[k]=x[k];sessionStorage.setItem(SK,JSON.stringify(o))}catch(e){}}
 function load(){try{var o=JSON.parse(sessionStorage.getItem(SK));return o&&o.A&&Date.now()-o.t<72e5?o:null}catch(e){return null}}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 var NF,DF;function fmt(){if(!NF&&window.Intl){NF=new Intl.NumberFormat("fr-FR");DF=new Intl.DateTimeFormat("fr-FR",{day:"numeric",month:"long",year:"numeric"})}}
@@ -911,7 +935,7 @@ function show(i,dir,push){cur=i;each(steps,function(s,j){s.classList.toggle("is-
   var st=steps[i];if(dir&&!RM){void st.offsetWidth;st.classList.add(dir>0?"es-fwd":"es-bwd")}
   var p=Math.round(100*(i+1)/(N+1));bar.style.width=p+"%";pct.textContent=p+"\u00a0%";var rem=N-i;num.textContent=rem===1?"Dernière étape":rem===2?"Avant-dernière étape":rem===3?"Plus que 3 étapes":"Étape "+(i+1)+" sur "+N;
   back.hidden=i===0;nav.hidden=i===0&&st.hasAttribute("data-auto");clearErr();
-  if(i===N-1)prep();refresh();
+  if(i===N-1){prep();var mb=f.querySelector(".es-mes");if(mb)mb.hidden=cookiesOk()||!fromAd()}refresh();
   var cx=st.querySelector(".es-ctx"),sel=f.querySelector('.es-opt[aria-checked="true"]');if(cx&&sel){cx.querySelector(".es-ctx-ico").innerHTML=sel.querySelector(".es-ico").innerHTML;cx.querySelector(".es-ctx-t").textContent=A.travaux;cx.hidden=false}
   nextL.textContent=i===N-1?(rows().length?"Voir mon estimation":"Envoyer ma demande"):"Suivant";
   if(push)try{history.pushState({es:i},"")}catch(x){}
@@ -969,7 +993,8 @@ function render(E,pr,telf,state){var sel=f.querySelector('.es-opt[aria-checked="
      +(C.wa?'<p class="es-box-p es-box-photo">En attendant, envoyez quelques photos du chantier\u00a0: la visite sera mieux préparée.</p>':"")
      +'<div class="es-acts">'+(C.wa?'<a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa-photo>'+ICO.wa+"Envoyer des photos</a>":"")+call+"</div></div>"
    +'<div class="es-s-manual">'+(C.wa?'<h3 class="es-box-h">Envoyez votre demande à '+esc(C.ent)+'</h3><p class="es-box-p">Votre message est déjà rédigé. Ajoutez-y quelques photos du chantier si vous pouvez\u00a0: la visite sera mieux préparée.</p><div class="es-acts"><a class="es-btn es-btn-wa" target="_blank" rel="noopener" data-wa>'+ICO.wa+"Envoyer sur WhatsApp</a>"+call+"</div>"
-     :'<h3 class="es-box-h">Appelez '+esc(C.ent)+' pour fixer la visite</h3><div class="es-acts">'+call+"</div>")+"</div></div>"
+     :(C.envoi?'<h3 class="es-box-h">Votre demande n’est pas partie</h3><p class="es-box-p">La connexion a coupé. Vos réponses sont gardées\u00a0: réessayez dans un instant.</p><div class="es-acts"><button type="button" class="es-btn es-btn-call" data-retry>Réessayer l’envoi</button>'+call+"</div>"
+       :'<h3 class="es-box-h">Appelez '+esc(C.ent)+' pour fixer la visite</h3><div class="es-acts">'+call+"</div>"))+"</div></div>"
    +'<div class="es-after"><button type="button" class="es-share">'+ICO.share+'<span>Partager l’estimation</span></button><span class="es-vh" role="status" data-sh-st></span><button type="button" class="es-again">Refaire une estimation</button></div>';
   return h}
 function countUp(el,E){if(RM||!el||!window.requestAnimationFrame)return;var t0=0,D=1100;
@@ -985,26 +1010,29 @@ function finish(pr,tel,state,anim){var E=estimate(),dg=tel.replace(/\D/g,""),tel
   toCard();if(anim){countUp(res.querySelector("[data-count]"),E);focusCur()}d.title=(E.rows.length?"Votre estimation":"Votre demande")+" | "+C.ent;
   var wa=res.querySelector("[data-wa]");if(wa)wa.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent(msg);
   var wp=res.querySelector("[data-wa-photo]");if(wp)wp.href="https://wa.me/"+C.wa+"?text="+encodeURIComponent("Bonjour, voici des photos pour mon estimation "+C.nom+" ("+A.travaux+", code postal "+place()+"). "+pr+(telf?", "+telf:"")+".");
+  var rt=res.querySelector("[data-retry]");if(rt)rt.addEventListener("click",function(){if(val("telephone"))submit();else reopen()});
   res.querySelector(".es-again").addEventListener("click",function(){try{sessionStorage.removeItem(SK)}catch(x){}location.href=location.pathname+location.search});
   var sh=res.querySelector(".es-share"),url=location.origin+location.pathname,txt="Estimation "+C.nom+" ("+C.ent+")\u00a0: "+A.travaux+", "+ql()+". "+(E.rows.length?est+", pose comprise, fourchette indicative.":"À chiffrer sur place.");
   sh.addEventListener("click",function(){if(navigator.share){navigator.share({title:"Estimation "+C.nom,text:txt,url:url}).catch(function(){})}
     else if(navigator.clipboard){navigator.clipboard.writeText(txt+" "+url).then(function(){shM("Copié, vous pouvez le coller")},function(){shM("Copie impossible")})}});
   var shL=sh.querySelector("span"),shT=shL.textContent,shS=res.querySelector("[data-sh-st]"),shTm;function shM(t){shL.textContent=t;shS.textContent=t;clearTimeout(shTm);shTm=setTimeout(function(){shL.textContent=shT;shS.textContent=""},3000)}
   return{E:E,est:est,det:det,msg:msg,box:res.querySelector(".es-box")}}
-function submit(){if(val("site_web"))return;var pr=val("prenom"),tel=val("telephone"),st0=C.envoi?"sending":"manual",R=finish(pr,tel,st0,true),est=R.est,det=R.det,msg=R.msg,box=R.box;
+function reopen(){done=false;res.hidden=true;res.innerHTML="";head.hidden=false;show(N-1,0,false);try{history.replaceState({es:N-1},"")}catch(x){}toCard();var t=f.querySelector("[name=telephone]");if(t)try{t.focus()}catch(x){}}
+function submit(){if(val("site_web"))return;if(!EID)EID=newId();var pr=val("prenom"),tel=val("telephone"),st0=C.envoi?"sending":"manual",R=finish(pr,tel,st0,true),est=R.est,det=R.det,msg=R.msg,box=R.box;
   save({done:1,pr:pr,st:C.envoi?"manual":st0});if(st0==="sending")box.querySelector("[data-st]").textContent="Envoi de votre demande…";
   dl("estimation_demande",{travaux:A.travaux,delai:A.delai,statut:A.statut,estimation:est});
-  if(window.fbq)window.fbq("track","Lead");
-  if(!C.envoi)return;
+  if(!C.envoi){conv();return}
   var body={type:"estimation",_subject:"Demande d’estimation "+C.nom+" · "+place(),message:msg,metier:C.key,entreprise:C.ent,fields:{travaux:A.travaux,quantite:ql(),estimation:est,details:det,delai:A.delai,statut:A.statut,code_postal:A.code_postal,commune:A.commune||"",prenom:pr,telephone:tel},
-    consent:{text:f.querySelector(".es-consent").textContent,at:new Date().toISOString()},page:location.pathname,tracking:track,site_web:""};
-  var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");var bh=box.querySelector(".es-s-"+(ok?"sent":"manual")+" .es-box-h");box.querySelector("[data-st]").textContent=bh?bh.textContent:"";save({done:1,pr:pr,st:ok?"sent":"manual"});dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
+    consent:{text:f.querySelector(".es-consent").textContent+(accord()==="case"?" "+f.querySelector(".es-mes span").textContent:""),at:new Date().toISOString()},page:location.pathname,tracking:track,
+    eid:EID,accord:accord(),clic_at:T0,fbp:cookiesOk()?cookie("_fbp"):"",site_web:""};
+  var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");var bh=box.querySelector(".es-s-"+(ok?"sent":"manual")+" .es-box-h");box.querySelector("[data-st]").textContent=bh?bh.textContent:"";save({done:1,pr:pr,st:ok?"sent":"manual"});if(ok)conv();dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
   try{fetch(C.envoi,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(body)}).then(function(r){clearTimeout(t);end(r.ok)}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}}
 function restore(S){started=true;for(var k in S){var v=S[k];A[k]=v;
     (Array.isArray(v)?v:[v]).forEach(function(x){var b=f.querySelector('button[data-q="'+k+'"][data-v="'+String(x).replace(/["\\]/g,"\\$&")+'"]');if(b)b.setAttribute("aria-checked","true")});
     var r=f.querySelector('.es-range[data-q="'+k+'"]');if(r){r.value=v;r.dispatchEvent(new Event("input"))}}
   if(cpIn&&A.code_postal)cpIn.value=A.code_postal}
 var S0=load(),pj=(qs.get("projet")||"").replace(/[^a-z0-9-]/g,""),ob=pj&&f.querySelector('.es-opt[data-slug="'+pj+'"]');
+if(S0&&S0.eid)EID=S0.eid;
 if(S0&&(S0.done||!ob)){restore(S0.A);if(S0.done){var pi=f.querySelector("#es-prenom");if(pi)pi.value=S0.pr;finish(S0.pr,"",S0.st||"manual",false)}
   else{show(S0.cur||0,0,false);try{history.replaceState({es:S0.cur||0},"")}catch(x){}}}
 else if(ob){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-checked",x===ob?"true":"false")});A.travaux=ob.getAttribute("data-v");started=true;dl("estimation_debut",{projet:pj});show(1,0,false);try{history.pushState({es:1},"")}catch(x){}}
@@ -1226,6 +1254,15 @@ def build(path):
     cfg.pop("_zone", None)
     cfg.pop("_spec", None)
     (out / "robots.txt").write_text("User-agent: *\nDisallow:\n", encoding="utf-8")
+    if envoi_url(cfg) == "/api/lead/":
+        (out / "api").mkdir()
+        fn = (HERE / "api_lead.js").read_text(encoding="utf-8")
+        fn = (fn.replace("__CLIENT__", json.dumps(cfg["entreprise"], ensure_ascii=False))
+                .replace("__METIERS__", json.dumps({k: M[k]["nom"] for k in keys}, ensure_ascii=False))
+                .replace("__PIXEL__", json.dumps(re.sub(r"\D", "", str(cfg.get("meta_pixel", ""))))))
+        (out / "api" / "lead.js").write_text(fn, encoding="utf-8")
+        print("  demandes : une ligne par demande dans le Google Sheet (fonction /api/lead/ ; LEAD_SHEET_URL et LEAD_SHEET_KEY à régler sur Vercel)"
+              + (" ; API Conversions de Meta si META_ACCESS_TOKEN est réglé" if cfg.get("meta_pixel") else ""))
     print(f"{cfg['slug']} : {len(keys)} pages ({', '.join('/' + M[k]['slug'] + '/' for k in keys)}) dans {out.relative_to(HERE)}")
     for k in keys:
         print(f"  liens {M[k]['slug']} :", ", ".join(f"?projet={slug(o[0])}" for o in M[k]["steps"][0]["qs"][0]["opts"]))
