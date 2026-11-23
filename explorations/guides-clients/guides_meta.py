@@ -16,6 +16,7 @@ from docx.shared import Cm, Pt, RGBColor
 
 HERE = pathlib.Path(__file__).resolve().parent
 LOGO = HERE.parent / "v8b" / "assets" / "logo-bartier.png"
+CAP = HERE / "captures"  # captures d'écran de Meta (pages publiques et menu des Paramètres), annotées en bleu
 ID = "1167396645943823"
 TEL, TEL_TXT, MAIL = "+33781018936", "07 81 01 89 36", "contact@bartierandco.com"
 WA = "https://wa.me/33781018936"
@@ -162,7 +163,7 @@ class Guide:
         p = c.add_paragraph(); runs(p, ["16 chiffres. Ce n’est pas un mot de passe : il sert seulement à indiquer à Meta à qui vous donnez l’accès."], size=9.5, color=SOFT)
         self.d.add_paragraph().paragraph_format.space_after = Pt(2)
 
-    def step(self, n, title, do, see=None, tip=None):
+    def step(self, n, title, do, see=None, tip=None, img=None):
         """Une étape : grand numéro à gauche ; à droite, ce qu'il faut faire, ce qu'on doit voir, et le conseil si ça bloque."""
         t = self.d.add_table(rows=1, cols=2); no_borders(t)
         t.columns[0].width = Cm(1.6); t.columns[1].width = Cm(15)
@@ -179,10 +180,21 @@ class Guide:
         if tip:
             p = b.add_paragraph(); p.paragraph_format.space_after = Pt(3)
             runs(p, [("Si ça bloque : ", "b")] + (tip if isinstance(tip, list) else [tip]), size=10.5, color=SOFT)
+        if img:
+            f, w = img
+            p = b.add_paragraph(); p.paragraph_format.space_before = Pt(4); p.paragraph_format.space_after = Pt(4)
+            p.add_run().add_picture(str(CAP / f), width=Cm(w))
         # le tableau d'une étape ne se coupe pas entre deux pages
         for row in t.rows:
             trPr = row._tr.get_or_add_trPr(); cs = OxmlElement("w:cantSplit"); trPr.append(cs)
         sp = self.d.add_paragraph(); sp.paragraph_format.space_after = Pt(4)
+
+    def figure(self, f, w, caption=None):
+        p = self.d.add_paragraph(); p.paragraph_format.left_indent = Cm(0.8); p.paragraph_format.space_before = Pt(4)
+        p.add_run().add_picture(str(CAP / f), width=Cm(w)); p.paragraph_format.keep_with_next = bool(caption)
+        if caption:
+            c = self.d.add_paragraph(); c.paragraph_format.left_indent = Cm(0.8)
+            runs(c, [caption], size=9.5, color=SOFT)
 
     def save(self, name):
         out = HERE / name
@@ -211,6 +223,7 @@ def give_access_steps(g, first=1, from_scratch=False):
     g.step(n, "Ouvrez la page « Partenaires » de votre espace professionnel",
            [["Dans votre navigateur, connecté à Facebook, ouvrez cette adresse : ", ("lien", PARTNERS, "business.facebook.com/settings/partners")],
             "Autre chemin : business.facebook.com, puis Paramètres (la roue dentée en bas à gauche), puis Utilisateurs › Partenaires."],
+           img=("03-menu-partenaires.png", 6.5),
            see="la page « Partenaires » au nom de votre entreprise, avec un bouton bleu « Ajouter » en haut à droite.",
            tip=("Meta vous demande de choisir une entreprise : cliquez sur la vôtre." if from_scratch else
                 ["Meta vous demande de choisir une entreprise : cliquez sur la vôtre. Meta vous propose de créer un portefeuille business : votre Page n’est pas encore rattachée à un espace professionnel. Suivez d’abord l’",
@@ -266,23 +279,26 @@ def retirer(g):
 def annexe_portefeuille(g, title, new_page=True):
     g.h1(title, new_page=new_page)
     g.para("Le portefeuille business est l’espace professionnel gratuit de Meta. Il regroupe votre Page, votre compte publicitaire et les personnes qui y ont accès. Il faut un profil Facebook pour le créer.")
-    g.bullets([["Ouvrez ", ("lien", "https://business.facebook.com", "business.facebook.com"), ", connecté à Facebook."],
+    g.bullets([["Ouvrez ", ("lien", "https://business.facebook.com", "business.facebook.com"), ". Si Meta vous demande de vous connecter, cliquez sur « Continuer avec Facebook » (encadré en bleu ci-dessous)."],
                "Cliquez sur « Créer un compte » ou « Créer un portefeuille business ».",
                "Indiquez le nom de votre entreprise (tel qu’il figure sur vos devis), votre nom et votre e-mail professionnel. Validez.",
                "Ouvrez l’e-mail de confirmation envoyé par Meta et cliquez sur le lien.",
                "Rattachez votre Page : Paramètres › Comptes › Pages › Ajouter › « Ajouter une Page existante ». Tapez le nom de votre Page et validez."], style="List Number")
+    g.figure("02-business-continuer-avec-facebook.png", 7.5, "Étape 1 : l’écran de connexion aux outils professionnels de Meta.")
+    g.figure("04-menu-pages.png", 6.5, "Étape 5 : dans le menu des Paramètres, Comptes › Pages.")
     g.para(("✓ Vous devez voir : ", "b"), "votre Page dans la liste « Pages » de votre portefeuille.", size=10.5, color=SOFT)
 
 
 def annexe_compte_pub(g, title, new_page=False):
     g.h1(title, new_page=new_page)
     g.para("Le compte publicitaire est le compte qui paie vos annonces. Il est à votre nom, et le budget est payé directement à Meta avec votre carte : Bartier & Co ne touche pas à cet argent.")
-    g.bullets(["Dans votre portefeuille : Paramètres › Comptes › Comptes publicitaires › Ajouter › « Créer un compte publicitaire ».",
+    g.bullets(["Dans votre portefeuille : Paramètres › Comptes › Comptes publicitaires (ci-dessous) › Ajouter › « Créer un compte publicitaire ».",
                "Nom du compte : le nom de votre entreprise.",
                [("Fuseau horaire : ", "b"), "(GMT+01:00) Paris. ", ("Devise : ", "b"), "euro (EUR)."],
                "Indiquez que le compte est utilisé pour votre propre entreprise.",
                "Ajoutez-vous comme personne, avec le contrôle total.",
                "Ajoutez votre carte bancaire professionnelle : dans le compte publicitaire, rubrique « Moyens de paiement » (ou « Facturation et paiements »)."], style="List Number")
+    g.figure("05-menu-comptes-publicitaires.png", 6.5, "Étape 1 : dans le menu des Paramètres, Comptes › Comptes publicitaires.")
     g.box([[("Attention : ", "b"), "le fuseau horaire et la devise ne peuvent plus être modifiés une fois le compte créé. Vérifiez-les bien avant de valider."]])
 
 
@@ -347,9 +363,10 @@ def guide_2():
     # Partie 1
     g.h1("Partie 1 : créer votre profil Facebook")
     g.box([[("Pourquoi un profil personnel ? ", "b"), "Meta exige qu’une vraie personne soit derrière chaque Page. Votre profil peut rester discret : vos clients voient la Page de votre entreprise, et vous n’avez rien à publier sur votre profil."]])
-    g.step(1, "Ouvrez Facebook et créez un compte", [["Sur ordinateur, ouvrez ", ("lien", "https://www.facebook.com", "facebook.com"), " et cliquez sur « Créer un compte »."]])
+    g.step(1, "Ouvrez le formulaire d’inscription", [["Sur ordinateur, ouvrez ", ("lien", "https://www.facebook.com/r.php", "facebook.com/r.php"), " : le formulaire s’ouvre directement. Il est intitulé « Démarrez sur Facebook à l’aide d’un compte Meta »."]])
     g.step(2, "Remplissez le formulaire",
-           ["Indiquez votre vrai prénom et votre vrai nom (Meta peut demander de les vérifier plus tard), votre date de naissance, votre e-mail professionnel ou votre numéro de portable, et un mot de passe solide."],
+           ["Dans l’ordre : votre vrai prénom et votre vrai nom (Meta peut demander de les vérifier plus tard), votre date de naissance, votre genre, votre numéro de portable ou votre e-mail professionnel, et un mot de passe solide. Cliquez ensuite sur le bouton bleu « Envoyer », en bas du formulaire."],
+           img=("01-inscription-facebook.png", 7.5),
            tip="Meta refuse le formulaire : utilisez votre vrai nom, pas celui de l’entreprise. Le nom de l’entreprise servira pour la Page.")
     g.step(3, "Confirmez avec le code reçu", ["Meta vous envoie un code par e-mail ou par SMS. Tapez-le dans la fenêtre qui s’affiche."],
            see="votre fil Facebook, encore presque vide.")
