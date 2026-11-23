@@ -2,7 +2,7 @@
 /**
  * POST /api/lead/ : reçoit la demande d'une page d'estimation client et
  *   1. l'écrit en une ligne dans le Google Sheet des demandes (application Web Apps Script, sheets/apps-script.gs) ;
- *   2. si le visiteur a donné son accord (cookies acceptés ou case cochée), envoie l'événement « Lead »
+ *   2. si le visiteur a donné son accord (cookies acceptés, ou « oui » à la question de la dernière étape), envoie l'événement « Lead »
  *      à l'API Conversions de Meta, avec l'identifiant de clic lu dans l'adresse de la page.
  *
  * Fichier source : lp-estimation/api_lead.js. build.py le copie dans dist/<client>/api/lead.js
@@ -27,7 +27,7 @@ const TIMEOUT_MS = 8000;
 const RATE_MAX = 5;
 const RATE_WINDOW_MS = 60 * 1000;
 const TRACKING = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid', 'fbclid'];
-const ACCORDS = ['cookies', 'case', 'non', 'sans objet'];
+const ACCORDS = ['cookies', 'question', 'non', 'sans objet'];
 
 /* ---------- Nettoyage ---------- */
 
@@ -142,7 +142,7 @@ async function sendSheet(lead, env) {
 // adresse IP et navigateur (demandés par Meta pour un événement de site).
 async function sendMeta(lead, req, env) {
   if (!PIXEL || !env.META_ACCESS_TOKEN) return 'off';
-  if (lead.accord !== 'cookies' && lead.accord !== 'case') return 'no_consent';
+  if (lead.accord !== 'cookies' && lead.accord !== 'question') return 'no_consent';
   const h = req.headers || {};
   const user = {};
   if (lead.tracking.fbclid) user.fbc = 'fb.1.' + lead.clic_at + '.' + lead.tracking.fbclid;

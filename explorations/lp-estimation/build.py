@@ -419,7 +419,11 @@ def steps_html(m, cfg, accent, photo_url=""):
         '</div>'
         '<input class="es-hp" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">'
         f'<p class="es-priv">{ico("lock")}<span class="es-consent">{e("En validant, vous acceptez d’être rappelé par " + cfg["entreprise"] + " au sujet de ce projet. Vos coordonnées ne servent qu’à cela : elles ne sont ni vendues ni cédées.")}</span></p>'
-        + (f'<label class="es-mes" hidden><input type="checkbox" name="mesure" value="1"><span>{e("Facultatif : j’accepte que " + cfg["entreprise"] + " indique à " + plats(cfg) + " que ma demande vient de leur publicité, pour mesurer ses annonces. Ni mon nom ni mon numéro ne leur sont transmis.")}</span></label>' if plats(cfg) else "")
+        + (f'<fieldset class="es-mes" data-req="mesure" data-miss="votre réponse sur la mesure des annonces" hidden>'
+           f'<legend>{e("Autorisez-vous " + cfg["entreprise"] + " à indiquer à " + plats(cfg) + " que votre demande vient de leur publicité ?")}</legend>'
+           f'<p>{e("Cela sert à mesurer ses annonces. Ni votre nom ni votre numéro ne leur sont transmis.")}</p>'
+           '<div class="es-mes-b"><button type="button" data-mes="1" aria-pressed="false">Oui</button>'
+           '<button type="button" data-mes="0" aria-pressed="false">Non</button></div></fieldset>' if plats(cfg) else "")
         + '</div>')
     return "".join(out), len(allsteps) + 1
 
@@ -517,7 +521,7 @@ def legal_html(m, cfg, key):
     if px:
         priv += (f"<p>Mesure des annonces. Avec votre accord seulement, {tags_who(cfg)} "
                  f"mesure{'' if tags_who(cfg) == 'un cookie de Meta' else 'nt'} l’efficacité de nos annonces. "
-                 f"Si vous avez accepté ces cookies, ou coché la case facultative au moment d’envoyer votre demande, nous indiquons aussi à {plats(cfg)} "
+                 f"Si vous avez accepté ces cookies, ou répondu oui à la question posée au moment d’envoyer votre demande, nous indiquons aussi à {plats(cfg)} "
                  "que votre demande vient de leur publicité : l’identifiant du clic sur l’annonce (présent dans l’adresse de la page), "
                  "l’heure de la demande, l’adresse de la page"
                  + (", ainsi que, pour Meta, votre adresse IP et le type de votre navigateur" if cfg.get("meta_pixel") else "") + ". "
@@ -754,9 +758,14 @@ svg{display:block}
 .es-two{display:grid;gap:16px;margin-top:20px}
 @media (min-width:40em){.es-two{grid-template-columns:1fr 1fr}}
 .es-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.es-mes{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-size:.84rem;line-height:1.45;color:var(--muted);cursor:pointer}
+.es-mes{margin:16px 0 0;padding:16px;border:1px solid var(--line);border-radius:12px;background:#fff;min-width:0}
 .es-mes[hidden]{display:none}
-.es-mes input{flex:none;width:20px;height:20px;margin:0;accent-color:var(--go);cursor:pointer}
+.es-mes legend{float:left;width:100%;padding:0;font-size:.94rem;line-height:1.4;font-weight:500;color:var(--ink)}
+.es-mes p{clear:both;margin-top:4px;font-size:.84rem;line-height:1.45;color:var(--muted)}
+.es-mes-b{display:flex;gap:8px;margin-top:12px}
+.es-mes-b button{flex:1 1 0;min-height:48px;border:1px solid var(--line2);border-radius:10px;background:#fff;font-weight:500;color:var(--ink)}
+.es-mes-b button[aria-pressed="true"]{border-color:var(--go);background:var(--go-bg);box-shadow:0 0 0 3px var(--go-ring)}
+.es-mes-b button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .es-priv{display:flex;gap:8px;margin-top:12px;font-size:.84rem;line-height:1.45;color:var(--muted)}
 .es-priv svg{flex:none;width:18px;height:18px;margin-top:0}
 .es-note{margin-top:16px;padding:12px 16px;border-radius:12px;background:var(--soft);font-size:.92rem;line-height:1.45;color:var(--ink2)}
@@ -856,7 +865,9 @@ var bar=f.querySelector(".es-bar i"),pct=f.querySelector(".es-pct"),num=f.queryS
 var qs=new URLSearchParams(location.search),track={},T0=Date.now(),EID="";["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid","gbraid","wbraid"].forEach(function(k){if(qs.get(k))track[k]=qs.get(k).slice(0,200)});
 function cookiesOk(){try{var v=JSON.parse(localStorage.getItem("es-consent"));return!!(v&&v.ok)}catch(e){return false}}
 function fromAd(){return!!(track.fbclid||track.gclid||track.gbraid||track.wbraid)}
-function accord(){if(!C.tags)return"sans objet";if(cookiesOk())return"cookies";var c=f.querySelector("[name=mesure]");return c&&c.checked&&!c.closest("[hidden]")?"case":"non"}
+function accord(){if(!C.tags)return"sans objet";if(cookiesOk())return"cookies";var mb=f.querySelector(".es-mes");return mb&&!mb.hidden&&A.mesure==="oui"?"question":"non"}
+each(f.querySelectorAll("[data-mes]"),function(b){b.addEventListener("click",function(){A.mesure=b.getAttribute("data-mes")==="1"?"oui":"non";
+  each(f.querySelectorAll("[data-mes]"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});clearErr();refresh();save()})});
 function newId(){try{if(window.crypto&&crypto.randomUUID)return crypto.randomUUID()}catch(e){}return Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,12)}
 function cookie(n){var m=document.cookie.match(new RegExp("(?:^|; )"+n+"=([^;]*)"));return m?decodeURIComponent(m[1]):""}
 /* conversion côté navigateur : seulement si les cookies sont acceptés (balises chargées), avec le même identifiant que l'API */
@@ -1023,7 +1034,7 @@ function submit(){if(val("site_web"))return;if(!EID)EID=newId();var pr=val("pren
   dl("estimation_demande",{travaux:A.travaux,delai:A.delai,statut:A.statut,estimation:est});
   if(!C.envoi){conv();return}
   var body={type:"estimation",_subject:"Demande d’estimation "+C.nom+" · "+place(),message:msg,metier:C.key,entreprise:C.ent,fields:{travaux:A.travaux,quantite:ql(),estimation:est,details:det,delai:A.delai,statut:A.statut,code_postal:A.code_postal,commune:A.commune||"",prenom:pr,telephone:tel},
-    consent:{text:f.querySelector(".es-consent").textContent+(accord()==="case"?" "+f.querySelector(".es-mes span").textContent:""),at:new Date().toISOString()},page:location.pathname,tracking:track,
+    consent:{text:f.querySelector(".es-consent").textContent+(accord()==="question"?" "+f.querySelector(".es-mes legend").textContent+" Réponse\u00a0: oui.":""),at:new Date().toISOString()},page:location.pathname,tracking:track,
     eid:EID,accord:accord(),clic_at:T0,fbp:cookiesOk()?cookie("_fbp"):"",site_web:""};
   var fin=false,end=function(ok){if(fin)return;fin=true;box.setAttribute("data-state",ok?"sent":"manual");var bh=box.querySelector(".es-s-"+(ok?"sent":"manual")+" .es-box-h");box.querySelector("[data-st]").textContent=bh?bh.textContent:"";save({done:1,pr:pr,st:ok?"sent":"manual"});if(ok)conv();dl("estimation_envoi",{envoi:ok?"auto":"manuel"})},t=setTimeout(function(){end(false)},8000);
   try{fetch(C.envoi,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(body)}).then(function(r){clearTimeout(t);end(r.ok)}).catch(function(){clearTimeout(t);end(false)})}catch(x){clearTimeout(t);end(false)}}

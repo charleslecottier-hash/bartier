@@ -18,7 +18,7 @@ var ENTETES = ['Reçue le', 'Suivi', 'Prénom', 'Téléphone', 'Code postal', 'C
   'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid', 'fbclid',
   'ID de la demande', 'Phrase affichée', 'Envoyée le'];
 var SUIVI = ['À rappeler', 'Rappelé', 'Qualifié', 'Visite fixée', 'Devis remis', 'Signé', 'Sans suite', 'Hors zone'];
-var ACCORD = { cookies: 'Oui (cookies)', 'case': 'Oui (case cochée)', non: 'Non', 'sans objet': 'Sans objet' };
+var ACCORD = { cookies: 'Oui (cookies)', question: 'Oui (question)', non: 'Non', 'sans objet': 'Sans objet' };
 
 function doPost(e) {
   try {

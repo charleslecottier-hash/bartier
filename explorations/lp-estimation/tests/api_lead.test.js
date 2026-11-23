@@ -23,7 +23,7 @@ const ENV = { LEAD_SHEET_URL: SHEET, LEAD_SHEET_KEY: 'cle-de-test-0123456789', M
 
 function payload(extra) {
   return Object.assign({
-    type: 'estimation', metier: 'toiture', eid: 'abcdef12-3456-7890-abcd-ef1234567890', accord: 'case', clic_at: Date.now() - 60000,
+    type: 'estimation', metier: 'toiture', eid: 'abcdef12-3456-7890-abcd-ef1234567890', accord: 'question', clic_at: Date.now() - 60000,
     fields: { prenom: 'Jeanne', telephone: '06 12 34 56 78', code_postal: '59000', commune: 'Lille', travaux: 'Réfection', details: ['Tuiles'] },
     tracking: { fbclid: 'IwAR0abc_DEF-123', gclid: 'Cj0KCQ_test', utm_source: 'facebook' },
     consent: { text: 'En validant…', at: new Date().toISOString() }, page: '/toiture/', site_web: '',
@@ -60,7 +60,7 @@ test('demande valide : une ligne dans le tableau et un Lead Meta avec l’identi
   assert.strictEqual(sheet.client, 'Toitures Test');
   assert.strictEqual(sheet.lead.fields.telephone, '+33612345678');
   assert.strictEqual(sheet.lead.metier, 'Toiture');
-  assert.strictEqual(sheet.lead.accord, 'case');
+  assert.strictEqual(sheet.lead.accord, 'question');
   assert.strictEqual(sheet.lead.tracking.gclid, 'Cj0KCQ_test');
   const meta = calls.find((c) => c.url.startsWith('https://graph.facebook.com/'));
   assert.match(meta.url, /\/v23\.0\/123456789012345\/events$/);
