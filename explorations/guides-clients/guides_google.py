@@ -257,10 +257,17 @@ def procedure_interne():
     g.h1("Une seule fois : mettre le compte en place")
     g.box([[("Compte administrateur : ", "b"), f"{MCC}, créé le 23 novembre 2026 avec {GMAIL}. C’est lui qui envoie les demandes d’accès aux clients."],
            [("Compte publicitaire de Bartier & Co : ", "b"), f"{PUB}, pour nos propres annonces. Il ne sert pas aux clients."]])
-    g.bullets([[("Ajouter Charles et Martin comme utilisateurs ", "b"), f"du compte administrateur, avec leur adresse personnelle, au niveau « Administrateur » : Admin › Accès et sécurité › Utilisateurs › « + ». Chacun se connecte ensuite avec sa propre adresse."],
-               [("Rattacher notre compte publicitaire ", "b"), f"au compte administrateur, pour tout voir au même endroit : Comptes (barre de gauche) › Performances › bouton bleu rond « + » au-dessus du tableau › « Associer un compte existant » › {PUB}, puis accepter la demande dans le compte {PUB} (Admin › Accès et sécurité › onglet « Gestionnaires »). C’est aussi le meilleur entraînement avant le premier client."],
-               [("Protéger ", "b"), f"{GMAIL} par la validation en deux étapes (myaccount.google.com › Sécurité) : ce compte donne accès à tous les clients."],
-               [("Windsor.ai : ", "b"), "reconnecter Google Ads avec ce compte, pour que les comptes des clients apparaissent dans le suivi."]], style="List Number")
+    g.bullets([[("Rattacher notre compte publicitaire : fait le 23 novembre 2026. ", "b"), f"{PUB} apparaît dans Comptes › Performances du compte administrateur."],
+               [("Sécuriser ", "b"), f"{GMAIL}, pour l’instant seul administrateur : validation en deux étapes avec deux méthodes (téléphone et codes de secours imprimés), "
+                "e-mail et téléphone de récupération (myaccount.google.com › Sécurité). Si cet accès est perdu, tous les comptes clients sont bloqués. "
+                "Identifiants partagés entre Charles et Martin par un gestionnaire de mots de passe, jamais par message."],
+               [("Notifications : ", "b"), "Admin › Notifications, activer au moins les alertes de refus d’annonces, de problèmes de paiement et de règlement, pour tous les comptes gérés."],
+               [("Règlement : ", "b"), "Admin › Règlement › Récapitulatif, traiter les points en attente du compte administrateur."],
+               [("Windsor.ai : ", "b"), f"reconnecter Google Ads avec {GMAIL} et cocher {MCC} et {PUB}, pour que les comptes des clients apparaissent dans le suivi."],
+               [("Dès que nous avons le SIREN : ", "b"), "faire la vérification « agence » (Admin › Règlement : « Advertiser verification – Agency »), avec le Kbis et le SIREN."],
+               [("Facultatif, plus tard : ", "b"), "quand nous aurons des adresses @bartierandco.com, les ajouter au niveau « Administrateur » (Admin › Accès et sécurité › Utilisateurs › « + »), "
+                f"vérifier qu’elles fonctionnent, et garder {GMAIL} en secours. Toujours au moins deux administrateurs dès que possible. "
+                "Les liens avec les clients ne changent pas : ils sont attachés au compte administrateur, pas aux personnes."]], style="List Number")
     g.h1("Pour chaque client qui a déjà Google Ads (guide 1)")
     g.step(1, "Envoyer le guide au client", ["Guide accès Google 1, par e-mail ou WhatsApp, avec ce message :",
                                               [("« ", ""), "Bonjour, voici le guide pour nous donner l’accès à Google Ads. Il suffit de nous envoyer le numéro à 10 chiffres en haut à droite de votre compte : on s’occupe du reste. ", ("»", "")]])
@@ -282,8 +289,13 @@ def procedure_interne():
            ["Dans « Comptes » › « Performances », le compte du client apparaît, actif. Pour voir les demandes encore en attente : onglet « Demandes d’association envoyées ». "
             "Sans réponse au bout de 48 heures, appeler le client et faire l’étape avec lui. Au-delà de 20 jours, la demande expire : la renvoyer."],
            tip="le client a utilisé la méthode de secours (il a ajouté notre adresse comme utilisateur) : accepter l’e-mail d’invitation de Google reçu sur " + GMAIL + ".")
-    g.step(8, "Fiche Google et Analytics", [f"Accepter les invitations reçues sur {GMAIL} : « gestionnaire » de la fiche Google, « éditeur » d’Analytics."])
-    g.step(9, "Brancher le suivi", ["Dans Windsor.ai, le nouveau compte apparaît avec les autres. S’il n’y est pas, reconnecter Google Ads dans Windsor pour actualiser la liste des comptes."])
+    g.step(8, "Régler le compte du client",
+           ["Ouvrir le compte du client depuis Comptes › Performances, puis Admin › Règlement › Récapitulatif :",
+            "faire la déclaration « annonces politiques dans l’UE » (réponse : non) ;",
+            "si Google propose la vérification de l’annonceur (« Client verification »), cliquer sur « Copy link » et envoyer le lien au client : c’est lui qui vérifie son entreprise.",
+            [("Propriétaire : ", "b"), "le lien est créé avec « Propriétaire : Non ». On le laisse ainsi : nous gérons les annonces, le client garde la main sur les accès à son compte."]])
+    g.step(9, "Fiche Google et Analytics", [f"Accepter les invitations reçues sur {GMAIL} : « gestionnaire » de la fiche Google, « éditeur » d’Analytics."])
+    g.step(10, "Brancher le suivi", ["Dans Windsor.ai, le nouveau compte apparaît avec les autres. S’il n’y est pas, reconnecter Google Ads dans Windsor pour actualiser la liste des comptes."])
     g.h1("Pour un client qui n’a pas Google Ads (guide 2)")
     g.para("Deux possibilités :")
     g.bullets([[("Le client crée son compte avec le guide 2, ", "b"), "puis on reprend à l’étape 2 ci-dessus. C’est la solution par défaut : le compte est à son nom dès le départ."],
