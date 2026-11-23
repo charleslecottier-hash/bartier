@@ -6,6 +6,14 @@ Un formulaire Google Forms à envoyer au client avant l'appel de lancement. Il r
 
 Les mentions légales ne sont pas demandées : raison sociale, forme juridique, capital, siège, immatriculation, numéro de TVA et dirigeant se retrouvent à partir du SIRET dans l'annuaire officiel des entreprises ([annuaire-entreprises.data.gouv.fr](https://annuaire-entreprises.data.gouv.fr)). Les objectifs, les prestations à mettre en avant, les chantiers refusés, les tarifs et la façon de recevoir les demandes se voient à l'appel.
 
+## Le formulaire en ligne
+
+Créé le 23/11/2026 avec le compte adminbartier@gmail.com.
+
+- **Lien à envoyer aux clients :** https://docs.google.com/forms/d/e/1FAIpQLSeGF6tEZCbA7OYP6rGWO_vq22b_bZcUwqyhfMkvVGXXdne1_g/viewform
+- Modifier le formulaire (compte Bartier & Co) : https://docs.google.com/forms/d/1p7cqQ4Z9y547aWU6j1aVfuDXidrq5mIVxqMn7BMPMU0/edit
+- Tableau des réponses (compte Bartier & Co) : https://docs.google.com/spreadsheets/d/1dif9ll05_BAjlnS4QFcyh_pecmD6ixpg5ZQoMMeXUxQ/edit
+
 ## Le créer (une seule fois, environ 2 minutes)
 
 Avec le compte Google de Bartier & Co (adminbartier@gmail.com) :
