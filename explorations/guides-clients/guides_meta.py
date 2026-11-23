@@ -180,8 +180,7 @@ class Guide:
         if tip:
             p = b.add_paragraph(); p.paragraph_format.space_after = Pt(3)
             runs(p, [("Si ça bloque : ", "b")] + (tip if isinstance(tip, list) else [tip]), size=10.5, color=SOFT)
-        if img:
-            f, w = img
+        for f, w in ([img] if isinstance(img, tuple) else (img or [])):
             p = b.add_paragraph(); p.paragraph_format.space_before = Pt(4); p.paragraph_format.space_after = Pt(4)
             p.add_run().add_picture(str(CAP / f), width=Cm(w))
         # le tableau d'une étape ne se coupe pas entre deux pages

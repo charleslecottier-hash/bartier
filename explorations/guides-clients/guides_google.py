@@ -60,9 +60,9 @@ def etapes_ads(g, first=1, new_account=False):
                tip="Google vous propose plusieurs comptes : choisissez celui de votre entreprise. Vous ne savez plus lequel ? Appelez-nous, on cherche avec vous.")
         n += 1
     g.step(n, "Repérez votre numéro de compte Google Ads",
-           ["C’est le numéro à 10 chiffres écrit en haut à droite de l’écran, à côté du nom de votre compte. Il ressemble à 123-456-7890. Copiez-le, ou notez-le."],
+           ["C’est le numéro à 10 chiffres écrit en haut à droite de l’écran, juste au-dessus de votre adresse e-mail (encadré en bleu ; sur l’image, un exemple). Il ressemble à 123-456-7890. Copiez-le, ou notez-le."],
+           img=("g-c-01-numero.png", 6.5),
            tip="Vous voyez plusieurs numéros, ou une liste de comptes : envoyez-nous celui du compte qui diffuse (ou diffusera) vos annonces, ou envoyez-nous une capture d’écran.")
-    exemple_numero(g)
     n += 1
     g.step(n, "Envoyez-nous ce numéro",
            [["Sur WhatsApp ou par SMS au ", (TEL_TXT, "b"), ", par exemple : « Mon numéro Google Ads : 123-456-7890 ». ", ("lien", WA, "Ouvrir WhatsApp")],
@@ -71,13 +71,17 @@ def etapes_ads(g, first=1, new_account=False):
     g.step(n, "Acceptez notre demande",
            ["Google vous prévient par e-mail qu’une demande de gestion de votre compte est arrivée de la part de Bartier & Co. Cliquez sur le bouton de l’e-mail, puis sur « Accepter ».",
             [("Vérifiez avant d’accepter : ", "b"), f"la demande vient du compte {MCC}, Bartier & Co. Si un autre nom ou un autre numéro apparaît, ne l’acceptez pas et appelez-nous."],
-            [("Pas d’e-mail ? ", "b"), "Dans Google Ads, cliquez sur « Administration » (la roue dentée, dans le menu de gauche), puis « Accès et sécurité », onglet « Gestionnaires ». La demande de Bartier & Co y attend votre accord : cliquez sur « Accepter »."]],
-           see=f"Bartier & Co, compte {MCC}, dans la liste des gestionnaires de votre compte. La demande reste valable 20 jours : passé ce délai, prévenez-nous, nous la renvoyons.",
-           tip="vous ne trouvez pas « Administration » : sur l’ancienne présentation de Google Ads, passez par l’icône « Outils » (la clé), puis « Accès et sécurité ».")
+            [("Pas d’e-mail ? ", "b"), "Dans Google Ads : (1) « Admin », la roue dentée en bas de la barre de gauche, (2) « Accès et sécurité », (3) onglet « Administrateurs ». "
+             "La demande de Bartier & Co apparaît dans le cadre « Demande d’association » : cliquez sur « Accepter »."]],
+           img=[("g-c-10-chemin-administrateurs.png", 14.5), ("g-c-04-administrateurs.png", 14.5)],
+           tip="vous ne trouvez pas « Admin » : sur l’ancienne présentation de Google Ads, passez par l’icône « Outils » (la clé), puis « Accès et sécurité ». L’onglet s’appelle parfois « Gestionnaires ».")
+    g.para(("✓ Vous devez voir : ", "b"), f"Bartier & Co, compte {MCC}, dans la liste sous le cadre, comme sur l’image ci-dessous. La demande reste valable 20 jours : passé ce délai, prévenez-nous, nous la renvoyons.", size=10.5, color=SOFT)
+    g.figure("g-c-06-lien-actif.png", 15, "Exemple : le compte Bartier & Co, associé et actif. La colonne « Propriétaire » reste sur « Non » : vous restez maître des accès à votre compte.")
     g.box([[("Autre méthode, si notre demande ne vous arrive pas : ", "b"), "ajoutez directement notre adresse comme utilisateur de votre compte Google Ads."],
-           "1. Dans Google Ads : Administration › Accès et sécurité › onglet « Utilisateurs ».",
+           "1. Dans Google Ads : Admin › Accès et sécurité › onglet « Utilisateurs » (voir l’image sous ce cadre).",
            ["2. Cliquez sur le « + » bleu et saisissez ", (GMAIL, "b"), "."],
            "3. Choisissez le niveau d’accès « Administrateur », puis « Envoyer l’invitation ». Prévenez-nous : nous acceptons de notre côté."])
+    g.figure("g-c-08-utilisateurs.png", 9, "L’onglet « Utilisateurs », à côté de « Administrateurs ».")
     return n
 
 
@@ -126,9 +130,10 @@ def blocages(g, extra=()):
 def retirer(g):
     g.h1("Retirer l’accès plus tard")
     g.para("Vous gardez la main à tout moment :")
-    g.bullets([[("Google Ads : ", "b"), "Administration › Accès et sécurité › onglet « Gestionnaires » › Bartier & Co › mettre fin à l’association."],
+    g.bullets([[("Google Ads : ", "b"), "Admin › Accès et sécurité › onglet « Administrateurs » › « Supprimer l’accès » sur la ligne Bartier & Co (image ci-dessous)."],
                [("Fiche Google : ", "b"), "Paramètres du profil › Personnes et accès › notre adresse › Supprimer."],
                [("Analytics : ", "b"), "Administration › Gestion des accès au compte › notre adresse › Supprimer l’accès."]])
+    g.figure("g-c-07-supprimer.png", 15, "« Supprimer l’accès », au bout de la ligne Bartier & Co.")
     g.para("Vos comptes, vos annonces et leur historique restent à vous.", color=SOFT, size=10.5)
 
 
@@ -206,7 +211,7 @@ def guide_2():
     g.box([[("À retenir : ", "b"), "notez votre mot de passe dans un endroit sûr. Ne le donnez à personne, pas même à nous : nous n’en aurons jamais besoin."]])
 
     # Partie 2
-    g.h1("Partie 2 : créer votre compte Google Ads, sans campagne", new_page=True)
+    g.h1("Partie 2 : créer votre compte Google Ads, sans campagne")
     g.step(1, "Ouvrez Google Ads et cliquez sur « Commencer »",
            [["Ouvrez ", ("lien", ADS, "ads.google.com"), " et cliquez sur le bouton bleu « Commencer » (encadré en bleu). Connectez-vous avec le compte Google de la partie 1."]],
            img=("g-02-ads-commencer.png", 13))
@@ -220,11 +225,13 @@ def guide_2():
             "Cliquez ensuite sur « Envoyer », puis sur « Explorer votre compte »."],
            see="l’écran d’accueil de Google Ads, avec votre numéro de compte en haut à droite.")
     g.box([[("Attention : ", "b"), "la devise ne peut plus être modifiée une fois le compte créé. Vérifiez-la bien, ainsi que le fuseau horaire, avant de valider."]])
+    g.figure("g-c-09-nouvelle-campagne.png", 14, "Si vous arrivez sur cet écran « Bienvenue, préparons votre compte… », le compte est créé. Ne cliquez pas sur « Nouvelle campagne » (encadré en rouge) : passez à la partie 3.")
 
     # Partie 3
     g.h1("Partie 3 : ajouter votre moyen de paiement")
     g.para("Le budget de vos annonces est payé directement à Google avec votre carte : Bartier & Co ne touche pas à cet argent. Aucune somme n’est dépensée tant qu’aucune campagne ne tourne.")
-    g.bullets(["Dans le menu de gauche de Google Ads, cliquez sur « Facturation ».",
+    g.figure("g-c-05-facturation.png", 2.2, "« Facturation », dans la barre de gauche, juste au-dessus de « Admin ».")
+    g.bullets(["Dans la barre de gauche de Google Ads, cliquez sur « Facturation » (image ci-dessus).",
                "Si Google vous le propose, choisissez le type de compte « Entreprise », puis indiquez le nom et l’adresse de votre entreprise, comme sur vos factures.",
                "Ajoutez votre carte bancaire professionnelle et enregistrez.",
                "Si Google vous demande votre numéro de TVA intracommunautaire, indiquez-le s’il existe."], style="List Number")
