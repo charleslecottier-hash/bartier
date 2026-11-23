@@ -54,7 +54,7 @@ NAV_SUB = {"#services": [("Accueil", "", "/"),
                          ("Google Ads", "", "/google-ads/"),
                          ("Meta Ads", "", "/meta-ads/"),
                          ("Questions fréquentes", "", "/questions/"),
-                         ("Chiffres du bâtiment", "", "/chiffres-du-batiment/"),
+                         ("Le Bâtimètre", "", "/chiffres-du-batiment/"),
                          ("Notre méthode", "", "#services")],
            # « Métiers » ouvre la liste des cinq métiers
            "/metiers/": [("Couverture et zinguerie", "", "/metiers/couverture/"),
@@ -1515,10 +1515,10 @@ write_plain("/lexique/", "Lexique des chantiers et des travaux | Bartier & Co",
                 bc_ld(("Lexique", "/lexique/"))]})
 paths.append("/lexique/")
 
-# ——— Observatoire « Les chiffres du bâtiment » : index BT de l'Insee et calculateur (_build/observatoire.py, données _build/indices_bt.py) ———
+# ——— Le Bâtimètre, observatoire Bartier & Co : index BT de l'Insee et calculateur (_build/observatoire.py, données _build/indices_bt.py) ———
 import observatoire as OB
 
-_ob_name = ("Chiffres du bâtiment", OB.BASE)
+_ob_name = ("Le Bâtimètre", OB.BASE)
 _ob_list = ("Indices BT", OB.LIST)
 _ob_ds = OB.dataset_ld(SITE, OB.BASE)
 
@@ -1545,7 +1545,7 @@ for _c, _x in OB.IDX.items():
                "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": SITE + "/assets/data/indices-bt.csv"}]}])
 _ob_calc = ("Révision de prix", OB.CALC)
 ob_write(OB.CALC, OB.page_calc(crumbs(_ob_name, _ob_calc), TICK_SVG, PHONE, PHONE_TXT), [_ob_name, _ob_calc],
-         [{"@type": "WebApplication", "@id": SITE + OB.CALC + "#outil", "name": "Calculateur de révision de prix (index BT)", "url": SITE + OB.CALC,
+         [{"@type": "WebApplication", "@id": SITE + OB.CALC + "#outil", "name": "Calculateur de révision de prix du Bâtimètre (index BT)", "url": SITE + OB.CALC,
            "applicationCategory": "BusinessApplication", "operatingSystem": "Tous", "inLanguage": "fr-FR", "isAccessibleForFree": True,
            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@id": SITE + "/#org"},
            "description": "Calcule la révision d’un prix avec la formule P = P0 × (a + (1 − a) × In / I0) et les index BT publiés par l’Insee."}])

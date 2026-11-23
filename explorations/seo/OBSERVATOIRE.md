@@ -1,4 +1,6 @@
-# Observatoire « Les chiffres du bâtiment »
+# Le Bâtimètre, l'observatoire Bartier & Co
+
+Nom choisi le 23/11/2026 (avant : « Les chiffres du bâtiment »). L'adresse /chiffres-du-batiment/ ne change pas. Nom non trouvé sur le web au 23/11 ; à vérifier à l'INPI avant tout dépôt de marque.
 
 En ligne le 22/11/2026 sur bartierandco.com. Objectif : une source de référence pour toute la profession, éditée par Bartier & Co, qui attire des liens et des citations (presse, moteurs de réponse IA) et des artisans qui cherchent l'indice BT01 chaque mois.
 
@@ -6,7 +8,7 @@ En ligne le 22/11/2026 sur bartierandco.com. Objectif : une source de référenc
 
 | Page | Recherches visées |
 |---|---|
-| /chiffres-du-batiment/ | chiffres du bâtiment, index BT, indices BT |
+| /chiffres-du-batiment/ | Bâtimètre, index BT, indices BT, chiffres du bâtiment |
 | /chiffres-du-batiment/indices-bt/ | indices BT + mois, index BT Insee, tableau des index BT |
 | /chiffres-du-batiment/indices-bt/btXX/ (38 pages) | indice BT01, indice BT01 + mois, index BT32, BT50, BT52… |
 | /chiffres-du-batiment/revision-de-prix/ | révision de prix BT01, calcul révision de prix, formule de révision |
@@ -30,7 +32,7 @@ L'Insee publie les index BT vers le milieu du mois (valeurs de septembre 2026 pu
 
 ## Maillage
 
-Menu « Comment ça marche », pied de page (Révision de prix BT01, Chiffres du bâtiment), chaque page métier vers l'index de son corps d'état, deux définitions dans le lexique (index BT, révision de prix), llms.txt.
+Menu « Comment ça marche », pied de page (Révision de prix BT01, Le Bâtimètre), chaque page métier vers l'index de son corps d'état, deux définitions dans le lexique (index BT, révision de prix), llms.txt.
 
 ## Suite prévue
 

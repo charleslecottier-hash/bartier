@@ -1,4 +1,4 @@
-"""Observatoire « Les chiffres du bâtiment » : index BT de l'Insee, pages par index, calculateur de révision de prix.
+"""Le Bâtimètre, l'observatoire Bartier & Co : index BT de l'Insee, pages par index, calculateur de révision de prix.
 
 Données : _build/indices_bt.json (mis à jour par _build/indices_bt.py). Aucune donnée inventée :
 chaque valeur vient de l'Insee, chaque règle citée a sa source.
@@ -284,7 +284,7 @@ def page_hub(crumbs, tick, phone, phone_txt):
                ("Index en hausse sur un an", f"{n_up} sur {len(act)}", "index publiés depuis plus d’un an"),
                ("Plus forte hausse", pct(var(up, 12)), f"{up['code']}, {up['nom'][0].lower() + up['nom'][1:]}"),
                ("Plus faible hausse" if var(down, 12) > 0 else "Plus faible évolution", pct(var(down, 12)), f"{down['code']}, {down['nom'][0].lower() + down['nom'][1:]}")])
-    h = hero(crumbs, "Observatoire", "Les chiffres du bâtiment",
+    h = hero(crumbs, "Observatoire Bartier &amp; Co", "Le Bâtimètre",
              f"Les {N_ACT} index BT publiés chaque mois par l’Insee, un calculateur de révision de prix et les données en accès libre. Dernier mois publié&nbsp;: {mois(LAST_P)}.",
              btn("Réviser un prix", CALC, tick) + f'<a class="link" href="{LIST}">Tous les index BT</a>', board())
     trows = "".join(f'<tr><th scope="row" class="ob-name">{t_}</th><td class="ob-code"><a class="link" href="{path(c)}">{c}</a></td><td class="ob-n" data-label="Valeur">{num(last(IDX[c])[1])}</td>'
@@ -303,11 +303,11 @@ def page_hub(crumbs, tick, phone, phone_txt):
 </ul>""", "paper", "outils"),
             section("Méthode", "", f"""<div class="ob-prose"><p>Les valeurs sont celles publiées par l’Insee dans sa base de données macroéconomiques (jeu « Index bâtiment, travaux publics et divers de la construction », base 2010). Nous les reprenons sans retouche, chaque mois, après la publication officielle.</p>
 <p>Les variations sont calculées par nos soins&nbsp;: sur un mois, par rapport au mois précédent ; sur un an, par rapport au même mois de l’année précédente. Depuis janvier 2026, l’Insee publie un nouvel index, le BT55 (isolation thermique par l’extérieur), et a arrêté le BT12.</p>
-<p>L’observatoire est réalisé par <a class="link" href="/qui-sommes-nous/">Bartier &amp; Co</a>, l’agence qui trouve des clients aux artisans du bâtiment.</p></div>{SRC_LINE}""", "light", "methode"),
+<p>Le Bâtimètre est réalisé par <a class="link" href="/qui-sommes-nous/">Bartier &amp; Co</a>, l’agence qui trouve des clients aux artisans du bâtiment.</p></div>{SRC_LINE}""", "light", "methode"),
             faq_html(FAQ_GEN, "Index BT : vos questions", phone, phone_txt),
             links_band("Aller plus loin", [("Calculateur de révision de prix", CALC), ("Tous les index BT", LIST), ("Lexique des chantiers et des travaux", "/lexique/"), ("Trouver des chantiers", "/trouver-des-chantiers/")])]
-    title = "Chiffres du bâtiment : index BT et révision de prix"
-    desc = f"Les {N_ACT} index BT de l’Insee mis à jour chaque mois ({mois(LAST_P)} : BT01 à {num(v)}), un calculateur de révision de prix et les données en accès libre."
+    title = "Le Bâtimètre : index BT de l’Insee et révision de prix"
+    desc = f"Le Bâtimètre : les {N_ACT} index BT de l’Insee mis à jour chaque mois ({mois(LAST_P)} : BT01 à {num(v)}), un calculateur de révision de prix et les données en accès libre."
     return title, desc, "\n\n".join(body) + OB_JS, FAQ_GEN
 
 
@@ -316,11 +316,11 @@ def page_list(crumbs, tick, phone, phone_txt):
     for i, (fam, codes) in enumerate(FAMILLES):
         secs.append(section(fam, "", table_family(codes, f"{fam}, {mois(LAST_P)}"), "light" if i % 2 == 0 else "paper", f"f{i + 1}"))
     bt01 = IDX["BT01"]
-    h = hero(crumbs, "Index du bâtiment", f"Indices BT&nbsp;: les valeurs de {mois(LAST_P)}",
+    h = hero(crumbs, "Le Bâtimètre", f"Indices BT&nbsp;: les valeurs de {mois(LAST_P)}",
              f"Les {N_ACT} index BT publiés chaque mois par l’Insee, base 100 en 2010, classés par famille de travaux, et le BT12, arrêté fin 2025.",
              btn("Réviser un prix", CALC, tick) + '<a class="link" href="/assets/data/indices-bt.csv" download>Télécharger les données (CSV)</a>', panel_index("BT01"))
     body = [h] + secs + [section("Source", "", SRC_LINE, "light"), faq_html(FAQ_GEN, "Index BT : vos questions", phone, phone_txt),
-                         links_band("Aller plus loin", [("Calculateur de révision de prix", CALC), ("Les chiffres du bâtiment", BASE), ("Lexique", "/lexique/")])]
+                         links_band("Aller plus loin", [("Calculateur de révision de prix", CALC), ("Le Bâtimètre, l’observatoire des index BT", BASE), ("Lexique", "/lexique/")])]
     title = f"Indices BT {mois(LAST_P)} : toutes les valeurs (Insee)"
     desc = f"Les {N_ACT} index BT du bâtiment de {mois(LAST_P)}, base 2010 : BT01 à {num(last(bt01)[1])}. Évolutions sur un mois et sur un an, historique et données en CSV. Source Insee."
     return title, desc, "\n\n".join(body), FAQ_GEN
@@ -336,7 +336,7 @@ def page_index(code, crumbs, tick, phone, phone_txt):
     stop = x["arretee"]
     lead = (f"L’index {code} de l’Insee mesure l’évolution du coût des travaux {de(nom)}. "
             + (f"Valeur de {mois(p)}&nbsp;: {num(v)}." if not stop else f"Cette série est arrêtée : dernière valeur, {num(v)} en {mois(p)}."))
-    h = hero(crumbs, f"Index du bâtiment · {fam}", f"Index {code}&nbsp;: {nom[0].lower() + nom[1:]}", lead,
+    h = hero(crumbs, f"Le Bâtimètre · {fam}", f"Index {code}&nbsp;: {nom[0].lower() + nom[1:]}", lead,
              (btn(f"Réviser un prix avec le {code}", f"{CALC}?index={code}", tick) if not stop else "") + f'<a class="link" href="{LIST}">Tous les index BT</a>', panel_index(code))
     recent = list(reversed(x["valeurs"][-24:]))
     vals = dict(x["valeurs"])
@@ -412,7 +412,7 @@ def page_calc(crumbs, tick, phone, phone_txt):
     <p class="ob-note">Le calcul suit la formule P = P0 × (a + (1 − a) × In / I0). Vérifiez qu’elle correspond à celle de votre contrat.</p>
   </div>
 </form>"""
-    h = hero(crumbs, "Outil gratuit", "Calculateur de révision de prix",
+    h = hero(crumbs, "Le Bâtimètre · outil gratuit", "Calculateur de révision de prix",
              "Révisez le prix d’un devis ou d’un marché avec l’index BT de votre choix, à partir des valeurs officielles de l’Insee. Le calcul est fait dans votre navigateur.",
              btn("Faire le calcul", "#calcul", tick) + f'<a class="link" href="{LIST}">Tous les index BT</a>', formula_panel())
     how = f"""<div class="ob-prose"><ol class="ob-steps">
@@ -424,7 +424,7 @@ def page_calc(crumbs, tick, phone, phone_txt):
             section("Comment l’utiliser", "", how, "light", "mode-emploi"),
             faq_html([FAQ_GEN[3], FAQ_GEN[4], FAQ_GEN[2], ("Les valeurs sont-elles à jour ?", f"Oui : ce sont les index publiés par l’Insee, mis à jour chaque mois. Dernier mois disponible&nbsp;: {mois(LAST_P)}.")],
                      "Révision de prix : vos questions", phone, phone_txt),
-            links_band("Aller plus loin", [("Tous les index BT", LIST), (label("BT01"), path("BT01")), (label("BT50"), path("BT50")), ("Les chiffres du bâtiment", BASE)])]
+            links_band("Aller plus loin", [("Tous les index BT", LIST), (label("BT01"), path("BT01")), (label("BT50"), path("BT50")), ("Le Bâtimètre, l’observatoire des index BT", BASE)])]
     title = "Révision de prix BT01 : calculateur gratuit (index BT)"
     desc = f"Calculez la révision de prix d’un devis ou d’un marché avec le BT01 ou l’un des {N_ACT} index BT de l’Insee, à jour de {mois(LAST_P)}. Formule détaillée, prête à copier."
     faqs = [FAQ_GEN[3], FAQ_GEN[4], FAQ_GEN[2]]
@@ -600,7 +600,7 @@ fetch("/assets/data/indices-bt.json").then(function(r){return r.json()}).then(fu
 
 
 def dataset_ld(SITE, url):
-    return {"@type": "Dataset", "@id": SITE + url + "#donnees", "name": "Index du bâtiment BT, base 2010 : séries mensuelles",
+    return {"@type": "Dataset", "@id": SITE + url + "#donnees", "name": "Index du bâtiment BT, base 2010 : séries mensuelles", "alternateName": "Le Bâtimètre",
             "description": f"Les {len(IDX)} index BT de l’Insee (base 100 en 2010), dont {len(IDX) - N_ACT} série arrêtée, d’octobre 2014 à {mois(LAST_P)}, mis à jour chaque mois.",
             "url": SITE + url, "inLanguage": "fr-FR", "temporalCoverage": f"2014-10/{LAST_P}", "spatialCoverage": {"@type": "Country", "name": "France"},
             "dateModified": MAJ, "isBasedOn": "https://bdm.insee.fr/series/sdmx/data/INDEX-BT-TP-DIV-IM-2010", "creditText": "Source : Insee",

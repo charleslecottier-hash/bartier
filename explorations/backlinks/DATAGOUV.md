@@ -17,7 +17,7 @@ Ne lier qu'un jeu qui contient vraiment les index BT.
 ## 2. Les champs du formulaire
 
 **Titre**
-Observatoire des index BT : valeurs mensuelles, courbes et calculateur de révision de prix
+Le Bâtimètre : les index BT de l'Insee chaque mois et un calculateur de révision de prix
 
 **Lien**
 https://bartierandco.com/chiffres-du-batiment/
@@ -30,7 +30,7 @@ La plus proche du logement, de l'urbanisme ou de l'économie, selon la liste pro
 
 **Description**
 
-Les 37 index BT publiés chaque mois par l'Insee (index bâtiment, base 100 en 2010), présentés pour les artisans, les entreprises du bâtiment et leurs clients :
+Le Bâtimètre présente les 37 index BT publiés chaque mois par l'Insee (index bâtiment, base 100 en 2010) pour les artisans, les entreprises du bâtiment et leurs clients :
 
 - une page par index, avec la valeur du dernier mois, l'évolution sur un mois et sur un an, la courbe depuis octobre 2014, les 24 derniers mois et les moyennes annuelles ;
 - un tableau de tous les index, classés par famille de travaux ;

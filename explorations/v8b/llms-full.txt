@@ -17326,13 +17326,13 @@ Voir aussi : reconnaître un artisan sérieux · Source : Annuaire des entrepris
 
 ---
 
-## Chiffres du bâtiment : index BT et révision de prix
+## Le Bâtimètre : index BT de l’Insee et révision de prix
 
 Adresse : https://bartierandco.com/chiffres-du-batiment/
 
-Les 37 index BT de l’Insee mis à jour chaque mois (septembre 2026 : BT01 à 139,1), un calculateur de révision de prix et les données en accès libre.
+Le Bâtimètre : les 37 index BT de l’Insee mis à jour chaque mois (septembre 2026 : BT01 à 139,1), un calculateur de révision de prix et les données en accès libre.
 
-Observatoire
+Observatoire Bartier & Co
 Les 37 index BT publiés chaque mois par l’Insee, un calculateur de révision de prix et les données en accès libre. Dernier mois publié : septembre 2026.
 Index BT de septembre 2026 sur 1 an
 - BT01 Tous corps d’état 139,1 +4,4 %
@@ -17395,7 +17395,7 @@ Toutes les valeurs depuis octobre 2014, prêtes pour un tableur. Réutilisation 
 ### Méthode
 Les valeurs sont celles publiées par l’Insee dans sa base de données macroéconomiques (jeu « Index bâtiment, travaux publics et divers de la construction », base 2010). Nous les reprenons sans retouche, chaque mois, après la publication officielle.
 Les variations sont calculées par nos soins : sur un mois, par rapport au mois précédent ; sur un an, par rapport au même mois de l’année précédente. Depuis janvier 2026, l’Insee publie un nouvel index, le BT55 (isolation thermique par l’extérieur), et a arrêté le BT12.
-L’observatoire est réalisé par Bartier & Co, l’agence qui trouve des clients aux artisans du bâtiment.
+Le Bâtimètre est réalisé par Bartier & Co, l’agence qui trouve des clients aux artisans du bâtiment.
 Source : Insee, index du bâtiment (base 2010), données mises à jour le 13 novembre 2026. Les données sont en accès libre : CSV, JSON.
 
 ### Index BT : vos questions
@@ -17430,7 +17430,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/
 
 Les 37 index BT du bâtiment de septembre 2026, base 2010 : BT01 à 139,1. Évolutions sur un mois et sur un an, historique et données en CSV. Source Insee.
 
-Index du bâtiment
+Le Bâtimètre
 Les 37 index BT publiés chaque mois par l’Insee, base 100 en 2010, classés par famille de travaux, et le BT12, arrêté fin 2025.
 Index BT01 septembre 2026
 139,1
@@ -17527,7 +17527,7 @@ La révision fait suivre l’index au prix pendant l’exécution des travaux, s
 
 ### Aller plus loin
 - Calculateur de révision de prix
-- Les chiffres du bâtiment
+- Le Bâtimètre, l’observatoire des index BT
 - Lexique
 
 ---
@@ -17538,7 +17538,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt01/
 
 Index BT01 (tous corps d’état) de septembre 2026 : 139,1, +4,4 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Tous corps d’état et rénovation
+Le Bâtimètre · Tous corps d’état et rénovation
 L’index BT01 de l’Insee mesure l’évolution du coût des travaux de tous corps d’état. Valeur de septembre 2026 : 139,1.
 Index BT01 septembre 2026
 139,1
@@ -17632,7 +17632,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt02/
 
 Index BT02 (terrassements) de septembre 2026 : 147,6, +8,4 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Gros œuvre et structure
+Le Bâtimètre · Gros œuvre et structure
 L’index BT02 de l’Insee mesure l’évolution du coût des travaux de terrassements. Valeur de septembre 2026 : 147,6.
 Index BT02 septembre 2026
 147,6
@@ -17728,7 +17728,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt03/
 
 Index BT03 (maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie)) de septembre 2026 : 140,3, +3,7 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Gros œuvre et structure
+Le Bâtimètre · Gros œuvre et structure
 L’index BT03 de l’Insee mesure l’évolution du coût des travaux de maçonnerie et canalisations en béton (sauf ossature, béton armé, carrelage, revêtements et plâtrerie). Valeur de septembre 2026 : 140,3.
 Index BT03 septembre 2026
 140,3
@@ -17824,7 +17824,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt06/
 
 Index BT06 (ossature, ouvrages en béton armé) de septembre 2026 : 136,9, +3,9 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Gros œuvre et structure
+Le Bâtimètre · Gros œuvre et structure
 L’index BT06 de l’Insee mesure l’évolution du coût des travaux d’ossature, ouvrages en béton armé. Valeur de septembre 2026 : 136,9.
 Index BT06 septembre 2026
 136,9
@@ -17920,7 +17920,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt07/
 
 Index BT07 (ossature et charpentes métalliques) de septembre 2026 : 153,6, +5,9 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Gros œuvre et structure
+Le Bâtimètre · Gros œuvre et structure
 L’index BT07 de l’Insee mesure l’évolution du coût des travaux d’ossature et charpentes métalliques. Valeur de septembre 2026 : 153,6.
 Index BT07 septembre 2026
 153,6
@@ -18016,7 +18016,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt08/
 
 Index BT08 (plâtre et préfabriqués) de septembre 2026 : 133,9, +4,2 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Gros œuvre et structure
+Le Bâtimètre · Gros œuvre et structure
 L’index BT08 de l’Insee mesure l’évolution du coût des travaux de plâtre et préfabriqués. Valeur de septembre 2026 : 133,9.
 Index BT08 septembre 2026
 133,9
@@ -18112,7 +18112,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt09/
 
 Index BT09 (carrelage et revêtement céramique) de septembre 2026 : 134,9, +3,0 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Revêtements
+Le Bâtimètre · Revêtements
 L’index BT09 de l’Insee mesure l’évolution du coût des travaux de carrelage et revêtement céramique. Valeur de septembre 2026 : 134,9.
 Index BT09 septembre 2026
 134,9
@@ -18207,7 +18207,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt10/
 
 Index BT10 (revêtements en plastiques) de septembre 2026 : 142,2, +3,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Revêtements
+Le Bâtimètre · Revêtements
 L’index BT10 de l’Insee mesure l’évolution du coût des travaux de revêtements en plastiques. Valeur de septembre 2026 : 142,2.
 Index BT10 septembre 2026
 142,2
@@ -18302,7 +18302,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt11/
 
 Index BT11 (revêtements en textiles) de septembre 2026 : 147,6, +4,0 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Revêtements
+Le Bâtimètre · Revêtements
 L’index BT11 de l’Insee mesure l’évolution du coût des travaux de revêtements en textiles. Valeur de septembre 2026 : 147,6.
 Index BT11 septembre 2026
 147,6
@@ -18397,7 +18397,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt12/
 
 Index BT12 (revêtements en textiles naturels) de décembre 2025 : 142,9, +2,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Revêtements
+Le Bâtimètre · Revêtements
 L’index BT12 de l’Insee mesure l’évolution du coût des travaux de revêtements en textiles naturels. Cette série est arrêtée : dernière valeur, 142,9 en décembre 2025.
 Index BT12 décembre 2025
 142,9
@@ -18492,7 +18492,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt14/
 
 Index BT14 (revêtements en plaque de pierre naturelle sciée et produits assimilés) de septembre 2026 : 143,2, +2,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Revêtements
+Le Bâtimètre · Revêtements
 L’index BT14 de l’Insee mesure l’évolution du coût des travaux de revêtements en plaque de pierre naturelle sciée et produits assimilés. Valeur de septembre 2026 : 143,2.
 Index BT14 septembre 2026
 143,2
@@ -18587,7 +18587,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt16b/
 
 Index BT16b (charpente bois) de septembre 2026 : 146,5, +4,9 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Couverture, charpente et étanchéité
+Le Bâtimètre · Couverture, charpente et étanchéité
 L’index BT16b de l’Insee mesure l’évolution du coût des travaux de charpente bois. Valeur de septembre 2026 : 146,5.
 Index BT16b septembre 2026
 146,5
@@ -18686,7 +18686,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt18a/
 
 Index BT18a (menuiserie intérieure en bois) de septembre 2026 : 142,3, +4,3 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Menuiseries et fermetures
+Le Bâtimètre · Menuiseries et fermetures
 L’index BT18a de l’Insee mesure l’évolution du coût des travaux de menuiserie intérieure en bois. Valeur de septembre 2026 : 142,3.
 Index BT18a septembre 2026
 142,3
@@ -18785,7 +18785,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt19b/
 
 Index BT19b (menuiserie extérieure en bois) de septembre 2026 : 147,5, +4,1 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Menuiseries et fermetures
+Le Bâtimètre · Menuiseries et fermetures
 L’index BT19b de l’Insee mesure l’évolution du coût des travaux de menuiserie extérieure en bois. Valeur de septembre 2026 : 147,5.
 Index BT19b septembre 2026
 147,5
@@ -18885,7 +18885,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt26/
 
 Index BT26 (fermeture de baies en plastique y compris fenêtre pvc) de septembre 2026 : 141,8, +5,3 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Menuiseries et fermetures
+Le Bâtimètre · Menuiseries et fermetures
 L’index BT26 de l’Insee mesure l’évolution du coût des travaux de fermeture de baies en plastique y compris fenêtre PVC. Valeur de septembre 2026 : 141,8.
 Index BT26 septembre 2026
 141,8
@@ -18985,7 +18985,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt27/
 
 Index BT27 (fermeture de baies en aluminium) de septembre 2026 : 148,7, +6,7 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Menuiseries et fermetures
+Le Bâtimètre · Menuiseries et fermetures
 L’index BT27 de l’Insee mesure l’évolution du coût des travaux de fermeture de baies en aluminium. Valeur de septembre 2026 : 148,7.
 Index BT27 septembre 2026
 148,7
@@ -19085,7 +19085,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt28/
 
 Index BT28 (fermeture de baies en métal ferreux) de septembre 2026 : 141,8, +9,6 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Menuiseries et fermetures
+Le Bâtimètre · Menuiseries et fermetures
 L’index BT28 de l’Insee mesure l’évolution du coût des travaux de fermeture de baies en métal ferreux. Valeur de septembre 2026 : 141,8.
 Index BT28 septembre 2026
 141,8
@@ -19184,7 +19184,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt30/
 
 Index BT30 (couverture en ardoises de schiste) de septembre 2026 : 153,9, +3,8 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Couverture, charpente et étanchéité
+Le Bâtimètre · Couverture, charpente et étanchéité
 L’index BT30 de l’Insee mesure l’évolution du coût des travaux de couverture en ardoises de schiste. Valeur de septembre 2026 : 153,9.
 Index BT30 septembre 2026
 153,9
@@ -19283,7 +19283,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt32/
 
 Index BT32 (couverture en tuiles en terre cuite) de septembre 2026 : 148,9, +4,9 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Couverture, charpente et étanchéité
+Le Bâtimètre · Couverture, charpente et étanchéité
 L’index BT32 de l’Insee mesure l’évolution du coût des travaux de couverture en tuiles en terre cuite. Valeur de septembre 2026 : 148,9.
 Index BT32 septembre 2026
 148,9
@@ -19382,7 +19382,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt33/
 
 Index BT33 (couverture en tuiles en béton) de septembre 2026 : 141,7, +5,7 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Couverture, charpente et étanchéité
+Le Bâtimètre · Couverture, charpente et étanchéité
 L’index BT33 de l’Insee mesure l’évolution du coût des travaux de couverture en tuiles en béton. Valeur de septembre 2026 : 141,7.
 Index BT33 septembre 2026
 141,7
@@ -19481,7 +19481,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt34/
 
 Index BT34 (couverture en zinc et en métal (sauf cuivre)) de septembre 2026 : 151,5, +9,1 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Couverture, charpente et étanchéité
+Le Bâtimètre · Couverture, charpente et étanchéité
 L’index BT34 de l’Insee mesure l’évolution du coût des travaux de couverture en zinc et en métal (sauf cuivre). Valeur de septembre 2026 : 151,5.
 Index BT34 septembre 2026
 151,5
@@ -19580,7 +19580,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt35/
 
 Index BT35 (couverture en bardeaux bitumés) de septembre 2026 : 154,3, +5,9 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Couverture, charpente et étanchéité
+Le Bâtimètre · Couverture, charpente et étanchéité
 L’index BT35 de l’Insee mesure l’évolution du coût des travaux de couverture en bardeaux bitumés. Valeur de septembre 2026 : 154,3.
 Index BT35 septembre 2026
 154,3
@@ -19678,7 +19678,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt38/
 
 Index BT38 (plomberie sanitaire (y compris appareils)) de septembre 2026 : 149,1, +8,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Équipements techniques
+Le Bâtimètre · Équipements techniques
 L’index BT38 de l’Insee mesure l’évolution du coût des travaux de plomberie sanitaire (y compris appareils). Valeur de septembre 2026 : 149,1.
 Index BT38 septembre 2026
 149,1
@@ -19773,7 +19773,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt40/
 
 Index BT40 (chauffage central (à l’exclusion du chauffage électrique)) de septembre 2026 : 134,3, +3,2 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Équipements techniques
+Le Bâtimètre · Équipements techniques
 L’index BT40 de l’Insee mesure l’évolution du coût des travaux de chauffage central (à l’exclusion du chauffage électrique). Valeur de septembre 2026 : 134,3.
 Index BT40 septembre 2026
 134,3
@@ -19868,7 +19868,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt41/
 
 Index BT41 (ventilation et conditionnement d’air) de septembre 2026 : 141,0, +3,4 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Équipements techniques
+Le Bâtimètre · Équipements techniques
 L’index BT41 de l’Insee mesure l’évolution du coût des travaux de ventilation et conditionnement d’air. Valeur de septembre 2026 : 141,0.
 Index BT41 septembre 2026
 141,0
@@ -19963,7 +19963,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt42/
 
 Index BT42 (menuiserie en acier et serrurerie) de septembre 2026 : 146,6, +5,2 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Menuiseries et fermetures
+Le Bâtimètre · Menuiseries et fermetures
 L’index BT42 de l’Insee mesure l’évolution du coût des travaux de menuiserie en acier et serrurerie. Valeur de septembre 2026 : 146,6.
 Index BT42 septembre 2026
 146,6
@@ -20062,7 +20062,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt43/
 
 Index BT43 (menuiserie en alliage d’aluminium) de septembre 2026 : 143,5, +4,7 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Menuiseries et fermetures
+Le Bâtimètre · Menuiseries et fermetures
 L’index BT43 de l’Insee mesure l’évolution du coût des travaux de menuiserie en alliage d’aluminium. Valeur de septembre 2026 : 143,5.
 Index BT43 septembre 2026
 143,5
@@ -20161,7 +20161,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt45/
 
 Index BT45 (vitrerie, miroiterie) de septembre 2026 : 154,1, +2,3 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Menuiseries et fermetures
+Le Bâtimètre · Menuiseries et fermetures
 L’index BT45 de l’Insee mesure l’évolution du coût des travaux de vitrerie, miroiterie. Valeur de septembre 2026 : 154,1.
 Index BT45 septembre 2026
 154,1
@@ -20260,7 +20260,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt46/
 
 Index BT46 (peinture, tenture, revêtements muraux) de septembre 2026 : 139,8, +3,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Façade et isolation
+Le Bâtimètre · Façade et isolation
 L’index BT46 de l’Insee mesure l’évolution du coût des travaux de peinture, tenture, revêtements muraux. Valeur de septembre 2026 : 139,8.
 Index BT46 septembre 2026
 139,8
@@ -20354,7 +20354,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt47/
 
 Index BT47 (électricité) de septembre 2026 : 136,4, +5,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Équipements techniques
+Le Bâtimètre · Équipements techniques
 L’index BT47 de l’Insee mesure l’évolution du coût des travaux d’électricité. Valeur de septembre 2026 : 136,4.
 Index BT47 septembre 2026
 136,4
@@ -20449,7 +20449,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt48/
 
 Index BT48 (ascenseurs) de septembre 2026 : 144,5, +8,7 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Équipements techniques
+Le Bâtimètre · Équipements techniques
 L’index BT48 de l’Insee mesure l’évolution du coût des travaux d’ascenseurs. Valeur de septembre 2026 : 144,5.
 Index BT48 septembre 2026
 144,5
@@ -20544,7 +20544,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt49/
 
 Index BT49 (couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité) de septembre 2026 : 151,3, +5,4 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Couverture, charpente et étanchéité
+Le Bâtimètre · Couverture, charpente et étanchéité
 L’index BT49 de l’Insee mesure l’évolution du coût des travaux de couverture et bardage en tôles d’acier nervurés avec revêtement étanchéité. Valeur de septembre 2026 : 151,3.
 Index BT49 septembre 2026
 151,3
@@ -20643,7 +20643,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt50/
 
 Index BT50 (rénovation et entretien, tous corps d’état) de septembre 2026 : 141,3, +4,1 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Tous corps d’état et rénovation
+Le Bâtimètre · Tous corps d’état et rénovation
 L’index BT50 de l’Insee mesure l’évolution du coût des travaux de rénovation et entretien, tous corps d’état. Valeur de septembre 2026 : 141,3.
 Index BT50 septembre 2026
 141,3
@@ -20736,7 +20736,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt51/
 
 Index BT51 (menuiseries pvc) de septembre 2026 : 136,1, +2,5 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Menuiseries et fermetures
+Le Bâtimètre · Menuiseries et fermetures
 L’index BT51 de l’Insee mesure l’évolution du coût des travaux de menuiseries PVC. Valeur de septembre 2026 : 136,1.
 Index BT51 septembre 2026
 136,1
@@ -20835,7 +20835,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt52/
 
 Index BT52 (imperméabilité de façades) de septembre 2026 : 149,3, +7,6 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Façade et isolation
+Le Bâtimètre · Façade et isolation
 L’index BT52 de l’Insee mesure l’évolution du coût des travaux d’imperméabilité de façades. Valeur de septembre 2026 : 149,3.
 Index BT52 septembre 2026
 149,3
@@ -20929,7 +20929,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt53/
 
 Index BT53 (étanchéité) de septembre 2026 : 141,2, +6,4 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Couverture, charpente et étanchéité
+Le Bâtimètre · Couverture, charpente et étanchéité
 L’index BT53 de l’Insee mesure l’évolution du coût des travaux d’étanchéité. Valeur de septembre 2026 : 141,2.
 Index BT53 septembre 2026
 141,2
@@ -21028,7 +21028,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt54/
 
 Index BT54 (ossature bois) de septembre 2026 : 142,4, +5,0 % sur un an. Courbe depuis 2014, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Gros œuvre et structure
+Le Bâtimètre · Gros œuvre et structure
 L’index BT54 de l’Insee mesure l’évolution du coût des travaux d’ossature bois. Valeur de septembre 2026 : 142,4.
 Index BT54 septembre 2026
 142,4
@@ -21124,7 +21124,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/indices-bt/bt55/
 
 Index BT55 (isolation thermique par l’extérieur, enduit sur isolant) de septembre 2026 : 142,0. Courbe depuis 2026, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.
 
-Index du bâtiment · Façade et isolation
+Le Bâtimètre · Façade et isolation
 L’index BT55 de l’Insee mesure l’évolution du coût des travaux d’isolation thermique par l’extérieur, enduit sur isolant. Valeur de septembre 2026 : 142,0.
 Index BT55 septembre 2026
 142,0
@@ -21188,7 +21188,7 @@ Adresse : https://bartierandco.com/chiffres-du-batiment/revision-de-prix/
 
 Calculez la révision de prix d’un devis ou d’un marché avec le BT01 ou l’un des 37 index BT de l’Insee, à jour de septembre 2026. Formule détaillée, prête à copier.
 
-Outil gratuit
+Le Bâtimètre · outil gratuit
 Révisez le prix d’un devis ou d’un marché avec l’index BT de votre choix, à partir des valeurs officielles de l’Insee. Le calcul est fait dans votre navigateur.
 La formule de révision
 P = P0 × (a + (1 − a) × In / I0)
@@ -21235,4 +21235,4 @@ Oui : ce sont les index publiés par l’Insee, mis à jour chaque mois. Dernier
 - Tous les index BT
 - BT01 · Tous corps d’état
 - BT50 · Rénovation et entretien, tous corps d’état
-- Les chiffres du bâtiment
+- Le Bâtimètre, l’observatoire des index BT
