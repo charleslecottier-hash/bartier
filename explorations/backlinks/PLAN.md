@@ -132,4 +132,5 @@ relient le profil à la marque.
 | 22/11/2026 | LinkedIn | Post 3 : travaux à chaque saison (PDF 08 en document) | /devis-travaux/ | à publier |
 | 22/11/2026 | Facebook | Post 3 : travaux à chaque saison (lien du deck) | /devis-travaux/ | à publier |
 | | Calaméo | Deck 8 : travaux à chaque saison | /devis-travaux/ | à faire |
+| | data.gouv.fr | Réutilisation « Observatoire des index BT » liée au jeu Insee (kit : DATAGOUV.md) | /chiffres-du-batiment/ | à faire |
 | | | | | |
