@@ -11,8 +11,9 @@ from docx.oxml import OxmlElement
 
 from guides_meta import (ACCENT, INK, PAPER, SOFT, TEL_TXT, TINT, WA, Guide, cell_margins, no_borders, runs, shade)
 
-MCC = "656-734-9439"  # compte Google Ads de Bartier & Co, utilisé pour gérer les comptes des clients
-GMAIL = "charleslecottier@gmail.com"  # adresse Google de Bartier & Co pour la fiche et Analytics (celle de l'ancien guide)
+MCC = "606-439-4700"  # compte administrateur (MCC) de Bartier & Co, créé le 23/11/2026, qui gère les comptes des clients
+PUB = "656-734-9439"  # compte publicitaire de Bartier & Co, pour ses propres annonces
+GMAIL = "adminbartier@gmail.com"  # compte Google de l'entreprise (propriétaire du compte administrateur)
 ADS = "https://ads.google.com"
 
 
@@ -253,12 +254,13 @@ def procedure_interne():
     g.title("Relier un client Google Ads au compte Bartier & Co", f"Procédure interne · compte {MCC}")
     g.para(f"Tous les comptes Google Ads des clients sont gérés depuis le compte Bartier & Co ({MCC}). Le client garde son compte et sa carte ; nous y accédons depuis ce compte. "
            "Cette fiche décrit ce que nous faisons de notre côté, en face des guides clients 1 et 2.")
-    g.h1("Une seule fois : vérifier le type du compte")
-    g.box([[("Point à vérifier avant le premier client. ", "b"), f"Pour envoyer des demandes d’accès, le compte {MCC} doit être un compte administrateur (MCC). "
-            "Dans Google Ads, en haut à droite, le sélecteur de comptes affiche « Compte administrateur » sous son nom, et le menu de gauche contient « Comptes » avec la liste des sous-comptes."],
-           ["Si ce n’est pas un compte administrateur : créez-en un sur ", ("lien", "https://ads.google.com/home/tools/manager-accounts/", "ads.google.com/home/tools/manager-accounts"),
-            " avec le même compte Google, puis mettez à jour le numéro dans les guides clients. En attendant, la méthode de secours des guides fonctionne : le client ajoute "
-            f"{GMAIL} comme utilisateur « Administrateur »."]])
+    g.h1("Une seule fois : mettre le compte en place")
+    g.box([[("Compte administrateur : ", "b"), f"{MCC}, créé le 23 novembre 2026 avec {GMAIL}. C’est lui qui envoie les demandes d’accès aux clients."],
+           [("Compte publicitaire de Bartier & Co : ", "b"), f"{PUB}, pour nos propres annonces. Il ne sert pas aux clients."]])
+    g.bullets([[("Ajouter Charles et Martin comme utilisateurs ", "b"), f"du compte administrateur, avec leur adresse personnelle, au niveau « Administrateur » : Admin › Accès et sécurité › Utilisateurs › « + ». Chacun se connecte ensuite avec sa propre adresse."],
+               [("Rattacher notre compte publicitaire ", "b"), f"au compte administrateur, pour tout voir au même endroit : Comptes › Sous-comptes › « + » › « Associer un compte existant » › {PUB}, puis accepter la demande dans le compte {PUB}."],
+               [("Protéger ", "b"), f"{GMAIL} par la validation en deux étapes (myaccount.google.com › Sécurité) : ce compte donne accès à tous les clients."],
+               [("Windsor.ai : ", "b"), "reconnecter Google Ads avec ce compte, pour que les comptes des clients apparaissent dans le suivi."]], style="List Number")
     g.h1("Pour chaque client qui a déjà Google Ads (guide 1)")
     g.step(1, "Envoyer le guide au client", ["Guide accès Google 1, par e-mail ou WhatsApp, avec ce message :",
                                               [("« ", ""), "Bonjour, voici le guide pour nous donner l’accès à Google Ads. Il suffit de nous envoyer le numéro à 10 chiffres en haut à droite de votre compte : on s’occupe du reste. ", ("»", "")]])
