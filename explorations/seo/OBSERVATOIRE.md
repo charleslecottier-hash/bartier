@@ -27,8 +27,16 @@ Chaque page d'index affiche la valeur du mois dès le haut de page, la courbe de
 L'Insee publie les index BT vers le milieu du mois (valeurs de septembre 2026 publiées le 13/11/2026).
 
 1. `python3 _build/indices_bt.py` (ou `--essai` pour voir le dernier mois sans rien écrire).
+1 bis. Dans `_build/observatoire.py`, reporter la date de la prochaine publication (`PROCHAINE`) et le lien de la dernière Informations rapides (`IR_SRC`), lus sur la page de l'Insee. Passée cette date, la mention disparaît d'elle-même.
 2. `python3 _build/site.py` : titres, valeurs, tableaux et données structurées se mettent à jour seuls.
 3. Mise en ligne, puis `python3 _build/indexnow.py`.
+
+## Contenu ajouté le 23/11/2026 (audit SEO/GEO)
+
+- Pages d'index : « dernier indice connu », date de la prochaine publication, faits clés calculés (rang sur un an, depuis janvier 2021, sur dix ans, plus haut niveau), bloc « Pour citer ces chiffres », FAQ propre à chaque index.
+- Contrats d'avant 2015 : coefficients de raccordement de l'Insee (table de correspondance, septembre 2014) et ancienne série prolongée sur 12 mois.
+- Accueil du Bâtimètre : classement des 36 index sur un an.
+- Descriptions ramenées sous 155 caractères.
 
 ## Maillage
 

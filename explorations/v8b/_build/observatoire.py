@@ -3,6 +3,7 @@
 Données : _build/indices_bt.json (mis à jour par _build/indices_bt.py). Aucune donnée inventée :
 chaque valeur vient de l'Insee, chaque règle citée a sa source.
 """
+import datetime
 import html
 import json
 import math
@@ -22,6 +23,25 @@ LIST = BASE + "indices-bt/"
 CALC = BASE + "revision-de-prix/"
 INSEE_SRC = ("Insee, index du bâtiment base 2010", "https://www.insee.fr/fr/metadonnees/source/indicateur/p1623/description")
 CCH = ("Code de la construction et de l’habitation, art. L231-11", "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006896217")
+# Dernière publication de l'Insee : date de la prochaine (à reporter chaque mois avec la mise à jour des données)
+IR_SRC = ("Insee, Informations rapides n° 273 du 13 novembre 2026", "https://www.insee.fr/fr/statistiques/9134660")
+PROCHAINE = "2026-12-11"
+# Contrats d'avant 2015 : règle et coefficients de raccordement publiés par l'Insee (calculés sur septembre 2014)
+RACC_SRC = ("Insee, correspondance entre les nouveaux et les anciens index BT", "https://www.insee.fr/fr/metadonnees/source/fichier/MET_CORRESP_ENTRE_NOUV_ANC_INDEX_BT.pdf")
+_J74 = "janvier 1974"
+RACC = {c: [(c, _J74, k, "")] for c, k in [
+    ("BT01", "8,3802"), ("BT02", "7,7586"), ("BT03", "8,0652"), ("BT06", "7,7124"), ("BT07", "6,5889"), ("BT08", "8,5755"), ("BT09", "7,5621"),
+    ("BT10", "10,4139"), ("BT12", "7,2817"), ("BT14", "7,9219"), ("BT26", "5,9962"), ("BT27", "6,6966"), ("BT28", "7,7083"), ("BT30", "9,4745"),
+    ("BT32", "6,6994"), ("BT33", "7,6942"), ("BT34", "6,6627"), ("BT38", "11,5460"), ("BT40", "9,8458"), ("BT41", "6,7221"), ("BT42", "6,8058"),
+    ("BT43", "7,0900"), ("BT45", "9,0560"), ("BT46", "8,3362"), ("BT47", "11,0707"), ("BT48", "9,5705")]}
+RACC.update({
+    "BT11": [("BT11", _J74, "8,7408", "revêtements en textiles synthétiques")],
+    "BT35": [("BT35", _J74, "6,5921", "couverture en bardeaux d’asphalte")],
+    "BT16b": [("BT16a", "septembre 2006", "1,1515", "charpente bois en résineux"), ("BT17a", "septembre 2006", "1,1117", "charpente bois en chêne")],
+    "BT18a": [("BT18a", "septembre 2006", "1,1058", "menuiserie bois et quincaillerie intérieure")],
+    "BT19b": [("BT19a", "septembre 2006", "1,1003", "menuiserie bois extérieure, bois tropicaux"), ("BT20a", "septembre 2006", "1,0946", "menuiserie bois extérieure, chêne")],
+    "BT49": [("BT49", "octobre 1991", "1,6573", "")], "BT50": [("BT50", "octobre 1991", "1,7293", "")], "BT51": [("BT51", "janvier 1991", "1,5495", "")],
+    "BT52": [("BT52", "février 1978", "1,5387", "")], "BT53": [("BT53", "février 1978", "1,5294", "étanchéité asphalte, multicouche")]})
 
 MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
 NB, NN = " ", " "
@@ -106,6 +126,29 @@ def de(s):
     return ("d’" if s[0] in "aeiouyéèêàâîôûh" else "de ") + s
 
 
+def prochaine():
+    """Date de la prochaine publication, seulement si elle est encore à venir."""
+    return PROCHAINE if PROCHAINE > max(MAJ, datetime.date.today().isoformat()) else None
+
+
+def racc(v, k):
+    """Ancienne série prolongée : index × coefficient, arrondi à une décimale (règle de l'Insee)."""
+    from decimal import Decimal, ROUND_HALF_UP
+    return (Decimal(str(v)) * Decimal(k.replace(",", "."))).quantize(Decimal("0.1"), ROUND_HALF_UP)
+
+
+def num_d(d):
+    return f"{d:,.1f}".replace(",", NN).replace(".", ",")
+
+
+def evol(d):
+    return "est stable" if abs(d) < 0.0005 else (f"a augmenté de {pct(d)[1:]}" if d > 0 else f"a baissé de {pct(d)[1:]}")
+
+
+def ordinal_hausse(r, n):
+    return "la plus forte hausse" if r == 1 else ("la plus faible évolution" if r == n else f"la {r}e plus forte hausse")
+
+
 def label(code):
     return f"{code} · {IDX[code]['nom']}"
 
@@ -174,6 +217,7 @@ def hero(crumb, kick, h1, lead, actions, aside=""):
       <p class="kick">{kick}</p>
       <h1>{h1}</h1>
       <p class="lead">{lead}</p>
+      <p class="pg-upd">Page mise à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></p>
       <div class="actions">{actions}</div>
     </div>
     {aside}
@@ -193,12 +237,14 @@ def panel_index(code):
     first_p, first_v = x["valeurs"][0]
     since = (("depuis 2010", pct(v / 100 - 1)) if first_p < "2020" else (f"depuis {mois_court(first_p)}", pct(v / first_v - 1)))
     rows = [("sur 1 mois", chg(x, 1))] + ([("sur 1 an", chg(x, 12))] if var(x, 12) is not None else []) + [since]
-    state = f"Série arrêtée par l’Insee après {mois(p)}" if x["arretee"] else f"Publié par l’Insee le {date_fr(x['maj'])}"
+    nxt = prochaine()
+    state = (f"Série arrêtée par l’Insee après {mois(p)}" if x["arretee"] else
+             f"Publié par l’Insee le {date_fr(x['maj'])}" + (f" · prochain le {date_fr(nxt)}" if nxt else ""))
     return (f'<aside class="ob-aside" aria-label="Dernière valeur de l’index {code}"><div class="ob-panel">'
             f'<p class="ob-ph"><span>Index {code}</span><span>{mois(p)}</span></p>'
             f'<p class="ob-big">{num(v)}</p>'
             f'<dl class="ob-chg">' + "".join(f"<div><dt>{k}</dt><dd>{val}</dd></div>" for k, val in rows) + "</dl>"
-            f'<p class="ob-live">{state} · base 100 en 2010</p></div></aside>')
+            f'<p class="ob-live">{state}</p></div></aside>')
 
 
 BOARD = [("BT01", "Tous corps d’état"), ("BT50", "Rénovation et entretien"), ("BT32", "Couverture en tuiles de terre cuite"),
@@ -212,7 +258,7 @@ def board():
     return (f'<aside class="ob-aside" aria-label="Index BT de {mois(LAST_P)}"><div class="ob-panel">'
             f'<p class="ob-ph"><span>Index BT de {mois(LAST_P)}</span><span>sur 1 an</span></p>'
             f'<ol class="ob-board">{rows}</ol>'
-            f'<p class="ob-live">Publié par l’Insee le {date_fr(MAJ)} · base 100 en 2010</p></div></aside>')
+            f'<p class="ob-live">Publié par l’Insee le {date_fr(MAJ)}' + (f' · prochain le {date_fr(prochaine())}' if prochaine() else "") + ' · base 100 en 2010</p></div></aside>')
 
 
 def formula_panel():
@@ -262,9 +308,9 @@ def faq_html(items, title, phone, phone_txt):
 </section>"""
 
 
-def links_band(title, links):
+def links_band(title, links, tone="light"):
     items = "".join(f'<li><a class="link" href="{h}">{t}</a></li>' for t, h in links)
-    return f"""<section class="sheet more" data-tone="light">
+    return f"""<section class="sheet more" data-tone="{tone}">
   <div class="grid sp-split">
     <div><h2 data-split>{title}</h2></div>
     <ul class="more-list">{items}</ul>
@@ -273,6 +319,16 @@ def links_band(title, links):
 
 
 # ——— Pages ———
+def classement():
+    """Les index classés par évolution sur un an : liste à barres fines, le BT01 en couleur."""
+    act = sorted([y for y in ACTIVE if var(y, 12) is not None], key=lambda y: -var(y, 12))
+    top = max(abs(var(y, 12)) for y in act)
+    li = "".join(f'<li{" class=is-ref" if y["code"] == "BT01" else ""}><a href="{path(y["code"])}"><span class="ob-rc">{y["code"]}</span><span class="ob-rl">{y["nom"]}</span>'
+                 f'<span class="ob-rb" aria-hidden="true"><i style="width:{max(0, var(y, 12)) / top * 100:.1f}%"></i></span><span class="ob-rv">{pct(var(y, 12))}</span></a></li>' for y in act)
+    return (f'<h3 class="ob-h3">Les {len(act)} index classés par évolution sur un an</h3>'
+            f'<p class="ob-sub">De {mois(act[0]["valeurs"][-13][0])} à {mois(LAST_P)}. Le BT01, tous corps d’état, est en bleu.</p><ol class="ob-rank">{li}</ol>')
+
+
 def page_hub(crumbs, tick, phone, phone_txt):
     bt01 = IDX["BT01"]
     p, v = last(bt01)
@@ -280,6 +336,10 @@ def page_hub(crumbs, tick, phone, phone_txt):
     up = max(act, key=lambda x: var(x, 12))
     down = min(act, key=lambda x: var(x, 12))
     n_up = sum(1 for x in act if var(x, 12) > 0)
+    nxt = prochaine()
+    hub_faq = [("Quel est le dernier indice BT01 connu ?", f"{num(v)}, valeur de {mois(p)} publiée par l’Insee le {date_fr(bt01['maj'])}, soit {pct(var(bt01, 12))} sur un an."),
+               ("Quand l’Insee publie-t-il les prochains index BT ?", (f"Le {date_fr(nxt)} à 12 h, d’après le calendrier de l’Insee. " if nxt else "")
+                + f"Les index BT sont publiés chaque mois, pour un mois passé : les valeurs de {mois(LAST_P)} ont été publiées le {date_fr(MAJ)}.")] + FAQ_GEN
     t = tiles([("BT01 sur un an", pct(var(bt01, 12)), f"tous corps d’état, {mois(p)} par rapport à {mois(bt01['valeurs'][-13][0])}"),
                ("Index en hausse sur un an", f"{n_up} sur {len(act)}", "index publiés depuis plus d’un an"),
                ("Plus forte hausse", pct(var(up, 12)), f"{up['code']}, {up['nom'][0].lower() + up['nom'][1:]}"),
@@ -292,7 +352,7 @@ def page_hub(crumbs, tick, phone, phone_txt):
     trade = (f'<div class="ob-tw"><table class="ob-tab ob-tab-c ob-tab-t"><caption>Index BT par type de travaux, valeurs de {mois(LAST_P)}</caption><thead><tr><th scope="col">Travaux</th>'
              f'<th scope="col">Index</th><th scope="col">Valeur</th><th scope="col">Sur 1 mois</th><th scope="col">Sur 1 an</th></tr></thead><tbody>{trows}</tbody></table></div>')
     body = [h,
-            section(f"Le bâtiment en {mois(LAST_P)}", "Le coût des travaux par rapport au même mois de l’année précédente, d’après les index de l’Insee", t + SRC_LINE, "light", "chiffres"),
+            section(f"Le bâtiment en {mois(LAST_P)}", "Le coût des travaux par rapport au même mois de l’année précédente, d’après les index de l’Insee", t + classement() + SRC_LINE, "light", "chiffres"),
             section("L’index BT01 depuis 2014", "Tous corps d’état, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois", chart("BT01"), "paper", "bt01"),
             section("Quel index pour quels travaux&nbsp;?", "L’index le plus proche de chaque type de chantier, d’après les intitulés de l’Insee. Le bon index reste celui que fixe votre contrat",
                     trade, "light", "travaux"),
@@ -304,11 +364,11 @@ def page_hub(crumbs, tick, phone, phone_txt):
             section("Méthode", "", f"""<div class="ob-prose"><p>Les valeurs sont celles publiées par l’Insee dans sa base de données macroéconomiques (jeu « Index bâtiment, travaux publics et divers de la construction », base 2010). Nous les reprenons sans retouche, chaque mois, après la publication officielle.</p>
 <p>Les variations sont calculées par nos soins&nbsp;: sur un mois, par rapport au mois précédent ; sur un an, par rapport au même mois de l’année précédente. Depuis janvier 2026, l’Insee publie un nouvel index, le BT55 (isolation thermique par l’extérieur), et a arrêté le BT12.</p>
 <p>Le Bâtimètre est réalisé par <a class="link" href="/qui-sommes-nous/">Bartier &amp; Co</a>, l’agence qui trouve des clients aux artisans du bâtiment.</p></div>{SRC_LINE}""", "light", "methode"),
-            faq_html(FAQ_GEN, "Index BT : vos questions", phone, phone_txt),
+            faq_html(hub_faq, "Index BT : vos questions", phone, phone_txt),
             links_band("Aller plus loin", [("Calculateur de révision de prix", CALC), ("Tous les index BT", LIST), ("Lexique des chantiers et des travaux", "/lexique/"), ("Trouver des chantiers", "/trouver-des-chantiers/")])]
     title = "Le Bâtimètre : index BT de l’Insee et révision de prix"
-    desc = f"Le Bâtimètre : les {N_ACT} index BT de l’Insee mis à jour chaque mois ({mois(LAST_P)} : BT01 à {num(v)}), un calculateur de révision de prix et les données en accès libre."
-    return title, desc, "\n\n".join(body) + OB_JS, FAQ_GEN
+    desc = f"Le Bâtimètre : les {N_ACT} index BT de l’Insee chaque mois (BT01 à {num(v)} en {mois(LAST_P)}), un calculateur de révision de prix et les données libres."
+    return title, desc, "\n\n".join(body) + OB_JS, hub_faq
 
 
 def page_list(crumbs, tick, phone, phone_txt):
@@ -326,16 +386,79 @@ def page_list(crumbs, tick, phone, phone_txt):
     return title, desc, "\n\n".join(body), FAQ_GEN
 
 
+def faits(code):
+    """Ce que disent les chiffres : des faits calculés sur la série de l'Insee, propres à chaque index."""
+    x = IDX[code]
+    vals = dict(x["valeurs"])
+    p, v = last(x)
+    first_p, first_v = x["valeurs"][0]
+    ref = IDX["BT50" if code == "BT01" else "BT01"]
+    rv = dict(ref["valeurs"])
+    out = []
+    act = sorted([y for y in ACTIVE if var(y, 12) is not None], key=lambda y: -var(y, 12))
+    v12 = var(x, 12)
+    if v12 is not None and not x["arretee"]:
+        r = [y["code"] for y in act].index(code) + 1
+        out.append(f"Sur un an, de {mois(x['valeurs'][-13][0])} à {mois(p)}, le {code} {evol(v12)}. C’est {ordinal_hausse(r, len(act))} des {len(act)} index BT publiés depuis plus d’un an"
+                   + f" (le {ref['code']}, {ref['nom'][0].lower() + ref['nom'][1:]} : {pct(var(ref, 12))}).")
+    elif v12 is not None:
+        out.append(f"Sur sa dernière année publiée, de {mois(x['valeurs'][-13][0])} à {mois(p)}, le {code} {evol(v12)}.")
+    if "2021-01" in vals and p > "2021-01":
+        d = v / vals["2021-01"] - 1
+        extra = f" (le {ref['code']} : {pct(rv[p] / rv['2021-01'] - 1)} sur la même période)" if p in rv and "2021-01" in rv else ""
+        out.append(f"Depuis janvier 2021, il {evol(d)}{extra}.")
+    k10 = f"{int(p[:4]) - 10}{p[4:]}"
+    if k10 in vals:
+        out.append(f"En dix ans, de {mois(k10)} à {mois(p)}, il {evol(v / vals[k10] - 1)}.")
+    mx = max(vv for _, vv in x["valeurs"])
+    pmx = max(pp for pp, vv in x["valeurs"] if vv == mx)
+    if pmx == p:
+        out.append(f"{mois(p)[0].upper() + mois(p)[1:]} est son plus haut niveau depuis le début de la série publiée, en {mois(first_p)}.")
+    else:
+        out.append(f"Son plus haut niveau reste {num(mx)}, en {mois(pmx)} : la valeur de {mois(p)} est {pct(v / mx - 1)[1:]} en dessous.")
+    if not out or first_p >= "2020":
+        out.append(f"Depuis son premier mois publié, {mois(first_p)}, il {evol(v / first_v - 1)}.")
+    return out
+
+
+def racc_html(code):
+    """Contrats d'avant 2015 : prolonger l'ancienne série avec le coefficient de raccordement de l'Insee."""
+    x = IDX[code]
+    rows = RACC.get(code)
+    if not rows:
+        why = ("Le BT55 est publié depuis janvier 2026 : il n’a pas de coefficient de raccordement vers une série d’avant 2015." if code == "BT55"
+               else f"Le {code} a été créé avec la base 2010 : il ne prolonge aucune ancienne série, et n’a donc pas de coefficient de raccordement ({ext('table de correspondance de l’Insee', RACC_SRC[1])}).")
+        return f"<h3>Contrat signé avant 2015</h3><p>{why}</p>", []
+    olds = ", ".join(f"{o} ({n + ', ' if n else ''}base 100 en {r}) : <b>{k}</b>" for o, r, k, n in rows)
+    p, v = last(x)
+    last12 = list(reversed(x["valeurs"][-12:]))
+    head = "".join(f'<th scope="col">Ancien {o}</th>' for o, _, _, _ in rows)
+    trs = "".join(f'<tr><th scope="row">{mois(pp)}</th><td class="ob-n">{num(vv)}</td>' + "".join(f'<td class="ob-n">{num_d(racc(vv, k))}</td>' for _, _, k, _ in rows) + "</tr>" for pp, vv in last12)
+    o0, r0, k0, _ = rows[0]
+    html_ = (f"<h3>Contrat signé avant 2015 : l’ancienne série</h3>"
+             f"<p>Pour un contrat signé avant la publication des index en base 2010 au Journal officiel du 16 janvier 2015, l’Insee indique d’utiliser l’ancienne série jusqu’à septembre 2014 inclus, "
+             f"puis de la prolonger à partir d’octobre 2014 en multipliant le {code} par un coefficient de raccordement et en arrondissant à une décimale ({ext('Insee', IR_SRC[1])}).</p>"
+             f"<p>Coefficient de raccordement, calculé par l’Insee sur septembre 2014&nbsp;: {olds} ({ext('table de l’Insee', RACC_SRC[1])}). "
+             f"Exemple en {mois(p)}&nbsp;: {num(v)} × {k0} = {num_d(racc(v, k0))}.</p>"
+             f'<div class="ob-tw"><table class="ob-tab ob-tab-s"><caption>{code} et ancienne série prolongée, 12 derniers mois</caption><thead><tr><th scope="col">Mois</th>'
+             f'<th scope="col">{code}, base 2010</th>{head}</tr></thead><tbody>{trs}</tbody></table></div>')
+    faq = (f"Quel coefficient de raccordement pour le {code} ?",
+           " ; ".join(f"{k} pour l’ancien {o} (base 100 en {r})" for o, r, k, _ in rows)
+           + f". On multiplie le {code} par ce coefficient et on arrondit à une décimale : en {mois(p)}, {num(v)} × {k0} = {num_d(racc(v, k0))} (Insee).")
+    return html_, [faq]
+
+
 def page_index(code, crumbs, tick, phone, phone_txt):
     x = IDX[code]
     p, v = last(x)
-    v1, v12 = var(x, 1), var(x, 12)
+    v12 = var(x, 12)
     fam = FAM_OF[code]
     nom = x["nom"]
     first_p = x["valeurs"][0][0]
     stop = x["arretee"]
+    nxt = prochaine()
     lead = (f"L’index {code} de l’Insee mesure l’évolution du coût des travaux {de(nom)}. "
-            + (f"Valeur de {mois(p)}&nbsp;: {num(v)}." if not stop else f"Cette série est arrêtée : dernière valeur, {num(v)} en {mois(p)}."))
+            + (f"Dernier indice connu&nbsp;: {num(v)}, valeur de {mois(p)}." if not stop else f"Cette série est arrêtée : dernière valeur, {num(v)} en {mois(p)}."))
     h = hero(crumbs, f"Le Bâtimètre · {fam}", f"Index {code}&nbsp;: {nom[0].lower() + nom[1:]}", lead,
              (btn(f"Réviser un prix avec le {code}", f"{CALC}?index={code}", tick) if not stop else "") + f'<a class="link" href="{LIST}">Tous les index BT</a>', panel_index(code))
     recent = list(reversed(x["valeurs"][-24:]))
@@ -355,27 +478,35 @@ def page_index(code, crumbs, tick, phone, phone_txt):
     use = USAGE.get(code) or []
     use_html = (f"<p>D’après son intitulé, c’est l’index le plus proche pour&nbsp;: {', '.join(u[0].lower() + u[1:] for u in use)}.</p>" if use else "")
     sibs = [c for c in dict(FAMILLES)[fam] if c != code]
+    p0 = x["valeurs"][-13] if v12 is not None else x["valeurs"][0]
     formula = (f"<p>Avec la formule la plus courante, un prix P0 fixé au mois de référence devient P = P0 × (a + (1 − a) × In / I0), où I0 et In sont les valeurs de l’index {code} "
-               f"aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre {mois(x['valeurs'][-13][0]) if v12 is not None else mois(first_p)} et {mois(p)}&nbsp;: "
-               f"10&nbsp;000&nbsp;€ deviennent {num(10000 * v / (x['valeurs'][-13][1] if v12 is not None else x['valeurs'][0][1]), 0)}&nbsp;€.</p>")
-    extra = f"<p>{'Le BT01 est le seul index autorisé pour réviser le prix d’un contrat de construction de maison individuelle (' + ext(CCH[0], CCH[1]) + ').' if code == 'BT01' else ''}</p>" if code == "BT01" else ""
+               f"aux deux mois prévus par le contrat et a la partie fixe éventuelle. Exemple sans partie fixe, entre {mois(p0[0])} et {mois(p)}&nbsp;: "
+               f"10&nbsp;000&nbsp;€ deviennent {num(10000 * v / p0[1], 0)}&nbsp;€.</p>")
+    extra = (f"<p>Le BT01 est le seul index autorisé pour réviser le prix d’un contrat de construction de maison individuelle ({ext(CCH[0], CCH[1])}).</p>" if code == "BT01" else "")
+    r_html, r_faq = racc_html(code)
+    url = f"https://bartierandco.com{path(code)}"
+    cite = (f'<div class="ob-cite"><p class="ob-tk">Pour citer ces chiffres</p><p>Index {code} ({nom[0].lower() + nom[1:]}) : {num(v)} en {mois(p)}, base 100 en 2010. '
+            f'Source : Insee, via le Bâtimètre de Bartier &amp; Co, <a class="link" href="{path(code)}">{url.replace("https://", "")}</a></p></div>')
+    facts = "".join(f"<li>{f}</li>" for f in faits(code))
+    faq_items = [(f"Quel est le dernier indice {code} connu ?", f"{num(v)}, valeur de {mois(p)} publiée par l’Insee le {date_fr(x['maj'])}, en base 100 en 2010."
+                  + (f" C’est {pct(v12)} par rapport à {mois(x['valeurs'][-13][0])}." if v12 is not None else "")),
+                 (f"Quand sera publié le prochain indice {code} ?",
+                  (f"Plus du tout : l’Insee a arrêté la série, sa dernière valeur est celle de {mois(p)}." if stop else
+                   (f"Le {date_fr(nxt)} à 12 h, d’après le calendrier de l’Insee. Les index BT sont publiés chaque mois." if nxt else "Chaque mois, à la date fixée par le calendrier de l’Insee.")))]
+    faq_items += r_faq + [FAQ_GEN[3]]
     body = [h,
             section(f"Courbe de l’index {code}", f"De {mois(first_p)} à {mois(p)}, base 100 en 2010. Survolez ou touchez la courbe pour lire chaque mois", chart(code) + SRC_LINE, "paper", "courbe"),
-            section("Les derniers mois", "Valeurs publiées et évolution par rapport au même mois de l’année précédente", tab + ytab, "light", "valeurs"),
-            section(f"À quoi sert l’index {code}&nbsp;?", "",
-                    f'<div class="ob-prose"><p>Il sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux {de(nom)}, quand le contrat le prévoit.</p>{use_html}{extra}{formula}'
-                    f'<p><a class="link" href="{CALC}?index={code}">Calculer une révision avec le {code}</a></p></div>', "paper", "usage"),
-            faq_html([(f"Quelle est la valeur de l’index {code} en {mois(p)} ?", f"{num(v)}, en base 100 en 2010 (Insee, données mises à jour le {date_fr(x['maj'])})."
-                       + (f" C’est {pct(v12)} par rapport à {mois(x['valeurs'][-13][0])}." if v12 is not None else "")),
-                      (f"Quand l’Insee publie-t-il l’index {code} ?", f"Chaque mois, comme les autres index du bâtiment. La dernière mise à jour de la série date du {date_fr(x['maj'])}." if not stop
-                       else f"Plus du tout : la série est arrêtée, sa dernière valeur est celle de {mois(p)}."),
-                      FAQ_GEN[3], FAQ_GEN[1]], f"Index {code} : vos questions", phone, phone_txt),
+            section(f"L’index {code} en bref", "Les évolutions clés, calculées sur la série publiée par l’Insee", f'<ul class="ob-facts">{facts}</ul>{cite}', "light", "en-bref"),
+            section("Les derniers mois", "Valeurs publiées et évolution par rapport au même mois de l’année précédente", tab + ytab, "paper", "valeurs"),
+            section(f"Utiliser l’index {code}", "",
+                    f'<div class="ob-prose"><h3>Réviser un prix</h3><p>Le {code} sert à réviser ou actualiser le prix d’un marché ou d’un devis de travaux {de(nom)}, quand le contrat le prévoit.</p>{use_html}{extra}{formula}'
+                    f'<p><a class="link" href="{CALC}?index={code}">Calculer une révision avec le {code}</a></p>{r_html}</div>', "light", "usage"),
+            faq_html(faq_items, f"Index {code} : vos questions", phone, phone_txt),
             links_band("Index de la même famille", [(label(c), path(c)) for c in sibs] + [("Tous les index BT", LIST), ("Calculateur de révision de prix", CALC)])]
     title = f"Indice {code} {mois(p)} : {num(v)} (Insee)"
-    desc = (f"Index {code} ({nom.lower()}) de {mois(p)} : {num(v)}" + (f", {pct(v12)} sur un an" if v12 is not None else "")
-            + f". Courbe depuis {first_p[:4]}, valeurs mensuelles, moyennes annuelles et calculateur de révision. Source Insee.")
-    faqs = [(f"Quelle est la valeur de l’index {code} en {mois(p)} ?", f"{num(v)}, en base 100 en 2010 (Insee).")]
-    return title, desc, "\n\n".join(body) + OB_JS, faqs
+    desc = (f"Dernier indice {code} connu : {num(v)} en {mois(p)}" + (f", {pct(v12)} sur un an" if v12 is not None else "")
+            + f". Historique depuis {first_p[:4]}, courbe" + (", raccordement" if RACC.get(code) else "") + " et calcul de révision. Source Insee.")
+    return title, desc, "\n\n".join(body) + OB_JS, faq_items
 
 
 def page_calc(crumbs, tick, phone, phone_txt):
@@ -426,13 +557,36 @@ def page_calc(crumbs, tick, phone, phone_txt):
                      "Révision de prix : vos questions", phone, phone_txt),
             links_band("Aller plus loin", [("Tous les index BT", LIST), (label("BT01"), path("BT01")), (label("BT50"), path("BT50")), ("Le Bâtimètre, l’observatoire des index BT", BASE)])]
     title = "Révision de prix BT01 : calculateur gratuit (index BT)"
-    desc = f"Calculez la révision de prix d’un devis ou d’un marché avec le BT01 ou l’un des {N_ACT} index BT de l’Insee, à jour de {mois(LAST_P)}. Formule détaillée, prête à copier."
+    desc = f"Révisez un devis ou un marché avec le BT01 ou l’un des {N_ACT} index BT de l’Insee, à jour de {mois(LAST_P)} : prix révisé et formule prête à copier."
     faqs = [FAQ_GEN[3], FAQ_GEN[4], FAQ_GEN[2]]
     return title, desc, "\n\n".join(body) + CALC_JS + OB_JS, faqs
 
 
 OB_CSS = """<style id="ob-css">
 .ob-top .lead{max-width:56ch}
+.ob-facts{display:grid;gap:0;max-width:78ch;margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.ob-facts li{position:relative;padding:16px 0 16px 28px;border-bottom:1px solid var(--rule);font-size:1.02rem;line-height:1.55}
+.ob-facts li::before{content:"";position:absolute;left:4px;top:1.45em;width:8px;height:2px;background:var(--accent)}
+.ob-cite{max-width:78ch;margin-top:28px;padding:18px 20px;background:var(--paper);border-radius:var(--r);font-size:.92rem;line-height:1.55}
+.ob-cite .ob-tk{margin-bottom:6px}
+.ob-cite .link{white-space:normal;display:inline;min-height:0}
+.ob-prose h3,.ob-h3{margin:32px 0 12px;font:400 1.35rem/1.25 var(--f-display);letter-spacing:-.01em}
+.ob-prose h3:first-child{margin-top:0}
+.ob-h3{margin-top:48px}
+.ob-sub{margin:0 0 16px;font-size:.88rem;color:var(--soft)}
+.ob-rank{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule);columns:2;column-gap:48px}
+.ob-rank li{break-inside:avoid}
+.ob-rank a{display:grid;grid-template-columns:52px minmax(0,1fr) minmax(64px,28%) 64px;align-items:center;gap:12px;min-height:44px;padding:6px 0;border-bottom:1px solid var(--rule);color:inherit;text-decoration:none}
+.ob-rank a:hover .ob-rl{text-decoration:underline}
+.ob-rc{font-size:.82rem;color:var(--soft)}
+.ob-rl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.88rem}
+.ob-rb{height:8px;background:color-mix(in oklab,var(--ink) 6%,transparent);border-radius:0 4px 4px 0}
+.ob-rb i{display:block;height:100%;background:color-mix(in oklab,var(--ink) 38%,var(--bg));border-radius:0 4px 4px 0}
+.ob-rank .is-ref .ob-rb i{background:var(--accent)}
+.ob-rank .is-ref .ob-rl,.ob-rank .is-ref .ob-rv{font-weight:500}
+.ob-rv{text-align:right;font-family:var(--f-display);font-variant-numeric:tabular-nums;font-size:.92rem}
+@media (max-width:1024px){.ob-rank{columns:1}}
+@media (max-width:640px){.ob-rank a{grid-template-columns:44px minmax(0,1fr) 56px;row-gap:6px}.ob-rb{grid-column:2 / 3;grid-row:2}.ob-rl{white-space:normal}.ob-facts li{font-size:.98rem}}
 .ob-top h1{font-size:clamp(2.3rem,4.4vw,4.4rem);text-wrap:balance}
 .ob-aside{grid-column:3 / 5;align-self:center;min-width:0}
 .ob-panel{--rule:color-mix(in oklab,var(--bg) 14%,transparent);--soft:color-mix(in oklab,var(--bg) 68%,var(--ink));display:grid;gap:16px;padding:clamp(22px,2.4vw,36px);background:var(--ink);color:var(--bg);border-radius:var(--r)}
