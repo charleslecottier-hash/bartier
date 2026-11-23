@@ -121,7 +121,8 @@ def faq_html(m, cfg, key):
           ("D’où viennent les prix ?", f"Des tarifs indicatifs de {ent}, pose comprise." if own else
            f"Des prix moyens publiés par {m['sources']}, pose comprise. Chaque ligne de l’estimation cite sa source et sa date."),
           ("Le prix final sera-t-il le même ?", "C’est une fourchette indicative. Le prix ferme se donne sur devis, après une visite : l’état du support, l’accès et les finitions changent le montant.")]
-    qa += [(q, r.replace("{tel}", cfg.get("telephone", ""))) for q, r in m.get("faq", [])]
+    tel = pub_tel(cfg)
+    qa += [(q, r.replace("{tel}", tel) if tel else re.sub(r"\s*[^.:]*\{tel\}[^.]*\.", "", r)) for q, r in m.get("faq", [])]
     qa += [("Qui va me rappeler ?", who_txt + " Votre numéro ne sert qu’à ce projet : il n’est ni vendu ni cédé."),
            ("Je suis locataire, puis-je faire l’estimation ?", "Oui. Les travaux sur le bâti se décident avec le propriétaire : faites l’estimation, puis transmettez-la-lui.")]
     items = "".join(f"<details><summary>{e(q)}</summary><p>{e(r)}</p></details>" for q, r in qa)
@@ -177,7 +178,7 @@ def gallery_html(m, cfg, key, urls, own):
 
 
 def end_html(m, cfg):
-    tel = cfg.get("telephone", "")
+    tel = pub_tel(cfg)
     telh = "+33" + re.sub(r"\D", "", tel)[1:] if tel else ""
     call = f'<a class="es-end-call" href="tel:{telh}">{ico("phone")}<span>ou appelez le {e(tel)}</span></a>' if tel else ""
     return (f'<section class="es-end"><h2 id="es-end-h">Prêt à connaître le prix de vos travaux ?</h2>'
@@ -189,7 +190,7 @@ def zone_html(m, cfg):
     z = cfg.get("_zone")
     if not z:
         return ""
-    tel = cfg.get("telephone", "")
+    tel = pub_tel(cfg)
     telh = "+33" + re.sub(r"\D", "", tel)[1:] if tel else ""
     who = "un artisan" if m["artisan"] == "artisan" else "un " + m["artisan"]
     btn = (f'<a class="es-cta es-area-cta" href="tel:{telh}"><b>{ico("phone")}Parler à {e(who)}</b></a>' if tel else
@@ -294,6 +295,37 @@ def a(s):
     return html.escape(str(s), quote=True)
 
 
+def pub_tel(cfg):
+    """Numéro affiché dans les boutons d'appel : seulement si « boutons_appel » vaut true."""
+    return cfg.get("telephone", "") if cfg.get("boutons_appel") else ""
+
+
+def pub_wa(cfg):
+    return re.sub(r"\D", "", cfg.get("whatsapp", "")) if cfg.get("boutons_appel") else ""
+
+
+def envoi_url(cfg):
+    """« tableau » : la page envoie à sa propre fonction /api/lead/, qui écrit une ligne dans le Google Sheet."""
+    v = str(cfg.get("envoi", "")).strip()
+    return "/api/lead/" if v == "tableau" else v
+
+
+def ga_send_to(cfg):
+    g = cfg.get("google_ads") or {}
+    i, l = str(g.get("id", "")).strip(), str(g.get("label", "")).strip()
+    return f"{i}/{l}" if re.fullmatch(r"AW-\d{6,12}", i) and re.fullmatch(r"[\w-]{4,40}", l) else ""
+
+
+def tags_n(cfg):
+    return int(bool(cfg.get("meta_pixel"))) + int(bool(ga_send_to(cfg)))
+
+
+def tags_who(cfg):
+    """« un cookie de Meta », « des cookies de Google » ou « des cookies de Meta et de Google »."""
+    meta, goo = bool(cfg.get("meta_pixel")), bool(ga_send_to(cfg))
+    return "des cookies de Meta et de Google" if meta and goo else "un cookie de Meta" if meta else "des cookies de Google" if goo else ""
+
+
 def need(cfg, warn):
     lg = cfg.get("legal", {})
     for k, lab in [("raison_sociale", "raison sociale"), ("forme", "forme juridique"), ("siege", "siège"), ("siret", "SIRET"),
@@ -301,9 +333,12 @@ def need(cfg, warn):
         if not str(lg.get(k, "")).strip():
             warn.append(f"mentions légales : {lab} manquant")
     if not cfg.get("telephone"):
-        warn.append("téléphone manquant")
-    if not cfg.get("envoi") and not cfg.get("whatsapp"):
-        warn.append("aucune réception des demandes : renseignez « envoi » (adresse qui reçoit les demandes) ou « whatsapp »")
+        warn.append("téléphone manquant (mentions légales)")
+    if not envoi_url(cfg) and not pub_wa(cfg):
+        warn.append("aucune réception des demandes : mettez « envoi » à \"tableau\" (une ligne par demande dans le Google Sheet)")
+    g = cfg.get("google_ads") or {}
+    if (g.get("id") or g.get("label")) and not ga_send_to(cfg):
+        warn.append("google_ads : « id » (AW-123456789) ou « label » invalide, la balise Google n’est pas posée")
 
 
 # ——— Questions ———
@@ -414,11 +449,11 @@ def cfg_js(key, m, cfg):
                 for x in lines:
                     x["l"], x["u"] = fr(x["l"]), fr(x["u"])
                 opts[o[0]] = dict(lines=lines, gl=fr(o[5]) if len(o) > 5 else "", vt=fr(m.get("visite_txt", {}).get(o[0], "")))
-    tel = cfg.get("telephone", "")
+    tel = pub_tel(cfg)
     recap = [q["name"] for st in m["steps"] for q in st["qs"] if q["t"] == "tiles"]
     _, title, person = who(cfg)
     return dict(key=key, nom=m["nom"], ent=cfg["entreprise"], who=title if person else cfg["entreprise"], tel=tel, telh="+33" + re.sub(r"\D", "", tel)[1:] if tel else "",
-                wa=re.sub(r"\D", "", cfg.get("whatsapp", "")), envoi=cfg.get("envoi", ""), deps=cfg.get("departements", []), zone=cfg.get("zone", ""),
+                wa=pub_wa(cfg), envoi=envoi_url(cfg), ga=ga_send_to(cfg), deps=cfg.get("departements", []), zone=cfg.get("zone", ""),
                 base=({"lat": cfg["_zone"]["lat"], "lon": cfg["_zone"]["lon"], "km": cfg["_zone"]["km"]} if cfg.get("_zone") else None),
                 horaires=fr(cfg.get("horaires", "")), px=cfg.get("meta_pixel", ""), qty=m["qty"], opts=opts, recap=recap, geo=GEO,
                 visite=[dict(r, txt=fr(r["txt"])) for r in m.get("visite", [])], notes=[dict(r, txt=fr(r["txt"])) for r in m.get("notes", [])],
@@ -457,22 +492,24 @@ def legal_html(m, cfg, key):
     ment.append(f"<p>Hébergeur : {f('hebergeur')}.</p>")
     if (cfg.get("_zone") or {}).get("url"):
         ment.append('<p>Carte : Plan IGN, © IGN, sous <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence/" target="_blank" rel="noopener">Licence Ouverte 2.0</a>.</p>')
-    px = bool(cfg.get("meta_pixel"))
+    px = bool(cfg.get("meta_pixel")) or bool(ga_send_to(cfg))
     priv = (f"<p>Responsable du traitement : {f('raison_sociale')}. Le prénom, le téléphone, le code postal et vos réponses servent à vous recontacter "
             "au sujet de votre projet et à préparer un devis, à votre demande. Ils sont conservés trois ans après le dernier contact, puis supprimés. "
             "Ils ne sont ni vendus ni cédés.</p>")
-    if cfg.get("envoi"):
+    if envoi_url(cfg):
         priv += ("<p>Votre demande transite par un prestataire technique qui agit pour notre compte et ne l’utilise pas pour lui-même. "
                  "Si vous arrivez par une publicité, les paramètres de campagne présents dans l’adresse de la page (source, campagne, "
                  "identifiant de clic Google ou Meta) sont joints à votre demande, pour savoir quelle annonce vous a amené.</p>")
-    if cfg.get("whatsapp"):
+    if pub_wa(cfg):
         priv += "<p>Si vous envoyez votre demande par WhatsApp, elle passe par ce service, édité par Meta.</p>"
     priv += ("<p>Pendant votre visite, vos réponses restent dans votre navigateur (stockage de session), pour ne pas les perdre si la page se recharge. "
              "Elles s’effacent quand vous fermez l’onglet.</p>")
     priv += "<p>Le nom de votre commune s’affiche grâce à l’API publique de l’État (geo.api.gouv.fr), qui ne reçoit que le code postal.</p>"
     priv += (f"<p>Vous pouvez accéder à vos données, les rectifier, les effacer ou vous opposer à leur traitement en écrivant à {f('email')}. "
              "En cas de difficulté, vous pouvez saisir la CNIL (cnil.fr).</p>")
-    priv += ("<p>Avec votre accord seulement, un cookie de Meta mesure l’efficacité de nos annonces. Sans accord, rien n’est déposé. "
+    priv += (f"<p>Avec votre accord seulement, {tags_who(cfg)} mesure{'' if tags_who(cfg) == 'un cookie de Meta' else 'nt'} l’efficacité de nos annonces : "
+             "quelle annonce vous a amené et si vous avez envoyé une demande. Ni votre nom ni votre numéro ne leur sont transmis. "
+             "Sans accord, rien n’est déposé et rien ne leur est envoyé. "
              '<button type="button" class="es-cc-open">Changer mon choix</button></p>' if px else "<p>Ce site ne dépose aucun cookie et n’utilise aucun outil de mesure.</p>")
     return (f'<details><summary>Conditions d’utilisation</summary>{cond}</details>'
             f'<details id="mentions-legales"><summary>Mentions légales</summary>{"".join(ment)}</details>'
@@ -974,11 +1011,15 @@ else if(ob){each(f.querySelectorAll(".es-opt"),function(x){x.setAttribute("aria-
 else show(0,0,false);
 })();"""
 
-PIXEL_JS = r"""(function(){var C=__PX__,K="es-consent",d=document,bar=d.getElementById("es-cc");if(!bar)return;
-function load(){if(window.fbq)return;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,d,"script","https://connect.facebook.net/en_US/fbevents.js");window.fbq("init",C);window.fbq("track","PageView")}
+TAGS_JS = r"""(function(){var C=__TAGS__,K="es-consent",d=document,bar=d.getElementById("es-cc");if(!bar)return;
+function load(){if(window.esTags)return;window.esTags=1;
+if(C.px){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,d,"script","https://connect.facebook.net/en_US/fbevents.js");window.fbq("set","autoConfig",false,C.px);window.fbq("init",C.px);window.fbq("track","PageView")}
+if(C.ga){var id=C.ga.split("/")[0];window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};
+window.gtag("consent","default",{ad_storage:"granted",ad_user_data:"granted",ad_personalization:"denied",analytics_storage:"denied"});
+window.gtag("js",new Date());window.gtag("config",id);var g=d.createElement("script");g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(id);d.head.appendChild(g)}}
 var v=null;try{v=JSON.parse(localStorage.getItem(K))}catch(x){}
 if(v&&Date.now()-v.t<1.5e10){if(v.ok)load()}else bar.hidden=false;
-[].forEach.call(bar.querySelectorAll("button"),function(b){b.addEventListener("click",function(){var ok=b.getAttribute("data-cc")==="1";try{localStorage.setItem(K,JSON.stringify({ok:ok,t:Date.now()}))}catch(x){}bar.hidden=true;if(ok)load();else if(window.fbq)location.reload()})});
+[].forEach.call(bar.querySelectorAll("button"),function(b){b.addEventListener("click",function(){var ok=b.getAttribute("data-cc")==="1";try{localStorage.setItem(K,JSON.stringify({ok:ok,t:Date.now()}))}catch(x){}bar.hidden=true;if(ok)load();else if(window.esTags)location.reload()})});
 [].forEach.call(d.querySelectorAll(".es-cc-open"),function(b){b.addEventListener("click",function(){bar.hidden=false})})})();"""
 
 
@@ -986,7 +1027,7 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
     m = M[key]
     accent = cfg.get("accent", "#2D5BE3")
     ent = cfg["entreprise"]
-    tel = cfg.get("telephone", "")
+    tel = pub_tel(cfg)
     telh = "+33" + re.sub(r"\D", "", tel)[1:] if tel else ""
     steps, n = steps_html(m, cfg, accent, photo_url)
     logo = f'<img src="{logo_url}" alt="{a(ent)}" width="180" height="36">' if logo_url else f'<span class="es-name">{e(ent)}</span>'
@@ -1006,20 +1047,30 @@ def page(key, cfg, logo_url, photo_url="", photo_urls=None):
     trust = (f'<div class="es-trust"><div class="es-who"><span class="es-av">{av}</span><p><b>{e(title)}</b>'
              f'<span>{e(cfg.get("rappel") or ("Vous rappelle personnellement" if person else "Rappel gratuit, sans engagement"))}</span></p></div>{stars(cfg)}</div>')
     by = f'<img src="{logo_url}" alt="{a(ent)}" width="150" height="28">' if logo_url else f"<b>{e(ent)}</b>"
-    cc = ('<div class="es-cc" id="es-cc" role="dialog" aria-label="Cookies" hidden><p>Acceptez-vous un cookie de Meta qui mesure l’efficacité de nos annonces ? '
-          'Sans accord, rien n’est déposé.</p><div><button type="button" data-cc="0">Refuser</button><button type="button" data-cc="1">Accepter</button></div></div>') if cfg.get("meta_pixel") else ""
+    ga = ga_send_to(cfg)
+    tags = bool(cfg.get("meta_pixel") or ga)
+    who_cc = tags_who(cfg)
+    cc = (f'<div class="es-cc" id="es-cc" role="dialog" aria-label="Cookies" hidden><p>Acceptez-vous {who_cc} qui '
+          f'mesure{"" if who_cc == "un cookie de Meta" else "nt"} l’efficacité de nos annonces ? '
+          'Sans accord, rien n’est déposé.</p><div><button type="button" data-cc="0">Refuser</button><button type="button" data-cc="1">Accepter</button></div></div>') if tags else ""
     cfg_json = json.dumps(cfg_js(key, m, cfg), ensure_ascii=False, separators=(",", ":"))
     ico_json = json.dumps({"phone": ico("phone"), "wa": ico("wa"), "share": ico("share")}, ensure_ascii=False)
     js = JS.replace("__CFG__", cfg_json).replace("__ICO__", ico_json)
-    scripts = [js] + ([PIXEL_JS.replace("__PX__", json.dumps(cfg["meta_pixel"]))] if cfg.get("meta_pixel") else [])
+    scripts = [js] + ([TAGS_JS.replace("__TAGS__", json.dumps({"px": cfg.get("meta_pixel", ""), "ga": ga}))] if tags else [])
     hashes = " ".join("'sha256-" + base64.b64encode(hashlib.sha256(s.encode()).digest()).decode() + "'" for s in scripts)
     env_origin = ""
-    if cfg.get("envoi"):
-        u = urlparse(cfg["envoi"])
+    if envoi_url(cfg):
+        u = urlparse(envoi_url(cfg))
         env_origin = f" {u.scheme}://{u.netloc}" if u.netloc else ""
     fb = " https://connect.facebook.net" if cfg.get("meta_pixel") else ""
-    csp = (f"default-src 'self'; script-src 'self' {hashes}{fb}; style-src 'self' 'unsafe-inline'; img-src 'self' data:{' https://www.facebook.com' if fb else ''}; "
-           f"font-src 'self'; connect-src 'self' {GEO}{env_origin}{' https://www.facebook.com' + fb if fb else ''}; form-action 'none'; base-uri 'none'; object-src 'none'")
+    # Google Ads (conversion et liaison des conversions) : liste de Google, developers.google.com/tag-platform/security/guides/csp
+    g_s = " https://www.googletagmanager.com https://www.googleadservices.com https://www.google.com" if ga else ""
+    g_i = (" https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net"
+           " https://pagead2.googlesyndication.com https://www.google.com https://www.google.fr") if ga else ""
+    g_c = g_i + " https://ad.doubleclick.net" if ga else ""
+    csp = (f"default-src 'self'; script-src 'self' {hashes}{fb}{g_s}; style-src 'self' 'unsafe-inline'; img-src 'self' data:{' https://www.facebook.com' if fb else ''}{g_i}; "
+           f"font-src 'self'; connect-src 'self' {GEO}{env_origin}{' https://www.facebook.com' + fb if fb else ''}{g_c}; "
+           f"{'frame-src https://www.googletagmanager.com; ' if ga else ''}form-action 'none'; base-uri 'none'; object-src 'none'")
     title = f"{m['title']} | {ent}"
     h1 = re.sub(r"<mark>(.*?)</mark>", lambda x: "<mark>" + x.group(1).replace(" ", "\u00a0") + "</mark>", fr(m["h1"]))
     dom = cfg.get("domaine", "").rstrip("/")
