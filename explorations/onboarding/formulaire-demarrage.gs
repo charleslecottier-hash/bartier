@@ -4,13 +4,14 @@
  *
  * À lancer UNE SEULE FOIS, avec le compte Google de Bartier & Co (adminbartier@gmail.com) :
  *   1. Ouvrez script.google.com, Nouveau projet.
- *   2. Collez ce fichier à la place du code présent, puis Enregistrer.
+ *   2. Effacez tout le code présent, collez ce fichier, puis Enregistrer.
  *   3. Choisissez la fonction creerFormulaire, puis Exécuter. Autorisez l'accès demandé (Forms et Sheets).
  *   4. Le journal d'exécution affiche trois adresses : le lien à envoyer aux clients, l'édition du formulaire
  *      et le tableau des réponses.
  *
- * Chaque question reprend un champ de la fiche client des pages d'estimation (lp-estimation/clients/<client>.json) :
- * la correspondance est dans onboarding/README.md.
+ * Version courte : 20 questions, dont 11 obligatoires. Les mentions légales (raison sociale, forme, capital,
+ * siège, immatriculation, TVA, dirigeant) se retrouvent à partir du SIRET dans l'annuaire officiel des entreprises.
+ * Correspondance avec la fiche client : onboarding/README.md.
  */
 
 var CONTACT_TEL = '07 81 01 89 36';
@@ -19,10 +20,8 @@ var CONTACT_MAIL = 'contact@bartierandco.com';
 function creerFormulaire() {
   var form = FormApp.create('Bartier & Co : démarrage de votre campagne');
   form.setDescription(
-    'Ce formulaire prend environ 10 minutes. Vos réponses nous servent à préparer votre page et vos annonces avant notre appel de lancement : ' +
-    'nous gagnons du temps, et l’appel sert à parler de vos objectifs.\n\n' +
-    'Gardez sous la main votre Kbis ou votre avis de situation au répertoire SIRENE, et votre attestation d’assurance décennale.\n\n' +
-    'Vous pouvez revenir modifier vos réponses avec le lien reçu après l’envoi. Une question ? ' + CONTACT_TEL + ' ou ' + CONTACT_MAIL + '.');
+    'Cinq minutes pour préparer votre page et vos annonces avant notre appel de lancement.\n\n' +
+    'Une question ? ' + CONTACT_TEL + ' ou ' + CONTACT_MAIL + '.');
   form.setProgressBar(true);
   try { form.setCollectEmail(false); } catch (e) { /* réglage retiré par Google : sans effet */ }
   form.setAllowResponseEdits(true);
@@ -31,85 +30,43 @@ function creerFormulaire() {
     'Merci, c’est bien reçu. Nous préparons votre page et revenons vers vous pour l’appel de lancement. ' +
     'Si ce n’est pas déjà fait, envoyez-nous votre logo et vos photos de chantiers par WhatsApp au ' + CONTACT_TEL + ' ou par e-mail à ' + CONTACT_MAIL + '.');
 
-  /* ——— 1. Vous ——— */
+  /* ——— 1. Vous et votre entreprise ——— */
   texte(form, 'Votre prénom et votre nom', '', true);
-  texte(form, 'Votre téléphone', 'Pour vous joindre pendant la mise en place.', true, telephone());
-  texte(form, 'Votre e-mail', '', true, FormApp.createTextValidation().requireTextIsEmail().setHelpText('Indiquez une adresse e-mail valide.').build());
-
-  /* ——— 2. Votre entreprise ——— */
-  section(form, 'Votre entreprise', 'Ces informations figurent dans les mentions légales de votre page. Recopiez-les exactement comme sur votre Kbis ou votre avis de situation.');
-  texte(form, 'Nom de l’entreprise affiché sur la page et dans les annonces', 'Le nom que vos clients connaissent. Par exemple : Dupont Toiture.', true);
-  texte(form, 'Raison sociale', 'Le nom officiel, s’il est différent. Par exemple : SARL Dupont et Fils.', true);
-  liste(form, 'Forme juridique', ['Entreprise individuelle (dont micro-entreprise)', 'EURL', 'SARL', 'SASU', 'SAS', 'Autre'], true);
-  texte(form, 'Capital social', 'Pour une société seulement. Par exemple : 10 000 €.', false);
-  texte(form, 'Adresse du siège', 'Numéro, rue, code postal et ville.', true);
-  texte(form, 'Numéro SIRET', '14 chiffres.', true, FormApp.createTextValidation()
-    .requireTextMatchesPattern('^\\s*([0-9]\\s*){14}$').setHelpText('Le SIRET compte 14 chiffres.').build());
-  texte(form, 'Immatriculation', 'Si vous êtes inscrit : RCS ou Répertoire des métiers, avec la ville. Par exemple : RCS Lille Métropole, ou RM 59.', false);
-  texte(form, 'Numéro de TVA intracommunautaire', 'Si vous en avez un.', false);
-  texte(form, 'Responsable de la publication du site', 'La personne responsable du contenu de la page, en général le gérant. Prénom et nom.', true);
-  texte(form, 'E-mail de contact affiché dans les mentions légales', 'Les visiteurs peuvent vous écrire à cette adresse (par exemple pour leurs données personnelles).', true,
+  texte(form, 'Votre téléphone', '', true, telephone());
+  texte(form, 'Votre e-mail', 'Il sera aussi affiché dans les mentions légales de votre page.', true,
     FormApp.createTextValidation().requireTextIsEmail().setHelpText('Indiquez une adresse e-mail valide.').build());
+  texte(form, 'Nom de l’entreprise affiché sur la page et dans les annonces', 'Le nom que vos clients connaissent. Par exemple : Dupont Toiture.', true);
+  texte(form, 'Numéro SIRET', '14 chiffres. Nous retrouvons le reste (raison sociale, siège, forme juridique) dans l’annuaire officiel des entreprises.', true,
+    FormApp.createTextValidation().requireTextMatchesPattern('^\\s*([0-9]\\s*){14}$').setHelpText('Le SIRET compte 14 chiffres.').build());
+  texte(form, 'Assurance décennale : assureur et numéro de contrat', 'Facultatif. Par exemple : MAAF, contrat n° 123456789.', false);
+  texte(form, 'Médiateur de la consommation', 'Facultatif. Si vous n’en avez pas, nous en parlerons à l’appel.', false);
+  cases(form, 'Qualifications et labels', 'Facultatif. Cochez seulement ceux qui sont valides aujourd’hui.', ['RGE', 'Qualibat'], false, true);
 
-  /* ——— 3. Assurance, médiation, qualifications ——— */
-  section(form, 'Assurance et qualifications', 'Nous n’affichons que ce que vous pouvez prouver.');
-  texte(form, 'Assurance décennale : assureur et numéro de contrat', 'Par exemple : MAAF, contrat n° 123456789.', true);
-  texte(form, 'Médiateur de la consommation', 'Le nom de votre médiateur, obligatoire pour travailler avec des particuliers. Si vous n’en avez pas, laissez vide : nous en parlerons à l’appel.', false);
-  cases(form, 'Qualifications et labels', 'Cochez seulement ceux qui sont valides aujourd’hui.', ['RGE', 'Qualibat', 'Artisan (Chambre de métiers)', 'Aucun pour l’instant'], false, true);
-
-  /* ——— 4. Votre activité ——— */
-  section(form, 'Votre activité', '');
+  /* ——— 2. Votre activité et le rappel des demandes ——— */
+  section(form, 'Votre activité', 'Ces informations sont affichées sur la page. Indiquez ce que vous tenez vraiment.');
   cases(form, 'Vos métiers', 'Une page est préparée pour chaque métier coché.',
     ['Toiture et couverture', 'Façade et ravalement', 'Fenêtres et portes', 'Charpente', 'Isolation'], true, true);
-  paragraphe(form, 'Autres prestations à mettre en avant', 'Une par ligne. Par exemple : zinguerie et gouttières, étanchéité de toit-terrasse.', false);
-  texte(form, 'Ville d’où vous partez', 'Le centre de votre zone d’intervention.', true);
+  texte(form, 'Ville d’où vous partez', '', true);
   texte(form, 'Rayon d’intervention, en kilomètres', 'Par exemple : 30.', true, FormApp.createTextValidation()
     .requireNumberBetween(1, 200).setHelpText('Indiquez un nombre de kilomètres, entre 1 et 200.').build());
-  texte(form, 'Départements couverts', 'Par exemple : 59, 62.', false);
-  paragraphe(form, 'Les chantiers que vous ne voulez pas', 'Trop petits, trop loin, certains travaux : nous filtrerons les annonces et les questions en conséquence.', false);
-  paragraphe(form, 'Vos tarifs indicatifs (facultatif)',
-    'Si vous voulez que l’estimation de la page utilise vos prix : une fourchette par type de travaux, pose comprise. Par exemple : démoussage 20 à 30 €/m², réfection de toiture 90 à 160 €/m². Sinon, la page utilise des prix moyens publiés, avec leur source.', false);
-
-  /* ——— 5. Le rappel des prospects ——— */
-  section(form, 'Le rappel des demandes', 'Ces informations sont affichées sur la page. Indiquez ce que vous tenez vraiment.');
   texte(form, 'Qui rappelle les demandes ?', 'Prénom et rôle. Par exemple : Julien, gérant.', true);
   liste(form, 'Délai de rappel que vous tenez', ['Dans l’heure', 'Dans la journée', 'Sous 24 h ouvrées', 'Sous 48 h ouvrées'], true);
   texte(form, 'Jours et heures de rappel', 'Par exemple : du lundi au vendredi, 8 h à 18 h.', true);
-  cases(form, 'Comment voulez-vous recevoir les nouvelles demandes ?', '', ['SMS', 'WhatsApp', 'E-mail', 'Appel'], true, false);
 
-  /* ——— 6. Vos photos et vos avis ——— */
-  section(form, 'Vos photos et vos avis',
-    'Ce sont eux qui donnent confiance aux visiteurs. Envoyez-nous :\n' +
-    '• votre logo, si vous en avez un ;\n' +
-    '• 10 à 20 photos de vos vrais chantiers, avant et après si possible (pas de photos trouvées sur internet) ;\n' +
-    '• une photo de la personne qui rappelle (facultatif, mais elle rassure).\n\n' +
-    'Par WhatsApp au ' + CONTACT_TEL + ', par e-mail à ' + CONTACT_MAIL + ', ou avec un lien de partage ci-dessous.');
-  choix(form, 'Comment nous envoyez-vous votre logo et vos photos ?', ['WhatsApp', 'E-mail', 'Lien de partage (ci-dessous)', 'Je n’en ai pas encore'], true);
-  texte(form, 'Lien de partage de vos photos', 'Google Drive, WeTransfer ou autre. Facultatif.', false);
-  texte(form, 'Lien de votre fiche Google (Google Maps)', 'Pour afficher votre note et vos avis. Facultatif.', false);
-
-  /* ——— 7. Votre présence en ligne ——— */
-  section(form, 'Votre présence en ligne', '');
-  choix(form, 'Avez-vous un site internet ?', ['Oui', 'Non'], true);
-  texte(form, 'Adresse de votre site', 'Si vous en avez un.', false);
-  choix(form, 'Avez-vous une page Facebook pour votre entreprise ?', ['Oui', 'Non', 'Je ne sais pas'], true);
-  texte(form, 'Lien de votre page Facebook ou Instagram', 'Si vous en avez une.', false);
-  choix(form, 'Avez-vous déjà un compte Google Ads ?', ['Oui', 'Non', 'Je ne sais pas'], true);
-  texte(form, 'Numéro de votre compte Google Ads', '10 chiffres, en haut à droite de Google Ads (par exemple 123-456-7890). Si vous en avez un.', false,
+  /* ——— 3. Photos et présence en ligne ——— */
+  section(form, 'Vos photos et vos liens',
+    'Envoyez-nous votre logo et 10 à 20 photos de vos vrais chantiers (avant et après si possible), par WhatsApp au ' + CONTACT_TEL +
+    ', par e-mail à ' + CONTACT_MAIL + ', ou avec un lien ci-dessous. Tout le reste de cette partie est facultatif.');
+  texte(form, 'Lien de partage de vos photos', 'Google Drive, WeTransfer ou autre.', false);
+  texte(form, 'Lien de votre fiche Google (Google Maps)', 'Pour afficher votre note et vos avis.', false);
+  texte(form, 'Adresse de votre site internet', 'Si vous en avez un.', false);
+  texte(form, 'Lien de votre page Facebook', 'Si vous en avez une.', false);
+  texte(form, 'Numéro de votre compte Google Ads', 'Si vous en avez un : 10 chiffres, en haut à droite de Google Ads (par exemple 123-456-7890).', false,
     FormApp.createTextValidation().requireTextMatchesPattern('^\\s*[0-9]{3}[-\\s]?[0-9]{3}[-\\s]?[0-9]{4}\\s*$').setHelpText('Le numéro compte 10 chiffres, par exemple 123-456-7890.').build());
-
-  /* ——— 8. Vos objectifs ——— */
-  section(form, 'Vos objectifs', '');
-  liste(form, 'Combien de chantiers en plus pouvez-vous prendre par mois ?', ['1 à 2', '3 à 5', '6 à 10', 'Plus de 10'], true);
-  paragraphe(form, 'Vos périodes complètes ou de congés', 'Pour mettre les annonces en pause au bon moment. Par exemple : août, ou carnet plein jusqu’en mars.', false);
-  paragraphe(form, 'Autre chose à nous dire ?', '', false);
-
-  /* ——— 9. Envoi ——— */
-  section(form, 'Envoi',
-    'Vos informations. Bartier & Co (SAS en cours d’immatriculation, 6 rue Saint-Bon, 75004 Paris) utilise vos réponses pour préparer et gérer votre campagne : ' +
-    'votre page, vos annonces et le suivi des demandes. Elles ne sont ni vendues ni cédées. Elles sont gardées pendant notre collaboration, puis trois ans. ' +
-    'Vous pouvez y accéder, les corriger ou les faire effacer en écrivant à ' + CONTACT_MAIL + '. En cas de difficulté, vous pouvez saisir la CNIL (cnil.fr).');
-  cases(form, 'Confirmation', '', ['Je confirme que ces informations sont exactes'], true, false);
+  paragraphe(form, 'Autre chose à nous dire ?',
+    'Vos informations : Bartier & Co (SAS en cours d’immatriculation, 6 rue Saint-Bon, 75004 Paris) utilise vos réponses pour préparer et gérer votre campagne. ' +
+    'Elles ne sont ni vendues ni cédées, et sont gardées pendant notre collaboration puis trois ans. Pour y accéder, les corriger ou les effacer : ' +
+    CONTACT_MAIL + '. En cas de difficulté, vous pouvez saisir la CNIL (cnil.fr).', false);
 
   /* ——— Tableau des réponses ——— */
   var ss = SpreadsheetApp.create('Bartier & Co, formulaires de démarrage (réponses)');
@@ -144,10 +101,6 @@ function paragraphe(form, titre, aide, obligatoire) {
 
 function liste(form, titre, valeurs, obligatoire) {
   return form.addListItem().setTitle(titre).setChoiceValues(valeurs).setRequired(obligatoire);
-}
-
-function choix(form, titre, valeurs, obligatoire) {
-  return form.addMultipleChoiceItem().setTitle(titre).setChoiceValues(valeurs).setRequired(obligatoire);
 }
 
 function cases(form, titre, aide, valeurs, obligatoire, autre) {
