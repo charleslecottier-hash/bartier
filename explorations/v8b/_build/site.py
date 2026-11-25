@@ -247,7 +247,8 @@ ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Bartier & Co", "
                         "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "19:00"}},
        "areaServed": {"@type": "Country", "name": "France"},
        "knowsAbout": ["Google Ads", "Meta Ads", "Publicité locale", "Devis de travaux", "Couverture", "Ravalement de façade", "Menuiserie extérieure", "Charpente", "Isolation", "Rénovation énergétique"],
-       "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434", "https://www.linkedin.com/company/bartier-co"],
+       "sameAs": ["https://www.facebook.com/profile.php?id=61596597124434", "https://www.linkedin.com/company/bartier-co",
+                  "https://maps.google.com/?cid=4884382790169488830", "https://www.google.com/search?kgmid=/g/11_1my1dxs"],
        "description": "Agence qui trouve des clients aux artisans du bâtiment : annonces locales, rappel des demandes en moins de 5 minutes, visites de devis fixées directement dans leur agenda. Pour les propriétaires, mise en relation gratuite avec un artisan de leur secteur.",
        "makesOffer": [{"@type": "Offer", "itemOffered": {"@id": SITE + u + "#service"}} for u in ("/devis-travaux/", "/google-ads/", "/meta-ads/")],
        "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Tarifs pour les artisans", "url": SITE + "/#tarifs", "itemListElement": [
