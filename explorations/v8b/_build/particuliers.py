@@ -540,7 +540,7 @@ CSS = """<style id="pf-css">
 .pf-eng-list{grid-template-columns:repeat(4,minmax(0,1fr))}
 .pf-eng-list li{display:flex;flex-direction:column;gap:10px;padding:22px;border:1px solid var(--rule);border-radius:var(--r);background:var(--bg)}
 .pf-eng-list h3{margin:0;font:400 clamp(1.2rem,1.5vw,1.4rem)/1.15 var(--f-display);letter-spacing:-.015em}
-.pf-eng-i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--tint,#DCE4FB);color:var(--accent)}
+.pf-eng-i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--tint,#DCE2EF);color:var(--accent)}
 .pf-eng-i svg{width:18px;height:18px}
 @media (max-width:760px){.pf-checks.pf-eng-list{gap:12px}.pf-eng-list li{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:14px;row-gap:6px;padding:18px}.pf-eng-i{grid-row:1 / span 2}.pf-eng-list h3{align-self:center}.pf-eng-list p{grid-column:2}}
 .pf-trust .pf-why-free{font-size:.92rem}
@@ -594,7 +594,7 @@ CSS = """<style id="pf-css">
 .pf-band p{display:flex;flex-direction:column;gap:4px;font:400 clamp(1.2rem,1.8vw,1.55rem)/1.2 var(--f-display);letter-spacing:-.015em;color:var(--ink)}
 .pf-band-sub{font:400 .92rem/1.4 var(--f-text);letter-spacing:0;color:var(--muted)}
 .pf-call.d-only{font-size:.95rem}
-.pf-sticky{position:fixed;left:14px;right:78px;bottom:14px;z-index:89;display:none;flex-direction:column;justify-content:center;min-height:52px;padding:6px 18px;border-radius:var(--r);background:var(--accent);color:#fff;font-weight:500;text-decoration:none;box-shadow:0 14px 30px -12px rgba(45,91,227,.6);transform:translateY(140%);transition:transform .35s var(--ease)}
+.pf-sticky{position:fixed;left:14px;right:78px;bottom:14px;z-index:89;display:none;flex-direction:column;justify-content:center;min-height:52px;padding:6px 18px;border-radius:var(--r);background:var(--accent);color:#fff;font-weight:500;text-decoration:none;box-shadow:0 14px 30px -12px rgba(36,72,154,.6);transform:translateY(140%);transition:transform .35s var(--ease)}
 .pf-sticky span{font-size:.75rem;font-weight:400;opacity:.85}
 .pf-sticky.is-on{transform:none}
 @media (max-width:1024px){.pf-trades,.pf-prices,.pf-howto,.pf-checks,.pf-proms{grid-template-columns:repeat(2,minmax(0,1fr))}.pf-time{grid-template-columns:repeat(3,minmax(0,1fr))}.pf-dl{grid-column:1 / -1}.pf-brief h2{grid-column:1 / -1}}

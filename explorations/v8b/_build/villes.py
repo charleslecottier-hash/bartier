@@ -123,8 +123,8 @@ CSS = """<style id="vl-css">
 [data-tone="dark"] .vl-fr{fill:rgba(255,255,255,.04);stroke:#fff;stroke-opacity:.32}
 [data-tone="dark"] .vl-dot{fill:rgba(255,255,255,.7)}
 [data-tone="dark"] .vl-lab{fill:rgba(255,255,255,.72)}
-[data-tone="dark"] .vl-dot.is-on{fill:#8fb0ff}
-[data-tone="dark"] .vl-halo{fill:#8fb0ff;opacity:.22}
+[data-tone="dark"] .vl-dot.is-on{fill:#9DB4E8}
+[data-tone="dark"] .vl-halo{fill:#9DB4E8;opacity:.22}
 [data-tone="dark"] .vl-lab.is-on{fill:#fff}
 [data-tone="dark"] .vl-svg a:hover .vl-lab,[data-tone="dark"] .vl-svg a:focus .vl-lab,[data-tone="dark"] .vl-svg a:hover .vl-dot,[data-tone="dark"] .vl-svg a:focus .vl-dot{fill:#fff}
 /* règles locales en fiches */
@@ -219,13 +219,13 @@ MAP_CSS = """.vl-map{margin:0}
 .vl-svg{display:block;width:100%;height:auto;overflow:visible}
 .vl-fr{fill:var(--paper,#EEF0F3);stroke:var(--ink,#0A1424);stroke-opacity:.18;stroke-width:1;stroke-linejoin:round}
 .vl-dot{fill:var(--ink,#0A1424)}
-.vl-dot.is-on{fill:var(--accent,#2D5BE3)}
-.vl-halo{fill:var(--accent,#2D5BE3);opacity:.16}
+.vl-dot.is-on{fill:var(--accent,#24489A)}
+.vl-halo{fill:var(--accent,#24489A);opacity:.16}
 .vl-lab{font-size:17px;fill:var(--ink,#0A1424)}
 [data-tone="paper"] .vl-fr{fill:#fff}
-.vl-lab.is-on{font-weight:500;fill:var(--accent,#2D5BE3)}
-.vl-svg a:hover .vl-lab,.vl-svg a:focus .vl-lab{fill:var(--accent,#2D5BE3);text-decoration:underline}
-.vl-svg a:hover .vl-dot,.vl-svg a:focus .vl-dot{fill:var(--accent,#2D5BE3)}"""
+.vl-lab.is-on{font-weight:500;fill:var(--accent,#24489A)}
+.vl-svg a:hover .vl-lab,.vl-svg a:focus .vl-lab{fill:var(--accent,#24489A);text-decoration:underline}
+.vl-svg a:hover .vl-dot,.vl-svg a:focus .vl-dot{fill:var(--accent,#24489A)}"""
 CSS = CSS.replace("</style>", MAP_CSS + "\n</style>", 1)
 
 

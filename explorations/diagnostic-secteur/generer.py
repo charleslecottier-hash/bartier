@@ -170,7 +170,7 @@ CSS = """
 @font-face{font-family:"Host Grotesk";font-weight:300 700;src:url(@@POL@@/host-grotesk-latin.woff2) format("woff2")}
 @font-face{font-family:"Host Grotesk";font-weight:300 700;src:url(@@POL@@/host-grotesk-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+1E00-1EFF,U+2020,U+20A0-20C0}
 @page{size:A4;margin:0}
-:root{--ink:#0A1424;--muted:#5B6475;--line:#DCE1E8;--soft:#F3F5F8;--accent:#2D5BE3;--tint:#E8EEFC;--bar:#8A93A3;--warn:#9A5B00;--warn-bg:#FFF6E5}
+:root{--ink:#0A1424;--muted:#5B6475;--line:#DCE1E8;--soft:#F3F5F8;--accent:#24489A;--tint:#E4E8F2;--bar:#8A93A3;--warn:#9A5B00;--warn-bg:#FFF6E5}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Host Grotesk",system-ui,sans-serif;color:var(--ink);font-size:9.6pt;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{position:relative;width:210mm;height:297mm;padding:16mm 16mm 20mm;display:flex;flex-direction:column;gap:7mm;page-break-after:always;overflow:hidden}

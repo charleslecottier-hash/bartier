@@ -214,7 +214,7 @@ LD_HEAD = """<style id="ld-css">
 .ld-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
 .ld-row p{max-width:22ch;color:rgba(255,255,255,.6);font:400 .9rem/1.4 var(--f-text)}
 .ld-n{font:300 clamp(4.5rem,14vw,11rem)/.8 var(--f-display);letter-spacing:-.05em;font-variant-numeric:tabular-nums}
-.ld-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:#2D5BE3;transform:scaleX(0);transform-origin:0 50%}
+.ld-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:#24489A;transform:scaleX(0);transform-origin:0 50%}
 html.ld-on{overflow:hidden}
 </style>
 <script>try{if(sessionStorage.getItem('bc-ld'))document.documentElement.classList.add('ld-skip');else document.documentElement.classList.add('ld-on')}catch(e){}</script>
@@ -924,9 +924,9 @@ VL_HUB = "".join(
         f'<li class="vlh-c" data-c="{c["slug"]}"><a href="{VL.path(c)}"><b>{c["name"]}</b><span>{c["hook"].rstrip(".")}</span>{_ARROW}</a></li>'
         for c in sorted((c for c in VL.CITIES if c["region"] == r), key=lambda c: c["name"])) + "</ul></section>" for r in _regs)
 # survol d'une ville dans la liste : son point s'allume sur la carte ; survol d'un point : la ville s'allume dans la liste
-VL_HL = "".join(f'.vlh:has([data-c="{c["slug"]}"]:hover) [data-c="{c["slug"]}"] .vl-dot,.vlh:has([data-c="{c["slug"]}"]:focus-visible) [data-c="{c["slug"]}"] .vl-dot{{fill:var(--accent,#2D5BE3)}}'
-                f'.vlh:has([data-c="{c["slug"]}"]:hover) [data-c="{c["slug"]}"] .vl-lab{{fill:var(--accent,#2D5BE3)}}'
-                f'.vlh:has([data-c="{c["slug"]}"]:hover) .vlh-c[data-c="{c["slug"]}"] b{{color:var(--accent,#2D5BE3)}}' for c in VL.CITIES)
+VL_HL = "".join(f'.vlh:has([data-c="{c["slug"]}"]:hover) [data-c="{c["slug"]}"] .vl-dot,.vlh:has([data-c="{c["slug"]}"]:focus-visible) [data-c="{c["slug"]}"] .vl-dot{{fill:var(--accent,#24489A)}}'
+                f'.vlh:has([data-c="{c["slug"]}"]:hover) [data-c="{c["slug"]}"] .vl-lab{{fill:var(--accent,#24489A)}}'
+                f'.vlh:has([data-c="{c["slug"]}"]:hover) .vlh-c[data-c="{c["slug"]}"] b{{color:var(--accent,#24489A)}}' for c in VL.CITIES)
 VL_HUB_CSS = (""".vlh{display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:48px clamp(48px,6vw,104px);align-items:start;padding:0 var(--cell)}
 .vlh-map{position:sticky;top:112px;margin:0}
 .vlh-map .vl-svg{display:block;width:100%;height:auto}
@@ -940,8 +940,8 @@ VL_HUB_CSS = (""".vlh{display:grid;grid-template-columns:minmax(0,520px) minmax(
 .vlh-c b{font:400 1.3rem/1.2 var(--f-display);letter-spacing:-.01em;transition:color .2s}
 .vlh-c span{grid-column:1;margin-top:6px;font-size:.9rem;line-height:1.45;color:var(--muted)}
 .vlh-c svg{grid-column:2;grid-row:1/span 2;align-self:center;width:20px;height:20px;opacity:.3;transition:transform .2s,opacity .2s,color .2s}
-.vlh-c a:hover svg,.vlh-c a:focus-visible svg{opacity:1;color:var(--accent,#2D5BE3);transform:translateX(4px)}
-.vlh-c a:focus-visible{outline:2px solid var(--accent,#2D5BE3);outline-offset:2px}
+.vlh-c a:hover svg,.vlh-c a:focus-visible svg{opacity:1;color:var(--accent,#24489A);transform:translateX(4px)}
+.vlh-c a:focus-visible{outline:2px solid var(--accent,#24489A);outline-offset:2px}
 .vl-svg circle.vl-dot{transition:fill .2s}
 @media (max-width:1100px){.vlh-list{columns:1}}
 @media (max-width:760px){.vlh{grid-template-columns:1fr;gap:32px}.vlh-map{position:static;max-width:400px}.vlh-c b{font-size:1.2rem}}
