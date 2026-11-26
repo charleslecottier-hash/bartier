@@ -170,7 +170,7 @@ CSS = """
 @font-face{font-family:"Host Grotesk";font-weight:300 700;src:url(@@POL@@/host-grotesk-latin.woff2) format("woff2")}
 @font-face{font-family:"Host Grotesk";font-weight:300 700;src:url(@@POL@@/host-grotesk-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+1E00-1EFF,U+2020,U+20A0-20C0}
 @page{size:A4;margin:0}
-:root{--ink:#18191B;--muted:#6A6A6A;--line:#E2E2E0;--soft:#F2F2F1;--accent:#B3261E;--tint:#F6E5E4;--bar:#9A9A9A;--warn:#9A5B00;--warn-bg:#FFF6E5}
+:root{--ink:#0A1424;--muted:#5B6475;--line:#DCE1E8;--soft:#F3F5F8;--accent:#2D5BE3;--tint:#E8EEFC;--bar:#8A93A3;--warn:#9A5B00;--warn-bg:#FFF6E5}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Host Grotesk",system-ui,sans-serif;color:var(--ink);font-size:9.6pt;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{position:relative;width:210mm;height:297mm;padding:16mm 16mm 20mm;display:flex;flex-direction:column;gap:7mm;page-break-after:always;overflow:hidden}
@@ -219,7 +219,7 @@ tr.hi td{background:var(--tint)}
 .next{background:var(--ink);color:#fff;border-radius:10px;padding:5mm 6mm;display:grid;grid-template-columns:1fr auto;gap:6mm;align-items:center}
 .next p{font-size:10.4pt}
 .next b{font-weight:600}
-.next .who{font-size:9pt;text-align:right;color:#CFCFCF;line-height:1.6}
+.next .who{font-size:9pt;text-align:right;color:#C9D0DC;line-height:1.6}
 .next .who strong{color:#fff;font-weight:600}
 .draft{position:absolute;top:9mm;right:16mm;font-size:8pt;font-weight:600;color:var(--warn);border:1px solid var(--warn);border-radius:4px;padding:.6mm 2mm}
 """

@@ -107,7 +107,7 @@ CSS = """<style id="vl-css">
 .vl-fig.has-scene{padding-top:0}
 .vl-scene{position:relative;margin:0 0 clamp(40px,5vw,72px);height:clamp(280px,34vw,520px);overflow:hidden;background:var(--ink)}
 .vl-scene img{width:100%;height:100%;object-fit:cover;display:block}
-.vl-scene::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(24,25,27,0) 45%,rgba(24,25,27,.55) 75%,var(--ink) 100%);pointer-events:none}
+.vl-scene::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,20,36,0) 45%,rgba(10,20,36,.55) 75%,var(--ink) 100%);pointer-events:none}
 .vl-scene figcaption{position:absolute;left:var(--cell);right:var(--cell);bottom:16px;z-index:1;font-size:.75rem;color:rgba(255,255,255,.62)}
 .vl-scene figcaption a{color:inherit}
 /* sommaire */
@@ -217,15 +217,15 @@ def carte(current=None):
 
 MAP_CSS = """.vl-map{margin:0}
 .vl-svg{display:block;width:100%;height:auto;overflow:visible}
-.vl-fr{fill:var(--paper,#F2F2F1);stroke:var(--ink,#18191B);stroke-opacity:.18;stroke-width:1;stroke-linejoin:round}
-.vl-dot{fill:var(--ink,#18191B)}
-.vl-dot.is-on{fill:var(--accent,#B3261E)}
-.vl-halo{fill:var(--accent,#B3261E);opacity:.16}
-.vl-lab{font-size:17px;fill:var(--ink,#18191B)}
+.vl-fr{fill:var(--paper,#EEF0F3);stroke:var(--ink,#0A1424);stroke-opacity:.18;stroke-width:1;stroke-linejoin:round}
+.vl-dot{fill:var(--ink,#0A1424)}
+.vl-dot.is-on{fill:var(--accent,#2D5BE3)}
+.vl-halo{fill:var(--accent,#2D5BE3);opacity:.16}
+.vl-lab{font-size:17px;fill:var(--ink,#0A1424)}
 [data-tone="paper"] .vl-fr{fill:#fff}
-.vl-lab.is-on{font-weight:500;fill:var(--accent,#B3261E)}
-.vl-svg a:hover .vl-lab,.vl-svg a:focus .vl-lab{fill:var(--accent,#B3261E);text-decoration:underline}
-.vl-svg a:hover .vl-dot,.vl-svg a:focus .vl-dot{fill:var(--accent,#B3261E)}"""
+.vl-lab.is-on{font-weight:500;fill:var(--accent,#2D5BE3)}
+.vl-svg a:hover .vl-lab,.vl-svg a:focus .vl-lab{fill:var(--accent,#2D5BE3);text-decoration:underline}
+.vl-svg a:hover .vl-dot,.vl-svg a:focus .vl-dot{fill:var(--accent,#2D5BE3)}"""
 CSS = CSS.replace("</style>", MAP_CSS + "\n</style>", 1)
 
 

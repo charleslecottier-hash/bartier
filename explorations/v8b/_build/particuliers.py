@@ -459,12 +459,12 @@ CSS = """<style id="pf-css">
 .pf-trust svg{width:18px;height:18px;flex:none;color:var(--accent)}
 .pf-call{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .6rem;font-size:.95rem}
 .pf-call span{flex-basis:100%;color:var(--muted);font-size:.82rem}
-.pf-card{grid-column:3 / 5;scroll-margin-top:calc(var(--hdr) + 16px);padding:clamp(20px,2.4vw,32px);background:var(--bg);border:1px solid var(--rule);border-radius:var(--r);box-shadow:0 30px 70px -40px rgba(24,25,27,.45)}
+.pf-card{grid-column:3 / 5;scroll-margin-top:calc(var(--hdr) + 16px);padding:clamp(20px,2.4vw,32px);background:var(--bg);border:1px solid var(--rule);border-radius:var(--r);box-shadow:0 30px 70px -40px rgba(10,20,36,.45)}
 .pf-top{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--muted)}
 .pf-back{display:inline-flex;align-items:center;min-height:44px;margin:-8px 0;border:0;background:none;color:var(--ink);font:inherit;cursor:pointer;padding:0 0 0 12px}
 .pf-back[hidden]{display:none}
 .pf-bar{height:4px;margin:12px 0 22px;background:var(--paper);border-radius:2px;overflow:hidden}
-.pf-bar i{display:block;height:100%;width:20%;background:var(--cta);transition:width .45s var(--ease)}
+.pf-bar i{display:block;height:100%;width:20%;background:var(--accent);transition:width .45s var(--ease)}
 .pf-step{display:none;margin:0;padding:0;border:0;min-width:0}
 .pf-step.is-on{display:block;animation:pfIn .35s var(--ease)}
 @keyframes pfIn{from{opacity:0;transform:translateX(14px)}}
@@ -472,17 +472,17 @@ CSS = """<style id="pf-css">
 .pf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .pf-list{display:grid;gap:10px}
 .pf-tile,.pf-opt{display:flex;align-items:center;min-height:56px;padding:0 16px;border:1px solid var(--rule);border-radius:var(--r);background:var(--bg);color:var(--ink);font:500 1rem/1.25 var(--f-text);text-align:left;cursor:pointer;transition:border-color .2s,background-color .2s}
-.pf-tile:hover,.pf-opt:hover{border-color:var(--cta)}
-.pf-tile.is-sel,.pf-opt.is-sel{border-color:var(--cta);background:color-mix(in oklab,var(--cta) 8%,var(--bg))}
+.pf-tile:hover,.pf-opt:hover{border-color:var(--accent)}
+.pf-tile.is-sel,.pf-opt.is-sel{border-color:var(--accent);background:var(--tint)}
 .pf-note{margin-top:14px;padding:12px 14px;background:var(--paper);font-size:.92rem;line-height:1.45}
 .pf-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
 .pf-f{display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:var(--muted)}
 .pf-f.is-wide{grid-column:1 / -1}
 .pf-f input{height:52px;padding:0 14px;border:1px solid var(--rule);border-radius:var(--r);background:var(--bg);color:var(--ink);font:400 1.05rem var(--f-text)}
-.pf-f input:focus{outline:2px solid var(--cta);outline-offset:-1px;border-color:transparent}
+.pf-f input:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
 .pf-f input[aria-invalid="true"]{border-color:#d93025}
 .pf-consent{display:flex;gap:10px;align-items:flex-start;margin-bottom:16px;font-size:.85rem;line-height:1.45;color:var(--muted);cursor:pointer}
-.pf-consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--cta)}
+.pf-consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--accent)}
 .pf-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .pf-err{margin-bottom:12px;color:#d93025;font-size:.9rem}
 .pf-submit{width:100%;justify-content:center;min-height:56px;font-size:1.02rem}
@@ -570,7 +570,7 @@ CSS = """<style id="pf-css">
 .pf-end-grid{row-gap:24px;align-items:end}
 .pf-end h2{grid-column:1 / 3;font:300 clamp(2.2rem,4.4vw,4rem)/1 var(--f-display);letter-spacing:-.04em}
 .pf-end-grid > div{grid-column:3 / 5;display:flex;flex-direction:column;align-items:flex-start;gap:1.2rem}
-.pf-btn-inv{background:#fff;color:var(--cta)}
+.pf-btn-inv{background:#fff;color:var(--accent)}
 .pf-live{display:flex;align-items:center;gap:8px;margin:-4px 0 14px;font-size:.85rem;color:var(--muted)}
 .pf-live i{width:9px;height:9px;border-radius:50%;background:#b8bec6;flex:none}
 .pf-live.is-on{color:#137333}.pf-live.is-on i{background:#1e8e3e;box-shadow:0 0 0 0 rgba(30,142,62,.5);animation:pfPulse 2s 4}
@@ -594,7 +594,7 @@ CSS = """<style id="pf-css">
 .pf-band p{display:flex;flex-direction:column;gap:4px;font:400 clamp(1.2rem,1.8vw,1.55rem)/1.2 var(--f-display);letter-spacing:-.015em;color:var(--ink)}
 .pf-band-sub{font:400 .92rem/1.4 var(--f-text);letter-spacing:0;color:var(--muted)}
 .pf-call.d-only{font-size:.95rem}
-.pf-sticky{position:fixed;left:14px;right:78px;bottom:14px;z-index:89;display:none;flex-direction:column;justify-content:center;min-height:52px;padding:6px 18px;border-radius:var(--r);background:var(--cta);color:#fff;font-weight:500;text-decoration:none;box-shadow:0 14px 30px -12px rgba(45,91,227,.6);transform:translateY(140%);transition:transform .35s var(--ease)}
+.pf-sticky{position:fixed;left:14px;right:78px;bottom:14px;z-index:89;display:none;flex-direction:column;justify-content:center;min-height:52px;padding:6px 18px;border-radius:var(--r);background:var(--accent);color:#fff;font-weight:500;text-decoration:none;box-shadow:0 14px 30px -12px rgba(45,91,227,.6);transform:translateY(140%);transition:transform .35s var(--ease)}
 .pf-sticky span{font-size:.75rem;font-weight:400;opacity:.85}
 .pf-sticky.is-on{transform:none}
 @media (max-width:1024px){.pf-trades,.pf-prices,.pf-howto,.pf-checks,.pf-proms{grid-template-columns:repeat(2,minmax(0,1fr))}.pf-time{grid-template-columns:repeat(3,minmax(0,1fr))}.pf-dl{grid-column:1 / -1}.pf-brief h2{grid-column:1 / -1}}
