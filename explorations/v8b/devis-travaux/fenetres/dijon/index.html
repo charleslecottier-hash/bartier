@@ -2,7 +2,7 @@
 <html lang="fr">
 <head><meta name="robots" content="noindex">
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-3CoPjDGNsMWIA3qkMewAlgEdiC4KTWUxSE4oJFCfh14=' 'sha256-DRV7wDuGeUuRLEw21MWXXmoY20dkN/iJBX9gIv1sUqI=' 'sha256-MR4tOloyQBoAm915uDqhlabhpnNPcMDm6hJDalJaQ88=' 'sha256-T8fQNGHbpDnIBFziB1sZGF8o1K6sYlY7cSnfmDaQvK0=' 'sha256-ac39Iqz4WGXRXvifea1ysBaekMCicpH6cJwQCxggxJg=' 'sha256-eQfczpUWq8ruLx93fi+Eaz9hSigYLgWpRI2Wjs4HEM0=' 'sha256-emXW80tMCi28HiOD8b7PFpEm1LN9q8OE65YtFLbA9fk=' 'sha256-gFpEyESWD5x5GN8Ln0/BsNW7QSq7M22RjzWgpRPm2Rw=' 'sha256-gSq/2EaipVbdo5C0kLlhaZyq6bjZhZ5V/mUTfzyz95Y=' 'sha256-u4ctR96u8muW5qetujZe8wuGSAIsuP1R4Mv6Bg3dWfY=' 'sha256-uQFczFBMwyW1VHK1/4aDhuBnN7DyH4pLCPWtHT/S5Qs=' 'sha256-zL+HyR3xaCJICy47NREQQDFfLcRzmGeP2g6NObhYang=' 'sha256-zWFhanvEKMOsymecW6GjzAht4MWZsyCr+VubiVpTnYY='; object-src 'none'; base-uri 'none'">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-3CoPjDGNsMWIA3qkMewAlgEdiC4KTWUxSE4oJFCfh14=' 'sha256-DRV7wDuGeUuRLEw21MWXXmoY20dkN/iJBX9gIv1sUqI=' 'sha256-MR4tOloyQBoAm915uDqhlabhpnNPcMDm6hJDalJaQ88=' 'sha256-OALaLtCt0LQHB02D5Bab6mmpNPY1M5kU9OZuI3ydysA=' 'sha256-ac39Iqz4WGXRXvifea1ysBaekMCicpH6cJwQCxggxJg=' 'sha256-eQfczpUWq8ruLx93fi+Eaz9hSigYLgWpRI2Wjs4HEM0=' 'sha256-emXW80tMCi28HiOD8b7PFpEm1LN9q8OE65YtFLbA9fk=' 'sha256-gFpEyESWD5x5GN8Ln0/BsNW7QSq7M22RjzWgpRPm2Rw=' 'sha256-gSq/2EaipVbdo5C0kLlhaZyq6bjZhZ5V/mUTfzyz95Y=' 'sha256-u4ctR96u8muW5qetujZe8wuGSAIsuP1R4Mv6Bg3dWfY=' 'sha256-uQFczFBMwyW1VHK1/4aDhuBnN7DyH4pLCPWtHT/S5Qs=' 'sha256-zL+HyR3xaCJICy47NREQQDFfLcRzmGeP2g6NObhYang=' 'sha256-zWFhanvEKMOsymecW6GjzAht4MWZsyCr+VubiVpTnYY='; object-src 'none'; base-uri 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Remplacement de fenêtres à Dijon : devis gratuit</title>
 <meta name="theme-color" content="#ffffff">
@@ -310,7 +310,8 @@ var ptr=0;f.addEventListener('pointerdown',function(){ptr=Date.now()});
 f.addEventListener('change',function(e){if(e.target.type==='radio'&&cur<steps.length-1&&Date.now()-ptr<1500)setTimeout(function(){show(cur+1,true)},260)});
 f.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.type==='radio'){e.preventDefault();if(cur<steps.length-1&&ok(cur))show(cur+1,true)}});
 var ch=f.elements.chantier_moyen;
-f.addEventListener('input',function(e){var x=e.target;if(x===ch){var g=x.value.replace(/\D/g,'').slice(0,7);x.value=g.replace(/\B(?=(\d{3})+(?!\d))/g,' ')}if(x===cp){x.value=x.value.replace(/\D/g,'').slice(0,5);var d=dep(x.value);depEl.textContent=d?'Secteur : '+d:''}
+var sp=document.getElementById('s-panier');if(sp&&ch)sp.addEventListener('input',function(){if(ch.dataset.saisi)return;ch.value=String(sp.value).replace(/\B(?=(\d{3})+(?!\d))/g,' ')});
+f.addEventListener('input',function(e){var x=e.target;if(x===ch){ch.dataset.saisi='1';var g=x.value.replace(/\D/g,'').slice(0,7);x.value=g.replace(/\B(?=(\d{3})+(?!\d))/g,' ')}if(x===cp){x.value=x.value.replace(/\D/g,'').slice(0,5);var d=dep(x.value);depEl.textContent=d?'Secteur : '+d:''}
  if(x===tel){var d2=phone(x.value);if(/^0\d*$/.test(d2)&&x.value.indexOf('+')!==0)x.value=d2.slice(0,10).replace(/(\d{2})(?=\d)/g,'$1 ')}
  if(x.getAttribute&&x.getAttribute('aria-invalid')==='true'&&!bad(x))msg(x,'')});
 f.querySelectorAll('.dq-next').forEach(function(b){b.addEventListener('click',function(){if(ok(cur))show(cur+1,true)})});

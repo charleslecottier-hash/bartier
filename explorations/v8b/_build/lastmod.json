@@ -1,11 +1,11 @@
 {
  "/": {
   "date": "2026-11-26",
-  "sig": "fd1d4a5918a4ca54"
+  "sig": "b7c447791046cbd1"
  },
  "/blog/": {
   "date": "2026-11-26",
-  "sig": "2bdf21299f899d0a"
+  "sig": "bb41d21bbcb7828e"
  },
  "/blog/demarchage-arnaques-travaux/": {
   "date": "2026-11-21",
@@ -17,15 +17,15 @@
  },
  "/blog/google-ads-ou-meta-ads-artisan/": {
   "date": "2026-11-26",
-  "sig": "4f5d8177941af917"
+  "sig": "d0a86ca136011813"
  },
  "/blog/lead-partage-lead-exclusif-rendez-vous-qualifie/": {
   "date": "2026-11-26",
-  "sig": "e337eda0b2f9266c"
+  "sig": "5a74526517022811"
  },
  "/blog/relance-devis-artisan/": {
   "date": "2026-11-26",
-  "sig": "f71d182f288d91ca"
+  "sig": "f3c3ef77c5d3ee4e"
  },
  "/chiffres-du-batiment/": {
   "date": "2026-11-23",
@@ -701,7 +701,7 @@
  },
  "/google-ads/": {
   "date": "2026-11-26",
-  "sig": "04c45a08840782ff"
+  "sig": "113e3cccfaf7dd29"
  },
  "/lexique/": {
   "date": "2026-11-26",
@@ -713,46 +713,46 @@
  },
  "/meta-ads/": {
   "date": "2026-11-26",
-  "sig": "f35e64ac8adaca7c"
+  "sig": "9c83098064cedd73"
  },
  "/metiers/": {
   "date": "2026-11-26",
-  "sig": "95f80695c63add77"
+  "sig": "11a6810ac8acf268"
  },
  "/metiers/charpente/": {
   "date": "2026-11-26",
-  "sig": "802e874d0262ab89"
+  "sig": "12801d5f21e88957"
  },
  "/metiers/couverture/": {
   "date": "2026-11-26",
-  "sig": "d077914f2f173a68"
+  "sig": "ec8b033dce079ea0"
  },
  "/metiers/facade/": {
   "date": "2026-11-26",
-  "sig": "621a00131d0ba475"
+  "sig": "c90ed6fde5934d2f"
  },
  "/metiers/isolation/": {
   "date": "2026-11-26",
-  "sig": "eca9cd3a0df97fe9"
+  "sig": "94e7f215183240d1"
  },
  "/metiers/menuiserie-exterieure/": {
   "date": "2026-11-26",
-  "sig": "dcc1d37579838d55"
+  "sig": "968f67b17c64f1dc"
  },
  "/questions/": {
   "date": "2026-11-26",
-  "sig": "a6a26a2a07f6dccd"
+  "sig": "0057a1a768f7a47d"
  },
  "/qui-sommes-nous/": {
   "date": "2026-11-26",
-  "sig": "05c3ed172233b5c6"
+  "sig": "fd667780cefec616"
  },
  "/trouver-des-chantiers/": {
   "date": "2026-11-26",
-  "sig": "87e2a3e368df5aa5"
+  "sig": "331a057d3bcf6738"
  },
  "/trouver-des-chantiers/habitatpresto-pro/": {
   "date": "2026-11-26",
-  "sig": "3a1a66cc2f3bde9c"
+  "sig": "0cfc9487abaace5a"
  }
 }

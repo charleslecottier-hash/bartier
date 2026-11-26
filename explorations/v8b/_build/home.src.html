@@ -49,7 +49,8 @@
 @media (max-width:760px){.ss-list{grid-template-columns:minmax(0,1fr)}.season{padding-bottom:.4rem}}
 
 .dq-more{grid-column:1 / 3;display:flex;flex-direction:column;gap:1.4rem}
-.dq-side{grid-row:1}.dq{grid-row:1 / span 2;align-self:start}
+.dq-side{grid-row:1}.dq{grid-row:1 / span 2;align-self:start}.dq-more{grid-row:2}
+.dq-k{font-size:.85rem;color:var(--soft)}.dq-k + .dq-checks{margin-top:-.6rem}
 .dq-grid{grid-template-rows:auto 1fr}
 .nw{white-space:nowrap}
 .wa.is-away{opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s,transform .25s,visibility 0s .25s}
@@ -477,15 +478,6 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
     <div class="dq-side">
       <h2 data-split>Un artisan spécialisé par secteur géographique.</h2>
       <p class="dq-lead">Vérifiez si le vôtre est encore libre et recevez votre diagnostic secteur, offert. Cinq questions, une minute.</p>
-      <ul class="dq-checks" aria-label="Ce que contient le diagnostic">
-        <li>Les maisons autour de votre dépôt</li>
-        <li>Ce que les propriétaires cherchent sur Google</li>
-        <li>Qui fait déjà de la publicité près de chez vous</li>
-        <li>Votre fiche Google face aux 3 premières</li>
-        <li>Ce qu’un budget peut vous rapporter, calculé avec votre chantier moyen</li>
-      </ul>
-      <div class="dq-team"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><p>Martin vous rappelle sous un jour ouvré, puis vous parcourez le diagnostic ensemble en 20 minutes.</p></div>
-      <p class="dq-wa-link"><a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20mon%20secteur%20est-il%20encore%20libre%20%3F%20Je%20voudrais%20mon%20diagnostic%20secteur." target="_blank" rel="noopener" data-wa="form-side">Ou écrire directement à Martin sur WhatsApp</a></p>
     </div>
     <form class="dq" id="dq" method="post" action="/api/lead/" novalidate>
       <div class="dq-top"><p class="dq-count" aria-live="polite">Étape 1 sur 5</p><button type="button" class="dq-back" hidden>← Retour</button></div>
@@ -551,6 +543,18 @@ requestAnimationFrame(f);setTimeout(function(){if(document.body.contains(l)){l.r
         </div>
       </div>
     </form>
+    <div class="dq-more">
+      <p class="dq-k">Dans votre diagnostic</p>
+      <ul class="dq-checks">
+        <li>Les maisons autour de votre dépôt</li>
+        <li>Ce que les propriétaires cherchent sur Google</li>
+        <li>Qui fait déjà de la publicité près de chez vous</li>
+        <li>Votre fiche Google face aux 3 premières</li>
+        <li>Ce qu’un budget peut vous rapporter, calculé avec votre chantier moyen</li>
+      </ul>
+      <div class="dq-team"><img src="/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Portrait de Martin Barthélémy, cofondateur de Bartier &amp; Co" width="360" height="450" loading="lazy" decoding="async"><p>Martin vous rappelle sous un jour ouvré, puis vous parcourez le diagnostic ensemble en 20 minutes.</p></div>
+      <p class="dq-wa-link"><a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20mon%20secteur%20est-il%20encore%20libre%20%3F%20Je%20voudrais%20mon%20diagnostic%20secteur." target="_blank" rel="noopener" data-wa="form-side">Ou écrire directement à Martin sur WhatsApp</a></p>
+    </div>
   </div>
 </section>
 
@@ -683,7 +687,8 @@ var ptr=0;f.addEventListener('pointerdown',function(){ptr=Date.now()});
 f.addEventListener('change',function(e){if(e.target.type==='radio'&&cur<steps.length-1&&Date.now()-ptr<1500)setTimeout(function(){show(cur+1,true)},260)});
 f.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.type==='radio'){e.preventDefault();if(cur<steps.length-1&&ok(cur))show(cur+1,true)}});
 var ch=f.elements.chantier_moyen;
-f.addEventListener('input',function(e){var x=e.target;if(x===ch){var g=x.value.replace(/\D/g,'').slice(0,7);x.value=g.replace(/\B(?=(\d{3})+(?!\d))/g,' ')}if(x===cp){x.value=x.value.replace(/\D/g,'').slice(0,5);var d=dep(x.value);depEl.textContent=d?'Secteur : '+d:''}
+var sp=document.getElementById('s-panier');if(sp&&ch)sp.addEventListener('input',function(){if(ch.dataset.saisi)return;ch.value=String(sp.value).replace(/\B(?=(\d{3})+(?!\d))/g,' ')});
+f.addEventListener('input',function(e){var x=e.target;if(x===ch){ch.dataset.saisi='1';var g=x.value.replace(/\D/g,'').slice(0,7);x.value=g.replace(/\B(?=(\d{3})+(?!\d))/g,' ')}if(x===cp){x.value=x.value.replace(/\D/g,'').slice(0,5);var d=dep(x.value);depEl.textContent=d?'Secteur : '+d:''}
  if(x===tel){var d2=phone(x.value);if(/^0\d*$/.test(d2)&&x.value.indexOf('+')!==0)x.value=d2.slice(0,10).replace(/(\d{2})(?=\d)/g,'$1 ')}
  if(x.getAttribute&&x.getAttribute('aria-invalid')==='true'&&!bad(x))msg(x,'')});
 f.querySelectorAll('.dq-next').forEach(function(b){b.addEventListener('click',function(){if(ok(cur))show(cur+1,true)})});
