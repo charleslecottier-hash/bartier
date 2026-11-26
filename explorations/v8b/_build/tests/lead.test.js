@@ -40,8 +40,8 @@ const ORIGIN = 'https://bartierandco.com';
 const artisan = (over = {}, top = {}) => ({
   type: 'artisan',
   fields: Object.assign({
-    metier: 'couverture', code_postal: '80000', equipes: '2', capacite: 'oui',
-    prenom: 'Jean', telephone: '06 12 34 56 78', entreprise: 'Toitures Durand',
+    metier: 'couverture', code_postal: '80000', chantier_moyen: '5 000', capacite: 'oui',
+    prenom: 'Jean', telephone: '06 12 34 56 78', entreprise: 'Toitures Durand', email: 'jean@durand.fr',
   }, over),
   page: '/', utm_source: 'google', utm_medium: 'cpc', utm_campaign: 'couvreurs', utm_content: 'a1',
   gclid: 'G123', fbclid: '', site_web: '', ...top,
@@ -205,7 +205,7 @@ test('artisan valide : lead normalisé, rien d’autre repris', () => {
   assert.deepStrictEqual(v.lead, {
     type: 'artisan',
     received_at: '2026-11-18T09:00:00.000Z',
-    fields: { metier: 'couverture', code_postal: '80000', equipes: '2', capacite: 'oui', prenom: 'Jean',
+    fields: { metier: 'couverture', code_postal: '80000', chantier_moyen: '5 000 €', capacite: 'oui', prenom: 'Jean',
       telephone: '+33612345678', entreprise: 'Toitures Durand', email: 'jean@durand.fr' },
     page: '/', utm_source: 'google', utm_medium: 'cpc', utm_campaign: 'couvreurs', utm_content: 'a1', gclid: 'G123', fbclid: '',
   });
@@ -215,21 +215,23 @@ test('artisan : chaque champ requis et chaque valeur autorisée', () => {
   const cases = [
     ['metier', undefined], ['metier', 'plomberie'], ['metier', ''],
     ['code_postal', undefined], ['code_postal', '7500'], ['code_postal', '750044'], ['code_postal', '75 004'], ['code_postal', 'ABCDE'],
-    ['equipes', undefined], ['equipes', '4'], ['equipes', '3'],
+    ['chantier_moyen', undefined], ['chantier_moyen', ''], ['chantier_moyen', '0'], ['chantier_moyen', '200'], ['chantier_moyen', '5000,50'],
+    ['chantier_moyen', '-5000'], ['chantier_moyen', '2000000'], ['chantier_moyen', 'cinq mille'],
     ['capacite', undefined], ['capacite', 'non'],
     ['prenom', undefined], ['prenom', ' '], ['prenom', 'J'], ['prenom', { a: 1 }],
     ['telephone', undefined], ['telephone', '123'], ['telephone', '+32 470 12 34 56'],
     ['entreprise', undefined], ['entreprise', ''],
-    ['email', 'pas-un-email'], ['email', 'a@b'], ['email', 'a b@c.fr'], ['email', 'a@b.fr\nBcc: x@y.fr'],
+    ['email', undefined], ['email', ''], ['email', 'pas-un-email'], ['email', 'a@b'], ['email', 'a b@c.fr'], ['email', 'a@b.fr\nBcc: x@y.fr'],
   ];
   for (const [field, value] of cases) {
     const v = validate(artisan({ [field]: value }));
     assert.deepStrictEqual(v, { ok: false, error: 'invalid', field }, `${field}=${JSON.stringify(value)}`);
   }
   for (const m of ['couverture', 'facade', 'menuiserie', 'charpente', 'isolation', 'autre']) assert.strictEqual(validate(artisan({ metier: m })).ok, true, m);
-  for (const e of ['1', '2', '3+']) assert.strictEqual(validate(artisan({ equipes: e })).ok, true, e);
+  for (const [v, attendu] of [['5000', '5 000 €'], ['12 500 €', '12 500 €'], [8000, '8 000 €'], ['300', '300 €'], ['1000000', '1 000 000 €'], ['15\u202f000', '15 000 €']]) {
+    assert.strictEqual(validate(artisan({ chantier_moyen: v })).lead.fields.chantier_moyen, attendu, String(v));
+  }
   for (const c of ['oui', 'bientot', 'ne-sait-pas']) assert.strictEqual(validate(artisan({ capacite: c })).ok, true, c);
-  assert.strictEqual(validate(artisan({ email: '' })).ok, true);
   assert.strictEqual(validate(artisan({ code_postal: 80000 })).lead.fields.code_postal, '80000');
 });
 

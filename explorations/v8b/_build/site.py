@@ -605,7 +605,7 @@ def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None, date
       <p class="kick">{kick}</p>
       <h1>{h1}</h1>
       {lead_html}{meta}
-      <div class="actions"><a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span><svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>{second}</div>
+      <div class="actions"><a class="btn" href="#contact"><span>Recevoir mon diagnostic secteur</span><svg class="tick" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1h8v8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>{second}</div>
     </div>
     {fig}
   </div>
@@ -956,7 +956,7 @@ pf_body = pf_body if not VL.CITIES else pf_body.replace('<section class="sheet p
 pf_top = absolutize(BODY_OPEN)
 pf_top = pf_top.replace('class="link" href="/devis-travaux/"', 'class="link" href="/devis-travaux/" aria-current="page"', 1)
 pf_top = re.sub(r'<p class="hdr-tag">[^<]*', '<p class="hdr-tag">Vos travaux, un seul artisan près de chez vous', pf_top, count=1)
-pf_top = pf_top.replace('<a class="hdr-cta" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="header"><span>Réserver un appel</span>', '<a class="hdr-cta" href="#projet"><span>Mon devis</span>', 1)
+pf_top = pf_top.replace('<a class="hdr-cta" href="#contact"><span>Mon diagnostic<span class="d-only"> secteur</span></span>', '<a class="hdr-cta" href="#projet"><span>Mon devis</span>', 1)
 pf_top = pf_top.replace('<span>Appeler Martin</span>', '<span>Nous appeler</span>', 1)
 # Pages particuliers : pas de lien « Tarifs » (ce sont les prix pour les artisans, le service est gratuit pour le propriétaire)
 pf_top = re.sub(r'\n[ ]*<a (?:class="link" )?href="/#tarifs">Tarifs</a>', '', pf_top)
@@ -964,7 +964,7 @@ pf_top = pf_top.replace('<a href="#contact">Contact</a>', '<a href="#projet">Obt
 pf_top = pf_top.replace('Des clients pour les artisans du bâtiment</p>', 'Un seul artisan près de chez vous, sans frais</p>')
 pf_tail = absolutize(TAIL)
 pf_tail = pf_tail.replace('<p>Faire équipe.<br> Faire la différence.</p>', '<p>Un projet de travaux&nbsp;?<br> Un seul artisan, près de chez vous.</p>', 1)
-pf_tail = pf_tail.replace('<a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span>', '<a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>', 1)
+pf_tail = pf_tail.replace('<a class="btn" href="#contact"><span>Recevoir mon diagnostic secteur</span>', '<a class="btn" href="#projet"><span>Obtenir mon devis gratuit</span>', 1)
 pf_tail = pf_tail.replace('<small>Cofondateur</small>', '<small>Bartier &amp; Co · vos travaux</small>', 1)
 pf_tail = pf_tail.replace('<b>Parler à Martin<span>, cofondateur</span></b>', '<b>Une question&nbsp;?<span> Écrivez à Martin</span></b>', 1)
 pf_tail = re.sub(r'<p class="wa-bubble">[\s\S]*?(?=<div class="wa-actions">)', lambda m: '<p class="wa-bubble">Bonjour. Un projet de travaux ou une question&nbsp;? Écrivez-moi, je vous réponds personnellement.</p>\n      <p class="wa-k">Choisissez une question, ou écrivez la vôtre&nbsp;:</p>\n' + "\n".join(
@@ -1195,7 +1195,7 @@ def _hero_cta(block, cta):
 
 ART_ASIDE = """<h3>Votre secteur est-il libre ?</h3>
       <p>Un seul artisan par métier et par secteur.</p>
-      <a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span></a>"""
+      <a class="btn" href="#contact"><span>Recevoir mon diagnostic secteur</span></a>"""
 SEO_TITLE = {"dpe-2027": "DPE 2027 : nouvelle étiquette, location et travaux",
              "demarchage-arnaques-travaux": "Démarchage pour des travaux : vos droits en 2026",
              "lead-partage-lead-exclusif-rendez-vous-qualifie": "Demande partagée, exclusive ou rendez-vous qualifié ?",
@@ -1258,7 +1258,7 @@ def guide(G, kick, crumb_items, faq_title, links):
     <div class="art-aside">
       <h3>Votre secteur est-il libre ?</h3>
       <p>Un seul artisan par métier et par secteur. Visites déjà fixées, sans durée d'engagement.</p>
-      <a class="btn" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span></a>
+      <a class="btn" href="#contact"><span>Recevoir mon diagnostic secteur</span></a>
     </div>
   </div>
 </section>""",
@@ -1375,7 +1375,7 @@ def pillar_page(G):
     <div class="tc-us-txt">
       <p>Nous combinons les annonces locales et le rappel de chaque demande client en moins de 5 minutes. La visite arrive dans votre agenda. Un seul artisan par métier et par secteur.</p>
       <p>Le bouche-à-oreille reste votre premier canal. Nous vous apportons des demandes en plus, sans durée d'engagement.</p>
-      <div class="actions"><a class="btn" href="{WA_BOOK}" target="_blank" rel="noopener" data-wa="cta"><span>Réserver un appel</span>{TICK_SVG}</a><a class="link" href="/#services">Voir comment ça marche</a></div>
+      <div class="actions"><a class="btn" href="#contact"><span>Recevoir mon diagnostic secteur</span>{TICK_SVG}</a><a class="link" href="/#services">Voir comment ça marche</a></div>
       <p class="tc-trades">Par métier : {trades}</p>
     </div>
   </div>
@@ -1565,7 +1565,7 @@ nf_body = """<section class="sheet pg-top" data-tone="light">
       <p class="kick">Erreur 404</p>
       <h1>Cette page n’existe pas.</h1>
       <p class="lead">Vous êtes propriétaire ou artisan ? Voici par où continuer.</p>
-      <div class="actions"><a class="btn" href="/devis-travaux/"><span>Obtenir mon devis gratuit</span></a><a class="link" href="https://wa.me/33781018936?text=Bonjour%20Martin%2C%20je%20suis%20artisan%20et%20je%20voudrais%20r%C3%A9server%20un%20appel%20de%2015%20minutes." target="_blank" rel="noopener">Réserver un appel</a></div>
+      <div class="actions"><a class="btn" href="/devis-travaux/"><span>Obtenir mon devis gratuit</span></a><a class="link" href="/#contact">Artisan : recevoir mon diagnostic secteur</a></div>
     </div>
   </div>
 </section>"""
@@ -1707,6 +1707,8 @@ for f in PAGES_OUT:
     doc = _parts[0] + "".join('<div class="fq-list">' + s.replace('<details class="fq">', '<details class="fq" open>', 2) for s in _parts[1:])
     _rel = f.relative_to(ROOT)
     _page = "/" + ("" if str(_rel.parent) == "." else str(_rel.parent) + "/")
+    if 'id="contact"' not in doc:  # page sans formulaire artisan : les boutons « diagnostic secteur » mènent à celui de l'accueil
+        doc = doc.replace('href="#contact"', 'href="/#contact"')
     if 'name="theme-color"' not in doc:
         doc = doc.replace("</title>", '</title>\n<meta name="theme-color" content="#ffffff">', 1)
     for slug in LEGAL_SLUGS:  # pas de lien vers une page légale qui n'existe pas encore

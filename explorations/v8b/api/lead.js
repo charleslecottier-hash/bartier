@@ -31,7 +31,8 @@ const CAP_EMAIL = 254;
 const ALLOWED_HOSTS = ['bartierandco.com', 'www.bartierandco.com', 'bartier-8b.vercel.app', 'localhost', '127.0.0.1'];
 
 const METIERS = ['couverture', 'facade', 'menuiserie', 'charpente', 'isolation', 'autre'];
-const EQUIPES = ['1', '2', '3+'];
+const CHANTIER_MIN = 300;      // chantier moyen déclaré, en euros
+const CHANTIER_MAX = 1000000;
 const CAPACITES = ['oui', 'bientot', 'ne-sait-pas'];
 
 // Valeurs du formulaire particulier (_build/particuliers.py : TRADES, build() et js()).
@@ -48,11 +49,11 @@ const DELAIS = ['Dès que possible', 'Dans 1 à 3 mois', 'Dans plus de 3 mois', 
 const STATUTS = ['Propriétaire occupant', 'Propriétaire bailleur'];
 
 const LABELS = {
-  metier: 'Métier', equipes: 'Équipes', capacite: 'Capacité à prendre des chantiers', entreprise: 'Entreprise',
+  metier: 'Métier', chantier_moyen: 'Chantier moyen', capacite: 'Capacité à prendre des chantiers', entreprise: 'Entreprise',
   travaux: 'Travaux', besoin: 'Besoin', delai: 'Délai', statut: 'Statut',
   code_postal: 'Code postal', prenom: 'Prénom', telephone: 'Téléphone', email: 'E-mail',
 };
-const FIELD_ORDER = ['entreprise', 'metier', 'equipes', 'capacite', 'travaux', 'besoin', 'delai', 'statut',
+const FIELD_ORDER = ['entreprise', 'metier', 'chantier_moyen', 'capacite', 'travaux', 'besoin', 'delai', 'statut',
   'code_postal', 'prenom', 'telephone', 'email'];
 const TRACKING = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'gclid', 'fbclid'];
 
@@ -156,9 +157,11 @@ function validate(payload, now) {
   fields.code_postal = cp;
 
   if (type === 'artisan') {
-    const equipes = pick(clean(src.equipes, CAP_NAME), EQUIPES);
-    if (!equipes) return bad('equipes');
-    fields.equipes = equipes;
+    // Chantier moyen : sert au calcul du diagnostic secteur. Chiffres seuls, espaces et « € » tolérés.
+    const brut = clean(src.chantier_moyen, 20).replace(/[\s\u00a0\u202f€]/g, '');
+    const montant = /^\d{3,7}$/.test(brut) ? Number(brut) : NaN;
+    if (!(montant >= CHANTIER_MIN && montant <= CHANTIER_MAX)) return bad('chantier_moyen');
+    fields.chantier_moyen = String(montant).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' €';
     const capacite = pick(clean(src.capacite, CAP_NAME), CAPACITES);
     if (!capacite) return bad('capacite');
     fields.capacite = capacite;
@@ -178,6 +181,8 @@ function validate(payload, now) {
     fields.entreprise = entreprise;
   }
 
+  // E-mail : obligatoire pour les artisans (le diagnostic secteur leur est envoyé), facultatif sinon.
+  if (type === 'artisan' && (src.email == null || src.email === '')) return bad('email');
   if (src.email != null && src.email !== '') {
     const email = clean(src.email, CAP_EMAIL + 1);
     if (!validEmail(email)) return bad('email');

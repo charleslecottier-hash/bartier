@@ -1,0 +1,239 @@
+{
+ "entreprise": "Metropole Couverture",
+ "fiche_google": "Metropole Couverture",
+ "metier": "couverture",
+ "code_postal": "80080",
+ "rayon_km": 30,
+ "chantier_moyen": 5000,
+ "chantier_moyen_source": "défaut",
+ "date": "2026-11-26",
+ "recherches_google": {
+  "total_mois": null,
+  "mots_cles": [],
+  "zone": "",
+  "releve_le": ""
+ },
+ "pubs_recherche": [
+  "couvreur Amiens",
+  "toiture Amiens"
+ ],
+ "pubs_releve_le": "2026-11-26",
+ "pubs": [
+  {
+   "page": "Rénov & Co Amiens",
+   "titre": "Rénov & Co Amiens | Façade et toiture | Gouttières aluminium | Isolation",
+   "depuis": "2026-11-23",
+   "lien": "https://www.facebook.com/ads/library/?id=1126029223364721",
+   "capture": null
+  },
+  {
+   "page": "Christophe couverture",
+   "titre": "Devis toiture gratuit à Amiens",
+   "depuis": "2026-11-18",
+   "lien": "https://www.facebook.com/ads/library/?id=1667372018426371",
+   "capture": null
+  },
+  {
+   "page": "As couvreur",
+   "titre": "Diagnostic de toiture gratuit",
+   "depuis": "2026-11-01",
+   "lien": "https://www.facebook.com/ads/library/?id=1009626875512114",
+   "capture": null
+  }
+ ],
+ "commune": "Amiens",
+ "insee": "80021",
+ "departement": "80",
+ "departement_nom": "Somme",
+ "parc": {
+  "annee": "2023",
+  "source": "https://api.insee.fr/melodi/data/DS_RP_LOGEMENT_PRINC",
+  "releve_le": "2026-11-26",
+  "commune": {
+   "maisons": 24329,
+   "maisons_avant_1991": 21210,
+   "residences": 69833,
+   "proprietaires": 21538
+  },
+  "departement": {
+   "maisons": 191838,
+   "maisons_avant_1991": 147920,
+   "residences": 259351,
+   "proprietaires": 154881
+  }
+ },
+ "avis": {
+  "requete": "couvreur Amiens",
+  "releve_le": "2026-11-26",
+  "fiches": [
+   {
+    "rang": 1,
+    "nom": "LES COMPAGNONS PRIN - Couvreur Amiens de proximité",
+    "note": 4.9,
+    "avis": 97,
+    "adresse": "72 Rue des Jacobins, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=11104817236643427776&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 2,
+    "nom": "Ets Gronier Père et Fils Couverture Zinguerie Vélux Gouttière Bac acier Couvreur Amiens Vignacourt Longueau Camon Boves Dury",
+    "note": 4.9,
+    "avis": 69,
+    "adresse": "1 Rue Adéodat Lefevre, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=12676866997026307458&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 3,
+    "nom": "AR Couverture",
+    "note": 4.9,
+    "avis": 48,
+    "adresse": "47 Pl. Alphonse Fiquet, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=557410022498513123&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 4,
+    "nom": "ETS COUVREUR EGC RÉNOVATION - Réparation Nettoyage Toiture Fuites Couverture Zinguerie Amiens et alentours",
+    "note": 4.8,
+    "avis": 117,
+    "adresse": "1 Rue Adéodat Lefevre, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=13026865789933313607&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 5,
+    "nom": "Capron Couverture",
+    "note": 4.8,
+    "avis": 141,
+    "adresse": "Des Bornes Du Temps, 1 All. du vieux berger Zac 1, 80470 Saint-Sauveur",
+    "lien": "https://maps.google.com/?cid=466202295066028586&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 6,
+    "nom": "Couvreur SURY RÉNOVATIONS",
+    "note": 5,
+    "avis": 67,
+    "adresse": "72 Rue des Jacobins, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=8388242903386035894&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 7,
+    "nom": "JM RENOV TOIT",
+    "note": 4.9,
+    "avis": 15,
+    "adresse": "1 Rue Adéodat Lefevre, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=279973178805479577&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 8,
+    "nom": "KARAPASS AMIENS",
+    "note": 5,
+    "avis": 66,
+    "adresse": "10 Rue du Fossé Warin, 80080 Amiens",
+    "lien": "https://maps.google.com/?cid=7631204226843823161&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 9,
+    "nom": "Couvreur Toiture 80",
+    "note": 4.9,
+    "avis": 98,
+    "adresse": "1 Rue Adéodat Lefevre, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=18343050811453660057&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 10,
+    "nom": "Cabuzel Couverture",
+    "note": 4.8,
+    "avis": 71,
+    "adresse": "3 Rue Fra Angelico, 80080 Amiens",
+    "lien": "https://maps.google.com/?cid=704389177447208987&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 11,
+    "nom": "PICARDIE RENOVATION AMIENS",
+    "note": 4.9,
+    "avis": 117,
+    "adresse": "19 Rue André Durouchez, 80080 Amiens",
+    "lien": "https://maps.google.com/?cid=6978536583749815339&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 12,
+    "nom": "imcouverture",
+    "note": 4.8,
+    "avis": 42,
+    "adresse": "5 Chem. d'Argoeuves, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=14359491606387174038&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 13,
+    "nom": "Metropole Couverture",
+    "note": 4.7,
+    "avis": 78,
+    "adresse": "5 Rue de la Vassellerie, 80080 Amiens",
+    "lien": "https://maps.google.com/?cid=564591081728545016&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 14,
+    "nom": "Pro Rénov'",
+    "note": 4.9,
+    "avis": 102,
+    "adresse": "338 Rue Stéphane Hessel, 80450 Camon",
+    "lien": "https://maps.google.com/?cid=8418551554666234640&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 15,
+    "nom": "Couvreur Amiens Toiture",
+    "note": 5,
+    "avis": 8,
+    "adresse": "2 Rue de la République, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=9584573909203067812&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 16,
+    "nom": "Ets Roger père & fils",
+    "note": 4.9,
+    "avis": 27,
+    "adresse": "1 Rue Adéodat Lefevre, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=1612658223896167048&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 17,
+    "nom": "Perfect'Toit",
+    "note": 4.9,
+    "avis": 35,
+    "adresse": "45 Rue Jacques Prévert, 80090 Amiens",
+    "lien": "https://maps.google.com/?cid=17665768902011422805&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 18,
+    "nom": "Caux Entreprise SAS",
+    "note": 4.7,
+    "avis": 57,
+    "adresse": "Zone Industrielle Nord, 6 Av. Roger Dumoulin, 80080 Amiens",
+    "lien": "https://maps.google.com/?cid=5151989667993595872&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 19,
+    "nom": "AS COUVREUR ZINGUEUR Charpente Bac acier tuile ardoise 80",
+    "note": 5,
+    "avis": 31,
+    "adresse": "255 Rue de Dreuil, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=315710904208581757&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   },
+   {
+    "rang": 20,
+    "nom": "ÉLITE TOITURE PRO",
+    "note": 4.9,
+    "avis": 17,
+    "adresse": "72 Rue des Jacobins, 80000 Amiens",
+    "lien": "https://maps.google.com/?cid=16678637022009024940&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   }
+  ],
+  "moi": {
+   "rang": 13,
+   "nom": "Metropole Couverture",
+   "note": 4.7,
+   "avis": 78,
+   "adresse": "5 Rue de la Vassellerie, 80080 Amiens",
+   "lien": "https://maps.google.com/?cid=564591081728545016&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  }
+ }
+}

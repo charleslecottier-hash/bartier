@@ -13,7 +13,6 @@ var CLE = '@@CLE@@';
 
 var METIERS = { couverture: 'Couverture et zinguerie', facade: 'Façade et ravalement', menuiserie: 'Menuiserie extérieure', charpente: 'Charpente', isolation: 'Isolation', autre: 'Autre métier' };
 var TRAVAUX = { toiture: 'Toiture', facade: 'Façade', fenetres: 'Fenêtres et portes', charpente: 'Charpente', isolation: 'Isolation', autre: 'Autre projet' };
-var EQUIPES = { '1': 'Une', '2': 'Deux', '3+': 'Trois ou plus' };
 var CAPACITE = { oui: 'Oui, sans problème', bientot: 'Bientôt, ils recrutent', 'ne-sait-pas': 'Ne sait pas encore' };
 var SUIVI = {
   Particuliers: ['À rappeler', 'Rappelé', 'Visite fixée', 'Devis remis', 'Travaux signés', 'Sans suite', 'Hors zone'],
@@ -34,7 +33,7 @@ function doPost(e) {
       texte(lead.gclid), texte(lead.fbclid), date(c.at), texte(c.text)];
     var ligne = artisan
       ? [date(lead.received_at), 'À rappeler', texte(f.entreprise), texte(f.prenom), tel(f.telephone), texte(f.email),
-        texte(METIERS[f.metier] || f.metier), texte(f.code_postal), texte(EQUIPES[f.equipes] || f.equipes),
+        texte(METIERS[f.metier] || f.metier), texte(f.code_postal), texte(f.chantier_moyen),
         texte(CAPACITE[f.capacite] || f.capacite), ''].concat(fin)
       : [date(lead.received_at), 'À rappeler', texte(f.prenom), tel(f.telephone), texte(f.code_postal),
         texte(TRAVAUX[f.travaux] || f.travaux), texte(f.besoin), texte(f.delai), texte(f.statut), ''].concat(fin);
