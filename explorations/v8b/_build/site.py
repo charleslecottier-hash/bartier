@@ -581,6 +581,11 @@ def label_tables(frag):
 
 MAJ_HTML = '<p class="pg-upd">Mis à jour le <time datetime="@@MAJ@@">@@MAJFR@@</time></p>'
 REVIEW = set()  # pages à faire valider : jamais indexées, absentes du plan du site (fiche Habitatpresto validée le 18/11/2026)
+# Pages métier + ville (ex. /devis-travaux/charpente/rennes/) : en ligne et reliées, mais « noindex », hors plan du site et hors llms-full.txt
+# tant que leur texte n'est pas propre à la ville (26/11/2026 : 7 % de texte propre en moyenne, le reste repris de la page ville et
+# du même métier ailleurs ; Search Console « Explorée, actuellement non indexée »). Une page réécrite sort de l'ensemble avec REINDEXEES.
+DOUBLONS = set()
+REINDEXEES = set()  # ex. {"/devis-travaux/toiture/rennes/"} quand plus de la moitié du texte lui est propre
 
 
 def top(kick, h1, lead, crumb, photo=None, cta2=None, meta="", visual=None, dated=False):
@@ -1047,6 +1052,8 @@ for _k in MC.CITY_TRADES:
     _tt = next(x for x in PF.TRADES if x[0] == _k)
     for c in VL.CITIES:
         _p = MC.city_path(PF, _k, c)
+        if _p not in REINDEXEES:
+            DOUBLONS.add(_p)
         _body, _rows = MC.build_trade_city(PF, VL, PHONE, PHONE_TXT, crumbs(("Devis travaux", PF.PATH), (_tt[1], f"{PF.PATH}{PF.SLUG[_k]}/"), (c["name"], _p)), _k, c, _IMG)
         _ti, _de = MC.trade_city_meta(PF, VL, _k, c)
         pf_write(_p, _ti, _de, VL.CSS + MC.CSS + "\n" + _body, MC.trade_city_schema(SITE, PF, VL, faq_ld, bc_ld, _k, c, _rows))
@@ -1706,7 +1713,7 @@ for f in PAGES_OUT:
         if slug not in LEGAL_READY:
             doc = re.sub(rf'\s*<a href="/{slug}/">[^<]*</a>', "", doc)
     rob = '<meta name="robots" content="noindex">'
-    if LIVE and _page not in REVIEW and f.name != "404.html":  # en ligne (la page 404 reste toujours hors index) : indexation et extraits longs autorisés (moteurs de réponse)
+    if LIVE and _page not in REVIEW and _page not in DOUBLONS and f.name != "404.html":  # en ligne (la page 404 reste toujours hors index) : indexation et extraits longs autorisés (moteurs de réponse)
         doc = doc.replace(rob, '<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">', 1).replace(rob + "\n", "").replace(rob, "")
     if doc.count(rob) > 1:
         i = doc.index(rob) + len(rob)
@@ -1883,10 +1890,10 @@ def _add_modified(p):
     f.write_text(d2, encoding="utf-8")
 for p in paths:
     _add_modified(p)
-urls = "\n".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{_lm[p]['date']}</lastmod></url>" for p in paths if p not in REVIEW)
+urls = "\n".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{_lm[p]['date']}</lastmod></url>" for p in paths if p not in REVIEW and p not in DOUBLONS)
 (ROOT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
 import llmsfull
-(ROOT / "llms-full.txt").write_text(llmsfull.build(ROOT, SITE, [p for p in paths if p not in ("/mentions-legales/", "/confidentialite/", "/cookies/") and p not in REVIEW]), encoding="utf-8")
+(ROOT / "llms-full.txt").write_text(llmsfull.build(ROOT, SITE, [p for p in paths if p not in ("/mentions-legales/", "/confidentialite/", "/cookies/") and p not in REVIEW and p not in DOUBLONS]), encoding="utf-8")
 _keep = IMG.used()
 for _f in (ROOT / "assets" / "photos").glob("*.webp"):
     if _f.name not in _keep:
