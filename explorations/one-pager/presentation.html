@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Bartier &amp; Co, ce que nous faisons</title>
+<title>Bartier &amp; Co, en une page</title>
 <style>
 @font-face{font-family:"Host Grotesk";font-weight:300 600;src:url(../v8b/assets/fonts/host-grotesk-latin.woff2) format("woff2")}
 @font-face{font-family:"Host Grotesk";font-weight:300 600;src:url(../v8b/assets/fonts/host-grotesk-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+1E00-1EFF,U+2020,U+20A0-20C0}
@@ -11,112 +11,137 @@
 @page{size:A4;margin:0}
 :root{--ink:#0A1424;--accent:#24489A;--muted:#5B6475;--line:#DCE1E8;--paper:#EEF0F3;--tint:#DCE2EF}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Schibsted Grotesk",system-ui,sans-serif;color:var(--ink);font-size:9.4pt;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:"Schibsted Grotesk",system-ui,sans-serif;color:var(--ink);font-size:10pt;line-height:1.42;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 a{color:inherit;text-decoration:none}
-.page{width:210mm;height:297mm;padding:12mm 14mm 8mm;display:flex;flex-direction:column;gap:5mm;overflow:hidden}
-.top{display:flex;justify-content:space-between;align-items:center;padding-bottom:3.5mm;border-bottom:1px solid var(--line)}
-.top img{height:7mm;display:block}
-.top p{font-size:8.6pt;color:var(--muted);text-align:right}
-.kick{font-size:8.8pt;color:var(--muted)}
-h1{font-family:"Host Grotesk",sans-serif;font-weight:300;font-size:26pt;line-height:1.02;letter-spacing:-.025em;margin:1.5mm 0 3mm}
-h1 span{color:var(--accent)}
-.lead{font-size:10.6pt;line-height:1.45;max-width:150mm}
-h2{font-family:"Host Grotesk",sans-serif;font-weight:400;font-size:13pt;letter-spacing:-.01em;margin-bottom:2.5mm}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
-.step{background:var(--paper);border-radius:2px;padding:3.6mm 4mm 4mm;display:flex;flex-direction:column;gap:1.3mm}
-.step.you{background:var(--accent);color:#fff}
-.step .n{display:flex;justify-content:space-between;align-items:baseline}
-.step .n b{font-family:"Host Grotesk",sans-serif;font-weight:300;font-size:20pt;line-height:1;color:var(--accent)}
-.step.you .n b{color:#fff}
-.step .n span{font-size:7.8pt;color:var(--muted)}
-.step.you .n span{color:#C9D3EC}
-.step h3{font-family:"Host Grotesk",sans-serif;font-weight:400;font-size:11.5pt;letter-spacing:-.005em}
-.step p{font-size:8.6pt}
-.step.you p{color:#E3E8F5}
-.engs{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm}
-.eng{border-top:1px solid var(--ink);padding-top:2.6mm}
-.eng b{display:block;font-family:"Host Grotesk",sans-serif;font-weight:300;font-size:22pt;line-height:1;color:var(--accent);letter-spacing:-.02em}
-.eng b small{font-size:11pt;color:var(--ink);letter-spacing:0;margin-left:1mm}
-.eng p{margin-top:1.5mm;font-size:8.5pt}
-.duo{display:grid;grid-template-columns:1.15fr 1fr;gap:3mm}
-.box{border:1px solid var(--line);border-radius:2px;padding:3.6mm 4.2mm;display:flex;flex-direction:column;gap:1.6mm}
-.box h3{font-family:"Host Grotesk",sans-serif;font-weight:400;font-size:11.5pt}
-.box .big{font-size:10.2pt}
-.box .big strong{font-weight:600}
-.box .note{font-size:7.6pt;color:var(--muted)}
-.box.pay{background:var(--tint);border-color:var(--tint)}
-.box .tag{align-self:flex-start;font-size:7.6pt;font-weight:600;color:var(--accent);background:#fff;border-radius:2px;padding:.7mm 2mm}
-.cta{margin-top:auto;background:var(--ink);color:#fff;border-radius:2px;padding:5mm 5.5mm;display:grid;grid-template-columns:1fr auto;gap:7mm;align-items:center}
-.cta h2{color:#fff;font-size:15pt;margin-bottom:2mm}
-.cta p{font-size:9.2pt;color:#C9D0DC}
-.cta .go{display:inline-block;margin-top:3mm;background:var(--accent);color:#fff;font-weight:500;font-size:9.4pt;padding:2.4mm 4mm;border-radius:2px}
-.who{display:flex;gap:3.5mm;align-items:center}
-.who img{width:19mm;height:19mm;border-radius:50%;object-fit:cover;object-position:50% 28%}
-.who div{font-size:9pt;line-height:1.55;color:#C9D0DC}
-.who strong{color:#fff;font-weight:600}
-.who .tel{color:#fff;font-size:11pt;font-weight:500}
-.foot{display:flex;justify-content:space-between;font-size:7.6pt;color:var(--muted)}
+.page{width:210mm;height:297mm;padding:11mm 13mm 8mm;display:flex;flex-direction:column;gap:4.6mm;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center}
+.top img{height:6.6mm;display:block}
+.top p{font-size:8.6pt;color:var(--muted)}
+.hero{display:grid;grid-template-columns:1fr 56mm;gap:7mm;align-items:center}
+.hero h1{font-family:"Host Grotesk",sans-serif;font-weight:400;font-size:28pt;line-height:1.04;letter-spacing:-.028em;margin:0 0 3.6mm}
+.hero h1 span{color:var(--accent)}
+.hero .lead{font-size:11.2pt;line-height:1.45}
+.hero .metiers{margin-top:3mm;font-size:8.8pt;color:var(--muted)}
+.hero figure{border-radius:3px;overflow:hidden;height:56mm}
+.hero figure img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+h2{font-family:"Host Grotesk",sans-serif;font-weight:500;font-size:12.5pt;letter-spacing:-.01em;margin-bottom:2.2mm}
+h2 i{font-style:normal;color:var(--accent);margin-right:2mm}
+.who{display:grid;grid-template-columns:1.55fr 1fr;gap:3mm}
+.col{border-radius:3px;padding:4mm 4.8mm}
+.col.us{background:var(--accent);color:#fff}
+.col.you{background:var(--paper)}
+.col h3{font-family:"Host Grotesk",sans-serif;font-weight:500;font-size:12pt;margin-bottom:2.2mm}
+.col ul{list-style:none;display:grid;gap:1.5mm}
+.col li{display:grid;grid-template-columns:5mm 1fr;font-size:10pt;line-height:1.38}
+.col li::before{content:"";width:2.6mm;height:1.4mm;margin-top:1.3mm;border-left:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(-45deg)}
+.col.us li::before{color:#BFD0F5}
+.col.you li::before{color:var(--accent)}
+.col.you .end{margin-top:3.5mm;font-family:"Host Grotesk",sans-serif;font-size:13pt;font-weight:400}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;counter-reset:s}
+.step{border-top:2px solid var(--accent);padding-top:2.8mm}
+.step b{display:block;font-family:"Host Grotesk",sans-serif;font-weight:500;font-size:10.8pt;margin-bottom:1mm}
+.step b em{font-style:normal;color:var(--accent);margin-right:1.6mm}
+.step p{font-size:9.3pt;color:#2A3446}
+.cost{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:3px}
+.cost div{padding:3.4mm 4.2mm}
+.cost div + div{border-left:1px solid var(--line)}
+.cost .k{font-size:8.4pt;color:var(--muted);margin-bottom:1.4mm}
+.cost .v{font-family:"Host Grotesk",sans-serif;font-weight:500;font-size:12pt;line-height:1.2;margin-bottom:1.4mm}
+.cost .v span{color:var(--accent)}
+.cost p{font-size:8.9pt;color:#2A3446}
+.cost .launch{background:var(--tint)}
+.cta{margin-top:auto;background:var(--ink);color:#fff;border-radius:3px;padding:5mm 6mm;display:grid;grid-template-columns:1fr auto;gap:7mm;align-items:center}
+.cta h2{color:#fff;font-size:16pt;font-weight:400;margin-bottom:1.8mm}
+.cta p{font-size:9.8pt;color:#C9D0DC}
+.cta .call{display:flex;gap:4mm;align-items:center}
+.cta .call img{width:18mm;height:18mm;border-radius:50%;object-fit:cover;object-position:50% 28%}
+.cta .call div{font-size:9pt;line-height:1.5;color:#C9D0DC}
+.cta .call strong{color:#fff;font-weight:600}
+.cta .call .tel{display:block;margin-top:.6mm;color:#fff;font-family:"Host Grotesk",sans-serif;font-size:15pt;font-weight:500;letter-spacing:-.01em}
+.foot{display:flex;justify-content:space-between;font-size:7.8pt;color:var(--muted)}
 </style>
 </head>
 <body>
 <div class="page">
   <div class="top">
     <img src="../v8b/assets/logo-bartier-wordmark.svg" alt="Bartier &amp; Co">
-    <p>Des clients pour les artisans du bâtiment<br>bartierandco.com</p>
+    <p>Pour les artisans du bâtiment</p>
   </div>
 
-  <div>
-    <p class="kick">Couvreurs, façadiers, menuisiers, charpentiers, entreprises d’isolation</p>
-    <h1>Plus de demandes de devis.<br><span>Moins de temps au téléphone.</span></h1>
-    <p class="lead">Nous gérons vos annonces, nous rappelons chaque prospect et nous vérifions son projet. Vous ne vous déplacez que pour les visites sérieuses.</p>
+  <div class="hero">
+    <div>
+      <h1>Vous faites les devis.<br><span>Nous trouvons les clients.</span></h1>
+      <p class="lead">Nous trouvons des propriétaires qui ont un projet de travaux près de chez vous. Nous vérifions chaque demande, puis nous fixons la visite dans votre agenda.</p>
+      <p class="metiers">Toiture · Façade · Fenêtres et portes · Charpente · Isolation</p>
+    </div>
+    <figure><img src="../v8b/assets/photos/couvreur-repare-toiture-ardoise-640x800.webp" alt="Couvreur au travail sur un toit"></figure>
   </div>
 
   <section>
-    <h2>Comment ça marche</h2>
+    <h2>Qui fait quoi</h2>
+    <div class="who">
+      <div class="col us">
+        <h3>Nous, Bartier &amp; Co</h3>
+        <ul>
+          <li>Nous lançons vos publicités sur Facebook, Instagram et Google, ciblées sur les propriétaires de votre secteur.</li>
+          <li>Nous rappelons chaque demande en moins de 5 minutes, en semaine.</li>
+          <li>Nous vérifions que la personne est propriétaire, que son projet est sérieux et qu’elle habite dans votre zone.</li>
+          <li>Nous fixons la visite dans votre agenda et nous la rappelons au client par SMS.</li>
+        </ul>
+      </div>
+      <div class="col you">
+        <h3>Vous</h3>
+        <ul>
+          <li>Vous faites la visite.</li>
+          <li>Vous chiffrez et vous signez.</li>
+        </ul>
+        <p class="end">C’est tout.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Comment on démarre</h2>
     <div class="steps">
-      <div class="step"><div class="n"><b>1</b><span>C’est nous</span></div><h3>Vos annonces</h3><p>Nous lançons vos annonces Facebook, Instagram et Google, à votre nom, ciblées sur les propriétaires autour de votre dépôt.</p></div>
-      <div class="step"><div class="n"><b>2</b><span>C’est nous</span></div><h3>Chaque demande vérifiée</h3><p>Chaque demande est rappelée en moins de 5&nbsp;minutes. Nous vérifions que la personne est propriétaire, que son projet est sérieux et qu’elle habite dans votre zone.</p></div>
-      <div class="step you"><div class="n"><b>3</b><span>C’est vous</span></div><h3>La visite de devis</h3><p>Le rendez-vous est fixé dans votre agenda, selon vos disponibilités et le temps de trajet. Vous rencontrez un propriétaire qui vous attend, avec un vrai projet.</p></div>
+      <div class="step"><b><em>1</em>Un appel de 20 minutes</b><p>Votre métier, votre zone, le nombre de chantiers que vous pouvez prendre en plus.</p></div>
+      <div class="step"><b><em>2</em>En ligne sous 48 heures</b><p>Votre page de demande de devis et vos publicités sont prêtes. Vous n’avez rien à préparer.</p></div>
+      <div class="step"><b><em>3</em>Les visites arrivent</b><p>Chaque demande est rappelée et vérifiée. Vous recevez les visites dans votre agenda.</p></div>
     </div>
   </section>
 
   <section>
-    <h2>Nos engagements</h2>
-    <div class="engs">
-      <div class="eng"><b>1<small>artisan</small></b><p>par métier et par secteur. Vos demandes ne sont partagées avec personne.</p></div>
-      <div class="eng"><b>5<small>min</small></b><p>pour rappeler chaque demande, en semaine de 8&nbsp;h à 19&nbsp;h.</p></div>
-      <div class="eng"><b>100<small>%</small></b><p>de votre budget dans vos annonces, payé directement à Meta ou à Google, sur des comptes à votre nom.</p></div>
-      <div class="eng"><b>0<small>mois</small></b><p>d’engagement. Vous arrêtez quand vous voulez.</p></div>
+    <h2>Ce que ça vous coûte</h2>
+    <div class="cost">
+      <div>
+        <p class="k">Votre budget publicitaire</p>
+        <p class="v">À partir de <span>1&nbsp;000&nbsp;€</span> par mois</p>
+        <p>Payé directement à Facebook et à Google, sur des comptes à votre nom. Il ne passe jamais par nous.</p>
+      </div>
+      <div class="launch">
+        <p class="k">Notre part · offre de lancement</p>
+        <p class="v">Un <span>pourcentage</span> des chantiers signés</p>
+        <p>Vous ne nous payez que sur les chantiers que vous signez grâce à nous. Pas de forfait.</p>
+      </div>
+      <div>
+        <p class="k">Vos garanties</p>
+        <p class="v"><span>Sans engagement</span></p>
+        <p>Un seul artisan par métier dans votre secteur. Vous arrêtez quand vous voulez et les comptes restent à vous.</p>
+      </div>
     </div>
   </section>
-
-  <div class="duo">
-    <div class="box">
-      <h3>Ce que peut donner un budget</h3>
-      <p class="big">Avec <strong>2&nbsp;000&nbsp;€</strong> de publicité par mois&nbsp;: <strong>44 à 100</strong> demandes, <strong>11 à 40</strong> visites fixées, <strong>3 à 10</strong> chantiers signés.</p>
-      <p class="note">Des estimations, pas des promesses&nbsp;: 20 à 45&nbsp;€ par demande, 25 à 40&nbsp;% de demandes qualifiées, 3 visites sur 4 honorées, un chantier signé pour 3 visites. Vos résultats dépendent de votre métier, de votre secteur et de la saison.</p>
-    </div>
-    <div class="box pay">
-      <span class="tag">Offre de lancement</span>
-      <h3>Notre rémunération</h3>
-      <p class="big">Pas de forfait. Nous sommes payés en <strong>pourcentage du chiffre d’affaires que nous vous apportons</strong>.</p>
-      <p class="note">Votre budget publicitaire est payé directement à Meta ou à Google. Il ne passe jamais par nous.</p>
-    </div>
-  </div>
 
   <div class="cta">
     <div>
       <h2>Votre secteur est-il encore libre&nbsp;?</h2>
-      <p>Demandez votre diagnostic secteur, offert&nbsp;: les maisons autour de votre dépôt, ce que les propriétaires cherchent sur Google, qui fait déjà de la publicité près de chez vous et ce qu’un budget peut vous rapporter. Nous le parcourons ensemble en 20&nbsp;minutes.</p>
-      <a class="go" href="https://bartierandco.com/#contact">bartierandco.com, mon diagnostic secteur</a>
+      <p>Appelez Martin. En 20 minutes, il vous dit si votre secteur est libre et vous montre ce qu’il peut vous rapporter, chiffres à l’appui.</p>
     </div>
-    <div class="who">
+    <div class="call">
       <img src="../v8b/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Martin Barthélémy">
-      <div><strong>Martin Barthélémy</strong><br>Cofondateur<br><a class="tel" href="tel:+33781018936">07&nbsp;81&nbsp;01&nbsp;89&nbsp;36</a><br><a href="mailto:contact@bartierandco.com">contact@bartierandco.com</a></div>
+      <div><strong>Martin Barthélémy</strong>, cofondateur<a class="tel" href="tel:+33781018936">07&nbsp;81&nbsp;01&nbsp;89&nbsp;36</a><a href="mailto:contact@bartierandco.com">contact@bartierandco.com</a></div>
     </div>
   </div>
 
-  <div class="foot"><span>Bartier &amp; Co · Charles Le Cottier et Martin Barthélémy, cofondateurs</span><span>bartierandco.com</span></div>
+  <div class="foot"><span>Bartier &amp; Co · Charles Le Cottier et Martin Barthélémy, cofondateurs</span><a href="https://bartierandco.com">bartierandco.com</a></div>
 </div>
 </body>
 </html>
