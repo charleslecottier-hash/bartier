@@ -13,7 +13,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Schibsted Grotesk",system-ui,sans-serif;color:var(--ink);font-size:10pt;line-height:1.42;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 a{color:inherit;text-decoration:none}
-.page{width:210mm;height:297mm;padding:11mm 13mm 8mm;display:flex;flex-direction:column;gap:4.6mm;overflow:hidden}
+.page{width:210mm;height:297mm;padding:11mm 13mm 8mm;display:flex;flex-direction:column;gap:4mm;overflow:hidden}
 .top{display:flex;justify-content:space-between;align-items:center}
 .top img{height:6.6mm;display:block}
 .top p{font-size:8.6pt;color:var(--muted)}
@@ -24,26 +24,26 @@ a{color:inherit;text-decoration:none}
 .hero .lead strong{font-weight:600}
 .hero figure{border-radius:4px;overflow:hidden;height:42mm}
 .hero figure img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
-.pay{background:var(--accent);color:#fff;border-radius:4px;padding:5mm 6.5mm 5.4mm;display:grid;grid-template-columns:34mm 1fr;gap:6mm;align-items:center}
-.pay .pct{font-family:"Host Grotesk",sans-serif;font-weight:300;font-size:104pt;line-height:.8;text-align:center;color:#fff}
+.pay{background:var(--accent);color:#fff;border-radius:4px;padding:4.4mm 6.5mm 4.8mm;display:grid;grid-template-columns:34mm 1fr;gap:6mm;align-items:center}
+.pay .pct{font-family:"Host Grotesk",sans-serif;font-weight:300;font-size:92pt;line-height:.8;text-align:center;color:#fff}
 .pay h2{font-family:"Host Grotesk",sans-serif;font-weight:400;font-size:19pt;letter-spacing:-.015em;line-height:1.1;margin-bottom:2.4mm}
 .pay p{font-size:10.2pt;color:#E3E8F5}
-.pay .cases{display:grid;grid-template-columns:1fr 1fr;gap:2.6mm;margin:3.6mm 0 3mm}
+.pay .cases{display:grid;grid-template-columns:1fr 1fr;gap:2.6mm;margin:3mm 0 2.6mm}
 .pay .case{background:rgba(255,255,255,.1);border-radius:3px;padding:2.8mm 3.4mm}
 .pay .case b{display:block;font-weight:600;color:#fff;font-size:10pt;margin-bottom:.6mm}
 .pay .case span{font-size:9.6pt;color:#E3E8F5}
 .pay .fixe{font-size:8.9pt;color:#C9D3EC}
 .pay .fixe strong{color:#fff;font-weight:600}
 h3{font-family:"Host Grotesk",sans-serif;font-weight:500;font-size:12.5pt;letter-spacing:-.01em;margin-bottom:2.4mm}
-.who{display:grid;grid-template-columns:1.5fr 1fr;gap:3mm}
+.who{display:grid;grid-template-columns:1fr 50mm;gap:3mm}
 .col{border-radius:4px;padding:4.2mm 4.8mm}
 .col.us{background:var(--paper)}
 .col.you{border:1.5px solid var(--accent)}
-.col ul{list-style:none;display:grid;gap:1.5mm}
+.col ul{list-style:none;display:grid;gap:1.4mm}
 .col li{display:grid;grid-template-columns:5mm 1fr;font-size:9.9pt;line-height:1.36}
 .col li::before{content:"";width:2.6mm;height:1.4mm;margin-top:1.3mm;border-left:1.6px solid var(--accent);border-bottom:1.6px solid var(--accent);transform:rotate(-45deg)}
 .col.you p{font-size:10.4pt;line-height:1.45}
-.col.you .big{font-family:"Host Grotesk",sans-serif;font-size:14pt;line-height:1.2;margin-bottom:2.4mm}
+.col.you .big{font-family:"Host Grotesk",sans-serif;font-size:14pt;line-height:1.2}
 .col.you .big span{color:var(--accent)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
 .step{border-top:2px solid var(--accent);padding-top:2.6mm}
@@ -53,9 +53,20 @@ h3{font-family:"Host Grotesk",sans-serif;font-weight:500;font-size:12.5pt;letter
 .promis{display:flex;flex-wrap:wrap;gap:2mm 6mm;font-size:9.3pt;padding:3mm 4mm;background:var(--paper);border-radius:4px}
 .promis span{display:inline-flex;gap:2mm;align-items:baseline}
 .promis span::before{content:"";width:2.4mm;height:1.3mm;border-left:1.6px solid var(--accent);border-bottom:1.6px solid var(--accent);transform:rotate(-45deg) translateY(-.4mm)}
-.cta{margin-top:auto;background:var(--ink);color:#fff;border-radius:4px;padding:5mm 6mm;display:grid;grid-template-columns:1fr auto;gap:7mm;align-items:center}
+.vs{display:grid;grid-template-columns:27mm 1fr 1fr;border:1px solid var(--line);border-radius:4px;overflow:hidden;font-size:9.3pt;line-height:1.35}
+.vs > div{padding:2.1mm 3.4mm;border-top:1px solid var(--line)}
+.vs > .h{border-top:0;font-family:"Host Grotesk",sans-serif;font-weight:500;font-size:10pt;padding-top:2.6mm;padding-bottom:2.2mm}
+.vs > .l{color:var(--muted);font-size:8.6pt;background:var(--paper)}
+.vs > .them{color:#4A5466}
+.vs > .h.them{color:var(--muted)}
+.vs > .us{background:var(--tint);font-weight:500}
+.vs > .h.us{color:var(--accent)}
+.cta{margin-top:auto;background:var(--ink);color:#fff;border-radius:4px;padding:5mm 6mm;display:grid;grid-template-columns:1fr auto;gap:5mm;align-items:center}
 .cta h2{font-family:"Host Grotesk",sans-serif;color:#fff;font-size:16pt;font-weight:400;margin-bottom:1.6mm}
 .cta p{font-size:9.8pt;color:#C9D0DC}
+.cta ol{list-style:none;display:flex;gap:1.6mm;margin-top:2.8mm;counter-reset:e}
+.cta ol li{counter-increment:e;white-space:nowrap;font-size:8.4pt;color:#fff;background:rgba(255,255,255,.08);border-radius:3px;padding:1.3mm 2.3mm}
+.cta ol li::before{content:counter(e) " ";color:#9DB4E8;font-weight:600}
 .cta .call{display:flex;gap:4mm;align-items:center}
 .cta .call img{width:18mm;height:18mm;border-radius:50%;object-fit:cover;object-position:50% 28%}
 .cta .call div{font-size:9pt;line-height:1.5;color:#C9D0DC}
@@ -83,12 +94,12 @@ h3{font-family:"Host Grotesk",sans-serif;font-weight:500;font-size:12.5pt;letter
     <div class="pct">%</div>
     <div>
       <h2>On gagne quand tu gagnes.</h2>
-      <p>Ni abonnement ni forfait à nous payer. On prend un pourcentage des chantiers que tu signes grâce à nous, c’est tout.</p>
+      <p>Ni abonnement ni forfait à nous payer. On prend un pourcentage des chantiers que tu signes grâce à nous. Le taux, on le fixe ensemble au premier appel.</p>
       <div class="cases">
         <div class="case"><b>Tu signes un chantier</b><span>On prend notre pourcentage dessus.</span></div>
         <div class="case"><b>Tu ne signes rien</b><span>Tu ne nous dois rien.</span></div>
       </div>
-      <p class="fixe"><strong>Ta seule dépense fixe : ton budget pub</strong>, dès 1&nbsp;000&nbsp;€ par mois, payé directement à Facebook et à Google. Il ne passe jamais par nous.</p>
+      <p class="fixe"><strong>Ta seule dépense fixe : ton budget pub</strong>, dès 1&nbsp;000&nbsp;€ par mois, payé directement à Facebook et à Google sur des comptes à ton nom. Il ne passe jamais par nous.</p>
     </div>
   </div>
 
@@ -96,34 +107,35 @@ h3{font-family:"Host Grotesk",sans-serif;font-weight:500;font-size:12.5pt;letter
     <div class="col us">
       <h3>Nous, on s’occupe de tout ça</h3>
       <ul>
-        <li>Tes pubs Facebook, Instagram et Google dans ton coin.</li>
-        <li>Chaque demande rappelée en moins de 5 minutes.</li>
-        <li>On trie : propriétaire, vrai projet, dans ta zone.</li>
-        <li>La visite calée dans ton agenda, SMS de rappel au client.</li>
+        <li>Tes pubs Facebook, Instagram et Google, ciblées sur ton coin</li>
+        <li>Le rappel de chaque demande, en moins de 5 minutes</li>
+        <li>Le tri : propriétaire, vrai projet, dans ta zone</li>
+        <li>La visite calée dans ton agenda, avec un SMS de rappel au client</li>
       </ul>
     </div>
     <div class="col you">
       <h3>Toi</h3>
-      <p class="big">Tu fais la visite, tu chiffres, <span>tu signes.</span></p>
-      <p>Pas de téléphone qui sonne pour rien sur le chantier. Tu ne te déplaces que pour des clients qui t’attendent.</p>
+      <p class="big">Tu fais la visite,<br>tu chiffres,<br><span>tu signes.</span></p>
     </div>
   </div>
+
 
   <div>
-    <h3>Comment ça démarre</h3>
-    <div class="steps">
-      <div class="step"><b><em>1</em>On s’appelle 20 minutes</b><p>Ton métier, ta zone, combien de chantiers tu peux prendre en plus.</p></div>
-      <div class="step"><b><em>2</em>En ligne en 48 heures</b><p>Ta page de demande de devis et tes pubs tournent. Tu n’as rien à préparer.</p></div>
-      <div class="step"><b><em>3</em>Les visites arrivent</b><p>Chaque demande est rappelée et triée. Toi, tu reçois les rendez-vous.</p></div>
+    <h3>La différence avec une plateforme de contacts</h3>
+    <div class="vs">
+      <div class="h l"></div><div class="h them">Une plateforme de contacts</div><div class="h us">Bartier &amp; Co</div>
+      <div class="l">Tu paies</div><div class="them">Chaque contact, même s’il ne décroche pas</div><div class="us">Seulement les chantiers que tu signes</div>
+      <div class="l">Le contact va</div><div class="them">À plusieurs artisans en même temps</div><div class="us">À toi seul : un artisan par métier et par secteur</div>
+      <div class="l">Qui rappelle</div><div class="them">Toi, entre deux chantiers</div><div class="us">Nous, en moins de 5 minutes</div>
+      <div class="l">Tu reçois</div><div class="them">Un nom et un numéro</div><div class="us">Une visite fixée dans ton agenda</div>
     </div>
   </div>
-
-  <p class="promis"><span>Un seul artisan par métier dans ton secteur</span><span>Sans engagement</span><span>Comptes pub à ton nom, tu les gardes</span></p>
 
   <div class="cta">
     <div>
       <h2>Ton secteur est encore libre&nbsp;?</h2>
-      <p>Appelle Martin. En 20 minutes, il te dit si la place est prise et ce que ton secteur peut te rapporter.</p>
+      <p>Appelle Martin. Il te dit si la place est prise et ce que ton secteur peut te rapporter. Sans engagement : si ça ne te va pas, tu arrêtes.</p>
+      <ol><li>On s’appelle 20 minutes</li><li>En ligne en 48 heures</li><li>Les visites arrivent</li></ol>
     </div>
     <div class="call">
       <img src="../v8b/assets/photos/martin-barthelemy-360x450-nb.webp" alt="Martin Barthélémy">
